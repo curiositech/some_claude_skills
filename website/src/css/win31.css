@@ -1,0 +1,676 @@
+/* Windows 3.1 Design System */
+
+/* Import playful 90s-style fonts */
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Press+Start+2P&display=swap');
+
+:root {
+  /* Classic Windows 3.1 Color Palette */
+  --win31-gray: #c0c0c0;
+  --win31-dark-gray: #808080;
+  --win31-light-gray: #dfdfdf;
+  --win31-white: #ffffff;
+  --win31-black: #000000;
+  --win31-navy: #000080;
+  --win31-teal: #008080;
+  --win31-desktop: #008080;
+
+  /* Vibrant accent colors */
+  --win31-yellow: #FFFF00;
+  --win31-bright-yellow: #FFD700;
+  --win31-red: #FF0000;
+  --win31-bright-red: #DC143C;
+  --win31-magenta: #FF00FF;
+  --win31-lime: #00FF00;
+
+  /* Title Bar Colors */
+  --win31-active-title: #000080;
+  --win31-inactive-title: #808080;
+  --win31-title-text: #ffffff;
+
+  /* Border Styles */
+  --win31-border-outer-light: #dfdfdf;
+  --win31-border-outer-dark: #000000;
+  --win31-border-inner-light: #ffffff;
+  --win31-border-inner-dark: #808080;
+
+  /* Spacing */
+  --win31-border-width: 2px;
+  --win31-title-height: 18px;
+  --win31-button-size: 16px;
+
+  /* 90s Typography */
+  --font-heading: 'VT323', monospace;
+  --font-body: 'Courier Prime', 'Courier New', monospace;
+  --font-code: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-pixel: 'Press Start 2P', cursive;
+  --font-system: 'IBM Plex Mono', monospace;
+}
+
+/* Windows 3.1 Typography */
+@font-face {
+  font-family: 'MS Sans Serif';
+  src: local('MS Sans Serif'), local('Microsoft Sans Serif');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.win31-font {
+  font-family: var(--font-system);
+  font-size: 12px;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.5px;
+}
+
+/* Doc content typography */
+.win31-doc-content {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  padding: 24px;
+  background: #F5F5DC !important; /* Soft beige - easier on eyes than white */
+  color: var(--win31-black) !important;
+}
+
+.win31-doc-content h1 {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  color: var(--win31-navy) !important;
+  border-bottom: 3px solid var(--win31-navy);
+  padding-bottom: 8px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.win31-doc-content h2 {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: normal;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  color: var(--win31-teal) !important;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.win31-doc-content h3 {
+  font-family: var(--font-system);
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: var(--win31-black) !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.win31-doc-content p {
+  margin-bottom: 12px;
+}
+
+.win31-doc-content code {
+  background: var(--win31-light-gray) !important;
+  color: var(--win31-navy) !important;
+  padding: 3px 8px;
+  border: 1px solid var(--win31-dark-gray);
+  font-family: var(--font-code);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 0;
+}
+
+.win31-doc-content pre {
+  background: #1a1a1a !important; /* Dark background for code blocks */
+  color: #E0E0E0 !important;
+  border: 2px solid var(--win31-black);
+  padding: 16px;
+  overflow-x: auto;
+  margin: 20px 0;
+  font-family: var(--font-code);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.win31-doc-content pre code {
+  background: none !important;
+  border: none;
+  padding: 0;
+  color: #E0E0E0 !important;
+}
+
+.win31-doc-content ul,
+.win31-doc-content ol {
+  margin-left: 24px;
+  margin-bottom: 12px;
+}
+
+.win31-doc-content li {
+  margin-bottom: 6px;
+  color: var(--win31-black) !important;
+}
+
+.win31-doc-content a {
+  color: var(--win31-navy) !important;
+  text-decoration: underline;
+}
+
+.win31-doc-content a:hover {
+  color: var(--win31-teal) !important;
+}
+
+.win31-doc-content blockquote {
+  border-left: 4px solid var(--win31-navy);
+  padding: 12px 16px;
+  margin: 16px 0;
+  color: var(--win31-black) !important;
+  background: var(--win31-light-gray) !important;
+  font-style: italic;
+  border-radius: 0;
+}
+
+/* Window Chrome */
+.win31-window {
+  background: var(--win31-gray);
+  border-style: solid;
+  border-width: var(--win31-border-width);
+  border-top-color: var(--win31-border-outer-light);
+  border-left-color: var(--win31-border-outer-light);
+  border-bottom-color: var(--win31-border-outer-dark);
+  border-right-color: var(--win31-border-outer-dark);
+  box-shadow:
+    inset 1px 1px 0 var(--win31-border-inner-light),
+    inset -1px -1px 0 var(--win31-border-inner-dark);
+}
+
+.win31-window-inner {
+  border-style: solid;
+  border-width: 1px;
+  border-top-color: var(--win31-border-inner-dark);
+  border-left-color: var(--win31-border-inner-dark);
+  border-bottom-color: var(--win31-border-inner-light);
+  border-right-color: var(--win31-border-inner-light);
+}
+
+/* Title Bar */
+.win31-titlebar {
+  background: var(--win31-active-title);
+  height: var(--win31-title-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 2px 2px 4px;
+  user-select: none;
+}
+
+.win31-titlebar-inactive {
+  background: var(--win31-inactive-title);
+}
+
+.win31-title-text {
+  color: var(--win31-title-text);
+  font-family: var(--font-system);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* System Buttons */
+.win31-button {
+  width: var(--win31-button-size);
+  height: var(--win31-button-size);
+  background: var(--win31-gray);
+  border-style: solid;
+  border-width: 1px;
+  border-top-color: var(--win31-white);
+  border-left-color: var(--win31-white);
+  border-bottom-color: var(--win31-black);
+  border-right-color: var(--win31-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 2px;
+}
+
+.win31-button:active {
+  border-top-color: var(--win31-black);
+  border-left-color: var(--win31-black);
+  border-bottom-color: var(--win31-white);
+  border-right-color: var(--win31-white);
+  transform: translate(1px, 1px);
+}
+
+.win31-button-icon {
+  width: 8px;
+  height: 8px;
+  display: block;
+}
+
+/* Desktop Background */
+.win31-desktop {
+  background-color: var(--win31-desktop);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Classic Beveled Panel */
+.win31-panel {
+  background: var(--win31-gray);
+  border-style: solid;
+  border-width: 2px;
+  border-top-color: var(--win31-dark-gray);
+  border-left-color: var(--win31-dark-gray);
+  border-bottom-color: var(--win31-white);
+  border-right-color: var(--win31-white);
+  padding: 8px;
+}
+
+.win31-panel-inset {
+  border-top-color: var(--win31-white);
+  border-left-color: var(--win31-white);
+  border-bottom-color: var(--win31-dark-gray);
+  border-right-color: var(--win31-dark-gray);
+}
+
+/* Classic Button */
+.win31-push-button {
+  background: var(--win31-gray);
+  border-style: solid;
+  border-width: 2px;
+  border-top-color: var(--win31-white);
+  border-left-color: var(--win31-white);
+  border-bottom-color: var(--win31-black);
+  border-right-color: var(--win31-black);
+  padding: 5px 14px;
+  font-family: var(--font-system);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 75px;
+  letter-spacing: 0.3px;
+}
+
+.win31-push-button:active {
+  border-top-color: var(--win31-black);
+  border-left-color: var(--win31-black);
+  border-bottom-color: var(--win31-white);
+  border-right-color: var(--win31-white);
+  transform: translate(1px, 1px);
+}
+
+.win31-push-button-default {
+  border-width: 3px;
+  border-color: var(--win31-black);
+}
+
+/* Scrollbar */
+.win31-scrollbar {
+  width: 16px;
+  background: var(--win31-gray);
+}
+
+.win31-scrollbar::-webkit-scrollbar {
+  width: 16px;
+}
+
+.win31-scrollbar::-webkit-scrollbar-track {
+  background: var(--win31-gray);
+  border-left: 1px solid var(--win31-dark-gray);
+}
+
+.win31-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--win31-gray);
+  border-style: solid;
+  border-width: 1px;
+  border-top-color: var(--win31-white);
+  border-left-color: var(--win31-white);
+  border-bottom-color: var(--win31-dark-gray);
+  border-right-color: var(--win31-dark-gray);
+}
+
+/* Icon Grid */
+.win31-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.win31-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.win31-icon-image {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 4px;
+}
+
+.win31-icon-label {
+  color: var(--win31-white);
+  font-family: var(--font-system);
+  font-size: 12px;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  padding: 2px 4px;
+  max-width: 80px;
+  word-wrap: break-word;
+  letter-spacing: 0.3px;
+}
+
+.win31-icon-selected .win31-icon-label {
+  background: var(--win31-navy);
+  color: var(--win31-white);
+}
+
+/* Menu Bar */
+.win31-menubar {
+  background: var(--win31-gray);
+  display: flex;
+  border-bottom: 1px solid var(--win31-dark-gray);
+  padding: 2px;
+}
+
+.win31-menu-item {
+  padding: 5px 10px;
+  font-family: var(--font-system);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+.win31-menu-item:hover {
+  background: var(--win31-navy);
+  color: var(--win31-white);
+}
+
+/* Status Bar */
+.win31-statusbar {
+  background: var(--win31-gray);
+  border-top: 1px solid var(--win31-white);
+  height: 22px;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  font-family: var(--font-system);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.win31-statusbar-panel {
+  border-style: solid;
+  border-width: 1px;
+  border-top-color: var(--win31-dark-gray);
+  border-left-color: var(--win31-dark-gray);
+  border-bottom-color: var(--win31-white);
+  border-right-color: var(--win31-white);
+  padding: 2px 4px;
+  margin-right: 4px;
+}
+
+/* Pixel-perfect icons using CSS */
+.win31-close-icon::before {
+  content: '✕';
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--win31-black);
+}
+
+.win31-maximize-icon::before {
+  content: '▲';
+  font-size: 8px;
+  color: var(--win31-black);
+}
+
+.win31-minimize-icon::before {
+  content: '_';
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--win31-black);
+  line-height: 8px;
+}
+
+/* Override Docusaurus sidebar - make it Windows 3.1 style */
+.theme-doc-sidebar-container {
+  background: var(--win31-gray) !important;
+  border-right: 2px solid var(--win31-black) !important;
+}
+
+.theme-doc-sidebar-menu,
+.menu {
+  font-family: var(--font-system) !important;
+  background: var(--win31-gray) !important;
+  padding: 12px !important;
+}
+
+.menu__link,
+.menu__list-item {
+  font-family: var(--font-system) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
+  color: var(--win31-black) !important;
+  padding: 6px 12px !important;
+  border-radius: 0 !important;
+}
+
+.menu__link:hover,
+.menu__link--active {
+  background: var(--win31-navy) !important;
+  color: var(--win31-white) !important;
+}
+
+.menu__list-item-collapsible {
+  font-family: var(--font-system) !important;
+}
+
+.menu__caret::before {
+  background: none !important;
+  content: '▸' !important;
+  font-size: 10px !important;
+  color: var(--win31-black) !important;
+}
+
+.menu__list-item--collapsed .menu__caret::before {
+  transform: rotate(0deg) !important;
+}
+
+.menu__list .menu__list {
+  border-left: 2px inset var(--win31-dark-gray) !important;
+  margin-left: 8px !important;
+  padding-left: 8px !important;
+}
+
+/* Override navbar */
+.navbar {
+  background: var(--win31-gray) !important;
+  border-bottom: 3px solid var(--win31-black) !important;
+  box-shadow: inset -1px -1px 0 var(--win31-dark-gray), inset 1px 1px 0 var(--win31-white) !important;
+  padding: 8px 16px !important;
+}
+
+.navbar__title,
+.navbar__link,
+.navbar__item {
+  font-family: var(--font-system) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--win31-black) !important;
+  letter-spacing: 0.5px !important;
+}
+
+.navbar__link:hover {
+  background: var(--win31-navy) !important;
+  color: var(--win31-white) !important;
+}
+
+/* Override breadcrumbs */
+.theme-doc-breadcrumbs,
+.breadcrumbs {
+  font-family: var(--font-system) !important;
+  background: var(--win31-light-gray) !important;
+  padding: 8px 16px !important;
+  border: 2px inset var(--win31-gray) !important;
+  margin-bottom: 16px !important;
+}
+
+.breadcrumbs__item,
+.breadcrumbs__link {
+  font-family: var(--font-system) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--win31-navy) !important;
+}
+
+.breadcrumbs__item--active {
+  color: var(--win31-black) !important;
+}
+
+/* Override table of contents */
+.table-of-contents,
+.theme-doc-toc-desktop {
+  font-family: var(--font-system) !important;
+  background: var(--win31-gray) !important;
+  border-left: 3px solid var(--win31-black) !important;
+  padding: 16px !important;
+}
+
+.table-of-contents__link,
+.table-of-contents li {
+  font-family: var(--font-system) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--win31-black) !important;
+}
+
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: var(--win31-navy) !important;
+  background: var(--win31-light-gray) !important;
+}
+
+/* Override pagination */
+.pagination-nav {
+  font-family: var(--font-system) !important;
+}
+
+.pagination-nav__link {
+  border: 2px outset var(--win31-gray) !important;
+  background: var(--win31-gray) !important;
+  font-family: var(--font-system) !important;
+  border-radius: 0 !important;
+}
+
+.pagination-nav__link:hover {
+  background: var(--win31-light-gray) !important;
+  border: 2px inset var(--win31-gray) !important;
+}
+
+.pagination-nav__label,
+.pagination-nav__sublabel {
+  font-family: var(--font-system) !important;
+  color: var(--win31-black) !important;
+}
+
+/* Make main wrapper beige instead of white */
+main[class*="docMainContainer"],
+.main-wrapper {
+  background: #F5F5DC !important;
+}
+
+/* Syntax Highlighting Overrides - Dark Background Theme */
+/* Override Prism.js syntax highlighting for dark code blocks */
+
+.win31-doc-content pre .token.comment,
+.win31-doc-content pre .token.prolog,
+.win31-doc-content pre .token.doctype,
+.win31-doc-content pre .token.cdata {
+  color: #7C7C7C !important; /* Gray for comments */
+  font-style: italic;
+}
+
+.win31-doc-content pre .token.punctuation {
+  color: #D4D4D4 !important; /* Light gray for punctuation */
+}
+
+.win31-doc-content pre .token.property,
+.win31-doc-content pre .token.tag,
+.win31-doc-content pre .token.boolean,
+.win31-doc-content pre .token.number,
+.win31-doc-content pre .token.constant,
+.win31-doc-content pre .token.symbol,
+.win31-doc-content pre .token.deleted {
+  color: #CE9178 !important; /* Peach/orange for numbers and constants */
+}
+
+.win31-doc-content pre .token.selector,
+.win31-doc-content pre .token.attr-name,
+.win31-doc-content pre .token.string,
+.win31-doc-content pre .token.char,
+.win31-doc-content pre .token.builtin,
+.win31-doc-content pre .token.inserted {
+  color: #CE9178 !important; /* Peach/orange for strings */
+}
+
+.win31-doc-content pre .token.operator,
+.win31-doc-content pre .token.entity,
+.win31-doc-content pre .token.url {
+  color: #D4D4D4 !important; /* Light gray for operators */
+}
+
+.win31-doc-content pre .language-css .token.string,
+.win31-doc-content pre .style .token.string {
+  color: #CE9178 !important;
+}
+
+.win31-doc-content pre .token.atrule,
+.win31-doc-content pre .token.attr-value,
+.win31-doc-content pre .token.keyword {
+  color: #C586C0 !important; /* Purple for keywords */
+  font-weight: 500;
+}
+
+.win31-doc-content pre .token.function,
+.win31-doc-content pre .token.class-name {
+  color: #DCDCAA !important; /* Yellow for functions */
+  font-weight: 500;
+}
+
+.win31-doc-content pre .token.regex,
+.win31-doc-content pre .token.important,
+.win31-doc-content pre .token.variable {
+  color: #9CDCFE !important; /* Light blue for variables */
+}
+
+.win31-doc-content pre .token.important,
+.win31-doc-content pre .token.bold {
+  font-weight: bold;
+}
+
+.win31-doc-content pre .token.italic {
+  font-style: italic;
+}
+
+/* Responsive adaptations while keeping retro feel */
+@media (max-width: 768px) {
+  .win31-icon-grid {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 15px;
+  }
+
+  .win31-icon-image {
+    width: 32px;
+    height: 32px;
+  }
+}

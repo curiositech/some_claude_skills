@@ -1,0 +1,185 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Import Windows 3.1 Design System */
+@import './win31.css';
+
+/* Claude Skills Custom Theme - Modern, Professional, AI-focused */
+:root {
+  /* Primary brand color - Deep purple/indigo for AI/intelligence */
+  --ifm-color-primary: #6366f1;
+  --ifm-color-primary-dark: #4f46e5;
+  --ifm-color-primary-darker: #4338ca;
+  --ifm-color-primary-darkest: #3730a3;
+  --ifm-color-primary-light: #818cf8;
+  --ifm-color-primary-lighter: #a5b4fc;
+  --ifm-color-primary-lightest: #c7d2fe;
+
+  /* Typography */
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing and borders */
+  --ifm-global-radius: 0.5rem;
+
+  /* Code blocks */
+  --docusaurus-highlighted-code-line-bg: rgba(99, 102, 241, 0.1);
+}
+
+/* Dark mode - Vibrant, high-tech aesthetic */
+[data-theme='dark'] {
+  --ifm-color-primary: #818cf8;
+  --ifm-color-primary-dark: #6366f1;
+  --ifm-color-primary-darker: #4f46e5;
+  --ifm-color-primary-darkest: #4338ca;
+  --ifm-color-primary-light: #a5b4fc;
+  --ifm-color-primary-lighter: #c7d2fe;
+  --ifm-color-primary-lightest: #e0e7ff;
+  --docusaurus-highlighted-code-line-bg: rgba(129, 140, 248, 0.15);
+  --ifm-background-color: #0f172a;
+  --ifm-navbar-background-color: #1e293b;
+}
+
+/* Custom styles for skill cards and interactive components */
+.skill-card {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+  transform: translateY(-2px);
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem;
+  background-color: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+[data-theme='dark'] .skill-tag {
+  background-color: rgba(129, 140, 248, 0.2);
+  color: var(--ifm-color-primary-lightest);
+}
+
+/* Interactive playground styles */
+.playground-container {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.playground-editor {
+  background-color: var(--ifm-background-surface-color);
+  padding: 1rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+.playground-output {
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 1rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Code block styling - Light mode with high specificity */
+html:not([data-theme='dark']) pre code,
+html:not([data-theme='dark']) pre code[class*="language-"],
+html:not([data-theme='dark']) code[class*="language-"] {
+  color: #fbbf24 !important; /* Yellow base color */
+}
+
+html:not([data-theme='dark']) .token.comment,
+html:not([data-theme='dark']) .token.prolog,
+html:not([data-theme='dark']) .token.doctype,
+html:not([data-theme='dark']) .token.cdata {
+  color: #78716c !important; /* Muted brown for comments */
+}
+
+html:not([data-theme='dark']) .token.punctuation {
+  color: #f59e0b !important; /* Amber */
+}
+
+html:not([data-theme='dark']) .token.property,
+html:not([data-theme='dark']) .token.tag,
+html:not([data-theme='dark']) .token.boolean,
+html:not([data-theme='dark']) .token.number,
+html:not([data-theme='dark']) .token.constant,
+html:not([data-theme='dark']) .token.symbol,
+html:not([data-theme='dark']) .token.deleted {
+  color: #fbbf24 !important; /* Yellow */
+}
+
+html:not([data-theme='dark']) .token.selector,
+html:not([data-theme='dark']) .token.attr-name,
+html:not([data-theme='dark']) .token.string,
+html:not([data-theme='dark']) .token.char,
+html:not([data-theme='dark']) .token.builtin,
+html:not([data-theme='dark']) .token.inserted {
+  color: #fcd34d !important; /* Lighter yellow */
+}
+
+html:not([data-theme='dark']) .token.operator,
+html:not([data-theme='dark']) .token.entity,
+html:not([data-theme='dark']) .token.url,
+html:not([data-theme='dark']) .language-css .token.string,
+html:not([data-theme='dark']) .style .token.string {
+  color: #f59e0b !important; /* Amber */
+}
+
+html:not([data-theme='dark']) .token.atrule,
+html:not([data-theme='dark']) .token.attr-value,
+html:not([data-theme='dark']) .token.keyword {
+  color: #fb923c !important; /* Orange */
+}
+
+html:not([data-theme='dark']) .token.function,
+html:not([data-theme='dark']) .token.class-name {
+  color: #fde047 !important; /* Bright yellow */
+}
+
+html:not([data-theme='dark']) .token.regex,
+html:not([data-theme='dark']) .token.important,
+html:not([data-theme='dark']) .token.variable {
+  color: #fbbf24 !important; /* Yellow */
+}
+
+html:not([data-theme='dark']) .token.namespace {
+  color: #facc15 !important;
+}
+
+/* Plain text in code blocks */
+html:not([data-theme='dark']) .token.plain,
+html:not([data-theme='dark']) .plain {
+  color: #fbbf24 !important;
+}
+
+/* Hero section enhancements */
+.hero {
+  background: linear-gradient(135deg, var(--ifm-color-primary-dark) 0%, var(--ifm-color-primary) 100%);
+  color: white;
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
