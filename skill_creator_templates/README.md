@@ -1,14 +1,31 @@
 # Skill Creator Templates
 
-This directory contains templates and resources for creating new Claude Skills and MCP servers.
+This directory contains templates and resources for creating new Claude Skills and MCP servers following Anthropic's Claude Skills format.
+
+## ⚠️ Claude Skills Format Required
+
+**All skills MUST include YAML frontmatter** as specified by Anthropic:
+
+```markdown
+---
+name: Your Skill Name
+description: Brief description of what the skill does
+---
+
+# Your Skill Name
+
+[Skill content follows...]
+```
+
+All agent templates in this directory include the proper YAML frontmatter structure.
 
 ## 📁 Directory Structure
 
 ```
 skill_creator_templates/
 ├── agents/                          # Agent definition templates
-│   ├── technical_expert_agent.md.template
-│   └── creative_expert_agent.md.template
+│   ├── technical_expert_agent.md.template  (includes YAML frontmatter)
+│   └── creative_expert_agent.md.template   (includes YAML frontmatter)
 ├── mcp_servers/                     # MCP server code templates
 │   ├── basic_mcp_server.ts.template
 │   ├── http_api_tool.ts.template
@@ -33,7 +50,7 @@ I want to create a skill for [your purpose].
 It should help with [specific tasks].
 ```
 
-The agent will guide you through the creation process interactively.
+The agent will guide you through the creation process interactively and ensure proper YAML frontmatter is included.
 
 ### Option 2: Use Templates Directly
 
@@ -44,6 +61,7 @@ The agent will guide you through the creation process interactively.
 
 2. **Copy and fill the template**:
    - Replace all `{{VARIABLES}}` with your values
+   - **Ensure `{{SKILL_NAME}}` and `{{SKILL_DESCRIPTION}}` are filled for YAML frontmatter**
    - Customize the content
    - Add domain-specific knowledge
 
@@ -64,7 +82,7 @@ The agent will guide you through the creation process interactively.
 ### Agent Templates
 
 #### `agents/technical_expert_agent.md.template`
-For technical and engineering domains.
+For technical and engineering domains. **Includes YAML frontmatter.**
 
 **Best for**:
 - Software development skills
@@ -75,6 +93,7 @@ For technical and engineering domains.
 - Testing and QA
 
 **Includes**:
+- YAML frontmatter (name, description)
 - Technical competency areas
 - Code examples and patterns
 - Best practices and anti-patterns
@@ -82,7 +101,7 @@ For technical and engineering domains.
 - Quality standards
 
 #### `agents/creative_expert_agent.md.template`
-For creative and design domains.
+For creative and design domains. **Includes YAML frontmatter.**
 
 **Best for**:
 - Design and UX
@@ -93,6 +112,7 @@ For creative and design domains.
 - Visual arts
 
 **Includes**:
+- YAML frontmatter (name, description)
 - Creative process steps
 - Inspiration sources
 - Design principles

@@ -1,4 +1,9 @@
-# {{SKILL_NAME}} Agent
+---
+name: {{SKILL_NAME}}
+description: {{SKILL_DESCRIPTION}}
+---
+
+# {{SKILL_NAME}}
 
 You are an expert {{ROLE}} with deep knowledge of {{DOMAIN}}.
 

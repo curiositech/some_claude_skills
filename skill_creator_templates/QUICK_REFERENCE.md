@@ -1,5 +1,20 @@
 # Skill Creator Quick Reference
 
+## ⚠️ Claude Skills Format Required
+
+**All skills MUST include YAML frontmatter:**
+
+```markdown
+---
+name: Your Skill Name
+description: Brief description of what it does
+---
+
+# Your Skill Name
+
+[Skill content follows...]
+```
+
 ## 🎯 Quick Decision Guide
 
 **Need expertise without tools?** → Conversational Agent  
@@ -10,10 +25,12 @@
 
 ### Agent Templates
 
-| Template | Use For | Time | Code? |
-|----------|---------|------|-------|
-| `technical_expert_agent.md.template` | Technical domains, engineering, data | 30-60 min | No |
-| `creative_expert_agent.md.template` | Design, content, creative work | 30-60 min | No |
+| Template | Use For | Time | Code? | YAML? |
+|----------|---------|------|-------|-------|
+| `technical_expert_agent.md.template` | Technical domains, engineering, data | 30-60 min | No | ✅ Included |
+| `creative_expert_agent.md.template` | Design, content, creative work | 30-60 min | No | ✅ Included |
+
+**Both templates include proper YAML frontmatter structure.**
 
 ### MCP Server Templates
 
@@ -32,13 +49,16 @@
 I want to create a skill for [your purpose]
 ```
 
+The creator will generate skills with proper YAML frontmatter.
+
 ### 2. Templates (Hands-on)
 ```bash
 # Copy template
 cp skill_creator_templates/agents/technical_expert_agent.md.template \
    .github/agents/my_skill.md
 
-# Fill in {{VARIABLES}}
+# Fill in {{VARIABLES}} including {{SKILL_NAME}} and {{SKILL_DESCRIPTION}}
+# YAML frontmatter is already included in the template!
 # Save and test!
 ```
 
@@ -49,15 +69,19 @@ Read: `skill_creator_templates/examples/weather_forecast_example.md`
 
 | Variable Type | Example | Usage |
 |---------------|---------|-------|
-| `{{SKILL_NAME}}` | "Weather Forecast Expert" | Display name |
+| `{{SKILL_NAME}}` | "Weather Forecast Expert" | Display name, YAML `name` field |
+| `{{SKILL_DESCRIPTION}}` | "Provides weather forecasts" | YAML `description` field |
 | `{{SKILL_NAME_KEBAB}}` | "weather-forecast-expert" | File names, URLs |
 | `{{SKILL_NAME_SNAKE}}` | "weather_forecast" | Tool names, functions |
 | `{{SKILL_NAME_PASCAL}}` | "WeatherForecast" | TypeScript types, classes |
 
 ## 📝 Common Variables
 
-### Essential
-- `{{SKILL_NAME}}` - What is it called?
+### Essential (Required for YAML Frontmatter)
+- `{{SKILL_NAME}}` - Human-readable name (goes in YAML `name` field)
+- `{{SKILL_DESCRIPTION}}` - Brief description (goes in YAML `description` field)
+
+### Additional
 - `{{DOMAIN}}` - What's the expertise area?
 - `{{MISSION_STATEMENT}}` - What's the purpose?
 - `{{ROLE}}` - What expert role? (e.g., "meteorologist")

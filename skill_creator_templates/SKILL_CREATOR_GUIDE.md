@@ -1,25 +1,46 @@
 # Skill Creator Guide
 
-Welcome to the Claude Skills Creator! This guide will help you create new custom skills, agents, and MCP integrations for this repository.
+Welcome to the Claude Skills Creator! This guide will help you create new custom skills, agents, and MCP integrations for this repository following Anthropic's Claude Skills format.
 
 ## Table of Contents
 
 1. [Quick Start](#quick-start)
 2. [Understanding Skill Types](#understanding-skill-types)
-3. [Using the Templates](#using-the-templates)
-4. [Step-by-Step Workflow](#step-by-step-workflow)
-5. [Best Practices](#best-practices)
-6. [Examples](#examples)
-7. [Troubleshooting](#troubleshooting)
+3. [Claude Skills Format](#claude-skills-format)
+4. [Using the Templates](#using-the-templates)
+5. [Step-by-Step Workflow](#step-by-step-workflow)
+6. [Best Practices](#best-practices)
+7. [Examples](#examples)
+8. [Troubleshooting](#troubleshooting)
 
 ## Quick Start
 
 ### What You'll Create
 
 A complete skill consists of:
-- **Agent definition** (`.md` file in `.github/agents/`)
+- **Skill definition** (SKILL.md or `.md` file in `.github/agents/` with YAML frontmatter)
 - **MCP server** (optional, for tool integration)
 - **Documentation** (README, examples, usage)
+
+### Claude Skills Format
+
+All skills must follow Anthropic's Claude Skills format:
+
+```markdown
+---
+name: Web Design Expert
+description: Creates unique web designs with brand identity
+---
+
+# Web Design Expert
+
+You are an expert web designer...
+[detailed instructions follow]
+```
+
+**Required YAML Frontmatter**:
+- `name`: Human-readable skill name
+- `description`: Brief description of what the skill does
 
 ### 5-Minute Quick Start
 
@@ -39,7 +60,7 @@ A complete skill consists of:
 
 3. **The creator will**:
    - Ask clarifying questions
-   - Generate agent definition
+   - Generate skill definition with proper YAML frontmatter
    - Create MCP server code (if needed)
    - Provide setup instructions
 

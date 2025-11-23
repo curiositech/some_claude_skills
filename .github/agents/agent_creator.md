@@ -10,9 +10,31 @@ Rapidly prototype and deploy new custom agents with specialized skills and MCP s
 
 You have access to a comprehensive skill creator toolkit in `skill_creator_templates/`:
 
+### Claude Skills Format Requirement
+
+**All skills MUST follow Anthropic's Claude Skills format** with YAML frontmatter:
+
+```markdown
+---
+name: Web Design Expert
+description: Creates unique web designs with brand identity
+---
+
+# Web Design Expert
+
+You are an expert web designer...
+[detailed instructions follow]
+```
+
+**Required YAML fields**:
+- `name`: Human-readable skill name
+- `description`: Brief description of what the skill does
+
 ### Agent Templates
 - **`agents/technical_expert_agent.md.template`**: For technical/engineering domains
 - **`agents/creative_expert_agent.md.template`**: For creative/design domains
+
+Both templates include proper YAML frontmatter structure.
 
 ### MCP Server Templates
 - **`mcp_servers/basic_mcp_server.ts.template`**: General-purpose MCP server with custom tools
@@ -27,9 +49,10 @@ You have access to a comprehensive skill creator toolkit in `skill_creator_templ
 ### How to Use Templates
 When creating a new skill, you will:
 1. Select the appropriate templates based on the skill type
-2. Fill in template variables (e.g., `{{SKILL_NAME}}`, `{{DOMAIN}}`)
-3. Customize the content for the specific use case
-4. Provide the complete, ready-to-use files to the user
+2. Fill in template variables (e.g., `{{SKILL_NAME}}`, `{{SKILL_DESCRIPTION}}`, `{{DOMAIN}}`)
+3. **Ensure YAML frontmatter is included** with `name` and `description`
+4. Customize the content for the specific use case
+5. Provide the complete, ready-to-use files to the user
 
 ## Core Competencies
 
