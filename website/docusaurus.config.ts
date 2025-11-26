@@ -57,7 +57,7 @@ const config: Config = {
       'docusaurus-plugin-plausible',
       {
         domain: 'someclaudeskills.com',
-        customDomain: 'https://plausible.io',
+        customDomain: 'plausible.io',
       },
     ]] : []),
   ],
