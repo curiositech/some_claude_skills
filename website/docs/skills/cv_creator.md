@@ -259,7 +259,7 @@ Well-generated resumes achieve:
 - **Keyword Coverage**: 80%+ for job-specific variants
 - **Length**: 1-2 pages (strict limit)
 - **Parsing Errors**: 0 in ATS simulation
-- **Readability**: <30 second recruiter scan time
+- **Readability**: &lt;30 second recruiter scan time
 
 ## When to Use
 

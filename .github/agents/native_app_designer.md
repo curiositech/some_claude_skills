@@ -289,8 +289,8 @@ const DelightfulCard = ({ item }) => {
       >
         <div class="item-glow" :class="{ active: hoveredId === item.id }"></div>
         <div class="item-content">
-          <h4>{{ item.title }}</h4>
-          <p>{{ item.description }}</p>
+          <h4>{`{{ item.title }}`}</h4>
+          <p>{`{{ item.description }}`}</p>
         </div>
       </div>
     </TransitionGroup>

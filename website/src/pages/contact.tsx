@@ -6,7 +6,7 @@ export default function Contact(): JSX.Element {
   return (
     <Layout
       title="Contact & Work With Me"
-      description="Get in touch with Erich Owens about Claude Skills, consulting, or collaboration opportunities"
+      description="Get in touch with Erich Owens about Agentic Learning, Claude Skills, AI consulting, or collaboration opportunities"
     >
       <div className="skills-page-bg">
         <div className="skills-container" style={{ maxWidth: '800px', margin: '0 auto', padding: '40px 20px' }}>
@@ -35,12 +35,15 @@ export default function Contact(): JSX.Element {
               <div style={{ marginBottom: '32px' }}>
                 <h2 style={{ fontSize: '20px', marginBottom: '16px' }}>Background</h2>
                 <p style={{ lineHeight: '1.7', marginBottom: '12px' }}>
-                  I spent <strong>12 years at Meta</strong> (2013-2024) as an engineering leader across ML, computer vision,
-                  VR/AR, and AI research. I hold <strong>12 patents</strong> spanning comment ranking algorithms, VR avatar
+                  I spent <strong>12 years at Meta</strong> (2013-2024) as an engineering leader 
+                  (alternatingly Staff Engineer, Tech Lead Manager, and Engineering Manager)  across ML, computer vision,
+                  VR/AR, and AI research departments (at <strong> Facebook, Oculus, Social VR, FAIR, and Instagram</strong>). 
+                  I hold <strong>12 patents</strong> spanning comment ranking algorithms, VR avatar
                   generation, thermal haptics for VR controllers, and content quality classification.
                 </p>
                 <p style={{ lineHeight: '1.7', marginBottom: '12px' }}>
-                  Key achievements: Led <strong>GPT-3/CLIP avatar customization</strong> for 40 engineers (Fourth Hackathon win),
+                  Key achievements: Led <strong>GPT-3/CLIP avatar customization</strong> (fourth Hackathon win), 
+                  managed 40 avatar pipeline/craft/rendering/ML engineers,
                   shipped the <strong>"avatar from photo" system</strong> for Facebook Spaces in 2 months (founding engineer),
                   contributed to <strong>open-source medical AI research</strong> with NYU's fastMRI project (proven in human trials),
                   built <strong>peltier-cooled VR controllers</strong> for thermal haptics (Third Hackathon win: "fire and ice in VR"),
@@ -56,17 +59,17 @@ export default function Contact(): JSX.Element {
               <div style={{ marginBottom: '32px' }}>
                 <h2 style={{ fontSize: '20px', marginBottom: '16px' }}>What I'm Working On Now</h2>
                 <p style={{ lineHeight: '1.7', marginBottom: '12px' }}>
-                  After leaving Meta in August 2024, I've been building AI agents, automation tools,
+                  After leaving Meta in August 2025, I've been building AI agents, automation tools,
                   and open source projects full-time. I created this collection of {' '}
                   <a href="/">39 production-ready Claude Skills</a> to help indie hackers and
-                  engineers ship faster with AI.
+                  engineers ship faster with AI, especially in fields near and dear to me.
                 </p>
                 <p style={{ lineHeight: '1.7', marginBottom: '12px' }}>
                   My current work spans: <strong>speech pathology AI</strong> (phoneme analysis, articulation visualization),{' '}
                   <strong>HRV biometrics and alexithymia training</strong> (emotional awareness through physiological signals),{' '}
                   <strong>computer vision and photo understanding</strong> (CLIP embeddings, event detection, composition analysis),{' '}
                   <strong>Jungian psychology chatbots</strong> (shadow work, dream analysis, individuation),
-                  and <strong>AI tooling for developers</strong> (Claude Skills framework, agent orchestration).
+                  and <strong>AI tooling for developers</strong> (ADHD-optimized coding assistant, Claude Skills framework, agent orchestration).
                 </p>
                 <p style={{ lineHeight: '1.7', marginBottom: 0 }}>
                   I'm advising a stealth drone/AI startup and exploring what's next—leadership roles (EM, Director, VP Eng),
