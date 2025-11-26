@@ -1,292 +1,111 @@
-# Claude Skills - Expert AI Agents
+# Claude Skills Collection
 
-**Claude skills that make my life easier. That know how to make unique-looking web apps as if a designer built them with a brand identity in mind— and then also wrote me a design bible in addition to CSS. Skills that know better than me. Pluripotent skills that research the landscape, research effective working styles, use their organizational psychology / management expertise to build an entire team with personalities that naturally complement each other and produce greatness.**
+**42 production-ready Claude Code skills** for specialized domains. Built by [Erich Owens](https://www.erichowens.com) (ex-Meta ML Engineer, 12 years, 12 patents).
 
-## 🎯 What's This?
+## Website
 
-This repository contains specialized Claude Skills (custom AI agents) that provide expert-level capabilities across:
-- 🎨 **Web Design** - Unique brand identities and visual designs
-- 📚 **Design Systems** - Comprehensive design bibles with production CSS
-- 🔍 **Research** - Landscape analysis and best practices
-- 👥 **Team Building** - Organizational psychology for high-performing teams
-- 🎭 **Orchestration** - Meta-skill that coordinates all specialists
+**[someclaudeskills.com](https://someclaudeskills.com)** - Browse all skills with search, filtering, and one-click install.
 
-## 🚀 Quick Start
+## Quick Install
 
-### Choose Your Path
-
-**Need Something Specific?**
-Jump directly to the skill you need:
-- Brand identity? → Use **Web Design Expert**
-- Design documentation? → Use **Design System Creator**
-- Research insights? → Use **Research Analyst**
-- Team planning? → Use **Team Builder**
-
-**Need Everything?**
-Use the **Orchestrator** - it coordinates all specialists automatically.
-
-### Example: Creating a Web App from Scratch
-
-```
-[To Orchestrator]
-
-I'm building a meditation app called "Zenith" for busy professionals.
-I want a unique design (not cliché), complete design system, and a 
-team plan to build it.
-
-Coordinate your specialists to deliver everything.
+```bash
+# Get all 42 skills
+git clone https://github.com/erichowens/some_claude_skills.git
+cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/
 ```
 
-The Orchestrator will automatically:
-1. Research meditation app design trends
-2. Create unique brand identity
-3. Build comprehensive design system with CSS
-4. Design optimal team composition
-5. Synthesize into complete solution
+Or download individual skills from the [Skills Gallery](https://someclaudeskills.com/skills).
 
-## 📚 Documentation
+## What Are Claude Skills?
 
-- **[CLAUDE_SKILLS_GUIDE.md](CLAUDE_SKILLS_GUIDE.md)** - Complete guide to understanding Claude Skills
-- **[SKILLS_DOCUMENTATION.md](SKILLS_DOCUMENTATION.md)** - How to use each skill
-- **[EXAMPLES.md](EXAMPLES.md)** - Real-world examples and use cases
+Claude Skills are modular prompt extensions for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Each skill teaches Claude domain expertise—how experts think, what they know, and why they make certain choices.
 
-## 🎨 Available Skills
+Read the full guide: [How to Write Great Claude Skills](https://someclaudeskills.com/docs/guides/claude-skills-guide)
 
-### Core Design & Development Skills
+## Available Skills (42)
 
-#### 1. Web Design Expert
-Creates unique, professionally designed web apps with strong brand identity.
-**Skills**: Brand identity, color theory, typography, UI/UX, accessibility
+### Design & Creative (9)
+- **design-system-creator** - Design tokens, CSS architecture, component libraries
+- **native-app-designer** - iOS/Mac/web apps with organic, non-AI aesthetic
+- **typography-expert** - Font pairing, hierarchy, OpenType features, variable fonts
+- **vaporwave-glassomorphic-ui-designer** - Retro-futuristic UI with glassmorphism
+- **web-design-expert** - Brand identity, color theory, UI/UX, accessibility
+- **windows-3-1-web-designer** - Windows 3.1 aesthetic (powers this site!)
+- **interior-design-expert** - Space planning, color theory, lighting design
+- **vibe-matcher** - Translate emotional vibes to visual DNA
+- **design-archivist** - Build visual databases from 500-1000 real-world examples
 
-#### 2. Design System Creator
-Builds comprehensive design systems and "design bibles" with production-ready CSS.
-**Skills**: Design tokens, CSS architecture, component libraries, documentation
+### Computer Vision & Graphics (8)
+- **clip-aware-embeddings** - Semantic image-text matching with CLIP
+- **collage-layout-expert** - Hockney-style computational collage composition
+- **color-theory-palette-harmony-expert** - Color science for photo composition
+- **drone-cv-expert** - Drone systems, SLAM, object detection, sensor fusion
+- **drone-inspection-specialist** - Infrastructure inspection, thermal analysis, 3D reconstruction
+- **metal-shader-expert** - Real-time graphics, MSL shaders, PBR rendering
+- **photo-composition-critic** - Graduate-level visual aesthetics analysis
+- **photo-content-recognition-curation-expert** - Face/place recognition, de-duplication
 
-#### 3. Native App Designer (Swift & JS)
-Breathtaking iOS/Mac and web apps with organic, non-AI aesthetic inspired by Weta/Pixar.
-**Skills**: SwiftUI, React animations, physics-based motion, human-crafted design
+### Development & Engineering (7)
+- **bot-developer** - Discord, Telegram, Slack automation
+- **physics-rendering-expert** - Rope/cable dynamics, constraint solving, rigid body simulation
+- **site-reliability-engineer** - Docusaurus build validation, pre-commit hooks
+- **sound-engineer** - Spatial audio, procedural sound design, real-time DSP
+- **voice-audio-engineer** - ElevenLabs integration, TTS, audio processing
+- **vr-avatar-engineer** - VR avatars, motion capture, real-time animation
+- **event-detection-temporal-intelligence-expert** - ST-DBSCAN, temporal event detection
 
-### Specialized Technical Skills
+### Coaching & Personal Development (9)
+- **career-biographer** - Extract structured career narratives from interviews
+- **competitive-cartographer** - Map competitive landscapes, find white space
+- **cv-creator** - ATS-optimized resumes in multiple formats
+- **jungian-psychologist** - Analytical psychology, shadow work, dream interpretation
+- **personal-finance-coach** - Tax optimization, investment theory, wealth building
+- **project-management-guru-adhd** - PM for ADHD engineers managing multiple projects
+- **tech-entrepreneur-coach-adhd** - Big tech → indie founder transition
+- **wisdom-accountability-coach** - Philosophy teaching, commitment tracking
+- **skill-coach** - Guide creation of high-quality Claude Skills
 
-#### 4. Drone & Computer Vision Expert
-Expert in drone systems, computer vision, and autonomous navigation.
-**Skills**: Flight control, SLAM, object detection, sensor fusion, real-time processing
+### Health & Neuroscience (3)
+- **adhd-design-expert** - Neuroscience-backed UX for ADHD brains
+- **hrv-alexithymia-expert** - HRV biometrics, interoception training, biofeedback
+- **speech-pathology-ai** - Speech therapy, phoneme analysis, articulation visualization
 
-#### 5. Drone Inspection Specialist
-Advanced CV for infrastructure inspection: forest fires, roofs, residential properties + Gaussian Splatting.
-**Skills**: Multi-modal detection, thermal analysis, 3D reconstruction, property assessment
+### Meta & Orchestration (6)
+- **agent-creator** - Create new custom agents, skills, and MCP integrations
+- **orchestrator** - Coordinate specialists and create skills on-the-fly
+- **research-analyst** - Landscape research, competitive analysis, best practices
+- **skill-documentarian** - Document skills, sync showcase website
+- **swift-executor** - Rapid task execution without hesitation
+- **team-builder** - Design high-performing teams using org psychology
 
-#### 6. Metal Shader Expert
-20 years Weta/Pixar experience in real-time graphics, shaders, and visual effects.
-**Skills**: MSL shaders, PBR rendering, performance optimization, debug tools
+## Documentation
 
-### Research & Strategy Skills
+- **[Skills Guide](https://someclaudeskills.com/docs/guides/claude-skills-guide)** - How skills work and how to create your own
+- **[Skills Gallery](https://someclaudeskills.com/skills)** - Browse all skills with search and filtering
+- **[Examples](https://someclaudeskills.com/artifacts)** - Real-world artifacts showing skills in action
+- **[Full Docs](https://someclaudeskills.com/docs/intro)** - Complete documentation
 
-#### 7. Research Analyst
-Conducts thorough research on landscapes, best practices, and methodologies.
-**Skills**: Market research, competitive analysis, trend forecasting, evidence-based recommendations
+## Philosophy
 
-#### 8. Team Builder & Organizational Psychologist
-Designs high-performing teams using organizational psychology principles.
-**Skills**: Team composition, personality balancing, collaboration rituals, organizational design
-
-### Health & Neuroscience Skills
-
-#### 9. HRV & Alexithymia Expert
-Heart rate variability biometrics and emotional awareness training.
-**Skills**: HRV analysis, interoception training, biofeedback, emotional intelligence
-
-#### 10. ADHD Design Expert
-Neuroscience-backed UX design specifically for ADHD brains.
-**Skills**: Executive function support, dopamine-driven engagement, cognitive load reduction
-
-### Personal Growth & Business Skills
-
-#### 11. Wisdom & Accountability Coach
-Longitudinal memory tracking, philosophy teaching, personal accountability with compassion.
-**Skills**: Pattern recognition, Stoicism/Buddhism/Existentialism, commitment tracking, growth guidance
-
-#### 12. Tech Entrepreneur Coach (ADHD-Aware)
-Big tech ML engineer → indie founder transition, business execution for ADHD brains.
-**Skills**: Idea validation, MVP development, marketing, monetization, sustainable growth
-
-### Meta Skills
-
-#### 13. Agent & Skill Creator
-Meta-agent for creating new custom agents, skills, and MCP integrations on the fly.
-**Skills**: Agent design, MCP development, skill architecture, rapid prototyping
-
-**🆕 New Features**:
-- Interactive skill creation workflow
-- Complete templates for agents and MCP servers
-- HTTP API integration templates
-- Step-by-step setup guides
-- Example walkthrough (Weather Forecast skill)
-
-**Quick Start**: See [Skill Creator Guide](skill_creator_templates/SKILL_CREATOR_GUIDE.md)
-
-#### 14. Orchestrator - Pluripotent Meta-Skill
-Coordinates all specialists to solve complex, multi-domain problems.
-**Skills**: Problem decomposition, delegation, synthesis, quality assurance
-
-## 💡 Why These Skills?
-
-Traditional prompts are one-off instructions. These skills are:
-- ✅ **Expert-level**: Encoded domain expertise
-- ✅ **Reusable**: Use across projects
-- ✅ **Composable**: Stack skills together
-- ✅ **Consistent**: Same quality every time
-- ✅ **Teachable**: Share across teams
-
-## 🎯 Common Use Cases
-
-**Launching New Product**
-```
-Orchestrator → Complete solution (research + design + system + team)
-```
-
-**Redesigning Existing App**
-```
-Research Analyst → Web Design Expert → Design System Creator
-```
-
-**Building Design System**
-```
-Research Analyst → Design System Creator
-```
-
-**Team Planning**
-```
-Research Analyst → Team Builder
-```
-
-**Quick Brand Identity**
-```
-Web Design Expert (standalone)
-```
-
-## 🛠️ How to Use
-
-### Option 1: GitHub Copilot (Recommended)
-These files are already in `.github/agents/` and work as custom agents in GitHub Copilot.
-
-### Option 2: Claude Projects
-1. Create a Claude Project
-2. Add skill files to project knowledge
-3. Reference them in conversations
-
-### Option 3: Copy-Paste
-Copy any skill file and paste into your Claude conversation as context.
-
-### Option 4: API
-Use as custom instructions in Claude API calls.
-
-## 📖 Learn More
-
-**New to Claude Skills?** Read [CLAUDE_SKILLS_GUIDE.md](CLAUDE_SKILLS_GUIDE.md) first - it explains:
-- What Claude Skills are and how they work
-- Best practices from Anthropic and the community
-- Surprising outcomes and tips
-- How to create your own skills
-
-**Ready to Use?** Check [EXAMPLES.md](EXAMPLES.md) for:
-- Complete walkthroughs
-- Real-world scenarios
-- Step-by-step workflows
-- Tips and variations
-
-**Need Reference?** See [SKILLS_DOCUMENTATION.md](SKILLS_DOCUMENTATION.md) for:
-- Detailed skill capabilities
-- When to use each skill
-- How to combine them
-- Best practices
-
-## 🛠️ Creating Your Own Skills
-
-Want to build custom skills for your specific needs?
-
-### Quick Start
-```
-[To Agent & Skill Creator]
-
-I want to create a skill for [your domain/purpose].
-Help me design and implement it.
-```
-
-The Agent & Skill Creator will:
-1. Ask clarifying questions about your needs
-2. Determine the right skill type (conversational, API integration, or custom tools)
-3. Generate complete agent definitions and MCP server code
-4. Provide step-by-step setup instructions
-
-### Resources Available
-- **[Skill Creator Guide](skill_creator_templates/SKILL_CREATOR_GUIDE.md)** - Complete how-to guide
-- **Templates** - Ready-to-use templates for agents and MCP servers
-  - Technical expert agent template
-  - Creative expert agent template
-  - HTTP API integration template
-  - Custom MCP server template
-- **[Example Walkthrough](skill_creator_templates/examples/weather_forecast_example.md)** - Complete example from scratch
-
-### Skill Types You Can Create
-
-**Conversational Experts** (No coding required)
-- Domain expertise and advice
-- Creative guidance
-- Strategic thinking
-- Process consultation
-
-**API Integrations** (Some coding)
-- Third-party service integration
-- REST API tools
-- Data fetching and transformation
-
-**Custom Tools** (More coding)
-- Business logic implementation
-- File system operations
-- Database integration
-- Complex workflows
-
-### Example Skills to Build
-- GitHub repository analyzer
-- Database query optimizer
-- Content strategy planner
-- Code review assistant
-- Budget tracker
-- Recipe suggester
-- Travel planner
-- Learning curriculum designer
-
-## 🎓 Philosophy
-
-These skills embody a new paradigm: **AI that knows better than you** in specific domains.
-
-Instead of telling Claude what to do, these skills teach Claude:
-- How experts think
-- What experts know
-- How experts work
-- Why experts make certain choices
+These skills embody **AI that knows better than you** in specific domains. Instead of telling Claude what to do, skills teach Claude how experts think, what they know, and why they make certain choices.
 
 The result? AI agents that bring genuine expertise to every interaction.
 
-## 🤝 Contributing
+## Contributing
 
 Want to add skills or improve existing ones?
-1. Follow the structure in `.github/agents/`
+
+1. Follow the structure in `.claude/skills/`
 2. Include clear mission, competencies, and outputs
 3. Provide examples and best practices
-4. Update documentation
+4. Submit a PR
 
-## 📄 License
+## License
 
 MIT License - See [LICENSE](LICENSE) file
 
 ---
 
-**Built with insights from:**
-- Anthropic's Claude Skills framework
-- Community best practices from Reddit and GitHub
-- Real-world design and development experience
-- Organizational psychology research
+**Built by [Erich Owens](https://www.erichowens.com)** | Ex-Meta 12 years | 12 Patents | MS Applied Math
 
 *Make Claude know better. Make your life easier.*
