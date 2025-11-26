@@ -126,7 +126,7 @@ const config: Config = {
         },
         {
           to: '/contact',
-          label: 'Contact',
+          label: 'Hire Author',
           position: 'right',
         },
         {
