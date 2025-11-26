@@ -146,45 +146,6 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
           </div>
 
           {/* ═══════════════════════════════════════════════════════════════════
-              WHY THIS EXISTS
-              ═══════════════════════════════════════════════════════════════════ */}
-          <div className="win31-window" style={{ marginBottom: '24px' }}>
-            <div className="win31-titlebar">
-              <div className="win31-titlebar__left">
-                <div className="win31-btn-3d win31-btn-3d--small">─</div>
-              </div>
-              <span className="win31-title-text">ABOUT.TXT</span>
-              <div className="win31-titlebar__right">
-                <div className="win31-btn-3d win31-btn-3d--small">▲</div>
-                <div className="win31-btn-3d win31-btn-3d--small">▼</div>
-              </div>
-            </div>
-            <div style={{
-              padding: '24px',
-              fontSize: '15px',
-              lineHeight: '1.7',
-              color: '#333'
-            }}>
-              <h2 style={{ marginTop: 0, fontSize: '20px', marginBottom: '16px' }}>Why This Exists</h2>
-              <p style={{ marginBottom: '12px' }}>
-                After leaving Meta in August 2024, I've been building AI agents and automation tools full-time.
-                These skills are what I actually use—not toy examples, but production-grade prompts that have helped me
-                ship real projects across speech pathology AI, computer vision, Jungian psychology chatbots, HRV biometrics,
-                and developer tooling.
-              </p>
-              <p style={{ marginBottom: '12px' }}>
-                Most AI agent libraries are either too abstract or too simplified. This collection sits in the sweet spot:
-                <strong> high technical depth with personality</strong>. Each skill has domain expertise, knows when to
-                refuse bad ideas, and produces working code on the first try.
-              </p>
-              <p style={{ marginBottom: 0 }}>
-                If you're an indie hacker, founder, or engineer building with Claude, you'll find something useful here.
-                MIT licensed. <a href="https://github.com/erichowens/some_claude_skills">Fork it, extend it, make it yours.</a>
-              </p>
-            </div>
-          </div>
-
-          {/* ═══════════════════════════════════════════════════════════════════
               HORIZONTAL SKILLS MARQUEE
               ═══════════════════════════════════════════════════════════════════ */}
           <div className="win31-window marquee-window-horizontal" style={{ position: 'relative' }}>
@@ -316,6 +277,45 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                 <div className="win31-btn-3d nav-window__btn">Open Docs</div>
               </div>
             </a>
+          </div>
+
+          {/* ═══════════════════════════════════════════════════════════════════
+              WHY THIS EXISTS
+              ═══════════════════════════════════════════════════════════════════ */}
+          <div className="win31-window" style={{ marginBottom: '24px' }}>
+            <div className="win31-titlebar">
+              <div className="win31-titlebar__left">
+                <div className="win31-btn-3d win31-btn-3d--small">─</div>
+              </div>
+              <span className="win31-title-text">ABOUT.TXT</span>
+              <div className="win31-titlebar__right">
+                <div className="win31-btn-3d win31-btn-3d--small">▲</div>
+                <div className="win31-btn-3d win31-btn-3d--small">▼</div>
+              </div>
+            </div>
+            <div style={{
+              padding: '24px',
+              fontSize: '15px',
+              lineHeight: '1.7',
+              color: '#333'
+            }}>
+              <h2 style={{ marginTop: 0, fontSize: '20px', marginBottom: '16px' }}>Why This Exists</h2>
+              <p style={{ marginBottom: '12px' }}>
+                After leaving Meta in August 2025, I've been building AI agents and automation tools full-time.
+                These skills are what I actually use—not toy examples, but production-grade prompts that have helped me
+                ship real projects across speech pathology AI, computer vision, Jungian psychology chatbots, HRV biometrics,
+                and developer tooling.
+              </p>
+              <p style={{ marginBottom: '12px' }}>
+                Most AI agent libraries are either too abstract or too simplified. This collection sits in the sweet spot:
+                <strong> high technical depth with personality</strong>. Each skill has domain expertise, knows when to
+                refuse bad ideas, and produces working code on the first try.
+              </p>
+              <p style={{ marginBottom: 0 }}>
+                If you're an indie hacker, founder, or engineer building with Claude, you'll find something useful here.
+                MIT licensed. <a href="https://github.com/erichowens/some_claude_skills">Fork it, extend it, make it yours.</a>
+              </p>
+            </div>
           </div>
 
           {/* ═══════════════════════════════════════════════════════════════════
