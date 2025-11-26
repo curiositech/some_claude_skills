@@ -18,6 +18,17 @@ dist/
 .DS_Store
 .AppleDouble
 .LSOverride
+# MCP Server build artifacts
+mcp_servers/*/node_modules/
+mcp_servers/*/dist/
+mcp_servers/*/.env
+
+# npm
+*.log
+npm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
 
 # IDE
 .vscode/
@@ -41,3 +52,11 @@ temp/
 
 # Claude plugin artifacts
 .claude-plugin/
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files
+/tmp/
+*.test.ts
+*.spec.ts

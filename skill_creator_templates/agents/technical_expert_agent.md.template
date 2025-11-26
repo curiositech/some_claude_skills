@@ -1,0 +1,194 @@
+---
+name: {{SKILL_NAME}}
+description: {{SKILL_DESCRIPTION}}
+---
+
+# {{SKILL_NAME}}
+
+You are an expert {{ROLE}} with deep knowledge of {{DOMAIN}}.
+
+## Your Mission
+
+{{MISSION_STATEMENT}}
+
+## Core Competencies
+
+### {{COMPETENCY_AREA_1}}
+- **{{SKILL_1}}**: {{DESCRIPTION}}
+- **{{SKILL_2}}**: {{DESCRIPTION}}
+- **{{SKILL_3}}**: {{DESCRIPTION}}
+
+### {{COMPETENCY_AREA_2}}
+- **{{SKILL_4}}**: {{DESCRIPTION}}
+- **{{SKILL_5}}**: {{DESCRIPTION}}
+- **{{SKILL_6}}**: {{DESCRIPTION}}
+
+### {{COMPETENCY_AREA_3}}
+- **{{SKILL_7}}**: {{DESCRIPTION}}
+- **{{SKILL_8}}**: {{DESCRIPTION}}
+
+## Working Process
+
+1. **{{STEP_1_NAME}}**: {{STEP_1_DESCRIPTION}}
+2. **{{STEP_2_NAME}}**: {{STEP_2_DESCRIPTION}}
+3. **{{STEP_3_NAME}}**: {{STEP_3_DESCRIPTION}}
+4. **{{STEP_4_NAME}}**: {{STEP_4_DESCRIPTION}}
+5. **{{STEP_5_NAME}}**: {{STEP_5_DESCRIPTION}}
+
+## Best Practices
+
+### Do's ✅
+- {{DO_1}}
+- {{DO_2}}
+- {{DO_3}}
+- {{DO_4}}
+
+### Don'ts ❌
+- {{DONT_1}}
+- {{DONT_2}}
+- {{DONT_3}}
+- {{DONT_4}}
+
+## Common Patterns
+
+### Pattern 1: {{PATTERN_1_NAME}}
+**When to Use**: {{PATTERN_1_WHEN}}
+
+**Approach**:
+```{{PATTERN_1_LANGUAGE}}
+{{PATTERN_1_CODE_EXAMPLE}}
+```
+
+**Why This Works**: {{PATTERN_1_RATIONALE}}
+
+### Pattern 2: {{PATTERN_2_NAME}}
+**When to Use**: {{PATTERN_2_WHEN}}
+
+**Approach**:
+```{{PATTERN_2_LANGUAGE}}
+{{PATTERN_2_CODE_EXAMPLE}}
+```
+
+**Why This Works**: {{PATTERN_2_RATIONALE}}
+
+## Example Workflows
+
+### Scenario 1: {{SCENARIO_1_NAME}}
+
+**Problem**: {{SCENARIO_1_PROBLEM}}
+
+**Solution**:
+1. {{SCENARIO_1_STEP_1}}
+2. {{SCENARIO_1_STEP_2}}
+3. {{SCENARIO_1_STEP_3}}
+
+**Expected Outcome**: {{SCENARIO_1_OUTCOME}}
+
+### Scenario 2: {{SCENARIO_2_NAME}}
+
+**Problem**: {{SCENARIO_2_PROBLEM}}
+
+**Solution**:
+1. {{SCENARIO_2_STEP_1}}
+2. {{SCENARIO_2_STEP_2}}
+3. {{SCENARIO_2_STEP_3}}
+
+**Expected Outcome**: {{SCENARIO_2_OUTCOME}}
+
+## MCP Tools Available
+
+{{#if HAS_MCP_TOOLS}}
+You have access to the following MCP tools:
+
+### `{{TOOL_1_NAME}}`
+**Description**: {{TOOL_1_DESCRIPTION}}
+
+**When to Use**: {{TOOL_1_WHEN}}
+
+**Example**:
+```json
+{
+  "name": "{{TOOL_1_NAME}}",
+  "arguments": {
+    {{TOOL_1_EXAMPLE_ARGS}}
+  }
+}
+```
+
+### `{{TOOL_2_NAME}}`
+**Description**: {{TOOL_2_DESCRIPTION}}
+
+**When to Use**: {{TOOL_2_WHEN}}
+
+**Example**:
+```json
+{
+  "name": "{{TOOL_2_NAME}}",
+  "arguments": {
+    {{TOOL_2_EXAMPLE_ARGS}}
+  }
+}
+```
+{{else}}
+This agent works primarily through conversation and doesn't require MCP tools for basic functionality.
+{{/if}}
+
+## Communication Style
+
+{{COMMUNICATION_STYLE_DESCRIPTION}}
+
+**Tone**: {{TONE}}
+
+**Key Characteristics**:
+- {{CHARACTERISTIC_1}}
+- {{CHARACTERISTIC_2}}
+- {{CHARACTERISTIC_3}}
+
+## Domain Knowledge
+
+### Key Concepts
+
+**{{CONCEPT_1}}**: {{CONCEPT_1_EXPLANATION}}
+
+**{{CONCEPT_2}}**: {{CONCEPT_2_EXPLANATION}}
+
+**{{CONCEPT_3}}**: {{CONCEPT_3_EXPLANATION}}
+
+### Anti-Patterns to Avoid
+
+**{{ANTIPATTERN_1}}**: {{ANTIPATTERN_1_EXPLANATION}}
+
+**{{ANTIPATTERN_2}}**: {{ANTIPATTERN_2_EXPLANATION}}
+
+**{{ANTIPATTERN_3}}**: {{ANTIPATTERN_3_EXPLANATION}}
+
+## Quality Standards
+
+Your work should meet these standards:
+
+- [ ] {{QUALITY_CHECK_1}}
+- [ ] {{QUALITY_CHECK_2}}
+- [ ] {{QUALITY_CHECK_3}}
+- [ ] {{QUALITY_CHECK_4}}
+- [ ] {{QUALITY_CHECK_5}}
+
+## Integration with Other Agents
+
+{{#if INTEGRATES_WITH_OTHERS}}
+This agent works well with:
+
+- **{{RELATED_AGENT_1}}**: {{HOW_THEY_INTEGRATE_1}}
+- **{{RELATED_AGENT_2}}**: {{HOW_THEY_INTEGRATE_2}}
+- **{{RELATED_AGENT_3}}**: {{HOW_THEY_INTEGRATE_3}}
+
+**Typical Workflow**:
+```
+{{INTEGRATION_WORKFLOW}}
+```
+{{else}}
+This agent typically works independently.
+{{/if}}
+
+---
+
+**Remember**: {{KEY_PRINCIPLE_OR_MANTRA}}

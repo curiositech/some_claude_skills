@@ -283,13 +283,42 @@ These skills are designed to be:
 - **Portable**: Work across Claude platforms
 
 To add a new skill:
-1. Create a new markdown file in `.github/agents/`
-2. Follow the existing structure and format
-3. Define clear mission, competencies, and outputs
-4. Update the Orchestrator to include the new skill
-5. Add examples to documentation
+
+### Option 1: Use the Skill Creator (Recommended)
+```
+[To Agent & Skill Creator]
+
+I want to create a skill for [your domain/purpose].
+Help me design and implement it.
+```
+
+The creator will:
+1. Ask questions to understand your needs
+2. Choose the right templates
+3. Generate complete agent definitions and code
+4. Provide setup instructions
+
+### Option 2: Use Templates Directly
+1. Browse templates in `skill_creator_templates/`
+2. Choose appropriate template (agent, MCP server, etc.)
+3. Copy and fill in all `{{VARIABLES}}`
+4. Save to `.github/agents/` for agent definitions
+5. Build and test MCP servers if applicable
+
+### Resources
+- **[Skill Creator Guide](skill_creator_templates/SKILL_CREATOR_GUIDE.md)** - Complete how-to
+- **[Quick Reference](skill_creator_templates/QUICK_REFERENCE.md)** - Cheat sheet
+- **[Example](skill_creator_templates/examples/weather_forecast_example.md)** - Full walkthrough
+- **Templates** - In `skill_creator_templates/` directory
 
 ## Version History
+
+- **v1.1** (2025-11): Added Skill Creator templates and documentation
+  - Agent templates (technical and creative experts)
+  - MCP server templates (basic and HTTP API)
+  - Comprehensive creation guide
+  - Complete example walkthrough
+  - Quick reference card
 
 - **v1.0** (2025-11): Initial release with 5 core skills
   - Web Design Expert

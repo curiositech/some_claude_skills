@@ -1,0 +1,163 @@
+/**
+ * {{SKILL_NAME}} MCP Server
+ * 
+ * Description: {{SKILL_DESCRIPTION}}
+ * Created: {{DATE}}
+ * 
+ * This MCP server provides tools for {{DOMAIN}}.
+ */
+
+import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import {
+  CallToolRequestSchema,
+  ListToolsRequestSchema,
+  Tool,
+} from "@modelcontextprotocol/sdk/types.js";
+
+/**
+ * Define your tool interfaces here
+ */
+interface {{TOOL_NAME_PASCAL}}Args {
+  // Add your tool parameters here
+  // Example:
+  // input: string;
+  // options?: {
+  //   format?: string;
+  //   validate?: boolean;
+  // };
+}
+
+/**
+ * Initialize the MCP server
+ */
+const server = new Server(
+  {
+    name: "{{SKILL_NAME_KEBAB}}-server",
+    version: "1.0.0",
+  },
+  {
+    capabilities: {
+      tools: {},
+      // Add other capabilities as needed:
+      // resources: {},
+      // prompts: {},
+    },
+  }
+);
+
+/**
+ * Define available tools
+ */
+const TOOLS: Tool[] = [
+  {
+    name: "{{TOOL_NAME_SNAKE}}",
+    description: "{{TOOL_DESCRIPTION}}",
+    inputSchema: {
+      type: "object",
+      properties: {
+        // Define your tool's input schema here
+        // Example:
+        // input: {
+        //   type: "string",
+        //   description: "The input to process",
+        // },
+        // options: {
+        //   type: "object",
+        //   properties: {
+        //     format: {
+        //       type: "string",
+        //       enum: ["json", "text", "markdown"],
+        //       description: "Output format",
+        //     },
+        //   },
+        // },
+      },
+      required: [
+        // List required parameters here
+        // Example: "input"
+      ],
+    },
+  },
+  // Add more tools here as needed
+];
+
+/**
+ * Handle tool listing requests
+ */
+server.setRequestHandler(ListToolsRequestSchema, async () => {
+  return {
+    tools: TOOLS,
+  };
+});
+
+/**
+ * Handle tool execution requests
+ */
+server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  const { name, arguments: args } = request.params;
+
+  try {
+    if (name === "{{TOOL_NAME_SNAKE}}") {
+      return await handle{{TOOL_NAME_PASCAL}}(args as {{TOOL_NAME_PASCAL}}Args);
+    }
+    
+    // Add more tool handlers here
+    
+    throw new Error(`Unknown tool: ${name}`);
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Error: ${errorMessage}`,
+        },
+      ],
+      isError: true,
+    };
+  }
+});
+
+/**
+ * Tool implementation: {{TOOL_NAME_SNAKE}}
+ */
+async function handle{{TOOL_NAME_PASCAL}}(
+  args: {{TOOL_NAME_PASCAL}}Args
+): Promise<{ content: Array<{ type: string; text: string }> }> {
+  // Validate inputs
+  // TODO: Add input validation
+  
+  // Implement your tool logic here
+  // TODO: Add implementation
+  
+  // Example implementation:
+  const result = {
+    success: true,
+    message: "Tool executed successfully",
+    // Add your result data here
+  };
+  
+  return {
+    content: [
+      {
+        type: "text",
+        text: JSON.stringify(result, null, 2),
+      },
+    ],
+  };
+}
+
+/**
+ * Start the MCP server
+ */
+async function main() {
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+  console.error("{{SKILL_NAME}} MCP Server running on stdio");
+}
+
+main().catch((error) => {
+  console.error("Fatal error in main():", error);
+  process.exit(1);
+});

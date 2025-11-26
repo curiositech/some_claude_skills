@@ -116,6 +116,15 @@ Big tech ML engineer → indie founder transition, business execution for ADHD b
 Meta-agent for creating new custom agents, skills, and MCP integrations on the fly.
 **Skills**: Agent design, MCP development, skill architecture, rapid prototyping
 
+**🆕 New Features**:
+- Interactive skill creation workflow
+- Complete templates for agents and MCP servers
+- HTTP API integration templates
+- Step-by-step setup guides
+- Example walkthrough (Weather Forecast skill)
+
+**Quick Start**: See [Skill Creator Guide](skill_creator_templates/SKILL_CREATOR_GUIDE.md)
+
 #### 14. Orchestrator - Pluripotent Meta-Skill
 Coordinates all specialists to solve complex, multi-domain problems.
 **Skills**: Problem decomposition, delegation, synthesis, quality assurance
@@ -191,6 +200,62 @@ Use as custom instructions in Claude API calls.
 - When to use each skill
 - How to combine them
 - Best practices
+
+## 🛠️ Creating Your Own Skills
+
+Want to build custom skills for your specific needs?
+
+### Quick Start
+```
+[To Agent & Skill Creator]
+
+I want to create a skill for [your domain/purpose].
+Help me design and implement it.
+```
+
+The Agent & Skill Creator will:
+1. Ask clarifying questions about your needs
+2. Determine the right skill type (conversational, API integration, or custom tools)
+3. Generate complete agent definitions and MCP server code
+4. Provide step-by-step setup instructions
+
+### Resources Available
+- **[Skill Creator Guide](skill_creator_templates/SKILL_CREATOR_GUIDE.md)** - Complete how-to guide
+- **Templates** - Ready-to-use templates for agents and MCP servers
+  - Technical expert agent template
+  - Creative expert agent template
+  - HTTP API integration template
+  - Custom MCP server template
+- **[Example Walkthrough](skill_creator_templates/examples/weather_forecast_example.md)** - Complete example from scratch
+
+### Skill Types You Can Create
+
+**Conversational Experts** (No coding required)
+- Domain expertise and advice
+- Creative guidance
+- Strategic thinking
+- Process consultation
+
+**API Integrations** (Some coding)
+- Third-party service integration
+- REST API tools
+- Data fetching and transformation
+
+**Custom Tools** (More coding)
+- Business logic implementation
+- File system operations
+- Database integration
+- Complex workflows
+
+### Example Skills to Build
+- GitHub repository analyzer
+- Database query optimizer
+- Content strategy planner
+- Code review assistant
+- Budget tracker
+- Recipe suggester
+- Travel planner
+- Learning curriculum designer
 
 ## 🎓 Philosophy
 

@@ -1,0 +1,195 @@
+/**
+ * {{SKILL_NAME}} HTTP API Tool
+ * 
+ * Description: {{SKILL_DESCRIPTION}}
+ * Created: {{DATE}}
+ * 
+ * This provides a simple HTTP API integration tool for {{DOMAIN}}.
+ */
+
+import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import {
+  CallToolRequestSchema,
+  ListToolsRequestSchema,
+} from "@modelcontextprotocol/sdk/types.js";
+
+/**
+ * Configuration
+ * These should be set via environment variables
+ */
+const CONFIG = {
+  apiBaseUrl: process.env.{{ENV_PREFIX}}_API_URL || "{{DEFAULT_API_URL}}",
+  apiKey: process.env.{{ENV_PREFIX}}_API_KEY,
+  // Add other configuration options
+};
+
+interface APIRequest {
+  endpoint: string;
+  method?: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
+  body?: Record<string, any>;
+  queryParams?: Record<string, string>;
+  headers?: Record<string, string>;
+}
+
+/**
+ * Initialize the MCP server
+ */
+const server = new Server(
+  {
+    name: "{{SKILL_NAME_KEBAB}}-api-tool",
+    version: "1.0.0",
+  },
+  {
+    capabilities: {
+      tools: {},
+    },
+  }
+);
+
+/**
+ * Define available tools
+ */
+server.setRequestHandler(ListToolsRequestSchema, async () => {
+  return {
+    tools: [
+      {
+        name: "{{TOOL_NAME_SNAKE}}_request",
+        description: "Make an API request to {{SERVICE_NAME}}",
+        inputSchema: {
+          type: "object",
+          properties: {
+            endpoint: {
+              type: "string",
+              description: "API endpoint path (e.g., '/users' or '/data/search')",
+            },
+            method: {
+              type: "string",
+              enum: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+              description: "HTTP method",
+              default: "GET",
+            },
+            body: {
+              type: "object",
+              description: "Request body (for POST, PUT, PATCH)",
+            },
+            queryParams: {
+              type: "object",
+              description: "Query parameters as key-value pairs",
+            },
+          },
+          required: ["endpoint"],
+        },
+      },
+      // Add more specialized tools here
+    ],
+  };
+});
+
+/**
+ * Handle tool execution
+ */
+server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  const { name, arguments: args } = request.params;
+
+  try {
+    if (name === "{{TOOL_NAME_SNAKE}}_request") {
+      return await makeAPIRequest(args as APIRequest);
+    }
+
+    throw new Error(`Unknown tool: ${name}`);
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Error: ${errorMessage}`,
+        },
+      ],
+      isError: true,
+    };
+  }
+});
+
+/**
+ * Make an API request
+ */
+async function makeAPIRequest(
+  args: APIRequest
+): Promise<{ content: Array<{ type: string; text: string }> }> {
+  const { endpoint, method = "GET", body, queryParams, headers = {} } = args;
+
+  // Validate API key
+  if (!CONFIG.apiKey) {
+    throw new Error(
+      "API key not configured. Set {{ENV_PREFIX}}_API_KEY environment variable."
+    );
+  }
+
+  // Build URL
+  const url = new URL(endpoint, CONFIG.apiBaseUrl);
+  if (queryParams) {
+    Object.entries(queryParams).forEach(([key, value]) => {
+      url.searchParams.append(key, value);
+    });
+  }
+
+  // Build request
+  const requestOptions: RequestInit = {
+    method,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${CONFIG.apiKey}`,
+      ...headers,
+    },
+  };
+
+  if (body && ["POST", "PUT", "PATCH"].includes(method)) {
+    requestOptions.body = JSON.stringify(body);
+  }
+
+  // Make request
+  const response = await fetch(url.toString(), requestOptions);
+
+  // Handle response
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(
+      `API request failed: ${response.status} ${response.statusText}\n${errorText}`
+    );
+  }
+
+  const responseData = await response.json();
+
+  return {
+    content: [
+      {
+        type: "text",
+        text: JSON.stringify(
+          {
+            status: response.status,
+            statusText: response.statusText,
+            data: responseData,
+          },
+          null,
+          2
+        ),
+      },
+    ],
+  };
+}
+
+/**
+ * Start the server
+ */
+async function main() {
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+  console.error("{{SKILL_NAME}} HTTP API Tool running on stdio");
+}
+
+main().catch((error) => {
+  console.error("Fatal error in main():", error);
+  process.exit(1);
+});
