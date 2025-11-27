@@ -2,6 +2,8 @@
  * Shared Skill type definition - Single Source of Truth
  * All components should import from here to avoid duplicate type definitions
  */
+export type SkillBadge = 'NEW' | 'UPDATED';
+
 export interface Skill {
   id: string;
   title: string;
@@ -10,6 +12,7 @@ export interface Skill {
   path: string;
   tags?: string[];
   icon?: string;
+  badge?: SkillBadge;
 }
 
 /**

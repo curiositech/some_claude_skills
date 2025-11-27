@@ -595,7 +595,7 @@
 .new-skill-badge {
   position: absolute;
   top: 8px;
-  right: 8px;
+  left: 8px;
   background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
   color: #000;
   font-family: 'Press Start 2P', cursive;
@@ -611,6 +611,30 @@
   z-index: 10;
   white-space: nowrap;
   text-shadow: 1px 1px 0 #fff;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+/* UPDATED sticker for recently improved skills */
+.updated-skill-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: linear-gradient(135deg, #00ccff 0%, #0099cc 100%);
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 7px;
+  padding: 4px 8px;
+  border-radius: 50% / 40%;
+  transform: rotate(-12deg);
+  box-shadow:
+    2px 2px 0 #000,
+    inset 0 -1px 0 rgba(0,0,0,0.2);
+  border: 2px solid #ff00ff;
+  animation: stickerPulse 2s ease-in-out infinite;
+  z-index: 10;
+  white-space: nowrap;
+  text-shadow: 1px 1px 0 #000;
   font-weight: bold;
   pointer-events: none;
 }

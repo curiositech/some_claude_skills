@@ -74,6 +74,13 @@ export default function SkillGalleryCard({
           alt={skill.title}
           className="skill-card__image"
         />
+        {/* Badge indicator */}
+        {skill.badge === 'NEW' && (
+          <span className="new-skill-badge">NEW!</span>
+        )}
+        {skill.badge === 'UPDATED' && (
+          <span className="updated-skill-badge">UPDATED</span>
+        )}
         <div className="skill-card__install-hint">
           Click for quick install
         </div>

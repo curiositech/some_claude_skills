@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "prebuild": "npm run validate:all && tsx scripts/fetchPlausibleStats.ts && tsx scripts/generateSkillZips.ts",
+    "prebuild": "npm run validate:all && tsx scripts/fetchPlausibleStats.ts && tsx scripts/generateSkillZips.ts && tsx scripts/generateSkillFolderData.ts",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -18,7 +18,8 @@
     "validate:liquid": "node scripts/validate-liquid.js docs/**/*.md",
     "validate:brackets": "node scripts/validate-brackets.js docs/**/*.md",
     "validate:props": "node scripts/validate-skill-props.js docs/skills/*.md",
-    "validate:all": "npm run validate:liquid && npm run validate:brackets && npm run validate:props",
+    "validate:badges": "node scripts/validate-badges.js",
+    "validate:all": "npm run validate:liquid && npm run validate:brackets && npm run validate:props && npm run validate:badges",
     "install-hooks": "node scripts/install-git-hooks.js"
   },
   "dependencies": {
@@ -28,6 +29,8 @@
     "@types/diff": "^7.0.2",
     "@types/react-syntax-highlighter": "^15.5.13",
     "buffer": "^6.0.3",
+    "butterchurn": "^2.6.7",
+    "butterchurn-presets": "^2.4.7",
     "clsx": "^2.0.0",
     "diff": "^8.0.2",
     "docusaurus-plugin-plausible": "^0.0.5",
