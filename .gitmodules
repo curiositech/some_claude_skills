@@ -1,3 +1,6 @@
 [submodule "cv-creator-implementation"]
 	path = cv-creator-implementation
 	url = https://github.com/erichowens/cv-creator.git
+[submodule "mcp-servers/prompt-learning"]
+	path = mcp-servers/prompt-learning
+	url = https://github.com/erichowens/prompt-learning-mcp.git

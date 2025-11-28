@@ -21,6 +21,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'guides/claude-skills-guide',
+        'guides/prompt-learning-mcp',
         'guides/examples',
         'guides/skills-documentation',
       ],

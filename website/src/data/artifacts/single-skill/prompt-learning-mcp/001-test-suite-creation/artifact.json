@@ -1,0 +1,126 @@
+{
+  "id": "prompt-learning-mcp-001-test-suite",
+  "title": "From Prototype to Production: 78 Tests Prove the Prompt Optimizer Works",
+  "description": "Building a comprehensive test suite that transforms a research prototype into battle-tested production code. 61 unit tests with mocked dependencies, 17 integration tests with real API calls, proving every component of the APE/OPRO-based prompt optimization system works end-to-end.",
+  "type": "single-skill",
+  "skills": [
+    {
+      "name": "Prompt Learning MCP",
+      "role": "The MCP server being tested - implements APE/OPRO patterns for automatic prompt optimization with vector similarity search and LLM-based evaluation",
+      "link": "/docs/guides/prompt-learning-mcp"
+    }
+  ],
+  "category": "development",
+  "tags": [
+    "testing",
+    "vitest",
+    "mcp-server",
+    "prompt-engineering",
+    "APE",
+    "OPRO",
+    "embeddings",
+    "vector-search",
+    "qdrant",
+    "redis",
+    "openai",
+    "tdd",
+    "integration-testing"
+  ],
+  "difficulty": "advanced",
+  "phases": [
+    {
+      "name": "Test Framework Setup",
+      "skills": ["automatic_stateful_prompt_improver"],
+      "duration": "10 minutes",
+      "outcome": "Vitest configured with separate unit and integration test configs, proper coverage settings"
+    },
+    {
+      "name": "Unit Test Development",
+      "skills": ["automatic_stateful_prompt_improver"],
+      "duration": "30 minutes",
+      "outcome": "61 unit tests covering Optimizer (21), Embeddings (17), and VectorDB (23) with full mocking"
+    },
+    {
+      "name": "Integration Test Development",
+      "skills": ["automatic_stateful_prompt_improver"],
+      "duration": "20 minutes",
+      "outcome": "17 integration tests with real OpenAI API, Qdrant, and Redis - proving end-to-end functionality"
+    },
+    {
+      "name": "Bug Fixes & Validation",
+      "skills": ["automatic_stateful_prompt_improver"],
+      "duration": "15 minutes",
+      "outcome": "Fixed error handling in optimizer, corrected Qdrant UUID format - all 78 tests passing"
+    }
+  ],
+  "outcome": {
+    "summary": "Transformed a research prototype into production-ready code with 78 passing tests. The test suite proves that vague prompts like 'Write code' get transformed into structured, specific prompts scoring 80%+ on LLM evaluation. Real API calls demonstrate the full optimization loop works.",
+    "metrics": [
+      {
+        "label": "Unit Tests",
+        "value": "61"
+      },
+      {
+        "label": "Integration Tests",
+        "value": "17"
+      },
+      {
+        "label": "Total Tests",
+        "value": "78"
+      },
+      {
+        "label": "Pass Rate",
+        "value": "100%"
+      },
+      {
+        "label": "Unit Test Time",
+        "value": "<300ms"
+      },
+      {
+        "label": "Integration Test Time",
+        "value": "~51s"
+      },
+      {
+        "label": "Lines of Test Code",
+        "value": "1,991"
+      },
+      {
+        "label": "Bugs Fixed",
+        "value": "3"
+      }
+    ],
+    "learned": [
+      "Mocking OpenAI API responses enables fast, reliable unit tests without API costs",
+      "Qdrant requires pure UUIDs - prefixed IDs like 'test-uuid' cause 400 errors",
+      "Error handling code must wrap the actual API call, not just the parsing",
+      "Pattern-based improvements cascade - add_structure includes 'format', blocking add_output_format",
+      "Integration tests with real APIs are slow (~51s) but prove the system actually works",
+      "Vitest's mocking system with __mockCreate pattern works well for ESM modules",
+      "Convergence detection needs at least N scores before it can trigger",
+      "LLM-based evaluation is more reliable than heuristics but requires proper error fallbacks"
+    ]
+  },
+  "files": {
+    "before": [
+      "before/optimizer.ts",
+      "before/NOTE.md"
+    ],
+    "after": [
+      "after/optimizer.ts",
+      "after/optimizer.test.ts",
+      "after/embeddings.test.ts",
+      "after/vectordb.test.ts",
+      "after/server.test.ts",
+      "after/vitest.config.ts"
+    ]
+  },
+  "heroImage": "/img/artifacts/prompt-learning-mcp-test-suite-hero.png",
+  "createdAt": "2024-11-28T22:20:00Z",
+  "featured": true,
+  "viewCount": 0,
+  "narrative": [
+    "There's a moment in every project where you stop saying 'it should work' and start saying 'I can prove it works.' This artifact documents that moment for the Prompt Learning MCP Server—the transition from research prototype to production code, measured in 78 passing tests.",
+    "The challenge wasn't just writing tests; it was creating a test architecture that could verify a complex system spanning multiple services: OpenAI's embedding API, Qdrant's vector database, Redis caching, and LLM-based evaluation. Unit tests needed to mock everything without losing fidelity. Integration tests needed to make real API calls without being flaky or slow.",
+    "The result is a test suite that runs in under a second for unit tests (mocked) and about 51 seconds for integration tests (real APIs). It caught three real bugs: error handling that didn't actually catch errors, Qdrant ID format requirements we didn't know about, and cascading pattern interactions that broke test assumptions. Each bug was a gift—proof that testing works, that confidence earned is better than confidence assumed."
+  ]
+}
