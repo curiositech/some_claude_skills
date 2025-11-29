@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-29T04:21:27.786Z",
+  "generatedAt": "2025-11-29T06:58:56.830Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
@@ -195,8 +195,8 @@
     },
     "hr-network-analyst": {
       "id": "hr-network-analyst",
-      "createdAt": null,
-      "updatedAt": null,
+      "createdAt": "2025-11-28T20:21:26-08:00",
+      "updatedAt": "2025-11-28T20:21:26-08:00",
       "totalLines": 1783,
       "totalFiles": 3,
       "skillMdSize": 22535,
@@ -209,13 +209,13 @@
       "id": "hrv-alexithymia-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-25T18:43:58-08:00",
-      "totalLines": 551,
-      "totalFiles": 1,
-      "skillMdSize": 19348,
-      "skillMdLines": 551,
-      "hasReferences": false,
+      "totalLines": 575,
+      "totalFiles": 5,
+      "skillMdSize": 6401,
+      "skillMdLines": 142,
+      "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "interior-design-expert": {
       "id": "interior-design-expert",
@@ -245,13 +245,13 @@
       "id": "jungian-psychologist",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-25T18:43:58-08:00",
-      "totalLines": 440,
-      "totalFiles": 1,
-      "skillMdSize": 17764,
-      "skillMdLines": 440,
-      "hasReferences": false,
+      "totalLines": 558,
+      "totalFiles": 4,
+      "skillMdSize": 6017,
+      "skillMdLines": 140,
+      "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "metal-shader-expert": {
       "id": "metal-shader-expert",
@@ -293,13 +293,13 @@
       "id": "personal-finance-coach",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-25T18:43:58-08:00",
-      "totalLines": 560,
-      "totalFiles": 1,
-      "skillMdSize": 16990,
-      "skillMdLines": 560,
-      "hasReferences": false,
+      "totalLines": 674,
+      "totalFiles": 5,
+      "skillMdSize": 5419,
+      "skillMdLines": 138,
+      "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "photo-composition-critic": {
       "id": "photo-composition-critic",
@@ -413,13 +413,13 @@
       "id": "speech-pathology-ai",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-25T18:43:58-08:00",
-      "totalLines": 1433,
-      "totalFiles": 5,
+      "totalLines": 1455,
+      "totalFiles": 6,
       "skillMdSize": 7918,
       "skillMdLines": 174,
       "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "swift-executor": {
       "id": "swift-executor",
@@ -545,13 +545,13 @@
       "id": "wisdom-accountability-coach",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-25T18:43:58-08:00",
-      "totalLines": 530,
-      "totalFiles": 1,
-      "skillMdSize": 19192,
-      "skillMdLines": 530,
-      "hasReferences": false,
+      "totalLines": 452,
+      "totalFiles": 4,
+      "skillMdSize": 6173,
+      "skillMdLines": 149,
+      "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     }
   }
 }
