@@ -10,7 +10,7 @@ sidebar_position: 10
 <SkillHeader
   skillName="Adhd Design Expert"
   fileName="adhd-design-expert"
-  description={"Designs digital experiences for ADHD brains using neuroscience research and UX principles. Expert in reducing cognitive load, time blindness solutions, dopamine-driven engagement, and compassionate design patterns."}
+  description={"\"Designs digital experiences for ADHD brains using neuroscience research and UX principles. Expert in reducing cognitive load, time blindness solutions, dopamine-driven engagement, and compassionate design patterns. Activate on 'ADHD design', 'cognitive load', 'accessibility', 'neurodivergent UX', 'time blindness', 'dopamine-driven', 'executive function'. NOT for general accessibility (WCAG only), neurotypical UX design, or simple UI styling without ADHD context.\""}
   tags={["creation","design","accessibility","research","beginner-friendly"]}
 />
 

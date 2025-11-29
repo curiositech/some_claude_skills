@@ -8,7 +8,7 @@ description: Big tech ML engineer to indie founder transition coach. Expert in i
 <SkillHeader
   skillName="Tech Entrepreneur Coach Adhd"
   fileName="tech-entrepreneur-coach-adhd"
-  description={"Big tech ML engineer to indie founder transition coach. Expert in idea validation, MVP development, marketing, monetization, and sustainable growth for ADHD entrepreneurs."}
+  description={"\"Big tech ML engineer to indie founder transition coach. Expert in idea validation, MVP development, marketing, monetization, and sustainable growth for ADHD entrepreneurs. Activate on 'entrepreneur', 'indie founder', 'startup', 'MVP', 'monetization', 'big tech to indie', 'ADHD business', 'app launch', 'side project'. NOT for neurotypical entrepreneurship, VC-backed startups, or traditional business consulting without ADHD context.\""}
   tags={["coaching","entrepreneurship","career","accessibility","strategy"]}
 />
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-29T01:00:18.816Z",
+  "generatedAt": "2025-11-29T03:48:27.379Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
@@ -17,13 +17,13 @@
       "id": "adhd-design-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-25T18:43:58-08:00",
-      "totalLines": 857,
-      "totalFiles": 2,
-      "skillMdSize": 14581,
-      "skillMdLines": 427,
-      "hasReferences": false,
+      "totalLines": 666,
+      "totalFiles": 3,
+      "skillMdSize": 6960,
+      "skillMdLines": 194,
+      "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "agent-creator": {
       "id": "agent-creator",
@@ -193,6 +193,18 @@
       "hasExamples": false,
       "hasChangelog": true
     },
+    "hr-network-analyst": {
+      "id": "hr-network-analyst",
+      "createdAt": null,
+      "updatedAt": null,
+      "totalLines": 0,
+      "totalFiles": 0,
+      "skillMdSize": 0,
+      "skillMdLines": 0,
+      "hasReferences": false,
+      "hasExamples": false,
+      "hasChangelog": false
+    },
     "hrv-alexithymia-expert": {
       "id": "hrv-alexithymia-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
@@ -216,6 +228,18 @@
       "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": true
+    },
+    "job-application-optimizer": {
+      "id": "job-application-optimizer",
+      "createdAt": null,
+      "updatedAt": null,
+      "totalLines": 254,
+      "totalFiles": 1,
+      "skillMdSize": 6659,
+      "skillMdLines": 254,
+      "hasReferences": false,
+      "hasExamples": false,
+      "hasChangelog": false
     },
     "jungian-psychologist": {
       "id": "jungian-psychologist",
@@ -317,13 +341,13 @@
       "id": "project-management-guru-adhd",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-25T18:43:58-08:00",
-      "totalLines": 626,
-      "totalFiles": 1,
-      "skillMdSize": 22114,
-      "skillMdLines": 626,
-      "hasReferences": false,
+      "totalLines": 887,
+      "totalFiles": 6,
+      "skillMdSize": 6444,
+      "skillMdLines": 167,
+      "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "research-analyst": {
       "id": "research-analyst",
@@ -425,13 +449,13 @@
       "id": "tech-entrepreneur-coach-adhd",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-25T18:43:58-08:00",
-      "totalLines": 779,
-      "totalFiles": 2,
-      "skillMdSize": 13164,
-      "skillMdLines": 428,
-      "hasReferences": false,
+      "totalLines": 802,
+      "totalFiles": 6,
+      "skillMdSize": 6643,
+      "skillMdLines": 183,
+      "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "typography-expert": {
       "id": "typography-expert",
