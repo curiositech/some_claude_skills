@@ -15,23 +15,28 @@ function validateBrackets(filePath) {
     }
     if (inCodeBlock) return;
 
-    // Check for unescaped < followed by digit or > followed by digit
-    const lessThanMatch = line.match(/<(\d+)/);
-    const greaterThanMatch = line.match(/>(\d+)/);
+    // Check for unescaped < or > followed by digit (including decimals like <0.1ms)
+    // Matches: <100, <0.5ms, >50%, etc.
+    const lessThanMatches = line.matchAll(/<(\d+[\d.]*\w*)/g);
+    const greaterThanMatches = line.matchAll(/>(\d+[\d.]*\w*)/g);
 
-    if (lessThanMatch && !line.includes('&lt;')) {
+    for (const match of lessThanMatches) {
+      // Skip if already escaped on this line
+      if (line.includes('&lt;' + match[1])) continue;
       errors.push({
         line: idx + 1,
-        text: lessThanMatch[0],
-        fix: lessThanMatch[0].replace('<', '&lt;')
+        text: match[0],
+        fix: match[0].replace('<', '&lt;')
       });
     }
 
-    if (greaterThanMatch && !line.includes('&gt;')) {
+    for (const match of greaterThanMatches) {
+      // Skip if already escaped on this line
+      if (line.includes('&gt;' + match[1])) continue;
       errors.push({
         line: idx + 1,
-        text: greaterThanMatch[0],
-        fix: greaterThanMatch[0].replace('>', '&gt;')
+        text: match[0],
+        fix: match[0].replace('>', '&gt;')
       });
     }
   });

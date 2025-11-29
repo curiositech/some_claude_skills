@@ -12,6 +12,7 @@ echo "🔍 Running pre-commit validation..."
 STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '\\.md$' || true)
 STAGED_TS=$(git diff --cached --name-only --diff-filter=ACM | grep 'skills\\.ts$' || true)
 STAGED_SKILLS=$(git diff --cached --name-only --diff-filter=ACMD | grep '^\\.claude/skills/' || true)
+STAGED_SKILL_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '^\\.claude/skills/.*\\.md$' || true)
 
 # Check for skills.ts changes (badge validation)
 if [ -n "$STAGED_TS" ]; then
@@ -51,6 +52,18 @@ if [ -n "$STAGED_SKILLS" ]; then
     git add docs/skills/*.md
   fi
 
+  cd ..
+fi
+
+# Validate skill folder markdown files for angle brackets
+if [ -n "$STAGED_SKILL_MD" ]; then
+  echo "📐 Validating skill markdown files for angle brackets..."
+  cd website || exit 1
+  for file in $STAGED_SKILL_MD; do
+    if [ -f "../$file" ]; then
+      node scripts/validate-brackets.js "../$file" || exit 1
+    fi
+  done
   cd ..
 fi
 
