@@ -1,0 +1,596 @@
+/* McpDetailModal - Windows 3.1 Style Full-Screen Modal */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 128, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  box-shadow:
+    inset 1px 1px 0 #dfdfdf,
+    inset -1px -1px 0 #808080,
+    4px 4px 0 rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1100px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Title Bar */
+.titleBar {
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+  padding: 3px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.titleLeft {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon {
+  font-size: 14px;
+}
+
+.titleText {
+  color: white;
+  font-family: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.titleButtons {
+  display: flex;
+  gap: 2px;
+}
+
+.titleBtn,
+.titleBtnClose {
+  width: 18px;
+  height: 16px;
+  background: #c0c0c0;
+  border: 1px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+.titleBtn:hover {
+  background: #d4d4d4;
+}
+
+.titleBtnClose {
+  font-weight: bold;
+}
+
+.titleBtnClose:hover {
+  background: #ff6b6b;
+  color: white;
+}
+
+.titleBtn:active,
+.titleBtnClose:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+/* Install Banner - Big CTA */
+.installBanner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 2px solid #808080;
+}
+
+.installLeft {
+  flex-shrink: 0;
+}
+
+.installTitle {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 4px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.installSubtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  margin: 0;
+}
+
+.installRight {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.installCommand {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.installCommand code {
+  color: #00ff88;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.copyBtn {
+  background: #00d084;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.copyBtn:hover {
+  background: #00b371;
+  transform: scale(1.05);
+}
+
+.installLinks {
+  display: flex;
+  gap: 12px;
+}
+
+.installLink {
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.installLink:hover {
+  opacity: 1;
+  color: white;
+  text-decoration: underline;
+}
+
+/* Main Content Area */
+.content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Left Column */
+.leftColumn {
+  width: 280px;
+  flex-shrink: 0;
+  padding: 12px;
+  border-right: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heroContainer {
+  background: white;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  padding: 4px;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: pixelated;
+}
+
+/* Colorful Stickers */
+.stickers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sticker {
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  animation: stickerPop 0.3s ease-out;
+}
+
+@keyframes stickerPop {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.stickerFeatured {
+  background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+  color: #5d4e00;
+}
+
+.stickerFeatured span {
+  animation: starPulse 1s infinite;
+}
+
+@keyframes starPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.stickerNew {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+  color: white;
+}
+
+.stickerStatus {
+  /* Colors set inline from statusConfig */
+}
+
+.stickerCategory {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  color: white;
+}
+
+.stickerTools {
+  background: linear-gradient(135deg, #667eea 0%, #5567d5 100%);
+  color: white;
+}
+
+.stickerVersion {
+  background: #333;
+  color: #00ff88;
+  font-family: monospace;
+}
+
+/* Quick Facts */
+.quickFacts {
+  background: white;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  padding: 10px;
+}
+
+.quickFacts h3 {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  border-bottom: 1px solid #c0c0c0;
+  padding-bottom: 4px;
+}
+
+.quickFacts ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 11px;
+}
+
+.quickFacts li {
+  margin-bottom: 4px;
+}
+
+.quickFacts strong {
+  color: #000080;
+}
+
+/* Right Column */
+.rightColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  padding: 8px 8px 0 8px;
+  gap: 2px;
+  background: #c0c0c0;
+}
+
+.tab {
+  padding: 6px 16px;
+  background: #d4d4d4;
+  border: 2px solid;
+  border-color: #ffffff #808080 #c0c0c0 #ffffff;
+  border-bottom: none;
+  font-size: 12px;
+  cursor: pointer;
+  margin-bottom: -2px;
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+.tab:hover {
+  background: #e4e4e4;
+}
+
+.tabActive {
+  background: white;
+  border-color: #808080 #ffffff #ffffff #808080;
+  border-bottom: 2px solid white;
+  font-weight: bold;
+}
+
+/* Tab Content */
+.tabContent {
+  flex: 1;
+  background: white;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  margin: 0 8px 8px 8px;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+/* Overview Tab */
+.overview h3 {
+  margin: 0 0 8px 0;
+  color: #000080;
+  font-size: 16px;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.longDescription {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.longDescription p {
+  margin-bottom: 10px;
+}
+
+.features {
+  margin-top: 16px;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.features h4 {
+  margin: 0 0 8px 0;
+  color: #000080;
+  font-size: 14px;
+}
+
+.features ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.features li {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+/* Tools Tab */
+.toolsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toolCard {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-left: 4px solid #667eea;
+  padding: 10px 12px;
+  border-radius: 0 4px 4px 0;
+}
+
+.toolHeader {
+  margin-bottom: 4px;
+}
+
+.toolName {
+  background: #000080;
+  color: #00ff88;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.toolDescription {
+  margin: 0;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Examples Tab */
+.examples {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exampleCard {
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 14px;
+  transition: border-color 0.2s;
+}
+
+.exampleCard:hover {
+  border-color: #667eea;
+}
+
+.exampleTitle {
+  margin: 0 0 6px 0;
+  color: #000080;
+  font-size: 14px;
+}
+
+.exampleDescription {
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.examplePrompt {
+  background: #1e1e1e;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.promptLabel {
+  display: block;
+  font-size: 10px;
+  color: #888;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.examplePrompt code {
+  color: #00ff88;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 12px;
+  word-break: break-word;
+}
+
+.noExamples {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+}
+
+.noExamples p {
+  margin: 4px 0;
+}
+
+/* Status Bar */
+.statusBar {
+  display: flex;
+  border-top: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  background: #c0c0c0;
+  padding: 2px;
+  gap: 2px;
+}
+
+.statusPanel {
+  padding: 2px 8px;
+  font-size: 11px;
+  border: 1px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  background: #c0c0c0;
+  flex-shrink: 0;
+}
+
+.statusPanel:first-child {
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal {
+    max-height: 95vh;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .leftColumn {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    max-height: 200px;
+  }
+
+  .stickers {
+    justify-content: center;
+  }
+
+  .installBanner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .installRight {
+    align-items: center;
+  }
+
+  .installCommand {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .installCommand code {
+    font-size: 11px;
+    word-break: break-all;
+    white-space: normal;
+  }
+}

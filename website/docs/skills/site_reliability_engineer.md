@@ -11,7 +11,7 @@ import SkillHeader from '@site/src/components/SkillHeader';
 <SkillHeader
   skillName="Site Reliability Engineer"
   fileName="site-reliability-engineer"
-  description={"Docusaurus build health validation and deployment safety for Claude Skills showcase. Pre-commit MDX validation (Liquid syntax, angle brackets, prop mismatches), pre-build link checking, post-build health reports. Activate on \"build errors\", \"commit hooks\", \"deployment safety\", \"site health\", \"MDX validation\". NOT for general DevOps, Kubernetes, cloud infrastructure, or non-Docusaurus projects."}
+  description={"\"Docusaurus build health validation and deployment safety for Claude Skills showcase. Pre-commit MDX validation (Liquid syntax, angle brackets, prop mismatches), pre-build link checking, post-build health reports. Activate on 'build errors', 'commit hooks', 'deployment safety', 'site health', 'MDX validation'. NOT for general DevOps (use deployment-engineer), Kubernetes/cloud infrastructure (use kubernetes-architect), runtime monitoring (use observability-engineer), or non-Docusaurus projects.\""}
   tags={["validation","automation","devops","code","production-ready"]}
 />
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-29T06:58:56.830Z",
+  "generatedAt": "2025-11-29T08:40:25.634Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
@@ -197,10 +197,10 @@
       "id": "hr-network-analyst",
       "createdAt": "2025-11-28T20:21:26-08:00",
       "updatedAt": "2025-11-28T20:21:26-08:00",
-      "totalLines": 1783,
-      "totalFiles": 3,
-      "skillMdSize": 22535,
-      "skillMdLines": 695,
+      "totalLines": 1506,
+      "totalFiles": 5,
+      "skillMdSize": 6256,
+      "skillMdLines": 148,
       "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": false
@@ -208,7 +208,7 @@
     "hrv-alexithymia-expert": {
       "id": "hrv-alexithymia-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-11-28T22:58:55-08:00",
       "totalLines": 575,
       "totalFiles": 5,
       "skillMdSize": 6401,
@@ -244,7 +244,7 @@
     "jungian-psychologist": {
       "id": "jungian-psychologist",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-11-28T22:58:55-08:00",
       "totalLines": 558,
       "totalFiles": 4,
       "skillMdSize": 6017,
@@ -292,7 +292,7 @@
     "personal-finance-coach": {
       "id": "personal-finance-coach",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-11-28T22:58:55-08:00",
       "totalLines": 674,
       "totalFiles": 5,
       "skillMdSize": 5419,
@@ -365,11 +365,11 @@
       "id": "site-reliability-engineer",
       "createdAt": "2025-11-26T11:14:50-08:00",
       "updatedAt": "2025-11-26T11:14:50-08:00",
-      "totalLines": 1030,
-      "totalFiles": 4,
-      "skillMdSize": 20711,
-      "skillMdLines": 790,
-      "hasReferences": false,
+      "totalLines": 696,
+      "totalFiles": 6,
+      "skillMdSize": 4764,
+      "skillMdLines": 132,
+      "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": false
     },
@@ -389,11 +389,11 @@
       "id": "skill-documentarian",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-26T23:04:52-08:00",
-      "totalLines": 2120,
-      "totalFiles": 5,
-      "skillMdSize": 35445,
-      "skillMdLines": 1125,
-      "hasReferences": false,
+      "totalLines": 1935,
+      "totalFiles": 9,
+      "skillMdSize": 6734,
+      "skillMdLines": 182,
+      "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": false
     },
@@ -412,7 +412,7 @@
     "speech-pathology-ai": {
       "id": "speech-pathology-ai",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-11-28T22:58:55-08:00",
       "totalLines": 1455,
       "totalFiles": 6,
       "skillMdSize": 7918,
@@ -544,7 +544,7 @@
     "wisdom-accountability-coach": {
       "id": "wisdom-accountability-coach",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-11-28T22:58:55-08:00",
       "totalLines": 452,
       "totalFiles": 4,
       "skillMdSize": 6173,

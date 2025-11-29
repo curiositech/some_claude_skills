@@ -11,6 +11,12 @@ export interface McpTool {
   description: string;
 }
 
+export interface McpExample {
+  title: string;
+  description: string;
+  prompt?: string;
+}
+
 export interface McpServer {
   id: string;
   name: string;
@@ -28,6 +34,8 @@ export interface McpServer {
   // Technical details
   tools: McpTool[];
   requirements?: string[];
+  features?: string[];
+  examples?: McpExample[];
 
   // Visual
   heroImage?: string;
@@ -46,6 +54,7 @@ export interface McpServer {
 export const MCP_CATEGORIES = [
   'all',
   'Prompt Engineering',
+  'Career & Resume',
   'Code Quality',
   'Data & Analytics',
   'External Services',

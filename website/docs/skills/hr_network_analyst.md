@@ -10,7 +10,7 @@ sidebar_position: 27
 <SkillHeader
   skillName="Hr Network Analyst"
   fileName="hr-network-analyst"
-  description={"Hypermodern HR data scientist specializing in professional network graph analysis to identify Gladwellian superconnectors, mavens, and influence brokers. Uses betweenness centrality, structural holes theory, and multi-source network reconstruction from LinkedIn, conferences, publications, and community signals. Use when users need to find key people, map professional influence, optimize networking strategy, or understand \"who knows who\" in any domain."}
+  description={"\"Professional network graph analyst identifying Gladwellian superconnectors, mavens, and influence brokers using betweenness centrality, structural holes theory, and multi-source network reconstruction. Activate on 'superconnectors', 'network analysis', 'who knows who', 'professional network', 'influence mapping', 'betweenness centrality'. NOT for surveillance, discrimination, stalking, privacy violation, or speculation without data.\""}
   tags={["research","analysis","data","career","strategy","advanced","mcp"]}
 />
 

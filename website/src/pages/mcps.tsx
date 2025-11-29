@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import Layout from '@theme/Layout';
 import McpGalleryCard from '../components/McpGalleryCard';
+import McpDetailModal from '../components/McpDetailModal';
 import type { McpServer } from '../types/mcp';
 import { MCP_CATEGORIES } from '../types/mcp';
 import { ALL_MCPS, searchMcps, filterMcpsByCategory } from '../data/mcps';
@@ -10,6 +11,7 @@ import '../css/skills-gallery.css';
 export default function McpsGallery(): JSX.Element {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedMcp, setSelectedMcp] = useState<McpServer | null>(null);
 
   const filteredMcps = useMemo(() => {
     let mcps = ALL_MCPS;
@@ -85,9 +87,21 @@ export default function McpsGallery(): JSX.Element {
           {/* MCPs Grid */}
           <div className="skills-grid">
             {filteredMcps.map((mcp) => (
-              <McpGalleryCard key={mcp.id} mcp={mcp} />
+              <McpGalleryCard
+                key={mcp.id}
+                mcp={mcp}
+                onClick={(mcp) => setSelectedMcp(mcp)}
+              />
             ))}
           </div>
+
+          {/* Detail Modal */}
+          {selectedMcp && (
+            <McpDetailModal
+              mcp={selectedMcp}
+              onClose={() => setSelectedMcp(null)}
+            />
+          )}
 
           {/* No Results */}
           {filteredMcps.length === 0 && (
