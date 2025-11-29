@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-29T08:40:25.634Z",
+  "generatedAt": "2025-11-29T20:34:31.755Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
@@ -29,13 +29,13 @@
       "id": "agent-creator",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-25T18:43:58-08:00",
-      "totalLines": 603,
-      "totalFiles": 1,
-      "skillMdSize": 16292,
-      "skillMdLines": 603,
-      "hasReferences": false,
+      "totalLines": 644,
+      "totalFiles": 5,
+      "skillMdSize": 5210,
+      "skillMdLines": 150,
+      "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "automatic-stateful-prompt-improver": {
       "id": "automatic-stateful-prompt-improver",
@@ -53,13 +53,13 @@
       "id": "bot-developer",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-25T18:43:58-08:00",
-      "totalLines": 624,
-      "totalFiles": 1,
-      "skillMdSize": 22084,
-      "skillMdLines": 624,
-      "hasReferences": false,
+      "totalLines": 847,
+      "totalFiles": 6,
+      "skillMdSize": 5428,
+      "skillMdLines": 154,
+      "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "career-biographer": {
       "id": "career-biographer",
@@ -125,13 +125,13 @@
       "id": "cv-creator",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-26T11:14:50-08:00",
-      "totalLines": 692,
-      "totalFiles": 1,
-      "skillMdSize": 22578,
-      "skillMdLines": 692,
-      "hasReferences": false,
+      "totalLines": 666,
+      "totalFiles": 5,
+      "skillMdSize": 5941,
+      "skillMdLines": 153,
+      "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "design-archivist": {
       "id": "design-archivist",
@@ -197,13 +197,13 @@
       "id": "hr-network-analyst",
       "createdAt": "2025-11-28T20:21:26-08:00",
       "updatedAt": "2025-11-28T20:21:26-08:00",
-      "totalLines": 1506,
-      "totalFiles": 5,
-      "skillMdSize": 6256,
-      "skillMdLines": 148,
+      "totalLines": 2382,
+      "totalFiles": 7,
+      "skillMdSize": 6368,
+      "skillMdLines": 149,
       "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "hrv-alexithymia-expert": {
       "id": "hrv-alexithymia-expert",
@@ -231,8 +231,8 @@
     },
     "job-application-optimizer": {
       "id": "job-application-optimizer",
-      "createdAt": null,
-      "updatedAt": null,
+      "createdAt": "2025-11-29T00:40:23-08:00",
+      "updatedAt": "2025-11-29T00:40:23-08:00",
       "totalLines": 254,
       "totalFiles": 1,
       "skillMdSize": 6659,
@@ -365,13 +365,13 @@
       "id": "site-reliability-engineer",
       "createdAt": "2025-11-26T11:14:50-08:00",
       "updatedAt": "2025-11-26T11:14:50-08:00",
-      "totalLines": 696,
-      "totalFiles": 6,
-      "skillMdSize": 4764,
+      "totalLines": 724,
+      "totalFiles": 7,
+      "skillMdSize": 4788,
       "skillMdLines": 132,
       "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "skill-coach": {
       "id": "skill-coach",
@@ -389,13 +389,13 @@
       "id": "skill-documentarian",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-26T23:04:52-08:00",
-      "totalLines": 1935,
-      "totalFiles": 9,
+      "totalLines": 1963,
+      "totalFiles": 10,
       "skillMdSize": 6734,
       "skillMdLines": 182,
       "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "sound-engineer": {
       "id": "sound-engineer",
@@ -533,11 +533,11 @@
       "id": "windows-3-1-web-designer",
       "createdAt": "2025-11-26T11:53:08-08:00",
       "updatedAt": "2025-11-26T14:44:34-08:00",
-      "totalLines": 583,
-      "totalFiles": 2,
-      "skillMdSize": 15070,
-      "skillMdLines": 540,
-      "hasReferences": false,
+      "totalLines": 687,
+      "totalFiles": 5,
+      "skillMdSize": 4953,
+      "skillMdLines": 137,
+      "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": true
     },

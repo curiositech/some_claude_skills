@@ -1,6 +1,6 @@
 ---
 name: site-reliability-engineer
-description: Docusaurus build health validation and deployment safety for Claude Skills showcase. Pre-commit MDX validation (Liquid syntax, angle brackets, prop mismatches), pre-build link checking, post-build health reports. Activate on "build errors", "commit hooks", "deployment safety", "site health", "MDX validation". NOT for general DevOps, Kubernetes, cloud infrastructure, or non-Docusaurus projects.
+description: "Docusaurus build health validation and deployment safety for Claude Skills showcase. Pre-commit MDX validation (Liquid syntax, angle brackets, prop mismatches), pre-build link checking, post-build health reports. Activate on 'build errors', 'commit hooks', 'deployment safety', 'site health', 'MDX validation'. NOT for general DevOps (use deployment-engineer), Kubernetes/cloud infrastructure (use kubernetes-architect), runtime monitoring (use observability-engineer), or non-Docusaurus projects."
 allowed-tools: Read,Write,Edit,Bash,Grep,Glob
 ---
 
@@ -10,780 +10,122 @@ Expert in Docusaurus build health, MDX validation, and deployment safety for the
 
 ## When to Use
 
-✅ **Use for:**
+**Use for:**
 - Pre-commit validation of markdown/MDX files
-- Catching Liquid template syntax errors before build
-- Validating SkillHeader component prop usage
-- Checking for missing hero images or ZIP files
-- Running pre-build link validation
+- Catching Liquid template syntax errors
+- Validating SkillHeader component props
+- Checking for missing hero images/ZIP files
+- Pre-build link validation
 - Post-build health reports
-- Installing git hooks for automated checks
 - Diagnosing Docusaurus build failures
 
-❌ **NOT for:**
+**Do NOT use for:**
 - General DevOps (use deployment-engineer)
 - Kubernetes/cloud infrastructure (use kubernetes-architect)
-- Non-Docusaurus static sites
 - Runtime monitoring/alerting (use observability-engineer)
 - Database migrations (use database-migrations agents)
 - Security scanning (use security-auditor)
 
-## Core Expertise
+## Core Problem Domain
 
-### Problem Domain: Docusaurus Build Failures
+### The 5 Recurring Anti-Patterns
 
-From recent debugging sessions, we've encountered these **recurring anti-patterns**:
-
-1. **Liquid Template Syntax in Code Examples**
-   - {`{{ variable }}`} in Vue/Handlebars examples gets interpreted as Liquid
-   - Breaks MDX compilation
-   - Fix: Wrap in MDX expression syntax {`{`{{ variable }}`}`}
-
-2. **Unescaped Angle Brackets in Markdown**
-   - `&lt;70` in headings/text parsed as incomplete HTML tag
-   - Causes "Unexpected character" MDX errors
-   - Fix: Escape with HTML entities `&lt;70`
-
-3. **Component Prop Mismatches**
-   - SkillHeader expects `fileName` but receives `skillId`
-   - Causes SSG build failure with "Cannot read properties of undefined"
-   - Fix: Use correct prop names, validate against component interface
-
-4. **Missing Critical Files**
-   - Skills without hero images or ZIP downloads
-   - Skills not in `website/src/data/skills.ts` (INVISIBLE on site!)
-   - Broken internal links to non-existent pages
-
-5. **Cache Corruption**
-   - Stale Webpack/Docusaurus cache causing phantom errors
-   - TypeScript errors from cached builds
-   - Fix: Clear `.docusaurus`, `build`, `node_modules/.cache`
-
-## Shibboleths: Expert vs Novice
-
-**Novice approach**:
-- "Let's add more comprehensive testing"
-- Focuses on post-build validation
-- Runs full build to check for errors (slow)
-- Doesn't understand MDX vs Markdown differences
-
-**Expert approach**:
-- "Prevent at commit time, validate before expensive build"
-- Pre-commit hooks catch 90% of issues in &lt;5 seconds
-- Knows Liquid syntax precedence rules in MDX
-- Understands SSG vs SSR error context
-- Uses targeted validation (grep patterns, not full AST parsing)
+| # | Problem | Symptom | Fix |
+|---|---------|---------|-----|
+| 1 | Liquid syntax in examples | Liquid templates break MDX | Wrap in backtick expression |
+| 2 | Unescaped angle brackets | `&lt;70` parsed as HTML | Use `&lt;70` |
+| 3 | Wrong SkillHeader props | SSG build failure | Use `fileName` not `skillId` |
+| 4 | Missing critical files | Skill invisible on site | Add to `skills.ts` |
+| 5 | Cache corruption | Phantom errors | Clear `.docusaurus`, `build` |
 
 ## Quick Start
 
-### Install Hooks (One-Time Setup)
-
+### Install Hooks (One-Time)
 ```bash
-# Run from project root
 npm run install-hooks
-
-# This creates:
-# - .git/hooks/pre-commit (MDX validation)
-# - package.json scripts: prebuild, postbuild
 ```
 
 ### Manual Validation
-
 ```bash
-# Check all markdown for Liquid syntax issues
-npm run validate:liquid
-
-# Check for unescaped angle brackets
-npm run validate:brackets
-
-# Validate SkillHeader props across all docs
-npm run validate:props
-
-# Full pre-build validation
-npm run validate:all
+npm run validate:liquid    # Liquid syntax
+npm run validate:brackets  # Angle brackets
+npm run validate:props     # SkillHeader props
+npm run validate:all       # All checks
 ```
 
-## Pre-Commit Validation
-
-### What Gets Checked
-
-1. **Liquid Template Syntax** (Fast: &lt;1s)
-   - Scan modified `.md` files for {`{{ ... }}`} outside code blocks
-   - Detect unescaped Liquid in Vue/Handlebars examples
-   - Auto-fix available: wrap in MDX expression syntax
-
-2. **Angle Bracket Escaping** (Fast: &lt;1s)
-   - Find `<\d` (angle bracket + digit) in markdown text
-   - Find comparison operators in headings (`&lt;70`, `&gt;2 pages`)
-   - Auto-fix: Replace with HTML entities
-
-3. **SkillHeader Prop Validation** (Fast: &lt;2s)
-   - Extract all `<SkillHeader .../>` component uses
-   - Verify prop names match component interface
-   - Check: `fileName` exists, `skillId` doesn't, `difficulty`/`category`/`tags` removed
-
-4. **Required Files Check** (Fast: &lt;1s)
-   - For new skills: Hero image must exist
-   - For new skills: ZIP must exist or be generatable
-   - For new skills: Entry in `skills.ts` required
-
-### Hook Installation Script
-
-**File**: `.git/hooks/pre-commit` (auto-generated)
-
+### Clear Cache (When Stuck)
 ```bash
-#!/bin/bash
-# Auto-generated by site-reliability-engineer skill
-# DO NOT EDIT MANUALLY - regenerate with: npm run install-hooks
-
-echo "🔍 Running pre-commit validation..."
-
-# Get list of staged .md files
-STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$' || true)
-
-if [ -z "$STAGED_MD" ]; then
-  echo "✅ No markdown files to validate"
-  exit 0
-fi
-
-# Run validation scripts
-node scripts/validate-liquid.js $STAGED_MD || exit 1
-node scripts/validate-brackets.js $STAGED_MD || exit 1
-node scripts/validate-skill-props.js $STAGED_MD || exit 1
-
-echo "✅ Pre-commit validation passed"
-exit 0
-```
-
-## Pre-Build Validation
-
-Runs before expensive Docusaurus build (`npm run build`).
-
-### What Gets Checked
-
-1. **Internal Link Validation** (Medium: ~10s)
-   - Parse all markdown files for internal links
-   - Verify targets exist (files, anchors)
-   - Report broken links with file:line
-
-2. **Skills Data Completeness** (Fast: &lt;3s)
-   - Every skill folder → entry in `skills.ts`?
-   - Every `skills.ts` entry → documentation file?
-   - Every skill → hero image + ZIP?
-
-3. **TypeScript Compilation** (Medium: ~15s)
-   - Run `tsc --noEmit` to catch type errors
-   - Prevents SSG failures from type mismatches
-
-4. **Image Optimization Check** (Fast: &lt;5s)
-   - Hero images under 1MB threshold
-   - All images web-optimized (not raw PNG/TIFF)
-
-### npm Script Integration
-
-**File**: `package.json` (add these scripts)
-
-```json
-{
-  "scripts": {
-    "prebuild": "node scripts/pre-build-validation.js",
-    "postbuild": "node scripts/post-build-health-check.js",
-    "validate:liquid": "node scripts/validate-liquid.js 'website/docs/**/*.md'",
-    "validate:brackets": "node scripts/validate-brackets.js 'website/docs/**/*.md'",
-    "validate:props": "node scripts/validate-skill-props.js 'website/docs/skills/*.md'",
-    "validate:links": "node scripts/validate-internal-links.js",
-    "validate:all": "npm run validate:liquid && npm run validate:brackets && npm run validate:props && npm run validate:links",
-    "install-hooks": "node scripts/install-git-hooks.js"
-  }
-}
-```
-
-## Post-Build Health Check
-
-Runs after successful build, generates health report.
-
-### Metrics Collected
-
-1. **Build Size Analysis**
-   - Bundle size (client/server)
-   - Alert if &gt;10MB increase
-   - Track per-page bundle size
-
-2. **Broken Link Detection**
-   - Docusaurus warns about broken links
-   - Parse warnings, generate report
-   - Categorize: internal vs external
-
-3. **Performance Estimates**
-   - Lighthouse scores (if configured)
-   - Bundle parse/execution time estimates
-
-4. **Health Report Output**
-
-**File**: `website/.build-health.json`
-
-```json
-{
-  "timestamp": "2025-11-26T05:00:00Z",
-  "build": {
-    "success": true,
-    "duration_ms": 45328,
-    "bundle_size_mb": 8.2,
-    "warnings": 3,
-    "errors": 0
-  },
-  "broken_links": {
-    "count": 2,
-    "details": [
-      {
-        "file": "docs/skills/cv_creator.md",
-        "line": 393,
-        "target": "/planning/cv-creator-architecture.md",
-        "type": "internal"
-      }
-    ]
-  },
-  "skills": {
-    "total": 40,
-    "with_hero_images": 40,
-    "with_zips": 40,
-    "in_skills_ts": 40
-  },
-  "recommendation": "Fix 2 broken internal links before deployment"
-}
-```
-
-## Common Anti-Patterns
-
-### Anti-Pattern: Full Build for Validation
-
-**What it looks like**:
-```bash
-# Checking for errors...
-npm run build  # Takes 2-3 minutes
-```
-
-**Why it's wrong**:
-- Expensive (minutes vs seconds)
-- Slow feedback loop
-- Doesn't prevent commit of broken code
-- Cache issues mask real errors
-
-**What to do instead**:
-```bash
-# Fast pre-commit validation
-npm run validate:all  # &lt;30 seconds
-# Only build if validation passes
-```
-
-**Detection**: Pre-commit hook missing or disabled
-
-### Anti-Pattern: Manual Cache Clearing
-
-**What it looks like**:
-```bash
-# Build failing, let me try clearing cache
 rm -rf .docusaurus build node_modules/.cache
 npm run build
 ```
 
-**Why it's wrong**:
-- Reactive, not proactive
-- Manual process (forgotten)
-- Doesn't address root cause
+## Pre-Commit Validation
 
-**What to do instead**:
-```bash
-# Auto-detect cache issues
-npm run clean-build  # Script that clears cache THEN builds
-# Or: Post-build health check detects cache corruption signs
-```
+The pre-commit hook automatically:
+1. **Liquid syntax** - Scans for double-brace templates outside code blocks
+2. **Angle brackets** - Finds `<digit` patterns
+3. **SkillHeader props** - Validates component usage
+4. **Required files** - Checks hero images, ZIPs exist
+
+**Speed**: Under 5 seconds for typical commits
+
+## Expert vs Novice Approach
+
+| Novice | Expert |
+|--------|--------|
+| Runs full build to check | Pre-commit catches 90% in 5 seconds |
+| Manual cache clearing | Auto-detect cache issues |
+| Ignores warnings | Zero-tolerance for broken links |
+| Simple regex validation | Context-aware (skips code blocks) |
+
+## Anti-Patterns
+
+### Anti-Pattern: Full Build for Validation
+**What it looks like**: `npm run build` to check for errors
+**Why wrong**: Minutes vs seconds, slow feedback
+**Instead**: `npm run validate:all` (under 30 seconds)
 
 ### Anti-Pattern: Ignoring Build Warnings
-
-**What it looks like**:
-```
-[WARNING] Broken link: /docs/skills/nonexistent
-[SUCCESS] Build completed
-# "Success! Ship it!"
-```
-
-**Why it's wrong**:
-- Broken links = poor UX
-- Warnings often indicate real issues
-- Accumulates technical debt
-
-**What to do instead**:
-```bash
-# Post-build validation fails on warnings
-npm run postbuild  # Exits non-zero if broken links > 0
-```
-
-### Anti-Pattern: Regex for MDX Parsing
-
-**What it looks like**:
-```javascript
-// Check for Liquid syntax
-const liquidPattern = /\{\{.*?\}\}/g;
-if (content.match(liquidPattern)) {
-  throw new Error("Liquid syntax detected!");
-}
-```
-
-**Why it's wrong**:
-- False positives in code blocks
-- Doesn't understand MDX context
-- Misses escaped syntax
-
-**What to do instead**:
-```javascript
-// Context-aware detection
-const lines = content.split('\n');
-let inCodeBlock = false;
-for (const line of lines) {
-  if (line.trim().startsWith('```')) inCodeBlock = !inCodeBlock;
-  if (inCodeBlock) continue;  // Skip code blocks
-  if (line.includes('{{') && !line.includes('{`{{')) {
-    // Found unescaped Liquid outside code block
-  }
-}
-```
-
-## Validation Scripts (Working Code)
-
-### Script 1: Liquid Syntax Validator
-
-**File**: `scripts/validate-liquid.js`
-
-```javascript
-#!/usr/bin/env node
-const fs = require('fs');
-const glob = require('glob');
-
-// Detect unescaped Liquid template syntax in MDX files
-function validateLiquid(filePath) {
-  const content = fs.readFileSync(filePath, 'utf8');
-  const lines = content.split('\n');
-  const errors = [];
-
-  let inCodeBlock = false;
-  let inFrontmatter = false;
-
-  lines.forEach((line, idx) => {
-    // Track code blocks
-    if (line.trim().startsWith('```')) {
-      inCodeBlock = !inCodeBlock;
-      return;
-    }
-
-    // Track frontmatter
-    if (line.trim() === '---') {
-      inFrontmatter = !inFrontmatter;
-      return;
-    }
-
-    // Skip if in code block or frontmatter
-    if (inCodeBlock || inFrontmatter) return;
-
-    // Check for unescaped Liquid syntax
-    const liquidMatch = line.match(/\{\{[^`].*?\}\}/);
-    if (liquidMatch && !line.includes('{`{{')) {
-      errors.push({
-        line: idx + 1,
-        column: line.indexOf(liquidMatch[0]) + 1,
-        text: liquidMatch[0],
-        suggestion: `{\\`${liquidMatch[0]}\\`}`
-      });
-    }
-  });
-
-  return errors;
-}
-
-// Process files
-const files = process.argv.slice(2);
-let totalErrors = 0;
-
-files.forEach(file => {
-  const errors = validateLiquid(file);
-  if (errors.length > 0) {
-    console.error(`❌ ${file}:`);
-    errors.forEach(err => {
-      console.error(`   Line ${err.line}:${err.column}: ${err.text}`);
-      console.error(`   Fix: ${err.suggestion}`);
-    });
-    totalErrors += errors.length;
-  }
-});
-
-if (totalErrors > 0) {
-  console.error(`\n❌ Found ${totalErrors} Liquid syntax error(s)`);
-  console.error(`\nRun: npm run fix:liquid (to auto-fix)`);
-  process.exit(1);
-} else {
-  console.log('✅ No Liquid syntax errors found');
-  process.exit(0);
-}
-```
-
-### Script 2: Angle Bracket Validator
-
-**File**: `scripts/validate-brackets.js`
-
-```javascript
-#!/usr/bin/env node
-const fs = require('fs');
-
-function validateBrackets(filePath) {
-  const content = fs.readFileSync(filePath, 'utf8');
-  const lines = content.split('\n');
-  const errors = [];
-
-  let inCodeBlock = false;
-
-  lines.forEach((line, idx) => {
-    if (line.trim().startsWith('```')) {
-      inCodeBlock = !inCodeBlock;
-      return;
-    }
-    if (inCodeBlock) return;
-
-    // Check for unescaped < followed by digit or > followed by digit
-    const lessThanMatch = line.match(/<(\d+)/);
-    const greaterThanMatch = line.match(/>(\d+)/);
-
-    if (lessThanMatch && !line.includes('&lt;')) {
-      errors.push({
-        line: idx + 1,
-        text: lessThanMatch[0],
-        fix: lessThanMatch[0].replace('<', '&lt;')
-      });
-    }
-
-    if (greaterThanMatch && !line.includes('&gt;')) {
-      errors.push({
-        line: idx + 1,
-        text: greaterThanMatch[0],
-        fix: greaterThanMatch[0].replace('>', '&gt;')
-      });
-    }
-  });
-
-  return errors;
-}
-
-const files = process.argv.slice(2);
-let totalErrors = 0;
-
-files.forEach(file => {
-  const errors = validateBrackets(file);
-  if (errors.length > 0) {
-    console.error(`❌ ${file}:`);
-    errors.forEach(err => {
-      console.error(`   Line ${err.line}: "${err.text}" → "${err.fix}"`);
-    });
-    totalErrors += errors.length;
-  }
-});
-
-if (totalErrors > 0) {
-  console.error(`\n❌ Found ${totalErrors} unescaped angle bracket(s)`);
-  process.exit(1);
-} else {
-  console.log('✅ No unescaped angle brackets found');
-  process.exit(0);
-}
-```
-
-### Script 3: SkillHeader Prop Validator
-
-**File**: `scripts/validate-skill-props.js`
-
-```javascript
-#!/usr/bin/env node
-const fs = require('fs');
-
-function validateSkillHeader(filePath) {
-  const content = fs.readFileSync(filePath, 'utf8');
-  const errors = [];
-
-  // Find SkillHeader component usage
-  const headerMatch = content.match(/<SkillHeader[\s\S]*?\/>/);
-  if (!headerMatch) return errors;
-
-  const headerText = headerMatch[0];
-  const lines = content.split('\n');
-  const lineNum = lines.findIndex(l => l.includes('<SkillHeader')) + 1;
-
-  // Check for correct prop: fileName (not skillId)
-  if (headerText.includes('skillId=')) {
-    errors.push({
-      line: lineNum,
-      issue: 'Uses "skillId" prop instead of "fileName"',
-      fix: 'Change skillId="..." to fileName="..."'
-    });
-  }
-
-  // Check for removed props (difficulty, category, tags)
-  const deprecatedProps = ['difficulty', 'category', 'tags'];
-  deprecatedProps.forEach(prop => {
-    if (headerText.includes(`${prop}=`)) {
-      errors.push({
-        line: lineNum,
-        issue: `Uses deprecated "${prop}" prop`,
-        fix: `Remove ${prop} prop (only use: skillName, fileName, description)`
-      });
-    }
-  });
-
-  // Check for required props
-  if (!headerText.includes('skillName=')) {
-    errors.push({
-      line: lineNum,
-      issue: 'Missing required "skillName" prop'
-    });
-  }
-
-  if (!headerText.includes('fileName=')) {
-    errors.push({
-      line: lineNum,
-      issue: 'Missing required "fileName" prop'
-    });
-  }
-
-  return errors;
-}
-
-const files = process.argv.slice(2);
-let totalErrors = 0;
-
-files.forEach(file => {
-  const errors = validateSkillHeader(file);
-  if (errors.length > 0) {
-    console.error(`❌ ${file}:`);
-    errors.forEach(err => {
-      console.error(`   Line ${err.line}: ${err.issue}`);
-      if (err.fix) console.error(`   Fix: ${err.fix}`);
-    });
-    totalErrors += errors.length;
-  }
-});
-
-if (totalErrors > 0) {
-  console.error(`\n❌ Found ${totalErrors} SkillHeader prop error(s)`);
-  process.exit(1);
-} else {
-  console.log('✅ SkillHeader props validated successfully');
-  process.exit(0);
-}
-```
-
-## Hook Installation
-
-### Auto-Install Script
-
-**File**: `scripts/install-git-hooks.js`
-
-```javascript
-#!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
-
-const HOOK_SCRIPT = `#!/bin/bash
-# Auto-generated by site-reliability-engineer skill
-# Regenerate with: npm run install-hooks
-
-echo "🔍 Running pre-commit validation..."
-
-# Get staged .md files
-STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '\\.md$' || true)
-
-if [ -z "$STAGED_MD" ]; then
-  echo "✅ No markdown files to validate"
-  exit 0
-fi
-
-# Run validations
-cd website
-npm run validate:liquid $STAGED_MD || exit 1
-npm run validate:brackets $STAGED_MD || exit 1
-npm run validate:props $STAGED_MD || exit 1
-
-echo "✅ Pre-commit validation passed"
-exit 0
-`;
-
-const hookPath = path.join(process.cwd(), '.git/hooks/pre-commit');
-
-// Write hook
-fs.writeFileSync(hookPath, HOOK_SCRIPT, { mode: 0o755 });
-console.log('✅ Installed pre-commit hook at .git/hooks/pre-commit');
-
-// Add npm scripts if not present
-const packageJsonPath = path.join(process.cwd(), 'website/package.json');
-const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-
-const scriptsToAdd = {
-  'validate:liquid': 'node scripts/validate-liquid.js',
-  'validate:brackets': 'node scripts/validate-brackets.js',
-  'validate:props': 'node scripts/validate-skill-props.js',
-  'validate:all': 'npm run validate:liquid && npm run validate:brackets && npm run validate:props',
-  'prebuild': 'npm run validate:all',
-};
-
-let added = false;
-Object.entries(scriptsToAdd).forEach(([name, script]) => {
-  if (!packageJson.scripts[name]) {
-    packageJson.scripts[name] = script;
-    added = true;
-    console.log(`✅ Added npm script: ${name}`);
-  }
-});
-
-if (added) {
-  fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
-  console.log('✅ Updated package.json with validation scripts');
-}
-
-console.log('\n🎉 Hook installation complete!');
-console.log('\nTest with: npm run validate:all');
-```
-
-## Configuration
-
-**File**: `website/.site-reliability.config.json`
-
-```json
-{
-  "validation": {
-    "liquid": {
-      "enabled": true,
-      "autoFix": false,
-      "ignorePatterns": ["**/*.example.md"]
-    },
-    "brackets": {
-      "enabled": true,
-      "autoFix": true
-    },
-    "skillProps": {
-      "enabled": true,
-      "requiredProps": ["skillName", "fileName", "description"],
-      "deprecatedProps": ["difficulty", "category", "tags"]
-    }
-  },
-  "thresholds": {
-    "bundleSizeMB": 10,
-    "brokenLinksMax": 0,
-    "imageMaxSizeKB": 1024
-  },
-  "hooks": {
-    "preCommit": true,
-    "preBuild": true,
-    "postBuild": true
-  }
-}
-```
-
-## Troubleshooting
-
-### Issue: Hook Not Running
-
-**Symptom**: Commit succeeds with invalid markdown
-
-**Diagnosis**:
-```bash
-ls -la .git/hooks/pre-commit
-# Should show executable permissions
-```
-
-**Fix**:
-```bash
-chmod +x .git/hooks/pre-commit
-# Or reinstall: npm run install-hooks
-```
-
-### Issue: False Positives
-
-**Symptom**: Validation fails on correct code
-
-**Diagnosis**: Check if pattern is in code block
-```bash
-# Manually review file
-# Verify code blocks are properly marked with ```
-```
-
-**Fix**: Add to ignore patterns in config, or fix detection logic
-
-### Issue: Slow Validation
-
-**Symptom**: Pre-commit takes &gt;10 seconds
-
-**Diagnosis**:
-```bash
-time npm run validate:all
-# Identify slow script
-```
-
-**Fix**: Optimize glob patterns, add file count limits
-
-## Integration with CI/CD
-
-### GitHub Actions Workflow
-
-```yaml
-name: Build Health Check
-on: [push, pull_request]
-
-jobs:
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: cd website && npm ci
-
-      - name: Run pre-build validation
-        run: cd website && npm run validate:all
-
-      - name: Build
-        run: cd website && npm run build
-
-      - name: Post-build health check
-        run: cd website && npm run postbuild
-
-      - name: Upload health report
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-health
-          path: website/.build-health.json
-```
-
-## Evolution Timeline
-
-**2024 Early**: Manual debugging of build errors, no validation
-
-**2024 Mid**: Post-build error detection, manual cache clearing
-
-**2024 Late**: Recognition of recurring anti-patterns (Liquid, brackets)
-
-**2025 Current**: Pre-commit validation, automated health checks, this skill
-
-**Watch For**: Docusaurus v4 changes to MDX parsing, new component patterns
+**What it looks like**: "Build succeeded, ship it!" (ignoring warnings)
+**Why wrong**: Broken links = poor UX, tech debt
+**Instead**: Post-build validation fails on warnings
+
+### Anti-Pattern: Naive Regex Validation
+**What it looks like**: `/\{\{.*?\}\}/` (matches in code blocks too)
+**Why wrong**: False positives in code examples
+**Instead**: Track code block state, skip protected regions
+
+## Scripts (in `scripts/` folder)
+
+| Script | Purpose |
+|--------|---------|
+| `validate-liquid.js` | Detect unescaped Liquid syntax |
+| `validate-brackets.js` | Detect unescaped angle brackets |
+| `validate-skill-props.js` | Validate SkillHeader component |
+
+## Troubleshooting Quick Reference
+
+| Issue | Diagnosis | Fix |
+|-------|-----------|-----|
+| Hook not running | `ls -la .git/hooks/pre-commit` | `chmod +x` or reinstall |
+| False positives | Pattern in code block | Check ``` markers |
+| Slow validation | `time npm run validate:all` | Optimize glob patterns |
 
 ## Success Metrics
 
-After installing this skill's hooks:
-- **Build failure rate**: Reduce from 15% → &lt;2%
-- **Time to diagnose errors**: Reduce from 10min → &lt;1min
-- **False commit rate**: &lt;5% (commits that pass hooks but fail CI)
-- **Validation speed**: &lt;30 seconds for typical commit
+After installing hooks:
+- **Build failure rate**: 15% → under 2%
+- **Time to diagnose errors**: 10 min → under 1 min
+- **Validation speed**: Under 30 seconds
+
+## Reference Files
+
+- `references/validation-logic.md` - Context-aware detection patterns
+- `references/ci-cd-integration.md` - GitHub Actions, health reports
+- `scripts/` - Working validation scripts
 
 ---
 
-**This skill prevents**: Liquid syntax errors | Angle bracket MDX failures | Component prop mismatches | Missing skill assets | Broken internal links
+**Prevents**: Liquid errors | Angle bracket failures | Prop mismatches | Missing assets | Broken links
 
-**Use with**: skill-documentarian (for skill sync) | docusaurus-expert (for advanced config)
+**Use with**: skill-documentarian (sync) | docusaurus-expert (advanced config)

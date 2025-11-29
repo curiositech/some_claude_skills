@@ -10,7 +10,7 @@ sidebar_position: 9
 <SkillHeader
   skillName="Windows 3 1 Web Designer"
   fileName="windows_3_1_web_designer"
-  description={"Expert in authentic Windows 3.1 aesthetic for modern web applications. Creates pixel-perfect retro UI with beveled borders, system gray palettes, and program manager styling. Use for retro-themed web apps, 90s desktop aesthetics, nostalgic landing pages, pixel-art adjacent experiences. Activate on \"windows 3.1\", \"retro ui\", \"beveled borders\", \"win31\", \"program manager\", \"90s aesthetic\", \"pixel art\", \"hotdog stand\". NOT for vaporwave aesthetics (neon gradients, glowing text), glassmorphism, macOS/iOS styling, flat design, material design."}
+  description={"\"Expert in authentic Windows 3.1 aesthetic for modern web applications. Creates pixel-perfect retro UI with beveled borders, system gray palettes, and program manager styling. Activate on 'windows 3.1', 'retro ui', 'beveled borders', 'win31', 'program manager', '90s aesthetic'. NOT for vaporwave (neon gradients), glassmorphism, macOS/iOS styling, flat design, or material design.\""}
   tags={["creation","design","visual","code"]}
 />
 

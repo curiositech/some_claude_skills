@@ -219,6 +219,7 @@ This skill includes comprehensive reference materials:
 
 - `references/algorithms.md` - NetworkX code, centrality formulas, Gladwell classification
 - `references/graph-databases.md` - Neo4j, Neptune, TigerGraph, ArangoDB queries
+- `references/data-sources.md` - LinkedIn network data acquisition strategies, APIs, scraping tools, legal considerations
 
 ## Example Output: AI Safety Superconnectors
 
