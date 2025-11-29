@@ -9,6 +9,11 @@ const config: Config = {
   tagline: 'Expert AI Agents for Specialized Tasks',
   favicon: 'img/favicon.ico',
 
+  // Client modules that load before the app - plausible shim prevents errors in dev
+  clientModules: [
+    require.resolve('./src/clientModules/plausibleShim.ts'),
+  ],
+
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
@@ -114,8 +119,8 @@ const config: Config = {
           position: 'left',
         },
         {
-          to: '/docs/guides/prompt-learning-mcp',
-          label: 'Prompt Learning',
+          to: '/mcps',
+          label: 'MCPs',
           position: 'left',
         },
         {

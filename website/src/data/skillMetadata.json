@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2025-11-29T00:43:51.955Z",
+  "generatedAt": "2025-11-29T01:00:18.816Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
-      "createdAt": null,
-      "updatedAt": null,
+      "createdAt": "2025-11-28T16:43:50-08:00",
+      "updatedAt": "2025-11-28T16:43:50-08:00",
       "totalLines": 361,
       "totalFiles": 1,
       "skillMdSize": 10585,
@@ -39,8 +39,8 @@
     },
     "automatic-stateful-prompt-improver": {
       "id": "automatic-stateful-prompt-improver",
-      "createdAt": null,
-      "updatedAt": null,
+      "createdAt": "2025-11-28T16:43:50-08:00",
+      "updatedAt": "2025-11-28T16:43:50-08:00",
       "totalLines": 3123,
       "totalFiles": 6,
       "skillMdSize": 14811,
@@ -88,7 +88,7 @@
     "collage-layout-expert": {
       "id": "collage-layout-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-26T20:09:33-08:00",
+      "updatedAt": "2025-11-28T16:43:50-08:00",
       "totalLines": 2102,
       "totalFiles": 8,
       "skillMdSize": 13078,
@@ -232,7 +232,7 @@
     "metal-shader-expert": {
       "id": "metal-shader-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-11-28T16:43:50-08:00",
       "totalLines": 734,
       "totalFiles": 2,
       "skillMdSize": 13871,
@@ -304,7 +304,7 @@
     "physics-rendering-expert": {
       "id": "physics-rendering-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-11-28T16:43:50-08:00",
       "totalLines": 1140,
       "totalFiles": 2,
       "skillMdSize": 18420,
@@ -376,7 +376,7 @@
     "sound-engineer": {
       "id": "sound-engineer",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-11-28T16:43:50-08:00",
       "totalLines": 565,
       "totalFiles": 2,
       "skillMdSize": 11348,
@@ -472,7 +472,7 @@
     "voice-audio-engineer": {
       "id": "voice-audio-engineer",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-11-28T16:43:50-08:00",
       "totalLines": 705,
       "totalFiles": 2,
       "skillMdSize": 12476,
@@ -484,7 +484,7 @@
     "vr-avatar-engineer": {
       "id": "vr-avatar-engineer",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-11-28T16:43:50-08:00",
       "totalLines": 184,
       "totalFiles": 1,
       "skillMdSize": 7909,

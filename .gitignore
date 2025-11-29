@@ -41,3 +41,6 @@ temp/
 
 # Claude plugin artifacts
 .claude-plugin/
+
+# Private portfolio site (submodule)
+erichowens_com/

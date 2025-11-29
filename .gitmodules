@@ -4,3 +4,6 @@
 [submodule "mcp-servers/prompt-learning"]
 	path = mcp-servers/prompt-learning
 	url = https://github.com/erichowens/prompt-learning-mcp.git
+[submodule "erichowens_com"]
+	path = erichowens_com
+	url = https://github.com/erichowens/erichowens_com.git
