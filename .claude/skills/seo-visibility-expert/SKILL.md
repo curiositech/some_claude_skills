@@ -52,7 +52,7 @@ Get your web projects discovered by both traditional search engines AND AI syste
 2. **Add JSON-LD schema** → Rich snippets in search results
 3. **Verify robots.txt** → Allow good bots, block bad ones
 4. **Generate sitemap.xml** → Help crawlers index everything
-5. **Check Core Web Vitals** → PageSpeed Insights score >90
+5. **Check Core Web Vitals** → PageSpeed Insights score &gt;90
 6. **Add Open Graph tags** → Beautiful social previews
 7. **Create humans.txt** → Credit your team, signal legitimacy
 
@@ -235,7 +235,7 @@ Sitemap: https://yoursite.com/sitemap.xml
 **Pre-launch checklist:**
 1. Build hunter network 2-4 weeks before
 2. Prepare all assets (logo, screenshots, video)
-3. Write compelling tagline (<60 chars)
+3. Write compelling tagline (under 60 chars)
 4. Create launch day communication plan
 5. Line up first 10-20 supporters for immediate upvotes
 
@@ -292,9 +292,9 @@ Show HN: I built [X] to solve [specific problem]
 **Target scores:**
 | Metric | Good | Needs Work | Poor |
 |--------|------|------------|------|
-| LCP (Largest Contentful Paint) | <2.5s | 2.5-4s | >4s |
-| INP (Interaction to Next Paint) | <200ms | 200-500ms | >500ms |
-| CLS (Cumulative Layout Shift) | <0.1 | 0.1-0.25 | >0.25 |
+| LCP (Largest Contentful Paint) | &lt;2.5s | 2.5-4s | &gt;4s |
+| INP (Interaction to Next Paint) | &lt;200ms | 200-500ms | &gt;500ms |
+| CLS (Cumulative Layout Shift) | &lt;0.1 | 0.1-0.25 | &gt;0.25 |
 
 **Quick fixes:**
 - LCP: Optimize images, preload critical assets
