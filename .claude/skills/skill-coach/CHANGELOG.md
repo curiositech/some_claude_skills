@@ -2,6 +2,19 @@
 
 All notable changes to the skill-coach skill will be documented in this file.
 
+## [2.1.1] - 2025-12-01
+
+### Added
+- `scripts/check_self_contained.py` - Validates skills ship working tools, not just instructions
+  - Detects Phantom Tools (referenced files that don't exist)
+  - Detects Template Soup (scripts with TODO/FIXME markers)
+  - Validates MCP server completeness (package.json, dependencies, source)
+  - Checks agent definition completeness
+  - Reports "instructions only" vs "self-contained with tools"
+
+### Changed
+- skill-coach now practices what it preaches (eats its own dogfood)
+
 ## [2.1.0] - 2025-12-01
 
 ### Added
