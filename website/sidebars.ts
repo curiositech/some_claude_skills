@@ -36,6 +36,7 @@ const sidebars: SidebarsConfig = {
         'skills/skill_coach',
         'skills/skill_documentarian',
         'skills/swift_executor',
+        'skills/automatic_stateful_prompt_improver',
       ],
     },
     {
@@ -63,6 +64,7 @@ const sidebars: SidebarsConfig = {
         'skills/vr_avatar_engineer',
         'skills/physics_rendering_expert',
         'skills/collage_layout_expert',
+        'skills/2000s_visualization_expert',
       ],
     },
     {
@@ -112,6 +114,8 @@ const sidebars: SidebarsConfig = {
         'skills/team_builder',
         'skills/competitive_cartographer',
         'skills/hr_network_analyst',
+        'skills/indie_monetization_strategist',
+        'skills/seo_visibility_expert',
       ],
     },
     {
@@ -121,6 +125,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'skills/career_biographer',
         'skills/cv_creator',
+        'skills/job_application_optimizer',
         'skills/personal_finance_coach',
         'skills/tech_entrepreneur_coach_adhd',
         'skills/project_management_guru_adhd',
@@ -137,6 +142,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'skills/site_reliability_engineer',
+        'skills/code_necromancer',
       ],
     },
   ],
