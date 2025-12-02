@@ -190,8 +190,7 @@ html:not([data-theme='dark']) .plain {
 
 /* Responsive retro headline */
 .hero__title,
-.readme-header h1,
-[class*="heroTitle"] {
+.readme-header h1 {
   font-size: clamp(1.5rem, 10vw, 4rem);
   word-break: break-word;
   max-width: 100%;
