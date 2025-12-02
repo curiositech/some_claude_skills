@@ -192,7 +192,8 @@ html:not([data-theme='dark']) .plain {
 .hero__title,
 .readme-header h1 {
   font-size: clamp(1.5rem, 10vw, 4rem);
-  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
   max-width: 100%;
   padding: 0 1rem;
   box-sizing: border-box;
