@@ -207,7 +207,8 @@ html:not([data-theme='dark']) .plain {
 /* Fallback for very small screens */
 @media (max-width: 400px) {
   .hero__title,
-  .readme-header h1 {
+  .readme-header h1,
+  [class*="heroTitle"] {
     font-size: 1.3rem;
     letter-spacing: -0.01em;
   }
