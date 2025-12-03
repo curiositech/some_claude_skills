@@ -674,3 +674,90 @@ main[class*="docMainContainer"],
     height: 32px;
   }
 }
+
+/* Mobile-specific text containment for Win3.1 windows */
+@media (max-width: 996px) {
+  /* Ensure text stays within window containers */
+  .win31-window,
+  .win31-panel,
+  .win31-doc-content {
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .win31-doc-content {
+    padding: 12px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .win31-doc-content h1 {
+    font-size: 28px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .win31-doc-content h2 {
+    font-size: 22px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .win31-doc-content h3 {
+    font-size: 16px;
+  }
+
+  .win31-doc-content pre {
+    max-width: 100%;
+    overflow-x: auto;
+    font-size: 12px;
+    padding: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .win31-doc-content code {
+    font-size: 12px;
+    word-break: break-all;
+  }
+
+  /* Prevent inline code from overflowing */
+  .win31-doc-content p code,
+  .win31-doc-content li code {
+    word-break: break-all;
+  }
+
+  .win31-titlebar {
+    min-width: 0;
+  }
+
+  .win31-title-text {
+    font-size: 11px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: calc(100% - 50px);
+  }
+
+  /* Constrain menu items */
+  .win31-menu-item {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  /* Navbar adjustments */
+  .navbar__title {
+    font-size: 12px !important;
+  }
+
+  /* Hide Winamp from mobile hamburger menu dropdown */
+  .navbar-sidebar .navbar__items [class*="musicPlayer"],
+  .navbar-sidebar [class*="MusicPlayer"],
+  .navbar__inner .navbar-sidebar__items [class*="musicPlayer"],
+  .navbar__inner .navbar-sidebar__items [class*="MusicPlayer"] {
+    display: none !important;
+  }
+}

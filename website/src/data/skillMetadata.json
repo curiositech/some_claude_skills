@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-12-01T22:27:04.539Z",
+  "generatedAt": "2025-12-03T04:11:06.107Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
@@ -388,7 +388,7 @@
     "seo-visibility-expert": {
       "id": "seo-visibility-expert",
       "createdAt": "2025-12-01T14:26:53-08:00",
-      "updatedAt": "2025-12-01T14:26:53-08:00",
+      "updatedAt": "2025-12-01T14:27:02-08:00",
       "totalLines": 400,
       "totalFiles": 1,
       "skillMdSize": 11622,
@@ -425,10 +425,10 @@
       "id": "skill-documentarian",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-12-01T14:26:53-08:00",
-      "totalLines": 1999,
+      "totalLines": 2064,
       "totalFiles": 10,
-      "skillMdSize": 8224,
-      "skillMdLines": 218,
+      "skillMdSize": 10662,
+      "skillMdLines": 283,
       "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": true

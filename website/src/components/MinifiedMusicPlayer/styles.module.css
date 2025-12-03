@@ -216,17 +216,20 @@
   height: 100%;
   overflow: hidden;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 
 .marqueeText {
   display: inline-block;
   color: var(--winamp-display-text);
   font-family: 'VT323', monospace;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 1px;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   padding-left: 100%;
+  flex-shrink: 0;
 }
 
 .marqueeText.scrolling {

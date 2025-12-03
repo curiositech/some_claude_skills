@@ -41,10 +41,10 @@ export default function MinifiedMusicPlayer() {
   const [showNullsoft, setShowNullsoft] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
 
-  // Draggable positioning state
-  const [isDragging, setIsDragging] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  // Dragging disabled - was causing 150px jump bug on mobile
+  // const [isDragging, setIsDragging] = useState(false);
+  // const [position, setPosition] = useState({ x: 0, y: 0 });
+  // const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
 
   // Skin quick-switcher
   type SkinType = 'classic' | 'matrix' | 'synthwave' | 'ice' | 'amber';
@@ -132,18 +132,18 @@ export default function MinifiedMusicPlayer() {
     setTimeout(() => setShowNullsoft(false), 3000);
   };
 
-  // Drag handlers for repositioning
-  const handleDragStart = (e: React.MouseEvent) => {
-    if (playerRef.current) {
-      const rect = playerRef.current.getBoundingClientRect();
-      setDragOffset({
-        x: e.clientX - rect.left - position.x,
-        y: e.clientY - rect.top - position.y
-      });
-      setIsDragging(true);
-      markInteracted();
-    }
-  };
+  // Drag handlers disabled - was causing 150px jump bug
+  // const handleDragStart = (e: React.MouseEvent) => {
+  //   if (playerRef.current) {
+  //     const rect = playerRef.current.getBoundingClientRect();
+  //     setDragOffset({
+  //       x: e.clientX - rect.left - position.x,
+  //       y: e.clientY - rect.top - position.y
+  //     });
+  //     setIsDragging(true);
+  //     markInteracted();
+  //   }
+  // };
 
   // Close skin menu when clicking outside
   useEffect(() => {
@@ -164,41 +164,22 @@ export default function MinifiedMusicPlayer() {
     };
   }, [showSkinMenu]);
 
-  // Handle drag move and release
-  useEffect(() => {
-    if (!isDragging) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (playerRef.current) {
-        const parentRect = playerRef.current.parentElement?.getBoundingClientRect();
-        if (parentRect) {
-          // Calculate new position relative to parent
-          const newX = e.clientX - parentRect.left - dragOffset.x;
-          const newY = e.clientY - parentRect.top - dragOffset.y;
-
-          // Constrain to viewport bounds
-          const maxX = window.innerWidth - playerRef.current.offsetWidth - parentRect.left;
-          const maxY = window.innerHeight - playerRef.current.offsetHeight - parentRect.top;
-
-          setPosition({
-            x: Math.max(-parentRect.left, Math.min(maxX, newX)),
-            y: Math.max(-parentRect.top + 60, Math.min(maxY, newY)) // Keep below navbar
-          });
-        }
-      }
-    };
-
-    const handleMouseUp = () => {
-      setIsDragging(false);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseup', handleMouseUp);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', handleMouseUp);
-    };
-  }, [isDragging, dragOffset]);
+  // Drag move/release disabled - was causing 150px jump bug
+  // useEffect(() => {
+  //   if (!isDragging) return;
+  //   const handleMouseMove = (e: MouseEvent) => {
+  //     // Drag position calculation removed
+  //   };
+  //   const handleMouseUp = () => {
+  //     setIsDragging(false);
+  //   };
+  //   window.addEventListener('mousemove', handleMouseMove);
+  //   window.addEventListener('mouseup', handleMouseUp);
+  //   return () => {
+  //     window.removeEventListener('mousemove', handleMouseMove);
+  //     window.removeEventListener('mouseup', handleMouseUp);
+  //   };
+  // }, [isDragging, dragOffset]);
 
   // Real FFT data for mini visualizer (5 bars for compact display)
   const frequencyData = useFFTData({
@@ -284,16 +265,15 @@ export default function MinifiedMusicPlayer() {
   // Show CTA glow on play button when not playing and user hasn't interacted
   const showPlayCta = !isPlaying && !hasInteracted;
 
-  // Calculate transform style for dragged position
-  const positionStyle = position.x !== 0 || position.y !== 0
-    ? { transform: `translate(${position.x}px, ${position.y}px)` }
-    : {};
+  // Dragging disabled - position transform removed
+  // const positionStyle = position.x !== 0 || position.y !== 0
+  //   ? { transform: `translate(${position.x}px, ${position.y}px)` }
+  //   : {};
 
   return (
     <div
       ref={playerRef}
-      className={`${styles.winampShade} ${hasInteracted ? styles.interacted : ''} ${isDragging ? styles.dragging : ''} ${styles[`skin_${currentSkin}`] || ''}`}
-      style={positionStyle}
+      className={`${styles.winampShade} ${hasInteracted ? styles.interacted : ''} ${styles[`skin_${currentSkin}`] || ''}`}
     >
       {/* NULLSOFT Easter Egg Overlay */}
       {showNullsoft && (
@@ -303,12 +283,11 @@ export default function MinifiedMusicPlayer() {
         </div>
       )}
 
-      {/* Title bar grip (left) - Drag handle + Double-click for easter egg */}
+      {/* Title bar grip (left) - Double-click for easter egg (dragging disabled) */}
       <div
         className={styles.titleGrip}
-        onMouseDown={handleDragStart}
         onDoubleClick={handleGripDoubleClick}
-        title="Drag to move • Double-click for surprise"
+        title="Double-click for surprise"
       >
         <div className={styles.gripLines}>
           <span></span><span></span><span></span>

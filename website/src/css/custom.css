@@ -534,3 +534,69 @@ html:not([data-theme='dark']) .plain {
   box-shadow: none;
   margin: 0;
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE - Hide duplicate elements in hamburger menu
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 996px) {
+  /* Hide music player from mobile sidebar dropdown - it's already in navbar */
+  .navbar-sidebar [class*="winampShade"],
+  .navbar-sidebar [class*="MusicPlayer"],
+  .navbar-sidebar [class*="musicPlayer"],
+  .navbar-sidebar__items--show-secondary [class*="winampShade"],
+  .navbar-sidebar__items--show-secondary [class*="MusicPlayer"],
+  .navbar-sidebar__items--show-secondary [class*="musicPlayer"] {
+    display: none !important;
+  }
+
+  /* Only show one Winamp player - the one in the main navbar */
+  .navbar__items--right [class*="winampShade"] {
+    display: block !important;
+    position: fixed !important;
+    top: auto !important;
+    bottom: 10px !important;
+    right: 10px !important;
+    z-index: 1000 !important;
+    transform: none !important;
+  }
+
+  /* Hide theme picker from sidebar too if duplicated */
+  .navbar-sidebar [class*="ThemePicker"],
+  .navbar-sidebar [class*="themePicker"],
+  .navbar-sidebar__items--show-secondary [class*="ThemePicker"],
+  .navbar-sidebar__items--show-secondary [class*="themePicker"] {
+    display: none !important;
+  }
+
+  /* Simplify hamburger menu - reduce persistence feeling */
+  .navbar-sidebar {
+    transition: transform 0.2s ease-out !important;
+  }
+
+  /* Make hamburger toggle more responsive */
+  .navbar__toggle {
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  /* Ensure clean close animation */
+  .navbar-sidebar--show {
+    animation: slideIn 0.2s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /* Reduce visual weight of open hamburger overlay */
+  .navbar-sidebar__backdrop {
+    opacity: 0.4 !important;
+    transition: opacity 0.2s ease-out !important;
+  }
+}

@@ -29,6 +29,7 @@ You are the skill-documentarian, guardian of the Claude Skills showcase website.
 4. **Badge Manager**: Track NEW/UPDATED badges with proper lifecycle.
 5. **Artifact Creator**: Capture multi-skill collaborations in blog-style docs.
 6. **Validation Enforcer**: Run scripts that catch drift and mismatches.
+7. **Subpage Sync Guardian**: Ensure skill reference docs are exposed as browsable subpages.
 
 ## Quick Reference: Key Files
 
@@ -38,9 +39,10 @@ You are the skill-documentarian, guardian of the Claude Skills showcase website.
 | Skills data | `website/src/data/skills.ts` (ALL_SKILLS array) |
 | Tag definitions | `website/src/types/tags.ts` |
 | Skill metadata | `website/src/data/skillMetadata.json` |
-| Skill docs | `website/docs/skills/*.md` |
+| Skill docs | `website/docs/skills/*.md` or `website/docs/skills/*/` (folders with subpages) |
 | Hero images | `website/static/img/skills/*-hero.png` |
 | Artifacts | `website/src/data/artifacts/` |
+| Subpage sync | `website/scripts/syncSkillSubpages.ts` |
 
 ## Automated Sync (Pre-commit Hooks)
 
@@ -53,6 +55,58 @@ The pre-commit hook automatically:
 
 **Manual batch sync**: `cd website && npm run sync:skills`
 **Manual README sync**: `cd website && npm run sync:readme`
+**Manual subpage sync**: `cd website && npm run sync:subpages`
+
+## Subpage Sync (Ancillary Documentation)
+
+Skills with `references/`, `templates/`, `examples/`, or `guides/` folders get their markdown files exposed as browsable subpages in the documentation.
+
+### How It Works
+
+1. **Detection**: Script scans `.claude/skills/*/` for supported subfolders
+2. **Conversion**: Flat `skill_name.md` becomes folder `skill_name/index.md`
+3. **Sync**: Markdown files from source subfolders are copied to doc subfolders
+4. **Frontmatter**: Auto-generated if missing (title, sidebar_label, sidebar_position)
+5. **Safety**: Angle brackets escaped to prevent MDX compilation errors
+
+### Folder Structure
+
+```
+.claude/skills/hr-network-analyst/          website/docs/skills/hr_network_analyst/
+├── SKILL.md                          →     ├── index.md (main skill page)
+├── references/                             ├── references/
+│   ├── data-sources.md               →     │   ├── _category_.json
+│   └── graph-metrics.md              →     │   ├── data-sources.md
+└── guides/                                 │   └── graph-metrics.md
+    └── quickstart.md                 →     └── guides/
+                                                ├── _category_.json
+                                                └── quickstart.md
+```
+
+### Run Subpage Sync
+
+```bash
+# During prebuild (automatic)
+npm run prebuild  # Includes subpage sync
+
+# Manual sync
+npm run sync:subpages
+
+# Or directly
+npx tsx scripts/syncSkillSubpages.ts
+```
+
+### Docusaurus Doc IDs
+
+Folder-based docs have IDs like `skills/skill_name/skill_name` (not `/index`).
+When updating `sidebars.ts`, use the skill folder name twice:
+```typescript
+// ✅ Correct
+'skills/hr_network_analyst/hr_network_analyst'
+
+// ❌ Wrong
+'skills/hr_network_analyst/index'
+```
 
 ## Adding a New Skill to Website
 
@@ -157,6 +211,17 @@ echo "UPDATED: $(grep "badge: 'UPDATED'" website/src/data/skills.ts | wc -l)"
 ACTUAL=$(ls -d .claude/skills/*/ 2>/dev/null | wc -l | tr -d ' ')
 README_COUNT=$(grep -oE '\d+\+? production-ready skills' README.md | grep -oE '\d+' | head -1)
 [ "$ACTUAL" -gt "$README_COUNT" ] && echo "⚠️  README outdated: $ACTUAL skills exist, README says $README_COUNT"
+
+# Find skills with subfolders not yet synced
+for skill in .claude/skills/*/; do
+  name=$(basename "$skill")
+  docname="${name//-/_}"
+  for sub in references templates examples guides; do
+    if [ -d "$skill$sub" ]; then
+      [ -d "website/docs/skills/$docname/$sub" ] || echo "Missing subpages: $name/$sub"
+    fi
+  done
+done
 ```
 
 ## When to Use This Skill

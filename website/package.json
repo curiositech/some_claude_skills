@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "prebuild": "npm run validate:all && tsx scripts/fetchPlausibleStats.ts && tsx scripts/generateSkillZips.ts && tsx scripts/generateSkillFolderData.ts && tsx scripts/generateSkillMetadata.ts",
+    "prebuild": "npm run validate:all && tsx scripts/syncSkillSubpages.ts && tsx scripts/fetchPlausibleStats.ts && tsx scripts/generateSkillZips.ts && tsx scripts/generateSkillFolderData.ts && tsx scripts/generateSkillMetadata.ts",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -16,6 +16,7 @@
     "typecheck": "tsc",
     "generate:zips": "tsx scripts/generateSkillZips.ts",
     "sync:skills": "tsx scripts/syncSkillDocs.ts",
+    "sync:subpages": "tsx scripts/syncSkillSubpages.ts",
     "validate:liquid": "node scripts/validate-liquid.js docs/**/*.md",
     "validate:brackets": "node scripts/validate-brackets.js docs/**/*.md",
     "validate:props": "node scripts/validate-skill-props.js docs/skills/*.md",
