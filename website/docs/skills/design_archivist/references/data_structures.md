@@ -42,7 +42,7 @@ interface VisualDNA {
   animation: {
     presence: string; // 'none', 'subtle', 'moderate', 'heavy'
     types: string[]; // 'scroll-triggered', 'hover-activated', 'auto-play'
-    timing: string; // 'fast' (&lt;200ms), 'medium' (200-500ms), 'slow' (&gt;500ms)
+    timing: string; // 'fast' (<200ms), 'medium' (200-500ms), 'slow' (>500ms)
   };
 }
 ```

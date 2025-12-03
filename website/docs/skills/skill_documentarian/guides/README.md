@@ -65,7 +65,7 @@ These guides support the artifact creation responsibility by providing:
 
 ## Related Documentation
 
-- **Main Skill Definition**: [`../SKILL.md`](../SKILL.md)
-- **Website Artifact Guide**: `/website/docs/guides/artifact-contribution-guide.md` (user-facing version)
-- **Artifact Data**: `/website/src/data/artifacts/`
-- **Artifacts Page**: `/website/src/pages/artifacts.tsx`
+- **Main Skill Definition**: [skill-documentarian](/docs/skills/skill_documentarian) (on website)
+- **Website Artifact Guide**: [Artifact Contribution Guide](/docs/guides/artifact-contribution-guide) (on website)
+- **Artifact Data**: `website/src/data/artifacts/`
+- **Artifacts Page**: [Artifacts Showcase](/artifacts) (on website)

@@ -524,7 +524,7 @@ class WildfireRiskAssessor:
         """Assess slope-related risk (fire spreads faster uphill)"""
         slope_percent = property_data.get('slope_percent', 0)
 
-        # Slope scoring: &gt;40% is extreme
+        # Slope scoring: >40% is extreme
         if slope_percent < 10:
             score = 0.2
         elif slope_percent < 20:

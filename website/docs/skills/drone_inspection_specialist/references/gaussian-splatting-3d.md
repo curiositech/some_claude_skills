@@ -282,7 +282,7 @@ class GaussianSplattingReconstructor:
 <!DOCTYPE html>
 <html>
 <head>
-    <title&gt;3D Gaussian Splatting Viewer</title>
+    <title>3D Gaussian Splatting Viewer</title>
     <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
     <style>

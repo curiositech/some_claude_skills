@@ -17,11 +17,12 @@ function validateBrackets(filePath) {
 
     // Check for unescaped < or > followed by digit (including decimals like <0.1ms)
     // Matches: <100, <0.5ms, >50%, etc.
-    const lessThanMatches = line.matchAll(/<(\d+[\d.]*\w*)/g);
-    const greaterThanMatches = line.matchAll(/>(\d+[\d.]*\w*)/g);
+    // Skip backslash-escaped angle brackets (MDX escaping)
+    const lessThanMatches = line.matchAll(/(?<!\\)<(\d+[\d.]*\w*)/g);
+    const greaterThanMatches = line.matchAll(/(?<!\\)>(\d+[\d.]*\w*)/g);
 
     for (const match of lessThanMatches) {
-      // Skip if already escaped on this line
+      // Skip if already escaped with &lt;
       if (line.includes('&lt;' + match[1])) continue;
       errors.push({
         line: idx + 1,
@@ -31,7 +32,7 @@ function validateBrackets(filePath) {
     }
 
     for (const match of greaterThanMatches) {
-      // Skip if already escaped on this line
+      // Skip if already escaped with &gt;
       if (line.includes('&gt;' + match[1])) continue;
       errors.push({
         line: idx + 1,

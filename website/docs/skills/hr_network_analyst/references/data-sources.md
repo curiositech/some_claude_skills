@@ -21,8 +21,7 @@ This document provides a comprehensive guide to acquiring professional network d
 4. [Scraping Tools](#scraping-tools)
 5. [Alternative Network Reconstruction](#alternative-network-reconstruction)
 6. [Legal Considerations](#legal-considerations)
-7. [Implementation Guide](#implementation-guide)
-8. [Recommended Strategy](#recommended-strategy)
+7. [Recommended Strategy](#recommended-strategy)
 
 ---
 

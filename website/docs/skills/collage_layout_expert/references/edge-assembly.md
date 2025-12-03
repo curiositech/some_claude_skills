@@ -152,7 +152,7 @@ def position_alignment(lines1, lines2, edge_pair):
 
     avg_misalignment = np.mean(min_distances)
 
-    # Score: 1.0 if perfect (&lt;5px), 0.0 if terrible (>50px)
+    # Score: 1.0 if perfect (<5px), 0.0 if terrible (>50px)
     return max(0.0, 1.0 - avg_misalignment / 50.0)
 ```
 

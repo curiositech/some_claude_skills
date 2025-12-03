@@ -134,7 +134,7 @@ class EmotionalStateMonitor:
     def __init__(self):
         self.baseline_hrv = None
         self.emotion_signatures = {
-            'calm': {'rmssd': '>baseline', 'lf_hf': '&lt;1.5'},
+            'calm': {'rmssd': '>baseline', 'lf_hf': '<1.5'},
             'stress': {'rmssd': '<baseline*0.7', 'lf_hf': '>2.5'},
             'anxiety': {'rmssd': '<baseline*0.6', 'hr': '>baseline+10'},
             'flow': {'rmssd': '~baseline', 'sdnn': '>baseline', 'lf_hf': '1.5-2.0'},

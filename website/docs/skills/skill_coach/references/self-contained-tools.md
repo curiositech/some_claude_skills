@@ -109,7 +109,7 @@ fi
 # Check line count
 lines=$(wc -l < "$SKILL_DIR/SKILL.md")
 if [ "$lines" -gt 500 ]; then
-    echo "⚠️  SKILL.md is $lines lines (target: &lt;500)"
+    echo "⚠️  SKILL.md is $lines lines (target: <500)"
 else
     echo "✅ SKILL.md is $lines lines"
 fi

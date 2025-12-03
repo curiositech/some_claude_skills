@@ -299,7 +299,7 @@ struct VaporwaveSun: View {
                 .frame(width: 200, height: 200)
 
             // Horizontal stripes (retrowave sun effect)
-            ForEach(0..&lt;10) { i in
+            ForEach(0..<10) { i in
                 Rectangle()
                     .fill(Color.vaporwaveCharcoal)
                     .frame(height: 3)

@@ -30,7 +30,7 @@ Detailed guides for conducting design archival research across different domains
 - Easy navigation to key work
 - Contact information readily available
 - Responsive on mobile
-- Fast load times (\&lt;2 seconds)
+- Fast load times (\<2 seconds)
 
 ## SaaS Landing Pages
 

@@ -125,7 +125,7 @@ For UI components like Winamp player:
   - [ ] Specific features
   - [ ] Before/after comparisons
 - [ ] Create standalone `demo.html` for interactive preview
-- [ ] Optimize images (\&lt;500KB each)
+- [ ] Optimize images (\<500KB each)
 - [ ] Document or externally host audio/video assets
 
 ## File Size Guidelines
@@ -149,7 +149,7 @@ For UI components like Winamp player:
 - Retroactively create artifacts (preserve as you go)
 - Cherry-pick only successful attempts
 - Exaggerate outcomes
-- Include massive binaries (&gt;10MB)
+- Include massive binaries (>10MB)
 - Skip testing preview locally
 
 ## Testing

@@ -234,6 +234,7 @@ done
 - Generating hero images
 - Writing changelogs and API docs
 - Managing NEW/UPDATED badges
+- Syncing skill subpages (references, guides, templates, examples)
 
 **Do NOT use for:**
 - Writing code (use domain-specific skills)

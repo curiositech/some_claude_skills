@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-12-03T04:11:06.107Z",
+  "generatedAt": "2025-12-03T07:51:34.553Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
@@ -209,7 +209,7 @@
       "id": "hr-network-analyst",
       "createdAt": "2025-11-28T20:21:26-08:00",
       "updatedAt": "2025-11-29T12:34:29-08:00",
-      "totalLines": 2382,
+      "totalLines": 2381,
       "totalFiles": 7,
       "skillMdSize": 6368,
       "skillMdLines": 149,
@@ -424,11 +424,11 @@
     "skill-documentarian": {
       "id": "skill-documentarian",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-01T14:26:53-08:00",
-      "totalLines": 2064,
+      "updatedAt": "2025-12-02T20:11:39-08:00",
+      "totalLines": 2065,
       "totalFiles": 10,
-      "skillMdSize": 10662,
-      "skillMdLines": 283,
+      "skillMdSize": 10729,
+      "skillMdLines": 284,
       "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": true

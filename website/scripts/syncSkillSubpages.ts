@@ -73,6 +73,9 @@ function escapeAngleBrackets(content: string): string {
     // Match < followed by anything that isn't a letter or / (valid tag start)
     let escapedLine = line.replace(/<(?![a-zA-Z\/!])/g, '\\<');
 
+    // Escape > followed by digits (e.g., >30, >100ms) which MDX interprets as JSX
+    escapedLine = escapedLine.replace(/>(\d)/g, '\\>$1');
+
     result.push(escapedLine);
   }
 
