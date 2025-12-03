@@ -149,7 +149,7 @@ For UI components like Winamp player:
 - Retroactively create artifacts (preserve as you go)
 - Cherry-pick only successful attempts
 - Exaggerate outcomes
-- Include massive binaries (>10MB)
+- Include massive binaries (\>10MB)
 - Skip testing preview locally
 
 ## Testing

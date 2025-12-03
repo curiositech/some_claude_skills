@@ -351,7 +351,7 @@ def detect_travel_milestones(self, photos):
 | Graduation | Cap/gown, diploma, auditorium | 0.6 |
 | Wedding | Formal attire, bouquet, cake | 0.7 |
 | Birth | New infant face cluster, hospital | 0.8 |
-| Residential Move | 50km+ location shift, >30 days | 0.8 |
+| Residential Move | 50km+ location shift, \>30 days | 0.8 |
 | Travel Milestone | First visit to new country | 1.0 |
 
 ---
