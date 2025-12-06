@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-12-04T00:08:05.479Z",
+  "generatedAt": "2025-12-06T05:29:58.718Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
@@ -413,10 +413,10 @@
       "id": "skill-coach",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-12-01T14:24:26-08:00",
-      "totalLines": 4363,
-      "totalFiles": 14,
-      "skillMdSize": 6897,
-      "skillMdLines": 214,
+      "totalLines": 5048,
+      "totalFiles": 17,
+      "skillMdSize": 7163,
+      "skillMdLines": 197,
       "hasReferences": true,
       "hasExamples": true,
       "hasChangelog": true

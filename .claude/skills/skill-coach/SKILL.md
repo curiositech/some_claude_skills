@@ -1,7 +1,7 @@
 ---
 name: skill-coach
-description: "Guides creation of high-quality Agent Skills with domain expertise, anti-pattern detection, and progressive disclosure best practices. Use when creating skills, reviewing existing skills, or when users mention improving skill quality, encoding expertise, or avoiding common AI tooling mistakes. Activate on keywords: create skill, review skill, skill quality, skill best practices, skill anti-patterns. NOT for general coding advice or non-skill Claude Code features."
-allowed-tools: Read,Write,Bash,Glob,Grep,Edit
+description: "Guides creation of high-quality Agent Skills with domain expertise, anti-pattern detection, and progressive disclosure best practices. Activate on keywords: create skill, review skill, skill quality, skill best practices, skill anti-patterns, improve skill, skill audit. NOT for general coding advice, slash commands, MCP development, or non-skill Claude Code features."
+allowed-tools: Read,Write,Edit,Glob,Grep,Bash(python:*)
 ---
 
 # Skill Coach: Creating Expert-Level Agent Skills
@@ -27,7 +27,7 @@ Encode real domain expertise, not just surface-level instructions. Focus on **sh
 **Immediate improvements for existing skills**:
 1. **Add NOT clause** to description → Prevents false activation
 2. **Add 1-2 anti-patterns** → Prevents common mistakes
-3. **Check line count** (`wc -l`) → Should be fewer than 500 lines
+3. **Check line count** (run validator) → Should be fewer than 500 lines
 4. **Remove dead files** → Delete unreferenced scripts/references
 5. **Test activation** → Questions that should/shouldn't trigger it
 
@@ -108,53 +108,9 @@ your-skill/
 
 ## Self-Contained Skills (RECOMMENDED)
 
-**Skills with working tools are immediately useful. Skills with only instructions require manual implementation.**
+**Skills with working tools are immediately useful.** See `references/self-contained-tools.md` for full patterns.
 
-### Why Ship Tools?
-
-| Skill Type | User Experience |
-|------------|-----------------|
-| Instructions only | "Great advice, now I have to build it myself" |
-| With working tools | "I can use this RIGHT NOW" |
-
-### What to Include
-
-**Scripts** - Working code for the domain:
-```
-scripts/
-├── analyze.py       # Actually works, not a template
-├── validate.sh      # Pre-flight checks
-└── README.md        # How to run
-```
-
-**MCP Server** - When external APIs are needed:
-```
-mcp-server/
-├── server.py        # Ready to install
-├── package.json     # Dependencies
-└── README.md        # `npx @anthropic/create-mcp-server`
-```
-
-**Subagents** - When orchestration is needed:
-```
-agents/
-├── workflow.md      # Agent definition
-└── prompts/         # Agent system prompts
-```
-
-### Decision Tree: What Tools Does My Skill Need?
-
-```
-Does skill need external APIs (GitHub, Figma, databases)?
-├── YES → Build an MCP server
-└── NO → Does skill need multi-step orchestration?
-    ├── YES → Define subagents
-    └── NO → Does skill have repeatable operations?
-        ├── YES → Write scripts
-        └── NO → References only (rare)
-```
-
-See `references/self-contained-tools.md` for implementation patterns.
+**Quick decision**: External APIs? → MCP. Multi-step workflow? → Subagents. Repeatable operations? → Scripts.
 
 ## Decision Trees
 
@@ -178,10 +134,33 @@ See `references/self-contained-tools.md` for implementation patterns.
 3. Add anti-patterns you've observed
 4. Test activation thoroughly
 
-**Debug Activation Issues**:
-1. Review description - missing keywords?
-2. Add NOT clause if false positives
-3. Test with specific phrases
+**Debug Activation Issues** (flowchart):
+```
+Skill not activating when expected?
+├── Check description has specific keywords
+│   ├── NO → Add "Activate on: keyword1, keyword2"
+│   └── YES → Check if query contains those keywords
+│       ├── NO → Add missing keyword variations
+│       └── YES → Check for conflicting NOT clause
+│           ├── YES → Narrow exclusion scope
+│           └── NO → Check file structure
+│               ├── SKILL.md missing → Create it
+│               └── Wrong location → Move to .claude/skills/
+
+Skill activating when it shouldn't?
+├── Missing NOT clause?
+│   ├── YES → Add "NOT for: exclusion1, exclusion2"
+│   └── NO → NOT clause too narrow
+│       └── Expand exclusions based on false positive queries
+```
+Run `python scripts/test_activation.py <path>` to validate
+
+**Recursive Self-Improvement** (use this skill to improve skills):
+1. Run `python scripts/validate_skill.py <path>` → Get validation report
+2. Run `python scripts/check_self_contained.py <path>` → Check tool completeness
+3. Address ERRORS first, then WARNINGS, then SUGGESTIONS
+4. Re-run validation until clean
+5. Update CHANGELOG.md with improvements made
 
 ## Tool Permissions
 
@@ -203,10 +182,14 @@ See `references/self-contained-tools.md` for implementation patterns.
 
 | File | Contents |
 |------|----------|
-| `references/anti-patterns.md` | Detailed anti-pattern examples with fixes |
+| `references/antipatterns.md` | Domain shibboleths and anti-pattern catalog with case studies |
 | `references/shibboleths.md` | Expert vs novice knowledge patterns |
 | `references/validation-checklist.md` | Complete review and testing guide |
 | `references/self-contained-tools.md` | Scripts, MCP servers, and subagent implementation patterns |
+| `references/scoring-rubric.md` | Quantitative skill evaluation (0-10 scoring) |
+| `references/skill-composition.md` | Cross-skill dependencies and composition patterns |
+| `references/skill-lifecycle.md` | Maintenance, versioning, and deprecation guidance |
+| `references/mcp_vs_scripts.md` | Architectural decision guide: Skills vs Agents vs MCPs vs Scripts |
 
 ---
 

@@ -440,6 +440,122 @@ When documenting anti-patterns, always include:
 
 ---
 
+---
+
+## Real-World Failure Case Studies
+
+### Case Study 1: The Photo Expert Explosion
+
+**Skill**: `photo-expert` (v1.0)
+**Problem**: Single skill for ALL photo operations
+
+**Symptoms**:
+- Activated on "photo" anywhere in query
+- 800+ lines of instructions
+- Slow loading, high token usage
+- Wrong advice given (composition advice when user wanted color theory)
+
+**Root Cause**: Everything Skill anti-pattern
+
+**Resolution**: Split into 5 focused skills:
+- `clip-aware-embeddings` - semantic search
+- `photo-composition-critic` - aesthetic analysis
+- `color-theory-palette-harmony-expert` - color science
+- `collage-layout-expert` - arrangement algorithms
+- `event-detection-temporal-intelligence-expert` - clustering
+
+**Lesson**: One domain ≠ one skill. Split by expertise type.
+
+---
+
+### Case Study 2: The Phantom MCP
+
+**Skill**: `github-workflow-helper` (v1.1)
+**Problem**: Referenced MCP server that didn't exist
+
+**SKILL.md said**:
+```markdown
+Use the included MCP server for GitHub API access.
+Run: `npx github-helper-mcp`
+```
+
+**Reality**: No `mcp-server/` directory existed
+
+**Symptoms**:
+- Claude confidently told users to run non-existent commands
+- Users filed bug reports
+- Trust in skill ecosystem damaged
+
+**Root Cause**: Reference Illusion anti-pattern
+
+**Resolution**:
+1. Added `check_self_contained.py` to detect phantom tools
+2. Either create the MCP or remove the reference
+3. Added validation to CI
+
+**Lesson**: Don't promise tools you don't deliver.
+
+---
+
+### Case Study 3: The Time Bomb
+
+**Skill**: `react-hooks-expert` (v2.0)
+**Problem**: Temporal knowledge became stale
+
+**Original content (2023)**:
+```markdown
+Use useEffect with empty deps for componentDidMount behavior
+```
+
+**By 2024**: This caused issues with React 18 Strict Mode double-mounting
+
+**Symptoms**:
+- Users followed advice → got bugs
+- Skill became actively harmful
+- No CHANGELOG to track when content was written
+
+**Root Cause**: Missing temporal knowledge markers
+
+**Resolution**:
+```markdown
+## Temporal Context
+- **Pre-React 18**: useEffect with [] = componentDidMount
+- **React 18+**: useEffect with [] runs TWICE in dev (Strict Mode)
+- **Current best practice**: Use refs for "run once" patterns
+```
+
+**Lesson**: Date your knowledge. Update quarterly.
+
+---
+
+### Case Study 4: The Activation Black Hole
+
+**Skill**: `api-design-expert` (v1.0)
+**Problem**: Never activated when needed
+
+**Description**:
+```yaml
+description: Expert guidance for API design
+```
+
+**Symptoms**:
+- User: "How should I structure my REST endpoints?"
+- Skill: *silence*
+- User confused why skill existed but never helped
+
+**Root Cause**: Missing Exclusions + no keywords
+
+**Resolution**:
+```yaml
+description: REST/GraphQL API design patterns. Activate on "API design",
+"endpoint structure", "REST architecture", "GraphQL schema".
+NOT for API implementation, SDK generation, or documentation.
+```
+
+**Lesson**: Generic descriptions = zero activations
+
+---
+
 ## Contributing
 
 When you discover a new anti-pattern:

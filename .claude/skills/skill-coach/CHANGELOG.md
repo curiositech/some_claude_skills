@@ -2,6 +2,48 @@
 
 All notable changes to the skill-coach skill will be documented in this file.
 
+## [2.2.0] - 2025-12-04
+
+### Added
+- `scripts/test_activation.py` - Automated activation testing with keyword extraction
+  - Extracts positive/negative keywords from description
+  - Generates test queries automatically
+  - Reports pass/fail rate against 90% target
+- `references/scoring-rubric.md` - Quantitative skill evaluation (0-10 scoring)
+  - 5 scoring categories: Activation Precision, Domain Expertise, Progressive Disclosure, Self-Containment, Maintainability
+  - Composite score formula with grade mapping (A-F)
+- `references/skill-composition.md` - Cross-skill dependency patterns
+  - Sequential, Parallel, Hierarchical dependency types
+  - Composition anti-patterns with fixes
+  - Example photo analysis pipeline
+- `references/skill-lifecycle.md` - Maintenance and versioning guidance
+  - 5 lifecycle stages: DRAFT → ACTIVE → MATURE → DEPRECATED → ARCHIVED
+  - Maintenance checklists (monthly, quarterly, annually)
+  - Health indicators table
+- 4 real-world failure case studies added to `references/antipatterns.md`:
+  - Photo Expert Explosion (Everything Skill anti-pattern)
+  - Phantom MCP (Reference Illusion anti-pattern)
+  - Time Bomb (stale temporal knowledge)
+  - Activation Black Hole (generic description)
+- Activation debugging flowchart in SKILL.md (ASCII decision tree)
+- Recursive self-improvement workflow in SKILL.md
+
+### Changed
+- Description now uses third person ("Activates for..." not "when users mention...")
+- Bash permissions scoped from `Bash` to `Bash(python:*,wc:*,find:*,grep:*)`
+- Added "improve skill" to activation keywords
+- Consolidated duplicate antipatterns files (merged `anti-patterns.md` into `antipatterns.md`)
+- Updated reference table with 4 new files
+
+### Fixed
+- Validation warning: Description no longer uses first/second person
+- Validation warning: Bash tool is now scoped (was unrestricted)
+
+### Metrics
+- Activation precision: 100% (12/12 tests passed)
+- SKILL.md: 240 lines (within 500 line limit)
+- New reference files: 4 (scoring-rubric, skill-composition, skill-lifecycle, test_activation.py)
+
 ## [2.1.1] - 2025-12-01
 
 ### Added

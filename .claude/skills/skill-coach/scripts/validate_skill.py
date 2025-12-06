@@ -42,6 +42,7 @@ class SkillValidator:
         self.check_description_quality()
         self.check_progressive_disclosure()
         self.check_antipatterns_section()
+        self.check_usage_sections()
         self.check_allowed_tools()
         return self.issues
     
@@ -187,8 +188,10 @@ class SkillValidator:
                 "Consider adding what NOT to use this skill for to prevent false activation"
             ))
         
-        # Check point of view
-        if any(word in description.lower() for word in ['i ', 'you ', 'your ', 'my ']):
+        # Check point of view (use word boundaries to avoid false positives like "skill" matching "i ")
+        import re
+        first_second_person = re.compile(r'\b(i|you|your|my|we|our)\b', re.IGNORECASE)
+        if first_second_person.search(description):
             self.issues.append(ValidationIssue(
                 Severity.WARNING,
                 "Description should use third person, not first/second person",
@@ -237,7 +240,33 @@ class SkillValidator:
                 "No anti-pattern guidance found. Consider adding common mistakes section.",
                 suggestion="Add '## Common Anti-Patterns' section"
             ))
-    
+
+    def check_usage_sections(self):
+        """Check for When to Use / NOT to Use sections."""
+        with open(self.skill_md, 'r') as f:
+            content = f.read().lower()
+
+        has_when_to_use = any(pattern in content for pattern in [
+            'when to use', 'use for:', '✅ use for'
+        ])
+        has_when_not = any(pattern in content for pattern in [
+            'not for:', 'when not to', '❌ not for'
+        ])
+
+        if not has_when_to_use:
+            self.issues.append(ValidationIssue(
+                Severity.WARNING,
+                "Missing 'When to Use' section. Helps activation clarity.",
+                suggestion="Add section listing what the skill is for"
+            ))
+
+        if not has_when_not:
+            self.issues.append(ValidationIssue(
+                Severity.WARNING,
+                "Missing 'When NOT to Use' section. Prevents false activation.",
+                suggestion="Add section listing what the skill should NOT handle"
+            ))
+
     def check_allowed_tools(self):
         """Validate allowed-tools field."""
         with open(self.skill_md, 'r') as f:
