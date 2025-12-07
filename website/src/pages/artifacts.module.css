@@ -405,56 +405,92 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 1.5rem 0;
+    padding: 1rem 0;
   }
 
   .heroTitle {
-    font-size: 36px;
+    font-size: 28px;
     flex-direction: column;
     gap: 8px;
   }
 
   .heroIcon {
-    font-size: 42px;
+    font-size: 36px;
   }
 
   .heroSubtitle {
-    font-size: 14px;
+    font-size: 13px;
+    padding: 0 12px;
   }
 
   .heroStats {
-    gap: 1.5rem;
+    gap: 1rem;
+    padding: 0 12px;
   }
 
   .stat {
-    padding: 8px 16px;
+    padding: 6px 12px;
   }
 
   .statValue {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .statLabel {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .sectionTitle {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .sectionIcon {
-    font-size: 36px;
+    font-size: 28px;
+  }
+
+  .filters {
+    margin-bottom: 1.5rem;
+  }
+
+  .filterGroup {
+    padding: 10px 12px;
+  }
+
+  .filterButtons {
+    gap: 6px;
+  }
+
+  .filterButton {
+    padding: 4px 8px;
+    font-size: 11px;
+    min-width: auto;
+  }
+
+  .searchContainer {
+    padding: 12px;
   }
 
   .ctaSection {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
   }
 
   .ctaTitle {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .ctaText {
-    font-size: 13px;
+    font-size: 12px;
+  }
+
+  .emptyState {
+    padding: 2rem 1rem;
+  }
+
+  .emptyTitle {
+    font-size: 24px;
+  }
+
+  .emptyText {
+    font-size: 12px;
   }
 }

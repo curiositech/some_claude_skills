@@ -539,6 +539,72 @@ html:not([data-theme='dark']) .plain {
    MOBILE RESPONSIVE - Hide duplicate elements in hamburger menu
    ═══════════════════════════════════════════════════════════════════ */
 
+/* ═══════════════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE - Docs Pages
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Pull in margins on docs pages for mobile */
+  .docs-doc-page {
+    padding: 12px;
+  }
+
+  .docs-doc-page .theme-doc-markdown,
+  .docs-doc-page article {
+    padding: 12px;
+  }
+
+  /* Adjust title bar negative margins for smaller container padding */
+  .docs-doc-page article > header:first-child,
+  .docs-doc-page .theme-doc-markdown > h1:first-child {
+    margin: -12px -12px 16px -12px;
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+
+  /* Reduce heading margins on mobile */
+  .docs-doc-page h2,
+  .docs-doc-page h3 {
+    margin-left: -6px;
+    margin-right: -6px;
+    padding: 6px 10px;
+  }
+
+  /* Guide hero banner - reduce padding */
+  .guide-hero-banner {
+    margin: -12px -12px 20px -12px;
+  }
+
+  .guide-hero-content {
+    padding: 24px 16px;
+  }
+
+  .guide-hero-title {
+    font-size: 16px;
+  }
+
+  .guide-hero-subtitle {
+    font-size: 12px;
+  }
+
+  .guide-hero-badge {
+    font-size: 7px;
+    padding: 6px 10px;
+  }
+
+  /* Breadcrumbs - smaller on mobile */
+  .theme-doc-breadcrumbs {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  /* Pagination - smaller on mobile */
+  .pagination-nav__link {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 996px) {
   /* Hide music player from mobile sidebar dropdown - it's already in navbar */
   .navbar-sidebar [class*="winampShade"],

@@ -1,0 +1,262 @@
+/* Agents++ Dashboard Styles */
+
+.agents-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.agents-subtitle {
+  font-size: 14px;
+  color: var(--win31-navy);
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  padding: 4px 12px;
+  border: 1px solid #f59e0b;
+  font-weight: bold;
+}
+
+/* Ecosystem Stats Banner */
+.ecosystem-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 24px;
+  background: linear-gradient(180deg, var(--win31-navy) 0%, #000066 100%);
+  color: white;
+  margin-bottom: 20px;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--win31-cyan);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* View Mode Toggle */
+.view-mode-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.view-mode-toggle button {
+  font-size: 12px;
+  padding: 8px 16px;
+}
+
+/* Agents Grid - slightly larger cards */
+.agents-grid {
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+}
+
+/* Coordination Network View */
+.coordination-network {
+  background: var(--win31-white);
+  border: 2px solid var(--win31-navy);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+  padding: 24px;
+}
+
+.network-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.network-svg {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  height: 400px;
+}
+
+.network-edge {
+  stroke: var(--win31-navy);
+  stroke-width: 0.3;
+  stroke-opacity: 0.4;
+}
+
+.network-node {
+  cursor: pointer;
+}
+
+.node-circle {
+  fill: var(--win31-cyan);
+  stroke: var(--win31-navy);
+  stroke-width: 0.5;
+}
+
+.node-emoji {
+  font-size: 4px;
+}
+
+.node-label {
+  font-size: 2.5px;
+  fill: var(--win31-navy);
+  font-weight: bold;
+}
+
+.network-legend {
+  text-align: center;
+  padding: 16px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+}
+
+.network-legend h4 {
+  margin: 0 0 8px 0;
+  color: var(--win31-navy);
+}
+
+.network-legend p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.network-agent-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.network-agent-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--win31-white);
+  border: 1px solid var(--win31-navy);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.network-agent-emoji {
+  font-size: 20px;
+}
+
+.network-agent-name {
+  font-weight: bold;
+  font-size: 12px;
+  color: var(--win31-navy);
+}
+
+.network-agent-role {
+  font-size: 10px;
+  color: #666;
+  margin-left: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Philosophy Section */
+.philosophy-points {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.philosophy-point {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+}
+
+.philosophy-emoji {
+  font-size: 18px;
+}
+
+.philosophy-text {
+  font-size: 12px;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ecosystem-stats {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .stat-value {
+    font-size: 22px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .agents-title-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .coordination-network {
+    padding: 12px;
+  }
+
+  .philosophy-point {
+    padding: 6px 12px;
+  }
+
+  .philosophy-emoji {
+    font-size: 16px;
+  }
+
+  .philosophy-text {
+    font-size: 11px;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .agents-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .network-svg {
+    height: 300px;
+  }
+
+  .network-agent-list {
+    grid-template-columns: 1fr;
+  }
+
+  .philosophy-points {
+    flex-direction: column;
+    align-items: center;
+  }
+}

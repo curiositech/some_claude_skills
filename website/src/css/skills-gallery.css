@@ -1535,6 +1535,23 @@
    ═══════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 768px) {
+  /* Pull in margins on mobile */
+  .skills-container {
+    padding: 12px;
+  }
+
+  .install-hero--full .install-hero__content {
+    padding: 20px 16px;
+  }
+
+  .install-hero__main-title {
+    font-size: 18px;
+  }
+
+  .install-hero__exposition {
+    font-size: 14px;
+  }
+
   .pixel-title {
     font-size: 20px;
   }
