@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-12-06T22:44:43.954Z",
+  "generatedAt": "2025-12-07T05:09:24.881Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
@@ -171,8 +171,8 @@
     },
     "diagramming-expert": {
       "id": "diagramming-expert",
-      "createdAt": null,
-      "updatedAt": null,
+      "createdAt": "2025-12-06T14:44:42-08:00",
+      "updatedAt": "2025-12-06T14:44:42-08:00",
       "totalLines": 2536,
       "totalFiles": 5,
       "skillMdSize": 11177,
@@ -280,7 +280,7 @@
     "jungian-psychologist": {
       "id": "jungian-psychologist",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-28T22:58:55-08:00",
+      "updatedAt": "2025-12-06T14:44:42-08:00",
       "totalLines": 1549,
       "totalFiles": 6,
       "skillMdSize": 7065,
@@ -288,6 +288,18 @@
       "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": true
+    },
+    "liaison": {
+      "id": "liaison",
+      "createdAt": null,
+      "updatedAt": null,
+      "totalLines": 276,
+      "totalFiles": 1,
+      "skillMdSize": 6300,
+      "skillMdLines": 276,
+      "hasReferences": false,
+      "hasExamples": false,
+      "hasChangelog": false
     },
     "metal-shader-expert": {
       "id": "metal-shader-expert",

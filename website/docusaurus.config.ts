@@ -104,7 +104,7 @@ const config: Config = {
         },
         {
           to: '/skills',
-          label: 'The Skills',
+          label: 'Skills',
           position: 'left',
         },
         {
@@ -122,6 +122,12 @@ const config: Config = {
           to: '/mcps',
           label: 'MCPs',
           position: 'left',
+        },
+        {
+          to: '/agents',
+          label: 'Agents++',
+          position: 'left',
+          className: 'beta-nav-item',
         },
         {
           to: '/favorites',
@@ -161,8 +167,12 @@ const config: Config = {
           title: 'Skills',
           items: [
             {
-              label: 'The Skills',
+              label: 'Skills',
               to: '/skills',
+            },
+            {
+              label: 'Agents++',
+              to: '/agents',
             },
             {
               label: 'Examples',

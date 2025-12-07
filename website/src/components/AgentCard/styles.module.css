@@ -1,0 +1,325 @@
+.agentCard {
+  background: var(--win31-white);
+  border: 2px solid var(--win31-navy);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Status glow indicator - pulses for active agents */
+.statusGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--status-glow, #9ca3af);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.statusGlowActive {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Header with emoji and badges */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, var(--win31-navy) 0%, #000066 100%);
+  color: white;
+}
+
+.emoji {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.badges {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.badge {
+  font-size: 9px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statusBadge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+/* Content area */
+.content {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--win31-navy);
+  margin: 0 0 4px 0;
+}
+
+.role {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 13px;
+  color: #333;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+/* Triggers preview */
+.triggersPreview {
+  margin-bottom: 12px;
+}
+
+.triggersLabel {
+  font-size: 11px;
+  color: #666;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.triggersList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.triggerBadge {
+  background: var(--win31-cyan);
+  color: var(--win31-navy);
+  font-size: 10px;
+  font-family: monospace;
+  padding: 2px 6px;
+  border: 1px solid var(--win31-navy);
+}
+
+/* Coordination network preview */
+.coordinationPreview {
+  margin-bottom: 12px;
+  padding: 8px;
+  background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+  border: 1px solid #ccc;
+}
+
+.coordLabel {
+  font-size: 11px;
+  color: #666;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.coordAgents {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.coordAgent {
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  filter: grayscale(0.3);
+}
+
+.coordAgent:hover {
+  transform: scale(1.2);
+  filter: grayscale(0);
+}
+
+/* Expanded content */
+.expandedContent {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--win31-navy);
+}
+
+.longDescription {
+  font-size: 12px;
+  color: #444;
+  line-height: 1.5;
+  white-space: pre-line;
+  margin-bottom: 16px;
+}
+
+.section {
+  margin-bottom: 16px;
+}
+
+.section h4 {
+  font-size: 12px;
+  color: var(--win31-navy);
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.beliefsList {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 11px;
+  color: #555;
+  list-style-type: '> ';
+}
+
+.beliefsList li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.outputsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.outputBadge {
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 10px;
+  padding: 2px 8px;
+  border: 1px solid #f59e0b;
+  border-radius: 2px;
+}
+
+.toolsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.toolBadge {
+  background: var(--win31-cyan);
+  color: var(--win31-navy);
+  font-size: 10px;
+  font-family: monospace;
+  padding: 2px 8px;
+  border: 1px solid var(--win31-navy);
+}
+
+.pledge {
+  margin-top: 16px;
+  padding: 12px;
+  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+  border-left: 3px solid #7c3aed;
+  font-size: 12px;
+  color: #5b21b6;
+  line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #666;
+}
+
+.statIcon {
+  font-size: 12px;
+}
+
+.created {
+  font-size: 10px;
+  color: #999;
+  font-style: italic;
+}
+
+/* Expand hint */
+.expandHint {
+  text-align: center;
+  font-size: 10px;
+  color: #999;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Mini card for coordination network visualization */
+.miniCard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--win31-white);
+  border: 1px solid var(--win31-navy);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.miniCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--status-glow, #9ca3af);
+}
+
+.miniEmoji {
+  font-size: 18px;
+}
+
+.miniName {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--win31-navy);
+}
+
+.miniStatus {
+  font-size: 9px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 2px;
+  margin-left: auto;
+}
