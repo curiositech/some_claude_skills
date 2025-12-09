@@ -1,5 +1,8 @@
 # Claude Skills Collection
 
+[![Run in Smithery](https://smithery.ai/badge/skills/erichowens)](https://smithery.ai/skills?ns=erichowens&utm_source=github&utm_medium=badge)
+
+
 **48+ production-ready skills** and **2 MCP servers** for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
 Built by [Erich Owens](https://www.erichowens.com) — Ex-Meta ML Engineer (12 years), 12 patents, MS Applied Math.
