@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import EcosystemDashboard from '../components/EcosystemDashboard';
-import ecosystemData from '../../.claude/data/ecosystem-state.json';
+import ecosystemData from '../data/ecosystem-state.json';
 import '../css/win31.css';
 
 export default function EcosystemPage(): JSX.Element {

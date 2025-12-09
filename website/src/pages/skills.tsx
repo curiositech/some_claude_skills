@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import { useHistory, useLocation } from '@docusaurus/router';
 import SkillQuickView from '../components/SkillQuickView';
 import SkillGalleryCard from '../components/SkillGalleryCard';
@@ -110,11 +111,42 @@ export default function SkillsGallery(): JSX.Element {
 
   const tagsByType = getTagsByType();
 
+  // Calculate category counts
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = { all: ALL_SKILLS.length };
+    SKILL_CATEGORIES.slice(1).forEach(category => {
+      counts[category] = ALL_SKILLS.filter(skill => skill.category === category).length;
+    });
+    return counts;
+  }, []);
+
+  // JSON-LD structured data for SEO
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Claude Skills Gallery',
+    description: `Browse all ${ALL_SKILLS.length} Claude Code skills. Expert AI agents for machine learning, computer vision, audio design, web development, and more.`,
+    url: 'https://someclaudeskills.com/skills',
+    numberOfItems: ALL_SKILLS.length,
+    about: {
+      '@type': 'SoftwareApplication',
+      name: 'Claude Code Skills',
+      applicationCategory: 'DeveloperApplication',
+    },
+  };
+
   return (
     <Layout
       title="Skills Gallery"
-      description="Browse all 25 Claude Skills with beautiful hero images"
+      description={`Browse all ${ALL_SKILLS.length} Claude Skills with beautiful hero images. Expert agents for ML, computer vision, audio, design, and more.`}
     >
+      <Head>
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd)}
+        </script>
+        <meta name="keywords" content="Claude Code skills, AI agents, machine learning, computer vision, audio design, web development, developer tools" />
+        <link rel="canonical" href="https://someclaudeskills.com/skills" />
+      </Head>
       <div className="skills-page-bg">
         <div className="skills-container">
           {/* Header */}
@@ -215,7 +247,7 @@ export default function SkillsGallery(): JSX.Element {
                   fontWeight: selectedCategory === category ? 'bold' : 'normal',
                 }}
               >
-                {category === 'all' ? 'All Skills' : category}
+                {category === 'all' ? 'All Skills' : category} ({categoryCounts[category] || 0})
               </button>
             ))}
           </div>
