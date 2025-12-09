@@ -138,6 +138,11 @@ export const skillFolderIndex: SkillFolderIndex = {
     "fileCount": 6,
     "folderCount": 1
   },
+  "liaison": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
+  },
   "metal-shader-expert": {
     "hasContent": true,
     "fileCount": 6,
@@ -183,6 +188,11 @@ export const skillFolderIndex: SkillFolderIndex = {
     "fileCount": 1,
     "folderCount": 0
   },
+  "security-auditor": {
+    "hasContent": true,
+    "fileCount": 5,
+    "folderCount": 2
+  },
   "seo-visibility-expert": {
     "hasContent": true,
     "fileCount": 1,
@@ -224,6 +234,11 @@ export const skillFolderIndex: SkillFolderIndex = {
     "folderCount": 0
   },
   "tech-entrepreneur-coach-adhd": {
+    "hasContent": true,
+    "fileCount": 6,
+    "folderCount": 1
+  },
+  "test-automation-expert": {
     "hasContent": true,
     "fileCount": 6,
     "folderCount": 1
@@ -301,6 +316,7 @@ export const skillsWithContent = [
   "photo-content-recognition-curation-expert",
   "physics-rendering-expert",
   "project-management-guru-adhd",
+  "security-auditor",
   "seo-visibility-expert",
   "site-reliability-engineer",
   "skill-coach",
@@ -308,6 +324,7 @@ export const skillsWithContent = [
   "sound-engineer",
   "speech-pathology-ai",
   "tech-entrepreneur-coach-adhd",
+  "test-automation-expert",
   "typography-expert",
   "vaporwave-glassomorphic-ui-designer",
   "vibe-matcher",

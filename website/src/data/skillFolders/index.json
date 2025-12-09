@@ -119,6 +119,11 @@
     "fileCount": 6,
     "folderCount": 1
   },
+  "liaison": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
+  },
   "metal-shader-expert": {
     "hasContent": true,
     "fileCount": 6,
@@ -164,6 +169,11 @@
     "fileCount": 1,
     "folderCount": 0
   },
+  "security-auditor": {
+    "hasContent": true,
+    "fileCount": 5,
+    "folderCount": 2
+  },
   "seo-visibility-expert": {
     "hasContent": true,
     "fileCount": 1,
@@ -205,6 +215,11 @@
     "folderCount": 0
   },
   "tech-entrepreneur-coach-adhd": {
+    "hasContent": true,
+    "fileCount": 6,
+    "folderCount": 1
+  },
+  "test-automation-expert": {
     "hasContent": true,
     "fileCount": 6,
     "folderCount": 1

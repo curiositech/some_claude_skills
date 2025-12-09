@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-12-09T16:10:01.402Z",
+  "generatedAt": "2025-12-09T16:23:24.998Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
@@ -28,7 +28,7 @@
     "agent-creator": {
       "id": "agent-creator",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-29T12:34:29-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 640,
       "totalFiles": 5,
       "skillMdSize": 5134,
@@ -136,7 +136,7 @@
     "cv-creator": {
       "id": "cv-creator",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-29T12:34:29-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 665,
       "totalFiles": 5,
       "skillMdSize": 5939,
@@ -172,7 +172,7 @@
     "diagramming-expert": {
       "id": "diagramming-expert",
       "createdAt": "2025-12-06T14:44:42-08:00",
-      "updatedAt": "2025-12-06T14:44:42-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 2532,
       "totalFiles": 5,
       "skillMdSize": 10961,
@@ -208,7 +208,7 @@
     "event-detection-temporal-intelligence-expert": {
       "id": "event-detection-temporal-intelligence-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-26T20:09:33-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 1776,
       "totalFiles": 6,
       "skillMdSize": 10476,
@@ -220,7 +220,7 @@
     "hr-network-analyst": {
       "id": "hr-network-analyst",
       "createdAt": "2025-11-28T20:21:26-08:00",
-      "updatedAt": "2025-12-02T23:51:49-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 2380,
       "totalFiles": 7,
       "skillMdSize": 6366,
@@ -232,7 +232,7 @@
     "hrv-alexithymia-expert": {
       "id": "hrv-alexithymia-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-28T22:58:55-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 570,
       "totalFiles": 5,
       "skillMdSize": 5885,
@@ -280,7 +280,7 @@
     "jungian-psychologist": {
       "id": "jungian-psychologist",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-06T14:44:42-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 1549,
       "totalFiles": 6,
       "skillMdSize": 6970,
@@ -292,7 +292,7 @@
     "liaison": {
       "id": "liaison",
       "createdAt": "2025-12-06T21:09:05-08:00",
-      "updatedAt": "2025-12-06T21:09:05-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 247,
       "totalFiles": 1,
       "skillMdSize": 5175,
@@ -328,7 +328,7 @@
     "orchestrator": {
       "id": "orchestrator",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 348,
       "totalFiles": 1,
       "skillMdSize": 11866,
@@ -340,7 +340,7 @@
     "personal-finance-coach": {
       "id": "personal-finance-coach",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-28T22:58:55-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 677,
       "totalFiles": 5,
       "skillMdSize": 5249,
@@ -364,7 +364,7 @@
     "photo-content-recognition-curation-expert": {
       "id": "photo-content-recognition-curation-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-26T20:09:33-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 1456,
       "totalFiles": 6,
       "skillMdSize": 11076,
@@ -400,7 +400,7 @@
     "research-analyst": {
       "id": "research-analyst",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 198,
       "totalFiles": 1,
       "skillMdSize": 7030,
@@ -411,8 +411,8 @@
     },
     "security-auditor": {
       "id": "security-auditor",
-      "createdAt": null,
-      "updatedAt": null,
+      "createdAt": "2025-12-09T08:09:59-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 1417,
       "totalFiles": 5,
       "skillMdSize": 8599,
@@ -448,7 +448,7 @@
     "skill-coach": {
       "id": "skill-coach",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-05T21:29:56-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 5093,
       "totalFiles": 17,
       "skillMdSize": 8355,
@@ -460,7 +460,7 @@
     "skill-documentarian": {
       "id": "skill-documentarian",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-02T23:51:49-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 2086,
       "totalFiles": 10,
       "skillMdSize": 11517,
@@ -484,7 +484,7 @@
     "speech-pathology-ai": {
       "id": "speech-pathology-ai",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-28T22:58:55-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 1451,
       "totalFiles": 6,
       "skillMdSize": 7503,
@@ -496,7 +496,7 @@
     "swift-executor": {
       "id": "swift-executor",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 284,
       "totalFiles": 1,
       "skillMdSize": 8855,
@@ -508,7 +508,7 @@
     "team-builder": {
       "id": "team-builder",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 309,
       "totalFiles": 1,
       "skillMdSize": 11397,
@@ -531,8 +531,8 @@
     },
     "test-automation-expert": {
       "id": "test-automation-expert",
-      "createdAt": null,
-      "updatedAt": null,
+      "createdAt": "2025-12-09T08:09:59-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 2301,
       "totalFiles": 6,
       "skillMdSize": 13741,
@@ -628,7 +628,7 @@
     "wisdom-accountability-coach": {
       "id": "wisdom-accountability-coach",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-28T22:58:55-08:00",
+      "updatedAt": "2025-12-09T08:09:59-08:00",
       "totalLines": 452,
       "totalFiles": 4,
       "skillMdSize": 6086,

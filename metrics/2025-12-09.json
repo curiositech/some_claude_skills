@@ -1,0 +1,938 @@
+{
+  "timestamp": "2025-12-09T16:10:45.934329+00:00",
+  "version": "1.0.0",
+  "total_skills": 53,
+  "total_agents": 1,
+  "total_references": 132,
+  "total_scripts": 17,
+  "total_guidance_lines": 35024,
+  "avg_references_per_skill": 2.49,
+  "avg_lines_per_skill": 660.83,
+  "skills_with_examples": 47,
+  "skills_with_changelog": 35,
+  "skills_with_scripts": 10,
+  "categories": {
+    "design": 53,
+    "ml-ai": 53,
+    "backend": 41,
+    "frontend": 41,
+    "testing": 30,
+    "audio-video": 30,
+    "documentation": 25,
+    "career": 25,
+    "security": 16,
+    "infrastructure": 13
+  },
+  "skills": [
+    {
+      "name": "drone-inspection-specialist",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 4,
+      "script_count": 0,
+      "total_lines": 2503,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "diagramming-expert",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 4,
+      "script_count": 0,
+      "total_lines": 2013,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "design",
+        "ml-ai",
+        "audio-video",
+        "backend"
+      ]
+    },
+    {
+      "name": "automatic-stateful-prompt-improver",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 7,
+      "script_count": 0,
+      "total_lines": 1982,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "design",
+        "ml-ai",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "skill-coach",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 8,
+      "script_count": 3,
+      "total_lines": 1742,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "testing",
+        "design",
+        "ml-ai",
+        "audio-video",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "test-automation-expert",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 4,
+      "script_count": 0,
+      "total_lines": 1689,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "testing",
+        "infrastructure",
+        "design",
+        "ml-ai",
+        "career",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "hr-network-analyst",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 5,
+      "script_count": 0,
+      "total_lines": 1575,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "design",
+        "ml-ai",
+        "career",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "vaporwave-glassomorphic-ui-designer",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 4,
+      "script_count": 0,
+      "total_lines": 1400,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "design",
+        "ml-ai",
+        "audio-video",
+        "documentation",
+        "backend"
+      ]
+    },
+    {
+      "name": "collage-layout-expert",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 6,
+      "script_count": 0,
+      "total_lines": 1332,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "jungian-psychologist",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 4,
+      "script_count": 0,
+      "total_lines": 1200,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "frontend"
+      ]
+    },
+    {
+      "name": "color-theory-palette-harmony-expert",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 6,
+      "script_count": 0,
+      "total_lines": 1153,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "design",
+        "ml-ai",
+        "career",
+        "frontend"
+      ]
+    },
+    {
+      "name": "event-detection-temporal-intelligence-expert",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 4,
+      "script_count": 0,
+      "total_lines": 1106,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "testing",
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "backend"
+      ]
+    },
+    {
+      "name": "drone-cv-expert",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 3,
+      "script_count": 0,
+      "total_lines": 1062,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "infrastructure",
+        "design",
+        "ml-ai",
+        "career",
+        "frontend"
+      ]
+    },
+    {
+      "name": "speech-pathology-ai",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 4,
+      "script_count": 0,
+      "total_lines": 1049,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "design",
+        "ml-ai",
+        "audio-video"
+      ]
+    },
+    {
+      "name": "photo-content-recognition-curation-expert",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 4,
+      "script_count": 0,
+      "total_lines": 951,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "backend"
+      ]
+    },
+    {
+      "name": "physics-rendering-expert",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 3,
+      "script_count": 0,
+      "total_lines": 791,
+      "has_examples": false,
+      "categories": [
+        "design",
+        "ml-ai",
+        "backend"
+      ]
+    },
+    {
+      "name": "native-app-designer",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 3,
+      "script_count": 0,
+      "total_lines": 684,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "skill-documentarian",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 4,
+      "script_count": 1,
+      "total_lines": 664,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "infrastructure",
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "interior-design-expert",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 4,
+      "script_count": 0,
+      "total_lines": 617,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "design",
+        "ml-ai",
+        "career",
+        "frontend"
+      ]
+    },
+    {
+      "name": "project-management-guru-adhd",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 4,
+      "script_count": 0,
+      "total_lines": 613,
+      "has_examples": false,
+      "categories": [
+        "security",
+        "testing",
+        "infrastructure",
+        "design",
+        "ml-ai",
+        "audio-video",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "bot-developer",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 4,
+      "script_count": 0,
+      "total_lines": 593,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "infrastructure",
+        "design",
+        "ml-ai",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "design-archivist",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 2,
+      "script_count": 1,
+      "total_lines": 516,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "tech-entrepreneur-coach-adhd",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 4,
+      "script_count": 0,
+      "total_lines": 512,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "design",
+        "ml-ai",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "voice-audio-engineer",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 1,
+      "script_count": 0,
+      "total_lines": 493,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "design",
+        "ml-ai",
+        "audio-video",
+        "frontend"
+      ]
+    },
+    {
+      "name": "adhd-design-expert",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 1,
+      "script_count": 0,
+      "total_lines": 474,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "testing",
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "windows-3-1-web-designer",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 3,
+      "script_count": 0,
+      "total_lines": 469,
+      "has_examples": false,
+      "categories": [
+        "testing",
+        "design",
+        "ml-ai",
+        "career",
+        "documentation",
+        "frontend"
+      ]
+    },
+    {
+      "name": "metal-shader-expert",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 3,
+      "script_count": 0,
+      "total_lines": 464,
+      "has_examples": false,
+      "categories": [
+        "design",
+        "ml-ai",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "personal-finance-coach",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 3,
+      "script_count": 0,
+      "total_lines": 457,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "career"
+      ]
+    },
+    {
+      "name": "security-auditor",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 1,
+      "script_count": 3,
+      "total_lines": 425,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "testing",
+        "infrastructure",
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "cv-creator",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 3,
+      "script_count": 0,
+      "total_lines": 422,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "infrastructure",
+        "design",
+        "ml-ai",
+        "career",
+        "backend"
+      ]
+    },
+    {
+      "name": "sound-engineer",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 1,
+      "script_count": 0,
+      "total_lines": 418,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "code-necromancer",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 1,
+      "script_count": 2,
+      "total_lines": 408,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "testing",
+        "infrastructure",
+        "design",
+        "ml-ai",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "agent-creator",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 3,
+      "script_count": 0,
+      "total_lines": 388,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "infrastructure",
+        "design",
+        "ml-ai",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "photo-composition-critic",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 4,
+      "script_count": 0,
+      "total_lines": 376,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "design",
+        "ml-ai",
+        "documentation",
+        "backend"
+      ]
+    },
+    {
+      "name": "hrv-alexithymia-expert",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 3,
+      "script_count": 0,
+      "total_lines": 360,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "frontend"
+      ]
+    },
+    {
+      "name": "competitive-cartographer",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 3,
+      "script_count": 1,
+      "total_lines": 332,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "career",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "site-reliability-engineer",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 2,
+      "script_count": 3,
+      "total_lines": 326,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "infrastructure",
+        "design",
+        "ml-ai",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "seo-visibility-expert",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 0,
+      "script_count": 0,
+      "total_lines": 284,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "design",
+        "ml-ai",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "indie-monetization-strategist",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 0,
+      "script_count": 0,
+      "total_lines": 281,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "testing",
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "documentation",
+        "backend"
+      ]
+    },
+    {
+      "name": "web-design-expert",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 3,
+      "script_count": 0,
+      "total_lines": 263,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "audio-video",
+        "frontend"
+      ]
+    },
+    {
+      "name": "design-system-creator",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 0,
+      "script_count": 0,
+      "total_lines": 258,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "testing",
+        "design",
+        "ml-ai",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "2000s-visualization-expert",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 0,
+      "script_count": 0,
+      "total_lines": 250,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "wisdom-accountability-coach",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 2,
+      "script_count": 0,
+      "total_lines": 242,
+      "has_examples": false,
+      "categories": [
+        "design",
+        "ml-ai",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "orchestrator",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 0,
+      "script_count": 0,
+      "total_lines": 233,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "typography-expert",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 0,
+      "script_count": 0,
+      "total_lines": 206,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "audio-video",
+        "frontend"
+      ]
+    },
+    {
+      "name": "team-builder",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 0,
+      "script_count": 0,
+      "total_lines": 197,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "testing",
+        "design",
+        "ml-ai",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "vibe-matcher",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 0,
+      "script_count": 1,
+      "total_lines": 188,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "career",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "clip-aware-embeddings",
+      "has_skill_md": true,
+      "has_changelog": true,
+      "reference_count": 0,
+      "script_count": 1,
+      "total_lines": 182,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "design",
+        "ml-ai",
+        "documentation"
+      ]
+    },
+    {
+      "name": "job-application-optimizer",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 0,
+      "script_count": 0,
+      "total_lines": 182,
+      "has_examples": true,
+      "categories": [
+        "testing",
+        "infrastructure",
+        "design",
+        "ml-ai",
+        "career",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "swift-executor",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 0,
+      "script_count": 0,
+      "total_lines": 179,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "testing",
+        "infrastructure",
+        "design",
+        "ml-ai",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "career-biographer",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 0,
+      "script_count": 1,
+      "total_lines": 160,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "vr-avatar-engineer",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 0,
+      "script_count": 0,
+      "total_lines": 123,
+      "has_examples": true,
+      "categories": [
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    },
+    {
+      "name": "liaison",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 0,
+      "script_count": 0,
+      "total_lines": 121,
+      "has_examples": true,
+      "categories": [
+        "security",
+        "design",
+        "ml-ai",
+        "career",
+        "audio-video",
+        "backend"
+      ]
+    },
+    {
+      "name": "research-analyst",
+      "has_skill_md": true,
+      "has_changelog": false,
+      "reference_count": 0,
+      "script_count": 0,
+      "total_lines": 116,
+      "has_examples": false,
+      "categories": [
+        "testing",
+        "infrastructure",
+        "design",
+        "ml-ai",
+        "documentation",
+        "backend",
+        "frontend"
+      ]
+    }
+  ]
+}
