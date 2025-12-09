@@ -36,6 +36,17 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Council Archives',
+      collapsed: false,
+      items: [
+        'council/index',
+        'council/liaison-reports',
+        'council/snapshots',
+        'council/decisions',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Orchestration & Meta',
       collapsed: false,
       items: [
