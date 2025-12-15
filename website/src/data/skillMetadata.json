@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2025-12-09T16:23:24.998Z",
+  "generatedAt": "2025-12-15T02:19:58.556Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
       "createdAt": "2025-11-28T16:43:50-08:00",
       "updatedAt": "2025-11-28T16:43:50-08:00",
-      "totalLines": 361,
-      "totalFiles": 1,
+      "totalLines": 1225,
+      "totalFiles": 4,
       "skillMdSize": 10585,
       "skillMdLines": 361,
-      "hasReferences": false,
+      "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": false
     },
@@ -33,6 +33,18 @@
       "totalFiles": 5,
       "skillMdSize": 5134,
       "skillMdLines": 146,
+      "hasReferences": true,
+      "hasExamples": false,
+      "hasChangelog": true
+    },
+    "api-architect": {
+      "id": "api-architect",
+      "createdAt": null,
+      "updatedAt": null,
+      "totalLines": 799,
+      "totalFiles": 8,
+      "skillMdSize": 5360,
+      "skillMdLines": 147,
       "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": true
@@ -101,8 +113,8 @@
       "id": "collage-layout-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-28T16:43:50-08:00",
-      "totalLines": 2102,
-      "totalFiles": 8,
+      "totalLines": 2778,
+      "totalFiles": 11,
       "skillMdSize": 13078,
       "skillMdLines": 368,
       "hasReferences": true,
@@ -145,17 +157,29 @@
       "hasExamples": false,
       "hasChangelog": true
     },
+    "data-pipeline-engineer": {
+      "id": "data-pipeline-engineer",
+      "createdAt": null,
+      "updatedAt": null,
+      "totalLines": 860,
+      "totalFiles": 7,
+      "skillMdSize": 5645,
+      "skillMdLines": 140,
+      "hasReferences": true,
+      "hasExamples": false,
+      "hasChangelog": true
+    },
     "design-archivist": {
       "id": "design-archivist",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-11-25T18:43:58-08:00",
-      "totalLines": 811,
-      "totalFiles": 4,
-      "skillMdSize": 13636,
-      "skillMdLines": 389,
+      "totalLines": 631,
+      "totalFiles": 5,
+      "skillMdSize": 6239,
+      "skillMdLines": 173,
       "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "design-system-creator": {
       "id": "design-system-creator",
@@ -165,18 +189,30 @@
       "totalFiles": 2,
       "skillMdSize": 11614,
       "skillMdLines": 360,
-      "hasReferences": false,
+      "hasReferences": true,
+      "hasExamples": false,
+      "hasChangelog": true
+    },
+    "devops-automator": {
+      "id": "devops-automator",
+      "createdAt": null,
+      "updatedAt": null,
+      "totalLines": 794,
+      "totalFiles": 7,
+      "skillMdSize": 6890,
+      "skillMdLines": 171,
+      "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": true
     },
     "diagramming-expert": {
       "id": "diagramming-expert",
       "createdAt": "2025-12-06T14:44:42-08:00",
-      "updatedAt": "2025-12-09T08:09:59-08:00",
-      "totalLines": 2532,
+      "updatedAt": "2025-12-11T20:32:29-08:00",
+      "totalLines": 2522,
       "totalFiles": 5,
-      "skillMdSize": 10961,
-      "skillMdLines": 291,
+      "skillMdSize": 10569,
+      "skillMdLines": 281,
       "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": false
@@ -245,13 +281,13 @@
       "id": "indie-monetization-strategist",
       "createdAt": "2025-12-01T14:26:53-08:00",
       "updatedAt": "2025-12-01T14:26:53-08:00",
-      "totalLines": 404,
-      "totalFiles": 1,
-      "skillMdSize": 12156,
-      "skillMdLines": 404,
+      "totalLines": 1541,
+      "totalFiles": 5,
+      "skillMdSize": 7732,
+      "skillMdLines": 226,
       "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "interior-design-expert": {
       "id": "interior-design-expert",
@@ -280,13 +316,13 @@
     "jungian-psychologist": {
       "id": "jungian-psychologist",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-09T08:09:59-08:00",
-      "totalLines": 1549,
-      "totalFiles": 6,
-      "skillMdSize": 6970,
-      "skillMdLines": 159,
+      "updatedAt": "2025-12-11T20:32:29-08:00",
+      "totalLines": 8097,
+      "totalFiles": 14,
+      "skillMdSize": 7950,
+      "skillMdLines": 176,
       "hasReferences": true,
-      "hasExamples": false,
+      "hasExamples": true,
       "hasChangelog": true
     },
     "liaison": {
@@ -397,6 +433,18 @@
       "hasExamples": false,
       "hasChangelog": true
     },
+    "refactoring-surgeon": {
+      "id": "refactoring-surgeon",
+      "createdAt": null,
+      "updatedAt": null,
+      "totalLines": 1663,
+      "totalFiles": 7,
+      "skillMdSize": 7026,
+      "skillMdLines": 161,
+      "hasReferences": true,
+      "hasExamples": false,
+      "hasChangelog": true
+    },
     "research-analyst": {
       "id": "research-analyst",
       "createdAt": "2025-11-25T18:43:58-08:00",
@@ -425,13 +473,13 @@
       "id": "seo-visibility-expert",
       "createdAt": "2025-12-01T14:26:53-08:00",
       "updatedAt": "2025-12-01T14:27:02-08:00",
-      "totalLines": 400,
-      "totalFiles": 1,
-      "skillMdSize": 11622,
-      "skillMdLines": 400,
+      "totalLines": 1374,
+      "totalFiles": 5,
+      "skillMdSize": 6405,
+      "skillMdLines": 197,
       "hasReferences": true,
       "hasExamples": false,
-      "hasChangelog": false
+      "hasChangelog": true
     },
     "site-reliability-engineer": {
       "id": "site-reliability-engineer",
@@ -461,10 +509,10 @@
       "id": "skill-documentarian",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-12-09T08:09:59-08:00",
-      "totalLines": 2086,
+      "totalLines": 2132,
       "totalFiles": 10,
-      "skillMdSize": 11517,
-      "skillMdLines": 305,
+      "skillMdSize": 13257,
+      "skillMdLines": 351,
       "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": true
@@ -525,6 +573,18 @@
       "totalFiles": 6,
       "skillMdSize": 6643,
       "skillMdLines": 183,
+      "hasReferences": true,
+      "hasExamples": false,
+      "hasChangelog": true
+    },
+    "technical-writer": {
+      "id": "technical-writer",
+      "createdAt": null,
+      "updatedAt": null,
+      "totalLines": 1323,
+      "totalFiles": 7,
+      "skillMdSize": 5547,
+      "skillMdLines": 138,
       "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": true

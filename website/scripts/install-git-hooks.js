@@ -13,6 +13,65 @@ STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '\\.md$' || t
 STAGED_TS=$(git diff --cached --name-only --diff-filter=ACM | grep 'skills\\.ts$' || true)
 STAGED_SKILLS=$(git diff --cached --name-only --diff-filter=ACMD | grep '^\\.claude/skills/' || true)
 STAGED_SKILL_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '^\\.claude/skills/.*\\.md$' || true)
+STAGED_README=$(git diff --cached --name-only --diff-filter=ACM | grep '^README\\.md$' || true)
+STAGED_AGENTS=$(git diff --cached --name-only --diff-filter=ACM | grep '^\\.claude/agents/.*\\.md$' || true)
+
+# Get project root
+PROJECT_ROOT="$(git rev-parse --show-toplevel)"
+
+# ========================================
+# FORGE: Agent Validation
+# ========================================
+if [ -n "$STAGED_AGENTS" ]; then
+  VALIDATOR="$PROJECT_ROOT/scripts/validate_agent.py"
+
+  if [ -f "$VALIDATOR" ]; then
+    echo "🏛️ Validating Founding Council agents..."
+    AGENT_ERRORS=0
+
+    for file in $STAGED_AGENTS; do
+      # Skip uppercase files like FOUNDING_COUNCIL.md
+      BASENAME=$(basename "$file" .md)
+      BASENAME_UPPER=$(echo "$BASENAME" | tr '[:lower:]' '[:upper:]')
+      if [ "$BASENAME" = "$BASENAME_UPPER" ]; then
+        continue
+      fi
+
+      FULL_PATH="$PROJECT_ROOT/$file"
+      echo -n "  Checking $file... "
+
+      if OUTPUT=$(python3 "$VALIDATOR" "$FULL_PATH" 2>&1); then
+        if echo "$OUTPUT" | grep -q "❌ FAIL"; then
+          echo "❌ FAIL"
+          echo "$OUTPUT" | grep -E "(ERROR|❌)" | head -5
+          AGENT_ERRORS=$((AGENT_ERRORS + 1))
+        else
+          echo "✓"
+        fi
+      else
+        echo "❌ FAIL"
+        echo "$OUTPUT" | head -5
+        AGENT_ERRORS=$((AGENT_ERRORS + 1))
+      fi
+    done
+
+    if [ $AGENT_ERRORS -gt 0 ]; then
+      echo "❌ Agent validation failed. Run: python3 scripts/validate_agent.py <agent-file>"
+      exit 1
+    fi
+    echo "✅ Agent validation passed"
+  else
+    echo "⚠️ Agent validator not found at $VALIDATOR, skipping agent validation"
+  fi
+fi
+
+# Check for README.md or skill folder changes (README validation)
+if [ -n "$STAGED_README" ] || [ -n "$STAGED_SKILLS" ]; then
+  echo "📖 Validating README.md skill count..."
+  cd website || exit 1
+  node scripts/validate-readme.js || exit 1
+  cd ..
+fi
 
 # Check for skills.ts changes (badge validation)
 if [ -n "$STAGED_TS" ]; then
@@ -24,6 +83,11 @@ fi
 
 # Check for skill folder changes (metadata regeneration + doc sync)
 if [ -n "$STAGED_SKILLS" ]; then
+  echo "🖼️ Validating hero images..."
+  cd website || exit 1
+  node scripts/validate-hero-images.js || exit 1
+  cd ..
+
   echo "📊 Regenerating skill metadata..."
   cd website || exit 1
 
@@ -50,6 +114,19 @@ if [ -n "$STAGED_SKILLS" ]; then
   if [ -n "$(git diff docs/skills/*.md 2>/dev/null)" ]; then
     echo "📝 Adding updated skill docs to commit..."
     git add docs/skills/*.md
+  fi
+
+  # Regenerate OG image with updated skill count
+  echo "🖼️ Regenerating OG image..."
+  bash scripts/generate-og-image.sh || {
+    echo "❌ Failed to regenerate OG image"
+    exit 1
+  }
+
+  # Add the regenerated OG image to the commit if it changed
+  if [ -n "$(git diff static/img/og-image.png 2>/dev/null)" ]; then
+    echo "📝 Adding updated og-image.png to commit..."
+    git add static/img/og-image.png
   fi
 
   cd ..
@@ -98,6 +175,21 @@ for file in $STAGED_MD; do
     node scripts/validate-skill-props.js "../$file" || exit 1
   fi
 done
+
+# ========================================
+# SYNC SKILLS/AGENTS TO USER-LEVEL CONFIG
+# ========================================
+# Always sync skills and agents to user-level Claude Code config
+# This ensures the user's Claude Code has access to all repo skills/agents
+if [ -n "$STAGED_SKILLS" ] || [ -n "$STAGED_AGENTS" ]; then
+  SYNC_SCRIPT="$PROJECT_ROOT/scripts/sync-skills-to-user.sh"
+  if [ -f "$SYNC_SCRIPT" ]; then
+    echo ""
+    bash "$SYNC_SCRIPT" || {
+      echo "⚠️ Warning: Failed to sync skills/agents to user config (non-fatal)"
+    }
+  fi
+fi
 
 echo "✅ Pre-commit validation passed"
 exit 0
