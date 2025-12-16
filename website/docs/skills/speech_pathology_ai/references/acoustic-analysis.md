@@ -265,7 +265,7 @@ class VocalTractVisualizer {
 
     animateTongue(frontPos, height) {
         // Morph tongue shape to target position
-        console.log(`Animating tongue to front: ${frontPos}, height: ${height}`);
+        console.log(`Animating tongue to front: $\{frontPos\}, height: $\{height\}`);
     }
 
     animateLips(rounding, opening) {

@@ -339,7 +339,7 @@ class PromptLearningServer {
         case "get_analytics":
           return await this.getAnalytics(args);
         default:
-          throw new Error(`Unknown tool: ${name}`);
+          throw new Error(`Unknown tool: $\{name\}`);
       }
     });
   }

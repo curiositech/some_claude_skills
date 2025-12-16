@@ -151,7 +151,7 @@ if (health.skills.with_hero_images < health.skills.total) {
 
 if (failures.length > 0) {
   console.error('❌ Deployment blocked:');
-  failures.forEach(f => console.error(`   - ${f}`));
+  failures.forEach(f => console.error(`   - $\{f\}`));
   process.exit(1);
 }
 

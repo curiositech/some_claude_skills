@@ -372,7 +372,7 @@ import requests
 
 def get_author_collaborators(author_id):
     """Get co-authors from Semantic Scholar."""
-    url = f"https://api.semanticscholar.org/graph/v1/author/{author_id}"
+    url = f"https://api.semanticscholar.org/graph/v1/author/\{author_id\}"
     params = {
         'fields': 'papers.authors'
     }
@@ -397,9 +397,9 @@ def get_repo_contributors(owner, repo, token=None):
     """Get contributors to a GitHub repo."""
     headers = {}
     if token:
-        headers['Authorization'] = f'token {token}'
+        headers['Authorization'] = f'token \{token\}'
 
-    url = f"https://api.github.com/repos/{owner}/{repo}/contributors"
+    url = f"https://api.github.com/repos/\{owner\}/\{repo\}/contributors"
     resp = requests.get(url, headers=headers)
 
     return [(c['login'], c['contributions']) for c in resp.json()]
@@ -417,9 +417,9 @@ def build_github_network(repos, token=None):
             for user2, contrib2 in contributors[i+1:]:
                 if G.has_edge(user1, user2):
                     G[user1][user2]['weight'] += 1
-                    G[user1][user2]['repos'].append(f"{owner}/{repo}")
+                    G[user1][user2]['repos'].append(f"\{owner\}/\{repo\}")
                 else:
-                    G.add_edge(user1, user2, weight=1, repos=[f"{owner}/{repo}"])
+                    G.add_edge(user1, user2, weight=1, repos=[f"\{owner\}/\{repo\}"])
 
     return G
 ```
@@ -451,7 +451,7 @@ def visualize_network(G, metrics, output='network.html'):
         bc = metrics['betweenness'][node]
         size = 10 + 100 * bc
         color = colors[classifications[node]]
-        title = f"{node}<br>Type: {classifications[node]}<br>BC: {bc:.4f}"
+        title = f"\{node\}<br>Type: {classifications[node]}<br>BC: {bc:.4f}"
 
         net.add_node(node, size=size, color=color, title=title)
 

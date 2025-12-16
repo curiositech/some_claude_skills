@@ -279,7 +279,7 @@ function compileShader(
 
   if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
     const info = gl.getShaderInfoLog(shader);
-    throw new Error(`Shader compilation error: ${info}`);
+    throw new Error(`Shader compilation error: $\{info\}`);
   }
 
   return shader;

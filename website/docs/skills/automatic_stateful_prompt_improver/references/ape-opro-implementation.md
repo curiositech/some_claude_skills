@@ -59,7 +59,7 @@ class APEOptimizer:
 
         # Format examples
         examples_text = "\n".join([
-            f"Input: {x}\nOutput: {y}"
+            f"Input: \{x\}\nOutput: \{y\}"
             for x, y in examples[:5]  # Use first 5 examples
         ])
 
@@ -67,16 +67,16 @@ class APEOptimizer:
         I have a task where given certain inputs, I want specific outputs.
 
         Here are some examples:
-        {examples_text}
+        \{examples_text\}
 
-        Your task: Generate {n} different instructions that would cause an AI to produce these outputs from these inputs.
+        Your task: Generate \{n\} different instructions that would cause an AI to produce these outputs from these inputs.
 
         Requirements:
         - Each instruction should be clear and complete
         - Instructions should be diverse (different phrasings, approaches)
         - Instructions should be concise but complete
 
-        Generate exactly {n} instructions, one per line, numbered 1-{n}:
+        Generate exactly \{n\} instructions, one per line, numbered 1-\{n\}:
         """
 
         response = await self.llm.generate(generation_prompt)
@@ -96,7 +96,7 @@ class APEOptimizer:
         total = len(eval_examples)
 
         for x, expected_y in eval_examples:
-            prompt = f"{instruction}\n\nInput: {x}\n\nOutput:"
+            prompt = f"\{instruction\}\n\nInput: \{x\}\n\nOutput:"
             response = await self.llm.generate(prompt)
 
             # Simple exact match (could use semantic similarity)
@@ -160,13 +160,13 @@ class APEOptimizer:
         Generate variations of an instruction.
         """
         variation_prompt = f"""
-        Generate {num_variations} variations of the following instruction.
+        Generate \{num_variations\} variations of the following instruction.
         Keep the semantic meaning but vary the phrasing, structure, or emphasis.
 
         Original instruction:
-        {instruction}
+        \{instruction\}
 
-        Variations (numbered 1-{num_variations}):
+        Variations (numbered 1-\{num_variations\}):
         """
 
         response = await self.llm.generate(variation_prompt)
@@ -202,7 +202,7 @@ async def improve_prompt_ape_style(
     optimizer = APEOptimizer(llm_client)
 
     # Use original prompt as task description
-    task_description = f"Original prompt: {original_prompt}"
+    task_description = f"Original prompt: \{original_prompt\}"
 
     # Optimize
     best_instruction, score = await optimizer.optimize(
@@ -268,18 +268,18 @@ class OPROOptimizer:
         recent = sorted_history[-self.max_history:]
 
         history_text = "\n".join([
-            f"Instruction: {inst}\nScore: {score:.3f}"
+            f"Instruction: \{inst\}\nScore: {score:.3f}"
             for inst, score in recent
         ])
 
         meta_prompt = f"""
         Your task is to generate an instruction that will achieve a high score on this task:
 
-        {task_description}
+        \{task_description\}
 
         Here are some previous instructions and their scores (higher is better):
 
-        {history_text}
+        \{history_text\}
 
         Based on the patterns in what works well:
         1. Analyze why high-scoring instructions perform better
@@ -393,7 +393,7 @@ async def improve_prompt_opro_style(
     async def eval_fn(instruction: str) -> float:
         correct = 0
         for x, expected_y in eval_examples:
-            prompt = f"{instruction}\n\nInput: {x}"
+            prompt = f"\{instruction\}\n\nInput: \{x\}"
             response = await llm_client.generate(prompt)
             if expected_y.lower() in response.lower():
                 correct += 1
@@ -401,7 +401,7 @@ async def improve_prompt_opro_style(
 
     # Task description
     task_description = f"""
-    Original prompt: {original_prompt}
+    Original prompt: \{original_prompt\}
 
     The goal is to find an instruction that produces correct outputs for various inputs.
     The instruction should be clear, specific, and effective.
@@ -454,7 +454,7 @@ class HybridPromptOptimizer:
 
         # Phase 1: APE generates initial candidates
         candidates = await self.ape.generate_candidates(
-            f"Task: {original_prompt}",
+            f"Task: \{original_prompt\}",
             train_examples,
             num_candidates=10
         )
@@ -475,7 +475,7 @@ class HybridPromptOptimizer:
         # Phase 2: OPRO iterative optimization
         task_description = f"""
         Task: Generate instructions for this prompt optimization task.
-        Original prompt: {original_prompt}
+        Original prompt: \{original_prompt\}
 
         The instruction should make the AI produce correct outputs for various inputs.
         """
@@ -508,7 +508,7 @@ class HybridPromptOptimizer:
         """Simple evaluation function."""
         correct = 0
         for x, expected_y in examples:
-            prompt = f"{instruction}\n\nInput: {x}"
+            prompt = f"\{instruction\}\n\nInput: \{x\}"
             response = await self.llm.generate(prompt)
             if self._matches(response, expected_y):
                 correct += 1
@@ -533,31 +533,31 @@ class PatternBasedOptimizer:
         {
             "name": "add_structure",
             "check": lambda p: not any(x in p.lower() for x in ["1.", "2.", "step", "first"]),
-            "apply": lambda p: f"{p}\n\nProvide your response in this format:\n1. [First point]\n2. [Second point]\n3. [Summary]",
+            "apply": lambda p: f"\{p\}\n\nProvide your response in this format:\n1. [First point]\n2. [Second point]\n3. [Summary]",
             "expected_improvement": 0.15
         },
         {
             "name": "add_cot",
             "check": lambda p: "step by step" not in p.lower() and "think" not in p.lower(),
-            "apply": lambda p: f"{p}\n\nThink through this step by step before providing your final answer.",
+            "apply": lambda p: f"\{p\}\n\nThink through this step by step before providing your final answer.",
             "expected_improvement": 0.20
         },
         {
             "name": "add_constraints",
             "check": lambda p: len(p) < 100,
-            "apply": lambda p: f"{p}\n\nRequirements:\n- Be specific and precise\n- Support claims with evidence\n- Keep response focused",
+            "apply": lambda p: f"\{p\}\n\nRequirements:\n- Be specific and precise\n- Support claims with evidence\n- Keep response focused",
             "expected_improvement": 0.10
         },
         {
             "name": "add_role",
             "check": lambda p: not p.lower().startswith(("you are", "as a", "act as")),
-            "apply": lambda p: f"You are an expert in this domain. {p}",
+            "apply": lambda p: f"You are an expert in this domain. \{p\}",
             "expected_improvement": 0.05
         },
         {
             "name": "add_output_format",
             "check": lambda p: "format" not in p.lower() and "json" not in p.lower(),
-            "apply": lambda p: f"{p}\n\nFormat your response as a clear, structured answer.",
+            "apply": lambda p: f"\{p\}\n\nFormat your response as a clear, structured answer.",
             "expected_improvement": 0.10
         }
     ]
@@ -627,7 +627,7 @@ def check_optimization_convergence(
 
     # Target reached
     if scores[-1] >= target:
-        return True, f"target_reached ({scores[-1]:.3f} >= {target})"
+        return True, f"target_reached ({scores[-1]:.3f} >= \{target\})"
 
     # Plateau detection
     if len(scores) >= window:

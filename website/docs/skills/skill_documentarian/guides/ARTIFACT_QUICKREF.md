@@ -10,7 +10,7 @@ Use this guide while actively creating an artifact. For full details, see `ARTIF
 ## Workflow Checklist
 
 ### Before Starting Work
-- [ ] Create artifact folder: `/website/src/data/artifacts/{type}/{skill-name}/{number-name}/`
+- [ ] Create artifact folder: `/website/src/data/artifacts/\{type\}/{skill-name}/{number-name}/`
 - [ ] Copy current files to `before/` folder
   - [ ] Components, hooks, contexts
   - [ ] Data files
@@ -46,7 +46,7 @@ Use this guide while actively creating an artifact. For full details, see `ARTIF
 ## Folder Structure
 
 ```
-/website/src/data/artifacts/{type}/{skill-name}/{number-name}/
+/website/src/data/artifacts/\{type\}/{skill-name}/{number-name}/
 ├── artifact.json       # REQUIRED: Metadata
 ├── README.md           # REQUIRED: Overview
 ├── transcript.md       # OPTIONAL: Conversation log
@@ -71,7 +71,7 @@ Use this guide while actively creating an artifact. For full details, see `ARTIF
 
 ```json
 {
-  "id": "{type}-{skill}-{number}-{slug}",
+  "id": "\{type\}-\{skill\}-\{number\}-\{slug\}",
   "title": "Descriptive Title",
   "description": "2-3 sentence summary",
   "type": "single-skill | multi-skill | frontend",
@@ -168,10 +168,10 @@ open http://localhost:3000/artifacts
 
 ```bash
 # Add artifact
-git add website/src/data/artifacts/{type}/{name}
+git add website/src/data/artifacts/\{type\}/\{name\}
 
 # Commit
-git commit -m "Add artifact: {title}"
+git commit -m "Add artifact: \{title\}"
 
 # Update artifact imports in artifacts.tsx if needed
 # Push and create pull request

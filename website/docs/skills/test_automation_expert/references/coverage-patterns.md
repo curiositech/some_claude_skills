@@ -379,7 +379,7 @@ describe.each([
   ['', false],
   [null, false],
 ])('validateEmail(%s)', (email, expected) => {
-  it(`returns ${expected}`, () => {
+  it(`returns $\{expected\}`, () => {
     expect(validateEmail(email)).toBe(expected);
   });
 });

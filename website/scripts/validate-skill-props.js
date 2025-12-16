@@ -5,13 +5,30 @@ function validateSkillHeader(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');
   const errors = [];
 
-  // Find SkillHeader component usage
-  const headerMatch = content.match(/<SkillHeader[\s\S]*?\/>/);
+  // Remove code blocks before searching for SkillHeader
+  // This prevents false positives from code examples
+  const contentWithoutCodeBlocks = content.replace(/```[\s\S]*?```/g, '');
+
+  // Find SkillHeader component usage (outside of code blocks)
+  const headerMatch = contentWithoutCodeBlocks.match(/<SkillHeader[\s\S]*?\/>/);
   if (!headerMatch) return errors;
 
   const headerText = headerMatch[0];
   const lines = content.split('\n');
-  const lineNum = lines.findIndex(l => l.includes('<SkillHeader')) + 1;
+
+  // Find the actual line number (search in original content but only outside code blocks)
+  let inCodeBlock = false;
+  let lineNum = 0;
+  for (let i = 0; i < lines.length; i++) {
+    if (lines[i].startsWith('```')) {
+      inCodeBlock = !inCodeBlock;
+      continue;
+    }
+    if (!inCodeBlock && lines[i].includes('<SkillHeader')) {
+      lineNum = i + 1;
+      break;
+    }
+  }
 
   // Check for correct prop: fileName (not skillId)
   if (headerText.includes('skillId=')) {

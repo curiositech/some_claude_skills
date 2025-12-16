@@ -14,7 +14,7 @@ Battle-tested email sequences for indie product launches and monetization.
 **Subject:** Your [Resource Name] is ready 📦
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 Thanks for grabbing [Resource Name]!
 
@@ -36,7 +36,7 @@ P.S. Hit reply if you have any questions. I read every email.
 **Subject:** The mistake I see 90% of developers make
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 After helping [X] developers with [problem], I've noticed a pattern.
 
@@ -58,7 +58,7 @@ What's the biggest challenge you're facing with [topic]?
 **Subject:** Why I built [product/resource]
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 Let me tell you why [Resource Name] exists.
 
@@ -80,7 +80,7 @@ If you ever want to chat about [topic], just hit reply.
 **Subject:** A question for you
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 Quick question: Have you had a chance to use [Resource Name]?
 
@@ -102,15 +102,15 @@ What would be most valuable for you right now?
 **Subject:** "This changed everything for me" - \{Customer Name\}
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 Wanted to share some wins from the community:
 
 "[Testimonial 1]"
-— {Name}, {Role at Company}
+— \{Name\}, \{Role at Company\}
 
 "[Testimonial 2]"
-— {Name}, {Role at Company}
+— \{Name\}, \{Role at Company\}
 
 These developers went from [before state] to [after state].
 
@@ -124,10 +124,10 @@ If you're ready to [achieve outcome], here's how:
 
 ### Email 6: Direct Pitch with Deadline (Day 30)
 
-**Subject:** {first_name}, decision time
+**Subject:** \{first_name\}, decision time
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 I've been sharing tips about [topic] for the past month.
 
@@ -170,7 +170,7 @@ P.S. After [deadline], the price goes back to $[X]. Lock in your discount today.
 **Subject:** Something new is coming...
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 For the past 6 months, I've been building something I'm really excited about.
 
@@ -197,7 +197,7 @@ More details coming soon.
 **Subject:** First look at [Product Name]
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 Here's your sneak peek at [Product Name]:
 
@@ -229,7 +229,7 @@ Reply if you have any questions!
 **Subject:** [Product Name] is LIVE 🚀
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 It's finally here.
 
@@ -266,7 +266,7 @@ Quick recap of what you get:
 **Subject:** Your questions about [Product Name], answered
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 Since launching this morning, I've gotten a lot of questions.
 
@@ -295,14 +295,14 @@ Ready to join?
 
 ### Launch Email 3: Case Study (Day 2)
 
-**Subject:** How {Customer} achieved [result]
+**Subject:** How \{Customer\} achieved [result]
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 Quick story:
 
-{Customer Name} came to me with [problem].
+\{Customer Name\} came to me with [problem].
 
 They had tried [previous attempts] but nothing worked.
 
@@ -310,7 +310,7 @@ Then they [action with your product].
 
 The result? [Specific outcome with numbers if possible].
 
-Here's what {Customer} said:
+Here's what \{Customer\} said:
 
 "[Testimonial quote]"
 
@@ -328,7 +328,7 @@ Launch pricing ends [deadline].
 **Subject:** Last chance: [Product Name] launch price ends tonight
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 This is it.
 
@@ -358,7 +358,7 @@ What you get:
 **Subject:** 3 hours left...
 
 ```
-{first_name},
+\{first_name\},
 
 3 hours left to get [Product Name] at launch price.
 
@@ -381,10 +381,10 @@ P.S. 30-day guarantee. If it's not for you, get a full refund.
 
 ### Email 1: We Miss You
 
-**Subject:** Are you still there, {first_name}?
+**Subject:** Are you still there, \{first_name\}?
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 I noticed you haven't opened my emails in a while.
 
@@ -406,7 +406,7 @@ P.S. If you'd rather not hear from me, no worries. [Unsubscribe link]
 **Subject:** The 5 things I'd read if I were starting over
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 In case you missed them, here are my 5 most popular posts:
 
@@ -426,7 +426,7 @@ Which one interests you most?
 **Subject:** Should I remove you?
 
 ```
-Hey {first_name},
+Hey \{first_name\},
 
 I want to respect your time.
 
@@ -458,7 +458,7 @@ No hard feelings either way.
 - "[X] ways to [benefit] (starting today)"
 
 ### Personal
-- "{first_name}, quick question"
+- "\{first_name\}, quick question"
 - "I made a mistake..."
 - "The story I've never told"
 

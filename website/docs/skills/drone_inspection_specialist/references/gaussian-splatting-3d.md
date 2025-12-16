@@ -507,7 +507,7 @@ class InspectionMeasurement:
     def _load_gaussians(self, model_path: str) -> Dict:
         """Load Gaussian parameters from PLY file"""
         # Simplified - real implementation parses full PLY format
-        ply_path = f"{model_path}/point_cloud/iteration_30000/point_cloud.ply"
+        ply_path = f"\{model_path\}/point_cloud/iteration_30000/point_cloud.ply"
 
         positions = []
         # Parse PLY file for positions

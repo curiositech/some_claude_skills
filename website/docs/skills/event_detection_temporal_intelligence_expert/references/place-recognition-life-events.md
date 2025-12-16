@@ -113,11 +113,11 @@ def label_event_by_location(event_photos, place_recognizer):
     # Generate label
     if place_analysis['is_landmark']:
         landmark_name = extract_landmark_name(place_analysis['address'])
-        return f"Visit to {landmark_name}"
+        return f"Visit to \{landmark_name\}"
 
     elif place_analysis['user_context'] == 'novel':
         city = extract_city(place_analysis['address'])
-        return f"Trip to {city}"
+        return f"Trip to \{city\}"
 
     elif place_analysis['user_context'] == 'familiar':
         return "At Home"

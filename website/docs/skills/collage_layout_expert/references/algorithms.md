@@ -304,7 +304,7 @@ def guillotine_pack(images, canvas_width):
 
 | Operation | Mac M2 | iPhone 15 Pro |
 |-----------|--------|---------------|
-| Grid layout (20 photos) | \<50ms | \<100ms |
+| Grid layout (20 photos) | &lt;50ms | &lt;100ms |
 | Photo mosaic (10k tiles) | 2s | 5s |
 | Force-directed (50 images, 100 iter) | 200ms | 500ms |
 | Poisson blending (512×512) | 20ms | 50ms |

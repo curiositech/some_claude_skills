@@ -39,7 +39,7 @@ class DistributedRateLimiter:
         Returns: (allowed: bool, retry_after: float)
         Uses sliding window log algorithm for accuracy.
         """
-        full_key = f"{self.prefix}:{key}"
+        full_key = f"{self.prefix}:\{key\}"
         now = time.time()
         window_start = now - config.window
 

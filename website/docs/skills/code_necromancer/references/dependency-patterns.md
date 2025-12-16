@@ -179,7 +179,7 @@ function generateDependencyMermaid(repos) {
     Object.keys(deps).forEach(dep => {
       // Check if dep is an internal repo
       if (repos.some(r => r.name === dep)) {
-        lines.push(`  ${repo.name}-->${dep}`);
+        lines.push(`  ${repo.name}-->$\{dep\}`);
       }
     });
   });

@@ -114,7 +114,7 @@ describe('Service Communication', () => {
 describe('Authentication Flow', () => {
   test('can register new user', async () => {
     const response = await api.post('/auth/register', {
-      email: `test-${Date.now()}@example.com`,
+      email: `test-$\{Date.now()\}@example.com`,
       password: 'SecurePassword123!'
     });
 
@@ -141,7 +141,7 @@ describe('Authentication Flow', () => {
     const token = loginResponse.data.token;
 
     const response = await api.get('/api/me', {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer $\{token\}` }
     });
 
     expect(response.status).toBe(200);
@@ -175,7 +175,7 @@ describe('Order Flow', () => {
       productId: 1,
       quantity: 2
     }, {
-      headers: { Authorization: `Bearer ${authToken}` }
+      headers: { Authorization: `Bearer $\{authToken\}` }
     });
 
     expect(response.status).toBe(200);
@@ -190,7 +190,7 @@ describe('Order Flow', () => {
         zip: '12345'
       }
     }, {
-      headers: { Authorization: `Bearer ${authToken}` }
+      headers: { Authorization: `Bearer $\{authToken\}` }
     });
 
     expect(response.status).toBe(201);

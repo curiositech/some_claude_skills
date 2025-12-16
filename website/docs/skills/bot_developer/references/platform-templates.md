@@ -71,10 +71,10 @@ class ProductionBot(commands.Bot):
         # Load cogs
         for cog in ['moderation', 'economy', 'fun', 'admin']:
             try:
-                await self.load_extension(f'cogs.{cog}')
-                logger.info(f"Loaded cog: {cog}")
+                await self.load_extension(f'cogs.\{cog\}')
+                logger.info(f"Loaded cog: \{cog\}")
             except Exception as e:
-                logger.error(f"Failed to load cog {cog}: {e}")
+                logger.error(f"Failed to load cog \{cog\}: \{e\}")
 
         # Sync commands
         await self.tree.sync()
@@ -105,9 +105,9 @@ class ProductionBot(commands.Bot):
 
     async def on_error(self, event: str, *args, **kwargs):
         """Global error handler."""
-        logger.exception(f"Error in {event}")
+        logger.exception(f"Error in \{event\}")
         if self.redis:
-            await self.redis.publish('bot_errors', f"Error in {event}")
+            await self.redis.publish('bot_errors', f"Error in \{event\}")
 ```
 
 ## Telegram Bot with Webhooks
@@ -122,7 +122,7 @@ app = FastAPI()
 # Telegram app (don't use polling in production!)
 telegram_app = Application.builder().token(BOT_TOKEN).build()
 
-@app.post("/webhook/{token}")
+@app.post("/webhook/\{token\}")
 async def telegram_webhook(token: str, request: Request):
     """Receive Telegram updates via webhook."""
 
@@ -146,7 +146,7 @@ async def telegram_webhook(token: str, request: Request):
 @app.on_event("startup")
 async def setup_webhook():
     await telegram_app.bot.set_webhook(
-        url=f"https://mybot.com/webhook/{WEBHOOK_TOKEN}",
+        url=f"https://mybot.com/webhook/\{WEBHOOK_TOKEN\}",
         secret_token=TELEGRAM_SECRET,
         allowed_updates=["message", "callback_query"],
         drop_pending_updates=True

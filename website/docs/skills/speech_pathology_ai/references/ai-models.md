@@ -186,7 +186,7 @@ class RealTimePERCEPTR:
 
         return {
             'accuracy': accuracy,
-            'feedback': f"{praise} Your /{target}/ is {accuracy:.1f}% accurate.",
+            'feedback': f"\{praise\} Your /\{target\}/ is {accuracy:.1f}% accurate.",
             'specific_errors': cues,
             'next_steps': cues[0] if cues else "Great work! Keep practicing."
         }
@@ -271,8 +271,8 @@ class ChildrenSpeechRecognizer:
             return {
                 'phase': 'isolation',
                 'exercises': [
-                    f"Practice /{target_phoneme}/ sound alone",
-                    f"Say /{target_phoneme}/ 10 times slowly"
+                    f"Practice /\{target_phoneme\}/ sound alone",
+                    f"Say /\{target_phoneme\}/ 10 times slowly"
                 ],
                 'trials': 20,
                 'success_criterion': 70
@@ -282,9 +282,9 @@ class ChildrenSpeechRecognizer:
             return {
                 'phase': 'syllable',
                 'exercises': [
-                    f"/{target_phoneme}a/",
-                    f"/{target_phoneme}i/",
-                    f"/{target_phoneme}u/"
+                    f"/\{target_phoneme\}a/",
+                    f"/\{target_phoneme\}i/",
+                    f"/\{target_phoneme\}u/"
                 ],
                 'trials': 15,
                 'success_criterion': 85

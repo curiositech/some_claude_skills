@@ -186,7 +186,7 @@ async def compare_crops(image_path: str, crops: list[dict]) -> str:
             crop['x'] + crop['width'],
             crop['y'] + crop['height']
         ))
-        temp_path = f"/tmp/crop_{i}.jpg"
+        temp_path = f"/tmp/crop_\{i\}.jpg"
         cropped.save(temp_path)
         score = critic.analyze(temp_path)['overall']
         results.append((i, score, crop))
@@ -195,7 +195,7 @@ async def compare_crops(image_path: str, crops: list[dict]) -> str:
 
     output = "## Crop Comparison\n\n"
     for rank, (idx, score, crop) in enumerate(results, 1):
-        output += f"{rank}. Crop {idx}: **{score:.1f}/10** "
+        output += f"\{rank\}. Crop \{idx\}: **{score:.1f}/10** "
         output += f"({crop['width']}x{crop['height']} at {crop['x']},{crop['y']})\n"
 
     return output

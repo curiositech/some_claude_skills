@@ -290,7 +290,7 @@ Ready to join?
 
 ### Launch Email 3: Case Study (Day 2)
 
-**Subject:** How {Customer} achieved [result]
+**Subject:** How \{Customer\} achieved [result]
 
 ```
 Hey {first_name},
@@ -376,7 +376,7 @@ P.S. 30-day guarantee. If it's not for you, get a full refund.
 
 ### Email 1: We Miss You
 
-**Subject:** Are you still there, {first_name}?
+**Subject:** Are you still there, \{first_name\}?
 
 ```
 Hey {first_name},
@@ -453,7 +453,7 @@ No hard feelings either way.
 - "[X] ways to [benefit] (starting today)"
 
 ### Personal
-- "{first_name}, quick question"
+- "\{first_name\}, quick question"
 - "I made a mistake..."
 - "The story I've never told"
 
@@ -463,6 +463,6 @@ No hard feelings either way.
 - "This disappears tomorrow"
 
 ### Social Proof
-- "How {Customer} achieved [result]"
+- "How \{Customer\} achieved [result]"
 - "[X] developers are already doing this"
 - "Join [X]+ people who [outcome]"

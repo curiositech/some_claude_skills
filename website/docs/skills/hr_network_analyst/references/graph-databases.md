@@ -34,7 +34,7 @@ FOR (p:Person) ON (p.name);
 // Relationship types
 (:Person)-[:WORKS_AT {since, role}]->(:Company)
 (:Person)-[:SPOKE_AT {talk_title, track}]->(:Conference)
-(:Person)-[:COAUTHORED {position}]->(:Publication)
+(:Person)-[:COAUTHORED \{position\}]->(:Publication)
 (:Person)-[:CONTRIBUTED_TO {commits, role}]->(:Project)
 (:Person)-[:KNOWS {strength, source, since}]->(:Person)
 (:Person)-[:COLLABORATED_WITH {project, duration}]->(:Person)
@@ -308,7 +308,7 @@ CREATE DIRECTED EDGE KNOWS (
 CREATE QUERY betweenness_centrality() FOR GRAPH professional_network {
   MapAccum<VERTEX<Person>, FLOAT> @@bc_scores;
 
-  Start = {Person.*};
+  Start = \{Person.*\};
 
   // Run shortest paths from each node
   FOREACH src IN Start DO
@@ -327,7 +327,7 @@ FOR GRAPH professional_network {
   MaxAccum<FLOAT> @pr_score = 1.0;
   SumAccum<FLOAT> @new_score;
 
-  Start = {Person.*};
+  Start = \{Person.*\};
   INT num_vertices = Start.size();
 
   FOREACH i IN RANGE[1, max_iter] DO
@@ -348,7 +348,7 @@ FOR GRAPH professional_network {
   SumAccum<INT> @degree;
   MaxAccum<FLOAT> @betweenness;
 
-  Start = {Person.*};
+  Start = \{Person.*\};
 
   // Calculate degree
   connected = SELECT s
@@ -547,7 +547,7 @@ superconnectors = analyzer.get_superconnectors()
 print(superconnectors.head(10))
 
 path, degrees = analyzer.find_path_to_target("Alice", "Bob")
-print(f"Path: {' -> '.join(path)} ({degrees} degrees)")
+print(f"Path: {' -> '.join(path)} (\{degrees\} degrees)")
 
 classifications = analyzer.classify_by_gladwell()
 print(classifications[classifications['archetype'] == 'connector'])

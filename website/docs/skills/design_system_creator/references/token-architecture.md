@@ -228,7 +228,7 @@ Use modular scale (1.25 ratio is common):
 
 ### Naming Pattern
 ```
---{category}-{property}-{variant}
+--\{category\}-\{property\}-\{variant\}
 
 Examples:
 --color-primary-hover

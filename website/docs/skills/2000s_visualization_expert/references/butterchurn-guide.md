@@ -130,8 +130,8 @@ function setupFullscreen(canvas: HTMLCanvasElement, visualizer: any) {
 
     canvas.width = width * devicePixelRatio;
     canvas.height = height * devicePixelRatio;
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
+    canvas.style.width = `$\{width\}px`;
+    canvas.style.height = `$\{height\}px`;
 
     visualizer.setRendererSize(width, height);
   }

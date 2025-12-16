@@ -76,7 +76,7 @@ export default async function handler(
         },
       ],
       customer_email: email,
-      success_url: `${process.env.NEXT_PUBLIC_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${process.env.NEXT_PUBLIC_URL}/success?session_id=\{CHECKOUT_SESSION_ID\}`,
       cancel_url: `${process.env.NEXT_PUBLIC_URL}/pricing`,
       metadata: {
         // Add custom data here for webhook processing
@@ -128,8 +128,8 @@ export function CheckoutButton({ priceId }: { priceId: string }) {
 
   return (
     <button
-      onClick={handleCheckout}
-      disabled={loading}
+      onClick=\{handleCheckout\}
+      disabled=\{loading\}
       className="btn-primary"
     >
       {loading ? 'Loading...' : 'Buy Now'}
@@ -163,7 +163,7 @@ export default async function handler(req, res) {
       ],
       customer: customerId, // Existing customer
       customer_email: customerId ? undefined : email, // Or new customer
-      success_url: `${process.env.NEXT_PUBLIC_URL}/dashboard?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${process.env.NEXT_PUBLIC_URL}/dashboard?session_id=\{CHECKOUT_SESSION_ID\}`,
       cancel_url: `${process.env.NEXT_PUBLIC_URL}/pricing`,
       subscription_data: {
         trial_period_days: 14, // Optional free trial

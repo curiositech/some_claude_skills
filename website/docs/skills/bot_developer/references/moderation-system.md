@@ -169,7 +169,7 @@ class AutoMod:
                     violations.append({
                         'rule': 'links',
                         'action': self.rules['links_action'],
-                        'reason': f'Unauthorized link: {url}'
+                        'reason': f'Unauthorized link: \{url\}'
                     })
 
         # Word filter (with Levenshtein for bypass attempts)

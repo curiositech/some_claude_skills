@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2025-12-16T06:26:44.217Z",
+  "generatedAt": "2025-12-16T06:49:46.826Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
       "createdAt": "2025-11-28T16:43:50-08:00",
-      "updatedAt": "2025-11-28T16:43:50-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 1054,
       "totalFiles": 5,
       "skillMdSize": 5651,
@@ -16,7 +16,7 @@
     "adhd-design-expert": {
       "id": "adhd-design-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-28T19:48:25-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 666,
       "totalFiles": 3,
       "skillMdSize": 6960,
@@ -112,7 +112,7 @@
     "code-necromancer": {
       "id": "code-necromancer",
       "createdAt": "2025-12-01T14:26:53-08:00",
-      "updatedAt": "2025-12-01T14:26:53-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 2718,
       "totalFiles": 12,
       "skillMdSize": 6108,
@@ -124,7 +124,7 @@
     "collage-layout-expert": {
       "id": "collage-layout-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-28T16:43:50-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 2554,
       "totalFiles": 11,
       "skillMdSize": 6888,
@@ -184,7 +184,7 @@
     "design-archivist": {
       "id": "design-archivist",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-25T18:43:58-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 631,
       "totalFiles": 5,
       "skillMdSize": 6242,
@@ -196,7 +196,7 @@
     "design-system-creator": {
       "id": "design-system-creator",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-26T14:33:01-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 1074,
       "totalFiles": 5,
       "skillMdSize": 6480,
@@ -244,7 +244,7 @@
     "drone-inspection-specialist": {
       "id": "drone-inspection-specialist",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-26T20:09:33-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 3569,
       "totalFiles": 7,
       "skillMdSize": 8662,
@@ -256,7 +256,7 @@
     "event-detection-temporal-intelligence-expert": {
       "id": "event-detection-temporal-intelligence-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-09T08:09:59-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 1776,
       "totalFiles": 6,
       "skillMdSize": 10476,
@@ -280,7 +280,7 @@
     "hrv-alexithymia-expert": {
       "id": "hrv-alexithymia-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-09T08:09:59-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 570,
       "totalFiles": 5,
       "skillMdSize": 5885,
@@ -292,7 +292,7 @@
     "indie-monetization-strategist": {
       "id": "indie-monetization-strategist",
       "createdAt": "2025-12-01T14:26:53-08:00",
-      "updatedAt": "2025-12-01T14:26:53-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 1541,
       "totalFiles": 5,
       "skillMdSize": 7732,
@@ -304,7 +304,7 @@
     "interior-design-expert": {
       "id": "interior-design-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-26T14:44:34-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 885,
       "totalFiles": 6,
       "skillMdSize": 7569,
@@ -352,7 +352,7 @@
     "metal-shader-expert": {
       "id": "metal-shader-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-30T22:36:49-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 1011,
       "totalFiles": 6,
       "skillMdSize": 5118,
@@ -364,7 +364,7 @@
     "native-app-designer": {
       "id": "native-app-designer",
       "createdAt": "2025-11-20T19:36:09-08:00",
-      "updatedAt": "2025-11-26T14:44:34-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 962,
       "totalFiles": 5,
       "skillMdSize": 7436,
@@ -412,7 +412,7 @@
     "photo-content-recognition-curation-expert": {
       "id": "photo-content-recognition-curation-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-09T08:09:59-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 1456,
       "totalFiles": 6,
       "skillMdSize": 11076,
@@ -436,7 +436,7 @@
     "project-management-guru-adhd": {
       "id": "project-management-guru-adhd",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-28T19:48:25-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 887,
       "totalFiles": 6,
       "skillMdSize": 6444,
@@ -484,7 +484,7 @@
     "seo-visibility-expert": {
       "id": "seo-visibility-expert",
       "createdAt": "2025-12-01T14:26:53-08:00",
-      "updatedAt": "2025-12-01T14:27:02-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 1374,
       "totalFiles": 5,
       "skillMdSize": 6426,
@@ -508,7 +508,7 @@
     "skill-coach": {
       "id": "skill-coach",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-09T08:09:59-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 5093,
       "totalFiles": 17,
       "skillMdSize": 8355,
@@ -520,7 +520,7 @@
     "skill-documentarian": {
       "id": "skill-documentarian",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-14T18:19:56-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 2132,
       "totalFiles": 10,
       "skillMdSize": 13257,
@@ -604,7 +604,7 @@
     "test-automation-expert": {
       "id": "test-automation-expert",
       "createdAt": "2025-12-09T08:09:59-08:00",
-      "updatedAt": "2025-12-09T08:09:59-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 2301,
       "totalFiles": 6,
       "skillMdSize": 13741,
@@ -628,7 +628,7 @@
     "vaporwave-glassomorphic-ui-designer": {
       "id": "vaporwave-glassomorphic-ui-designer",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-26T14:44:34-08:00",
+      "updatedAt": "2025-12-15T22:26:32-08:00",
       "totalLines": 1847,
       "totalFiles": 6,
       "skillMdSize": 7775,

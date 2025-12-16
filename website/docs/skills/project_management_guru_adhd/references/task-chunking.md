@@ -86,7 +86,7 @@ class ADHDTaskChunker:
 
             for i in range(num_chunks):
                 chunks.append({
-                    'name': f"{task_description} - {phase_name} ({i+1}/{num_chunks})",
+                    'name': f"\{task_description\} - \{phase_name\} ({i+1}/\{num_chunks\})",
                     'duration_min': chunk_duration,
                     'phase': phase_name,
                     'dopamine_reward': '✅' if i == num_chunks - 1 else '⏭️'
@@ -135,9 +135,9 @@ task = "Build user authentication system"
 chunks = ADHDTaskChunker.chunk_task(task, estimated_hours=8)
 plan = ADHDTaskChunker.optimize_for_hyperfocus(chunks)
 
-print(f"📋 Task Plan for: {task}")
+print(f"📋 Task Plan for: \{task\}")
 for i, session in enumerate(plan['sessions'], 1):
-    print(f"\n🔥 Hyperfocus Session {i} (~{session['total_duration']}min):")
+    print(f"\n🔥 Hyperfocus Session \{i\} (~{session['total_duration']}min):")
     for chunk in session['chunks']:
         print(f"  {chunk['dopamine_reward']} {chunk['name']} ({chunk['duration_min']}min)")
     if session['break_after']:

@@ -596,7 +596,7 @@ class TangleManager {
     _makePairKey(pA, pB) {
         const idA = pA.id ?? pA;
         const idB = pB.id ?? pB;
-        return idA < idB ? `${idA}-${idB}` : `${idB}-${idA}`;
+        return idA < idB ? `$\{idA\}-$\{idB\}` : `$\{idB\}-$\{idA\}`;
     }
 
     /**

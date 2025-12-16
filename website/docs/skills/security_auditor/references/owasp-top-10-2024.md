@@ -121,7 +121,7 @@ User-supplied data sent to an interpreter as part of a command or query.
 **SQL Injection:**
 ```python
 # BAD: String concatenation
-query = f"SELECT * FROM users WHERE name = '{name}'"
+query = f"SELECT * FROM users WHERE name = '\{name\}'"
 
 # GOOD: Parameterized query
 cursor.execute("SELECT * FROM users WHERE name = %s", (name,))
@@ -130,7 +130,7 @@ cursor.execute("SELECT * FROM users WHERE name = %s", (name,))
 **Command Injection:**
 ```javascript
 // BAD: User input in exec
-exec(`convert ${userInput} output.pdf`);
+exec(`convert $\{userInput\} output.pdf`);
 
 // GOOD: Use execFile with array
 execFile('convert', [sanitizedInput, 'output.pdf']);
@@ -348,10 +348,10 @@ Insufficient logging, monitoring, or response to security events.
 **Sensitive Data in Logs:**
 ```python
 # BAD: Password in logs
-logger.info(f"Login attempt: {username}, password: {password}")
+logger.info(f"Login attempt: \{username\}, password: \{password\}")
 
 # GOOD: Redacted sensitive data
-logger.info(f"Login attempt: {username}, password: [REDACTED]")
+logger.info(f"Login attempt: \{username\}, password: [REDACTED]")
 ```
 
 ### Remediation

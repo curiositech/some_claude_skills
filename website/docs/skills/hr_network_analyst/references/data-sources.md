@@ -159,7 +159,7 @@ def search_people(domain, title_keywords):
 # Find ML engineers at top AI labs
 for domain in ['anthropic.com', 'openai.com', 'deepmind.com']:
     people = search_people(domain, ['Machine Learning', 'Research'])
-    print(f"{domain}: {len(people)} people found")
+    print(f"\{domain\}: {len(people)} people found")
 ```
 
 #### ZoomInfo
@@ -220,7 +220,7 @@ def get_linkedin_profile(linkedin_url):
     response = requests.get(
         'https://nubela.co/proxycurl/api/v2/linkedin',
         params={'url': linkedin_url},
-        headers={'Authorization': f'Bearer {PROXYCURL_API_KEY}'}
+        headers={'Authorization': f'Bearer \{PROXYCURL_API_KEY\}'}
     )
     return response.json()
 
@@ -258,7 +258,7 @@ def find_coworkers(company, year_range):
         'https://api.peopledatalabs.com/v5/person/search',
         headers={'X-Api-Key': PDL_API_KEY},
         params={
-            'query': f"experience.company.name:{company} AND experience.start_date:[{year_range[0]} TO {year_range[1]}]",
+            'query': f"experience.company.name:\{company\} AND experience.start_date:[{year_range[0]} TO {year_range[1]}]",
             'size': 100
         }
     )
@@ -396,7 +396,7 @@ class SemanticScholarNetwork:
     def get_author_papers(self, author_id):
         """Get all papers by an author."""
         response = requests.get(
-            f'{self.BASE_URL}/author/{author_id}',
+            f'{self.BASE_URL}/author/\{author_id\}',
             params={'fields': 'papers.authors,papers.title,papers.year'}
         )
         return response.json()
@@ -453,7 +453,7 @@ print(f"Found {len(papers)} papers")
 
 # Build co-authorship network
 G = network.build_coauthorship_network(papers)
-print(f"Network: {G.number_of_nodes()} authors, {G.number_of_edges()} collaborations")
+print(f"Network: \{G.number_of_nodes()\} authors, \{G.number_of_edges()\} collaborations")
 
 # Find superconnectors
 superconnectors = network.find_superconnectors(top_n=10)
@@ -511,7 +511,7 @@ from collections import defaultdict
 class GitHubNetwork:
     def __init__(self, token):
         self.token = token
-        self.headers = {'Authorization': f'token {token}'}
+        self.headers = {'Authorization': f'token \{token\}'}
         self.G = nx.Graph()
 
     def get_repo_contributors(self, owner, repo):
@@ -521,7 +521,7 @@ class GitHubNetwork:
 
         while True:
             response = requests.get(
-                f'https://api.github.com/repos/{owner}/{repo}/contributors',
+                f'https://api.github.com/repos/\{owner\}/\{repo\}/contributors',
                 headers=self.headers,
                 params={'page': page, 'per_page': 100}
             )
@@ -541,7 +541,7 @@ class GitHubNetwork:
     def get_pr_reviewers(self, owner, repo, limit=100):
         """Get PR review relationships (high trust signal)."""
         response = requests.get(
-            f'https://api.github.com/repos/{owner}/{repo}/pulls',
+            f'https://api.github.com/repos/\{owner\}/\{repo\}/pulls',
             headers=self.headers,
             params={'state': 'all', 'per_page': limit}
         )
@@ -583,9 +583,9 @@ class GitHubNetwork:
                 for u2 in logins[i+1:]:
                     if self.G.has_edge(u1, u2):
                         self.G[u1][u2]['weight'] += 1
-                        self.G[u1][u2]['repos'].append(f"{owner}/{repo}")
+                        self.G[u1][u2]['repos'].append(f"\{owner\}/\{repo\}")
                     else:
-                        self.G.add_edge(u1, u2, weight=1, repos=[f"{owner}/{repo}"])
+                        self.G.add_edge(u1, u2, weight=1, repos=[f"\{owner\}/\{repo\}"])
 
         return self.G
 
@@ -602,7 +602,7 @@ ml_repos = [
 ]
 
 G = github.build_network_from_repos(ml_repos)
-print(f"Network: {G.number_of_nodes()} developers, {G.number_of_edges()} collaborations")
+print(f"Network: \{G.number_of_nodes()\} developers, \{G.number_of_edges()\} collaborations")
 ```
 
 ### 3. Conference Speaker Networks
@@ -621,7 +621,7 @@ class ConferenceNetwork:
         """Scrape NeurIPS speaker list."""
         # Note: Actual implementation depends on conference website structure
         # This is a template
-        url = f'https://neurips.cc/{year}/Schedule'
+        url = f'https://neurips.cc/\{year\}/Schedule'
         response = requests.get(url)
         soup = BeautifulSoup(response.text, 'html.parser')
 

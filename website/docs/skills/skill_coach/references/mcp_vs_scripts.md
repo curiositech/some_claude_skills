@@ -251,8 +251,8 @@ def organize_by_date(source_dir):
         if file.lower().endswith(('.jpg', '.png')):
             creation_time = os.path.getctime(os.path.join(source_dir, file))
             date = datetime.fromtimestamp(creation_time).strftime('%Y-%m')
-            os.makedirs(f"{source_dir}/{date}", exist_ok=True)
-            shutil.move(f"{source_dir}/{file}", f"{source_dir}/{date}/{file}")
+            os.makedirs(f"\{source_dir\}/\{date\}", exist_ok=True)
+            shutil.move(f"\{source_dir\}/\{file\}", f"\{source_dir\}/\{date\}/\{file\}")
 ```
 
 **Why script**: No auth, no external APIs, pure file operations.
@@ -280,7 +280,7 @@ import json
 
 def get_commit_summary(since="1 week ago"):
     result = subprocess.run(
-        ['git', 'log', f'--since={since}', '--oneline'],
+        ['git', 'log', f'--since=\{since\}', '--oneline'],
         capture_output=True,
         text=True
     )
@@ -381,7 +381,7 @@ async def subscribe_stock(ticker: str):
     """Subscribe to real-time stock updates."""
     global ws
     ws = websocket.WebSocketApp(
-        f"wss://api.example.com/stocks/{ticker}",
+        f"wss://api.example.com/stocks/\{ticker\}",
         on_message=handle_message
     )
     ws.run_forever()
@@ -399,19 +399,19 @@ import requests
 app = Server("github-api")
 BASE = "https://api.github.com"
 TOKEN = os.getenv("GITHUB_TOKEN")
-HEADERS = {"Authorization": f"token {TOKEN}"}
+HEADERS = {"Authorization": f"token \{TOKEN\}"}
 
 @app.tool()
 async def list_repos(org: str):
     """List organization repositories."""
-    r = requests.get(f"{BASE}/orgs/{org}/repos", headers=HEADERS)
+    r = requests.get(f"\{BASE\}/orgs/\{org\}/repos", headers=HEADERS)
     return r.json()
 
 @app.tool()
 async def create_issue(repo: str, title: str, body: str):
     """Create GitHub issue."""
     r = requests.post(
-        f"{BASE}/repos/{repo}/issues",
+        f"\{BASE\}/repos/\{repo\}/issues",
         headers=HEADERS,
         json={"title": title, "body": body}
     )
@@ -420,7 +420,7 @@ async def create_issue(repo: str, title: str, body: str):
 @app.tool()
 async def get_pr(repo: str, pr_number: int):
     """Get pull request details."""
-    r = requests.get(f"{BASE}/repos/{repo}/pulls/{pr_number}", headers=HEADERS)
+    r = requests.get(f"\{BASE\}/repos/\{repo\}/pulls/\{pr_number\}", headers=HEADERS)
     return r.json()
 ```
 

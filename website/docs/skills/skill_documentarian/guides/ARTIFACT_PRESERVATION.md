@@ -29,14 +29,14 @@ Demonstrates one skill working independently.
   ├── README.md              # Overview
   ├── transcript.md          # Conversation log (optional)
   ├── before/                # Initial state
-  │   ├── {file1}.md
-  │   └── {file2}.md
+  │   ├── \{file1\}.md
+  │   └── \{file2\}.md
   ├── after/                 # Final state
-  │   ├── {file1}.md
-  │   └── {file2}.md
+  │   ├── \{file1\}.md
+  │   └── \{file2\}.md
   └── assets/                # Screenshots, diagrams
-      ├── {image1}.png
-      └── {diagram}.svg
+      ├── \{image1\}.png
+      └── \{diagram\}.svg
 ```
 
 ### 2. Multi-Skill Artifacts (Orchestration)
@@ -50,10 +50,10 @@ Shows multiple skills working together.
   ├── artifact.json          # Metadata with phases
   ├── README.md              # Orchestration overview
   ├── transcript.md          # Full conversation
-  ├── phase-1-{skill}/       # Each phase separate
+  ├── phase-1-\{skill\}/       # Each phase separate
   │   ├── before/
   │   └── after/
-  ├── phase-2-{skill}/
+  ├── phase-2-\{skill\}/
   │   ├── before/
   │   └── after/
   └── assets/
@@ -106,7 +106,7 @@ Ask yourself:
 cd website/src/data/artifacts
 
 # Create your artifact folder
-mkdir -p {type}/{skill-or-project}/{number-name}
+mkdir -p \{type\}/{skill-or-project}/{number-name}
 
 # Example:
 mkdir -p single-skill/sound-engineer/001-winamp-fft
@@ -170,7 +170,7 @@ This is the most important file. It defines your artifact's metadata.
 **Template:**
 ```json
 {
-  "id": "{type}-{skill}-{number}-{slug}",
+  "id": "\{type\}-\{skill\}-\{number\}-\{slug\}",
   "title": "Descriptive Title: What Was Achieved",
   "description": "2-3 sentence summary. What was the goal? Which skills were used? What was the outcome?",
   "type": "single-skill | multi-skill | comparison",
@@ -235,7 +235,7 @@ This is the most important file. It defines your artifact's metadata.
 The README is your artifact's landing page. Structure:
 
 ```markdown
-# {Artifact Title}
+# \{Artifact Title\}
 
 ## Overview
 Brief summary of what this artifact demonstrates.
@@ -304,7 +304,7 @@ Front-end artifacts should include standalone previews:
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{Component Name} - Before/After Demo</title>
+  <title>\{Component Name\} - Before/After Demo</title>
   <style>
     /* Inline all critical CSS */
   </style>
@@ -331,12 +331,12 @@ Front-end artifacts should include standalone previews:
 
 2. **Commit your artifact:**
    ```bash
-   git add website/src/data/artifacts/{type}/{name}
-   git commit -m "Add artifact: {title}"
+   git add website/src/data/artifacts/\{type\}/\{name\}
+   git commit -m "Add artifact: \{title\}"
    ```
 
 3. **Submit pull request:**
-   - Title: `Add artifact: {title}`
+   - Title: `Add artifact: \{title\}`
    - Description: Link to artifact preview, brief summary
    - Reviewers will check: structure, quality, learnings
 

@@ -177,7 +177,7 @@ For at-a-glance reference:
 │ --button-padding-x, --button-padding-y                      │
 │ --button-radius, --button-font-size                         │
 ├─────────────────────────────────────────────────────────────┤
-│ A11Y: 4.5:1 contrast | 44px touch | focus ring | <button>   │
+│ A11Y: 4.5:1 contrast | 44px touch | focus ring | `<button>` │
 ├─────────────────────────────────────────────────────────────┤
 │ ✅ Verb labels | Short | One primary per view               │
 │ ❌ Navigation | All caps | Stacking 3+                      │

@@ -215,7 +215,7 @@ class ScreenshotDetector:
 
         for target_aspect, device_name in device_aspects:
             if abs(aspect - target_aspect) < 0.01:
-                signals.append((f'device_aspect_{device_name}', 0.6))
+                signals.append((f'device_aspect_\{device_name\}', 0.6))
                 break
 
         # SIGNAL 6: Perfect sharpness

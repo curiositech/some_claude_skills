@@ -95,12 +95,12 @@ class ContextSwitchTracker:
         """Gently deny context switch"""
         message = (
             f"⚠️ Context Switch Budget Exceeded\n\n"
-            f"You've already switched {switch_count} times today.\n\n"
+            f"You've already switched \{switch_count\} times today.\n\n"
             f"Current context: **{self.current_context}**\n"
-            f"Attempted switch to: {attempted_context}\n\n"
+            f"Attempted switch to: \{attempted_context\}\n\n"
             f"Options:\n"
             f"1. Stay in current context (recommended)\n"
-            f"2. Add '{attempted_context}' to tomorrow's active list\n"
+            f"2. Add '\{attempted_context\}' to tomorrow's active list\n"
             f"3. Override (costs energy token)\n\n"
             f"What would you like to do?"
         )

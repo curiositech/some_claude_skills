@@ -132,7 +132,7 @@ export async function GET() {
 // app/users/page.js
 async function UsersPage() {
   const users = await fetchUsers()  // Server Component
-  return <UserList users={users} />
+  return <UserList users=\{users\} />
 }
 ```
 
@@ -324,7 +324,7 @@ Is your component:
 'use client'
 async function Page() {  // This doesn't work!
   const data = await fetch(...)
-  return <div>{data}</div>
+  return <div>\{data\}</div>
 }
 ```
 
@@ -333,14 +333,14 @@ async function Page() {  // This doesn't work!
 // Server Component (default)
 async function Page() {
   const data = await fetchData()
-  return <ClientComponent data={data} />
+  return <ClientComponent data=\{data\} />
 }
 
 // client-component.jsx
 'use client'
 function ClientComponent({ data }) {
   const [count, setCount] = useState(0)
-  return <div onClick={() => setCount(count + 1)}>{data}</div>
+  return <div onClick={() => setCount(count + 1)}>\{data\}</div>
 }
 ```
 
@@ -391,7 +391,7 @@ def validate_setup():
     }
     
     for name, passed in checks.items():
-        print(f"{'✅' if passed else '❌'} {name}")
+        print(f"{'✅' if passed else '❌'} \{name\}")
     
     return all(checks.values())
 ```

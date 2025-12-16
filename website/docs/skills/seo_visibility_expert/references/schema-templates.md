@@ -345,7 +345,7 @@ Copy-paste JSON-LD structured data for different content types. Place in `<scrip
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://yoursite.com/search?q={search_term_string}"
+      "urlTemplate": "https://yoursite.com/search?q=\{search_term_string\}"
     },
     "query-input": "required name=search_term_string"
   }
@@ -397,7 +397,7 @@ export default function ProductPage() {
 
   return (
     <>
-      <StructuredData data={productSchema} />
+      <StructuredData data=\{productSchema\} />
       {/* Page content */}
     </>
   );

@@ -189,8 +189,8 @@ class AACDevice {
             category,
             symbols: this.vocabulary.fringe[category].map(word => ({
                 word,
-                symbol: `symbols/${word}.png`,
-                audio: `audio/${word}.mp3`
+                symbol: `symbols/$\{word\}.png`,
+                audio: `audio/$\{word\}.mp3`
             }))
         };
     }

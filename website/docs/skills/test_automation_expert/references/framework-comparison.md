@@ -298,7 +298,7 @@ def auth_headers(client):
         'password': 'test123'
     })
     token = response.json['token']
-    return {'Authorization': f'Bearer {token}'}
+    return {'Authorization': f'Bearer \{token\}'}
 ```
 
 ## Component Testing
@@ -323,7 +323,7 @@ test('submits form with user data', async () => {
   const user = userEvent.setup();
   const onSubmit = jest.fn();
 
-  render(<LoginForm onSubmit={onSubmit} />);
+  render(<LoginForm onSubmit=\{onSubmit\} />);
 
   await user.type(screen.getByLabelText(/email/i), 'test@example.com');
   await user.type(screen.getByLabelText(/password/i), 'password123');
@@ -359,7 +359,7 @@ describe('Users API', () => {
   it('GET /users returns list', async () => {
     const response = await request(app)
       .get('/api/users')
-      .set('Authorization', `Bearer ${token}`)
+      .set('Authorization', `Bearer $\{token\}`)
       .expect('Content-Type', /json/)
       .expect(200);
 

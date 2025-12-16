@@ -133,15 +133,15 @@ class RoomLayoutSolver:
         clearance = min_clearance // self.grid_size
 
         # Position variables
-        x = self.model.NewIntVar(0, self.width - w, f'{name}_x')
-        y = self.model.NewIntVar(0, self.length - l, f'{name}_y')
+        x = self.model.NewIntVar(0, self.width - w, f'\{name\}_x')
+        y = self.model.NewIntVar(0, self.length - l, f'\{name\}_y')
 
         # Rotation (0 = original, 1 = 90° rotated)
-        rotated = self.model.NewBoolVar(f'{name}_rotated')
+        rotated = self.model.NewBoolVar(f'\{name\}_rotated')
 
         # Actual dimensions considering rotation
-        actual_w = self.model.NewIntVar(min(w, l), max(w, l), f'{name}_actual_w')
-        actual_l = self.model.NewIntVar(min(w, l), max(w, l), f'{name}_actual_l')
+        actual_w = self.model.NewIntVar(min(w, l), max(w, l), f'\{name\}_actual_w')
+        actual_l = self.model.NewIntVar(min(w, l), max(w, l), f'\{name\}_actual_l')
 
         # Link rotation to dimensions
         self.model.Add(actual_w == w).OnlyEnforceIf(rotated.Not())

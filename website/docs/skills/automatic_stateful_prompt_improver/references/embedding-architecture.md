@@ -60,7 +60,7 @@ class ContextualPromptEmbedder:
         context = await self._generate_context(prompt, domain, task_type)
 
         # Combine context with prompt
-        contextualized = f"{context}\n\n{prompt}"
+        contextualized = f"\{context\}\n\n\{prompt\}"
 
         # Generate embedding
         embedding = await self._embed(contextualized)
@@ -88,7 +88,7 @@ class ContextualPromptEmbedder:
         Uses LLM to create contextualizing information that improves retrieval.
         Results are cached to reduce API calls.
         """
-        cache_key = f"{domain}:{task_type}:{hash(prompt[:100])}"
+        cache_key = f"\{domain\}:\{task_type\}:{hash(prompt[:100])}"
 
         if cache_key in self.context_cache:
             return self.context_cache[cache_key]
@@ -96,8 +96,8 @@ class ContextualPromptEmbedder:
         context_prompt = f"""
         Generate a brief context (50-100 tokens) for this prompt to improve retrieval.
 
-        Domain: {domain}
-        Task Type: {task_type}
+        Domain: \{domain\}
+        Task Type: \{task_type\}
         Prompt: {prompt[:500]}
 
         Include:
@@ -550,7 +550,7 @@ class QueryCache:
         """
         Get results from cache or execute query.
         """
-        cache_key = f"query:{hashlib.sha256(f'{query}:{json.dumps(filters)}'.encode()).hexdigest()}"
+        cache_key = f"query:{hashlib.sha256(f'\{query\}:{json.dumps(filters)}'.encode()).hexdigest()}"
 
         cached = await self.redis.get(cache_key)
         if cached:

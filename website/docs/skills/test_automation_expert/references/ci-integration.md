@@ -237,7 +237,7 @@ cache:
 # ============================================
 install:
   stage: install
-  image: node:${NODE_VERSION}
+  image: node:$\{NODE_VERSION\}
   script:
     - npm ci
   artifacts:
@@ -250,7 +250,7 @@ install:
 # ============================================
 unit-tests:
   stage: test
-  image: node:${NODE_VERSION}
+  image: node:$\{NODE_VERSION\}
   needs: [install]
   script:
     - npm test -- --coverage
@@ -267,7 +267,7 @@ unit-tests:
 
 lint:
   stage: test
-  image: node:${NODE_VERSION}
+  image: node:$\{NODE_VERSION\}
   needs: [install]
   script:
     - npm run lint
@@ -377,8 +377,8 @@ jobs:
       - run:
           name: Run E2E tests
           command: |
-            SHARD="$((${CIRCLE_NODE_INDEX}+1))"
-            npx playwright test --shard=${SHARD}/${CIRCLE_NODE_TOTAL}
+            SHARD="$(($\{CIRCLE_NODE_INDEX\}+1))"
+            npx playwright test --shard=$\{SHARD\}/$\{CIRCLE_NODE_TOTAL\}
       - store_artifacts:
           path: playwright-report
           destination: playwright-report
@@ -437,7 +437,7 @@ pipeline {
 
     environment {
         CI = 'true'
-        npm_config_cache = "${WORKSPACE}/.npm"
+        npm_config_cache = "$\{WORKSPACE\}/.npm"
     }
 
     stages {
