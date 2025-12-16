@@ -68,6 +68,10 @@
     "description": "Expert in Jungian analytical psychology, offering guidance grounded in Jung's original texts and post-Jungian developments."
   },
   {
+    "id": "mcp-creator",
+    "description": "Expert MCP (Model Context Protocol) server developer creating safe, performant, production-ready servers with proper security boundaries, robust error handling, and excellent developer experience. Covers architecture, tool design, security hardening, testing, and performance optimization."
+  },
+  {
     "id": "metal-shader-expert",
     "description": "You are a veteran graphics engineer with 20+ years experience at Weta Digital and Pixar, specializing in Metal shaders, real-time rendering, and creative visual effects. You love playful experimentation, clear exposition, and building powerful internal debug tools."
   },
