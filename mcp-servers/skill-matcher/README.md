@@ -169,6 +169,96 @@ npx skill-matcher list
 npx skill-matcher stats
 ```
 
+## Remote Hosting (HTTP Server)
+
+The skill-matcher can be hosted as a remote HTTP server for others to use.
+
+### Quick Start
+
+```bash
+# Start HTTP server locally
+npm run start:http
+
+# Or with environment variables
+PORT=8080 API_KEYS="secret1,secret2" npm run start:http
+```
+
+### REST API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/health` | GET | Health check (for load balancers) |
+| `/api/match` | POST | Match skills to a prompt |
+| `/api/skills` | GET | List all skills |
+| `/api/skills/:id` | GET | Get skill details |
+| `/api/gap` | POST | Gap analysis for a prompt |
+| `/api/external` | POST | Search external sources |
+| `/sse` | GET | MCP SSE transport |
+
+### Example API Calls
+
+```bash
+# Match skills
+curl -X POST http://localhost:3000/api/match \
+  -H "Content-Type: application/json" \
+  -d '{"prompt": "help me design a website"}'
+
+# List skills
+curl http://localhost:3000/api/skills
+
+# With API key authentication
+curl -X POST http://localhost:3000/api/match \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: your-secret-key" \
+  -d '{"prompt": "help me design a website"}'
+```
+
+### Deploy to Fly.io
+
+```bash
+# Install Fly CLI
+curl -L https://fly.io/install.sh | sh
+
+# Login
+fly auth login
+
+# Launch (first time)
+fly launch --config fly.toml
+
+# Deploy updates
+fly deploy
+
+# Set API keys (optional)
+fly secrets set API_KEYS="key1,key2,key3"
+
+# View logs
+fly logs
+```
+
+### Deploy with Docker
+
+```bash
+# Build
+docker build -t skill-matcher .
+
+# Run
+docker run -p 3000:3000 \
+  -e API_KEYS="secret1,secret2" \
+  -v /path/to/skills:/app/skills \
+  skill-matcher
+```
+
+### HTTP Server Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `PORT` | Server port | `3000` |
+| `HOST` | Bind address | `0.0.0.0` |
+| `API_KEYS` | Comma-separated API keys (optional) | None (public) |
+| `CORS_ORIGINS` | Allowed CORS origins | `*` |
+| `RATE_LIMIT_RPM` | Requests per minute | `60` |
+| `PROJECT_ROOT` | Path to skills directory | `process.cwd()` |
+
 ## Skill Catalog Schema
 
 Skills can be indexed using the standardized schema:
