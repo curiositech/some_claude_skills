@@ -14,6 +14,13 @@ function validateSkillHeader(filePath) {
   if (!headerMatch) return errors;
 
   const headerText = headerMatch[0];
+
+  // Skip if this looks like a regex pattern (contains regex metacharacters)
+  // or doesn't look like actual JSX (no prop assignments)
+  // This prevents false positives from documentation showing regex patterns
+  if (headerText.includes('[\\s\\S]') || headerText.includes('\\s\\S') || !headerText.includes('="')) {
+    return errors;  // Not a real SkillHeader component
+  }
   const lines = content.split('\n');
 
   // Find the actual line number (search in original content but only outside code blocks)

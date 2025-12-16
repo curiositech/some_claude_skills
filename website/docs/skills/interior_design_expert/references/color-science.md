@@ -108,7 +108,7 @@ CRITICAL FOR INTERIORS:
 ├── Test at different times of day
 ├── North-facing rooms: Cooler light, colors shift blue
 ├── South-facing rooms: Warm light, colors appear warmer
-├── LED CRI matters: >90 CRI for accurate color rendering
+├── LED CRI matters: &gt;90 CRI for accurate color rendering
 
 COLOR CONSTANCY FAILURE ZONES:
 ├── Near windows (daylight vs interior mix)

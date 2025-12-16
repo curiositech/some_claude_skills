@@ -24,18 +24,18 @@ def calculate_hrv_metrics(rr_intervals):
 
     # SDNN: Standard deviation of NN intervals
     # Reflects overall HRV - higher is generally better
-    # < 50ms = poor, 50-100ms = compromised, >100ms = healthy
+    # < 50ms = poor, 50-100ms = compromised, &gt;100ms = healthy
     sdnn = np.std(rr_intervals, ddof=1)
 
     # RMSSD: Root mean square of successive differences
     # Reflects parasympathetic (rest & digest) activity
-    # < 20ms = low, 20-50ms = moderate, >50ms = good vagal tone
+    # < 20ms = low, 20-50ms = moderate, &gt;50ms = good vagal tone
     successive_diffs = np.diff(rr_intervals)
     rmssd = np.sqrt(np.mean(successive_diffs ** 2))
 
     # pNN50: Percentage of successive RR intervals that differ by > 50ms
     # Another parasympathetic indicator
-    # < 5% = low, 5-15% = moderate, >15% = good
+    # < 5% = low, 5-15% = moderate, &gt;15% = good
     pnn50 = np.sum(np.abs(successive_diffs) > 50) / len(successive_diffs) * 100
 
     # Mean HR and HRV
@@ -134,8 +134,8 @@ class EmotionalStateMonitor:
     def __init__(self):
         self.baseline_hrv = None
         self.emotion_signatures = {
-            'calm': {'rmssd': '>baseline', 'lf_hf': '<1.5'},
-            'stress': {'rmssd': '<baseline*0.7', 'lf_hf': '>2.5'},
+            'calm': {'rmssd': '>baseline', 'lf_hf': '&lt;1.5'},
+            'stress': {'rmssd': '<baseline*0.7', 'lf_hf': '&gt;2.5'},
             'anxiety': {'rmssd': '<baseline*0.6', 'hr': '>baseline+10'},
             'flow': {'rmssd': '~baseline', 'sdnn': '>baseline', 'lf_hf': '1.5-2.0'},
             'fatigue': {'rmssd': '<baseline*0.8', 'hr': 'variable'}

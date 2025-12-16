@@ -288,7 +288,7 @@ class ScreenshotDetector:
 |--------|------------|-------------|
 | UI elements | 0.85 | Status bars, buttons |
 | Perfect rectangles | 0.75 | UI buttons (4 corners, 90° angles) |
-| High text | 0.70 | \>25% text coverage |
+| High text | 0.70 | &gt;25% text coverage |
 | No camera EXIF | 0.60 | Missing Make/Model/Lens |
 | Device aspect | 0.60 | Exact phone screen ratio |
-| Perfect sharpness | 0.50 | \>2000 Laplacian variance |
+| Perfect sharpness | 0.50 | &gt;2000 Laplacian variance |

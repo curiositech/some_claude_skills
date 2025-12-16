@@ -298,7 +298,7 @@ def detect_moves(self, photos):
             duration_b = (cluster_b.photos[-1].timestamp -
                         cluster_b.photos[0].timestamp).days
 
-            if duration_b > 30:  # Permanent move (>30 days)
+            if duration_b > 30:  # Permanent move (&gt;30 days)
                 moves.append(LifeEvent(
                     type='residential_move',
                     timestamp=cluster_b.photos[0].timestamp,
@@ -351,7 +351,7 @@ def detect_travel_milestones(self, photos):
 | Graduation | Cap/gown, diploma, auditorium | 0.6 |
 | Wedding | Formal attire, bouquet, cake | 0.7 |
 | Birth | New infant face cluster, hospital | 0.8 |
-| Residential Move | 50km+ location shift, \>30 days | 0.8 |
+| Residential Move | 50km+ location shift, &gt;30 days | 0.8 |
 | Travel Milestone | First visit to new country | 1.0 |
 
 ---

@@ -34,9 +34,9 @@ function processOrder(order) {
 // Branch coverage: Only 25% - missing 3 combinations!
 
 // Need tests for:
-// 1. isPriority=true, total>100 (discount applied)
+// 1. isPriority=true, total&gt;100 (discount applied)
 // 2. isPriority=true, total<=100 (no discount)
-// 3. isPriority=false, total>100 (no discount)
+// 3. isPriority=false, total&gt;100 (no discount)
 // 4. isPriority=false, total<=100 (no discount)
 ```
 

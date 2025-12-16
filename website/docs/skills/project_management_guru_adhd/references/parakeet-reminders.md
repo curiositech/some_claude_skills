@@ -27,8 +27,8 @@ class ReminderUrgency(Enum):
     FUTURE_FYI = 1      # 1+ week out
     UPCOMING = 2        # 3-7 days
     SOON = 3            # 1-3 days
-    URGENT = 4          # <24 hours
-    CRITICAL = 5        # <4 hours
+    URGENT = 4          # &lt;24 hours
+    CRITICAL = 5        # &lt;4 hours
 
 class ParakeetReminder:
     def __init__(self, task: str, deadline: datetime, engineer: str):

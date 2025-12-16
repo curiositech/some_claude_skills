@@ -322,7 +322,7 @@ struct OptimizedPhotoGrid: View {
 struct OptimizedGlassStack: View {
     var body: some View {
         VStack(spacing: 20) {
-            ForEach(0..<10) { index in
+            ForEach(0..&lt;10) { index in
                 GlassCard {
                     Text("Card \(index)")
                 }

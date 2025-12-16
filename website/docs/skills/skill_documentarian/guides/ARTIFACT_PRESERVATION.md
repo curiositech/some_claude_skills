@@ -662,7 +662,7 @@ Here's how to structure the upcoming Winamp audio improvements:
 ❌ Cherry-pick only successful attempts
 ❌ Omit failed iterations or dead ends
 ❌ Exaggerate outcomes or metrics
-❌ Include massive binary files (\>10MB)
+❌ Include massive binary files (&gt;10MB)
 ❌ Submit without testing preview locally
 ❌ Forget to update artifact list in artifacts.tsx
 

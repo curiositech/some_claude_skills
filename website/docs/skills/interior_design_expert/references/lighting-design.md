@@ -27,7 +27,7 @@ VERTICAL ILLUMINATION
 └── Video calls: 300+ lux on face, even distribution
 
 UNIFORMITY RATIO
-└── Max:Min ratio should be <3:1 for comfort
+└── Max:Min ratio should be &lt;3:1 for comfort
     (No dark holes or blinding spots)
 ```
 
@@ -95,7 +95,7 @@ Midday (9am-5pm): 4000-5000K - Productivity
 Evening (5-9pm): 2700-3000K - Relaxation transition
 Night (9pm+): 2200-2700K - Melatonin production
 
-Avoid blue light (<3000K) in:
+Avoid blue light (&lt;3000K) in:
 ├── Bedrooms after 8pm
 ├── Bathrooms used before sleep
 └── Hallways at night

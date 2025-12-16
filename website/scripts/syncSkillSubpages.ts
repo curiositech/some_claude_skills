@@ -37,14 +37,18 @@ function titleCase(str: string): string {
 }
 
 function escapeAngleBrackets(content: string): string {
-  // Escape angle brackets that could be interpreted as JSX
-  // But preserve code blocks and frontmatter
+  // Escape angle brackets and curly braces that could be interpreted as JSX
+  // MDX interprets {variable} as JSX expressions even in code blocks without language specifiers
 
   const lines = content.split('\n');
   const result: string[] = [];
   let inCodeBlock = false;
   let inFrontmatter = false;
   let frontmatterCount = 0;
+
+  // Only track frontmatter if file actually starts with ---
+  // Otherwise, all --- are horizontal rules and should be ignored
+  const hasFrontmatter = lines[0] === '---';
 
   for (const line of lines) {
     if (line.startsWith('```')) {
@@ -53,7 +57,8 @@ function escapeAngleBrackets(content: string): string {
       continue;
     }
 
-    if (line === '---' && !inCodeBlock) {
+    // Only track frontmatter delimiters if file has frontmatter
+    if (hasFrontmatter && line === '---' && !inCodeBlock && frontmatterCount < 2) {
       frontmatterCount++;
       if (frontmatterCount === 1) {
         inFrontmatter = true;
@@ -64,23 +69,30 @@ function escapeAngleBrackets(content: string): string {
       continue;
     }
 
-    if (inCodeBlock || inFrontmatter) {
+    // Skip frontmatter entirely
+    if (inFrontmatter) {
       result.push(line);
       continue;
     }
 
-    // Escape < that isn't part of a valid HTML/JSX tag or code fence
-    // Match < followed by anything that isn't a letter or / (valid tag start)
-    let escapedLine = line.replace(/<(?![a-zA-Z\/!])/g, '\\<');
+    let escapedLine = line;
 
-    // Escape > followed by digits (e.g., >30, >100ms) which MDX interprets as JSX
-    escapedLine = escapedLine.replace(/>(\d)/g, '\\>$1');
+    // Only escape angle brackets outside code blocks
+    if (!inCodeBlock) {
+      // Escape < that isn't part of a valid HTML/JSX tag or code fence
+      // Match < followed by anything that isn't a letter or / (valid tag start)
+      escapedLine = escapedLine.replace(/<(?![a-zA-Z\/!])/g, '\\<');
 
-    // Escape curly braces that look like placeholders (e.g., {Customer Name}, {first_name})
-    // MDX interprets these as JSX expressions. Escape { not followed by valid JS identifier start
-    // Pattern: { followed by space, uppercase (likely placeholder), or followed by text with spaces
-    escapedLine = escapedLine.replace(/\{([A-Z][^}]*)\}/g, '\\{$1\\}'); // {Customer Name}
-    escapedLine = escapedLine.replace(/\{([a-z_][^}]*[ ][^}]*)\}/g, '\\{$1\\}'); // {first name} with space
+      // Escape > followed by digits (e.g., >30, >100ms) which MDX interprets as JSX
+      escapedLine = escapedLine.replace(/>(\d)/g, '\\>$1');
+    }
+
+    // Escape curly braces that look like placeholders EVERYWHERE (including code blocks)
+    // MDX interprets {variable} as JSX expressions even in code blocks without language specifiers
+    // Use negative lookbehind to skip already-escaped braces: (?<!\\)
+    // Patterns: {Customer Name}, {first_name}, {Name}, etc.
+    escapedLine = escapedLine.replace(/(?<!\\)\{([A-Z][^}]*)\}/g, '\\{$1\\}'); // {Customer Name}, {Name}
+    escapedLine = escapedLine.replace(/(?<!\\)\{([a-z_][a-z0-9_]*)\}/gi, '\\{$1\\}'); // {first_name}, {name}
 
     result.push(escapedLine);
   }

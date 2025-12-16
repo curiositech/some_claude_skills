@@ -24,7 +24,7 @@ llms.txt is a markdown file at your site root that helps AI systems (ChatGPT, Cl
 DevSync provides real-time collaborative coding with conflict resolution, voice chat, and integrated debugging. Built for teams working across time zones who need to pair program without latency.
 
 ## Key Features
-- Real-time cursor tracking and code sync (<50ms latency)
+- Real-time cursor tracking and code sync (&lt;50ms latency)
 - Intelligent conflict resolution using CRDT
 - Integrated voice/video with screen sharing
 - Git integration with branch visualization

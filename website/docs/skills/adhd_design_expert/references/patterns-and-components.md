@@ -384,7 +384,7 @@ struct ADHDTimer: View {
 
 ### Checklist
 
-- [ ] **Cognitive Load**: Can task be completed with \<5 items in working memory?
+- [ ] **Cognitive Load**: Can task be completed with &lt;5 items in working memory?
 - [ ] **Task Initiation**: Is the first step obvious and easy?
 - [ ] **Time Visibility**: Are all waits/durations shown concretely?
 - [ ] **Immediate Feedback**: Does every action give instant response?
