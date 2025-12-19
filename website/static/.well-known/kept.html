@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Erich's Internal Family System</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            color: #e2e8f0;
+            padding: 1rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem 1rem;
+            background: rgba(124, 58, 237, 0.1);
+            border-radius: 16px;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #a78bfa;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .section {
+            margin-bottom: 1.5rem;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .section-content {
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        /* Self Energy */
+        .self-section {
+            background: rgba(6, 95, 70, 0.2);
+            border: 2px solid #10b981;
+        }
+
+        .self-section .section-header {
+            background: rgba(16, 185, 129, 0.2);
+            color: #6ee7b7;
+        }
+
+        .self-card {
+            background: rgba(6, 95, 70, 0.4);
+            border: 1px solid #10b981;
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        /* Managers */
+        .managers-section {
+            background: rgba(30, 58, 95, 0.2);
+            border: 2px solid #3b82f6;
+        }
+
+        .managers-section .section-header {
+            background: rgba(59, 130, 246, 0.2);
+            color: #93c5fd;
+        }
+
+        .manager-card {
+            background: rgba(30, 58, 95, 0.4);
+            border: 1px solid #3b82f6;
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .subsection-label {
+            font-size: 0.75rem;
+            color: #60a5fa;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 0.75rem 0.5rem 0.25rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        /* Firefighters */
+        .firefighters-section {
+            background: rgba(124, 45, 18, 0.2);
+            border: 2px solid #f97316;
+        }
+
+        .firefighters-section .section-header {
+            background: rgba(249, 115, 22, 0.2);
+            color: #fdba74;
+        }
+
+        .firefighter-card {
+            background: rgba(124, 45, 18, 0.4);
+            border: 1px solid #f97316;
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        /* Exile */
+        .exile-section {
+            background: rgba(112, 26, 117, 0.2);
+            border: 3px solid #e879f9;
+        }
+
+        .exile-section .section-header {
+            background: rgba(232, 121, 249, 0.2);
+            color: #f0abfc;
+        }
+
+        .exile-card {
+            background: rgba(112, 26, 117, 0.3);
+            border: 2px solid #e879f9;
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        /* Card content */
+        .card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: inherit;
+        }
+
+        .card-belief {
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            opacity: 0.9;
+            color: #fcd34d;
+        }
+
+        .card-details {
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+
+        .card-details p {
+            margin-bottom: 0.25rem;
+        }
+
+        .inactive-badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.2);
+            color: #86efac;
+            font-size: 0.7rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 9999px;
+            margin-top: 0.5rem;
+            border: 1px solid #22c55e;
+        }
+
+        /* Exile special styling */
+        .exile-card .card-title {
+            font-size: 1.1rem;
+            color: #f0abfc;
+        }
+
+        .exile-card .core-wound {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 0.75rem;
+            margin: 0.75rem 0;
+        }
+
+        .exile-card .core-wound p {
+            margin-bottom: 0.35rem;
+            color: #fca5a5;
+        }
+
+        .exile-card .origin {
+            font-size: 0.85rem;
+            color: #c4b5fd;
+            margin-top: 0.75rem;
+        }
+
+        /* Connection indicators */
+        .connection-note {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            padding: 0.25rem 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+
+        /* Legend */
+        .legend {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.self { background: #10b981; }
+        .legend-dot.manager { background: #3b82f6; }
+        .legend-dot.firefighter { background: #f97316; }
+        .legend-dot.exile { background: #e879f9; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        footer .affirmation {
+            color: #10b981;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        footer .date {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        /* Flow arrows for visual hierarchy */
+        .flow-indicator {
+            text-align: center;
+            color: #64748b;
+            font-size: 1.25rem;
+            margin: 0.25rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✧ Erich's Internal Family System ✧</h1>
+            <p class="subtitle">"Possibility Preservation Through Commitment Avoidance"</p>
+        </header>
+
+        <!-- SELF ENERGY -->
+        <section class="section self-section">
+            <div class="section-header">✧ Self Energy ✧ — Access Points to Healing</div>
+            <div class="section-content">
+                <div class="self-card">
+                    <div class="card-title">🔢 The Mathematician</div>
+                    <div class="card-details">
+                        <p>Beauty in rigor</p>
+                        <p>Genuine curiosity</p>
+                        <p>Window to Self</p>
+                    </div>
+                    <span class="connection-note">Can be recruited by Architect • Window to the Boy</span>
+                </div>
+                <div class="self-card">
+                    <div class="card-title">💗 Tender Sweetness</div>
+                    <div class="card-details">
+                        <p>Visible when guards down</p>
+                        <p>Others see it first</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="flow-indicator">↓</div>
+
+        <!-- MANAGERS -->
+        <section class="section managers-section">
+            <div class="section-header">Managers — Proactive Protection</div>
+            <div class="section-content">
+                <div class="subsection-label">Primary Defense Chain</div>
+
+                <div class="manager-card">
+                    <div class="card-icon">◈</div>
+                    <div class="card-title">The Architect</div>
+                    <div class="card-belief">"If I understand everything, I can make the perfect choice"</div>
+                    <div class="card-details">
+                        <p>13+ concurrent projects</p>
+                        <p>Perpetual design phase</p>
+                    </div>
+                </div>
+
+                <div class="flow-indicator">⤵</div>
+
+                <div class="manager-card">
+                    <div class="card-icon">≋</div>
+                    <div class="card-title">The Cataloguer</div>
+                    <div class="card-belief">"If I categorize the feeling, I can control it"</div>
+                    <div class="card-details">
+                        <p>Emotions → Data</p>
+                        <p>ThinkFeel.Live</p>
+                    </div>
+                    <span class="connection-note">Processes leakage from Architect</span>
+                </div>
+
+                <div class="flow-indicator">⤵</div>
+
+                <div class="manager-card">
+                    <div class="card-icon">🏠</div>
+                    <div class="card-title">Lighthouse Keeper</div>
+                    <div class="card-belief">"If I control my environment, I prevent demands"</div>
+                    <div class="card-details">
+                        <p>Mt. Tabor fortress</p>
+                        <p>Dogs as safe attachment</p>
+                    </div>
+                    <span class="connection-note">Container for the Boy</span>
+                </div>
+
+                <div class="subsection-label">Relationship Managers</div>
+
+                <div class="manager-card">
+                    <div class="card-icon">↔</div>
+                    <div class="card-title">The Prodigal</div>
+                    <div class="card-belief">"If I always have an exit, I never discover my limits"</div>
+                    <div class="card-details">
+                        <p>Microsoft option warm</p>
+                        <p>12 patents as proof</p>
+                    </div>
+                    <span class="connection-note">Justifies non-commitment → Architect</span>
+                </div>
+
+                <div class="manager-card">
+                    <div class="card-icon">👻</div>
+                    <div class="card-title">Husband Who Disappeared</div>
+                    <div class="card-belief">"If I'm not present, I can't be rejected"</div>
+                    <div class="card-details">
+                        <p>Alex logic: protect Kyle FROM me</p>
+                    </div>
+                    <span class="connection-note">Overlaps with Cold Withdrawal</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="flow-indicator">↓</div>
+
+        <!-- FIREFIGHTERS -->
+        <section class="section firefighters-section">
+            <div class="section-header">Firefighters — Emergency Response</div>
+            <p style="padding: 0 1rem; font-size: 0.8rem; opacity: 0.8; margin-bottom: 0.5rem;">High threshold → severe response</p>
+            <div class="section-content">
+                <div class="firefighter-card">
+                    <div class="card-icon">⚗</div>
+                    <div class="card-title">Chemical Escape</div>
+                    <div class="card-belief">"This feeling will kill me if I don't stop it NOW"</div>
+                    <span class="inactive-badge">✓ Currently INACTIVE</span>
+                </div>
+
+                <div class="firefighter-card">
+                    <div class="card-icon">∞</div>
+                    <div class="card-title">The Proliferator</div>
+                    <div class="card-belief">"If my mind is full, no room for feeling"</div>
+                    <div class="card-details">
+                        <p>37 tabs, looks like work</p>
+                    </div>
+                    <span class="connection-note">Cognitive overwhelm → Boy</span>
+                </div>
+
+                <div class="firefighter-card">
+                    <div class="card-icon">❄</div>
+                    <div class="card-title">Cold Withdrawal</div>
+                    <div class="card-belief">"If I disappear, I cannot hurt anyone"</div>
+                    <div class="card-details">
+                        <p>The Alex template</p>
+                    </div>
+                    <span class="connection-note">Disconnection → Boy</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="flow-indicator">↓ ↓ ↓</div>
+
+        <!-- THE EXILE -->
+        <section class="section exile-section">
+            <div class="section-header">The Exile — The Protected Wound</div>
+            <div class="section-content">
+                <div class="exile-card">
+                    <div class="card-icon">◦</div>
+                    <div class="card-title">The Boy Who Wasn't Kept</div>
+                    <p style="font-size: 0.85rem; color: #c4b5fd; margin-bottom: 0.75rem;">The Unchosen One</p>
+
+                    <div class="core-wound">
+                        <p>"I am fundamentally unwantable"</p>
+                        <p>"If people truly see me, they will find THE THING"</p>
+                        <p>"Love will be withdrawn when my defectiveness is found"</p>
+                    </div>
+
+                    <div class="origin">
+                        <p><strong>Origin:</strong> Maternal rejection</p>
+                        <p><strong>Compounded by:</strong> Alex's death</p>
+                        <p style="margin-top: 0.5rem; color: #fca5a5;">"Allowing myself to be loved is dangerous to OTHERS"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item">
+                <span class="legend-dot self"></span>
+                <span>Self Energy</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot manager"></span>
+                <span>Managers</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot firefighter"></span>
+                <span>Firefighters</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot exile"></span>
+                <span>Exile</span>
+            </div>
+        </div>
+
+        <footer>
+            <p class="affirmation">The tender sweetness is real.<br>Others see it.<br>The Boy can be kept.</p>
+            <p class="date">IFS System Map — December 2024</p>
+        </footer>
+    </div>
+</body>
+</html>
