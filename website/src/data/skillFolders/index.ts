@@ -163,6 +163,11 @@ export const skillFolderIndex: SkillFolderIndex = {
     "fileCount": 1,
     "folderCount": 0
   },
+  "mcp-creator": {
+    "hasContent": true,
+    "fileCount": 8,
+    "folderCount": 2
+  },
   "metal-shader-expert": {
     "hasContent": true,
     "fileCount": 6,
@@ -344,6 +349,7 @@ export const skillsWithContent = [
   "indie-monetization-strategist",
   "interior-design-expert",
   "jungian-psychologist",
+  "mcp-creator",
   "metal-shader-expert",
   "native-app-designer",
   "personal-finance-coach",

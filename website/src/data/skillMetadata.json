@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-12-16T06:49:46.826Z",
+  "generatedAt": "2025-12-18T17:43:10.783Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
@@ -292,7 +292,7 @@
     "indie-monetization-strategist": {
       "id": "indie-monetization-strategist",
       "createdAt": "2025-12-01T14:26:53-08:00",
-      "updatedAt": "2025-12-15T22:26:32-08:00",
+      "updatedAt": "2025-12-15T22:49:44-08:00",
       "totalLines": 1541,
       "totalFiles": 5,
       "skillMdSize": 7732,
@@ -348,6 +348,18 @@
       "hasReferences": false,
       "hasExamples": false,
       "hasChangelog": false
+    },
+    "mcp-creator": {
+      "id": "mcp-creator",
+      "createdAt": "2025-12-17T14:24:35-08:00",
+      "updatedAt": "2025-12-17T14:24:35-08:00",
+      "totalLines": 3095,
+      "totalFiles": 8,
+      "skillMdSize": 14712,
+      "skillMdLines": 465,
+      "hasReferences": true,
+      "hasExamples": false,
+      "hasChangelog": true
     },
     "metal-shader-expert": {
       "id": "metal-shader-expert",
