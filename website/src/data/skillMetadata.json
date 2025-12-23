@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-12-18T17:43:10.783Z",
+  "generatedAt": "2025-12-23T13:24:34.487Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
@@ -337,6 +337,18 @@
       "hasExamples": true,
       "hasChangelog": true
     },
+    "knot-theory-educator": {
+      "id": "knot-theory-educator",
+      "createdAt": null,
+      "updatedAt": null,
+      "totalLines": 302,
+      "totalFiles": 1,
+      "skillMdSize": 10841,
+      "skillMdLines": 302,
+      "hasReferences": false,
+      "hasExamples": false,
+      "hasChangelog": false
+    },
     "liaison": {
       "id": "liaison",
       "createdAt": "2025-12-06T21:09:05-08:00",
@@ -521,10 +533,10 @@
       "id": "skill-coach",
       "createdAt": "2025-11-25T18:43:58-08:00",
       "updatedAt": "2025-12-15T22:26:32-08:00",
-      "totalLines": 5093,
+      "totalLines": 5145,
       "totalFiles": 17,
-      "skillMdSize": 8355,
-      "skillMdLines": 242,
+      "skillMdSize": 10078,
+      "skillMdLines": 294,
       "hasReferences": true,
       "hasExamples": true,
       "hasChangelog": true
@@ -696,6 +708,18 @@
       "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": true
+    },
+    "webapp-testing": {
+      "id": "webapp-testing",
+      "createdAt": null,
+      "updatedAt": null,
+      "totalLines": 286,
+      "totalFiles": 1,
+      "skillMdSize": 7308,
+      "skillMdLines": 286,
+      "hasReferences": false,
+      "hasExamples": false,
+      "hasChangelog": false
     },
     "windows-3-1-web-designer": {
       "id": "windows-3-1-web-designer",

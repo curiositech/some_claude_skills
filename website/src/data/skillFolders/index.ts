@@ -158,6 +158,11 @@ export const skillFolderIndex: SkillFolderIndex = {
     "fileCount": 14,
     "folderCount": 2
   },
+  "knot-theory-educator": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
+  },
   "liaison": {
     "hasContent": false,
     "fileCount": 1,
@@ -307,6 +312,11 @@ export const skillFolderIndex: SkillFolderIndex = {
     "hasContent": true,
     "fileCount": 5,
     "folderCount": 1
+  },
+  "webapp-testing": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
   },
   "windows-3-1-web-designer": {
     "hasContent": true,

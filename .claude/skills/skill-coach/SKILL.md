@@ -171,6 +171,58 @@ your-skill/
 - **Subagent**: Multi-step workflows needing tool orchestration
 - **MCP**: External APIs, auth, stateful connections
 
+## Skill Creation Process (6 Steps)
+
+Follow these steps in order when creating a new skill:
+
+### Step 1: Understand with Concrete Examples
+Skip only if usage patterns are already clear. Ask:
+- "What functionality should this skill support?"
+- "Can you give examples of how it would be used?"
+- "What would a user say that should trigger this skill?"
+
+### Step 2: Plan Reusable Contents
+For each example, analyze:
+1. How to execute from scratch
+2. What scripts, references, assets would help with repeated execution
+
+**Example analyses**:
+- `pdf-editor` for "rotate this PDF" → Needs `scripts/rotate_pdf.py`
+- `frontend-webapp-builder` → Needs `assets/hello-world/` template
+- `big-query` skill → Needs `references/schema.md` for table schemas
+
+### Step 3: Initialize the Skill
+Create the skill directory structure:
+```
+your-skill/
+├── SKILL.md           # Core instructions (max 500 lines)
+├── scripts/           # Working code - NOT templates
+├── references/        # Deep dives on domain knowledge
+└── assets/            # Files used in output (templates, icons)
+```
+
+### Step 4: Write SKILL.md
+- Write in **imperative/infinitive form** ("To accomplish X, do Y")
+- Answer: Purpose? When to use? How to use bundled resources?
+- Reference all scripts/references so Claude knows they exist
+
+### Step 5: Validate and Package
+```bash
+# Validate skill structure and content
+python scripts/validate_skill.py <path>
+
+# Check for self-contained tool completeness
+python scripts/check_self_contained.py <path>
+```
+
+### Step 6: Iterate
+After real-world use:
+1. Notice struggles or inefficiencies
+2. Identify how SKILL.md or bundled resources should be updated
+3. Implement changes and test again
+
+---
+
 ## Common Workflows
 
 **Create Skill from Expertise**:
