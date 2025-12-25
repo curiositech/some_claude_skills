@@ -1,0 +1,98 @@
+{
+  "id": "panic-room-finder-001-hidden-space-detective",
+  "title": "The Hidden Space Detective: Finding 47 Unaccounted Square Feet",
+  "description": "A systematic investigation of a 1924 Craftsman home that reveals 47 square feet of unaccounted space behind the master bedroom closet. Using dimensional analysis, acoustic testing, and historical pattern matching, this artifact demonstrates how to turn curiosity into discovery.",
+  "type": "single-skill",
+  "skills": [
+    {
+      "name": "panic-room-finder",
+      "role": "Guided the complete investigation from initial suspicion through discovery, providing measurement templates, acoustic testing protocols, discrepancy calculations, and historical context for a Prohibition-era home"
+    }
+  ],
+  "category": "lifestyle",
+  "tags": [
+    "hidden-rooms",
+    "home-investigation",
+    "dimensional-analysis",
+    "acoustic-testing",
+    "craftsman-homes",
+    "prohibition-era",
+    "mystery-solving",
+    "home-improvement"
+  ],
+  "difficulty": "intermediate",
+  "phases": [
+    {
+      "name": "Phase 1: Initial Suspicion",
+      "skills": ["panic-room-finder"],
+      "duration": "15 minutes",
+      "outcome": "Homeowner noticed the master closet felt 'wrong'—too shallow for the space. Skill provided initial checklist: measure exterior, measure interior, compare. Historical research revealed home built in 1924, peak Prohibition era."
+    },
+    {
+      "name": "Phase 2: Systematic Measurement",
+      "skills": ["panic-room-finder"],
+      "duration": "45 minutes",
+      "outcome": "Room-by-room measurements using provided templates. Master bedroom: 14x12ft. Adjacent office: 10x12ft. Hallway: 3ft wide. Exterior measurement: 32ft. Interior sum: 27ft + walls = 29ft. DISCREPANCY: 3ft."
+    },
+    {
+      "name": "Phase 3: Acoustic Investigation",
+      "skills": ["panic-room-finder"],
+      "duration": "30 minutes",
+      "outcome": "Systematic knock test of closet back wall using grid template. Result: Solid for first 4 feet, distinctly hollow for remaining 6 feet. Marked boundary with blue tape. Hollow section measures 6ft wide x 8ft tall."
+    },
+    {
+      "name": "Phase 4: Access Point Search",
+      "skills": ["panic-room-finder"],
+      "duration": "20 minutes",
+      "outcome": "Examined closet baseboards, crown molding, floor. Found: unusual seam in closet floor. Lifted carpet section to reveal trapdoor hinges. Original 1920s hardware still functional."
+    },
+    {
+      "name": "Phase 5: Discovery",
+      "skills": ["panic-room-finder"],
+      "duration": "10 minutes",
+      "outcome": "Trapdoor opened to reveal ladder descending to 6x8ft underground room. Contents: empty wooden shelving (bottle-sized slots), ventilation pipe to exterior, 1920s newspaper fragments. Classic Prohibition-era alcohol storage."
+    }
+  ],
+  "outcome": {
+    "summary": "Successfully identified and accessed a hidden Prohibition-era storage room that had been sealed for approximately 70 years. The 48 sq ft space was structurally sound and has since been converted to a wine cellar, honoring its original purpose.",
+    "metrics": [
+      {"label": "Exterior Footprint", "value": "1,850 sq ft"},
+      {"label": "Interior Measured", "value": "1,803 sq ft"},
+      {"label": "Unaccounted Space", "value": "47 sq ft"},
+      {"label": "Hidden Room Size", "value": "6x8 ft"},
+      {"label": "Years Hidden", "value": "~70"},
+      {"label": "Investigation Time", "value": "2 hours"}
+    ],
+    "learned": [
+      "Exterior vs interior measurements are the most reliable detection method",
+      "Acoustic testing confirms but shouldn't be the primary method",
+      "Homes built 1920-1933 have highest probability of Prohibition features",
+      "Hidden spaces are often accessed from unexpected directions (floor, not wall)",
+      "Original hardware often still functional despite decades of disuse",
+      "3ft discrepancy = high confidence of hidden space",
+      "The homeowner's 'gut feeling' about the closet was validated by data",
+      "Historical context (Prohibition) predicted feature type accurately"
+    ]
+  },
+  "files": {
+    "transcript": "transcript.md",
+    "assets": [
+      "assets/measurement-worksheet-completed.pdf",
+      "assets/floor-plan-with-void.svg",
+      "assets/acoustic-test-grid.png",
+      "assets/trapdoor-discovery.jpg",
+      "assets/hidden-room-interior.jpg",
+      "assets/wine-cellar-conversion.jpg"
+    ]
+  },
+  "createdAt": "2025-12-25T10:00:00Z",
+  "featured": true,
+  "viewCount": 0,
+  "narrative": [
+    "It started with a feeling. The master bedroom closet in this 1924 Craftsman never felt right—too shallow for the footprint, the back wall slightly cold to the touch. Most homeowners would shrug and move on. This one decided to investigate.",
+    "The panic-room-finder skill turned intuition into method. First: the numbers. Exterior measurement of the back wall: 32 feet. Sum of interior rooms along that wall: 27 feet. Add 2 feet for wall thickness. That leaves 3 feet unaccounted for—and 3 feet is too much to be construction variance.",
+    "The acoustic test sealed it. Using a systematic grid pattern, knocking every foot along the closet's back wall revealed the truth: solid for the first four feet (drywall over studs over drywall), then dramatically hollow for the remaining six. Not stud-hollow. VOID-hollow. The kind of hollow that says 'there's a room back here.'",
+    "The access point wasn't where you'd expect. No hidden panel in the wall, no bookshelf that swings open. Instead: a seam in the closet floor, invisible under the carpet. A trapdoor with 1920s hinges, leading down a wooden ladder into a 6x8 foot underground room. Wooden shelves with bottle-shaped slots. A ventilation pipe to the outside. Newspaper fragments from 1929. This was a Prohibition-era liquor storage room, sealed up when the homeowner's grandfather 'went legit' after repeal.",
+    "The room sat empty for 70 years, waiting to be found. Now it's a wine cellar—a fitting tribute to its original purpose, brought back to life by someone who trusted their instincts and followed the math."
+  ]
+}

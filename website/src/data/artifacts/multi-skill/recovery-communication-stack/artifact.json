@@ -1,0 +1,86 @@
+{
+  "id": "recovery-communication-stack",
+  "title": "Recovery Communication Stack: Rebuilding Relationships in Sobriety",
+  "description": "A multi-skill demonstration showing how three recovery-focused skills work together: modern-drug-rehab-computer provides evidence-based coping strategies, sober-addict-protector maintains daily accountability, and partner-text-coach helps repair relationship communication damaged by addiction.",
+  "type": "multi-skill",
+  "category": "wellness",
+  "created": "2025-12-25",
+  "skills": [
+    {
+      "name": "modern-drug-rehab-computer",
+      "role": "primary",
+      "contribution": "Provided comprehensive MAT education, DBT coping skills (TIPP, opposite action), grounding techniques, and recovery program options (12-step, SMART, Refuge Recovery). Explained the neurological basis of addiction and recovery."
+    },
+    {
+      "name": "sober-addict-protector",
+      "role": "primary",
+      "contribution": "Created daily protection framework with HALT+ assessment, high-risk situation checklist, relapse prevention strategies (3 D's, urge surfing), and strong advocacy for couples therapy. Provided crisis planning templates."
+    },
+    {
+      "name": "partner-text-coach",
+      "role": "secondary",
+      "contribution": "Applied attachment theory to understand communication patterns, provided NVC-based response templates, helped decode emotional subtext in partner messages, and created scripts for difficult recovery conversations."
+    }
+  ],
+  "phases": [
+    {
+      "name": "Phase 1: Understanding the Landscape",
+      "skills": ["modern-drug-rehab-computer"],
+      "description": "Comprehensive education on treatment modalities, MAT options, coping skills toolkit. Building the knowledge foundation for informed recovery."
+    },
+    {
+      "name": "Phase 2: Daily Protection System",
+      "skills": ["sober-addict-protector"],
+      "description": "Implementing daily check-ins, trigger identification, crisis planning. Creating the daily structure that protects sobriety."
+    },
+    {
+      "name": "Phase 3: Relationship Repair",
+      "skills": ["partner-text-coach", "sober-addict-protector"],
+      "description": "Applying communication skills to rebuild trust with partner. Understanding attachment dynamics, practicing difficult conversations, advocating for couples therapy."
+    }
+  ],
+  "metrics": {
+    "referenceDocuments": 5,
+    "copingSkillsDocumented": 15,
+    "communicationTemplates": 8,
+    "crisisResources": 12
+  },
+  "outcome": {
+    "summary": "Created a comprehensive recovery communication system that addresses both individual sobriety protection and relationship repair. The combination of evidence-based treatment knowledge, daily accountability practices, and attachment-informed communication provides a holistic approach to recovery that acknowledges the relational dimension of addiction.",
+    "metrics": [
+      {"label": "Coping Skills", "value": "15+"},
+      {"label": "Communication Templates", "value": "8"},
+      {"label": "Crisis Resources", "value": "12"},
+      {"label": "Reference Docs", "value": "5"}
+    ],
+    "learned": [
+      "Recovery affects relationships as much as it affects the individual",
+      "Partners need their own support and have their own healing journey",
+      "Communication patterns established during addiction must be consciously rebuilt",
+      "MAT is evidence-based medicine, not 'trading one drug for another'",
+      "Couples therapy isn't optional if relationship survival matters",
+      "Attachment styles explain many communication breakdowns during recovery",
+      "Daily protection practices compound into long-term sobriety",
+      "Crisis planning is done when calm, used when in crisis"
+    ]
+  },
+  "tags": [
+    "recovery",
+    "addiction",
+    "relationships",
+    "communication",
+    "DBT",
+    "attachment-theory",
+    "couples-therapy",
+    "MAT",
+    "sobriety",
+    "mental-health"
+  ],
+  "narrative": [
+    "Recovery doesn't happen in isolation. When someone gets sober, they're not just healing their relationship with substances—they're rebuilding every relationship that addiction touched. This artifact demonstrates how three skills work together to address the full picture.",
+    "The modern-drug-rehab-computer provides the foundation: evidence-based understanding of treatment options, coping skills like TIPP and urge surfing, and the truth about MAT (it's medicine, not a crutch). Knowledge is power, especially when fighting misinformation.",
+    "The sober-addict-protector takes that knowledge and makes it daily practice. The HALT+ check-in becomes ritual. High-risk situations get identified before they become crises. And critically, it doesn't shy away from the hard truth: if you're in a relationship, couples therapy isn't optional—it's where the real repair happens.",
+    "Finally, the partner-text-coach addresses the communication that addiction broke. Using attachment theory, we understand why the anxious-pursuer/avoidant-withdrawer dynamic is so common in recovery relationships. With NVC-based templates and scripts for difficult conversations, both partners can start communicating with clarity instead of reactivity.",
+    "The result isn't a cure—recovery doesn't work that way. It's a system. Daily practices that compound. Communication skills that improve with use. Knowledge that empowers instead of shames. And most importantly, the acknowledgment that rebuilding relationships takes as much intention as building sobriety."
+  ]
+}

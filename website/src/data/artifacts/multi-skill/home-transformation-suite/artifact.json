@@ -1,0 +1,106 @@
+{
+  "id": "home-transformation-suite",
+  "title": "Complete Home Transformation: From Boring to Bold Inside and Out",
+  "description": "A multi-skill demonstration showing how three home-focused skills work together: fancy-yard-landscaper transforms the exterior with privacy screens and seasonal planning, maximalist-wall-decorator brings bold colors and gallery walls inside, and panic-room-finder discovers 200 sq ft of hidden bonus space to become a meditation room.",
+  "type": "multi-skill",
+  "category": "lifestyle",
+  "created": "2025-12-25",
+  "skills": [
+    {
+      "name": "fancy-yard-landscaper",
+      "role": "primary",
+      "contribution": "Created comprehensive landscape plan with fast-growing privacy screen (avoiding arborvitae pitfalls), native pollinator garden, and outdoor living space design. Provided zone-appropriate plant recommendations and seasonal timeline."
+    },
+    {
+      "name": "maximalist-wall-decorator",
+      "role": "primary",
+      "contribution": "Designed bold interior transformation including emerald green accent walls, gallery wall layout for 23 pieces, eclectic lamp collection placement, and color palette that flows between rooms. Applied the 40-25-20-15 maximalist color rule."
+    },
+    {
+      "name": "panic-room-finder",
+      "role": "secondary",
+      "contribution": "Investigated dimensional discrepancies in basement, discovered 200 sq ft hidden space (former coal storage from 1910s). Provided structural assessment methodology and conversion planning."
+    }
+  ],
+  "phases": [
+    {
+      "name": "Phase 1: Exterior Assessment",
+      "skills": ["fancy-yard-landscaper"],
+      "description": "Photo mapping of existing yard, privacy need analysis, soil testing, sun exposure tracking. Identified neighbor sight lines and created priority zones."
+    },
+    {
+      "name": "Phase 2: Landscape Design",
+      "skills": ["fancy-yard-landscaper"],
+      "description": "Designed fast-growing privacy screen using Green Giant arborvitae alternative (skip laurel + hollies), native pollinator garden, and outdoor seating area with fire pit. Created 3-year growth projection."
+    },
+    {
+      "name": "Phase 3: Interior Color Planning",
+      "skills": ["maximalist-wall-decorator"],
+      "description": "Room-by-room color analysis. Selected jewel-tone palette: emerald (living room), ruby (dining room), sapphire (bedroom), amethyst (office). Brass metallics throughout."
+    },
+    {
+      "name": "Phase 4: Gallery Wall Design",
+      "skills": ["maximalist-wall-decorator"],
+      "description": "Curated 23-piece gallery wall mixing photography, original art, mirrors, and dimensional objects. Created layout template using kraft paper method before any holes were drilled."
+    },
+    {
+      "name": "Phase 5: Hidden Space Discovery",
+      "skills": ["panic-room-finder"],
+      "description": "Dimensional analysis of basement revealed 200 sq ft discrepancy. Acoustic testing confirmed void behind workshop. Discovered sealed coal room from original 1912 construction."
+    },
+    {
+      "name": "Phase 6: Bonus Room Conversion",
+      "skills": ["panic-room-finder", "maximalist-wall-decorator"],
+      "description": "Coal room converted to meditation space. Sound-dampened walls, warm lighting, maximalist wall treatment with collected textiles from travels. The 'secret room' becomes the retreat."
+    }
+  ],
+  "metrics": {
+    "exteriorTransformed": "2,400 sq ft",
+    "privacyScreenLength": "85 linear ft",
+    "nativePlants": 47,
+    "roomsRedesigned": 5,
+    "galleryWallPieces": 23,
+    "hiddenSpaceFound": "200 sq ft",
+    "projectDuration": "8 months"
+  },
+  "outcome": {
+    "summary": "Complete home transformation from generic builder-grade to deeply personal expression. The combination of intentional landscaping, bold interior design, and discovered hidden space created a home that tells the owner's story—outside and in, visible and secret.",
+    "metrics": [
+      {"label": "Rooms Transformed", "value": "6"},
+      {"label": "Gallery Pieces", "value": "23"},
+      {"label": "Native Plants", "value": "47"},
+      {"label": "Hidden Sq Ft Found", "value": "200"},
+      {"label": "Privacy Coverage", "value": "100%"},
+      {"label": "Project Duration", "value": "8 months"}
+    ],
+    "learned": [
+      "Start outside, work in—landscape provides daily joy immediately",
+      "Privacy screens don't have to be arborvitae (and probably shouldn't be)",
+      "Bold wall colors feel scary until you live with them, then feel essential",
+      "Gallery walls tell stories better when they include non-art objects",
+      "Hidden spaces are more common than people think—always worth investigating",
+      "Seasonal planning prevents impulse purchases at the nursery",
+      "Brass unifies jewel tones better than silver",
+      "The 'secret room' became the most-used space in the house"
+    ]
+  },
+  "tags": [
+    "home-transformation",
+    "landscape-design",
+    "interior-design",
+    "maximalism",
+    "hidden-rooms",
+    "gallery-wall",
+    "privacy-screen",
+    "meditation-room",
+    "bold-colors",
+    "personal-expression"
+  ],
+  "narrative": [
+    "This home started like millions of others: beige walls, builder-grade everything, a yard that was just 'mowed lawn with some bushes.' The neighbors could see straight into every window. Inside, nothing reflected who actually lived there. It was shelter, not sanctuary.",
+    "The transformation started outside. The fancy-yard-landscaper skill analyzed the property like a military strategist: where are the sight lines? What grows fast? What survives deer and drought and Zone 6 winters? The result wasn't a row of arborvitae (the skill warned hard against that particular trap). Instead: skip laurel for year-round density, hollies for winter berries, a pollinator garden that buzzed with life by June.",
+    "Inside, the maximalist-wall-decorator threw out the rulebook. 'Neutral walls make a room feel larger' gave way to 'neutral walls make a room feel boring.' Emerald green in the living room. Ruby red in the dining room. A gallery wall that mixes original art with mirrors, sculptural objects, and framed concert posters—23 pieces that tell a life story better than any single painting could.",
+    "But the real surprise was underground. The panic-room-finder skill noticed something wrong with the basement measurements: 200 square feet that existed on the exterior footprint but not in any accessible room. Acoustic testing confirmed it—a void behind the workshop wall. Behind that wall: a sealed coal storage room from 1912, perfectly preserved, waiting to become something new.",
+    "That hidden room is now a meditation space. Sound-dampened, warm-lit, walls covered in textiles collected from travels. It's the secret heart of the house—discovered through curiosity and math, transformed through intention and color. The home went from generic to deeply personal, from shelter to story, from house to home."
+  ]
+}
