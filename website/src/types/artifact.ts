@@ -1,5 +1,5 @@
 export type ArtifactType = 'single-skill' | 'multi-skill' | 'comparison';
-export type ArtifactCategory = 'design' | 'development' | 'ai-ml' | 'research' | 'writing' | 'meta';
+export type ArtifactCategory = 'design' | 'development' | 'ai-ml' | 'research' | 'writing' | 'meta' | 'lifestyle' | 'relationships' | 'recovery';
 export type Difficulty = 'beginner' | 'intermediate' | 'advanced';
 
 export interface SkillInvolvement {

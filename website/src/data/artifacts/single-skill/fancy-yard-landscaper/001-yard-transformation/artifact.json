@@ -1,0 +1,103 @@
+{
+  "id": "fancy-yard-landscaper-001-yard-transformation",
+  "title": "Yard Transformation Studio: From Blank Lawn to Private Paradise",
+  "description": "A complete backyard redesign project: photo-mapped existing conditions, generated visualization of the transformation, selected zone-appropriate plants, and created a 3-year implementation plan. Privacy achieved in 18 months instead of the expected 5 years.",
+  "type": "single-skill",
+  "skills": [
+    {
+      "name": "fancy-yard-landscaper",
+      "role": "Conducted site analysis via photos, designed privacy screening (deliberately avoiding arborvitae), selected native pollinator plants, created seasonal planting timeline, and provided ongoing care guidance"
+    }
+  ],
+  "category": "lifestyle",
+  "tags": [
+    "landscape-design",
+    "privacy-screening",
+    "native-plants",
+    "outdoor-living",
+    "plant-selection",
+    "seasonal-planning"
+  ],
+  "difficulty": "intermediate",
+  "phases": [
+    {
+      "name": "Phase 1: Photo Mapping",
+      "skills": ["fancy-yard-landscaper"],
+      "duration": "1 day",
+      "outcome": "Homeowner submitted 24 photos from all angles, plus drone overview. Skill identified: south-facing exposure, clay soil indicators, existing mature oak (asset), neighbor sight lines from 3 directions, slope toward back corner (drainage consideration)."
+    },
+    {
+      "name": "Phase 2: Privacy Analysis",
+      "skills": ["fancy-yard-landscaper"],
+      "duration": "1 day",
+      "outcome": "Mapped 4 critical sight lines: neighbor's deck (high priority), street view through side yard, back neighbor's second story, adjacent driveway. Calculated: 127 linear feet of screening needed at varying heights."
+    },
+    {
+      "name": "Phase 3: Plant Selection",
+      "skills": ["fancy-yard-landscaper"],
+      "duration": "2 days",
+      "outcome": "REJECTED arborvitae (skill warned about bagworms, deer, and 'arborvitae graveyards'). SELECTED: Nellie Stevens holly (evergreen, 15-20ft fast), skip laurel (dense, 8-10ft), winterberry holly (deciduous but dense), native serviceberry (spring interest). All deer-resistant, Zone 6b hardy."
+    },
+    {
+      "name": "Phase 4: Design Visualization",
+      "skills": ["fancy-yard-landscaper"],
+      "duration": "1 day",
+      "outcome": "Generated before/after visualization showing: staggered evergreen screen at property line, layered planting with shrubs in front, pollinator garden in sunny corner, flagstone patio under oak tree, fire pit area with privacy from all angles."
+    },
+    {
+      "name": "Phase 5: Implementation Timeline",
+      "skills": ["fancy-yard-landscaper"],
+      "duration": "1 day",
+      "outcome": "Created 3-year phased plan: Year 1 Fall - install largest hollies and hardscape. Year 2 Spring - add understory shrubs and perennials. Year 2 Fall - fill gaps based on first-year growth. Year 3 - fine-tune and add seasonal interest plants."
+    },
+    {
+      "name": "Phase 6: 18-Month Check-In",
+      "skills": ["fancy-yard-landscaper"],
+      "duration": "Ongoing",
+      "outcome": "Privacy screening achieved at 18 months—3.5 years faster than typical arborvitae timeline. Zero plant losses (proper selection for conditions). Pollinator garden attracted documented 14 butterfly species. Fire pit area used 40+ times."
+    }
+  ],
+  "outcome": {
+    "summary": "Transformed a bare lawn with zero privacy into a layered, private outdoor living space. By avoiding the arborvitae trap and selecting fast-growing alternatives, privacy was achieved in 18 months. The design increased usable outdoor space from 'never used' to '40+ fire pit nights per year.'",
+    "metrics": [
+      {"label": "Privacy Screen Length", "value": "127 ft"},
+      {"label": "Trees Planted", "value": "12"},
+      {"label": "Shrubs Planted", "value": "34"},
+      {"label": "Perennials", "value": "89"},
+      {"label": "Time to Privacy", "value": "18 months"},
+      {"label": "Plant Survival Rate", "value": "100%"},
+      {"label": "Butterfly Species", "value": "14"},
+      {"label": "Fire Pit Uses", "value": "40+"}
+    ],
+    "learned": [
+      "Arborvitae are NOT the fastest path to privacy—they're the slowest reliable path at best",
+      "Staggered planting (not a single row) creates density faster",
+      "Nellie Stevens holly grows 3ft/year and stays evergreen—beats arborvitae easily",
+      "Photo mapping catches site conditions that verbal descriptions miss",
+      "Fall planting gives trees a full root season before summer stress",
+      "Native pollinators arrive within ONE season if you plant correctly",
+      "Fire pits become the social center—design everything around sight lines to it",
+      "The oak tree they almost removed became the best feature (shade for patio)"
+    ]
+  },
+  "files": {
+    "transcript": "transcript.md",
+    "assets": [
+      "assets/before-aerial.jpg",
+      "assets/after-visualization.png",
+      "assets/sight-line-analysis.svg",
+      "assets/plant-placement-plan.pdf",
+      "assets/18-month-progress.jpg"
+    ]
+  },
+  "createdAt": "2025-12-25T12:00:00Z",
+  "featured": true,
+  "viewCount": 0,
+  "narrative": [
+    "The backyard was technically large—a quarter acre—but it felt like a fishbowl. The neighbor's elevated deck looked directly down onto the patio. The street was visible through the side yard. The back neighbor's second-story windows had a clear view of everything. The homeowners had stopped using their outdoor space entirely.",
+    "The first instinct was arborvitae. Everyone plants arborvitae, right? The fancy-yard-landscaper skill intervened immediately: 'Arborvitae are the number one regret in residential landscaping. They're slow, they're deer candy, bagworms love them, and when one dies in a row, you have an obvious gap for years.' The skill had seen too many 'arborvitae graveyards.'",
+    "Instead: Nellie Stevens holly for the back corners (20 feet tall, evergreen, grows 3 feet per year, deer-resistant). Skip laurel for mid-height screening (dense enough to block the neighbor's deck by month 8). Winterberry hollies for winter interest when deciduous plants are bare. A layered approach that created depth, not just a green wall.",
+    "The design went beyond privacy. A flagstone patio emerged under the existing oak tree—the tree they'd almost removed, now the crown jewel of the space. A pollinator garden in the sunny corner. A fire pit area positioned so that every seat had privacy from every sight line. The yard became a series of outdoor rooms instead of one exposed lawn.",
+    "Eighteen months later: full privacy. Not the five-to-seven years arborvitae would have taken (if they survived). One hundred percent plant survival because every species was matched to the actual site conditions. Forty-plus fire pit nights that first full summer. Fourteen documented butterfly species in the pollinator garden. The fishbowl became a sanctuary."
+  ]
+}

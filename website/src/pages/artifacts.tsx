@@ -11,13 +11,28 @@ import promptLearningMcpArtifact from '@site/src/data/artifacts/single-skill/pro
 import skillCoachArtifact from '@site/src/data/artifacts/single-skill/skill-coach/001-self-improvement/artifact.json';
 import vaporwaveMidiPlayerArtifact from '@site/src/data/artifacts/single-skill/vaporwave-glassomorphic-ui-designer/001-midi-player/artifact.json';
 import siteReliabilityEngineerArtifact from '@site/src/data/artifacts/frontend/multi-skill/1-site-reliability-engineer-integration/artifact.json';
+// New lifestyle and recovery artifacts
+import recoveryCommunicationStackArtifact from '@site/src/data/artifacts/multi-skill/recovery-communication-stack/artifact.json';
+import homeTransformationSuiteArtifact from '@site/src/data/artifacts/multi-skill/home-transformation-suite/artifact.json';
+import hiddenSpaceDetectiveArtifact from '@site/src/data/artifacts/single-skill/panic-room-finder/001-hidden-space-detective/artifact.json';
+import weddingTimeCapsuleArtifact from '@site/src/data/artifacts/single-skill/wedding-immortalist/001-wedding-time-capsule/artifact.json';
+import relationshipLabArtifact from '@site/src/data/artifacts/single-skill/partner-text-coach/001-relationship-lab/artifact.json';
+import yardTransformationArtifact from '@site/src/data/artifacts/single-skill/fancy-yard-landscaper/001-yard-transformation/artifact.json';
+import colorConfidenceArtifact from '@site/src/data/artifacts/single-skill/maximalist-wall-decorator/001-color-confidence/artifact.json';
 
 const ARTIFACTS: Artifact[] = [
   promptLearningMcpArtifact as Artifact,
   skillCoachArtifact as Artifact,
   vaporwaveMidiPlayerArtifact as Artifact,
   siteReliabilityEngineerArtifact as Artifact,
-  // More artifacts will be added here as they're created
+  // Lifestyle and recovery artifacts
+  recoveryCommunicationStackArtifact as Artifact,
+  homeTransformationSuiteArtifact as Artifact,
+  hiddenSpaceDetectiveArtifact as Artifact,
+  weddingTimeCapsuleArtifact as Artifact,
+  relationshipLabArtifact as Artifact,
+  yardTransformationArtifact as Artifact,
+  colorConfidenceArtifact as Artifact,
 ];
 
 const CATEGORIES: { value: ArtifactCategory | 'all'; label: string; icon: string }[] = [
@@ -25,6 +40,9 @@ const CATEGORIES: { value: ArtifactCategory | 'all'; label: string; icon: string
   { value: 'design', label: 'Design', icon: '🎨' },
   { value: 'development', label: 'Development', icon: '💻' },
   { value: 'ai-ml', label: 'AI/ML', icon: '🤖' },
+  { value: 'lifestyle', label: 'Lifestyle', icon: '🏡' },
+  { value: 'relationships', label: 'Relationships', icon: '💕' },
+  { value: 'recovery', label: 'Recovery', icon: '🌅' },
   { value: 'research', label: 'Research', icon: '🔬' },
   { value: 'writing', label: 'Writing', icon: '✍️' },
   { value: 'meta', label: 'Meta', icon: '🔄' },

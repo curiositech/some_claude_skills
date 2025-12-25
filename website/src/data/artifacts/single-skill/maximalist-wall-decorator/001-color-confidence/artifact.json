@@ -1,0 +1,104 @@
+{
+  "id": "maximalist-wall-decorator-001-color-confidence",
+  "title": "Color Confidence Builder: From Beige Fear to Jewel Tone Joy",
+  "description": "A homeowner paralyzed by color choices used the maximalist-wall-decorator skill to systematically build confidence, starting with one bold accent wall and expanding to a whole-house jewel tone palette. Nine months from first swatch to maximalist paradise.",
+  "type": "single-skill",
+  "skills": [
+    {
+      "name": "maximalist-wall-decorator",
+      "role": "Provided color combination theory, room-by-room progression strategy, the 40-25-20-15 maximalist rule, gallery wall planning, and ongoing encouragement through the 'color terror' phase"
+    }
+  ],
+  "category": "design",
+  "tags": [
+    "interior-design",
+    "color-theory",
+    "maximalism",
+    "bold-colors",
+    "gallery-wall",
+    "home-transformation"
+  ],
+  "difficulty": "beginner",
+  "phases": [
+    {
+      "name": "Phase 1: Color Terror Assessment",
+      "skills": ["maximalist-wall-decorator"],
+      "duration": "Week 1",
+      "outcome": "Homeowner admitted to 'color terror'—every room was beige or gray because colors 'might not go together.' Skill diagnosed: decision paralysis from too many options. Prescription: start with ONE wall, ONE foolproof combo."
+    },
+    {
+      "name": "Phase 2: First Bold Wall",
+      "skills": ["maximalist-wall-decorator"],
+      "duration": "Week 2-3",
+      "outcome": "Selected Benjamin Moore 'Hunter Green' for living room accent wall. Homeowner painted it, panicked for 48 hours ('it's too dark!'), then fell in love. The skill predicted this exact pattern."
+    },
+    {
+      "name": "Phase 3: Understanding the 40-25-20-15 Rule",
+      "skills": ["maximalist-wall-decorator"],
+      "duration": "Week 4",
+      "outcome": "Learned the maximalist color distribution: 40% dominant (the green), 25% secondary (existing cream sofa), 20% accent (brass and gold), 15% pop (coral throw pillows). Suddenly the room 'made sense.'"
+    },
+    {
+      "name": "Phase 4: Gallery Wall Construction",
+      "skills": ["maximalist-wall-decorator"],
+      "duration": "Month 2-3",
+      "outcome": "Built 19-piece gallery wall on the green accent wall. Mixed: vintage oil paintings, modern prints, 3 mirrors, 2 sculptural objects. Used kraft paper template method. Zero regrettable holes."
+    },
+    {
+      "name": "Phase 5: Room-by-Room Expansion",
+      "skills": ["maximalist-wall-decorator"],
+      "duration": "Month 4-7",
+      "outcome": "Expanded to other rooms: Dining room got deep coral. Bedroom got moody navy. Office got sunny mustard. Each room connected via repeated brass accents and one shared 'thread color' (cream)."
+    },
+    {
+      "name": "Phase 6: Maximalist Finishing",
+      "skills": ["maximalist-wall-decorator"],
+      "duration": "Month 8-9",
+      "outcome": "Added final maximalist touches: eclectic lamp collection (7 lamps, none matching), layered rugs, collected objects on every surface. Home went from 'afraid of color' to 'magazine feature' in 9 months."
+    }
+  ],
+  "outcome": {
+    "summary": "A homeowner with severe 'color terror' built confidence through progressive exposure, starting with one accent wall and expanding to a whole-house maximalist palette. The transformation took 9 months and resulted in a space that feels bold, personal, and joyfully alive.",
+    "metrics": [
+      {"label": "Starting Confidence", "value": "1/10"},
+      {"label": "Final Confidence", "value": "9/10"},
+      {"label": "Rooms Transformed", "value": "5"},
+      {"label": "Gallery Wall Pieces", "value": "19"},
+      {"label": "Paint Colors Used", "value": "7"},
+      {"label": "Lamps Collected", "value": "7"},
+      {"label": "Months to Completion", "value": "9"},
+      {"label": "Beige Walls Remaining", "value": "0"}
+    ],
+    "learned": [
+      "Color terror is real and common—it's decision paralysis, not lack of taste",
+      "The 48-hour panic after painting bold is NORMAL and passes",
+      "Starting with one wall builds confidence for the next",
+      "The 40-25-20-15 rule prevents 'too much' while enabling 'enough'",
+      "Brass/gold metallics unify almost any jewel tone palette",
+      "Gallery walls should include non-art objects for visual interest",
+      "Maximalism is about abundance, not chaos—there are still rules",
+      "No one who goes bold ever wants to go back to beige"
+    ]
+  },
+  "files": {
+    "transcript": "transcript.md",
+    "assets": [
+      "assets/before-beige-living-room.jpg",
+      "assets/first-green-wall.jpg",
+      "assets/48-hour-panic-text.png",
+      "assets/gallery-wall-kraft-template.jpg",
+      "assets/final-living-room.jpg",
+      "assets/whole-house-palette.png"
+    ]
+  },
+  "createdAt": "2025-12-25T12:00:00Z",
+  "featured": true,
+  "viewCount": 0,
+  "narrative": [
+    "Every room was beige. Or gray. Or 'greige.' The homeowner had Pinterest boards full of colorful rooms they loved—jewel tones, bold patterns, maximalist abundance—but when it came to their own home, fear won. What if the colors clashed? What if they got tired of it? What if guests judged? So: beige. Safe, forgettable, beige.",
+    "The maximalist-wall-decorator skill diagnosed the problem immediately: color terror, a form of decision paralysis caused by too many options and fear of 'permanent' mistakes. The cure wasn't a whole-house makeover. It was one wall. One foolproof combination. One small act of bravery.",
+    "Hunter Green. Benjamin Moore 2041-10. Deep, rich, dramatic. The homeowner painted the living room accent wall on a Saturday and spent the next 48 hours in what the skill calls 'the panic window.' It's too dark. It's too much. I've made a terrible mistake. This is completely normal. By Monday, they loved it. By Wednesday, they were planning the next room.",
+    "The skill introduced the 40-25-20-15 rule: 40% dominant color (the green wall), 25% secondary (their existing cream sofa—see, you don't have to buy all new furniture), 20% accent (brass lamps, gold frames), 15% pop (coral throw pillows that make the green sing). Suddenly maximalism had structure. Bold had rules. It wasn't chaos—it was composition.",
+    "Nine months later: five rooms transformed. Deep coral in the dining room. Moody navy in the bedroom. Sunny mustard in the office. A 19-piece gallery wall mixing vintage oils, modern prints, mirrors, and sculptural objects. Seven lamps, none matching, all perfect. Zero beige walls remaining. The homeowner's parting words: 'I can't believe I lived in beige for ten years. This feels like ME.'"
+  ]
+}

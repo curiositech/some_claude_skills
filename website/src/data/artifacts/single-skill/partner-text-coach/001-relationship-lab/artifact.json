@@ -1,0 +1,95 @@
+{
+  "id": "partner-text-coach-001-relationship-lab",
+  "title": "Relationship Communication Lab: 30 Days of Practice",
+  "description": "An interactive training program where a couple practiced responding to difficult relationship scenarios, received attachment-informed feedback, and tracked their communication improvement over 30 days.",
+  "type": "single-skill",
+  "skills": [
+    {
+      "name": "partner-text-coach",
+      "role": "Provided scenario generation, real-time response analysis, attachment style detection, alternative suggestions, and progress tracking across 30 days of deliberate practice"
+    }
+  ],
+  "category": "relationships",
+  "tags": [
+    "relationship-coaching",
+    "communication-skills",
+    "attachment-theory",
+    "practice-scenarios",
+    "conflict-resolution",
+    "emotional-intelligence"
+  ],
+  "difficulty": "intermediate",
+  "phases": [
+    {
+      "name": "Phase 1: Baseline Assessment",
+      "skills": ["partner-text-coach"],
+      "duration": "Day 1",
+      "outcome": "Both partners completed attachment style assessment. Partner A: Anxious-Preoccupied. Partner B: Dismissive-Avoidant. Classic anxious-avoidant trap identified. Baseline communication score: 42/100."
+    },
+    {
+      "name": "Phase 2: Scenario Training (Week 1)",
+      "skills": ["partner-text-coach"],
+      "duration": "Days 2-8",
+      "outcome": "Daily scenarios: 'They're upset and you don't know why', 'Planning conflict about holidays', 'Feeling disconnected'. Practiced responding, received feedback, tried alternatives. Average improvement: 12 points."
+    },
+    {
+      "name": "Phase 3: Pattern Recognition (Week 2)",
+      "skills": ["partner-text-coach"],
+      "duration": "Days 9-15",
+      "outcome": "Identified recurring patterns: Partner A's reassurance-seeking spirals, Partner B's withdrawal under pressure. Practiced counter-moves: A learned to self-soothe first, B learned to name emotions before retreating."
+    },
+    {
+      "name": "Phase 4: Real Conversation Analysis (Week 3)",
+      "skills": ["partner-text-coach"],
+      "duration": "Days 16-22",
+      "outcome": "Analyzed 15 real text exchanges from the past month. Identified 7 escalation points that could have been defused. Rewrote responses together. Both partners reported 'finally understanding' each other's reactions."
+    },
+    {
+      "name": "Phase 5: Advanced Scenarios (Week 4)",
+      "skills": ["partner-text-coach"],
+      "duration": "Days 23-30",
+      "outcome": "Tackled high-stakes scenarios: money disagreements, family boundary violations, intimacy concerns. Final assessment: Communication score 78/100. Both partners report feeling 'heard' for first time in years."
+    }
+  ],
+  "outcome": {
+    "summary": "A couple stuck in an anxious-avoidant cycle used deliberate practice to transform their communication. Over 30 days, they identified destructive patterns, practiced healthier responses, and raised their communication score from 42 to 78.",
+    "metrics": [
+      {"label": "Starting Score", "value": "42/100"},
+      {"label": "Final Score", "value": "78/100"},
+      {"label": "Scenarios Practiced", "value": "47"},
+      {"label": "Real Convos Analyzed", "value": "15"},
+      {"label": "Patterns Identified", "value": "8"},
+      {"label": "Days Practiced", "value": "30"},
+      {"label": "Escalations Avoided (Month After)", "value": "12"}
+    ],
+    "learned": [
+      "Anxious-avoidant pairings are common and workable with awareness",
+      "Practicing responses in low-stakes scenarios builds muscle memory",
+      "Naming the pattern ('I'm doing the reassurance spiral') defuses it",
+      "Avoidant partners need explicit permission to take space WITHOUT it meaning rejection",
+      "Anxious partners need consistent small reassurances, not grand gestures",
+      "Analyzing real past conversations is more powerful than hypotheticals",
+      "30 days is enough to shift habits, not enough to fully rewire—maintenance matters",
+      "Both partners improved most when they stopped trying to 'win' arguments"
+    ]
+  },
+  "files": {
+    "transcript": "transcript.md",
+    "assets": [
+      "assets/attachment-assessment-results.png",
+      "assets/score-progression-chart.svg",
+      "assets/pattern-identification-diagram.png",
+      "assets/before-after-conversation.png"
+    ]
+  },
+  "createdAt": "2025-12-25T12:00:00Z",
+  "featured": true,
+  "viewCount": 0,
+  "narrative": [
+    "They'd been together for seven years and loved each other deeply—but their fights were getting worse. The pattern was always the same: she'd sense distance and reach out more intensely; he'd feel overwhelmed and withdraw further; she'd interpret the withdrawal as rejection and escalate; he'd shut down completely. Rinse, repeat, resentment.",
+    "The partner-text-coach skill diagnosed the pattern immediately: classic anxious-avoidant attachment trap. Not a character flaw in either partner—a dance they'd learned in childhood, now playing out in their relationship. The question wasn't 'who's wrong?' but 'how do we change the choreography?'",
+    "For thirty days, they practiced. Daily scenarios—some low-stakes ('planning a weekend'), some high-stakes ('feeling neglected')—where they'd write responses, get feedback, and try alternatives. The skill didn't just say 'that's wrong.' It explained WHY: 'That phrase triggers his withdrawal reflex because it implies obligation. Try this instead.'",
+    "Week two was the breakthrough. They started recognizing their patterns IN THE MOMENT. She'd catch herself spiraling and say 'I'm doing the thing.' He'd notice his shutdown reflex and say 'I need space but I'm not leaving.' The patterns didn't disappear—they became visible, nameable, manageable.",
+    "By day thirty, their communication score had jumped from 42 to 78. More importantly: in the month after, they counted twelve potential escalations that just... didn't happen. Fights that would have lasted days resolved in hours. The anxious-avoidant dance continued, but now they knew the steps—and how to change them."
+  ]
+}

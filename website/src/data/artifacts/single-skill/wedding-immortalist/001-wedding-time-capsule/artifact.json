@@ -1,0 +1,103 @@
+{
+  "id": "wedding-immortalist-001-time-capsule",
+  "title": "Wedding Time Capsule: 3,247 Photos Become a Walkable Memory",
+  "description": "A complete wedding memory preservation project: 3,247 photos and 4 hours of video transformed into an interactive 3D venue you can walk through, with face-clustered guest galleries and click-to-play moment hotspots.",
+  "type": "single-skill",
+  "skills": [
+    {
+      "name": "wedding-immortalist",
+      "role": "Orchestrated the complete pipeline: 3DGS reconstruction from video frames, face clustering of 127 guests, aesthetic scoring for best-photo selection, theme extraction (garden party with bohemian accents), and theatre mode hotspot placement"
+    }
+  ],
+  "category": "lifestyle",
+  "tags": [
+    "wedding",
+    "3d-gaussian-splatting",
+    "photo-organization",
+    "face-clustering",
+    "memory-preservation",
+    "interactive-media",
+    "theatre-mode"
+  ],
+  "difficulty": "advanced",
+  "phases": [
+    {
+      "name": "Phase 1: Media Ingestion",
+      "skills": ["wedding-immortalist"],
+      "duration": "2 hours",
+      "outcome": "Collected 3,247 photos from 12 photographers/guests plus 4 hours of video from 3 angles. Deduplicated to 2,891 unique images. Extracted 8,400 video frames for 3DGS training."
+    },
+    {
+      "name": "Phase 2: 3D Venue Reconstruction",
+      "skills": ["wedding-immortalist"],
+      "duration": "8 hours (GPU)",
+      "outcome": "Built 3D Gaussian Splat model of entire venue: ceremony arch, reception tent, dance floor, bar area. 2.1M gaussians, 45MB compressed model. Smooth navigation at 60fps on mobile."
+    },
+    {
+      "name": "Phase 3: Face Clustering",
+      "skills": ["wedding-immortalist"],
+      "duration": "3 hours",
+      "outcome": "Detected 8,943 faces across all media. Clustered into 127 unique guests using ArcFace embeddings + HDBSCAN. Named 89 guests via provided list, 38 tagged as 'Guest'. Zero false merges."
+    },
+    {
+      "name": "Phase 4: Aesthetic Curation",
+      "skills": ["wedding-immortalist"],
+      "duration": "1 hour",
+      "outcome": "Scored all photos for aesthetic quality. Selected top 5 photos per guest. Identified 47 'hero moments': first kiss, first dance, cake cutting, bouquet toss, father-daughter dance, speeches."
+    },
+    {
+      "name": "Phase 5: Theme Extraction",
+      "skills": ["wedding-immortalist"],
+      "duration": "30 minutes",
+      "outcome": "Analyzed color palette: sage green, blush pink, cream, gold accents. Detected style: garden bohemian with vintage touches. UI themed to match: sage backgrounds, gold highlights, handwritten-style fonts."
+    },
+    {
+      "name": "Phase 6: Theatre Mode",
+      "skills": ["wedding-immortalist"],
+      "duration": "2 hours",
+      "outcome": "Placed 23 interactive hotspots in 3D space. Each hotspot triggers video playback from that exact location. Ceremony hotspots: processional, vows, ring exchange, kiss. Reception hotspots: toasts, first dance, parent dances."
+    }
+  ],
+  "outcome": {
+    "summary": "Created a fully interactive wedding time capsule where the couple can literally walk through their venue in 3D, click to watch moments unfold where they happened, and browse every guest's best photos. The entire experience matches their wedding aesthetic.",
+    "metrics": [
+      {"label": "Original Photos", "value": "3,247"},
+      {"label": "Video Hours", "value": "4"},
+      {"label": "3D Gaussians", "value": "2.1M"},
+      {"label": "Guests Clustered", "value": "127"},
+      {"label": "Hero Moments", "value": "47"},
+      {"label": "Theatre Hotspots", "value": "23"},
+      {"label": "Model Size", "value": "45MB"}
+    ],
+    "learned": [
+      "Multiple video angles dramatically improve 3DGS quality",
+      "Face clustering works best when you process ALL media together, not in batches",
+      "Guests love seeing their 'best 5' photos automatically selected",
+      "Theatre mode hotspots should match natural pause points in the space",
+      "Theme extraction from photos accurately captures the wedding vibe",
+      "The ceremony arch is always the emotional center of the 3D experience",
+      "Mobile performance requires aggressive gaussian pruning (keep under 3M)",
+      "Couples return to the time capsule most often on anniversaries"
+    ]
+  },
+  "files": {
+    "transcript": "transcript.md",
+    "assets": [
+      "assets/3dgs-venue-screenshot.png",
+      "assets/face-cluster-grid.png",
+      "assets/theme-palette-extracted.png",
+      "assets/theatre-mode-demo.gif",
+      "assets/guest-gallery-sample.png"
+    ]
+  },
+  "createdAt": "2025-12-25T12:00:00Z",
+  "featured": true,
+  "viewCount": 0,
+  "narrative": [
+    "Three thousand two hundred forty-seven photos. Four hours of video. Twelve different cameras. This is what a modern wedding produces—a beautiful, overwhelming chaos of memories scattered across phones, SD cards, and cloud accounts. The couple wanted to experience their wedding again, not just scroll through an endless photo dump.",
+    "The wedding-immortalist skill turned that chaos into something magical. First: the venue itself was reconstructed in 3D using Gaussian Splatting. Video frames from three angles trained a model that lets you literally walk through the ceremony arch, past the cocktail tables, onto the dance floor. It's not a video—it's a place you can explore.",
+    "Then: every face. The skill detected 8,943 faces across all media and clustered them into 127 unique guests. No more hunting for photos of Aunt Martha—click her name, see her five best shots from the whole wedding, automatically selected by aesthetic quality. The couple named 89 guests; the remaining 38 got polite 'Guest' tags (everyone has those plus-ones they barely know).",
+    "The real magic is Theatre Mode. Twenty-three hotspots placed throughout the 3D venue. Stand at the ceremony arch, click, and watch the vows play from that exact angle. Walk to the dance floor, click, and the first dance begins. It's like being there again, but with the power to pause, rewind, and linger.",
+    "The whole experience is themed to match the wedding itself—sage green backgrounds, gold accents, a handwritten font that echoes the invitations. The skill extracted the color palette and style directly from the photos. This isn't a generic photo viewer. It's THEIR wedding, preserved in a way that feels alive."
+  ]
+}

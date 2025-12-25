@@ -22,7 +22,9 @@
     "validate:props": "node scripts/validate-skill-props.js docs/skills/*.md",
     "validate:badges": "node scripts/validate-badges.js",
     "validate:all": "npm run validate:liquid && npm run validate:brackets && npm run validate:props && npm run validate:badges",
-    "install-hooks": "node scripts/install-git-hooks.js"
+    "install-hooks": "node scripts/install-git-hooks.js",
+    "generate:og": "tsx scripts/generateSkillOgImage.ts --all",
+    "generate:og:skill": "tsx scripts/generateSkillOgImage.ts --skill"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",

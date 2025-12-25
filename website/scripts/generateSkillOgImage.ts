@@ -38,15 +38,34 @@ const GRADIENTS: Record<string, [string, string, string]> = {
 
 // Skill category mappings
 const SKILL_CATEGORIES: Record<string, string> = {
+  // Lifestyle skills
   'wedding-immortalist': 'design',
-  'skill-logger': 'tech',
-  'modern-drug-rehab-computer': 'recovery',
-  'sober-addict-protector': 'recovery',
-  'partner-text-coach': 'lifestyle',
   'fancy-yard-landscaper': 'lifestyle',
   'maximalist-wall-decorator': 'design',
   'panic-room-finder': 'mystery',
-  // Add more as needed
+  'interior-design-expert': 'design',
+  // Recovery skills
+  'modern-drug-rehab-computer': 'recovery',
+  'sober-addict-protector': 'recovery',
+  'grief-companion': 'recovery',
+  'pet-memorial-creator': 'recovery',
+  // Tech skills
+  'skill-logger': 'tech',
+  'digital-estate-planner': 'tech',
+  // Personal skills
+  'partner-text-coach': 'lifestyle',
+  'adhd-daily-planner': 'lifestyle',
+  // Design skills
+  'vaporwave-glassomorphic-ui-designer': 'design',
+  'collage-layout-expert': 'design',
+  'photo-composition-critic': 'design',
+  // AI/ML skills
+  'drone-cv-expert': 'tech',
+  'drone-inspection-specialist': 'tech',
+  'clip-aware-embeddings': 'tech',
+  // Meta skills
+  'skill-coach': 'default',
+  'agent-creator': 'default',
 };
 
 interface OgImageConfig {

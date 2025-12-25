@@ -14,17 +14,36 @@ import styles from './artifact.module.css';
 import skillCoachArtifact from '@site/src/data/artifacts/single-skill/skill-coach/001-self-improvement/artifact.json';
 import vaporwaveMidiPlayerArtifact from '@site/src/data/artifacts/single-skill/vaporwave-glassomorphic-ui-designer/001-midi-player/artifact.json';
 import siteReliabilityEngineerArtifact from '@site/src/data/artifacts/frontend/multi-skill/1-site-reliability-engineer-integration/artifact.json';
+// New lifestyle and recovery artifacts
+import recoveryCommunicationStackArtifact from '@site/src/data/artifacts/multi-skill/recovery-communication-stack/artifact.json';
+import homeTransformationSuiteArtifact from '@site/src/data/artifacts/multi-skill/home-transformation-suite/artifact.json';
+import hiddenSpaceDetectiveArtifact from '@site/src/data/artifacts/single-skill/panic-room-finder/001-hidden-space-detective/artifact.json';
+import weddingTimeCapsuleArtifact from '@site/src/data/artifacts/single-skill/wedding-immortalist/001-wedding-time-capsule/artifact.json';
+import relationshipLabArtifact from '@site/src/data/artifacts/single-skill/partner-text-coach/001-relationship-lab/artifact.json';
+import yardTransformationArtifact from '@site/src/data/artifacts/single-skill/fancy-yard-landscaper/001-yard-transformation/artifact.json';
+import colorConfidenceArtifact from '@site/src/data/artifacts/single-skill/maximalist-wall-decorator/001-color-confidence/artifact.json';
 
 const ARTIFACTS_MAP: Record<string, Artifact> = {
   'skill-coach-001-self-improvement': skillCoachArtifact as Artifact,
   'vaporwave-glassomorphic-ui-designer-001-midi-player': vaporwaveMidiPlayerArtifact as Artifact,
   'multi-skill-site-reliability-engineer-integration': siteReliabilityEngineerArtifact as Artifact,
+  // New artifacts
+  'recovery-communication-stack': recoveryCommunicationStackArtifact as Artifact,
+  'home-transformation-suite': homeTransformationSuiteArtifact as Artifact,
+  'panic-room-finder-001-hidden-space-detective': hiddenSpaceDetectiveArtifact as Artifact,
+  'wedding-immortalist-001-time-capsule': weddingTimeCapsuleArtifact as Artifact,
+  'partner-text-coach-001-relationship-lab': relationshipLabArtifact as Artifact,
+  'fancy-yard-landscaper-001-yard-transformation': yardTransformationArtifact as Artifact,
+  'maximalist-wall-decorator-001-color-confidence': colorConfidenceArtifact as Artifact,
 };
 
 const CATEGORY_CONFIG = {
   design: { icon: '🎨', label: 'Design' },
   development: { icon: '💻', label: 'Development' },
   'ai-ml': { icon: '🤖', label: 'AI/ML' },
+  lifestyle: { icon: '🏡', label: 'Lifestyle' },
+  relationships: { icon: '💕', label: 'Relationships' },
+  recovery: { icon: '🌅', label: 'Recovery' },
   research: { icon: '🔬', label: 'Research' },
   writing: { icon: '✍️', label: 'Writing' },
   meta: { icon: '🔄', label: 'Meta' }
