@@ -1,20 +1,89 @@
-/* Windows 3.1 Design System */
+/* ═══════════════════════════════════════════════════════════════════════════
+   WINDOWS 3.1 DESIGN SYSTEM - TYPOGRAPHY STYLE GUIDE
+   ═══════════════════════════════════════════════════════════════════════════
 
-/* Import playful 90s-style fonts */
+   TYPOGRAPHY HIERARCHY (use these consistently across the site):
+
+   ┌─────────────────────────────────────────────────────────────────────────┐
+   │  FONT ROLE          │  FONT FAMILY       │  USE CASE                   │
+   ├─────────────────────────────────────────────────────────────────────────┤
+   │  --font-display     │  Press Start 2P    │  Hero titles, badges,       │
+   │                     │                    │  stickers, pixel accents    │
+   │                     │                    │  "Make Claude an Expert"    │
+   │                     │                    │  Size: 8-32px               │
+   ├─────────────────────────────────────────────────────────────────────────┤
+   │  --font-window      │  VT323             │  Window title bars ONLY     │
+   │                     │                    │  "README.TXT", "ABOUT.TXT"  │
+   │                     │                    │  Size: 13-16px, weight: 400 │
+   ├─────────────────────────────────────────────────────────────────────────┤
+   │  --font-system      │  IBM Plex Mono     │  UI chrome: navbar, menus,  │
+   │                     │                    │  buttons, labels, sidebar   │
+   │                     │                    │  Size: 11-14px, weight: 500 │
+   ├─────────────────────────────────────────────────────────────────────────┤
+   │  --font-body        │  Courier Prime     │  Doc body text, paragraphs  │
+   │                     │                    │  Long-form readable content │
+   │                     │                    │  Size: 14-16px              │
+   ├─────────────────────────────────────────────────────────────────────────┤
+   │  --font-code        │  IBM Plex Mono     │  Code blocks, terminal      │
+   │                     │                    │  Inline code snippets       │
+   │                     │                    │  Size: 12-14px              │
+   └─────────────────────────────────────────────────────────────────────────┘
+
+   USAGE EXAMPLES:
+   - Page hero title     → --font-display, 24-32px, lime color, text-shadow
+   - Window titlebar     → --font-window, 13-14px, white on navy
+   - Navbar links        → --font-system, 13px, bold
+   - Button labels       → --font-system, 11-12px
+   - Doc headings (h1)   → --font-window, 36-48px (retro CRT look)
+   - Doc body            → --font-body, 15px
+   - Code blocks         → --font-code, 14px, lime on black
+
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Import fonts - all from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=VT323&family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Press+Start+2P&display=swap');
 
 :root {
-  /* Classic Windows 3.1 Color Palette */
+  /* ═══════════════════════════════════════════════════════════════════════
+     TYPOGRAPHY VARIABLES - Use these everywhere!
+     ═══════════════════════════════════════════════════════════════════════ */
+
+  /* Display font - pixel art hero titles, stickers, badges */
+  --font-display: 'Press Start 2P', cursive;
+
+  /* Window title bars - retro VT terminal aesthetic */
+  --font-window: 'VT323', monospace;
+
+  /* UI system font - navbar, buttons, menus, labels */
+  --font-system: 'IBM Plex Mono', monospace;
+
+  /* Body text - readable typewriter style for docs */
+  --font-body: 'Courier Prime', 'Courier New', monospace;
+
+  /* Code - same as system for consistency */
+  --font-code: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Legacy aliases (keep for backwards compatibility) */
+  --font-heading: var(--font-window);
+  --font-pixel: var(--font-display);
+
+  /* ═══════════════════════════════════════════════════════════════════════
+     COLOR PALETTE
+     ═══════════════════════════════════════════════════════════════════════ */
+
+  /* Classic Windows 3.1 Grays */
   --win31-gray: #c0c0c0;
   --win31-dark-gray: #808080;
   --win31-light-gray: #dfdfdf;
   --win31-white: #ffffff;
   --win31-black: #000000;
+
+  /* Classic Win31 Colors */
   --win31-navy: #000080;
   --win31-teal: #008080;
   --win31-desktop: #008080;
 
-  /* Vibrant accent colors */
+  /* Vibrant Accent Colors */
   --win31-yellow: #FFFF00;
   --win31-bright-yellow: #FFD700;
   --win31-red: #FF0000;
@@ -37,13 +106,6 @@
   --win31-border-width: 2px;
   --win31-title-height: 18px;
   --win31-button-size: 16px;
-
-  /* 90s Typography */
-  --font-heading: 'VT323', monospace;
-  --font-body: 'Courier Prime', 'Courier New', monospace;
-  --font-code: 'IBM Plex Mono', 'Courier New', monospace;
-  --font-pixel: 'Press Start 2P', cursive;
-  --font-system: 'IBM Plex Mono', monospace;
 }
 
 /* Windows 3.1 Typography */
@@ -212,10 +274,11 @@
 
 .win31-title-text {
   color: var(--win31-title-text);
-  font-family: var(--font-system);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-family: var(--font-window);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* System Buttons */

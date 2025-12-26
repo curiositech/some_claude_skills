@@ -258,6 +258,16 @@ export const skillFolderIndex: SkillFolderIndex = {
     "fileCount": 6,
     "folderCount": 1
   },
+  "recovery-app-legal-terms": {
+    "hasContent": true,
+    "fileCount": 5,
+    "folderCount": 2
+  },
+  "recovery-community-moderator": {
+    "hasContent": true,
+    "fileCount": 4,
+    "folderCount": 2
+  },
   "refactoring-surgeon": {
     "hasContent": true,
     "fileCount": 7,
@@ -436,6 +446,8 @@ export const skillsWithContent = [
   "photo-content-recognition-curation-expert",
   "physics-rendering-expert",
   "project-management-guru-adhd",
+  "recovery-app-legal-terms",
+  "recovery-community-moderator",
   "refactoring-surgeon",
   "security-auditor",
   "seo-visibility-expert",

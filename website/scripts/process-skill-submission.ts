@@ -5,7 +5,9 @@
  * Parses and validates skill submissions from GitHub Issues.
  * Used by the GitHub Action workflow to automatically process submissions.
  *
- * Usage: npx tsx scripts/process-skill-submission.ts <issue_number> <issue_body>
+ * Usage: npx tsx scripts/process-skill-submission.ts <issue_number>
+ *
+ * The script fetches the issue body via GitHub API to avoid shell escaping issues.
  */
 
 import * as fs from 'fs';
@@ -202,18 +204,73 @@ function validateSubmission(submission: ParsedSubmission): ValidationResult {
 }
 
 // =============================================================================
+// GITHUB API
+// =============================================================================
+
+interface GitHubIssue {
+  number: number;
+  title: string;
+  body: string;
+  user: {
+    login: string;
+  };
+}
+
+async function fetchIssue(issueNumber: string): Promise<GitHubIssue> {
+  const token = process.env.GITHUB_TOKEN;
+  const repo = process.env.GITHUB_REPOSITORY || 'erichowens/some_claude_skills';
+
+  if (!token) {
+    throw new Error('GITHUB_TOKEN environment variable is required');
+  }
+
+  const response = await fetch(
+    `https://api.github.com/repos/${repo}/issues/${issueNumber}`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: 'application/vnd.github.v3+json',
+        'User-Agent': 'skill-submission-processor',
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch issue #${issueNumber}: ${response.statusText}`);
+  }
+
+  return response.json();
+}
+
+// =============================================================================
 // MAIN
 // =============================================================================
 
 async function main() {
-  const [issueNumber, issueBody] = process.argv.slice(2);
+  const [issueNumber] = process.argv.slice(2);
 
-  if (!issueNumber || !issueBody) {
-    console.error('Usage: process-skill-submission.ts <issue_number> <issue_body>');
+  if (!issueNumber) {
+    console.error('Usage: process-skill-submission.ts <issue_number>');
     process.exit(1);
   }
 
   console.log(`Processing skill submission from issue #${issueNumber}`);
+
+  // Fetch issue body from GitHub API (avoids shell escaping issues)
+  let issueBody: string;
+  let submitterGithub: string | undefined;
+
+  try {
+    const issue = await fetchIssue(issueNumber);
+    issueBody = issue.body;
+    submitterGithub = issue.user.login;
+    console.log(`Fetched issue: ${issue.title}`);
+  } catch (error) {
+    console.error(`Failed to fetch issue: ${error}`);
+    setOutput('valid', 'false');
+    setOutput('errors', `Failed to fetch issue #${issueNumber} from GitHub API`);
+    process.exit(0);
+  }
 
   // Extract YAML content
   const yamlContent = extractYamlBlock(issueBody);
@@ -231,10 +288,10 @@ async function main() {
     process.exit(0);
   }
 
-  // Add metadata
+  // Add metadata from API and issue body
   const metadata = extractMetadata(issueBody);
   submission.submitter = metadata.submitter;
-  submission.submitterGithub = metadata.submitterGithub;
+  submission.submitterGithub = submitterGithub || metadata.submitterGithub;
 
   // Validate
   const result = validateSubmission(submission);

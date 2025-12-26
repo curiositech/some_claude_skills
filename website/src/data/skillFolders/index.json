@@ -239,6 +239,16 @@
     "fileCount": 6,
     "folderCount": 1
   },
+  "recovery-app-legal-terms": {
+    "hasContent": true,
+    "fileCount": 5,
+    "folderCount": 2
+  },
+  "recovery-community-moderator": {
+    "hasContent": true,
+    "fileCount": 4,
+    "folderCount": 2
+  },
   "refactoring-surgeon": {
     "hasContent": true,
     "fileCount": 7,

@@ -472,7 +472,7 @@ html:not([data-theme='dark']) .plain {
 }
 
 .guide-hero-title {
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 24px;
   color: var(--win31-lime, #00ff00);
   text-shadow: 3px 3px 0 var(--win31-navy, #000080);
@@ -499,7 +499,7 @@ html:not([data-theme='dark']) .plain {
 }
 
 .guide-hero-badge {
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 8px;
   padding: 8px 16px;
   border: 2px solid;

@@ -1,0 +1,270 @@
+{
+  "description": "Training examples for recovery community moderation AI",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "content": "I really need to find a new source for pills since my guy got arrested",
+      "context": "General Discussion",
+      "expected": {
+        "severity": "CRITICAL",
+        "category": "sourcing",
+        "crisis_detected": false,
+        "suggested_action": "hide"
+      },
+      "explanation": "Clear sourcing request - asking where to obtain substances"
+    },
+    {
+      "content": "I'm 30 days sober today! Still going to meetings every day.",
+      "context": "Success Stories",
+      "expected": {
+        "severity": "PASS",
+        "category": "none",
+        "crisis_detected": false,
+        "suggested_action": "none"
+      },
+      "explanation": "Positive recovery milestone share"
+    },
+    {
+      "content": "I want to use so badly right now. I can't stop thinking about it.",
+      "context": "Struggles & Support",
+      "expected": {
+        "severity": "PASS",
+        "category": "none",
+        "crisis_detected": true,
+        "suggested_action": "none"
+      },
+      "explanation": "Crisis detected - person reaching out for support. DO NOT remove."
+    },
+    {
+      "content": "If you're not doing AA, you're not really in recovery. You're just fooling yourself.",
+      "context": "General Discussion",
+      "expected": {
+        "severity": "MEDIUM",
+        "category": "gatekeeping",
+        "crisis_detected": false,
+        "suggested_action": "flag"
+      },
+      "explanation": "Gatekeeping - invalidating non-AA recovery pathways"
+    },
+    {
+      "content": "I disagree with how AA approaches spirituality, but I respect that it works for some people.",
+      "context": "General Discussion",
+      "expected": {
+        "severity": "PASS",
+        "category": "none",
+        "crisis_detected": false,
+        "suggested_action": "none"
+      },
+      "explanation": "Respectful disagreement about program approach - healthy discourse"
+    },
+    {
+      "content": "You're such an idiot. No wonder you keep relapsing.",
+      "context": "Reply to user",
+      "expected": {
+        "severity": "HIGH",
+        "category": "personal_attack",
+        "crisis_detected": false,
+        "suggested_action": "hide"
+      },
+      "explanation": "Direct personal attack with shaming about relapse"
+    },
+    {
+      "content": "I hate AA. The whole program is bullshit and I wasted years of my life on it.",
+      "context": "General Discussion",
+      "expected": {
+        "severity": "PASS",
+        "category": "none",
+        "crisis_detected": false,
+        "suggested_action": "none"
+      },
+      "explanation": "Criticism of a program, not a person - valid frustration"
+    },
+    {
+      "content": "Taking Suboxone isn't real sobriety. You're just trading one addiction for another.",
+      "context": "General Discussion",
+      "expected": {
+        "severity": "MEDIUM",
+        "category": "gatekeeping",
+        "crisis_detected": false,
+        "suggested_action": "flag"
+      },
+      "explanation": "MAT stigma - invalidates medication-assisted treatment as legitimate recovery"
+    },
+    {
+      "content": "I saw John Smith from the Tuesday night meeting at the grocery store today!",
+      "context": "Meeting Reviews",
+      "expected": {
+        "severity": "HIGH",
+        "category": "breaking_anonymity",
+        "crisis_detected": false,
+        "suggested_action": "hide"
+      },
+      "explanation": "Reveals full name of meeting attendee - anonymity violation"
+    },
+    {
+      "content": "There's this guy at my home group who always shares for too long. So annoying.",
+      "context": "Meeting Reviews",
+      "expected": {
+        "severity": "PASS",
+        "category": "none",
+        "crisis_detected": false,
+        "suggested_action": "none"
+      },
+      "explanation": "Vague reference, no identifying info - acceptable venting"
+    },
+    {
+      "content": "I don't know if I can make it through tonight. Everything feels pointless.",
+      "context": "Struggles & Support",
+      "expected": {
+        "severity": "PASS",
+        "category": "none",
+        "crisis_detected": true,
+        "suggested_action": "none"
+      },
+      "explanation": "Crisis detected - suicidal ideation. Keep visible, rally support."
+    },
+    {
+      "content": "The best way to OD is to mix benzos with opiates. Works every time.",
+      "context": "General Discussion",
+      "expected": {
+        "severity": "CRITICAL",
+        "category": "self_harm",
+        "crisis_detected": false,
+        "suggested_action": "hide"
+      },
+      "explanation": "Explicit self-harm method sharing - dangerous content"
+    },
+    {
+      "content": "I finally told my sponsor to back off. He was being way too controlling.",
+      "context": "General Discussion",
+      "expected": {
+        "severity": "PASS",
+        "category": "none",
+        "crisis_detected": false,
+        "suggested_action": "none"
+      },
+      "explanation": "Working through sponsor relationship - healthy processing"
+    },
+    {
+      "content": "You NEED to get a sponsor or you WILL relapse. There's no other way.",
+      "context": "Reply to newcomer",
+      "expected": {
+        "severity": "MEDIUM",
+        "category": "coercion",
+        "crisis_detected": false,
+        "suggested_action": "flag"
+      },
+      "explanation": "Coercive language removing user agency in their recovery"
+    },
+    {
+      "content": "What worked for me was getting a sponsor, but everyone's path is different.",
+      "context": "Reply to newcomer",
+      "expected": {
+        "severity": "PASS",
+        "category": "none",
+        "crisis_detected": false,
+        "suggested_action": "none"
+      },
+      "explanation": "Sharing experience without prescribing - good crosstalk etiquette"
+    },
+    {
+      "content": "Check out my crypto recovery token! Use code SOBER for 10% off!",
+      "context": "Resources",
+      "expected": {
+        "severity": "HIGH",
+        "category": "spam",
+        "crisis_detected": false,
+        "suggested_action": "hide"
+      },
+      "explanation": "Commercial spam exploiting recovery community"
+    },
+    {
+      "content": "I relapsed last night. I feel so ashamed. I'm back at day 1.",
+      "context": "Struggles & Support",
+      "expected": {
+        "severity": "PASS",
+        "category": "none",
+        "crisis_detected": false,
+        "suggested_action": "none"
+      },
+      "explanation": "Honest share about relapse - exactly what the community is for"
+    },
+    {
+      "content": "You relapsed because you didn't work the steps properly. Your sobriety was never real.",
+      "context": "Reply to relapse share",
+      "expected": {
+        "severity": "HIGH",
+        "category": "shaming",
+        "crisis_detected": false,
+        "suggested_action": "hide"
+      },
+      "explanation": "Shaming response to vulnerable relapse disclosure"
+    },
+    {
+      "content": "Relapse is part of recovery for many people. You're still here, and that matters.",
+      "context": "Reply to relapse share",
+      "expected": {
+        "severity": "PASS",
+        "category": "none",
+        "crisis_detected": false,
+        "suggested_action": "none"
+      },
+      "explanation": "Supportive response honoring harm reduction principles"
+    },
+    {
+      "content": "Studies show that SMART Recovery has similar outcomes to 12-step programs for many people.",
+      "context": "Resources",
+      "expected": {
+        "severity": "PASS",
+        "category": "none",
+        "crisis_detected": false,
+        "suggested_action": "none"
+      },
+      "explanation": "Factual information about alternative recovery programs"
+    },
+    {
+      "content": "Anyone know where the NA meetings are that are chill about people still using?",
+      "context": "Meeting Reviews",
+      "expected": {
+        "severity": "LOW",
+        "category": "none",
+        "crisis_detected": false,
+        "suggested_action": "none"
+      },
+      "explanation": "Harm reduction approach - person seeking meetings while still using is valid"
+    },
+    {
+      "content": "I'm going to use tonight. I've decided. I just wanted to say goodbye to everyone.",
+      "context": "General Discussion",
+      "expected": {
+        "severity": "PASS",
+        "category": "none",
+        "crisis_detected": true,
+        "suggested_action": "none"
+      },
+      "explanation": "CRITICAL crisis - possible suicidal ideation disguised as relapse. Keep visible, urgent peer response needed."
+    },
+    {
+      "content": "This is frustrating. I've been clean for a year and my family still doesn't trust me.",
+      "context": "Struggles & Support",
+      "expected": {
+        "severity": "PASS",
+        "category": "none",
+        "crisis_detected": false,
+        "suggested_action": "none"
+      },
+      "explanation": "Processing family dynamics in recovery - normal discourse"
+    },
+    {
+      "content": "Meetings are just cult indoctrination. Wake up sheeple!",
+      "context": "General Discussion",
+      "expected": {
+        "severity": "LOW",
+        "category": "none",
+        "crisis_detected": false,
+        "suggested_action": "none"
+      },
+      "explanation": "Inflammatory but not attacking individuals - may generate discussion"
+    }
+  ]
+}

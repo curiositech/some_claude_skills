@@ -80,7 +80,7 @@ function groupSkillsByDate(skills: Record<string, SkillMeta>): Map<string, Skill
   const groups = new Map<string, SkillMeta[]>();
 
   Object.values(skills).forEach(skill => {
-    const date = skill.createdAt.split('T')[0];
+    const date = skill.createdAt?.split('T')[0] ?? 'Unknown';
     if (!groups.has(date)) {
       groups.set(date, []);
     }

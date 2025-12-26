@@ -34,10 +34,11 @@ jobs:
       - name: Parse and validate submission
         id: parse
         run: |
-          npx tsx scripts/process-skill-submission.ts '${{ github.event.issue.number }}' '${{ github.event.issue.body }}'
+          npx tsx scripts/process-skill-submission.ts '${{ github.event.issue.number }}'
         working-directory: website
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
 
       - name: Create skill files
         if: steps.parse.outputs.valid == 'true'

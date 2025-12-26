@@ -38,7 +38,7 @@
 }
 
 .top-banner__title {
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 12px;
   color: var(--win31-navy);
 }
@@ -357,7 +357,7 @@
   transform: translateY(-50%) rotate(12deg);
   background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
   color: #fff;
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 10px;
   padding: 14px 24px;
   border-radius: 50% / 40%;
@@ -392,7 +392,7 @@
   left: -90px;
   background: linear-gradient(135deg, #00ffff 0%, #0099cc 100%);
   color: #fff;
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 6px;
   padding: 4px 8px;
   border-radius: 50% / 40%;
@@ -441,7 +441,7 @@
   transform: rotate(8deg);
   background: linear-gradient(135deg, #ffff00 0%, #ff9900 100%);
   color: #000;
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 8px;
   padding: 6px 12px;
   border-radius: 50% / 40%;
@@ -476,7 +476,7 @@
   right: -15px;
   background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
   color: #000;
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 8px;
   padding: 8px 14px;
   border-radius: 50% / 40%;
@@ -519,7 +519,7 @@
   transform: translateX(50%) rotate(-10deg);
   background: linear-gradient(135deg, #ff6600 0%, #cc3300 100%);
   color: #fff;
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 8px;
   padding: 8px 14px;
   border-radius: 50% / 40%;
@@ -575,7 +575,7 @@
   right: -60px;
   background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%);
   color: #fff;
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 10px;
   padding: 6px 12px;
   border-radius: 50% / 40%;
@@ -598,7 +598,7 @@
   left: 8px;
   background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
   color: #000;
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 7px;
   padding: 4px 8px;
   border-radius: 50% / 40%;
@@ -622,7 +622,7 @@
   left: 8px;
   background: linear-gradient(135deg, #00ccff 0%, #0099cc 100%);
   color: #fff;
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 7px;
   padding: 4px 8px;
   border-radius: 50% / 40%;
@@ -641,7 +641,7 @@
 
 /* Main title */
 .install-hero__main-title {
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 28px;
   color: var(--win31-lime);
   text-shadow: 3px 3px 0 var(--win31-navy);
@@ -734,7 +734,7 @@
   transform: translateX(-50%);
   background: var(--win31-lime);
   color: #000;
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 8px;
   padding: 6px 12px;
   border: 2px solid #000;
@@ -1284,7 +1284,7 @@
    ═══════════════════════════════════════════════════════════════════ */
 
 .pixel-title {
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 32px;
   color: var(--win31-navy);
   text-shadow: 3px 3px 0 var(--win31-dark-gray);
@@ -1294,13 +1294,13 @@
 }
 
 .pixel-text {
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 18px;
   letter-spacing: 1px;
 }
 
 .pixel-text-sm {
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 10px;
   letter-spacing: 1px;
 }
@@ -1385,7 +1385,7 @@
   background: var(--win31-gray);
   border: 2px outset var(--win31-gray);
   padding: 8px 16px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 8px;
   cursor: pointer;
   transition: all 0.1s;
@@ -1419,7 +1419,7 @@
 }
 
 .install-hero__badge {
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 8px;
   padding: 8px 16px;
   border: 2px solid;
@@ -1524,7 +1524,7 @@
   transform: translateX(-50%);
   background: var(--win31-lime);
   color: #000;
-  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font-display);
   font-size: 6px;
   padding: 4px 8px;
   border: 2px solid #000;
