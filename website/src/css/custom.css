@@ -967,29 +967,36 @@ html:not([data-theme='dark']) .skill-references-back:hover {
     transition: transform 0.2s ease-out !important;
   }
 
-  /* Transform hamburger into Windows 3.1 style "Menu" button */
+  /* Transform hamburger into Windows 3.1 style button */
   .navbar__toggle {
     cursor: pointer;
-    padding: 4px 12px !important;
-    background: var(--win31-silver, #c0c0c0) !important;
-    border: 2px outset var(--win31-silver, #c0c0c0) !important;
+    padding: 5px 14px !important;
+    background: var(--win31-gray, #c0c0c0) !important;
+    border-style: solid !important;
+    border-width: 2px !important;
+    border-top-color: var(--win31-white, #fff) !important;
+    border-left-color: var(--win31-white, #fff) !important;
+    border-bottom-color: var(--win31-black, #000) !important;
+    border-right-color: var(--win31-black, #000) !important;
     border-radius: 0 !important;
-    font-family: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif !important;
+    font-family: var(--font-system) !important;
     font-size: 12px !important;
-    font-weight: bold !important;
-    color: var(--win31-navy, #000080) !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-    box-shadow: 1px 1px 0 #000 !important;
+    font-weight: 600 !important;
+    color: var(--win31-black, #000) !important;
+    box-shadow: inset -1px -1px 0 var(--win31-dark-gray, #808080),
+                inset 1px 1px 0 var(--win31-light-gray, #dfdfdf) !important;
   }
 
   .navbar__toggle:hover {
-    background: var(--win31-light-silver, #dfdfdf) !important;
+    background: var(--win31-light-gray, #dfdfdf) !important;
   }
 
   .navbar__toggle:active {
-    border-style: inset !important;
-    box-shadow: none !important;
+    border-top-color: var(--win31-black, #000) !important;
+    border-left-color: var(--win31-black, #000) !important;
+    border-bottom-color: var(--win31-white, #fff) !important;
+    border-right-color: var(--win31-white, #fff) !important;
+    box-shadow: inset 1px 1px 0 var(--win31-dark-gray, #808080) !important;
   }
 
   /* Hide the hamburger icon bars and show "Menu" text */
@@ -998,7 +1005,7 @@ html:not([data-theme='dark']) .skill-references-back:hover {
   }
 
   .navbar__toggle::before {
-    content: '☰ Menu' !important;
+    content: 'Menu' !important;
     display: inline !important;
   }
 
@@ -1021,6 +1028,158 @@ html:not([data-theme='dark']) .skill-references-back:hover {
     opacity: 0.4 !important;
     transition: opacity 0.2s ease-out !important;
   }
+
+  /* ═══════════════════════════════════════════════════════════════════
+     MOBILE SIDEBAR - Windows 3.1 Style
+     ═══════════════════════════════════════════════════════════════════ */
+
+  /* Hide ALL hot dogs and floating decorations in sidebar */
+  .navbar-sidebar img[src*="hotdog"],
+  .navbar-sidebar [class*="hotdog"],
+  .navbar-sidebar [class*="Hotdog"],
+  .navbar-sidebar img[alt*="hotdog"],
+  .navbar-sidebar img[alt*="Hotdog"],
+  .navbar-sidebar .inline-sticker,
+  .navbar-sidebar .marquee-sticker,
+  .navbar-sidebar .footer-sticker,
+  .navbar-sidebar .nav-window-sticker {
+    display: none !important;
+  }
+
+  /* Sidebar container - Win31 window look */
+  .navbar-sidebar {
+    background: var(--win31-gray, #c0c0c0) !important;
+    border-right: 3px solid var(--win31-black, #000) !important;
+    box-shadow: inset -2px 0 0 var(--win31-dark-gray, #808080),
+                inset 2px 0 0 var(--win31-white, #fff) !important;
+  }
+
+  /* Sidebar brand/logo area */
+  .navbar-sidebar__brand {
+    background: var(--win31-navy, #000080) !important;
+    padding: 8px 12px !important;
+    border-bottom: 2px solid var(--win31-black, #000) !important;
+  }
+
+  .navbar-sidebar__brand .navbar__brand {
+    color: var(--win31-white, #fff) !important;
+  }
+
+  /* Hide hot dogs in brand area too */
+  .navbar-sidebar__brand img[src*="hotdog"],
+  .navbar-sidebar__brand img[alt*="hotdog"] {
+    display: none !important;
+  }
+
+  /* Menu items container */
+  .navbar-sidebar__items {
+    background: var(--win31-gray, #c0c0c0) !important;
+    padding: 8px !important;
+  }
+
+  /* Each menu item as Win31 beveled button */
+  .navbar-sidebar .menu__link,
+  .navbar-sidebar .navbar__link {
+    display: block !important;
+    margin: 4px 0 !important;
+    padding: 8px 12px !important;
+    background: var(--win31-gray, #c0c0c0) !important;
+    border-style: solid !important;
+    border-width: 2px !important;
+    border-top-color: var(--win31-white, #fff) !important;
+    border-left-color: var(--win31-white, #fff) !important;
+    border-bottom-color: var(--win31-black, #000) !important;
+    border-right-color: var(--win31-black, #000) !important;
+    border-radius: 0 !important;
+    font-family: var(--font-system) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: var(--win31-black, #000) !important;
+    text-decoration: none !important;
+    box-shadow: inset -1px -1px 0 var(--win31-dark-gray, #808080),
+                inset 1px 1px 0 var(--win31-light-gray, #dfdfdf) !important;
+  }
+
+  .navbar-sidebar .menu__link:hover,
+  .navbar-sidebar .navbar__link:hover {
+    background: var(--win31-navy, #000080) !important;
+    color: var(--win31-white, #fff) !important;
+  }
+
+  .navbar-sidebar .menu__link:active,
+  .navbar-sidebar .navbar__link:active {
+    border-top-color: var(--win31-black, #000) !important;
+    border-left-color: var(--win31-black, #000) !important;
+    border-bottom-color: var(--win31-white, #fff) !important;
+    border-right-color: var(--win31-white, #fff) !important;
+    box-shadow: inset 1px 1px 0 var(--win31-dark-gray, #808080) !important;
+  }
+
+  /* Collapsible menu sections (Skills, Explore, Learn) */
+  .navbar-sidebar .menu__list-item-collapsible {
+    margin: 4px 0 !important;
+  }
+
+  .navbar-sidebar .menu__caret {
+    background: var(--win31-gray, #c0c0c0) !important;
+    border: 1px solid var(--win31-dark-gray, #808080) !important;
+  }
+
+  /* Submenu items - slightly indented */
+  .navbar-sidebar .menu__list .menu__list {
+    margin-left: 8px !important;
+    padding: 4px !important;
+    background: var(--win31-light-gray, #dfdfdf) !important;
+    border: 2px inset var(--win31-gray, #c0c0c0) !important;
+  }
+
+  .navbar-sidebar .menu__list .menu__list .menu__link {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+  }
+
+  /* Close button styling */
+  .navbar-sidebar__close {
+    background: var(--win31-gray, #c0c0c0) !important;
+    border-style: solid !important;
+    border-width: 2px !important;
+    border-top-color: var(--win31-white, #fff) !important;
+    border-left-color: var(--win31-white, #fff) !important;
+    border-bottom-color: var(--win31-black, #000) !important;
+    border-right-color: var(--win31-black, #000) !important;
+    border-radius: 0 !important;
+    padding: 4px 8px !important;
+  }
+
+  .navbar-sidebar__close:hover {
+    background: var(--win31-light-gray, #dfdfdf) !important;
+  }
+
+  /* ═══════════════════════════════════════════════════════════════════
+     MOBILE NAVBAR CLEANUP - Hide duplicate controls
+     ═══════════════════════════════════════════════════════════════════ */
+
+  /* 1. Hide Theme Picker from navbar on mobile (it's in sidebar menu) */
+  .navbar__items--right .navbar-theme-picker,
+  .navbar__items--right [class*="ThemePicker"] {
+    display: none !important;
+  }
+
+  /* 2. Hide Music Player (Winamp) from navbar on mobile */
+  .navbar__items--right [class*="MusicPlayer"],
+  .navbar__items--right [class*="winamp"],
+  .navbar__items--right [class*="Winamp"] {
+    display: none !important;
+  }
+}
+
+/* 3. Hide floating hot dog when sidebar is open */
+html.navbar-sidebar--show .theme-picker__hotdog,
+html[class*="sidebar--show"] .theme-picker__hotdog,
+.navbar-sidebar--show .theme-picker__hotdog {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════════

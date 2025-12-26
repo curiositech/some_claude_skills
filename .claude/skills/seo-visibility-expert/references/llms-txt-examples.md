@@ -37,10 +37,10 @@ DevSync provides real-time collaborative coding with conflict resolution, voice 
 - Enterprise: Custom - SSO, SLA, dedicated support
 
 ## Documentation
-- [Getting Started](/docs/quickstart)
-- [API Reference](/docs/api)
-- [Self-Hosting Guide](/docs/self-host)
-- [Security Whitepaper](/docs/security)
+- \[Getting Started\](/docs/quickstart)
+- \[API Reference\](/docs/api)
+- \[Self-Hosting Guide\](/docs/self-host)
+- \[Security Whitepaper\](/docs/security)
 
 ## Use Cases
 1. Remote pair programming sessions
@@ -82,17 +82,17 @@ def read_root():
 ```
 
 ## Documentation Structure
-- [Tutorial](/tutorial) - Step-by-step guide for beginners
-- [Advanced Guide](/advanced) - Complex patterns and optimization
-- [API Reference](/reference) - Complete API documentation
-- [Deployment](/deployment) - Production deployment guides
+- \[Tutorial\](/tutorial) - Step-by-step guide for beginners
+- \[Advanced Guide\](/advanced) - Complex patterns and optimization
+- \[API Reference\](/reference) - Complete API documentation
+- \[Deployment\](/deployment) - Production deployment guides
 
 ## Common Tasks
-- [CRUD Operations](/tutorial/crud)
-- [Authentication](/tutorial/security)
-- [Database Integration](/tutorial/sql-databases)
-- [Testing](/tutorial/testing)
-- [WebSockets](/advanced/websockets)
+- \[CRUD Operations\](/tutorial/crud)
+- \[Authentication\](/tutorial/security)
+- \[Database Integration\](/tutorial/sql-databases)
+- \[Testing\](/tutorial/testing)
+- \[WebSockets\](/advanced/websockets)
 
 ## Comparisons
 - vs Flask: Faster, type hints, async native
@@ -147,11 +147,11 @@ type User = z.infer<typeof UserSchema>;
 - Modifiers: optional, nullable, default
 
 ## Documentation
-- [Introduction](/docs)
-- [Basic Usage](/docs/basic-usage)
-- [Primitives](/docs/primitives)
-- [Objects](/docs/objects)
-- [Error Handling](/docs/error-handling)
+- \[Introduction\](/docs)
+- \[Basic Usage\](/docs/basic-usage)
+- \[Primitives\](/docs/primitives)
+- \[Objects\](/docs/objects)
+- \[Error Handling\](/docs/error-handling)
 
 ## Integrations
 - React Hook Form: @hookform/resolvers
@@ -195,10 +195,10 @@ In-depth articles and analysis on software engineering, tech leadership, and the
 - Project Management
 
 ## Popular Articles
-- [The Trimodal Nature of Tech Compensation](/blog/trimodal-compensation)
-- [System Design Interview Guide](/blog/system-design-interview)
-- [What TPMs Do](/blog/what-tpms-do)
-- [The Developer Experience](/blog/developer-experience)
+- \[The Trimodal Nature of Tech Compensation\](/blog/trimodal-compensation)
+- \[System Design Interview Guide\](/blog/system-design-interview)
+- \[What TPMs Do\](/blog/what-tpms-do)
+- \[The Developer Experience\](/blog/developer-experience)
 
 ## Newsletter
 - Weekly: Deep dives on engineering topics
@@ -250,10 +250,10 @@ Notion is an all-in-one workspace combining notes, documents, wikis, and project
 - 100+ integrations via API
 
 ## Resources
-- [Getting Started Guide](https://notion.so/help/getting-started)
-- [Template Gallery](https://notion.so/templates)
-- [API Documentation](https://developers.notion.com)
-- [Community](https://notion.so/community)
+- \[Getting Started Guide\](https://notion.so/help/getting-started)
+- \[Template Gallery\](https://notion.so/templates)
+- \[API Documentation\](https://developers.notion.com)
+- \[Community\](https://notion.so/community)
 
 ## Links
 - Website: https://notion.so

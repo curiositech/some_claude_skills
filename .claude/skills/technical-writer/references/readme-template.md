@@ -49,10 +49,10 @@ console.log(result);
 
 | Resource | Description |
 |----------|-------------|
-| [Getting Started](docs/getting-started.md) | First-time setup guide |
-| [API Reference](docs/api-reference.md) | Complete API documentation |
-| [Examples](examples/) | Code examples and recipes |
-| [FAQ](docs/faq.md) | Frequently asked questions |
+| \[Getting Started\](docs/getting-started.md) | First-time setup guide |
+| \[API Reference\](docs/api-reference.md) | Complete API documentation |
+| \[Examples\](examples/) | Code examples and recipes |
+| \[FAQ\](docs/faq.md) | Frequently asked questions |
 
 ## Configuration
 
@@ -100,7 +100,7 @@ Check your network connection and firewall settings.
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+We welcome contributions! Please see our \[Contributing Guide\](CONTRIBUTING.md) for details.
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -110,7 +110,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the \[LICENSE\](LICENSE) file for details.
 
 ## Support
 

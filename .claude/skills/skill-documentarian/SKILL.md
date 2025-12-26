@@ -27,6 +27,7 @@ You are the skill-documentarian, guardian of the Claude Skills showcase website.
 5. **Artifact Creator**: Capture multi-skill collaborations in blog-style docs.
 6. **Validation Enforcer**: Run scripts that catch drift and mismatches.
 7. **Subpage Sync Guardian**: Ensure skill reference docs are exposed as browsable subpages.
+8. **Category Enforcer**: Ensure every skill has a valid category for browse page filtering.
 
 ## Quick Reference: Key Files
 
@@ -266,6 +267,54 @@ for skill in .claude/skills/*/SKILL.md; do
 done
 ```
 
+## Category Validation (CRITICAL)
+
+Skills **must** have a valid category for the browse page to be useful. Invalid or missing categories make skills invisible to users filtering by category.
+
+### Valid Categories
+
+| Category | Emoji | Description |
+|----------|-------|-------------|
+| AI & Machine Learning | 🤖 | ML models, computer vision, NLP, embeddings |
+| Code Quality & Testing | ✅ | Testing, code review, refactoring, security |
+| Content & Writing | ✍️ | Documentation, technical writing, diagrams |
+| Data & Analytics | 📊 | Data pipelines, analytics, visualization |
+| Design & Creative | 🎨 | UI/UX, graphics, audio, visual design |
+| DevOps & Site Reliability | ⚙️ | CI/CD, infrastructure, monitoring |
+| Business & Monetization | 💰 | Entrepreneurship, finance, marketing |
+| Research & Analysis | 🔬 | Research, competitive analysis |
+| Productivity & Meta | 🚀 | Workflow, orchestration, skill management |
+| Lifestyle & Personal | 🧘 | Health, coaching, personal development |
+
+### Category Validation Command
+
+```bash
+# Check all skills have valid categories
+VALID_CATS="AI & Machine Learning|Code Quality & Testing|Content & Writing|Data & Analytics|Design & Creative|DevOps & Site Reliability|Business & Monetization|Research & Analysis|Productivity & Meta|Lifestyle & Personal"
+
+for skill in .claude/skills/*/SKILL.md; do
+  cat=$(grep -m1 "^category:" "$skill" | sed 's/category: *//')
+  if [ -z "$cat" ]; then
+    echo "❌ MISSING category: $(dirname "$skill" | xargs basename)"
+  elif ! echo "$cat" | grep -qE "^($VALID_CATS)$"; then
+    echo "❌ INVALID category '$cat': $(dirname "$skill" | xargs basename)"
+  fi
+done && echo "✅ All categories valid"
+```
+
+### When to Validate Categories
+
+- **Before accepting skill submissions** (automated workflow checks this)
+- **After running `npm run skills:generate`** (regenerates skills.ts)
+- **When browse page filtering seems broken**
+
+### Fixing Invalid Categories
+
+1. Edit the skill's `SKILL.md` frontmatter
+2. Change `category:` to one of the 10 valid values above
+3. Run `cd website && npm run skills:generate` to regenerate skills.ts
+4. Verify on browse page at `/skills`
+
 ## Validation Commands
 
 ```bash
@@ -307,6 +356,7 @@ done
 **Use for:**
 - Keeping README.md accurate (skill counts, categories, install instructions)
 - Assigning and updating skill tags
+- **Validating skill categories** (ensure browse page filtering works)
 - Creating artifact documentation
 - Validating skill-to-website sync
 - Generating hero images

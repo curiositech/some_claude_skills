@@ -252,9 +252,9 @@ If the failover causes issues:
 
 ## Related Documentation
 
-- [Database Architecture](../architecture/database.md)
-- [Backup & Recovery](./backup-recovery.md)
-- [Incident Response Process](../processes/incident-response.md)
+- \[Database Architecture\](../architecture/database.md)
+- \[Backup & Recovery\](./backup-recovery.md)
+- \[Incident Response Process\](../processes/incident-response.md)
 ```
 
 ---
