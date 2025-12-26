@@ -23,6 +23,11 @@ export const skillFolderIndex: SkillFolderIndex = {
     "fileCount": 5,
     "folderCount": 1
   },
+  "adhd-daily-planner": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
+  },
   "adhd-design-expert": {
     "hasContent": true,
     "fileCount": 3,
@@ -113,6 +118,11 @@ export const skillFolderIndex: SkillFolderIndex = {
     "fileCount": 5,
     "folderCount": 1
   },
+  "digital-estate-planner": {
+    "hasContent": true,
+    "fileCount": 2,
+    "folderCount": 1
+  },
   "drone-cv-expert": {
     "hasContent": true,
     "fileCount": 5,
@@ -126,6 +136,16 @@ export const skillFolderIndex: SkillFolderIndex = {
   "event-detection-temporal-intelligence-expert": {
     "hasContent": true,
     "fileCount": 6,
+    "folderCount": 1
+  },
+  "fancy-yard-landscaper": {
+    "hasContent": true,
+    "fileCount": 2,
+    "folderCount": 1
+  },
+  "grief-companion": {
+    "hasContent": true,
+    "fileCount": 3,
     "folderCount": 1
   },
   "hr-network-analyst": {
@@ -168,6 +188,11 @@ export const skillFolderIndex: SkillFolderIndex = {
     "fileCount": 1,
     "folderCount": 0
   },
+  "maximalist-wall-decorator": {
+    "hasContent": true,
+    "fileCount": 2,
+    "folderCount": 1
+  },
   "mcp-creator": {
     "hasContent": true,
     "fileCount": 8,
@@ -176,6 +201,11 @@ export const skillFolderIndex: SkillFolderIndex = {
   "metal-shader-expert": {
     "hasContent": true,
     "fileCount": 6,
+    "folderCount": 1
+  },
+  "modern-drug-rehab-computer": {
+    "hasContent": true,
+    "fileCount": 3,
     "folderCount": 1
   },
   "native-app-designer": {
@@ -188,9 +218,24 @@ export const skillFolderIndex: SkillFolderIndex = {
     "fileCount": 1,
     "folderCount": 0
   },
+  "panic-room-finder": {
+    "hasContent": true,
+    "fileCount": 2,
+    "folderCount": 1
+  },
+  "partner-text-coach": {
+    "hasContent": true,
+    "fileCount": 2,
+    "folderCount": 1
+  },
   "personal-finance-coach": {
     "hasContent": true,
     "fileCount": 5,
+    "folderCount": 1
+  },
+  "pet-memorial-creator": {
+    "hasContent": true,
+    "fileCount": 2,
     "folderCount": 1
   },
   "photo-composition-critic": {
@@ -247,6 +292,16 @@ export const skillFolderIndex: SkillFolderIndex = {
     "hasContent": true,
     "fileCount": 10,
     "folderCount": 3
+  },
+  "skill-logger": {
+    "hasContent": true,
+    "fileCount": 2,
+    "folderCount": 1
+  },
+  "sober-addict-protector": {
+    "hasContent": true,
+    "fileCount": 2,
+    "folderCount": 1
   },
   "sound-engineer": {
     "hasContent": true,
@@ -318,6 +373,11 @@ export const skillFolderIndex: SkillFolderIndex = {
     "fileCount": 1,
     "folderCount": 0
   },
+  "wedding-immortalist": {
+    "hasContent": true,
+    "fileCount": 4,
+    "folderCount": 1
+  },
   "windows-3-1-web-designer": {
     "hasContent": true,
     "fileCount": 5,
@@ -333,6 +393,7 @@ export const skillFolderIndex: SkillFolderIndex = {
 // Skills with rich content (more than just SKILL.md)
 export const skillsWithContent = [
   "2000s-visualization-expert",
+  "adhd-daily-planner",
   "adhd-design-expert",
   "agent-creator",
   "api-architect",
@@ -351,18 +412,26 @@ export const skillsWithContent = [
   "design-system-creator",
   "devops-automator",
   "diagramming-expert",
+  "digital-estate-planner",
   "drone-cv-expert",
   "drone-inspection-specialist",
   "event-detection-temporal-intelligence-expert",
+  "fancy-yard-landscaper",
+  "grief-companion",
   "hr-network-analyst",
   "hrv-alexithymia-expert",
   "indie-monetization-strategist",
   "interior-design-expert",
   "jungian-psychologist",
+  "maximalist-wall-decorator",
   "mcp-creator",
   "metal-shader-expert",
+  "modern-drug-rehab-computer",
   "native-app-designer",
+  "panic-room-finder",
+  "partner-text-coach",
   "personal-finance-coach",
+  "pet-memorial-creator",
   "photo-composition-critic",
   "photo-content-recognition-curation-expert",
   "physics-rendering-expert",
@@ -373,6 +442,8 @@ export const skillsWithContent = [
   "site-reliability-engineer",
   "skill-coach",
   "skill-documentarian",
+  "skill-logger",
+  "sober-addict-protector",
   "sound-engineer",
   "speech-pathology-ai",
   "tech-entrepreneur-coach-adhd",
@@ -383,6 +454,7 @@ export const skillsWithContent = [
   "vibe-matcher",
   "voice-audio-engineer",
   "web-design-expert",
+  "wedding-immortalist",
   "windows-3-1-web-designer",
   "wisdom-accountability-coach"
 ];

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2025-12-26T06:32:24.606Z",
+  "generatedAt": "2025-12-26T06:46:57.072Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
       "createdAt": "2025-11-28T16:43:50-08:00",
-      "updatedAt": "2025-12-15T22:26:32-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 1053,
       "totalFiles": 5,
       "skillMdSize": 5636,
@@ -15,8 +15,8 @@
     },
     "adhd-daily-planner": {
       "id": "adhd-daily-planner",
-      "createdAt": "2025-12-25T09:29:33Z",
-      "updatedAt": "2025-12-25T10:36:27Z",
+      "createdAt": "2025-12-25T22:46:49-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 1026,
       "totalFiles": 3,
       "skillMdSize": 10043,
@@ -52,7 +52,7 @@
     "api-architect": {
       "id": "api-architect",
       "createdAt": "2025-12-14T21:40:37-08:00",
-      "updatedAt": "2025-12-14T21:40:37-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 798,
       "totalFiles": 8,
       "skillMdSize": 5345,
@@ -124,7 +124,7 @@
     "code-necromancer": {
       "id": "code-necromancer",
       "createdAt": "2025-12-01T14:26:53-08:00",
-      "updatedAt": "2025-12-15T22:26:32-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 2717,
       "totalFiles": 12,
       "skillMdSize": 6093,
@@ -136,7 +136,7 @@
     "collage-layout-expert": {
       "id": "collage-layout-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-15T22:26:32-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 2553,
       "totalFiles": 11,
       "skillMdSize": 6873,
@@ -184,7 +184,7 @@
     "data-pipeline-engineer": {
       "id": "data-pipeline-engineer",
       "createdAt": "2025-12-14T21:40:37-08:00",
-      "updatedAt": "2025-12-14T21:40:37-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 859,
       "totalFiles": 7,
       "skillMdSize": 5641,
@@ -196,7 +196,7 @@
     "design-archivist": {
       "id": "design-archivist",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-15T22:26:32-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 630,
       "totalFiles": 5,
       "skillMdSize": 6227,
@@ -208,7 +208,7 @@
     "design-system-creator": {
       "id": "design-system-creator",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-15T22:26:32-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 1073,
       "totalFiles": 5,
       "skillMdSize": 6465,
@@ -220,7 +220,7 @@
     "devops-automator": {
       "id": "devops-automator",
       "createdAt": "2025-12-14T21:40:37-08:00",
-      "updatedAt": "2025-12-14T21:40:37-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 793,
       "totalFiles": 7,
       "skillMdSize": 6875,
@@ -243,8 +243,8 @@
     },
     "digital-estate-planner": {
       "id": "digital-estate-planner",
-      "createdAt": "2025-12-25T09:29:33Z",
-      "updatedAt": "2025-12-25T10:36:27Z",
+      "createdAt": "2025-12-25T22:46:49-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 672,
       "totalFiles": 2,
       "skillMdSize": 10837,
@@ -256,7 +256,7 @@
     "drone-cv-expert": {
       "id": "drone-cv-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-26T20:09:33-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 1533,
       "totalFiles": 5,
       "skillMdSize": 8120,
@@ -268,7 +268,7 @@
     "drone-inspection-specialist": {
       "id": "drone-inspection-specialist",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-15T22:26:32-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 3560,
       "totalFiles": 7,
       "skillMdSize": 8642,
@@ -291,8 +291,8 @@
     },
     "fancy-yard-landscaper": {
       "id": "fancy-yard-landscaper",
-      "createdAt": "2025-12-24T07:01:01Z",
-      "updatedAt": "2025-12-25T09:09:41Z",
+      "createdAt": "2025-12-25T22:46:49-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 786,
       "totalFiles": 2,
       "skillMdSize": 13978,
@@ -303,8 +303,8 @@
     },
     "grief-companion": {
       "id": "grief-companion",
-      "createdAt": "2025-12-25T09:29:33Z",
-      "updatedAt": "2025-12-25T10:36:27Z",
+      "createdAt": "2025-12-25T22:46:49-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 721,
       "totalFiles": 3,
       "skillMdSize": 8895,
@@ -340,7 +340,7 @@
     "indie-monetization-strategist": {
       "id": "indie-monetization-strategist",
       "createdAt": "2025-12-01T14:26:53-08:00",
-      "updatedAt": "2025-12-15T22:49:44-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 1540,
       "totalFiles": 5,
       "skillMdSize": 7717,
@@ -411,8 +411,8 @@
     },
     "maximalist-wall-decorator": {
       "id": "maximalist-wall-decorator",
-      "createdAt": "2025-12-24T07:01:01Z",
-      "updatedAt": "2025-12-25T09:09:41Z",
+      "createdAt": "2025-12-25T22:46:49-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 858,
       "totalFiles": 2,
       "skillMdSize": 16490,
@@ -436,7 +436,7 @@
     "metal-shader-expert": {
       "id": "metal-shader-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-15T22:26:32-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 1011,
       "totalFiles": 6,
       "skillMdSize": 5146,
@@ -447,8 +447,8 @@
     },
     "modern-drug-rehab-computer": {
       "id": "modern-drug-rehab-computer",
-      "createdAt": "2025-12-24T07:01:01Z",
-      "updatedAt": "2025-12-25T09:09:41Z",
+      "createdAt": "2025-12-25T22:46:49-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 1154,
       "totalFiles": 3,
       "skillMdSize": 14852,
@@ -483,8 +483,8 @@
     },
     "panic-room-finder": {
       "id": "panic-room-finder",
-      "createdAt": "2025-12-24T07:01:01Z",
-      "updatedAt": "2025-12-25T09:09:41Z",
+      "createdAt": "2025-12-25T22:46:49-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 830,
       "totalFiles": 2,
       "skillMdSize": 15606,
@@ -495,8 +495,8 @@
     },
     "partner-text-coach": {
       "id": "partner-text-coach",
-      "createdAt": "2025-12-24T07:01:01Z",
-      "updatedAt": "2025-12-25T09:09:41Z",
+      "createdAt": "2025-12-25T22:46:49-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 762,
       "totalFiles": 2,
       "skillMdSize": 14544,
@@ -519,8 +519,8 @@
     },
     "pet-memorial-creator": {
       "id": "pet-memorial-creator",
-      "createdAt": "2025-12-25T09:29:33Z",
-      "updatedAt": "2025-12-25T10:36:27Z",
+      "createdAt": "2025-12-25T22:46:49-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 776,
       "totalFiles": 2,
       "skillMdSize": 11170,
@@ -580,7 +580,7 @@
     "refactoring-surgeon": {
       "id": "refactoring-surgeon",
       "createdAt": "2025-12-14T21:40:37-08:00",
-      "updatedAt": "2025-12-14T21:40:37-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 1662,
       "totalFiles": 7,
       "skillMdSize": 7011,
@@ -616,7 +616,7 @@
     "seo-visibility-expert": {
       "id": "seo-visibility-expert",
       "createdAt": "2025-12-01T14:26:53-08:00",
-      "updatedAt": "2025-12-15T22:26:32-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 1373,
       "totalFiles": 5,
       "skillMdSize": 6411,
@@ -663,8 +663,8 @@
     },
     "skill-logger": {
       "id": "skill-logger",
-      "createdAt": "2025-12-24T07:01:01Z",
-      "updatedAt": "2025-12-25T09:09:41Z",
+      "createdAt": "2025-12-25T22:46:49-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 897,
       "totalFiles": 2,
       "skillMdSize": 13982,
@@ -675,8 +675,8 @@
     },
     "sober-addict-protector": {
       "id": "sober-addict-protector",
-      "createdAt": "2025-12-24T07:01:01Z",
-      "updatedAt": "2025-12-25T09:09:41Z",
+      "createdAt": "2025-12-25T22:46:49-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 832,
       "totalFiles": 2,
       "skillMdSize": 14340,
@@ -688,7 +688,7 @@
     "sound-engineer": {
       "id": "sound-engineer",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-11-28T16:43:50-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 565,
       "totalFiles": 2,
       "skillMdSize": 11380,
@@ -700,7 +700,7 @@
     "speech-pathology-ai": {
       "id": "speech-pathology-ai",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-09T08:09:59-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 1451,
       "totalFiles": 6,
       "skillMdSize": 7519,
@@ -748,7 +748,7 @@
     "technical-writer": {
       "id": "technical-writer",
       "createdAt": "2025-12-14T21:40:37-08:00",
-      "updatedAt": "2025-12-14T21:40:37-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 1322,
       "totalFiles": 7,
       "skillMdSize": 5532,
@@ -855,8 +855,8 @@
     },
     "wedding-immortalist": {
       "id": "wedding-immortalist",
-      "createdAt": "2025-12-24T07:01:01Z",
-      "updatedAt": "2025-12-25T09:09:41Z",
+      "createdAt": "2025-12-25T22:46:49-08:00",
+      "updatedAt": "2025-12-25T22:46:49-08:00",
       "totalLines": 1978,
       "totalFiles": 4,
       "skillMdSize": 15052,
