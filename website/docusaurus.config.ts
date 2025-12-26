@@ -97,54 +97,71 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
+        // Skills dropdown
         {
-          to: '/',
-          label: 'Home',
-          position: 'left',
-        },
-        {
-          to: '/skills',
+          type: 'dropdown',
           label: 'Skills',
           position: 'left',
+          items: [
+            {
+              to: '/skills',
+              label: '🎯 Browse All Skills',
+            },
+            {
+              to: '/favorites',
+              label: '⭐ My Favorites',
+            },
+            {
+              to: '/submit-skill',
+              label: '💡 Got an Idea?',
+            },
+          ],
         },
+        // Explore dropdown
+        {
+          type: 'dropdown',
+          label: 'Explore',
+          position: 'left',
+          items: [
+            {
+              to: '/artifacts',
+              label: '🎨 Examples & Artifacts',
+            },
+            {
+              to: '/mcps',
+              label: '🔌 MCP Servers',
+            },
+            {
+              to: '/ecosystem',
+              label: '🌐 Ecosystem',
+            },
+          ],
+        },
+        // Learn dropdown
+        {
+          type: 'dropdown',
+          label: 'Learn',
+          position: 'left',
+          items: [
+            {
+              to: '/docs/guides/claude-skills-guide',
+              label: '📖 Getting Started',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'tutorialSidebar',
+              label: '📚 Documentation',
+            },
+          ],
+        },
+        // Contribute CTA
         {
           to: '/submit-skill',
-          label: 'Submit',
+          label: '✨ Add Your Own',
           position: 'left',
-          className: 'submit-nav-item',
+          className: 'navbar-cta-button',
         },
-        {
-          to: '/artifacts',
-          label: 'Examples',
-          position: 'left',
-          className: 'beta-nav-item',
-        },
-        {
-          to: '/docs/guides/claude-skills-guide',
-          label: 'Guide',
-          position: 'left',
-        },
-        {
-          to: '/mcps',
-          label: 'MCPs',
-          position: 'left',
-        },
-        {
-          to: '/ecosystem',
-          label: 'Ecosystem',
-          position: 'left',
-        },
-        {
-          to: '/favorites',
-          label: 'Favorites',
-          position: 'left',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Docs',
-        },
+        // Right side items
         {
           to: '/contact',
           label: 'Hire Me',
