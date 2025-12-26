@@ -993,3 +993,41 @@ html:not([data-theme='dark']) .skill-references-back:hover {
     transition: opacity 0.2s ease-out !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   NAVIGATION ITEM BADGES
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Submit Skill nav item - green highlight to encourage submissions */
+.submit-nav-item {
+  position: relative;
+}
+
+.submit-nav-item::after {
+  content: '+';
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  background: #059669;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  vertical-align: super;
+}
+
+/* Beta nav item - subtle indicator */
+.beta-nav-item::after {
+  content: 'β';
+  font-size: 9px;
+  font-weight: bold;
+  color: var(--win31-navy);
+  background: #fbbf24;
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin-left: 4px;
+  vertical-align: super;
+}

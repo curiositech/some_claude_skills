@@ -108,6 +108,12 @@ const config: Config = {
           position: 'left',
         },
         {
+          to: '/submit-skill',
+          label: 'Submit',
+          position: 'left',
+          className: 'submit-nav-item',
+        },
+        {
           to: '/artifacts',
           label: 'Examples',
           position: 'left',
@@ -166,8 +172,12 @@ const config: Config = {
           title: 'Skills',
           items: [
             {
-              label: 'Skills',
+              label: 'Browse Skills',
               to: '/skills',
+            },
+            {
+              label: 'Submit a Skill',
+              to: '/submit-skill',
             },
             {
               label: 'Ecosystem',
