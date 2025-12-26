@@ -1,16 +1,7 @@
 ---
 name: drone-inspection-specialist
 description: Advanced CV for infrastructure inspection including forest fire detection, wildfire precondition assessment, roof inspection, hail damage analysis, thermal imaging, and 3D Gaussian Splatting reconstruction. Expert in multi-modal detection, insurance risk modeling, and reinsurance data pipelines. Activate on "fire detection", "wildfire risk", "roof inspection", "hail damage", "thermal analysis", "Gaussian Splatting", "3DGS", "insurance inspection", "defensible space", "property assessment", "catastrophe modeling", "NDVI", "fuel load". NOT for general drone flight control, SLAM, path planning, or sensor fusion (use drone-cv-expert), GPU shader development (use metal-shader-expert), or generic object detection without inspection context (use clip-aware-embeddings).
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - mcp__firecrawl__firecrawl_search
-  - WebFetch
-  - mcp__stability-ai__stability-ai-generate-image
+allowed-tools: Read,Write,Edit,Bash(python:*,pip:*),Grep,Glob,mcp__firecrawl__firecrawl_search,WebFetch,mcp__stability-ai__stability-ai-generate-image
 ---
 
 # Drone Inspection Specialist

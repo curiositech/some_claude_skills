@@ -1,6 +1,5 @@
 ---
 name: refactoring-surgeon
-version: 2.0.0
 description: "Expert code refactoring specialist for improving code quality without changing behavior. Activate on: refactor, code smell, technical debt, legacy code, cleanup, simplify, extract method, extract class, DRY, SOLID principles. NOT for: new feature development (use feature skills), bug fixing (use debugging skills), performance optimization (use performance skills)."
 allowed-tools: Read,Write,Edit,Bash(npm test:*,npm run lint:*,git:*)
 ---

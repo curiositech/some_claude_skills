@@ -1,6 +1,5 @@
 ---
 name: collage-layout-expert
-version: 2.0.0
 description: "Expert in ALL computational collage composition: photo mosaics, grid layouts, scrapbook/journal styles, magazine editorial, vision boards, mood boards, social media collages, memory walls, abstract/generative arrangements, and art-historical techniques (Hockney joiners, Dadaist photomontage, Surrealist assemblage, Rauschenberg combines). Masters edge-based assembly, Poisson blending, optimal transport color harmonization, and aesthetic optimization. Activate on 'collage', 'photo mosaic', 'grid layout', 'scrapbook', 'vision board', 'mood board', 'photo wall', 'magazine layout', 'Hockney', 'joiner', 'photomontage'. NOT for simple image editing (use native-app-designer), generating new images (use Stability AI), single photo enhancement (use photo-composition-critic), or basic image similarity search (use clip-aware-embeddings)."
 allowed-tools: Read,Write,Edit,Bash,mcp__stability-ai__stability-ai-generate-image,mcp__firecrawl__firecrawl_search,WebFetch
 ---

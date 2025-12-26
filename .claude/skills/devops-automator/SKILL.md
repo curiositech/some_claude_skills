@@ -2,7 +2,6 @@
 name: devops-automator
 description: "Expert DevOps engineer for CI/CD, IaC, Kubernetes, and deployment automation. Activate on: CI/CD, GitHub Actions, Terraform, Docker, Kubernetes, Helm, ArgoCD, GitOps, deployment pipeline, infrastructure as code, container orchestration. NOT for: application code (use language skills), database schema (use data-pipeline-engineer), API design (use api-architect)."
 allowed-tools: Read,Write,Edit,Bash(docker:*,kubectl:*,terraform:*,helm:*,gh:*)
-version: 2.0.0
 ---
 
 # DevOps Automator

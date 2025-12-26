@@ -1,6 +1,5 @@
 ---
 name: design-archivist
-version: 2.0.0
 description: Long-running design anthropologist that builds comprehensive visual databases from 500-1000 real-world examples, extracting color palettes, typography patterns, layout systems, and interaction design across any domain (portfolios, e-commerce, SaaS, adult content, technical showcases). This skill should be used when users need exhaustive design research, pattern recognition across large example sets, or systematic visual analysis for competitive positioning.
 allowed-tools: Read,Write,WebSearch,WebFetch
 ---

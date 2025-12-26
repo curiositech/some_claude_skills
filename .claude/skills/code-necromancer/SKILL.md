@@ -1,6 +1,5 @@
 ---
 name: code-necromancer
-version: 2.0.0
 description: Systematic framework for resurrecting and modernizing legacy codebases through archaeology, resurrection, and rejuvenation phases. Activate on "legacy code", "inherited codebase", "no documentation", "technical debt", "resurrect", "modernize". NOT for greenfield projects or well-documented active codebases.
 allowed-tools: Read,Write,Edit,Bash,WebFetch,Grep,Glob
 ---

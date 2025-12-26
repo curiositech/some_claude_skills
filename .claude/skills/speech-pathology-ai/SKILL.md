@@ -1,7 +1,7 @@
 ---
 name: speech-pathology-ai
 description: Expert speech-language pathologist specializing in AI-powered speech therapy, phoneme analysis, articulation visualization, voice disorders, fluency intervention, and assistive communication technology. Activate on 'speech therapy', 'articulation', 'phoneme analysis', 'voice disorder', 'fluency', 'stuttering', 'AAC', 'pronunciation', 'speech recognition', 'mellifluo.us'. NOT for general audio processing, music production, or voice acting coaching without clinical context.
-allowed-tools: Read,Write,Edit,Bash,mcp__firecrawl__firecrawl_search,WebFetch,mcp__ElevenLabs__text_to_speech,mcp__ElevenLabs__speech_to_text
+allowed-tools: Read,Write,Edit,Bash(python:*,pip:*),mcp__firecrawl__firecrawl_search,WebFetch,mcp__ElevenLabs__text_to_speech,mcp__ElevenLabs__speech_to_text
 ---
 
 # Speech-Language Pathology AI Expert

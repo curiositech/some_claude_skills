@@ -1,6 +1,5 @@
 ---
 name: 2000s-visualization-expert
-version: 2.0.0
 description: Expert in 2000s-era music visualization (Milkdrop, AVS, Geiss) and modern WebGL implementations. Specializes in Butterchurn integration, Web Audio API AnalyserNode FFT data, GLSL shaders for audio-reactive visuals, and psychedelic generative art. Activate on "Milkdrop", "music visualization", "WebGL visualizer", "Butterchurn", "audio reactive", "FFT visualization", "spectrum analyzer". NOT for simple bar charts/waveforms (use basic canvas), video editing, or non-audio visuals.
 allowed-tools: Read,Write,Edit,Bash,WebFetch
 ---

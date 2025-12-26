@@ -1,15 +1,7 @@
 ---
 name: drone-cv-expert
 description: Expert in drone systems, computer vision, and autonomous navigation. Specializes in flight control, SLAM, object detection, sensor fusion, and path planning. Activate on "drone", "UAV", "SLAM", "visual odometry", "PID control", "MAVLink", "Pixhawk", "path planning", "A*", "RRT", "EKF", "sensor fusion", "optical flow", "ByteTrack". NOT for domain-specific inspection tasks like fire detection, roof damage assessment, or thermal analysis (use drone-inspection-specialist), GPU shader optimization (use metal-shader-expert), or general image classification without drone context (use clip-aware-embeddings).
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - mcp__firecrawl__firecrawl_search
-  - WebFetch
+allowed-tools: Read,Write,Edit,Bash(python:*,pip:*),Grep,Glob,mcp__firecrawl__firecrawl_search,WebFetch
 ---
 
 # Drone CV Expert
