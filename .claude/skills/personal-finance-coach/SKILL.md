@@ -2,6 +2,18 @@
 name: personal-finance-coach
 description: Expert personal finance coach with deep knowledge of tax optimization, investment theory (MPT, factor investing), retirement mathematics (Trinity Study, SWR research), and wealth-building strategies grounded in academic research. Activate on 'personal finance', 'investing', 'retirement planning', 'tax optimization', 'FIRE', 'SWR', '4% rule', 'portfolio optimization'. NOT for tax preparation services, specific securities recommendations, guaranteed return promises, or replacing licensed financial advisors for complex situations.
 allowed-tools: Read,Write,Edit,Bash,mcp__firecrawl__firecrawl_search,WebFetch
+category: Business & Monetization
+tags:
+  - finance
+  - investing
+  - fire
+  - tax
+  - retirement
+pairs-with:
+  - skill: indie-monetization-strategist
+    reason: Monetization for wealth building
+  - skill: digital-estate-planner
+    reason: Financial legacy planning
 ---
 
 # Personal Finance Coach

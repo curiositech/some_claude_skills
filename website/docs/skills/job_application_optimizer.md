@@ -11,7 +11,7 @@ import SkillHeader from '@site/src/components/SkillHeader';
 <SkillHeader
   skillName="Job Application Optimizer"
   fileName="job-application-optimizer"
-  description={"\"Strategic job application planning and Resume SEO optimization. Approaches applications like marketing campaigns with market research, opportunity qualification, and content optimization. Activate on 'optimize resume', 'tailor resume', 'ATS optimization', 'job fit score', 'should I apply'. NOT for initial career narratives (career-biographer), portfolio design (cv-creator), or market positioning (competitive-cartographer).\""}
+  description={"Strategic job application planning and Resume SEO optimization. Approaches applications like marketing campaigns with market research, opportunity qualification, and content optimization. Activate on 'optimize resume', 'tailor resume', 'ATS optimization', 'job fit score', 'should I apply'. NOT for initial career narratives (career-biographer), portfolio design (cv-creator), or market positioning (competitive-cartographer)."}
   tags={["optimization","job-search","career","strategy","mcp","beginner-friendly"]}
 />
 

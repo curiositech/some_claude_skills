@@ -4,6 +4,11 @@
  */
 export type SkillBadge = 'NEW' | 'UPDATED';
 
+export interface SkillPairing {
+  skill: string;
+  reason: string;
+}
+
 export interface Skill {
   id: string;
   title: string;
@@ -13,6 +18,7 @@ export interface Skill {
   tags?: string[];
   icon?: string;
   badge?: SkillBadge;
+  pairsWith?: SkillPairing[];
 }
 
 /**

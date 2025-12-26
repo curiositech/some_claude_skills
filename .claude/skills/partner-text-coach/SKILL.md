@@ -2,6 +2,18 @@
 name: partner-text-coach
 description: Real-time communication coach for navigating partner/relationship texts. Analyzes incoming messages for emotional subtext, suggests thoughtful responses, helps de-escalate conflict, and provides follow-up conversation strategies. Expert in attachment theory, nonviolent communication (NVC), Gottman research, and healthy relationship dynamics. Activate on "what should I say", "how to respond", "partner text", "relationship message", "what does this mean", "text my partner", "conversation with partner". NOT for manipulation tactics, revenge/ghosting advice, replacing couples therapy, or abusive relationships (seek professional help).
 allowed-tools: Read,Write,Edit
+category: Lifestyle & Personal
+tags:
+  - relationships
+  - communication
+  - nvc
+  - conflict
+  - attachment
+pairs-with:
+  - skill: jungian-psychologist
+    reason: Deep psychological context
+  - skill: wisdom-accountability-coach
+    reason: Relationship growth tracking
 ---
 
 # Partner Text Coach

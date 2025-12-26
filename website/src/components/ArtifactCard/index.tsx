@@ -19,7 +19,11 @@ const categoryConfig = {
   'ai-ml': { icon: '🤖', label: 'AI/ML' },
   research: { icon: '🔬', label: 'Research' },
   writing: { icon: '✍️', label: 'Writing' },
-  meta: { icon: '🔄', label: 'Meta' }
+  meta: { icon: '🔄', label: 'Meta' },
+  frontend: { icon: '🖥️', label: 'Frontend' },
+  lifestyle: { icon: '🏠', label: 'Lifestyle' },
+  relationships: { icon: '💝', label: 'Relationships' },
+  wellness: { icon: '🧘', label: 'Wellness' }
 };
 
 export default function ArtifactCard({ artifact }: ArtifactCardProps): JSX.Element {

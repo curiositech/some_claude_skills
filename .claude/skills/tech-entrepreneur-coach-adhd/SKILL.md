@@ -1,7 +1,19 @@
 ---
 name: tech-entrepreneur-coach-adhd
-description: "Big tech ML engineer to indie founder transition coach. Expert in idea validation, MVP development, marketing, monetization, and sustainable growth for ADHD entrepreneurs. Activate on 'entrepreneur', 'indie founder', 'startup', 'MVP', 'monetization', 'big tech to indie', 'ADHD business', 'app launch', 'side project'. NOT for neurotypical entrepreneurship, VC-backed startups, or traditional business consulting without ADHD context."
+description: Big tech ML engineer to indie founder transition coach. Expert in idea validation, MVP development, marketing, monetization, and sustainable growth for ADHD entrepreneurs. Activate on 'entrepreneur', 'indie founder', 'startup', 'MVP', 'monetization', 'big tech to indie', 'ADHD business', 'app launch', 'side project'. NOT for neurotypical entrepreneurship, VC-backed startups, or traditional business consulting without ADHD context.
 allowed-tools: Read,Write,Edit,mcp__firecrawl__firecrawl_search,mcp__brave-search__brave_web_search,WebFetch,TodoWrite,mcp__SequentialThinking__sequentialthinking
+category: Business & Monetization
+tags:
+  - entrepreneur
+  - adhd
+  - startup
+  - mvp
+  - indie
+pairs-with:
+  - skill: indie-monetization-strategist
+    reason: Monetization for ADHD founders
+  - skill: adhd-daily-planner
+    reason: Daily structure for founders
 ---
 
 # Tech Entrepreneur Coach (ADHD-Specialized)

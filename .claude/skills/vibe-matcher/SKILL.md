@@ -2,6 +2,18 @@
 name: vibe-matcher
 description: Synesthete designer that translates emotional vibes and brand keywords into concrete visual DNA (colors, typography, layouts, interactions). Use when users describe desired "feel" (edgy, trustworthy, premium, playful, minimal) and need specific design specifications. NOT for technical implementation or coding.
 allowed-tools: Read,Write
+category: Design & Creative
+tags:
+  - vibes
+  - brand
+  - aesthetic
+  - synesthesia
+  - mood
+pairs-with:
+  - skill: web-design-expert
+    reason: Apply matched vibes to designs
+  - skill: color-theory-palette-harmony-expert
+    reason: Color for mood translation
 ---
 
 # Vibe Matcher

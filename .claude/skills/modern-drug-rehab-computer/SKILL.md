@@ -2,6 +2,18 @@
 name: modern-drug-rehab-computer
 description: Comprehensive knowledge system for addiction recovery environments, supporting both residential and outpatient (IOP/PHP) patients. Expert in evidence-based treatment modalities (CBT, DBT, MI, EMDR, MAT), recovery resources, coping strategies, crisis intervention, family systems, and holistic wellness. Activate on "rehab", "addiction recovery", "substance abuse", "treatment center", "IOP", "PHP", "detox", "sobriety support", "MAT", "Suboxone", "methadone", "12 step", "SMART Recovery". NOT for prescribing medications (consult medical professionals), emergency overdose situations (call 911), or replacing licensed counselors/therapists.
 allowed-tools: Read,Write,Edit,WebFetch,WebSearch
+category: Lifestyle & Personal
+tags:
+  - recovery
+  - addiction
+  - treatment
+  - mat
+  - sobriety
+pairs-with:
+  - skill: sober-addict-protector
+    reason: Daily relapse prevention
+  - skill: jungian-psychologist
+    reason: Psychological depth for recovery
 ---
 
 # Modern Drug Rehab Computer

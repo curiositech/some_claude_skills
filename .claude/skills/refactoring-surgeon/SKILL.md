@@ -2,6 +2,18 @@
 name: refactoring-surgeon
 description: "Expert code refactoring specialist for improving code quality without changing behavior. Activate on: refactor, code smell, technical debt, legacy code, cleanup, simplify, extract method, extract class, DRY, SOLID principles. NOT for: new feature development (use feature skills), bug fixing (use debugging skills), performance optimization (use performance skills)."
 allowed-tools: Read,Write,Edit,Bash(npm test:*,npm run lint:*,git:*)
+category: Code Quality & Testing
+tags:
+  - refactoring
+  - code-smells
+  - solid
+  - dry
+  - cleanup
+pairs-with:
+  - skill: code-necromancer
+    reason: Refactor resurrected legacy code
+  - skill: test-automation-expert
+    reason: Tests before refactoring
 ---
 
 # Refactoring Surgeon

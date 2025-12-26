@@ -1,7 +1,19 @@
 ---
 name: test-automation-expert
-description: "Comprehensive test automation specialist covering unit, integration, and E2E testing strategies. Expert in Jest, Vitest, Playwright, Cypress, pytest, and modern testing frameworks. Guides test pyramid design, coverage optimization, flaky test detection, and CI/CD integration. Activate on 'test strategy', 'unit tests', 'integration tests', 'E2E testing', 'test coverage', 'flaky tests', 'mocking', 'test fixtures', 'TDD', 'BDD', 'test automation'. NOT for manual QA processes, load/performance testing (use performance-engineer), or security testing (use security-auditor)."
+description: Comprehensive test automation specialist covering unit, integration, and E2E testing strategies. Expert in Jest, Vitest, Playwright, Cypress, pytest, and modern testing frameworks. Guides test pyramid design, coverage optimization, flaky test detection, and CI/CD integration. Activate on 'test strategy', 'unit tests', 'integration tests', 'E2E testing', 'test coverage', 'flaky tests', 'mocking', 'test fixtures', 'TDD', 'BDD', 'test automation'. NOT for manual QA processes, load/performance testing (use performance-engineer), or security testing (use security-auditor).
 allowed-tools: Read,Write,Edit,Bash(npm test:*,npx jest:*,npx vitest:*,npx playwright:*,pytest:*),Grep,Glob
+category: Code Quality & Testing
+tags:
+  - testing
+  - jest
+  - playwright
+  - tdd
+  - coverage
+pairs-with:
+  - skill: refactoring-surgeon
+    reason: Tests before refactoring
+  - skill: devops-automator
+    reason: CI/CD test integration
 ---
 
 # Test Automation Expert

@@ -2,6 +2,18 @@
 name: automatic-stateful-prompt-improver
 description: Automatically intercepts and optimizes prompts using the prompt-learning MCP server. Learns from performance over time via embedding-indexed history. Uses APE, OPRO, DSPy patterns. Activate on "optimize prompt", "improve this prompt", "prompt engineering", or ANY complex task request. Requires prompt-learning MCP server. NOT for simple questions (just answer them), NOT for direct commands (just execute them), NOT for conversational responses (no optimization needed).
 allowed-tools: mcp__prompt-learning__optimize_prompt,mcp__prompt-learning__retrieve_prompts,mcp__prompt-learning__record_feedback,mcp__prompt-learning__suggest_improvements,mcp__prompt-learning__get_analytics,mcp__SequentialThinking__sequentialthinking
+category: AI & Machine Learning
+tags:
+  - prompts
+  - optimization
+  - learning
+  - embeddings
+  - dspy
+pairs-with:
+  - skill: skill-coach
+    reason: Optimize skill prompts systematically
+  - skill: skill-logger
+    reason: Track prompt performance over time
 ---
 
 # Automatic Stateful Prompt Improver

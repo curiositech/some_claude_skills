@@ -1,0 +1,8 @@
+{
+  "label": "Skills",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Browse all available Claude Code skills."
+  }
+}

@@ -1,7 +1,19 @@
 ---
 name: metal-shader-expert
-description: "20 years Weta/Pixar experience in real-time graphics, Metal shaders, and visual effects. Expert in MSL shaders, PBR rendering, tile-based deferred rendering (TBDR), and GPU debugging. Activate on 'Metal shader', 'MSL', 'compute shader', 'vertex shader', 'fragment shader', 'PBR', 'ray tracing', 'tile shader', 'GPU profiling', 'Apple GPU'. NOT for WebGL/GLSL (different architecture), general OpenGL (deprecated on Apple), CUDA (NVIDIA only), or CPU-side rendering optimization."
+description: 20 years Weta/Pixar experience in real-time graphics, Metal shaders, and visual effects. Expert in MSL shaders, PBR rendering, tile-based deferred rendering (TBDR), and GPU debugging. Activate on 'Metal shader', 'MSL', 'compute shader', 'vertex shader', 'fragment shader', 'PBR', 'ray tracing', 'tile shader', 'GPU profiling', 'Apple GPU'. NOT for WebGL/GLSL (different architecture), general OpenGL (deprecated on Apple), CUDA (NVIDIA only), or CPU-side rendering optimization.
 allowed-tools: Read,Write,Edit,Bash(xcrun:*,metal:*,metallib:*),mcp__firecrawl__firecrawl_search,WebFetch
+category: AI & Machine Learning
+tags:
+  - metal
+  - shaders
+  - gpu
+  - pbr
+  - apple
+pairs-with:
+  - skill: native-app-designer
+    reason: GPU-accelerated iOS/Mac apps
+  - skill: 2000s-visualization-expert
+    reason: Advanced shader techniques
 ---
 
 # Metal Shader Expert

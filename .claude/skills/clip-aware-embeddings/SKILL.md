@@ -2,6 +2,18 @@
 name: clip-aware-embeddings
 description: Semantic image-text matching with CLIP and alternatives. Use for image search, zero-shot classification, similarity matching. NOT for counting objects, fine-grained classification (celebrities, car models), spatial reasoning, or compositional queries. Activate on "CLIP", "embeddings", "image similarity", "semantic search", "zero-shot classification", "image-text matching".
 allowed-tools: Read,Write,Edit,Bash
+category: AI & Machine Learning
+tags:
+  - clip
+  - embeddings
+  - vision
+  - similarity
+  - zero-shot
+pairs-with:
+  - skill: photo-content-recognition-curation-expert
+    reason: Content-aware photo processing
+  - skill: collage-layout-expert
+    reason: Semantic image matching for layouts
 ---
 
 # CLIP-Aware Image Embeddings

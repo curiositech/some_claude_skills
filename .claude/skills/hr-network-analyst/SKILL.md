@@ -2,6 +2,18 @@
 name: hr-network-analyst
 description: Professional network graph analyst identifying Gladwellian superconnectors, mavens, and influence brokers using betweenness centrality, structural holes theory, and multi-source network reconstruction. Activate on 'superconnectors', 'network analysis', 'who knows who', 'professional network', 'influence mapping', 'betweenness centrality'. NOT for surveillance, discrimination, stalking, privacy violation, or speculation without data.
 allowed-tools: Read,Write,Edit,WebSearch,WebFetch,mcp__firecrawl__firecrawl_search,mcp__firecrawl__firecrawl_scrape,mcp__brave-search__brave_web_search,mcp__SequentialThinking__sequentialthinking
+category: Research & Analysis
+tags:
+  - network
+  - superconnectors
+  - influence
+  - graph-theory
+  - hr
+pairs-with:
+  - skill: career-biographer
+    reason: Understand network in career context
+  - skill: competitive-cartographer
+    reason: Map competitive professional landscape
 ---
 
 # HR Network Analyst

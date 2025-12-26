@@ -6,6 +6,7 @@ import { downloadSkillZip } from '@site/src/utils/downloadSkillZip';
 import { useSkillStats } from '../hooks/usePlausibleStats';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { TagList } from './TagBadge';
+import { skills as allSkills } from '../data/skills';
 
 interface SkillQuickViewProps {
   skill: Skill;
@@ -160,6 +161,75 @@ export default function SkillQuickView({ skill, onClose, isStarred = false, onTo
           {skill.tags && skill.tags.length > 0 && (
             <div style={{ marginBottom: '16px' }}>
               <TagList tags={skill.tags} size="md" />
+            </div>
+          )}
+
+          {/* Pairs Great With */}
+          {skill.pairsWith && skill.pairsWith.length > 0 && (
+            <div style={{
+              marginBottom: '16px',
+              background: 'linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 100%)',
+              border: '2px solid var(--win31-navy)',
+              padding: '12px',
+            }}>
+              <div style={{
+                fontSize: '13px',
+                fontWeight: 'bold',
+                color: 'var(--win31-navy)',
+                marginBottom: '10px',
+                fontFamily: 'var(--font-code)',
+              }}>
+                🤝 Pairs Great With
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {skill.pairsWith.map((pairing, idx) => {
+                  const pairedSkill = allSkills.find(s => s.id === pairing.skill);
+                  if (!pairedSkill) return null;
+                  return (
+                    <a
+                      key={idx}
+                      href={useBaseUrl(pairedSkill.path)}
+                      style={{
+                        textDecoration: 'none',
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '8px',
+                        padding: '8px',
+                        background: 'white',
+                        border: '1px solid #ccc',
+                        transition: 'all 0.15s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = '#fff8dc';
+                        e.currentTarget.style.borderColor = 'var(--win31-navy)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'white';
+                        e.currentTarget.style.borderColor = '#ccc';
+                      }}
+                    >
+                      <span style={{ fontSize: '16px' }}>→</span>
+                      <div>
+                        <div style={{
+                          fontWeight: 'bold',
+                          fontSize: '13px',
+                          color: 'var(--win31-navy)',
+                          fontFamily: 'var(--font-code)',
+                        }}>
+                          {pairedSkill.title}
+                        </div>
+                        <div style={{
+                          fontSize: '12px',
+                          color: '#555',
+                          marginTop: '2px',
+                        }}>
+                          {pairing.reason}
+                        </div>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
             </div>
           )}
 

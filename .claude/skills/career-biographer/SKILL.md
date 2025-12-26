@@ -2,6 +2,18 @@
 name: career-biographer
 description: AI-powered career biographer that conducts empathetic interviews, extracts structured career narratives, and transforms professional stories into portfolios, CVs, and personal brand assets. This skill should be used when users want to document their career journey, create professional portfolios, generate CVs, or craft compelling career narratives.
 allowed-tools: Read,Write,Edit
+category: Business & Monetization
+tags:
+  - career
+  - narrative
+  - portfolio
+  - interviews
+  - storytelling
+pairs-with:
+  - skill: cv-creator
+    reason: Turn career narratives into resumes
+  - skill: competitive-cartographer
+    reason: Position your career competitively
 ---
 
 # Career Biographer

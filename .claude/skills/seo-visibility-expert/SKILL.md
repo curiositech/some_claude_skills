@@ -1,7 +1,19 @@
 ---
 name: seo-visibility-expert
-description: "Comprehensive SEO, discoverability, and AI crawler optimization for web projects. Use for technical SEO audits, llms.txt/robots.txt setup, schema markup, social launch strategies (Product Hunt, HN, Reddit), and Answer Engine Optimization (AEO). Activate on 'SEO', 'discoverability', 'llms.txt', 'robots.txt', 'Product Hunt', 'launch strategy', 'get traffic', 'be found', 'search ranking'. NOT for paid advertising, PPC campaigns, or social media content creation (use marketing skills)."
+description: Comprehensive SEO, discoverability, and AI crawler optimization for web projects. Use for technical SEO audits, llms.txt/robots.txt setup, schema markup, social launch strategies (Product Hunt, HN, Reddit), and Answer Engine Optimization (AEO). Activate on 'SEO', 'discoverability', 'llms.txt', 'robots.txt', 'Product Hunt', 'launch strategy', 'get traffic', 'be found', 'search ranking'. NOT for paid advertising, PPC campaigns, or social media content creation (use marketing skills).
 allowed-tools: Read,Write,Edit,Bash,Glob,Grep,WebFetch,WebSearch
+category: Business & Monetization
+tags:
+  - seo
+  - llms-txt
+  - discoverability
+  - product-hunt
+  - aeo
+pairs-with:
+  - skill: claude-ecosystem-promoter
+    reason: Promote with SEO backing
+  - skill: technical-writer
+    reason: SEO-optimized documentation
 ---
 
 # SEO & Visibility Expert

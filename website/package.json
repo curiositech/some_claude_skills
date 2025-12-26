@@ -24,7 +24,11 @@
     "validate:all": "npm run validate:liquid && npm run validate:brackets && npm run validate:props && npm run validate:badges",
     "install-hooks": "node scripts/install-git-hooks.js",
     "generate:og": "tsx scripts/generateSkillOgImage.ts --all",
-    "generate:og:skill": "tsx scripts/generateSkillOgImage.ts --skill"
+    "generate:og:skill": "tsx scripts/generateSkillOgImage.ts --skill",
+    "skills:generate": "tsx scripts/generate-skills.ts",
+    "skills:validate": "tsx scripts/generate-skills.ts --validate-only",
+    "skills:watch": "tsx scripts/generate-skills.ts --watch",
+    "skills:submissions": "tsx scripts/process-submissions.ts"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",
@@ -56,10 +60,12 @@
     "@docusaurus/tsconfig": "3.9.2",
     "@docusaurus/types": "3.9.2",
     "@types/node": "^24.10.1",
+    "chokidar": "^5.0.0",
     "dotenv": "^17.2.3",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.6",
-    "typescript": "~5.6.2"
+    "typescript": "~5.6.2",
+    "yaml": "^2.8.2"
   },
   "browserslist": {
     "production": [

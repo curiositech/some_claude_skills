@@ -2,6 +2,18 @@
 name: typography-expert
 description: Master typographer specializing in font pairing, typographic hierarchy, OpenType features, variable fonts, and performance-optimized web typography. Use for font selection, type scales, web font optimization, and typographic systems. Activate on "typography", "font pairing", "type scale", "variable fonts", "web fonts", "OpenType", "font loading". NOT for logo design, icon fonts, general CSS styling, or image-based typography.
 allowed-tools: Read,Write,Edit,WebFetch
+category: Design & Creative
+tags:
+  - typography
+  - fonts
+  - type-scale
+  - variable-fonts
+  - opentype
+pairs-with:
+  - skill: design-system-creator
+    reason: Typography in design systems
+  - skill: web-design-expert
+    reason: Typography for web projects
 ---
 
 # Typography Expert

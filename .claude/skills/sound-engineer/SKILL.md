@@ -1,7 +1,19 @@
 ---
 name: sound-engineer
-description: "Expert in spatial audio, procedural sound design, game audio middleware, and app UX sound design. Specializes in HRTF/Ambisonics, Wwise/FMOD integration, UI sound design, and adaptive music systems. Activate on 'spatial audio', 'HRTF', 'binaural', 'Wwise', 'FMOD', 'procedural sound', 'footstep system', 'adaptive music', 'UI sounds', 'notification audio', 'sonic branding'. NOT for music composition/production (use DAW), audio post-production for film (linear media), voice cloning/TTS (use voice-audio-engineer), podcast editing (use standard audio editors), or hardware design."
+description: Expert in spatial audio, procedural sound design, game audio middleware, and app UX sound design. Specializes in HRTF/Ambisonics, Wwise/FMOD integration, UI sound design, and adaptive music systems. Activate on 'spatial audio', 'HRTF', 'binaural', 'Wwise', 'FMOD', 'procedural sound', 'footstep system', 'adaptive music', 'UI sounds', 'notification audio', 'sonic branding'. NOT for music composition/production (use DAW), audio post-production for film (linear media), voice cloning/TTS (use voice-audio-engineer), podcast editing (use standard audio editors), or hardware design.
 allowed-tools: Read,Write,Edit,Bash(python:*,node:*,npm:*,ffmpeg:*),mcp__firecrawl__firecrawl_search,WebFetch,mcp__ElevenLabs__text_to_sound_effects
+category: Design & Creative
+tags:
+  - audio
+  - spatial
+  - wwise
+  - fmod
+  - game-audio
+pairs-with:
+  - skill: voice-audio-engineer
+    reason: Voice + spatial audio integration
+  - skill: 2000s-visualization-expert
+    reason: Audio-reactive visuals
 ---
 
 # Sound Engineer: Spatial Audio, Procedural Sound & App UX Audio

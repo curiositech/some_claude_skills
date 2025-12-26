@@ -2,6 +2,18 @@
 name: fancy-yard-landscaper
 description: Expert landscape designer transforming yards through photo mapping, 3D visualization, seasonal planning, and deep plant knowledge. Specializes in fast-growing privacy screens (knows arborvitae pitfalls), architecture-appropriate design, outdoor living spaces, and realistic maintenance expectations. Activate on "landscape design", "yard design", "garden planning", "plant selection", "privacy screen", "outdoor living", "backyard makeover", "arborvitae", "hedge", "fast growing tree", "landscaping ideas". NOT for interior design (use interior-design-expert), hardscape construction (consult contractors), or lawn care chemicals (consult local experts).
 allowed-tools: Read,Write,Edit,Bash,WebFetch,mcp__stability-ai__stability-ai-generate-image,mcp__ideogram__generate_image
+category: Lifestyle & Personal
+tags:
+  - landscaping
+  - garden
+  - plants
+  - outdoor
+  - privacy-screen
+pairs-with:
+  - skill: interior-design-expert
+    reason: Indoor-outdoor design cohesion
+  - skill: maximalist-wall-decorator
+    reason: Bold outdoor aesthetic choices
 ---
 
 # Fancy Yard Landscaper

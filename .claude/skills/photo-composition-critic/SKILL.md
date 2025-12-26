@@ -2,6 +2,18 @@
 name: photo-composition-critic
 description: Expert photography composition critic grounded in graduate-level visual aesthetics education, computational aesthetics research (AVA, NIMA, LAION-Aesthetics, VisualQuality-R1), and professional image analysis with custom tooling. Use for image quality assessment, composition analysis, aesthetic scoring, photo critique. Activate on "photo critique", "composition analysis", "image aesthetics", "NIMA", "AVA dataset", "visual quality". NOT for photo editing/retouching (use native-app-designer), generating images (use Stability AI directly), or basic image processing (use clip-aware-embeddings).
 allowed-tools: Read,Write,Edit,Bash,mcp__firecrawl__firecrawl_search
+category: Design & Creative
+tags:
+  - photography
+  - composition
+  - aesthetics
+  - nima
+  - critique
+pairs-with:
+  - skill: color-theory-palette-harmony-expert
+    reason: Color analysis of photos
+  - skill: collage-layout-expert
+    reason: Quality photos for collages
 ---
 
 # Photo Composition Critic

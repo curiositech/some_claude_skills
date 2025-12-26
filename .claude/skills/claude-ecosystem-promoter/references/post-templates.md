@@ -373,8 +373,8 @@ Hey everyone! Just released an MCP server for [use case].
 ```
 
 **Links:**
-• GitHub: <link>
-• Demo: <link>
+• GitHub: [URL]
+• Demo: [URL]
 
 Would love feedback! Especially interested in [specific feedback area].
 ```

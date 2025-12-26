@@ -1,6 +1,18 @@
 ---
 name: liaison
-description: "Human interface agent that translates ecosystem activity into clear, actionable communication. Creates status briefings, decision requests, celebration reports, concern alerts, and opportunity summaries. Use for 'status update', 'brief me', 'what's happening', 'summarize progress', or when complex multi-agent work needs human-readable reporting."
+description: Human interface agent that translates ecosystem activity into clear, actionable communication. Creates status briefings, decision requests, celebration reports, concern alerts, and opportunity summaries. Use for 'status update', 'brief me', 'what's happening', 'summarize progress', or when complex multi-agent work needs human-readable reporting.
+category: Productivity & Meta
+tags:
+  - communication
+  - briefings
+  - coordination
+  - human-interface
+  - reporting
+pairs-with:
+  - skill: orchestrator
+    reason: Coordinate complex multi-skill work
+  - skill: project-management-guru-adhd
+    reason: Structured status updates
 ---
 
 # THE LIAISON

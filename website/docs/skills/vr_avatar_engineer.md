@@ -8,7 +8,7 @@ description: Expert in photorealistic and stylized VR avatar systems for Apple V
 <SkillHeader
   skillName="Vr Avatar Engineer"
   fileName="vr-avatar-engineer"
-  description={"\"Expert in photorealistic and stylized VR avatar systems for Apple Vision Pro, Meta Quest, and cross-platform metaverse. Specializes in facial tracking (52+ blend shapes), subsurface scattering, Persona-style generation, Photon networking, and real-time LOD. Activate on 'VR avatar', 'Vision Pro Persona', 'Meta avatar', 'facial tracking', 'blend shapes', 'avatar networking', 'photorealistic avatar'. NOT for 2D profile pictures (use image generation), non-VR game characters (use game engine tools), static 3D models (use modeling tools), or motion capture hardware setup.\""}
+  description={"Expert in photorealistic and stylized VR avatar systems for Apple Vision Pro, Meta Quest, and cross-platform metaverse. Specializes in facial tracking (52+ blend shapes), subsurface scattering, Persona-style generation, Photon networking, and real-time LOD. Activate on 'VR avatar', 'Vision Pro Persona', 'Meta avatar', 'facial tracking', 'blend shapes', 'avatar networking', 'photorealistic avatar'. NOT for 2D profile pictures (use image generation), non-VR game characters (use game engine tools), static 3D models (use modeling tools), or motion capture hardware setup."}
   tags={["creation","3d","ml","code","advanced"]}
 />
 
