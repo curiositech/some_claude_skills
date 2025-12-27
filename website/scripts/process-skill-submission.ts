@@ -60,6 +60,33 @@ const RESERVED_SKILL_IDS = [
   'template',
 ];
 
+// Known tags from taxonomy (for validation suggestions)
+// Keep in sync with website/src/types/tags.ts
+const KNOWN_TAGS = new Set([
+  // Skill Type (purple)
+  'research', 'creation', 'coaching', 'automation', 'orchestration',
+  'validation', 'analysis', 'optimization', 'clustering', 'curation',
+  'indexing', 'refactoring', 'testing', 'moderation', 'coordination',
+  // Domain (blue)
+  'design', 'audio', '3d', 'cv', 'ml', 'psychology', 'finance', 'career',
+  'accessibility', 'adhd', 'devops', 'robotics', 'photography', 'health',
+  'recovery', 'entrepreneurship', 'spatial', 'job-search', 'inspection',
+  'thermal', 'insurance', 'temporal', 'events', 'faces', 'duplicates',
+  'web', 'api', 'security', 'documentation', 'legal', 'relationships',
+  'grief', 'vr', 'landscaping', 'color', 'typography', 'shaders',
+  'physics', 'bots', 'agents', 'prompts',
+  // Output (green)
+  'code', 'document', 'visual', 'data', 'strategy', 'diagrams', 'templates',
+  // Complexity (orange)
+  'beginner-friendly', 'advanced', 'production-ready',
+  // Integration (pink)
+  'mcp', 'elevenlabs', 'figma', 'stability-ai', 'playwright', 'jest',
+  'docusaurus', 'swiftui', 'react', 'discord', 'slack', 'telegram',
+]);
+
+const MIN_TAGS = 2;
+const MAX_TAGS = 10;
+
 // =============================================================================
 // PARSING
 // =============================================================================
@@ -186,9 +213,24 @@ function validateSubmission(submission: ParsedSubmission): ValidationResult {
 
   // Validate tags
   if (submission.tags.length === 0) {
-    errors.push('At least one tag is required');
-  } else if (submission.tags.length > 10) {
-    errors.push('Maximum 10 tags allowed');
+    errors.push('At least 2 tags are required for discoverability');
+  } else if (submission.tags.length < MIN_TAGS) {
+    errors.push(`At least ${MIN_TAGS} tags are required for discoverability`);
+  } else if (submission.tags.length > MAX_TAGS) {
+    errors.push(`Maximum ${MAX_TAGS} tags allowed`);
+  }
+
+  // Check for known tags (warn about unknowns but don't fail)
+  const unknownTags = submission.tags.filter(tag => !KNOWN_TAGS.has(tag));
+  const knownTags = submission.tags.filter(tag => KNOWN_TAGS.has(tag));
+
+  if (knownTags.length === 0 && submission.tags.length > 0) {
+    // All tags are custom - suggest using at least one from taxonomy
+    errors.push(
+      `Please use at least one tag from the official taxonomy for better discoverability. ` +
+      `Unknown tags: ${unknownTags.join(', ')}. ` +
+      `See: https://someclaudeskills.com/skills for popular tags.`
+    );
   }
 
   // Validate content has required sections
