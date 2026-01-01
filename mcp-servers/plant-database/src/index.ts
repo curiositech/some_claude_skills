@@ -35,6 +35,18 @@ import { z } from 'zod';
 
 import { PLANTS_DATABASE, type Plant } from './plants.js';
 import { ZIP_TO_ZONE, type ZoneInfo } from './zones.js';
+import {
+  TREFLE_PLANTS,
+  PLANTS_BY_NAME,
+  PLANTS_BY_SCIENTIFIC,
+  searchPlants as searchTreflePlants,
+  getPlantsNativeTo,
+  getPlantsByHabit,
+  type TreflePlant,
+} from './trefle-plants.js';
+
+// Total plants available
+const TOTAL_PLANTS = Object.keys(PLANTS_DATABASE).length + TREFLE_PLANTS.length;
 
 // ============================================================================
 // Input Schemas
@@ -45,6 +57,7 @@ const LookupZoneSchema = z.object({
 });
 
 const SearchPlantsSchema = z.object({
+  query: z.string().optional().describe('Search by name (common or scientific)'),
   zone: z.string().optional().describe('USDA hardiness zone (e.g., "6b", "7a")'),
   sun: z.enum(['full_sun', 'part_shade', 'full_shade', 'any']).optional(),
   water: z.enum(['low', 'medium', 'high', 'any']).optional(),
@@ -52,10 +65,13 @@ const SearchPlantsSchema = z.object({
   evergreen: z.boolean().optional(),
   deer_resistant: z.boolean().optional(),
   native_region: z.string().optional(),
+  native_state: z.string().optional().describe('US state for native plant filtering (e.g., "California", "Texas")'),
   max_height_ft: z.number().optional(),
   min_height_ft: z.number().optional(),
   growth_rate: z.enum(['slow', 'medium', 'fast', 'any']).optional(),
-  limit: z.number().min(1).max(50).default(20),
+  family: z.string().optional().describe('Plant family (e.g., "Rosaceae", "Fabaceae")'),
+  edible: z.boolean().optional().describe('Filter for edible plants'),
+  limit: z.number().min(1).max(100).default(25),
 });
 
 const GetPlantSchema = z.object({
@@ -126,21 +142,25 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: 'search_plants',
-        description: 'Search plants by characteristics. Filter by zone compatibility, sun requirements, water needs, type, deer resistance, and more.',
+        description: `Search across ${TOTAL_PLANTS.toLocaleString()}+ plants by characteristics. Filter by zone compatibility, sun requirements, water needs, type, deer resistance, and more. Combines curated landscaping database with Trefle botanical data.`,
         inputSchema: {
           type: 'object',
           properties: {
+            query: { type: 'string', description: 'Search by name (common or scientific)' },
             zone: { type: 'string', description: 'USDA zone (e.g., "6b")' },
             sun: { type: 'string', enum: ['full_sun', 'part_shade', 'full_shade', 'any'] },
             water: { type: 'string', enum: ['low', 'medium', 'high', 'any'] },
             type: { type: 'string', enum: ['tree', 'shrub', 'perennial', 'grass', 'vine', 'any'] },
             evergreen: { type: 'boolean' },
             deer_resistant: { type: 'boolean' },
-            native_region: { type: 'string' },
+            native_region: { type: 'string', description: 'Region (northeast, southeast, midwest, etc.)' },
+            native_state: { type: 'string', description: 'US state (e.g., "California", "Texas")' },
+            family: { type: 'string', description: 'Plant family (e.g., "Rosaceae")' },
+            edible: { type: 'boolean' },
             max_height_ft: { type: 'number' },
             min_height_ft: { type: 'number' },
             growth_rate: { type: 'string', enum: ['slow', 'medium', 'fast', 'any'] },
-            limit: { type: 'number', default: 20 },
+            limit: { type: 'number', default: 25, maximum: 100 },
           },
         },
       },
@@ -270,33 +290,53 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
       case 'get_plant': {
         const input = GetPlantSchema.parse(args);
-        const plant = PLANTS_DATABASE[input.plant_id];
 
-        if (!plant) {
-          // Try fuzzy match
-          const matches = Object.keys(PLANTS_DATABASE).filter(k =>
-            k.includes(input.plant_id) || input.plant_id.includes(k)
-          );
-          if (matches.length > 0) {
-            return {
-              content: [{
-                type: 'text',
-                text: JSON.stringify({
-                  error: 'Plant not found',
-                  suggestions: matches.slice(0, 5),
-                }, null, 2),
-              }],
-            };
-          }
-          throw new McpError(ErrorCode.InvalidParams, `Plant not found: ${input.plant_id}`);
+        // Try curated database first
+        const curatedPlant = PLANTS_DATABASE[input.plant_id];
+        if (curatedPlant) {
+          return {
+            content: [{
+              type: 'text',
+              text: JSON.stringify({ ...curatedPlant, source: 'curated' }, null, 2),
+            }],
+          };
         }
 
-        return {
-          content: [{
-            type: 'text',
-            text: JSON.stringify(plant, null, 2),
-          }],
-        };
+        // Try Trefle by common name
+        const treflePlant = PLANTS_BY_NAME.get(input.plant_id.toLowerCase()) ||
+                           PLANTS_BY_SCIENTIFIC.get(input.plant_id.toLowerCase());
+        if (treflePlant) {
+          return {
+            content: [{
+              type: 'text',
+              text: JSON.stringify(treflePlantToResult(treflePlant), null, 2),
+            }],
+          };
+        }
+
+        // Try fuzzy match across both databases
+        const curatedMatches = Object.keys(PLANTS_DATABASE).filter(k =>
+          k.includes(input.plant_id) || input.plant_id.includes(k)
+        );
+        const trefleMatches = searchTreflePlants(input.plant_id).slice(0, 5);
+
+        if (curatedMatches.length > 0 || trefleMatches.length > 0) {
+          return {
+            content: [{
+              type: 'text',
+              text: JSON.stringify({
+                error: 'Exact match not found',
+                curated_suggestions: curatedMatches.slice(0, 5),
+                trefle_suggestions: trefleMatches.map(p => ({
+                  common_name: p.commonName,
+                  scientific_name: p.scientificName,
+                })),
+              }, null, 2),
+            }],
+          };
+        }
+
+        throw new McpError(ErrorCode.InvalidParams, `Plant not found: ${input.plant_id}`);
       }
 
       case 'recommend_privacy_screen': {
@@ -377,52 +417,176 @@ function isZoneCompatible(plantZones: string, targetZone: string): boolean {
   return targetNum >= minNum && targetNum <= maxNum;
 }
 
-function searchPlants(criteria: z.infer<typeof SearchPlantsSchema>): Plant[] {
-  let results = Object.values(PLANTS_DATABASE);
+// Convert Trefle plant to unified format for display
+function treflePlantToResult(p: TreflePlant) {
+  return {
+    id: p.id,
+    common_name: p.commonName,
+    scientific_name: p.scientificName,
+    family: p.family,
+    family_common_name: p.familyCommonName,
+    type: mapGrowthHabit(p.growthHabit),
+    growth_rate: p.growthRate || 'unknown',
+    mature_height_ft: p.maximumHeightCm ? Math.round(p.maximumHeightCm / 30.48) : null,
+    ph_range: p.phMin && p.phMax ? `${p.phMin}-${p.phMax}` : null,
+    light: p.lightRequirement,
+    drought_tolerance: p.droughtTolerance,
+    shade_tolerance: p.shadeTolerance,
+    flower_color: p.flowerColor,
+    foliage_color: p.foliageColor,
+    bloom_months: p.bloomMonths,
+    edible: p.edible,
+    native_states: p.distributions,
+    image_url: p.imageUrl,
+    source: 'trefle' as const,
+  };
+}
+
+// Map Trefle growth habit to our type system
+function mapGrowthHabit(habit: string): string {
+  const h = habit.toLowerCase();
+  if (h.includes('tree')) return 'tree';
+  if (h.includes('shrub') || h.includes('subshrub')) return 'shrub';
+  if (h.includes('vine')) return 'vine';
+  if (h.includes('graminoid')) return 'grass';
+  if (h.includes('forb') || h.includes('herb')) return 'perennial';
+  return 'unknown';
+}
+
+// Map Trefle growth rate to our system
+function mapGrowthRate(rate: string): 'slow' | 'medium' | 'fast' | 'unknown' {
+  const r = rate.toLowerCase();
+  if (r.includes('slow')) return 'slow';
+  if (r.includes('rapid') || r.includes('fast')) return 'fast';
+  if (r.includes('moderate') || r.includes('medium')) return 'medium';
+  return 'unknown';
+}
+
+function searchPlants(criteria: z.infer<typeof SearchPlantsSchema>): Array<Plant | ReturnType<typeof treflePlantToResult>> {
+  // Search curated database first
+  let curatedResults = Object.values(PLANTS_DATABASE);
 
   if (criteria.zone) {
-    results = results.filter(p => isZoneCompatible(p.hardiness_zones, criteria.zone!));
+    curatedResults = curatedResults.filter(p => isZoneCompatible(p.hardiness_zones, criteria.zone!));
   }
 
   if (criteria.sun && criteria.sun !== 'any') {
-    results = results.filter(p => p.sun.includes(criteria.sun!) || p.sun.includes('part_shade'));
+    const sunReq = criteria.sun;
+    curatedResults = curatedResults.filter(p => p.sun.includes(sunReq) || p.sun.includes('part_shade'));
   }
 
   if (criteria.water && criteria.water !== 'any') {
-    results = results.filter(p => p.water === criteria.water);
+    curatedResults = curatedResults.filter(p => p.water === criteria.water);
   }
 
   if (criteria.type && criteria.type !== 'any') {
-    results = results.filter(p => p.type === criteria.type);
+    curatedResults = curatedResults.filter(p => p.type === criteria.type);
   }
 
   if (criteria.evergreen !== undefined) {
-    results = results.filter(p => p.evergreen === criteria.evergreen);
+    curatedResults = curatedResults.filter(p => p.evergreen === criteria.evergreen);
   }
 
   if (criteria.deer_resistant) {
-    results = results.filter(p => p.deer_resistant);
+    curatedResults = curatedResults.filter(p => p.deer_resistant);
   }
 
   if (criteria.native_region) {
-    results = results.filter(p =>
+    curatedResults = curatedResults.filter(p =>
       p.native_regions?.includes(criteria.native_region!)
     );
   }
 
   if (criteria.max_height_ft) {
-    results = results.filter(p => p.mature_height_ft <= criteria.max_height_ft!);
+    curatedResults = curatedResults.filter(p => p.mature_height_ft <= criteria.max_height_ft!);
   }
 
   if (criteria.min_height_ft) {
-    results = results.filter(p => p.mature_height_ft >= criteria.min_height_ft!);
+    curatedResults = curatedResults.filter(p => p.mature_height_ft >= criteria.min_height_ft!);
   }
 
   if (criteria.growth_rate && criteria.growth_rate !== 'any') {
-    results = results.filter(p => p.growth_rate === criteria.growth_rate);
+    curatedResults = curatedResults.filter(p => p.growth_rate === criteria.growth_rate);
   }
 
-  return results.slice(0, criteria.limit);
+  // Also search Trefle database
+  let trefleResults = [...TREFLE_PLANTS];
+
+  // Text search
+  if (criteria.query) {
+    const q = criteria.query.toLowerCase();
+    trefleResults = trefleResults.filter(p =>
+      p.commonName.toLowerCase().includes(q) ||
+      p.scientificName.toLowerCase().includes(q) ||
+      p.family.toLowerCase().includes(q)
+    );
+    // Also filter curated
+    curatedResults = curatedResults.filter(p =>
+      p.common_name.toLowerCase().includes(q) ||
+      p.scientific_name.toLowerCase().includes(q)
+    );
+  }
+
+  // Type filter
+  if (criteria.type && criteria.type !== 'any') {
+    trefleResults = trefleResults.filter(p =>
+      mapGrowthHabit(p.growthHabit) === criteria.type
+    );
+  }
+
+  // Native state filter
+  if (criteria.native_state) {
+    trefleResults = trefleResults.filter(p =>
+      p.distributions.some(d =>
+        d.toLowerCase() === criteria.native_state!.toLowerCase()
+      )
+    );
+  }
+
+  // Family filter
+  if (criteria.family) {
+    trefleResults = trefleResults.filter(p =>
+      p.family.toLowerCase().includes(criteria.family!.toLowerCase())
+    );
+  }
+
+  // Edible filter
+  if (criteria.edible !== undefined) {
+    trefleResults = trefleResults.filter(p => p.edible === criteria.edible);
+  }
+
+  // Height filters
+  if (criteria.max_height_ft) {
+    trefleResults = trefleResults.filter(p => {
+      if (!p.maximumHeightCm) return false;
+      return p.maximumHeightCm / 30.48 <= criteria.max_height_ft!;
+    });
+  }
+
+  if (criteria.min_height_ft) {
+    trefleResults = trefleResults.filter(p => {
+      if (!p.maximumHeightCm) return false;
+      return p.maximumHeightCm / 30.48 >= criteria.min_height_ft!;
+    });
+  }
+
+  // Growth rate filter
+  if (criteria.growth_rate && criteria.growth_rate !== 'any') {
+    trefleResults = trefleResults.filter(p =>
+      mapGrowthRate(p.growthRate) === criteria.growth_rate
+    );
+  }
+
+  // Combine results: curated first (they have more detail), then Trefle
+  const curatedWithSource = curatedResults.map(p => ({ ...p, source: 'curated' as const }));
+  const trefleConverted = trefleResults.map(treflePlantToResult);
+
+  // Deduplicate by common name
+  const seen = new Set(curatedWithSource.map(p => p.common_name.toLowerCase()));
+  const uniqueTrefle = trefleConverted.filter(p => !seen.has(p.common_name.toLowerCase()));
+
+  const combined = [...curatedWithSource, ...uniqueTrefle];
+  return combined.slice(0, criteria.limit);
 }
 
 function recommendPrivacyScreen(criteria: z.infer<typeof RecommendPrivacyScreenSchema>) {
@@ -491,20 +655,66 @@ function recommendPrivacyScreen(criteria: z.infer<typeof RecommendPrivacyScreenS
   };
 }
 
-function findNativePlants(criteria: z.infer<typeof FindNativePlantsSchema>): Plant[] {
-  let results = Object.values(PLANTS_DATABASE).filter(p =>
+// Map regions to states for Trefle lookup
+const REGION_TO_STATES: Record<string, string[]> = {
+  northeast: ['Connecticut', 'Maine', 'Massachusetts', 'New Hampshire', 'New Jersey', 'New York', 'Pennsylvania', 'Rhode Island', 'Vermont'],
+  southeast: ['Alabama', 'Florida', 'Georgia', 'Kentucky', 'Louisiana', 'Mississippi', 'North Carolina', 'South Carolina', 'Tennessee', 'Virginia', 'West Virginia'],
+  midwest: ['Illinois', 'Indiana', 'Iowa', 'Kansas', 'Michigan', 'Minnesota', 'Missouri', 'Nebraska', 'North Dakota', 'Ohio', 'South Dakota', 'Wisconsin'],
+  southwest: ['Arizona', 'New Mexico', 'Oklahoma', 'Texas'],
+  pacific_northwest: ['Oregon', 'Washington'],
+  california: ['California'],
+  mountain_west: ['Colorado', 'Idaho', 'Montana', 'Nevada', 'Utah', 'Wyoming'],
+  great_plains: ['Kansas', 'Nebraska', 'North Dakota', 'Oklahoma', 'South Dakota', 'Texas'],
+};
+
+function findNativePlants(criteria: z.infer<typeof FindNativePlantsSchema>): Array<Plant | ReturnType<typeof treflePlantToResult>> {
+  // Search curated database
+  let curatedResults = Object.values(PLANTS_DATABASE).filter(p =>
     p.native_regions?.includes(criteria.region)
   );
 
   if (criteria.type !== 'any') {
-    results = results.filter(p => p.type === criteria.type);
+    curatedResults = curatedResults.filter(p => p.type === criteria.type);
   }
 
   if (criteria.for_pollinators) {
-    results = results.filter(p => p.pollinator_friendly);
+    curatedResults = curatedResults.filter(p => p.pollinator_friendly);
   }
 
-  return results.slice(0, criteria.limit);
+  // Search Trefle by states in the region
+  const states = REGION_TO_STATES[criteria.region] || [];
+  let trefleResults: TreflePlant[] = [];
+
+  for (const state of states) {
+    const statePlants = getPlantsNativeTo(state);
+    trefleResults.push(...statePlants);
+  }
+
+  // Deduplicate Trefle results
+  const seenIds = new Set<string>();
+  trefleResults = trefleResults.filter(p => {
+    if (seenIds.has(p.id)) return false;
+    seenIds.add(p.id);
+    return true;
+  });
+
+  // Filter by type
+  if (criteria.type !== 'any') {
+    trefleResults = trefleResults.filter(p =>
+      mapGrowthHabit(p.growthHabit) === criteria.type
+    );
+  }
+
+  // Combine: curated first
+  const curatedWithSource = curatedResults.map(p => ({ ...p, source: 'curated' as const }));
+  const trefleConverted = trefleResults.map(treflePlantToResult);
+
+  // Deduplicate by common name
+  const seenNames = new Set(curatedWithSource.map(p => p.common_name.toLowerCase()));
+  const uniqueTrefle = trefleConverted.filter(p => !seenNames.has(p.common_name.toLowerCase()));
+
+  const combined = [...curatedWithSource, ...uniqueTrefle];
+  return combined.slice(0, criteria.limit);
 }
 
 function checkZoneCompatibility(plantId: string, zone: string) {

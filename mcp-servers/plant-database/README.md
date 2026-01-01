@@ -1,13 +1,14 @@
 # Plant Database MCP Server
 
-An MCP server providing plant information, USDA hardiness zone lookups, and landscaping recommendations. Designed to pair with the `fancy-yard-landscaper` skill.
+An MCP server providing access to **13,700+ plants** with USDA hardiness zone lookups and landscaping recommendations. Combines a curated landscaping database with data from [Trefle.io](https://trefle.io) botanical database. Designed to pair with the `fancy-yard-landscaper` skill.
 
 ## Features
 
+- **13,700+ Plants** - Comprehensive US plant database from Trefle.io
 - **USDA Hardiness Zone Lookup** - Get zone information by ZIP code
-- **Plant Search** - Filter by zone, sun, water, type, deer resistance, etc.
+- **Plant Search** - Filter by name, zone, sun, water, type, family, native state, edibility, and more
 - **Privacy Screen Recommendations** - Smart suggestions avoiding common mistakes
-- **Native Plant Finder** - Find plants native to your region
+- **Native Plant Finder** - Find plants native to your region or state
 - **Compatibility Checking** - Verify if plants work in your zone
 
 ## Installation
@@ -58,17 +59,28 @@ Returns:
 
 ### `search_plants`
 
-Search plants by criteria.
+Search across 13,700+ plants by criteria.
 
 ```json
 {
-  "zone": "6b",
-  "type": "shrub",
-  "evergreen": true,
-  "deer_resistant": true,
-  "limit": 10
+  "query": "maple",
+  "native_state": "California",
+  "type": "tree",
+  "limit": 20
 }
 ```
+
+Available filters:
+- `query` - Search by common or scientific name
+- `zone` - USDA hardiness zone (e.g., "6b")
+- `type` - tree, shrub, perennial, grass, vine
+- `native_state` - US state (e.g., "California", "Texas")
+- `native_region` - Region (northeast, southeast, midwest, etc.)
+- `family` - Plant family (e.g., "Rosaceae", "Fabaceae")
+- `edible` - Filter for edible plants
+- `sun`, `water`, `growth_rate` - Growing conditions
+- `evergreen`, `deer_resistant` - Plant characteristics
+- `min_height_ft`, `max_height_ft` - Size filters
 
 ### `get_plant`
 
@@ -145,21 +157,35 @@ Better alternatives:
 
 ## Plant Database
 
-The database includes:
+The database combines two sources:
+
+### Curated Database (~25 plants)
+Hand-picked landscaping plants with detailed care information:
 - Privacy screening plants
 - Native trees and shrubs by region
 - Native perennials for pollinator gardens
 - Ornamental grasses
 
+### Trefle Database (13,700+ plants)
+Imported from [Trefle.io](https://trefle.io) botanical database:
+- Filtered for US-distributed species
+- Trees, shrubs, perennials, vines, grasses
+- Includes scientific names, families, growth characteristics
+- Native state distributions
+
 Each plant entry includes:
 - Common and scientific names
-- Hardiness zones
-- Sun/water requirements
-- Mature size and growth rate
-- Deer resistance
-- Native regions
-- Pollinator friendliness
-- Care notes and potential problems
+- Plant family
+- Growth habit and rate
+- Mature height
+- pH range (where available)
+- Light requirements
+- Drought/shade tolerance
+- Flower and foliage colors
+- Bloom months
+- Edibility
+- Native state distributions
+- Image URL (where available)
 
 ## Pairing with fancy-yard-landscaper
 
@@ -172,7 +198,9 @@ This MCP is designed to work alongside the `fancy-yard-landscaper` skill:
 
 ## Extending the Database
 
-To add plants, edit `src/plants.ts`:
+### Add Curated Plants
+
+Edit `src/plants.ts` for detailed landscaping recommendations:
 
 ```typescript
 'your-plant-id': {
@@ -194,6 +222,29 @@ To add plants, edit `src/plants.ts`:
   care_notes: 'Your care notes here.',
 }
 ```
+
+### Re-import Trefle Data
+
+To refresh the Trefle database:
+
+```bash
+# Download latest Trefle dump (may take a while)
+curl -L "https://media.githubusercontent.com/media/treflehq/dump/master/species.csv" -o scripts/species.csv
+
+# Run import script
+npm run import:trefle
+```
+
+The import script filters for:
+- US-distributed plants (50 states)
+- Species rank only (not varieties/subspecies)
+- Plants with common names
+- Landscaping-relevant growth habits (trees, shrubs, perennials, vines, grasses)
+
+## Data Sources
+
+- **Trefle.io** - Open botanical database (AGPL-3.0 license)
+- **USDA Plants Database** - Zone and distribution data
 
 ## License
 
