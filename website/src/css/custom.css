@@ -1227,14 +1227,16 @@ html[class*="sidebar--show"] .theme-picker__hotdog,
 .navbar-cta-button {
   background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
   color: white !important;
-  padding: 6px 14px !important;
+  padding: 6px 12px !important;
   border-radius: 6px !important;
   font-weight: 600 !important;
-  font-size: 0.9rem !important;
+  font-size: 0.85rem !important;
   transition: all 0.2s ease !important;
   border: 2px solid #047857 !important;
   box-shadow: 0 2px 4px rgba(5, 150, 105, 0.3) !important;
-  margin-left: 8px !important;
+  margin-left: 6px !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 .navbar-cta-button:hover {
@@ -1267,9 +1269,21 @@ html[class*="sidebar--show"] .theme-picker__hotdog,
   background-color: var(--ifm-color-primary-lightest) !important;
 }
 
-/* Mobile: Hide CTA button in sidebar (dropdowns handle it) */
-@media (max-width: 996px) {
+/* Mobile: Hide CTA button in sidebar (dropdowns handle it) and on narrower screens */
+@media (max-width: 1100px) {
   .navbar-cta-button {
     display: none !important;
+  }
+}
+
+/* Ensure navbar doesn't crumple on tablet sizes */
+@media (max-width: 1300px) {
+  .navbar__inner {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+  }
+
+  .navbar__items {
+    gap: 4px !important;
   }
 }

@@ -19,6 +19,7 @@ export interface Skill {
   icon?: string;
   badge?: SkillBadge;
   pairsWith?: SkillPairing[];
+  heroImage?: string; // Path to hero image (e.g., /img/skills/skill-id-hero.webp)
 }
 
 /**

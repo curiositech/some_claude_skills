@@ -13,6 +13,16 @@ interface SkillCardProps {
 export default function SkillCard({ skill }: SkillCardProps): JSX.Element {
   return (
     <div className={styles.skillCard}>
+      {skill.heroImage && (
+        <div className={styles.heroImageContainer}>
+          <img
+            src={skill.heroImage}
+            alt={`${skill.title} hero image`}
+            className={styles.heroImage}
+            loading="lazy"
+          />
+        </div>
+      )}
       <div className={styles.skillHeader}>
         {skill.icon && <div className={styles.skillIcon}>{skill.icon}</div>}
         <h3 className={styles.skillTitle}>

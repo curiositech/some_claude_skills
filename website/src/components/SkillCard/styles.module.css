@@ -1,12 +1,28 @@
 .skillCard {
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: var(--ifm-global-radius);
-  padding: 1.5rem;
+  padding: 0;
   height: 100%;
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
   background-color: var(--ifm-background-surface-color);
+  overflow: hidden;
+}
+
+.heroImageContainer {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .skillCard:hover {
@@ -20,6 +36,7 @@
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.5rem;
+  padding: 1.5rem 1.5rem 0 1.5rem;
 }
 
 .skillIcon {

@@ -1,0 +1,124 @@
+/* ═══════════════════════════════════════════════════════════════════
+   BACKSPLASH HERO IMAGES
+   Per-page pixel art backgrounds that appear behind the hero section
+   ═══════════════════════════════════════════════════════════════════ */
+
+.page-backsplash {
+  position: relative;
+}
+
+.page-backsplash::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0) 100%);
+}
+
+/* Ensure content stays above the backsplash */
+.page-backsplash > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PAGE-SPECIFIC BACKSPLASH IMAGES
+   ═══════════════════════════════════════════════════════════════════ */
+
+.page-backsplash--homepage::before {
+  background-image: url('/img/backsplash/homepage-backsplash.webp');
+}
+
+.page-backsplash--skills::before {
+  background-image: url('/img/backsplash/skills-backsplash.webp');
+}
+
+.page-backsplash--ecosystem::before {
+  background-image: url('/img/backsplash/ecosystem-backsplash.webp');
+}
+
+.page-backsplash--favorites::before {
+  background-image: url('/img/backsplash/favorites-backsplash.webp');
+}
+
+.page-backsplash--agents::before {
+  background-image: url('/img/backsplash/agents-backsplash.webp');
+}
+
+.page-backsplash--artifacts::before {
+  background-image: url('/img/backsplash/artifacts-backsplash.webp');
+}
+
+.page-backsplash--changelog::before {
+  background-image: url('/img/backsplash/changelog-backsplash.webp');
+}
+
+.page-backsplash--contact::before {
+  background-image: url('/img/backsplash/contact-backsplash.webp');
+}
+
+.page-backsplash--mcps::before {
+  background-image: url('/img/backsplash/mcps-backsplash.webp');
+}
+
+.page-backsplash--metrics::before {
+  background-image: url('/img/backsplash/metrics-backsplash.webp');
+}
+
+.page-backsplash--submit-skill::before {
+  background-image: url('/img/backsplash/submit-skill-backsplash.webp');
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   INTENSITY VARIANTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+.page-backsplash--subtle::before {
+  opacity: 0.1;
+}
+
+.page-backsplash--medium::before {
+  opacity: 0.2;
+}
+
+.page-backsplash--strong::before {
+  opacity: 0.3;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   HEIGHT VARIANTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+.page-backsplash--tall::before {
+  height: 600px;
+}
+
+.page-backsplash--full::before {
+  height: 100%;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0) 100%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE ADJUSTMENTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .page-backsplash::before {
+    height: 300px;
+    opacity: 0.12;
+  }
+
+  .page-backsplash--tall::before {
+    height: 400px;
+  }
+}
