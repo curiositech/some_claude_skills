@@ -257,7 +257,7 @@ For each text/background pair:
 - Total color pairs tested: X
 - Passing (AA): Y
 - Failing: Z
-- Critical failures (<2:1): N
+- Critical failures (&lt;2:1): N
 
 ## Failures by Severity
 
