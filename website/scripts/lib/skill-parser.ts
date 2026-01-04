@@ -80,10 +80,17 @@ export function parseSkillFile(
   const folderName = path.basename(skillPath);
   const id = folderName;
 
-  // Parse allowed tools
-  const allowedTools = frontmatter['allowed-tools']
-    ? frontmatter['allowed-tools'].split(',').map((t) => t.trim())
-    : [];
+  // Parse allowed tools (handle both comma-separated string and YAML list)
+  let allowedTools: string[] = [];
+  if (frontmatter['allowed-tools']) {
+    if (Array.isArray(frontmatter['allowed-tools'])) {
+      // YAML list format: ["Read", "Write", "Edit"]
+      allowedTools = frontmatter['allowed-tools'].map((t: string) => t.trim());
+    } else {
+      // Comma-separated string format: "Read,Write,Edit"
+      allowedTools = frontmatter['allowed-tools'].split(',').map((t: string) => t.trim());
+    }
+  }
 
   // Generate title from name if not provided
   const title = frontmatter.title || toTitleCase(frontmatter.name || id);
