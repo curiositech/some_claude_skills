@@ -137,8 +137,8 @@ BAD:                         GOOD:
 PROXIMITY:      SIMILARITY:     ENCLOSURE:
 ○ ○   ● ●      ○ ● ○ ● ○      ┌───────────┐
 ○ ○   ● ●      ● ○ ● ○ ●      │ ○ ○ ○ ○ ○ │
-Groups by      Groups by       │ (grouped) │
-nearness       appearance      └───────────┘
+Groups by      Groups by      │ (grouped) │
+nearness       appearance     └───────────┘
 ```
 
 ### 4. Visual Hierarchy
@@ -219,11 +219,11 @@ SIZE HIERARCHY:
 ### Chartjunk
 ```
 ✗ BAD: Excessive decoration
-╔══════════════════════════════════════╗
+╔═════════════════════════════════════╗
 ║ ╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮ ║
-║ ┃ ★ ★ ★  IMPORTANT INFO  ★ ★ ★  ┃ ║
+║ ┃ ★ ★ ★  IMPORTANT INFO  ★ ★ ★    ┃ ║
 ║ ╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯ ║
-╚══════════════════════════════════════╝
+╚═════════════════════════════════════╝
 
 ✓ GOOD: Clean and direct
 ┌──────────────────┐
