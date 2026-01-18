@@ -700,8 +700,8 @@ export const skillFolderIndex: SkillFolderIndex = {
   },
   "video-processing-editing": {
     "hasContent": true,
-    "fileCount": 6,
-    "folderCount": 2
+    "fileCount": 12,
+    "folderCount": 3
   },
   "vitest-testing-patterns": {
     "hasContent": false,
