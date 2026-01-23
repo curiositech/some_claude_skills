@@ -1,0 +1,28 @@
+/* TEAM */
+Developer: Erich Owens
+Role: Creator, Ex-Meta ML Engineer
+Site: https://someclaudeskills.com
+GitHub: https://github.com/erichowens
+LinkedIn: https://linkedin.com/in/erich-owens-01a38446/
+Location: San Francisco Bay Area
+
+/* SKILLS */
+This project showcases 45+ production-ready AI skills for Claude Code.
+Each skill encodes real domain expertise from years of industry experience.
+
+/* THANKS */
+Claude Code - For making AI skills possible
+Anthropic - For building Claude
+Docusaurus - For the documentation framework
+The open source community - For continuous inspiration
+
+/* SITE */
+Last update: 2024
+Language: English
+Standards: HTML5, CSS3, TypeScript, React
+Components: Docusaurus 3.x, Custom React Components
+Software: Claude Code, VS Code
+Hosting: GitHub Pages / Vercel
+
+/* EASTER EGGS */
+Try the Konami Code on the homepage ;)

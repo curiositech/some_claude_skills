@@ -1,0 +1,1486 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2025-12-07T20:25:58.858420Z",
+  "project_root": "/Users/erichowens/coding/some_claude_skills",
+  "summary": {
+    "total_agents": 9,
+    "total_skills": 51,
+    "agents_by_format": {
+      "flat": 0,
+      "directory": 9
+    },
+    "skill_categories": {
+      "uncategorized": 51
+    },
+    "unique_tools": 18
+  },
+  "agents": [
+    {
+      "name": "architect",
+      "role": "Meta-Orchestrator of Combinatorial Genius",
+      "description": "You are The Architect, supreme designer of the agentic ecosystem. You see what doesn't exist but could if the right combinations were assembled. You create \"mutant circuits\" - unprecedented agent/skill combinations that produce emergent capabilities never seen before.",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Bash",
+        "Task",
+        "WebFetch",
+        "WebSearch",
+        "TodoWrite"
+      ],
+      "triggers": [
+        "design new agent",
+        "create agent",
+        "combinatorial",
+        "mutant circuit",
+        "agent combination",
+        "orchestrate agents",
+        "meta design",
+        "architect",
+        "what agents could",
+        "capability synthesis"
+      ],
+      "coordinates_with": [
+        "smith",
+        "cartographer",
+        "weaver",
+        "librarian",
+        "scout",
+        "visualizer",
+        "archivist",
+        "liaison"
+      ],
+      "outputs": [
+        "agent-specifications",
+        "mutant-circuit-designs",
+        "capability-graphs",
+        "workflow-orchestrations",
+        "emergence-hypotheses"
+      ],
+      "format": "directory",
+      "path": ".claude/agents/architect/AGENT.md"
+    },
+    {
+      "name": "archivist",
+      "role": "Keeper of History and Documentation",
+      "description": "You are The Archivist, chronicler of the ecosystem's journey. You maintain detailed records of every expansion, every creation, every evolution. Your records enable reflection, learning, and storytelling. You transform raw activity into narratives that inform and inspire.",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Bash",
+        "Task",
+        "WebFetch",
+        "WebSearch",
+        "TodoWrite"
+      ],
+      "triggers": [
+        "document",
+        "snapshot",
+        "history",
+        "blog",
+        "archivist",
+        "changelog",
+        "track progress",
+        "write about",
+        "record",
+        "chronicle"
+      ],
+      "coordinates_with": [
+        "liaison",
+        "cartographer",
+        "visualizer"
+      ],
+      "outputs": [
+        "ecosystem-snapshots",
+        "changelogs",
+        "blog-drafts",
+        "progress-reports",
+        "documentation",
+        "historical-analyses"
+      ],
+      "format": "directory",
+      "path": ".claude/agents/archivist/AGENT.md"
+    },
+    {
+      "name": "cartographer",
+      "role": "Explorer of Adjacent Knowledge Space",
+      "description": "You are The Cartographer, navigator of possibility. You map the frontier of what exists and what could exist. Your purpose is to identify the densest, most valuable vectors for ecosystem expansion and guide the colony toward territories of maximum impact.",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Bash",
+        "Task",
+        "WebFetch",
+        "WebSearch",
+        "TodoWrite"
+      ],
+      "triggers": [
+        "explore",
+        "map knowledge",
+        "find gaps",
+        "what's missing",
+        "expansion",
+        "cartographer",
+        "adjacent possible",
+        "knowledge density",
+        "where should we go",
+        "opportunity analysis"
+      ],
+      "coordinates_with": [
+        "architect",
+        "scout",
+        "liaison",
+        "librarian"
+      ],
+      "outputs": [
+        "knowledge-maps",
+        "gap-analyses",
+        "expansion-roadmaps",
+        "priority-queues",
+        "adjacency-reports"
+      ],
+      "format": "directory",
+      "path": ".claude/agents/cartographer/AGENT.md"
+    },
+    {
+      "name": "liaison",
+      "role": "Human Interface and Informant",
+      "description": "You are The Liaison, the bridge between the expanding ecosystem and its human steward. You translate complex agent activity into clear communication, surface decisions that need human input, celebrate victories, and flag concerns. You ensure the human never feels lost in their own creation.",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Bash",
+        "Task",
+        "WebFetch",
+        "WebSearch",
+        "TodoWrite"
+      ],
+      "triggers": [
+        "update me",
+        "what's happening",
+        "liaison",
+        "inform",
+        "summary",
+        "brief me",
+        "status",
+        "communicate",
+        "announce",
+        "tell erich"
+      ],
+      "coordinates_with": [
+        "archivist",
+        "cartographer",
+        "architect",
+        "all-agents"
+      ],
+      "outputs": [
+        "status-briefings",
+        "decision-requests",
+        "announcements",
+        "celebration-reports",
+        "concern-alerts",
+        "opportunity-summaries"
+      ],
+      "format": "directory",
+      "path": ".claude/agents/liaison/AGENT.md"
+    },
+    {
+      "name": "librarian",
+      "role": "Content Curator with Rights Awareness",
+      "description": "You are The Librarian, keeper of knowledge with an unwavering commitment to ethical sourcing. You discover, evaluate, and curate high-quality content while ensuring proper attribution and licensing compliance. You are the gatekeeper who ensures the ecosystem's knowledge is both excellent and ethically obtained.",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Bash",
+        "Task",
+        "WebFetch",
+        "WebSearch",
+        "TodoWrite"
+      ],
+      "triggers": [
+        "find content",
+        "curate",
+        "scrape",
+        "gather documents",
+        "librarian",
+        "license",
+        "rights",
+        "source material",
+        "collect",
+        "knowledge sources"
+      ],
+      "coordinates_with": [
+        "weaver",
+        "scout",
+        "archivist"
+      ],
+      "outputs": [
+        "curated-collections",
+        "license-manifests",
+        "attribution-databases",
+        "quality-reports",
+        "source-catalogs"
+      ],
+      "format": "directory",
+      "path": ".claude/agents/librarian/AGENT.md"
+    },
+    {
+      "name": "scout",
+      "role": "External Intelligence Gatherer",
+      "description": "You are The Scout, the ecosystem's eyes on the outside world. You read READMEs, blog posts, papers, and discussions to find inspiration vectors. You keep the ecosystem informed about what's happening in the wider world of AI, development, and tooling.",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Bash",
+        "Task",
+        "WebFetch",
+        "WebSearch",
+        "TodoWrite"
+      ],
+      "triggers": [
+        "what's trending",
+        "find inspiration",
+        "scout",
+        "external",
+        "research what others",
+        "community",
+        "discover",
+        "explore outside",
+        "what are people building"
+      ],
+      "coordinates_with": [
+        "cartographer",
+        "librarian",
+        "liaison"
+      ],
+      "outputs": [
+        "inspiration-briefs",
+        "trend-reports",
+        "opportunity-alerts",
+        "external-references",
+        "community-insights"
+      ],
+      "format": "directory",
+      "path": ".claude/agents/scout/AGENT.md"
+    },
+    {
+      "name": "smith",
+      "role": "Builder of Infrastructure",
+      "description": "You are The Smith, master craftsman of the agentic ecosystem. You forge the tools, environments, and infrastructure that enable all other agents to function. From MCP servers to bash scripts, from validation tools to GUIs, your creations are the foundation upon which the ecosystem stands.",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Bash",
+        "Task",
+        "WebFetch",
+        "WebSearch",
+        "TodoWrite"
+      ],
+      "triggers": [
+        "build tool",
+        "create mcp",
+        "make script",
+        "build infrastructure",
+        "smith",
+        "implement",
+        "create utility",
+        "validation script",
+        "environment setup",
+        "build cli",
+        "docker"
+      ],
+      "coordinates_with": [
+        "architect",
+        "visualizer",
+        "weaver"
+      ],
+      "outputs": [
+        "mcp-servers",
+        "cli-tools",
+        "validation-scripts",
+        "environment-configs",
+        "docker-files",
+        "test-suites"
+      ],
+      "format": "directory",
+      "path": ".claude/agents/smith/AGENT.md"
+    },
+    {
+      "name": "visualizer",
+      "role": "Builder of Portals",
+      "description": "You are The Visualizer, creator of windows into complexity. You build the \"bottle city\" view - beautiful, efficient interfaces that let the human observe the expanding ecosystem. You make the invisible visible, the complex comprehensible, and the vast navigable.",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Bash",
+        "Task",
+        "WebFetch",
+        "WebSearch",
+        "TodoWrite"
+      ],
+      "triggers": [
+        "dashboard",
+        "visualize",
+        "show me",
+        "bottle city",
+        "portal",
+        "visualizer",
+        "graph",
+        "display",
+        "monitoring",
+        "ui for ecosystem"
+      ],
+      "coordinates_with": [
+        "smith",
+        "archivist",
+        "cartographer"
+      ],
+      "outputs": [
+        "dashboards",
+        "knowledge-graphs",
+        "progress-visualizations",
+        "interactive-explorers",
+        "monitoring-interfaces"
+      ],
+      "format": "directory",
+      "path": ".claude/agents/visualizer/AGENT.md"
+    },
+    {
+      "name": "weaver",
+      "role": "RAG Specialist",
+      "description": "You are The Weaver, enhancer of minds. You bolt on retrieval-augmented generation to superpower any agent or skill. You create the knowledge webs that give agents deep, accurate, retrievable expertise.",
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Bash",
+        "Task",
+        "WebFetch",
+        "WebSearch",
+        "TodoWrite"
+      ],
+      "triggers": [
+        "rag",
+        "embeddings",
+        "vector",
+        "retrieval",
+        "weaver",
+        "knowledge base",
+        "semantic search",
+        "enhance with",
+        "augment",
+        "superpower"
+      ],
+      "coordinates_with": [
+        "librarian",
+        "smith",
+        "architect"
+      ],
+      "outputs": [
+        "embedding-pipelines",
+        "vector-stores",
+        "rag-configurations",
+        "retrieval-metrics",
+        "knowledge-bases"
+      ],
+      "format": "directory",
+      "path": ".claude/agents/weaver/AGENT.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "2000s-visualization-expert",
+      "description": "Expert in 2000s-era music visualization (Milkdrop, AVS, Geiss) and modern WebGL implementations. Specializes in Butterchurn integration, Web Audio API AnalyserNode FFT data, GLSL shaders for audio-reactive visuals, and psychedelic generative art. Activate on \"Milkdrop\", \"music visualization\", \"WebGL visualizer\", \"Butterchurn\", \"audio reactive\", \"FFT visualization\", \"spectrum analyzer\". NOT for simple bar charts/waveforms (use basic canvas), video editing, or non-audio visuals.",
+      "category": null,
+      "tools": [],
+      "has_references": false,
+      "has_examples": false,
+      "path": ".claude/skills/2000s-visualization-expert/skill.md"
+    },
+    {
+      "name": "adhd-design-expert",
+      "description": "Designs digital experiences for ADHD brains using neuroscience research and UX principles. Expert in reducing cognitive load, time blindness solutions, dopamine-driven engagement, and compassionate design patterns. Activate on 'ADHD design', 'cognitive load', 'accessibility', 'neurodivergent UX', 'time blindness', 'dopamine-driven', 'executive function'. NOT for general accessibility (WCAG only), neurotypical UX design, or simple UI styling without ADHD context.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/adhd-design-expert/skill.md"
+    },
+    {
+      "name": "agent-creator",
+      "description": "Meta-agent for creating new custom agents, skills, and MCP integrations. Expert in agent design, MCP development, skill architecture, and rapid prototyping. Activate on 'create agent', 'new skill', 'MCP server', 'custom tool', 'agent design'. NOT for using existing agents (invoke them directly), general coding (use language-specific skills), or infrastructure setup (use deployment-engineer).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/agent-creator/skill.md"
+    },
+    {
+      "name": "automatic-stateful-prompt-improver",
+      "description": "Automatically intercepts and optimizes prompts using the prompt-learning MCP server. Learns from performance over time via embedding-indexed history. Uses APE, OPRO, DSPy patterns. Activate on \"optimize prompt\", \"improve this prompt\", \"prompt engineering\", or ANY complex task request. Requires prompt-learning MCP server. NOT for simple questions (just answer them), NOT for direct commands (just execute them), NOT for conversational responses (no optimization needed).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/automatic-stateful-prompt-improver/skill.md"
+    },
+    {
+      "name": "bot-developer",
+      "description": "Expert bot developer specializing in Discord, Telegram, Slack automation with deep knowledge of rate limiting, state machines, event sourcing, moderation systems, and conversational AI integration. Activate on 'Discord bot', 'Telegram bot', 'Slack bot', 'chat automation', 'moderation system'. NOT for web APIs (use backend-architect), general automation scripts (use python-pro), or frontend chat widgets (use frontend-developer).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/bot-developer/skill.md"
+    },
+    {
+      "name": "career-biographer",
+      "description": "AI-powered career biographer that conducts empathetic interviews, extracts structured career narratives, and transforms professional stories into portfolios, CVs, and personal brand assets. This skill should be used when users want to document their career journey, create professional portfolios, generate CVs, or craft compelling career narratives.",
+      "category": null,
+      "tools": [],
+      "has_references": false,
+      "has_examples": false,
+      "path": ".claude/skills/career-biographer/skill.md"
+    },
+    {
+      "name": "clip-aware-embeddings",
+      "description": "Semantic image-text matching with CLIP and alternatives. Use for image search, zero-shot classification, similarity matching. NOT for counting objects, fine-grained classification (celebrities, car models), spatial reasoning, or compositional queries. Activate on \"CLIP\", \"embeddings\", \"image similarity\", \"semantic search\", \"zero-shot classification\", \"image-text matching\".",
+      "category": null,
+      "tools": [],
+      "has_references": false,
+      "has_examples": false,
+      "path": ".claude/skills/clip-aware-embeddings/skill.md"
+    },
+    {
+      "name": "code-necromancer",
+      "description": "Systematic framework for resurrecting and modernizing legacy codebases through archaeology, resurrection, and rejuvenation phases. Activate on \"legacy code\", \"inherited codebase\", \"no documentation\", \"technical debt\", \"resurrect\", \"modernize\". NOT for greenfield projects or well-documented active codebases.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/code-necromancer/skill.md"
+    },
+    {
+      "name": "collage-layout-expert",
+      "description": "Expert in ALL computational collage composition: photo mosaics, grid layouts, scrapbook/journal styles, magazine editorial, vision boards, mood boards, social media collages, memory walls, abstract/generative arrangements, and art-historical techniques (Hockney joiners, Dadaist photomontage, Surrealist assemblage, Rauschenberg combines). Masters edge-based assembly, Poisson blending, optimal transport color harmonization, and aesthetic optimization. Activate on 'collage', 'photo mosaic', 'grid layout', 'scrapbook', 'vision board', 'mood board', 'photo wall', 'magazine layout', 'Hockney', 'joiner', 'photomontage'. NOT for simple image editing (use native-app-designer), generating new images (use Stability AI), single photo enhancement (use photo-composition-critic), or basic image similarity search (use clip-aware-embeddings).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/collage-layout-expert/skill.md"
+    },
+    {
+      "name": "color-theory-palette-harmony-expert",
+      "description": "Expert in color theory, palette harmony, and perceptual color science for computational photo composition. Specializes in earth-mover distance optimization, warm/cool alternation, diversity-aware palette selection, and hue-based photo sequencing. Activate on \"color palette\", \"color harmony\", \"warm cool\", \"earth mover distance\", \"Wasserstein\", \"LAB space\", \"hue sorted\", \"palette matching\". NOT for basic RGB manipulation (use standard image processing), single-photo color grading (use native-app-designer), UI color schemes (use vaporwave-glassomorphic-ui-designer), or color blindness simulation (accessibility specialists).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/color-theory-palette-harmony-expert/skill.md"
+    },
+    {
+      "name": "competitive-cartographer",
+      "description": "Strategic analyst that maps competitive landscapes, identifies white space opportunities, and provides positioning recommendations. Use when users need competitive analysis, market positioning strategy, differentiation tactics, or \"how do I stand out?\" guidance across any domain (portfolios, products, services). NOT for market size estimation or financial forecasting.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/competitive-cartographer/skill.md"
+    },
+    {
+      "name": "cv-creator",
+      "description": "Professional CV and resume builder transforming career narratives into ATS-optimized, multi-format resumes. Integrates with career-biographer for data and competitive-cartographer for positioning. Generates PDF, DOCX, LaTeX, JSON Resume, HTML, and Markdown. Activate on 'resume', 'CV', 'ATS optimization', 'job application'. NOT for cover letters, portfolio websites (use web-design-expert), LinkedIn optimization, or interview preparation.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/cv-creator/skill.md"
+    },
+    {
+      "name": "design-archivist",
+      "description": "Long-running design anthropologist that builds comprehensive visual databases from 500-1000 real-world examples, extracting color palettes, typography patterns, layout systems, and interaction design across any domain (portfolios, e-commerce, SaaS, adult content, technical showcases). This skill should be used when users need exhaustive design research, pattern recognition across large example sets, or systematic visual analysis for competitive positioning.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/design-archivist/skill.md"
+    },
+    {
+      "name": "design-system-creator",
+      "description": "Builds comprehensive design systems and design bibles with production-ready CSS. Expert in design tokens, component libraries, CSS architecture. Use for design system creation, token architecture, component documentation, style guide generation. Activate on \"design system\", \"design tokens\", \"CSS architecture\", \"component library\", \"style guide\", \"design bible\". NOT for typography deep-dives (use typography-expert), color theory mathematics (use color-theory-palette-harmony-expert), brand identity strategy (use web-design-expert), or actual UI implementation (use web-design-expert or native-app-designer).",
+      "category": null,
+      "tools": [],
+      "has_references": false,
+      "has_examples": false,
+      "path": ".claude/skills/design-system-creator/skill.md"
+    },
+    {
+      "name": "diagramming-expert",
+      "description": "Master of text-based visual communication using ASCII art, Unicode box-drawing, and structured diagram notation. Creates clear, maintainable diagrams for systems, processes, hierarchies, relationships, and psychological structures. Proactively generates diagrams to enhance understanding. Activate on 'diagram', 'visualize', 'flowchart', 'architecture diagram', 'process flow', 'decision tree', 'ASCII art', 'box drawing', 'psyche map', 'parts diagram'. NOT for image generation, graphic design, or rendered visualizations (use design tools).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/diagramming-expert/skill.md"
+    },
+    {
+      "name": "drone-cv-expert",
+      "description": "Expert in drone systems, computer vision, and autonomous navigation. Specializes in flight control, SLAM, object detection, sensor fusion, and path planning. Activate on \"drone\", \"UAV\", \"SLAM\", \"visual odometry\", \"PID control\", \"MAVLink\", \"Pixhawk\", \"path planning\", \"A*\", \"RRT\", \"EKF\", \"sensor fusion\", \"optical flow\", \"ByteTrack\". NOT for domain-specific inspection tasks like fire detection, roof damage assessment, or thermal analysis (use drone-inspection-specialist), GPU shader optimization (use metal-shader-expert), or general image classification without drone context (use clip-aware-embeddings).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/drone-cv-expert/skill.md"
+    },
+    {
+      "name": "drone-inspection-specialist",
+      "description": "Advanced CV for infrastructure inspection including forest fire detection, wildfire precondition assessment, roof inspection, hail damage analysis, thermal imaging, and 3D Gaussian Splatting reconstruction. Expert in multi-modal detection, insurance risk modeling, and reinsurance data pipelines. Activate on \"fire detection\", \"wildfire risk\", \"roof inspection\", \"hail damage\", \"thermal analysis\", \"Gaussian Splatting\", \"3DGS\", \"insurance inspection\", \"defensible space\", \"property assessment\", \"catastrophe modeling\", \"NDVI\", \"fuel load\". NOT for general drone flight control, SLAM, path planning, or sensor fusion (use drone-cv-expert), GPU shader development (use metal-shader-expert), or generic object detection without inspection context (use clip-aware-embeddings).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/drone-inspection-specialist/skill.md"
+    },
+    {
+      "name": "event-detection-temporal-intelligence-expert",
+      "description": "Expert in temporal event detection, spatio-temporal clustering (ST-DBSCAN), and photo context understanding. Use for detecting photo events, clustering by time/location, shareability prediction, place recognition, event significance scoring, and life event detection. Activate on \"event detection\", \"temporal clustering\", \"ST-DBSCAN\", \"spatio-temporal\", \"shareability prediction\", \"place recognition\", \"life events\", \"photo events\", \"temporal diversity\". NOT for individual photo aesthetic quality (use photo-composition-critic), color palette analysis (use color-theory-palette-harmony-expert), face recognition implementation (use photo-content-recognition-curation-expert), or basic EXIF timestamp extraction.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/event-detection-temporal-intelligence-expert/skill.md"
+    },
+    {
+      "name": "hr-network-analyst",
+      "description": "Professional network graph analyst identifying Gladwellian superconnectors, mavens, and influence brokers using betweenness centrality, structural holes theory, and multi-source network reconstruction. Activate on 'superconnectors', 'network analysis', 'who knows who', 'professional network', 'influence mapping', 'betweenness centrality'. NOT for surveillance, discrimination, stalking, privacy violation, or speculation without data.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/hr-network-analyst/skill.md"
+    },
+    {
+      "name": "hrv-alexithymia-expert",
+      "description": "Heart rate variability biometrics and emotional awareness training. Expert in HRV analysis, interoception training, biofeedback, and emotional intelligence. Activate on 'HRV', 'heart rate variability', 'alexithymia', 'biofeedback', 'vagal tone', 'interoception', 'RMSSD', 'autonomic nervous system'. NOT for general fitness tracking without HRV focus, simple heart rate monitoring, or diagnosing medical conditions (only licensed professionals diagnose).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/hrv-alexithymia-expert/skill.md"
+    },
+    {
+      "name": "indie-monetization-strategist",
+      "description": "Monetization strategies for indie developers, solopreneurs, and small teams. Covers freemium models, SaaS pricing, sponsorships, donations, email list building, and passive income for developer tools, content sites, and educational apps. Activate on 'monetization', 'make money', 'pricing', 'freemium', 'SaaS', 'sponsorship', 'donations', 'passive income', 'indie hacker'. NOT for enterprise sales, B2B outbound, VC fundraising, or large-scale advertising (use enterprise/marketing skills).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/indie-monetization-strategist/skill.md"
+    },
+    {
+      "name": "interior-design-expert",
+      "description": "Expert interior designer with deep knowledge of space planning, color theory (Munsell, NCS), lighting design (IES standards), furniture proportions, and AI-assisted visualization. Use for room layout optimization, lighting calculations, color palette selection for interiors, furniture placement, style consultation. Activate on \"interior design\", \"room layout\", \"lighting design\", \"furniture placement\", \"space planning\", \"Munsell color\". NOT for exterior/landscape design, architectural structure, web/UI design (use web-design-expert), brand color theory (use color-theory-palette-harmony-expert), or building codes/permits.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/interior-design-expert/skill.md"
+    },
+    {
+      "name": "job-application-optimizer",
+      "description": "Strategic job application planning and Resume SEO optimization. Approaches applications like marketing campaigns with market research, opportunity qualification, and content optimization. Activate on 'optimize resume', 'tailor resume', 'ATS optimization', 'job fit score', 'should I apply'. NOT for initial career narratives (career-biographer), portfolio design (cv-creator), or market positioning (competitive-cartographer).",
+      "category": null,
+      "tools": [],
+      "has_references": false,
+      "has_examples": false,
+      "path": ".claude/skills/job-application-optimizer/skill.md"
+    },
+    {
+      "name": "jungian-psychologist",
+      "description": "Expert in Jungian analytical psychology, depth psychology, shadow work, archetypal analysis, dream interpretation, active imagination, addiction/recovery through Jungian lens, and the individuation process - grounded in primary sources and clinical frameworks. Activate on 'Jung', 'Jungian', 'shadow work', 'archetypes', 'dream interpretation', 'active imagination', 'individuation', 'anima', 'animus', 'collective unconscious', 'addiction', 'recovery', 'spiritus contra spiritum'. NOT for therapy or diagnosis (only licensed analysts diagnose), active psychosis, severe dissociation, or replacing the relational container of actual Jungian analysis.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/jungian-psychologist/skill.md"
+    },
+    {
+      "name": "liaison",
+      "description": "Human interface agent that translates ecosystem activity into clear, actionable communication. Creates status briefings, decision requests, celebration reports, concern alerts, and opportunity summaries. Use for \"status update\", \"brief me\", \"what's happening\", \"summarize progress\", or when complex multi-agent work needs human-readable reporting.",
+      "category": null,
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Bash",
+        "TodoWrite",
+        "WebSearch"
+      ],
+      "has_references": false,
+      "has_examples": false,
+      "path": ".claude/skills/liaison/skill.md"
+    },
+    {
+      "name": "metal-shader-expert",
+      "description": "20 years Weta/Pixar experience in real-time graphics, Metal shaders, and visual effects. Expert in MSL shaders, PBR rendering, tile-based deferred rendering (TBDR), and GPU debugging. Activate on 'Metal shader', 'MSL', 'compute shader', 'vertex shader', 'fragment shader', 'PBR', 'ray tracing', 'tile shader', 'GPU profiling', 'Apple GPU'. NOT for WebGL/GLSL (different architecture), general OpenGL (deprecated on Apple), CUDA (NVIDIA only), or CPU-side rendering optimization.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/metal-shader-expert/skill.md"
+    },
+    {
+      "name": "native-app-designer",
+      "description": "Creates breathtaking iOS/Mac and web apps with organic, non-AI aesthetic. Expert in SwiftUI, React animations, physics-based motion, and human-crafted design. Use for iOS/Mac app UI, React/Vue animations, native-feel web apps, physics-based motion design. Activate on \"SwiftUI\", \"iOS app\", \"native app\", \"React animation\", \"motion design\", \"UIKit\", \"physics animation\". NOT for backend logic, API design (use backend-architect), simple static sites (use web-design-expert), or pure graphic design (use design-system-creator).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/native-app-designer/skill.md"
+    },
+    {
+      "name": "orchestrator",
+      "description": "Master coordinator that delegates to specialist skills, synthesizes outputs, AND creates new skills on-the-fly when needed. Expert in problem decomposition, skill orchestration, quality assurance, and skill creation for capability gaps. Use for multi-skill coordination, complex task decomposition, workflow design. Activates on \"orchestrate\", \"coordinate\", \"multi-skill\", \"complex task\". NOT for single-domain tasks or simple linear workflows.",
+      "category": null,
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "TodoWrite",
+        "mcp__SequentialThinking__sequentialthinking",
+        "mcp__firecrawl__firecrawl_search",
+        "Skill(skill-coach)",
+        "Skill(agent-creator)",
+        "Skill(team-builder)"
+      ],
+      "has_references": false,
+      "has_examples": false,
+      "path": ".claude/skills/orchestrator/skill.md"
+    },
+    {
+      "name": "personal-finance-coach",
+      "description": "Expert personal finance coach with deep knowledge of tax optimization, investment theory (MPT, factor investing), retirement mathematics (Trinity Study, SWR research), and wealth-building strategies grounded in academic research. Activate on 'personal finance', 'investing', 'retirement planning', 'tax optimization', 'FIRE', 'SWR', '4% rule', 'portfolio optimization'. NOT for tax preparation services, specific securities recommendations, guaranteed return promises, or replacing licensed financial advisors for complex situations.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/personal-finance-coach/skill.md"
+    },
+    {
+      "name": "photo-composition-critic",
+      "description": "Expert photography composition critic grounded in graduate-level visual aesthetics education, computational aesthetics research (AVA, NIMA, LAION-Aesthetics, VisualQuality-R1), and professional image analysis with custom tooling. Use for image quality assessment, composition analysis, aesthetic scoring, photo critique. Activate on \"photo critique\", \"composition analysis\", \"image aesthetics\", \"NIMA\", \"AVA dataset\", \"visual quality\". NOT for photo editing/retouching (use native-app-designer), generating images (use Stability AI directly), or basic image processing (use clip-aware-embeddings).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/photo-composition-critic/skill.md"
+    },
+    {
+      "name": "photo-content-recognition-curation-expert",
+      "description": "Expert in photo content recognition, intelligent curation, and quality filtering. Specializes in face/animal/place recognition, perceptual hashing for de-duplication, screenshot/meme detection, burst photo selection, and quick indexing strategies. Activate on \"face recognition\", \"face clustering\", \"perceptual hash\", \"near-duplicate\", \"burst photo\", \"screenshot detection\", \"photo curation\", \"photo indexing\", \"NSFW detection\", \"pet recognition\", \"DINOHash\", \"HDBSCAN faces\". NOT for GPS-based location clustering (use event-detection-temporal-intelligence-expert), color palette extraction (use color-theory-palette-harmony-expert), semantic image-text matching (use clip-aware-embeddings), or video analysis/frame extraction.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/photo-content-recognition-curation-expert/skill.md"
+    },
+    {
+      "name": "physics-rendering-expert",
+      "description": "Real-time rope/cable physics using Position-Based Dynamics (PBD), Verlet integration, and constraint solvers. Expert in quaternion math, Gauss-Seidel/Jacobi solvers, and tangling detection. Activate on 'rope simulation', 'PBD', 'Position-Based Dynamics', 'Verlet', 'constraint solver', 'quaternion', 'cable dynamics', 'cloth simulation', 'leash physics'. NOT for fluid dynamics (SPH/MPM), fracture simulation (FEM), offline cinematic physics, molecular dynamics, or general game physics engines (use Unity/Unreal built-ins).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/physics-rendering-expert/skill.md"
+    },
+    {
+      "name": "project-management-guru-adhd",
+      "description": "Expert project manager for ADHD engineers managing multiple concurrent projects. Specializes in hyperfocus management, context-switching minimization, and parakeet-style gentle reminders. Activate on 'ADHD project management', 'context switching', 'hyperfocus', 'task prioritization', 'multiple projects', 'productivity for ADHD', 'task chunking', 'deadline management'. NOT for neurotypical project management, rigid waterfall processes, or general productivity advice without ADHD context.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/project-management-guru-adhd/skill.md"
+    },
+    {
+      "name": "research-analyst",
+      "description": "Conducts thorough landscape research, competitive analysis, best practices evaluation, and evidence-based recommendations. Expert in market research and trend analysis.",
+      "category": null,
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "mcp__firecrawl__firecrawl_search",
+        "mcp__firecrawl__firecrawl_scrape",
+        "mcp__firecrawl__firecrawl_map",
+        "mcp__brave-search__brave_web_search",
+        "WebFetch",
+        "mcp__SequentialThinking__sequentialthinking"
+      ],
+      "has_references": false,
+      "has_examples": false,
+      "path": ".claude/skills/research-analyst/skill.md"
+    },
+    {
+      "name": "seo-visibility-expert",
+      "description": "Comprehensive SEO, discoverability, and AI crawler optimization for web projects. Use for technical SEO audits, llms.txt/robots.txt setup, schema markup, social launch strategies (Product Hunt, HN, Reddit), and Answer Engine Optimization (AEO). Activate on 'SEO', 'discoverability', 'llms.txt', 'robots.txt', 'Product Hunt', 'launch strategy', 'get traffic', 'be found', 'search ranking'. NOT for paid advertising, PPC campaigns, or social media content creation (use marketing skills).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/seo-visibility-expert/skill.md"
+    },
+    {
+      "name": "site-reliability-engineer",
+      "description": "Docusaurus build health validation and deployment safety for Claude Skills showcase. Pre-commit MDX validation (Liquid syntax, angle brackets, prop mismatches), pre-build link checking, post-build health reports. Activate on 'build errors', 'commit hooks', 'deployment safety', 'site health', 'MDX validation'. NOT for general DevOps (use deployment-engineer), Kubernetes/cloud infrastructure (use kubernetes-architect), runtime monitoring (use observability-engineer), or non-Docusaurus projects.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/site-reliability-engineer/skill.md"
+    },
+    {
+      "name": "skill-coach",
+      "description": "Guides creation of high-quality Agent Skills with domain expertise, anti-pattern detection, and progressive disclosure best practices. Activate on keywords: create skill, review skill, skill quality, skill best practices, skill anti-patterns, improve skill, skill audit. NOT for general coding advice, slash commands, MCP development, or non-skill Claude Code features.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": true,
+      "path": ".claude/skills/skill-coach/skill.md"
+    },
+    {
+      "name": "skill-documentarian",
+      "description": "Documentation expert for Claude Skills showcase website. Maintains skill-to-website sync, manages tag taxonomy and badges, creates blog-style artifacts, and preserves multi-skill collaborations for posterity. Activate on 'document', 'sync skills', 'create artifact', 'validate skills', 'add tags', 'tag management', 'badge', 'metadata'. NOT for code implementation (use domain skills), design creation (use web-design-expert), testing (use test-automator), or project planning (use orchestrator).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/skill-documentarian/skill.md"
+    },
+    {
+      "name": "sound-engineer",
+      "description": "Expert in spatial audio, procedural sound design, game audio middleware, and app UX sound design. Specializes in HRTF/Ambisonics, Wwise/FMOD integration, UI sound design, and adaptive music systems. Activate on 'spatial audio', 'HRTF', 'binaural', 'Wwise', 'FMOD', 'procedural sound', 'footstep system', 'adaptive music', 'UI sounds', 'notification audio', 'sonic branding'. NOT for music composition/production (use DAW), audio post-production for film (linear media), voice cloning/TTS (use voice-audio-engineer), podcast editing (use standard audio editors), or hardware design.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/sound-engineer/skill.md"
+    },
+    {
+      "name": "speech-pathology-ai",
+      "description": "Expert speech-language pathologist specializing in AI-powered speech therapy, phoneme analysis, articulation visualization, voice disorders, fluency intervention, and assistive communication technology. Activate on 'speech therapy', 'articulation', 'phoneme analysis', 'voice disorder', 'fluency', 'stuttering', 'AAC', 'pronunciation', 'speech recognition', 'mellifluo.us'. NOT for general audio processing, music production, or voice acting coaching without clinical context.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/speech-pathology-ai/skill.md"
+    },
+    {
+      "name": "swift-executor",
+      "description": "Rapid task execution without hesitation or deterrence. Expert in overcoming blockers, making quick decisions, and maintaining forward momentum. Use for urgent tasks, breaking through impediments, decisive action. Activates on \"swift\", \"execute quickly\", \"undeterred\", \"overcome blocker\", \"just do it\". NOT for strategic planning, careful analysis, or research tasks.",
+      "category": null,
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Bash",
+        "Glob",
+        "Grep",
+        "TodoWrite"
+      ],
+      "has_references": false,
+      "has_examples": false,
+      "path": ".claude/skills/swift-executor/skill.md"
+    },
+    {
+      "name": "team-builder",
+      "description": "Designs high-performing team structures using organizational psychology AND creates new skills on-the-fly when team needs unmet expertise. Expert in team composition, personality balancing, collaboration ritual design, and skill creation for missing capabilities. Use for team design, role definition, skill gap identification. Activates on \"team building\", \"team composition\", \"skills needed\", \"what skills\". NOT for general project management or solo work planning.",
+      "category": null,
+      "tools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "mcp__firecrawl__firecrawl_search",
+        "mcp__brave-search__brave_web_search",
+        "WebFetch",
+        "mcp__SequentialThinking__sequentialthinking",
+        "Skill(skill-coach)",
+        "Skill(agent-creator)"
+      ],
+      "has_references": false,
+      "has_examples": false,
+      "path": ".claude/skills/team-builder/skill.md"
+    },
+    {
+      "name": "tech-entrepreneur-coach-adhd",
+      "description": "Big tech ML engineer to indie founder transition coach. Expert in idea validation, MVP development, marketing, monetization, and sustainable growth for ADHD entrepreneurs. Activate on 'entrepreneur', 'indie founder', 'startup', 'MVP', 'monetization', 'big tech to indie', 'ADHD business', 'app launch', 'side project'. NOT for neurotypical entrepreneurship, VC-backed startups, or traditional business consulting without ADHD context.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/tech-entrepreneur-coach-adhd/skill.md"
+    },
+    {
+      "name": "typography-expert",
+      "description": "Master typographer specializing in font pairing, typographic hierarchy, OpenType features, variable fonts, and performance-optimized web typography. Use for font selection, type scales, web font optimization, and typographic systems. Activate on \"typography\", \"font pairing\", \"type scale\", \"variable fonts\", \"web fonts\", \"OpenType\", \"font loading\". NOT for logo design, icon fonts, general CSS styling, or image-based typography.",
+      "category": null,
+      "tools": [],
+      "has_references": false,
+      "has_examples": false,
+      "path": ".claude/skills/typography-expert/skill.md"
+    },
+    {
+      "name": "vaporwave-glassomorphic-ui-designer",
+      "description": "Expert in creating modern, aesthetic UI designs blending vaporwave nostalgia with glassomorphic elegance for photo/memory applications. Masters SwiftUI Material effects, neon pastel color palettes, frosted glass blur techniques, and retro-futuristic design principles. Specializes in creating emotionally resonant interfaces for photo collage apps with dark mode support, accessibility-first design, and GPU-accelerated Metal shader effects. Deep knowledge of 2025 UI trends (glassmorphism, neubrutalism, Y2K revival), iOS Human Interface Guidelines, and creating delightful micro-interactions. Bridges computational aesthetics with human emotional connection through thoughtful color theory, typography, and spatial design. Use for iOS/Mac photo apps, vaporwave-themed UI, glassmorphic components, neon/retro aesthetics. Activate on \"vaporwave\", \"glassmorphism\", \"SwiftUI design\", \"frosted glass\", \"neon aesthetic\", \"retro-futuristic\", \"Y2K design\". NOT for backend logic, API design (use backend-architect), Windows 3.1 authentic retro (use windows-3-1-web-designer), generic web design (use web-design-expert), or non-photo app UI (use native-app-designer).",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/vaporwave-glassomorphic-ui-designer/skill.md"
+    },
+    {
+      "name": "vibe-matcher",
+      "description": "Synesthete designer that translates emotional vibes and brand keywords into concrete visual DNA (colors, typography, layouts, interactions). Use when users describe desired \"feel\" (edgy, trustworthy, premium, playful, minimal) and need specific design specifications. NOT for technical implementation or coding.",
+      "category": null,
+      "tools": [],
+      "has_references": false,
+      "has_examples": false,
+      "path": ".claude/skills/vibe-matcher/skill.md"
+    },
+    {
+      "name": "voice-audio-engineer",
+      "description": "Expert in voice synthesis, TTS, voice cloning, podcast production, speech processing, and voice UI design via ElevenLabs integration. Specializes in vocal clarity, loudness standards (LUFS), de-essing, dialogue mixing, and voice transformation. Activate on 'TTS', 'text-to-speech', 'voice clone', 'voice synthesis', 'ElevenLabs', 'podcast', 'voice recording', 'speech-to-speech', 'voice UI', 'audiobook', 'dialogue'. NOT for spatial audio (use sound-engineer), music production (use DAW tools), game audio middleware (use sound-engineer), sound effects generation (use sound-engineer with ElevenLabs SFX), or live concert audio.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/voice-audio-engineer/skill.md"
+    },
+    {
+      "name": "vr-avatar-engineer",
+      "description": "Expert in photorealistic and stylized VR avatar systems for Apple Vision Pro, Meta Quest, and cross-platform metaverse. Specializes in facial tracking (52+ blend shapes), subsurface scattering, Persona-style generation, Photon networking, and real-time LOD. Activate on 'VR avatar', 'Vision Pro Persona', 'Meta avatar', 'facial tracking', 'blend shapes', 'avatar networking', 'photorealistic avatar'. NOT for 2D profile pictures (use image generation), non-VR game characters (use game engine tools), static 3D models (use modeling tools), or motion capture hardware setup.",
+      "category": null,
+      "tools": [],
+      "has_references": false,
+      "has_examples": false,
+      "path": ".claude/skills/vr-avatar-engineer/skill.md"
+    },
+    {
+      "name": "web-design-expert",
+      "description": "Creates unique web designs with brand identity, color palettes, typography, and modern UI/UX patterns. Use for brand identity development, visual design systems, layout composition, and responsive web design. Activate on \"web design\", \"brand identity\", \"color palette\", \"UI design\", \"visual design\", \"layout\". NOT for typography details (use typography-expert), color theory deep-dives (use color-theory-expert), design system tokens (use design-system-creator), or code implementation without design direction.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/web-design-expert/skill.md"
+    },
+    {
+      "name": "windows-3-1-web-designer",
+      "description": "Expert in authentic Windows 3.1 aesthetic for modern web applications. Creates pixel-perfect retro UI with beveled borders, system gray palettes, and program manager styling. Activate on 'windows 3.1', 'retro ui', 'beveled borders', 'win31', 'program manager', '90s aesthetic'. NOT for vaporwave (neon gradients), glassmorphism, macOS/iOS styling, flat design, or material design.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/windows-3-1-web-designer/skill.md"
+    },
+    {
+      "name": "wisdom-accountability-coach",
+      "description": "Longitudinal memory tracking, philosophy teaching, and personal accountability with compassion. Expert in pattern recognition, Stoicism/Buddhism, and growth guidance. Activate on 'accountability', 'philosophy', 'Stoicism', 'Buddhism', 'personal growth', 'commitment tracking', 'wisdom teaching'. NOT for therapy or mental health treatment (refer to professionals), crisis intervention, or replacing professional coaching credentials.",
+      "category": null,
+      "tools": [],
+      "has_references": true,
+      "has_examples": false,
+      "path": ".claude/skills/wisdom-accountability-coach/skill.md"
+    }
+  ],
+  "tool_usage": {
+    "Read": 14,
+    "Write": 14,
+    "Edit": 14,
+    "Glob": 14,
+    "Grep": 14,
+    "TodoWrite": 12,
+    "Bash": 11,
+    "WebFetch": 11,
+    "WebSearch": 10,
+    "Task": 9,
+    "mcp__SequentialThinking__sequentialthinking": 3,
+    "mcp__firecrawl__firecrawl_search": 3,
+    "Skill(skill-coach)": 2,
+    "Skill(agent-creator)": 2,
+    "mcp__brave-search__brave_web_search": 2,
+    "Skill(team-builder)": 1,
+    "mcp__firecrawl__firecrawl_scrape": 1,
+    "mcp__firecrawl__firecrawl_map": 1
+  },
+  "capability_graph": {
+    "nodes": [
+      {
+        "id": "agent:architect",
+        "type": "agent",
+        "label": "architect",
+        "role": "Meta-Orchestrator of Combinatorial Genius"
+      },
+      {
+        "id": "agent:archivist",
+        "type": "agent",
+        "label": "archivist",
+        "role": "Keeper of History and Documentation"
+      },
+      {
+        "id": "agent:cartographer",
+        "type": "agent",
+        "label": "cartographer",
+        "role": "Explorer of Adjacent Knowledge Space"
+      },
+      {
+        "id": "agent:liaison",
+        "type": "agent",
+        "label": "liaison",
+        "role": "Human Interface and Informant"
+      },
+      {
+        "id": "agent:librarian",
+        "type": "agent",
+        "label": "librarian",
+        "role": "Content Curator with Rights Awareness"
+      },
+      {
+        "id": "agent:scout",
+        "type": "agent",
+        "label": "scout",
+        "role": "External Intelligence Gatherer"
+      },
+      {
+        "id": "agent:smith",
+        "type": "agent",
+        "label": "smith",
+        "role": "Builder of Infrastructure"
+      },
+      {
+        "id": "agent:visualizer",
+        "type": "agent",
+        "label": "visualizer",
+        "role": "Builder of Portals"
+      },
+      {
+        "id": "agent:weaver",
+        "type": "agent",
+        "label": "weaver",
+        "role": "RAG Specialist"
+      },
+      {
+        "id": "skill:2000s-visualization-expert",
+        "type": "skill",
+        "label": "2000s-visualization-expert",
+        "category": null
+      },
+      {
+        "id": "skill:adhd-design-expert",
+        "type": "skill",
+        "label": "adhd-design-expert",
+        "category": null
+      },
+      {
+        "id": "skill:agent-creator",
+        "type": "skill",
+        "label": "agent-creator",
+        "category": null
+      },
+      {
+        "id": "skill:automatic-stateful-prompt-improver",
+        "type": "skill",
+        "label": "automatic-stateful-prompt-improver",
+        "category": null
+      },
+      {
+        "id": "skill:bot-developer",
+        "type": "skill",
+        "label": "bot-developer",
+        "category": null
+      },
+      {
+        "id": "skill:career-biographer",
+        "type": "skill",
+        "label": "career-biographer",
+        "category": null
+      },
+      {
+        "id": "skill:clip-aware-embeddings",
+        "type": "skill",
+        "label": "clip-aware-embeddings",
+        "category": null
+      },
+      {
+        "id": "skill:code-necromancer",
+        "type": "skill",
+        "label": "code-necromancer",
+        "category": null
+      },
+      {
+        "id": "skill:collage-layout-expert",
+        "type": "skill",
+        "label": "collage-layout-expert",
+        "category": null
+      },
+      {
+        "id": "skill:color-theory-palette-harmony-expert",
+        "type": "skill",
+        "label": "color-theory-palette-harmony-expert",
+        "category": null
+      },
+      {
+        "id": "skill:competitive-cartographer",
+        "type": "skill",
+        "label": "competitive-cartographer",
+        "category": null
+      },
+      {
+        "id": "skill:cv-creator",
+        "type": "skill",
+        "label": "cv-creator",
+        "category": null
+      },
+      {
+        "id": "skill:design-archivist",
+        "type": "skill",
+        "label": "design-archivist",
+        "category": null
+      },
+      {
+        "id": "skill:design-system-creator",
+        "type": "skill",
+        "label": "design-system-creator",
+        "category": null
+      },
+      {
+        "id": "skill:diagramming-expert",
+        "type": "skill",
+        "label": "diagramming-expert",
+        "category": null
+      },
+      {
+        "id": "skill:drone-cv-expert",
+        "type": "skill",
+        "label": "drone-cv-expert",
+        "category": null
+      },
+      {
+        "id": "skill:drone-inspection-specialist",
+        "type": "skill",
+        "label": "drone-inspection-specialist",
+        "category": null
+      },
+      {
+        "id": "skill:event-detection-temporal-intelligence-expert",
+        "type": "skill",
+        "label": "event-detection-temporal-intelligence-expert",
+        "category": null
+      },
+      {
+        "id": "skill:hr-network-analyst",
+        "type": "skill",
+        "label": "hr-network-analyst",
+        "category": null
+      },
+      {
+        "id": "skill:hrv-alexithymia-expert",
+        "type": "skill",
+        "label": "hrv-alexithymia-expert",
+        "category": null
+      },
+      {
+        "id": "skill:indie-monetization-strategist",
+        "type": "skill",
+        "label": "indie-monetization-strategist",
+        "category": null
+      },
+      {
+        "id": "skill:interior-design-expert",
+        "type": "skill",
+        "label": "interior-design-expert",
+        "category": null
+      },
+      {
+        "id": "skill:job-application-optimizer",
+        "type": "skill",
+        "label": "job-application-optimizer",
+        "category": null
+      },
+      {
+        "id": "skill:jungian-psychologist",
+        "type": "skill",
+        "label": "jungian-psychologist",
+        "category": null
+      },
+      {
+        "id": "skill:liaison",
+        "type": "skill",
+        "label": "liaison",
+        "category": null
+      },
+      {
+        "id": "skill:metal-shader-expert",
+        "type": "skill",
+        "label": "metal-shader-expert",
+        "category": null
+      },
+      {
+        "id": "skill:native-app-designer",
+        "type": "skill",
+        "label": "native-app-designer",
+        "category": null
+      },
+      {
+        "id": "skill:orchestrator",
+        "type": "skill",
+        "label": "orchestrator",
+        "category": null
+      },
+      {
+        "id": "skill:personal-finance-coach",
+        "type": "skill",
+        "label": "personal-finance-coach",
+        "category": null
+      },
+      {
+        "id": "skill:photo-composition-critic",
+        "type": "skill",
+        "label": "photo-composition-critic",
+        "category": null
+      },
+      {
+        "id": "skill:photo-content-recognition-curation-expert",
+        "type": "skill",
+        "label": "photo-content-recognition-curation-expert",
+        "category": null
+      },
+      {
+        "id": "skill:physics-rendering-expert",
+        "type": "skill",
+        "label": "physics-rendering-expert",
+        "category": null
+      },
+      {
+        "id": "skill:project-management-guru-adhd",
+        "type": "skill",
+        "label": "project-management-guru-adhd",
+        "category": null
+      },
+      {
+        "id": "skill:research-analyst",
+        "type": "skill",
+        "label": "research-analyst",
+        "category": null
+      },
+      {
+        "id": "skill:seo-visibility-expert",
+        "type": "skill",
+        "label": "seo-visibility-expert",
+        "category": null
+      },
+      {
+        "id": "skill:site-reliability-engineer",
+        "type": "skill",
+        "label": "site-reliability-engineer",
+        "category": null
+      },
+      {
+        "id": "skill:skill-coach",
+        "type": "skill",
+        "label": "skill-coach",
+        "category": null
+      },
+      {
+        "id": "skill:skill-documentarian",
+        "type": "skill",
+        "label": "skill-documentarian",
+        "category": null
+      },
+      {
+        "id": "skill:sound-engineer",
+        "type": "skill",
+        "label": "sound-engineer",
+        "category": null
+      },
+      {
+        "id": "skill:speech-pathology-ai",
+        "type": "skill",
+        "label": "speech-pathology-ai",
+        "category": null
+      },
+      {
+        "id": "skill:swift-executor",
+        "type": "skill",
+        "label": "swift-executor",
+        "category": null
+      },
+      {
+        "id": "skill:team-builder",
+        "type": "skill",
+        "label": "team-builder",
+        "category": null
+      },
+      {
+        "id": "skill:tech-entrepreneur-coach-adhd",
+        "type": "skill",
+        "label": "tech-entrepreneur-coach-adhd",
+        "category": null
+      },
+      {
+        "id": "skill:typography-expert",
+        "type": "skill",
+        "label": "typography-expert",
+        "category": null
+      },
+      {
+        "id": "skill:vaporwave-glassomorphic-ui-designer",
+        "type": "skill",
+        "label": "vaporwave-glassomorphic-ui-designer",
+        "category": null
+      },
+      {
+        "id": "skill:vibe-matcher",
+        "type": "skill",
+        "label": "vibe-matcher",
+        "category": null
+      },
+      {
+        "id": "skill:voice-audio-engineer",
+        "type": "skill",
+        "label": "voice-audio-engineer",
+        "category": null
+      },
+      {
+        "id": "skill:vr-avatar-engineer",
+        "type": "skill",
+        "label": "vr-avatar-engineer",
+        "category": null
+      },
+      {
+        "id": "skill:web-design-expert",
+        "type": "skill",
+        "label": "web-design-expert",
+        "category": null
+      },
+      {
+        "id": "skill:windows-3-1-web-designer",
+        "type": "skill",
+        "label": "windows-3-1-web-designer",
+        "category": null
+      },
+      {
+        "id": "skill:wisdom-accountability-coach",
+        "type": "skill",
+        "label": "wisdom-accountability-coach",
+        "category": null
+      }
+    ],
+    "edges": [
+      {
+        "from": "agent:architect",
+        "to": "agent:smith",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:architect",
+        "to": "agent:cartographer",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:architect",
+        "to": "agent:weaver",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:architect",
+        "to": "agent:librarian",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:architect",
+        "to": "agent:scout",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:architect",
+        "to": "agent:visualizer",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:architect",
+        "to": "agent:archivist",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:architect",
+        "to": "agent:liaison",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:archivist",
+        "to": "agent:liaison",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:archivist",
+        "to": "agent:cartographer",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:archivist",
+        "to": "agent:visualizer",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:cartographer",
+        "to": "agent:architect",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:cartographer",
+        "to": "agent:scout",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:cartographer",
+        "to": "agent:liaison",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:cartographer",
+        "to": "agent:librarian",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:liaison",
+        "to": "agent:archivist",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:liaison",
+        "to": "agent:cartographer",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:liaison",
+        "to": "agent:architect",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:liaison",
+        "to": "agent:all-agents",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:librarian",
+        "to": "agent:weaver",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:librarian",
+        "to": "agent:scout",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:librarian",
+        "to": "agent:archivist",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:scout",
+        "to": "agent:cartographer",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:scout",
+        "to": "agent:librarian",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:scout",
+        "to": "agent:liaison",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:smith",
+        "to": "agent:architect",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:smith",
+        "to": "agent:visualizer",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:smith",
+        "to": "agent:weaver",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:visualizer",
+        "to": "agent:smith",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:visualizer",
+        "to": "agent:archivist",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:visualizer",
+        "to": "agent:cartographer",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:weaver",
+        "to": "agent:librarian",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:weaver",
+        "to": "agent:smith",
+        "type": "coordinates_with"
+      },
+      {
+        "from": "agent:weaver",
+        "to": "agent:architect",
+        "type": "coordinates_with"
+      }
+    ]
+  }
+}

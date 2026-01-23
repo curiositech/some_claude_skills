@@ -1,0 +1,121 @@
+{
+  "id": "skill-coach-001-self-improvement",
+  "title": "Skill-Coach Improves Itself: 5 Iterations of Meta-Improvement",
+  "description": "The skill-coach demonstrates its own principles by improving itself through 5 iterations. Shows progressive disclosure, anti-pattern detection, and the improvement loop it teaches. The ultimate meta-demonstration: a skill using its own guidance to become better.",
+  "type": "single-skill",
+  "skills": [
+    {
+      "name": "skill_coach",
+      "role": "Guided its own improvement through 5 iterations, applying anti-pattern detection, progressive disclosure, and temporal knowledge capture to itself"
+    }
+  ],
+  "category": "meta",
+  "tags": [
+    "meta-programming",
+    "self-improvement",
+    "progressive-disclosure",
+    "anti-patterns",
+    "skill-creation",
+    "iteration",
+    "validation"
+  ],
+  "difficulty": "advanced",
+  "phases": [
+    {
+      "name": "Iteration 1: Foundation",
+      "skills": ["skill_coach"],
+      "duration": "1 iteration",
+      "outcome": "Added 5 skill-specific anti-patterns, Evolution Timeline, Skill Review Checklist, removed non-existent file references"
+    },
+    {
+      "name": "Iteration 2: Actionability",
+      "skills": ["skill_coach"],
+      "duration": "1 iteration",
+      "outcome": "Added 3 Common Workflows, actionable iteration strategy, tool permission explanations"
+    },
+    {
+      "name": "Iteration 3: Expert Knowledge",
+      "skills": ["skill_coach"],
+      "duration": "1 iteration",
+      "outcome": "Added Skill Creation Shibboleths (novice vs expert), enhanced 'What Makes a Great Skill' from 5 to 7 items"
+    },
+    {
+      "name": "Iteration 4: Usability",
+      "skills": ["skill_coach"],
+      "duration": "1 iteration",
+      "outcome": "Added Quick Wins section, simplified structure, description progression (Bad→Better→Good)"
+    },
+    {
+      "name": "Iteration 5: Decision Support",
+      "skills": ["skill_coach"],
+      "duration": "1 iteration",
+      "outcome": "Added Decision Trees (when to create skill, Skill vs Subagent vs MCP), prioritized checklist"
+    }
+  ],
+  "outcome": {
+    "summary": "Successfully improved skill-coach through 5 iterations, reducing line count from 482 to 470 while becoming more comprehensive. Achieved 0 validation errors, demonstrating the improvement loop the skill teaches.",
+    "metrics": [
+      {
+        "label": "Starting Lines",
+        "value": "482"
+      },
+      {
+        "label": "Final Lines",
+        "value": "470"
+      },
+      {
+        "label": "Iterations",
+        "value": "5"
+      },
+      {
+        "label": "Validation Errors",
+        "value": "0"
+      },
+      {
+        "label": "Files Updated",
+        "value": "7"
+      },
+      {
+        "label": "Anti-Patterns Added",
+        "value": "5"
+      },
+      {
+        "label": "Decision Trees Added",
+        "value": "3"
+      }
+    ],
+    "learned": [
+      "Progressive disclosure works: 482→470 lines but MORE comprehensive",
+      "Meta-skills can improve themselves using their own guidance",
+      "Each iteration should have a clear focus (Foundation, Actionability, Expert Knowledge, Usability, Decision Support)",
+      "Anti-patterns are more valuable than templates",
+      "Temporal knowledge prevents LLMs from suggesting outdated patterns",
+      "Quick wins provide immediate value",
+      "Prioritized checklists (CRITICAL/HIGH/NICE) are more actionable than flat lists",
+      "Decision trees prevent overengineering"
+    ]
+  },
+  "files": {
+    "transcript": "transcript.md",
+    "before": [
+      "before/SKILL-iteration-0.md",
+      "before/README-iteration-0.md",
+      "before/OVERVIEW-iteration-0.md"
+    ],
+    "after": [
+      "after/SKILL.md",
+      "after/README.md",
+      "after/OVERVIEW.md",
+      "after/references/mcp_vs_scripts.md"
+    ],
+    "assets": [
+      "assets/iteration-timeline.svg",
+      "assets/validation-before.png",
+      "assets/validation-after.png",
+      "assets/line-count-reduction.png"
+    ]
+  },
+  "createdAt": "2024-11-24T23:00:00Z",
+  "featured": true,
+  "viewCount": 0
+}

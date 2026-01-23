@@ -1,0 +1,216 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2025-01-XX",
+  "generator": "cartographer",
+  "expansion_targets": [
+    {
+      "rank": 1,
+      "name": "security-auditor",
+      "domain": "security",
+      "score": 0.84,
+      "rationale": "Critical gap - no security skills exist. High demand for OWASP compliance.",
+      "implementation_notes": [
+        "Integrate OWASP dependency check",
+        "Add secret scanning patterns",
+        "Include SAST for common vulnerabilities",
+        "Provide security posture reporting"
+      ],
+      "adjacencies": ["code-review", "ci-cd-specialist"],
+      "estimated_effort": "medium",
+      "priority": "immediate"
+    },
+    {
+      "rank": 2,
+      "name": "test-automation-expert",
+      "domain": "qa",
+      "score": 0.84,
+      "rationale": "QA domain severely underserved. Test strategy and automation are major friction points.",
+      "implementation_notes": [
+        "Test strategy generation based on project type",
+        "Framework selection guidance",
+        "Coverage analysis and optimization",
+        "CI/CD integration patterns"
+      ],
+      "adjacencies": ["code-review", "ci-cd-specialist", "playwright"],
+      "estimated_effort": "medium",
+      "priority": "immediate"
+    },
+    {
+      "rank": 3,
+      "name": "audio-transcription-expert",
+      "domain": "ai-ml",
+      "score": 0.82,
+      "rationale": "Whisper integration is straightforward. High demand for meeting notes and podcast processing.",
+      "implementation_notes": [
+        "Whisper model integration",
+        "Speaker diarization",
+        "Timestamp generation",
+        "Multiple output formats"
+      ],
+      "adjacencies": ["llm-application-design", "technical-writer"],
+      "estimated_effort": "low",
+      "priority": "near-term"
+    },
+    {
+      "rank": 4,
+      "name": "backend-architect",
+      "domain": "backend",
+      "score": 0.82,
+      "rationale": "Backend domain needs architecture guidance. API design and microservices patterns in high demand.",
+      "implementation_notes": [
+        "API design patterns (REST, GraphQL)",
+        "Database schema guidance",
+        "Microservices decomposition strategies",
+        "Event-driven architecture patterns"
+      ],
+      "adjacencies": ["api-design", "database-expert", "nodejs-specialist"],
+      "estimated_effort": "medium",
+      "priority": "immediate"
+    },
+    {
+      "rank": 5,
+      "name": "kubernetes-operator",
+      "domain": "devops",
+      "score": 0.78,
+      "rationale": "K8s is ubiquitous but complex. Manifest generation and troubleshooting highly valued.",
+      "implementation_notes": [
+        "Manifest generation and validation",
+        "Helm chart patterns",
+        "Troubleshooting decision trees",
+        "Security context configuration"
+      ],
+      "adjacencies": ["docker-expert", "ci-cd-specialist", "terraform-expert"],
+      "estimated_effort": "high",
+      "priority": "near-term"
+    },
+    {
+      "rank": 6,
+      "name": "graphql-specialist",
+      "domain": "backend",
+      "score": 0.76,
+      "rationale": "GraphQL adoption growing. Schema design and performance optimization needed.",
+      "implementation_notes": [
+        "Schema design patterns",
+        "Resolver implementation",
+        "N+1 query prevention",
+        "Federation and stitching"
+      ],
+      "adjacencies": ["api-design", "backend-architect", "typescript-pro"],
+      "estimated_effort": "medium",
+      "priority": "near-term"
+    },
+    {
+      "rank": 7,
+      "name": "terraform-expert",
+      "domain": "devops",
+      "score": 0.75,
+      "rationale": "IaC is fundamental for modern infrastructure. Module patterns and state management critical.",
+      "implementation_notes": [
+        "Module design patterns",
+        "State management strategies",
+        "Multi-cloud configurations",
+        "Cost optimization techniques"
+      ],
+      "adjacencies": ["kubernetes-operator", "ci-cd-specialist"],
+      "estimated_effort": "medium",
+      "priority": "near-term"
+    },
+    {
+      "rank": 8,
+      "name": "mlops-specialist",
+      "domain": "ai-ml",
+      "score": 0.74,
+      "rationale": "Production ML is complex. Pipeline design and model management needed.",
+      "implementation_notes": [
+        "ML pipeline design",
+        "Model versioning and registry",
+        "Feature store patterns",
+        "A/B testing frameworks"
+      ],
+      "adjacencies": ["llm-application-design", "rag-architect", "docker-expert"],
+      "estimated_effort": "high",
+      "priority": "future"
+    },
+    {
+      "rank": 9,
+      "name": "performance-profiler",
+      "domain": "qa",
+      "score": 0.72,
+      "rationale": "Performance optimization guidance lacking. Profiling and bundle analysis valuable.",
+      "implementation_notes": [
+        "Profiling strategy guidance",
+        "Bundle size analysis",
+        "Memory leak detection patterns",
+        "Database query optimization"
+      ],
+      "adjacencies": ["code-review", "backend-architect"],
+      "estimated_effort": "medium",
+      "priority": "future"
+    },
+    {
+      "rank": 10,
+      "name": "storybook-specialist",
+      "domain": "frontend",
+      "score": 0.70,
+      "rationale": "Component documentation important. Design system integration.",
+      "implementation_notes": [
+        "Story patterns",
+        "Addon configuration",
+        "Design token integration",
+        "Visual regression setup"
+      ],
+      "adjacencies": ["react-expert", "css-mastery", "technical-writer"],
+      "estimated_effort": "low",
+      "priority": "future"
+    },
+    {
+      "rank": 11,
+      "name": "gitops-practitioner",
+      "domain": "devops",
+      "score": 0.68,
+      "rationale": "Modern deployment pattern. ArgoCD and Flux gaining adoption.",
+      "implementation_notes": [
+        "ArgoCD setup patterns",
+        "Flux configuration",
+        "Application sync strategies",
+        "Secret management in GitOps"
+      ],
+      "adjacencies": ["kubernetes-operator", "ci-cd-specialist"],
+      "estimated_effort": "medium",
+      "priority": "future"
+    },
+    {
+      "rank": 12,
+      "name": "opentelemetry-expert",
+      "domain": "devops",
+      "score": 0.65,
+      "rationale": "Observability becoming standard. OpenTelemetry is the emerging standard.",
+      "implementation_notes": [
+        "Instrumentation patterns",
+        "Collector configuration",
+        "Trace context propagation",
+        "Metrics and logging correlation"
+      ],
+      "adjacencies": ["kubernetes-operator", "backend-architect"],
+      "estimated_effort": "medium",
+      "priority": "future"
+    }
+  ],
+  "domain_density": {
+    "frontend": 0.85,
+    "ai-ml": 0.78,
+    "accessibility": 0.72,
+    "docs": 0.68,
+    "backend": 0.62,
+    "devops": 0.55,
+    "qa": 0.35,
+    "security": 0.25
+  },
+  "critical_gaps": ["security", "qa"],
+  "recommended_sequence": [
+    "security-auditor",
+    "test-automation-expert",
+    "backend-architect",
+    "audio-transcription-expert"
+  ]
+}

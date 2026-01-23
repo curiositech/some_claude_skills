@@ -1,0 +1,660 @@
+{
+  "style_guide_base": "Pixel art, 16-bit video game aesthetic, retro Windows 95 interface elements, clean pixel art style, no anti-aliasing, visible pixels --ar 16:9",
+  "exemplars_skip": [
+    "vr-avatar-engineer", "diagramming-expert", "adhd-design-expert", "collage-layout-expert",
+    "color-theory-palette-harmony-expert", "design-system-creator", "interior-design-expert",
+    "vaporwave-glassomorphic-ui-designer", "career-biographer", "competitive-cartographer",
+    "design-archivist", "hr-network-analyst", "agent-creator", "orchestrator",
+    "jungian-psychologist", "wisdom-accountability-coach"
+  ],
+  "skills": [
+    {
+      "id": "2000s-visualization-expert",
+      "name": "2000s Visualization Expert",
+      "composition": "synthwave",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art synthwave landscape with floating Winamp-style music visualizer window, rainbow spectrum bars and swirling patterns, retro Windows Media Player chrome with minimize/maximize buttons, 16-bit video game aesthetic, perspective grid floor with neon purple and cyan, clean pixel art style, no anti-aliasing --ar 16:9"
+    },
+    {
+      "id": "adhd-daily-planner",
+      "name": "ADHD Daily Planner",
+      "composition": "desktop",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art desktop workstation showing calendar app with colorful time blocks and dopamine-friendly checkboxes, lavender and soft purple color scheme, retro Windows 95 interface with title bar, keyboard and desk plant in foreground, motivational sticky notes on monitor, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "admin-dashboard",
+      "name": "Admin Dashboard",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop workstation showing admin control panel with data widgets and user management icons, mint and teal professional color scheme, retro Windows 95 interface with beveled buttons, keyboard and coffee mug in foreground, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "ai-video-production-master",
+      "name": "AI Video Production Master",
+      "composition": "desktop",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art desktop workstation showing video editing timeline with AI generation preview panels, synthwave sunset pink and purple color scheme, retro Windows 95 video editor interface, film reel and playback controls, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "api-architect",
+      "name": "API Architect",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal flowchart showing REST API endpoints connected by glowing lines, bright green on black color scheme, retro Windows 95 terminal chrome, JSON brackets and HTTP method labels floating, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "automatic-stateful-prompt-improver",
+      "name": "Automatic Stateful Prompt Improver",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing prompt evolution with arrows and improvement scores, bright green and amber on black, retro Windows 95 interface with progress bars, neural network nodes glowing, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "bot-developer",
+      "name": "Bot Developer",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop workstation showing Discord bot interface with message bubbles and command icons, mint and teal color scheme, retro Windows 95 chat window chrome, robot mascot on desk, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "chatbot-analytics",
+      "name": "Chatbot Analytics",
+      "composition": "isometric",
+      "palette": "mint_teal",
+      "prompt": "Pixel art isometric workspace with multiple chat analytics dashboards showing conversation flows and metrics, mint and teal professional color scheme, retro Windows 95 interface elements, bar charts and pie graphs, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "claude-ecosystem-promoter",
+      "name": "Claude Ecosystem Promoter",
+      "composition": "desktop",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art desktop showing Claude AI marketing dashboard with social share icons and community metrics, warm coral and sunset colors, retro Windows 95 interface with megaphone icon, star ratings visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "clip-aware-embeddings",
+      "name": "CLIP Aware Embeddings",
+      "composition": "terminal",
+      "palette": "rainbow",
+      "prompt": "Pixel art terminal showing image and text embedding vectors as colorful connected nodes, rainbow spectrum lines on dark background, retro Windows 95 interface, floating images matched to text labels, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "code-necromancer",
+      "name": "Code Necromancer",
+      "composition": "synthwave",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art synthwave scene with ancient code scrolls being revived with glowing magic, purple and magenta color scheme, retro Windows 95 terminal showing legacy code transforming, skull wearing headphones, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "code-review-checklist",
+      "name": "Code Review Checklist",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop workstation showing code diff viewer with green checkmarks and review comments, mint and teal color scheme, retro Windows 95 interface with checklist panel, rubber duck on desk, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "crisis-response-protocol",
+      "name": "Crisis Response Protocol",
+      "composition": "terminal",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art command center with multiple alert screens and incident response flowchart, red and orange warning colors on dark background, retro Windows 95 interface with status indicators, emergency beacon visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "cv-creator",
+      "name": "CV Creator",
+      "composition": "interaction",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art professional scene with resume document on retro monitor, person reviewing portfolio, lavender and cream color scheme, retro Windows 95 word processor interface, desk with briefcase, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "data-pipeline-engineer",
+      "name": "Data Pipeline Engineer",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing data flow diagram with pipes connecting database icons, bright green on black color scheme, retro Windows 95 interface, streaming data particles, ETL boxes connected, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "devops-automator",
+      "name": "DevOps Automator",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing CI/CD pipeline with Docker containers and Kubernetes pods, bright green and cyan on black, retro Windows 95 interface, robot arm automating deployments, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "digital-estate-planner",
+      "name": "Digital Estate Planner",
+      "composition": "desktop",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art desktop showing password vault and digital accounts inventory, lavender and soft blue color scheme, retro Windows 95 interface with lock icons, family photo frame on desk, filing cabinet beside, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "drizzle-migrations",
+      "name": "Drizzle Migrations",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing database migration arrows between schema versions, bright green on black, retro Windows 95 interface, water droplet icon, SQL tables transforming, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "drone-cv-expert",
+      "name": "Drone CV Expert",
+      "composition": "isometric",
+      "palette": "mint_teal",
+      "prompt": "Pixel art isometric scene with drone flying over terrain showing computer vision overlay, mint and teal color scheme, retro Windows 95 tracking interface, detection boxes on ground targets, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "drone-inspection-specialist",
+      "name": "Drone Inspection Specialist",
+      "composition": "isometric",
+      "palette": "warm_terracotta",
+      "prompt": "Pixel art isometric scene with inspection drone scanning rooftop for damage, warm terracotta and orange color scheme, retro Windows 95 thermal overlay interface, property report visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "email-composer",
+      "name": "Email Composer",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop workstation showing email client with compose window and AI suggestions, mint and teal color scheme, retro Windows 95 mail interface, envelope icon, inbox visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "event-detection-temporal-intelligence-expert",
+      "name": "Event Detection Temporal Intelligence Expert",
+      "composition": "terminal",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art terminal showing timeline with clustered event markers and temporal patterns, magenta and cyan on dark, retro Windows 95 interface, calendar grid with photo thumbnails, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "fancy-yard-landscaper",
+      "name": "Fancy Yard Landscaper",
+      "composition": "isometric",
+      "palette": "warm_terracotta",
+      "prompt": "Pixel art isometric garden view with landscape design overlay showing plant placement zones, warm terracotta and green color scheme, retro Windows 95 planning interface, trees and hedge icons, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "feature-manifest",
+      "name": "Feature Manifest",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop showing feature specification document with checkboxes and priority tags, mint and teal color scheme, retro Windows 95 document interface, roadmap timeline visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "grief-companion",
+      "name": "Grief Companion",
+      "composition": "interaction",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art gentle scene with supportive chat interface and calming visuals, soft lavender and cream color scheme, retro Windows 95 window with warm heart icon, peaceful plant in corner, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "hipaa-compliance",
+      "name": "HIPAA Compliance",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop showing compliance checklist with medical shield icon and audit report, mint and teal color scheme, retro Windows 95 interface with padlock, healthcare cross visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "hrv-alexithymia-expert",
+      "name": "HRV Alexithymia Expert",
+      "composition": "desktop",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art desktop showing heart rate variability graph with emotion mapping overlay, lavender and soft pink color scheme, retro Windows 95 biometric interface, wearable device icon, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "indie-monetization-strategist",
+      "name": "Indie Monetization Strategist",
+      "composition": "isometric",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art isometric scene with revenue dashboard and growth charts, coral and sunset orange color scheme, retro Windows 95 interface, coin stacks and upward arrows, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "intimacy-avatar-engineer",
+      "name": "Intimacy Avatar Engineer",
+      "composition": "synthwave",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art synthwave scene with VR avatar customization interface, warm pink and magenta color scheme, retro Windows 95 window with character preview, perspective grid floor, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "job-application-optimizer",
+      "name": "Job Application Optimizer",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop showing resume optimization dashboard with keyword matching scores, mint and teal color scheme, retro Windows 95 interface, target icon and checkmarks, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "knot-theory-educator",
+      "name": "Knot Theory Educator",
+      "composition": "terminal",
+      "palette": "rainbow",
+      "prompt": "Pixel art terminal showing mathematical knot diagrams with crossing numbers and invariants, colorful spectrum on dark background, retro Windows 95 interface, tangled rope illustrations, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "liaison",
+      "name": "Liaison",
+      "composition": "interaction",
+      "palette": "mint_teal",
+      "prompt": "Pixel art scene with two figures connecting via digital bridge interface, mint and teal color scheme, retro Windows 95 messaging window, handshake icon visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "maximalist-wall-decorator",
+      "name": "Maximalist Wall Decorator",
+      "composition": "isometric",
+      "palette": "rainbow",
+      "prompt": "Pixel art isometric room with gallery wall planning overlay showing frame placement, rainbow spectrum color scheme, retro Windows 95 design interface, art pieces visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "mcp-creator",
+      "name": "MCP Creator",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing MCP server architecture with tool definitions and transport connections, bright green on black, retro Windows 95 interface, protocol diagram visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "metal-shader-expert",
+      "name": "Metal Shader Expert",
+      "composition": "terminal",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art terminal showing GPU shader code with metallic gradient preview, silver and purple color scheme, retro Windows 95 interface, 3D rendered sphere sample, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "modern-drug-rehab-computer",
+      "name": "Modern Drug Rehab Computer",
+      "composition": "desktop",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art desktop showing recovery tracking dashboard with sobriety milestones, soft lavender and healing green color scheme, retro Windows 95 interface, supportive progress charts, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "native-app-designer",
+      "name": "Native App Designer",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop showing iOS and Android app mockups side by side, mint and teal color scheme, retro Windows 95 design interface, phone frames on screen, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "panic-room-finder",
+      "name": "Panic Room Finder",
+      "composition": "isometric",
+      "palette": "warm_terracotta",
+      "prompt": "Pixel art isometric house cross-section showing hidden safe room locations, warm terracotta and steel color scheme, retro Windows 95 floor plan interface, security icons visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "partner-text-coach",
+      "name": "Partner Text Coach",
+      "composition": "interaction",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art scene with messaging interface showing relationship communication suggestions, soft lavender and pink color scheme, retro Windows 95 chat window, heart icons and helpful tips, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "personal-finance-coach",
+      "name": "Personal Finance Coach",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop showing budget tracker with savings goals and spending pie charts, mint and teal color scheme, retro Windows 95 spreadsheet interface, piggy bank on desk, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "pet-memorial-creator",
+      "name": "Pet Memorial Creator",
+      "composition": "desktop",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art desktop showing pet photo tribute page with paw prints and memorial text, soft lavender and cream color scheme, retro Windows 95 album interface, rainbow bridge imagery, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "photo-composition-critic",
+      "name": "Photo Composition Critic",
+      "composition": "desktop",
+      "palette": "warm_terracotta",
+      "prompt": "Pixel art desktop showing photo with rule-of-thirds overlay and composition feedback, warm terracotta and cream color scheme, retro Windows 95 photo viewer, golden ratio spiral visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "photo-content-recognition-curation-expert",
+      "name": "Photo Content Recognition Curation Expert",
+      "composition": "isometric",
+      "palette": "mint_teal",
+      "prompt": "Pixel art isometric workspace with AI-tagged photo library and smart album organization, mint and teal color scheme, retro Windows 95 gallery interface, face detection boxes, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "physics-rendering-expert",
+      "name": "Physics Rendering Expert",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing physics simulation with velocity vectors and collision detection, bright green on black, retro Windows 95 interface, bouncing particles visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "project-management-guru-adhd",
+      "name": "Project Management Guru ADHD",
+      "composition": "desktop",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art desktop showing Kanban board with dopamine-friendly task cards and progress badges, soft lavender and bright accents, retro Windows 95 interface, timer widget visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "recovery-app-legal-terms",
+      "name": "Recovery App Legal Terms",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop showing legal document with privacy policy sections and compliance checkboxes, mint and teal color scheme, retro Windows 95 document viewer, scale of justice icon, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "recovery-coach-patterns",
+      "name": "Recovery Coach Patterns",
+      "composition": "desktop",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art desktop showing recovery pattern library with conversation templates, soft lavender and healing green, retro Windows 95 interface, supportive chat bubbles, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "recovery-community-moderator",
+      "name": "Recovery Community Moderator",
+      "composition": "interaction",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art scene with community forum moderation dashboard and support resources, soft lavender color scheme, retro Windows 95 interface, shield icon and helpful hands, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "refactoring-surgeon",
+      "name": "Refactoring Surgeon",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing code transformation with surgical precision, bright green on black, retro Windows 95 diff interface, scalpel icon, clean code emerging, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "research-analyst",
+      "name": "Research Analyst",
+      "composition": "isometric",
+      "palette": "mint_teal",
+      "prompt": "Pixel art isometric workspace with research papers and citation network visualization, mint and teal color scheme, retro Windows 95 document interface, magnifying glass icon, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "rest-api-design",
+      "name": "REST API Design",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing API endpoint tree with HTTP methods color-coded, bright green and cyan on black, retro Windows 95 interface, JSON response preview, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "rope-physics-rendering-expert",
+      "name": "Rope Physics Rendering Expert",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing rope simulation with tension vectors and physics nodes, bright green on black, retro Windows 95 interface, dangling animated rope, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "security-auditor",
+      "name": "Security Auditor",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing security scan results with vulnerability alerts, bright green and red on black, retro Windows 95 interface, shield with checkmark, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "seo-visibility-expert",
+      "name": "SEO Visibility Expert",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop showing search rankings dashboard with keyword analysis charts, mint and teal color scheme, retro Windows 95 interface, magnifying glass and graph icons, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "site-reliability-engineer",
+      "name": "Site Reliability Engineer",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing server monitoring with uptime graphs and alert thresholds, bright green on black, retro Windows 95 interface, server rack icon, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "skill-coach",
+      "name": "Skill Coach",
+      "composition": "interaction",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art scene with skill creation wizard and guidance interface, soft lavender and mint color scheme, retro Windows 95 tutorial window, helpful arrow icons, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "skill-creator",
+      "name": "Skill Creator",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop showing skill YAML editor with metadata fields and markdown preview, mint and teal color scheme, retro Windows 95 code editor, puzzle piece icon, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "skill-documentarian",
+      "name": "Skill Documentarian",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop showing documentation generator with markdown and examples, mint and teal color scheme, retro Windows 95 word processor, book icon visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "skill-logger",
+      "name": "Skill Logger",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing skill execution logs with timestamps and outputs, bright green on black, retro Windows 95 console, scrolling log entries, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "sober-addict-protector",
+      "name": "Sober Addict Protector",
+      "composition": "desktop",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art desktop showing protective content filter with shield interface, soft lavender and safe blue color scheme, retro Windows 95 window, guardian angel icon, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "sound-engineer",
+      "name": "Sound Engineer",
+      "composition": "desktop",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art desktop showing audio waveform editor with mixing console interface, warm sunset and purple color scheme, retro Windows 95 audio app, speaker icons and equalizer bars, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "speech-pathology-ai",
+      "name": "Speech Pathology AI",
+      "composition": "interaction",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art scene with speech therapy interface showing pronunciation guides, soft lavender and cream color scheme, retro Windows 95 window, sound wave and mouth diagram, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "swift-executor",
+      "name": "Swift Executor",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing Swift code execution with fast compile output, bright green and orange on black, retro Windows 95 interface, swift bird icon, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "team-builder",
+      "name": "Team Builder",
+      "composition": "isometric",
+      "palette": "mint_teal",
+      "prompt": "Pixel art isometric office with team skill matrix and org chart visualization, mint and teal color scheme, retro Windows 95 interface, people icons connected, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "tech-entrepreneur-coach-adhd",
+      "name": "Tech Entrepreneur Coach ADHD",
+      "composition": "desktop",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art desktop showing startup dashboard with dopamine-friendly milestones, warm coral and purple color scheme, retro Windows 95 interface, rocket ship and brain icons, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "technical-writer",
+      "name": "Technical Writer",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop showing technical documentation with code samples and diagrams, mint and teal color scheme, retro Windows 95 word processor, pen and scroll icon, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "test-automation-expert",
+      "name": "Test Automation Expert",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing test suite runner with green checkmarks and coverage report, bright green on black, retro Windows 95 interface, robot running tests, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "typography-expert",
+      "name": "Typography Expert",
+      "composition": "desktop",
+      "palette": "warm_terracotta",
+      "prompt": "Pixel art desktop showing font specimen sheets with kerning guides and type hierarchy, warm terracotta and cream color scheme, retro Windows 95 font viewer, letterforms displayed, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "vercel-deployment",
+      "name": "Vercel Deployment",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing deployment pipeline with Vercel logo and build stages, bright green and white on black, retro Windows 95 interface, triangle icon and progress bar, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "vibe-matcher",
+      "name": "Vibe Matcher",
+      "composition": "synthwave",
+      "palette": "rainbow",
+      "prompt": "Pixel art synthwave scene with aesthetic matching interface showing mood palettes, rainbow spectrum color scheme, retro Windows 95 window, floating color swatches and vibe cards, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "vitest-testing-patterns",
+      "name": "Vitest Testing Patterns",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing Vitest runner with test pattern examples, bright green and yellow on black, retro Windows 95 interface, lightning bolt icon, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "voice-audio-engineer",
+      "name": "Voice Audio Engineer",
+      "composition": "desktop",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art desktop showing voice recording interface with waveform and EQ controls, warm purple and coral color scheme, retro Windows 95 audio app, microphone icon, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "web-design-expert",
+      "name": "Web Design Expert",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop showing web design mockup with responsive layouts, mint and teal color scheme, retro Windows 95 browser window, CSS grid visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "webapp-testing",
+      "name": "Webapp Testing",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing browser automation with test selector highlights, bright green on black, retro Windows 95 interface, browser icon with checkmark, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "wedding-immortalist",
+      "name": "Wedding Immortalist",
+      "composition": "isometric",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art isometric scene with wedding memory preservation interface showing photo albums and timeline, soft lavender and rose color scheme, retro Windows 95 window, rings and flower icons, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "windows-3-1-web-designer",
+      "name": "Windows 3.1 Web Designer",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop showing Windows 3.1 Program Manager styling web page design, classic gray and teal color scheme, 3.1-era interface with Program Groups, retro buttons and icons, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    }
+  ],
+  "agents": [
+    {
+      "id": "architect",
+      "name": "Architect Agent",
+      "composition": "isometric",
+      "palette": "mint_teal",
+      "prompt": "Pixel art isometric workspace with software architecture blueprints and system diagrams, mint and teal color scheme, retro Windows 95 interface, building blocks connected, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "archivist",
+      "name": "Archivist Agent",
+      "composition": "isometric",
+      "palette": "warm_terracotta",
+      "prompt": "Pixel art isometric library with filing cabinets and knowledge database interface, warm terracotta and cream color scheme, retro Windows 95 file browser, scrolls and books organized, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "auditor",
+      "name": "Auditor Agent",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing audit log analysis with compliance checkmarks, bright green on black, retro Windows 95 interface, magnifying glass examining code, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "cartographer",
+      "name": "Cartographer Agent",
+      "composition": "isometric",
+      "palette": "mint_teal",
+      "prompt": "Pixel art isometric scene with codebase map and dependency graph visualization, mint and teal color scheme, retro Windows 95 interface, compass and map icons, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "debugger",
+      "name": "Debugger Agent",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing debug session with breakpoints and variable inspection, bright green and red on black, retro Windows 95 interface, bug with magnifying glass, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "guardian",
+      "name": "Guardian Agent",
+      "composition": "desktop",
+      "palette": "mint_teal",
+      "prompt": "Pixel art desktop showing security monitoring dashboard with shield and protection status, mint and teal color scheme, retro Windows 95 interface, watchful eye icon, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "liaison",
+      "name": "Liaison Agent",
+      "composition": "interaction",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art scene with multi-agent communication hub and message routing, soft lavender color scheme, retro Windows 95 messaging interface, connected nodes, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "librarian",
+      "name": "Librarian Agent",
+      "composition": "isometric",
+      "palette": "warm_terracotta",
+      "prompt": "Pixel art isometric library with indexed documentation and search interface, warm terracotta and cream, retro Windows 95 catalog window, books on shelves organized, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "optimizer",
+      "name": "Optimizer Agent",
+      "composition": "terminal",
+      "palette": "terminal_green",
+      "prompt": "Pixel art terminal showing performance optimization metrics with speedup graphs, bright green on black, retro Windows 95 interface, rocket and gauge icons, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "researcher",
+      "name": "Researcher Agent",
+      "composition": "isometric",
+      "palette": "mint_teal",
+      "prompt": "Pixel art isometric workspace with research papers and web search interface, mint and teal color scheme, retro Windows 95 browser, magnifying glass over documents, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "scout",
+      "name": "Scout Agent",
+      "composition": "isometric",
+      "palette": "mint_teal",
+      "prompt": "Pixel art isometric scene with exploration map and discovery markers, mint and teal color scheme, retro Windows 95 file explorer, compass and telescope icons, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "smith",
+      "name": "Smith Agent",
+      "composition": "desktop",
+      "palette": "warm_terracotta",
+      "prompt": "Pixel art desktop showing code forge with transformation tools, warm terracotta and orange, retro Windows 95 interface, anvil and hammer icons, crafting code, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "visualizer",
+      "name": "Visualizer Agent",
+      "composition": "desktop",
+      "palette": "rainbow",
+      "prompt": "Pixel art desktop showing data visualization dashboard with colorful charts, rainbow spectrum accents, retro Windows 95 graphing interface, bar and pie charts, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "weaver",
+      "name": "Weaver Agent",
+      "composition": "terminal",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art terminal showing code weaving with thread connections between modules, purple and magenta color scheme, retro Windows 95 interface, intertwined lines and patterns, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    }
+  ],
+  "mcps": [
+    {
+      "id": "cv-creator",
+      "name": "CV Creator MCP",
+      "composition": "desktop",
+      "palette": "lavender_workspace",
+      "prompt": "Pixel art desktop showing CV generation server with resume templates, soft lavender and professional blue, retro Windows 95 interface, document icons flowing, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    },
+    {
+      "id": "prompt-learning",
+      "name": "Prompt Learning MCP",
+      "composition": "terminal",
+      "palette": "synthwave_sunset",
+      "prompt": "Pixel art terminal showing prompt optimization server with learning curves, magenta and cyan on dark, retro Windows 95 interface, brain with neural connections, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+name: Process Skill Submission
+
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  process-submission:
+    # Only run on issues with skill-submission label
+    if: contains(github.event.issue.labels.*.name, 'skill-submission')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: website/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: website
+
+      - name: Parse and validate submission
+        id: parse
+        run: |
+          npx tsx scripts/process-skill-submission.ts '${{ github.event.issue.number }}'
+        working-directory: website
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+
+      - name: Create skill files
+        if: steps.parse.outputs.valid == 'true'
+        run: |
+          SKILL_ID="${{ steps.parse.outputs.skill_id }}"
+          SKILL_DIR=".claude/skills/${SKILL_ID}"
+
+          mkdir -p "${SKILL_DIR}"
+          echo '${{ steps.parse.outputs.skill_content }}' | base64 -d > "${SKILL_DIR}/SKILL.md"
+
+          echo "Created skill at ${SKILL_DIR}/SKILL.md"
+
+      - name: Create Pull Request
+        if: steps.parse.outputs.valid == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "feat(skills): Add ${{ steps.parse.outputs.skill_title }} skill"
+          title: "[Skill] Add ${{ steps.parse.outputs.skill_title }}"
+          body: |
+            ## New Skill Submission
+
+            This PR was automatically generated from issue #${{ github.event.issue.number }}.
+
+            **Skill:** ${{ steps.parse.outputs.skill_title }}
+            **Category:** ${{ steps.parse.outputs.category }}
+            **Submitted by:** @${{ github.event.issue.user.login }}
+
+            ---
+
+            ### Checklist
+            - [ ] Skill content reviewed
+            - [ ] Category is appropriate
+            - [ ] Tags are relevant
+            - [ ] No duplicate skill exists
+
+            Closes #${{ github.event.issue.number }}
+          branch: skill/${{ steps.parse.outputs.skill_id }}
+          labels: |
+            skill-submission
+            automated-pr
+
+      - name: Comment on issue (success)
+        if: steps.parse.outputs.valid == 'true'
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            ## ✅ Skill Submission Processed
+
+            Your skill submission has been automatically processed and a pull request has been created!
+
+            **Next Steps:**
+            1. A maintainer will review the PR
+            2. They may request changes or clarifications
+            3. Once approved, your skill will be added to the collection
+
+            Thank you for contributing! 🎉
+
+      - name: Comment on issue (validation failed)
+        if: steps.parse.outputs.valid == 'false'
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            ## ⚠️ Validation Issues
+
+            We found some issues with your skill submission:
+
+            ```
+            ${{ steps.parse.outputs.errors }}
+            ```
+
+            Please update your submission to fix these issues. You can edit this issue to make corrections.
+
+      - name: Add needs-revision label
+        if: steps.parse.outputs.valid == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ github.event.issue.number }},
+              labels: ['needs-revision']
+            });

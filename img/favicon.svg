@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Win31 Claude Skills Favicon - simplified skill document -->
+
+  <!-- Main document body - system gray -->
+  <rect x="4" y="2" width="24" height="28" fill="#c0c0c0"/>
+
+  <!-- Outer bevel - white top/left -->
+  <rect x="4" y="2" width="24" height="2" fill="#ffffff"/>
+  <rect x="4" y="2" width="2" height="28" fill="#ffffff"/>
+
+  <!-- Outer bevel - dark bottom/right -->
+  <rect x="4" y="28" width="24" height="2" fill="#000000"/>
+  <rect x="26" y="2" width="2" height="28" fill="#000000"/>
+
+  <!-- Document header bar - navy blue like titlebar -->
+  <rect x="6" y="4" width="20" height="5" fill="#000080"/>
+
+  <!-- Title bar shine -->
+  <rect x="7" y="5" width="18" height="2" fill="#0000cc"/>
+
+  <!-- Document content lines -->
+  <rect x="7" y="11" width="14" height="2" fill="#808080"/>
+  <rect x="7" y="15" width="18" height="2" fill="#808080"/>
+  <rect x="7" y="19" width="16" height="2" fill="#808080"/>
+
+  <!-- Claude orange seal/badge -->
+  <circle cx="22" cy="24" r="5" fill="#ff6b35"/>
+  <circle cx="22" cy="24" r="3" fill="#ffffff"/>
+
+  <!-- C in seal -->
+  <path d="M21 22 L23 22 L23 23 L21 23 L21 25 L23 25 L23 26 L21 26 L20 26 L20 22 Z" fill="#ff6b35"/>
+</svg>

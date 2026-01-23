@@ -1,0 +1,100 @@
+# Some Claude Skills
+
+> Production-ready AI skills for Claude Code - expert agents that encode real domain expertise
+
+## Overview
+
+Some Claude Skills is a curated collection of 45+ expert AI skills for Claude Code. Each skill transforms Claude into a domain specialist with deep expertise, anti-pattern detection, and decision-tree guidance. Skills cover ML/computer vision, audio/video, design, psychology, development tools, and more.
+
+## What Are Claude Skills?
+
+Claude Skills are markdown files (SKILL.md) that encode domain expertise for Claude Code. Unlike simple prompts, skills provide:
+- **Shibboleths**: Deep knowledge that separates novices from experts
+- **Anti-patterns**: Common mistakes to avoid with explanations
+- **Decision trees**: Context-aware guidance, not rigid templates
+- **Progressive disclosure**: Core instructions + reference materials
+
+## Featured Skills
+
+- **drone-cv-expert**: Computer vision for drone systems - SLAM, object detection, path planning
+- **drone-inspection-specialist**: Fire detection, roof inspection, thermal analysis, 3DGS
+- **career-biographer**: Extract career narratives, create portfolios and CVs
+- **metal-shader-expert**: Apple Metal shaders, TBDR optimization, GPU debugging
+- **sound-engineer**: ElevenLabs integration, audio production, voice synthesis
+- **jungian-psychologist**: Analytical psychology, shadow work, dream interpretation
+- **vaporwave-glassomorphic-ui-designer**: Retro-futuristic UI with modern glassmorphism
+
+## Installation
+
+```bash
+# Clone a skill to your project
+git clone https://github.com/erichowens/some_claude_skills
+cp -r some_claude_skills/.claude/skills/skill-name .claude/skills/
+```
+
+Or download individual skills as ZIP files from the Skills Gallery.
+
+## Documentation
+
+- [Skills Gallery](https://someclaudeskills.com/skills): Browse all 45+ skills
+- [Getting Started Guide](https://someclaudeskills.com/docs/guides/claude-skills-guide): Learn how skills work
+- [Examples & Artifacts](https://someclaudeskills.com/artifacts): Real-world usage examples
+- [MCP Integrations](https://someclaudeskills.com/mcps): Model Context Protocol servers
+
+## Links
+
+- Website: https://someclaudeskills.com
+- GitHub: https://github.com/erichowens/some_claude_skills
+- Author: https://linkedin.com/in/erich-owens-01a38446/
+
+## Categories
+
+### Machine Learning & Computer Vision
+- clip-aware-embeddings
+- drone-cv-expert
+- drone-inspection-specialist
+- photo-composition-critic
+- photo-content-recognition-curation-expert
+- collage-layout-expert
+- event-detection-temporal-intelligence-expert
+
+### Audio & Media
+- sound-engineer
+- voice-audio-engineer
+- 2000s-visualization-expert
+
+### Design & UI
+- vaporwave-glassomorphic-ui-designer
+- windows-3-1-web-designer
+- web-design-expert
+- native-app-designer
+- design-system-creator
+- typography-expert
+- interior-design-expert
+
+### Psychology & Coaching
+- jungian-psychologist
+- career-biographer
+- hrv-alexithymia-expert
+- wisdom-accountability-coach
+- personal-finance-coach
+- tech-entrepreneur-coach-adhd
+- adhd-design-expert
+
+### Development Tools
+- skill-coach
+- skill-documentarian
+- agent-creator
+- orchestrator
+- site-reliability-engineer
+- bot-developer
+
+### Career & Professional
+- cv-creator
+- job-application-optimizer
+- competitive-cartographer
+- hr-network-analyst
+
+## Contact
+
+For custom skill development or consulting: https://someclaudeskills.com/contact

@@ -1,0 +1,235 @@
+{
+  "name": "Wan 2.1 I2V Optimized for Apple Silicon",
+  "description": "Optimized Image-to-Video workflow for M4 Max with GGUF quantization",
+  "author": "ai-video-production-master skill",
+  "version": "1.0.0",
+  "nodes": {
+    "1": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "input.png"
+      },
+      "_meta": {
+        "title": "Load Keyframe"
+      }
+    },
+    "2": {
+      "class_type": "ImageScale",
+      "inputs": {
+        "image": ["1", 0],
+        "width": 832,
+        "height": 480,
+        "upscale_method": "lanczos",
+        "crop": "center"
+      },
+      "_meta": {
+        "title": "Scale to 480p (optimal for I2V)"
+      }
+    },
+    "3": {
+      "class_type": "UnetLoaderGGUF",
+      "inputs": {
+        "unet_name": "wan2.1-i2v-14b-480p-Q5_K_M.gguf"
+      },
+      "_meta": {
+        "title": "Load Wan 2.1 I2V GGUF (Q5_K_M)"
+      }
+    },
+    "4": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+        "type": "wan"
+      },
+      "_meta": {
+        "title": "Load UMT5 Text Encoder"
+      }
+    },
+    "5": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "wan_2.1_vae.safetensors"
+      },
+      "_meta": {
+        "title": "Load Wan VAE"
+      }
+    },
+    "6": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "text": "subtle organic motion, gentle breathing, cinematic quality",
+        "clip": ["4", 0]
+      },
+      "_meta": {
+        "title": "Positive Prompt (Motion Description)"
+      }
+    },
+    "7": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "text": "blurry, distorted, low quality, watermark, text, static, frozen",
+        "clip": ["4", 0]
+      },
+      "_meta": {
+        "title": "Negative Prompt"
+      }
+    },
+    "8": {
+      "class_type": "WanImageToVideo",
+      "inputs": {
+        "positive": ["6", 0],
+        "negative": ["7", 0],
+        "vae": ["5", 0],
+        "width": 832,
+        "height": 480,
+        "length": 33,
+        "batch_size": 1,
+        "start_image": ["2", 0]
+      },
+      "_meta": {
+        "title": "Wan I2V Conditioning (33 frames = ~2 sec at 16fps)"
+      }
+    },
+    "9": {
+      "class_type": "ModelSamplingSD3",
+      "inputs": {
+        "model": ["3", 0],
+        "shift": 8.0
+      },
+      "_meta": {
+        "title": "Apply Flow Matching (shift=8 for I2V)"
+      }
+    },
+    "10": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": ["9", 0],
+        "positive": ["8", 0],
+        "negative": ["8", 1],
+        "latent_image": ["8", 2],
+        "seed": 42,
+        "steps": 6,
+        "cfg": 5.0,
+        "sampler_name": "uni_pc",
+        "scheduler": "normal",
+        "denoise": 1.0
+      },
+      "_meta": {
+        "title": "Sample (6 steps optimal for speed/quality)"
+      }
+    },
+    "11": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": ["10", 0],
+        "vae": ["5", 0]
+      },
+      "_meta": {
+        "title": "Decode Latents to Frames"
+      }
+    },
+    "12": {
+      "class_type": "VHS_VideoCombine",
+      "inputs": {
+        "frame_rate": 16,
+        "loop_count": 0,
+        "filename_prefix": "wan_i2v",
+        "format": "video/h264-mp4",
+        "pingpong": false,
+        "save_output": true,
+        "images": ["11", 0]
+      },
+      "_meta": {
+        "title": "Export MP4 (16fps)"
+      }
+    }
+  },
+  "parameters": {
+    "motion_prompt": {
+      "description": "Describe the desired motion",
+      "default": "subtle organic motion, gentle breathing",
+      "node": "6",
+      "input": "text"
+    },
+    "negative_prompt": {
+      "description": "What to avoid in the output",
+      "default": "blurry, distorted, low quality, watermark, text, static, frozen",
+      "node": "7",
+      "input": "text"
+    },
+    "steps": {
+      "description": "Sampling steps (more = better quality, slower)",
+      "default": 6,
+      "range": [4, 12],
+      "node": "10",
+      "input": "steps"
+    },
+    "cfg": {
+      "description": "Classifier-free guidance scale",
+      "default": 5.0,
+      "range": [3.0, 8.0],
+      "node": "10",
+      "input": "cfg"
+    },
+    "frames": {
+      "description": "Number of output frames (16fps)",
+      "default": 33,
+      "range": [17, 81],
+      "node": "8",
+      "input": "length"
+    },
+    "shift": {
+      "description": "Flow matching shift (8 for I2V, 5 for T2V)",
+      "default": 8.0,
+      "range": [5.0, 12.0],
+      "node": "9",
+      "input": "shift"
+    }
+  },
+  "performance_notes": {
+    "apple_silicon": {
+      "m4_max_128gb": {
+        "steps_6": "~90 minutes per clip",
+        "steps_4": "~60 minutes per clip",
+        "memory_usage": "~12-15GB unified memory",
+        "recommendation": "Use for iteration/testing, cloud for batch"
+      }
+    },
+    "cloud_gpu": {
+      "h100_80gb": {
+        "steps_6": "~2 minutes per clip",
+        "steps_12": "~4 minutes per clip",
+        "cost": "$1.87-2.99/hr on Vast.ai/RunPod"
+      },
+      "a100_80gb": {
+        "steps_6": "~3 minutes per clip",
+        "steps_12": "~6 minutes per clip",
+        "cost": "$1.50-1.74/hr"
+      }
+    }
+  },
+  "required_models": {
+    "unet": {
+      "name": "wan2.1-i2v-14b-480p-Q5_K_M.gguf",
+      "size": "12.7 GB",
+      "source": "https://huggingface.co/city96/Wan2.1-I2V-14B-480P-GGUF",
+      "path": "models/diffusion_models/"
+    },
+    "clip": {
+      "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "size": "~5 GB",
+      "source": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+      "path": "models/text_encoders/"
+    },
+    "vae": {
+      "name": "wan_2.1_vae.safetensors",
+      "size": "~200 MB",
+      "source": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+      "path": "models/vae/"
+    }
+  },
+  "required_nodes": [
+    "ComfyUI-GGUF",
+    "ComfyUI-VideoHelperSuite"
+  ]
+}

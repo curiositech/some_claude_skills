@@ -1,0 +1,143 @@
+name: Skill Submission
+description: Submit a new skill to the Claude Skills Collection
+title: "[Skill] "
+labels: ["skill-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Submit Your Skill
+
+        Thanks for contributing to the Claude Skills Collection! Please fill out the form below.
+
+        Your submission will be reviewed and, if approved, added to the collection.
+
+  - type: input
+    id: skill_name
+    attributes:
+      label: Skill Name
+      description: Unique identifier (lowercase, hyphens only, 3-50 characters)
+      placeholder: my-awesome-skill
+    validations:
+      required: true
+
+  - type: input
+    id: skill_title
+    attributes:
+      label: Skill Title
+      description: Human-readable title for display
+      placeholder: My Awesome Skill
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Select the best-fit category
+      options:
+        - AI & Machine Learning
+        - Code Quality & Testing
+        - Content & Writing
+        - Data & Analytics
+        - Design & Creative
+        - DevOps & Site Reliability
+        - Business & Monetization
+        - Research & Analysis
+        - Productivity & Meta
+        - Lifestyle & Personal
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What does this skill do? (50-500 characters)
+      placeholder: This skill helps you...
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated list of tags (1-10 tags)
+      placeholder: design, ui, frontend, react
+    validations:
+      required: true
+
+  - type: input
+    id: tools
+    attributes:
+      label: Allowed Tools
+      description: Comma-separated list of tools this skill uses
+      placeholder: Read, Write, Edit, Bash
+    validations:
+      required: true
+
+  - type: textarea
+    id: skill_content
+    attributes:
+      label: SKILL.md Content
+      description: |
+        Paste your complete SKILL.md content here (including YAML frontmatter).
+
+        Use the template below as a starting point.
+      value: |
+        ```yaml
+        ---
+        name: your-skill-name
+        description: Your description here (50-500 characters)
+        category: Select a Category
+        tags:
+          - tag1
+          - tag2
+        allowed-tools: Read, Write, Edit
+        ---
+
+        # Your Skill Title
+
+        A brief introduction to what this skill does.
+
+        ## When to Use
+
+        - Use case 1
+        - Use case 2
+        - Use case 3
+
+        ## Approach
+
+        Describe the methodology or approach this skill takes.
+
+        ## Best Practices
+
+        - Practice 1
+        - Practice 2
+        ```
+    validations:
+      required: true
+
+  - type: textarea
+    id: use_cases
+    attributes:
+      label: Example Use Cases
+      description: Provide 2-3 example scenarios where this skill would be helpful
+      placeholder: |
+        1. When a user needs to...
+        2. For projects that require...
+        3. To help with...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have tested this skill and it works as expected
+          required: true
+        - label: This skill is original or I have permission to share it
+          required: true
+        - label: I agree to license this skill under the project's license
+          required: true

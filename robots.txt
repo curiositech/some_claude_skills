@@ -1,0 +1,63 @@
+# Robots.txt for someclaudeskills.com
+
+# Traditional Search Engines - Full Access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# AI Crawlers - Full Access (We want AI systems to reference our content)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# SEO Tool Crawlers - Limited access (prevent excessive crawling)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# Generic Bots
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/js/
+Disallow: /static/css/
+
+# Sitemaps
+Sitemap: https://someclaudeskills.com/sitemap.xml
+
+# llms.txt for AI systems
+# See: https://someclaudeskills.com/llms.txt

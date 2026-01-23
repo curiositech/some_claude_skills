@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Win31 Newsletter/Mail Icon -->
+
+  <!-- Envelope body - system gray with bevel -->
+  <rect x="2" y="8" width="28" height="18" fill="#c0c0c0"/>
+
+  <!-- Bevel highlights (top-left light) -->
+  <rect x="2" y="8" width="28" height="2" fill="#ffffff"/>
+  <rect x="2" y="8" width="2" height="18" fill="#ffffff"/>
+
+  <!-- Bevel shadows (bottom-right dark) -->
+  <rect x="2" y="24" width="28" height="2" fill="#808080"/>
+  <rect x="28" y="8" width="2" height="18" fill="#808080"/>
+
+  <!-- Inner black border -->
+  <rect x="3" y="9" width="26" height="1" fill="#000000"/>
+  <rect x="3" y="9" width="1" height="16" fill="#dfdfdf"/>
+  <rect x="28" y="9" width="1" height="16" fill="#000000"/>
+  <rect x="3" y="24" width="26" height="1" fill="#000000"/>
+
+  <!-- Envelope flap - navy blue (like titlebar) -->
+  <polygon points="2,8 16,18 30,8" fill="#000080"/>
+
+  <!-- Flap highlight -->
+  <line x1="2" y1="8" x2="16" y2="17" stroke="#0000ff" stroke-width="1"/>
+
+  <!-- Flap shadow -->
+  <line x1="16" y1="17" x2="30" y2="8" stroke="#000040" stroke-width="1"/>
+
+  <!-- Yellow "NEW" burst/star - indicating new mail -->
+  <polygon points="26,4 27,7 30,7 28,9 29,12 26,10 23,12 24,9 22,7 25,7" fill="#ffff00"/>
+  <polygon points="26,4 27,7 30,7 28,9 29,12 26,10 23,12 24,9 22,7 25,7" stroke="#000000" stroke-width="0.5" fill="none"/>
+
+  <!-- Pixelated letter lines (visible through envelope) -->
+  <rect x="8" y="14" width="10" height="1" fill="#808080"/>
+  <rect x="8" y="16" width="14" height="1" fill="#808080"/>
+  <rect x="8" y="18" width="12" height="1" fill="#808080"/>
+  <rect x="8" y="20" width="8" height="1" fill="#808080"/>
+</svg>

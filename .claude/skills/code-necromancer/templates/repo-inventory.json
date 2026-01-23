@@ -1,0 +1,111 @@
+{
+  "$schema": "repo-inventory-schema",
+  "organization": "ORGANIZATION_NAME",
+  "scan_date": "YYYY-MM-DD",
+  "total_repos": 0,
+  "repos": [
+    {
+      "name": "repo-name",
+      "description": "Repository description",
+      "url": "https://github.com/org/repo",
+      "primary_language": "TypeScript",
+      "languages": {
+        "TypeScript": 80,
+        "JavaScript": 15,
+        "CSS": 5
+      },
+      "framework": {
+        "name": "React",
+        "version": "16.8.0",
+        "detected_from": "package.json"
+      },
+      "runtime": {
+        "name": "Node.js",
+        "version": "12.x",
+        "detected_from": ".nvmrc"
+      },
+      "last_commit": {
+        "date": "2021-03-15T10:30:00Z",
+        "author": "developer@company.com",
+        "message": "Last commit message"
+      },
+      "commit_stats": {
+        "total_commits": 1500,
+        "contributors": 8,
+        "first_commit": "2018-01-15T00:00:00Z",
+        "commits_last_year": 0,
+        "commits_last_6_months": 0
+      },
+      "size": {
+        "files": 500,
+        "lines_of_code": 45000,
+        "disk_mb": 25
+      },
+      "has": {
+        "readme": true,
+        "dockerfile": true,
+        "docker_compose": true,
+        "ci_cd": "github_actions",
+        "tests": true,
+        "env_example": false
+      },
+      "dependencies": {
+        "count": 45,
+        "outdated": 30,
+        "vulnerable": 5,
+        "internal_deps": ["@org/shared-lib", "@org/auth-client"]
+      },
+      "env_vars": [
+        "DATABASE_URL",
+        "REDIS_URL",
+        "JWT_SECRET",
+        "AWS_ACCESS_KEY_ID"
+      ],
+      "api_endpoints": {
+        "count": 25,
+        "documented": false,
+        "openapi_spec": false
+      },
+      "databases": ["PostgreSQL", "Redis"],
+      "external_services": ["AWS S3", "Stripe", "SendGrid"],
+      "category": "core|support|deprecated|unknown",
+      "maturity": {
+        "score": 3,
+        "max": 5,
+        "factors": {
+          "documentation": 2,
+          "test_coverage": 3,
+          "code_quality": 4,
+          "activity": 1,
+          "maintainability": 3
+        }
+      },
+      "notes": "Free-form notes about this repo",
+      "depends_on": ["repo-2", "repo-3"],
+      "depended_by": ["repo-4"]
+    }
+  ],
+  "summary": {
+    "by_language": {
+      "TypeScript": 8,
+      "Python": 5,
+      "Go": 3,
+      "Other": 4
+    },
+    "by_category": {
+      "core": 5,
+      "support": 8,
+      "deprecated": 4,
+      "unknown": 3
+    },
+    "by_maturity": {
+      "high": 3,
+      "medium": 10,
+      "low": 7
+    },
+    "oldest_repo": "repo-name",
+    "newest_repo": "repo-name",
+    "most_active": "repo-name",
+    "least_active": "repo-name"
+  }
+}

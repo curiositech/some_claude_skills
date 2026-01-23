@@ -1,0 +1,169 @@
+<!doctype html>
+<html
+	lang="en"
+	style="
+		margin: 0;
+		padding: 0;
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+	"
+>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:title" content="Gradio" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="{url}" />
+		<meta property="og:description" content="Click to try out the app!" />
+		<meta
+			property="og:image"
+			content="https://raw.githubusercontent.com/gradio-app/gradio/main/js/_website/src/lib/assets/img/header-image.jpg"
+		/>
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:creator" content="@Gradio" />
+		<meta name="twitter:title" content="Gradio" />
+		<meta name="twitter:description" content="Click to try out the app!" />
+		<meta
+			name="twitter:image"
+			content="https://raw.githubusercontent.com/gradio-app/gradio/main/js/_website/src/lib/assets/img/header-image.jpg"
+		/>
+		<script data-gradio-mode>
+			window.__gradio_mode__ = "app";
+			window.iFrameResizer = {
+				heightCalculationMethod: "taggedElement"
+			};
+			window.parent?.postMessage(
+				{ type: "SET_SCROLLING", enabled: false },
+				"*"
+			);
+		</script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.contentWindow.min.js"
+			async
+		></script>
+
+		
+		<link href="../../../../_app/immutable/assets/0.e0pfnN6l.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/2.BTQDGmJF.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.C5NYahSl.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.E3yBBMTH.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/AudioPlayer.D5BS3Cgh.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Example.D7K5RtQ2.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/InteractiveAudio.B76TQFG-.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Upload.L7mprsyN.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.CSHIljo_.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Checkbox.COx9d1js.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.DMKGW8pW.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Example.oomIF0ca.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.DloLYeAi.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Example.Bw8Q_3wB.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.DwWu86Nh.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Example.1kVNej19.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.Ckk68opA.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/ImageUploader.DMdYP1a9.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Example.DikqVAPo.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.D3f6Hf9S.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.Bk5ZTHOI.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.tcNSQSor.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Dropdown.CWxB-qJp.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Example.DpWs9cEC.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/FileUpload.b2Zdge9M.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Example.DfhEULNF.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.BKaa_GXG.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Gallery.CUVAWrOv.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Video.DJw86Ppo.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.Cgj6KPvj.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.KsvjhaTn.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.Csm0OGa9.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Example.CSw4pLi5.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Example.6rv12T44.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.CCAzyDPy.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Example.fMB4cHw6.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.xkmfPIkL.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Example.CG7uBGLE.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/JSON.AVFPpFex.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.D3BKJl5I.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.BTXaMQgd.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.Be3F7oKw.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Example.CCTTJ5R1.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.D6bhueJw.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.WdTVQ0oj.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.Dclo02rM.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.BuaZ3fzZ.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/BokehPlot.Cd-I2ErV.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/AltairPlot.CSe9xcFj.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/MatplotlibPlot.AF_QcUtc.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.-UpFQsHg.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.CfowPFmo.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.w1Ra_uQ1.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.Cwr2RydD.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.C0mowOU5.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.Gmwqb-vD.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Tabs.C0qLuAtA.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.DYDmCduo.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/VideoPreview.BeECudjn.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Example.B5CSTz0f.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/index.CFBZQE_H.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Index.CgDrEMlk.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/ApiDocs.CSqxRPus.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/ApiRecorder.7UmvbTxs.css" rel="stylesheet">
+		<link href="../../../../_app/immutable/assets/Settings.D01KD214.css" rel="stylesheet"><title>Gradio</title><!-- HEAD_svelte-ky6cqz_START --><link rel="stylesheet" href="./theme.css?v=dcc5ba6daa59190cd89158b9dcd638cb327c8d2793466af78361ece68e126118"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&amp;display=swap"><link rel="manifest" href="/manifest.json"><!-- HEAD_svelte-ky6cqz_END --><!-- HEAD_svelte-eiigye_START --><!-- HTML_TAG_START --><style>
+#col-container {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+#logo-title {
+    text-align: center;
+}
+#logo-title img {
+    width: 400px;
+}
+</style><!-- HTML_TAG_END --><!-- HEAD_svelte-eiigye_END -->
+	</head>
+	<body
+		data-sveltekit-preload-data="hover"
+		style="
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+		"
+	>
+		<div style="display: contents">   <div class="gradio-container gradio-container-5-39-0 svelte-1anp163" data-iframe-height style="min-height: initial; flex-grow: 1;"> <main class="fillable svelte-1anp163  app"> <div class="wrap svelte-czcr5b" style="min-height: 100%;"><div class="contain svelte-czcr5b" style="flex-grow: 1;">  <div id="component-0" class="column  svelte-bnzux8" style="min-width: calc(min(0px, 100%));">   <div id="col-container" class="column  svelte-bnzux8" style="flex-grow: 1; min-width: calc(min(320px, 100%));">   <div id="component-2" class="block  svelte-1svsvh2      hide-container   auto-margin" dir="ltr" style="--start-top: 0px; --start-left: 0px; --start-width: 0px; --start-height: 0px; border-style: solid; overflow: auto; min-width: calc(min(0px, 100%)); border-width: var(--block-border-width);"> <div class="wrap center full svelte-ls20lj hide" style="position: absolute; padding: 0;"> </div> <div class="html-container svelte-phx28p padding"> <div class="prose  svelte-ydeks8"><!-- HTML_TAG_START -->
+        <div id="logo-title">
+            <img src="https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen-Image/qwen_image_logo.png" alt="Qwen-Image Logo" width="400" style="display: block; margin: 0 auto;">
+            <h2 style="font-style: italic;color: #5b47d1;margin-top: -33px !important;margin-left: 133px;">Fast, 8-steps with Lightining LoRA</h2>
+        </div>
+        <!-- HTML_TAG_END --> </div></div> </div>   <div id="component-3" class="block  svelte-1svsvh2  padded    hide-container   auto-margin" dir="ltr" style="--start-top: 0px; --start-left: 0px; --start-width: 0px; --start-height: 0px; border-style: solid; overflow: auto; min-width: calc(min(0px, 100%)); border-width: var(--block-border-width);"><div class="wrap center full svelte-ls20lj hide" style="position: absolute; padding: 0;"> </div> <div class="svelte-vuh1yp"><div class="prose  svelte-lag733" data-testid="markdown" dir="ltr"> <span class="md svelte-7ddecg  prose"><!-- HTML_TAG_START --><p><a href="https://github.com/QwenLM/Qwen-Image">Learn more</a> about the Qwen-Image series. This demo uses the <a href="https://huggingface.co/lightx2v/Qwen-Image-Lightning">Qwen-Image-Lightning</a> LoRA for accelerated inference. <a href="https://huggingface.co/Qwen/Qwen-Image">Download model</a> to run locally with ComfyUI or diffusers.</p>
+<!-- HTML_TAG_END --> </span> </div></div> </div>   <div id="component-4" class="row  svelte-1xp0cw7   unequal-height">      <div id="component-5" class="block  svelte-1svsvh2         auto-margin" dir="ltr" style="--start-top: 0px; --start-left: 0px; --start-width: 0px; --start-height: 0px; border-style: solid; overflow: hidden; min-width: calc(min(160px, 100%)); border-width: var(--block-border-width);">  <label class="svelte-173056l  show_textbox_border"> <span data-testid="block-info" dir="ltr" class="svelte-g2oxp3 sr-only hide">Prompt</span>  <div class="input-container svelte-173056l"><textarea data-testid="textbox" dir="ltr" placeholder="Enter your prompt" rows="1"   style="" class="svelte-173056l"></textarea>  </div> </label> </div>   <button class="lg primary  svelte-1ixn6qd" id="component-6"  style="width: fit-content;"> Run</button> </div>     <div id="component-7" class="block  svelte-1svsvh2         auto-margin" dir="ltr" style="--start-top: 0px; --start-left: 0px; --start-width: 0px; --start-height: 0px; border-style: solid; overflow: hidden; min-width: calc(min(160px, 100%)); border-width: var(--block-border-width);"><div class="wrap default full svelte-ls20lj hide" style="position: absolute; padding: 0;"> </div> <label for="" data-testid="block-label" dir="ltr" class="svelte-1to105q hide sr-only float"><span class="svelte-1to105q"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-image"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></span>  </label> <div class="empty svelte-1oiin9d  large unpadded_box" aria-label="Empty value"><div class="icon svelte-1oiin9d"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-image"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div> </div> </div>   <div id="component-8" class="block  svelte-1svsvh2  padded       auto-margin" dir="ltr" style="--start-top: 0px; --start-left: 0px; --start-width: 0px; --start-height: 0px; border-style: solid; overflow: auto; min-width: calc(min(0px, 100%)); border-width: var(--block-border-width);"><div class="wrap default full svelte-ls20lj hide" style="position: absolute; padding: 0;"> </div> <button class="label-wrap svelte-1w6vloh"><span class="svelte-1w6vloh">Advanced Settings</span> <span class="icon svelte-1w6vloh" style="transform: rotate(90deg);" data-svelte-h="svelte-1mqwc8d">▼</span></button> <div style="display: none;"><div id="" class="column  svelte-bnzux8" style="min-width: calc(min(0px, 100%));">   <div class="form svelte-633qhp" style="min-width: calc(min(0px, 100%));">   <div id="component-9" class="block  svelte-1svsvh2  padded       auto-margin" dir="ltr" style="--start-top: 0px; --start-left: 0px; --start-width: 0px; --start-height: 0px; border-style: solid; overflow: auto; min-width: calc(min(160px, 100%)); border-width: var(--block-border-width);"><div class="wrap default full svelte-ls20lj hide" style="position: absolute; padding: 0;"> </div> <div class="wrap svelte-1kajgn1"><div class="head svelte-1kajgn1"><label for="range_id_87" class="svelte-1kajgn1"><span data-testid="block-info" dir="ltr" class="svelte-g2oxp3">Seed</span> </label> <div class="tab-like-container svelte-1kajgn1"><input aria-label="number input for Seed" data-testid="number-input" type="number" min="0" max="2147483647" step="1"  class="svelte-1kajgn1" value="0"> <button class="reset-button svelte-1kajgn1"  aria-label="Reset to default value" data-testid="reset-button">↺</button></div></div> <div class="slider_input_container svelte-1kajgn1"><span class="min_value svelte-1kajgn1">0</span> <input type="range" id="range_id_87" name="cowbell" min="0" max="2147483647" step="1"  aria-label="range slider for Seed" class="svelte-1kajgn1" value="0"> <span class="max_value svelte-1kajgn1">2147483647</span></div></div> </div>   <div id="component-10" class="block  svelte-1svsvh2  padded       auto-margin" dir="ltr" style="--start-top: 0px; --start-left: 0px; --start-width: 0px; --start-height: 0px; border-style: solid; overflow: auto; min-width: calc(min(160px, 100%)); border-width: var(--block-border-width);"><div class="wrap default full svelte-ls20lj hide" style="position: absolute; padding: 0;"> </div>  <label class="svelte-1a15wmk"><input  type="checkbox" name="test" data-testid="checkbox" class="svelte-1a15wmk" checked> <span class="svelte-1a15wmk">Randomize seed</span> </label> </div>  </div>  <div id="component-11" class="row  svelte-1xp0cw7   unequal-height">   <div class="form svelte-633qhp" style="flex-grow: 2; min-width: calc(min(320px, 100%));">  <fieldset id="component-12" class="block  svelte-1svsvh2  padded       auto-margin" dir="ltr" style="--start-top: 0px; --start-left: 0px; --start-width: 0px; --start-height: 0px; border-style: solid; overflow: auto; min-width: calc(min(160px, 100%)); border-width: var(--block-border-width);"><div class="wrap default full svelte-ls20lj hide" style="position: absolute; padding: 0;"> </div> <span data-testid="block-info" dir="ltr" class="svelte-g2oxp3">Aspect ratio (width:height)</span>  <div class="wrap svelte-1kzox3m"><label data-testid="1:1-radio-label" class="svelte-1bx8sav"><input  type="radio" name="radio-204" value="1:1" aria-checked="false" class="svelte-1bx8sav"> <span class="svelte-1bx8sav">1:1</span> </label><label data-testid="16:9-radio-label" class="svelte-1bx8sav  selected"><input  type="radio" name="radio-205" value="16:9" aria-checked="true" class="svelte-1bx8sav" checked> <span class="svelte-1bx8sav">16:9</span> </label><label data-testid="9:16-radio-label" class="svelte-1bx8sav"><input  type="radio" name="radio-206" value="9:16" aria-checked="false" class="svelte-1bx8sav"> <span class="svelte-1bx8sav">9:16</span> </label><label data-testid="4:3-radio-label" class="svelte-1bx8sav"><input  type="radio" name="radio-207" value="4:3" aria-checked="false" class="svelte-1bx8sav"> <span class="svelte-1bx8sav">4:3</span> </label><label data-testid="3:4-radio-label" class="svelte-1bx8sav"><input  type="radio" name="radio-208" value="3:4" aria-checked="false" class="svelte-1bx8sav"> <span class="svelte-1bx8sav">3:4</span> </label><label data-testid="3:2-radio-label" class="svelte-1bx8sav"><input  type="radio" name="radio-209" value="3:2" aria-checked="false" class="svelte-1bx8sav"> <span class="svelte-1bx8sav">3:2</span> </label><label data-testid="2:3-radio-label" class="svelte-1bx8sav"><input  type="radio" name="radio-210" value="2:3" aria-checked="false" class="svelte-1bx8sav"> <span class="svelte-1bx8sav">2:3</span> </label></div> </fieldset>   <div id="component-13" class="block  svelte-1svsvh2  padded       auto-margin" dir="ltr" style="--start-top: 0px; --start-left: 0px; --start-width: 0px; --start-height: 0px; border-style: solid; overflow: auto; min-width: calc(min(160px, 100%)); border-width: var(--block-border-width);"><div class="wrap default full svelte-ls20lj hide" style="position: absolute; padding: 0;"> </div>  <label class="svelte-1a15wmk"><input  type="checkbox" name="test" data-testid="checkbox" class="svelte-1a15wmk" checked> <span class="svelte-1a15wmk">Prompt Enhance</span> </label> </div>  </div> </div>  <div id="component-15" class="row  svelte-1xp0cw7   unequal-height">   <div class="form svelte-633qhp" style="flex-grow: 2; min-width: calc(min(320px, 100%));">   <div id="component-16" class="block  svelte-1svsvh2  padded       auto-margin" dir="ltr" style="--start-top: 0px; --start-left: 0px; --start-width: 0px; --start-height: 0px; border-style: solid; overflow: auto; min-width: calc(min(160px, 100%)); border-width: var(--block-border-width);"><div class="wrap default full svelte-ls20lj hide" style="position: absolute; padding: 0;"> </div> <div class="wrap svelte-1kajgn1"><div class="head svelte-1kajgn1"><label for="range_id_88" class="svelte-1kajgn1"><span data-testid="block-info" dir="ltr" class="svelte-g2oxp3">Guidance scale (True CFG Scale)</span> </label> <div class="tab-like-container svelte-1kajgn1"><input aria-label="number input for Guidance scale (True CFG Scale)" data-testid="number-input" type="number" min="1" max="5" step="0.1"  class="svelte-1kajgn1" value="1"> <button class="reset-button svelte-1kajgn1"  aria-label="Reset to default value" data-testid="reset-button">↺</button></div></div> <div class="slider_input_container svelte-1kajgn1"><span class="min_value svelte-1kajgn1">1</span> <input type="range" id="range_id_88" name="cowbell" min="1" max="5" step="0.1"  aria-label="range slider for Guidance scale (True CFG Scale)" class="svelte-1kajgn1" value="1"> <span class="max_value svelte-1kajgn1">5</span></div></div> </div>    <div id="component-17" class="block  svelte-1svsvh2  padded       auto-margin" dir="ltr" style="--start-top: 0px; --start-left: 0px; --start-width: 0px; --start-height: 0px; border-style: solid; overflow: auto; min-width: calc(min(160px, 100%)); border-width: var(--block-border-width);"><div class="wrap default full svelte-ls20lj hide" style="position: absolute; padding: 0;"> </div> <div class="wrap svelte-1kajgn1"><div class="head svelte-1kajgn1"><label for="range_id_89" class="svelte-1kajgn1"><span data-testid="block-info" dir="ltr" class="svelte-g2oxp3">Number of inference steps</span> </label> <div class="tab-like-container svelte-1kajgn1"><input aria-label="number input for Number of inference steps" data-testid="number-input" type="number" min="4" max="28" step="1"  class="svelte-1kajgn1" value="8"> <button class="reset-button svelte-1kajgn1"  aria-label="Reset to default value" data-testid="reset-button">↺</button></div></div> <div class="slider_input_container svelte-1kajgn1"><span class="min_value svelte-1kajgn1">4</span> <input type="range" id="range_id_89" name="cowbell" min="4" max="28" step="1"  aria-label="range slider for Number of inference steps" class="svelte-1kajgn1" value="8"> <span class="max_value svelte-1kajgn1">28</span></div></div> </div>  </div> </div> </div> </div> </div>   <div id="component-20" class="block  svelte-1svsvh2      hide-container   auto-margin" dir="ltr" style="--start-top: 0px; --start-left: 0px; --start-width: 0px; --start-height: 0px; border-style: solid; overflow: hidden; min-width: calc(min(160px, 100%)); border-width: var(--block-border-width);"><div class="label svelte-p5q82i"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" class="svelte-p5q82i"><path fill="currentColor" d="M10 6h18v2H10zm0 18h18v2H10zm0-9h18v2H10zm-6 0h2v2H4zm0-9h2v2H4zm0 18h2v2H4z"></path></svg> Examples</div> <div class="gallery svelte-p5q82i"><button class="gallery-item svelte-p5q82i"> </button><button class="gallery-item svelte-p5q82i"> </button><button class="gallery-item svelte-p5q82i"> </button><button class="gallery-item svelte-p5q82i"> </button><button class="gallery-item svelte-p5q82i"> </button><button class="gallery-item svelte-p5q82i"> </button><button class="gallery-item svelte-p5q82i"> </button><button class="gallery-item svelte-p5q82i"> </button><button class="gallery-item svelte-p5q82i"> </button></div>  </div>  </div> </div></div> <footer class="svelte-czcr5b"><button class="show-api svelte-czcr5b">Use via API or MCP <img src="data:image/svg+xml,%3csvg%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M26.9425%202.94265C27.4632%202.42195%2027.4632%201.57773%2026.9425%201.05703C26.4218%200.536329%2025.5776%200.536329%2025.0569%201.05703L22.5713%203.54256C21.1213%202.59333%2019.5367%202.43378%2018.1753%202.64006C16.5495%202.88638%2015.1127%203.66838%2014.3905%204.39053L12.3905%206.39053C12.1405%206.64058%2012%206.97972%2012%207.33334C12%207.68697%2012.1405%208.0261%2012.3905%208.27615L19.7239%2015.6095C20.2446%2016.1302%2021.0888%2016.1302%2021.6095%2015.6095L23.6095%2013.6095C24.3316%2012.8873%2025.1136%2011.4505%2025.36%209.82475C25.5663%208.46312%2025.4066%206.87827%2024.4571%205.42807L26.9425%202.94265Z'%20fill='%233c4555'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M12.276%2012.9426C12.7967%2012.4219%2012.7967%2011.5777%2012.276%2011.057C11.7553%2010.5363%2010.9111%2010.5363%2010.3904%2011.057L8.66651%2012.7809L8.27615%2012.3905C8.0261%2012.1405%207.68697%2012%207.33334%2012C6.97972%2012%206.64058%2012.1405%206.39053%2012.3905L4.39053%2014.3905C3.66838%2015.1127%202.88638%2016.5495%202.64006%2018.1753C2.43377%2019.5367%202.59333%2021.1214%203.54262%2022.5714L1.05703%2025.057C0.536329%2025.5777%200.536329%2026.4219%201.05703%2026.9426C1.57773%2027.4633%202.42195%2027.4633%202.94265%2026.9426L5.42817%2024.4571C6.87835%2025.4066%208.46315%2025.5663%209.82475%2025.36C11.4505%2025.1136%2012.8873%2024.3316%2013.6095%2023.6095L15.6095%2021.6095C16.1302%2021.0888%2016.1302%2020.2446%2015.6095%2019.7239L15.2188%2019.3332L16.9426%2017.6093C17.4633%2017.0886%2017.4633%2016.2444%2016.9426%2015.7237C16.4219%2015.203%2015.5777%2015.203%2015.057%2015.7237L13.3332%2017.4475L10.5521%2014.6665L12.276%2012.9426Z'%20fill='%23FF7C00'/%3e%3c/svg%3e" alt="logo" class="svelte-czcr5b"></button> <div class="divider show-api-divider svelte-czcr5b" data-svelte-h="svelte-1b2w0qd">·</div> <a href="https://gradio.app" class="built-with svelte-czcr5b" target="_blank" rel="noreferrer">Built with Gradio <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='576'%20height='576'%20viewBox='0%200%20576%20576'%20fill='none'%3e%3cpath%20d='M287.5%20229L86%20344.5L287.5%20460L489%20344.5L287.5%20229Z'%20stroke='url(%23paint0_linear_102_7)'%20stroke-width='59'%20stroke-linejoin='round'/%3e%3cpath%20d='M287.5%20116L86%20231.5L287.5%20347L489%20231.5L287.5%20116Z'%20stroke='url(%23paint1_linear_102_7)'%20stroke-width='59'%20stroke-linejoin='round'/%3e%3cpath%20d='M86%20344L288%20229'%20stroke='url(%23paint2_linear_102_7)'%20stroke-width='59'%20stroke-linejoin='bevel'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_102_7'%20x1='60'%20y1='341'%20x2='429.5'%20y2='344'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F9D100'/%3e%3cstop%20offset='1'%20stop-color='%23F97700'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_102_7'%20x1='513.5'%20y1='231'%20x2='143.5'%20y2='231'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F9D100'/%3e%3cstop%20offset='1'%20stop-color='%23F97700'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint2_linear_102_7'%20x1='60'%20y1='344'%20x2='428.987'%20y2='341.811'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F9D100'/%3e%3cstop%20offset='1'%20stop-color='%23F97700'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e" alt="logo" class="svelte-czcr5b"></a> <div class="divider svelte-czcr5b hidden" data-svelte-h="svelte-8g02jg">·</div> <button class="record svelte-czcr5b hidden">Stop Recording <img src="data:image/svg+xml,%3csvg%20viewBox='0%200%2020%2020'%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20fill='%23000000'%3e%3cg%20id='SVGRepo_bgCarrier'%20stroke-width='0'%3e%3c/g%3e%3cg%20id='SVGRepo_tracerCarrier'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3c/g%3e%3cg%20id='SVGRepo_iconCarrier'%3e%3ctitle%3erecord%20[%23982]%3c/title%3e%3cdesc%3eCreated%20with%20Sketch.%3c/desc%3e%3cdefs%3e%3c/defs%3e%3cg%20id='Page-1'%20stroke='none'%20stroke-width='1'%20fill='none'%20fill-rule='evenodd'%3e%3cg%20id='Dribbble-Light-Preview'%20transform='translate(-380.000000,%20-3839.000000)'%20fill='%23FF0000'%3e%3cg%20id='icons'%20transform='translate(56.000000,%20160.000000)'%3e%3cpath%20d='M338,3689%20C338,3691.209%20336.209,3693%20334,3693%20C331.791,3693%20330,3691.209%20330,3689%20C330,3686.791%20331.791,3685%20334,3685%20C336.209,3685%20338,3686.791%20338,3689%20M334,3697%20C329.589,3697%20326,3693.411%20326,3689%20C326,3684.589%20329.589,3681%20334,3681%20C338.411,3681%20342,3684.589%20342,3689%20C342,3693.411%20338.411,3697%20334,3697%20M334,3679%20C328.477,3679%20324,3683.477%20324,3689%20C324,3694.523%20328.477,3699%20334,3699%20C339.523,3699%20344,3694.523%20344,3689%20C344,3683.477%20339.523,3679%20334,3679'%20id='record-[%23982]'%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="Stop Recording" class="svelte-czcr5b"></button> <div class="divider svelte-czcr5b" data-svelte-h="svelte-1r8d4nl">·</div> <button class="settings svelte-czcr5b">Settings <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3c!--%20Outer%20gear%20teeth%20(gray)%20--%3e%3cpath%20d='M19.14%2012.94c.04-.3.06-.61.06-.94%200-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24%200-.43.17-.47.41l-.36%202.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47%200-.59.22L2.74%208.87c-.12.21-.08.47.12.61l2.03%201.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03%201.58c-.18.14-.23.41-.12.61l1.92%203.32c.12.22.37.29.59.22l2.39-.96c.5.38%201.03.7%201.62.94l.36%202.54c.05.24.24.41.48.41h3.84c.24%200%20.44-.17.47-.41l.36-2.54c.59-.24%201.13-.56%201.62-.94l2.39.96c.22.08.47%200%20.59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12%2015.6c-1.98%200-3.6-1.62-3.6-3.6s1.62-3.6%203.6-3.6%203.6%201.62%203.6%203.6-1.62%203.6-3.6%203.6z'%20fill='%23808080'/%3e%3c!--%20Inner%20circle%20(now%20gray)%20--%3e%3ccircle%20cx='12'%20cy='12'%20r='2.5'%20fill='%23808080'/%3e%3c/svg%3e" alt="Settings" class="svelte-czcr5b"></button></footer></div>    <div class="toast-wrap svelte-pu0yf1"> </div> <div></div></main> </div> 
+			
+			<script>
+				{
+					__sveltekit_o680fy = {
+						base: new URL("../../../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [{"type":"data","data":null,"uses":{}},{"type":"data","data":{server:"http://0.0.0.0:7860",port:"7860",local_dev_mode:void 0},"uses":{}}];
+
+					Promise.all([
+						import("../../../../_app/immutable/entry/start.DJv2Cs3S.js"),
+						import("../../../../_app/immutable/entry/app.XkwneLUg.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
