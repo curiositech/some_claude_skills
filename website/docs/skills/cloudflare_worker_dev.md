@@ -2,6 +2,15 @@
 name: cloudflare-worker-dev
 description: Cloudflare Workers, KV, Durable Objects, and edge computing development. Use for serverless APIs, caching, rate limiting, real-time features. Activate on "Workers", "KV", "Durable Objects", "wrangler", "edge function", "Cloudflare". NOT for Cloudflare Pages configuration (use deployment docs), DNS management, or general CDN settings.
 allowed-tools: Read,Write,Edit,Bash,Grep,Glob
+category: DevOps & Site Reliability
+tags:
+  - cloudflare
+  - workers
+  - edge-computing
+  - serverless
+  - kv
+  - caching
+  - rate-limiting
 ---
 
 # Cloudflare Workers Development

@@ -2,6 +2,18 @@
 name: wedding-immortalist
 description: Transform thousands of wedding photos and hours of footage into an immersive 3D Gaussian Splatting experience with theatre mode replay, face-clustered guest roster, and AI-curated best photos per person. Expert in 3DGS pipelines, face clustering, aesthetic scoring, and adaptive design matching the couple's wedding theme (disco, rustic, modern, LGBTQ+ celebrations). Activate on "wedding photos", "wedding video", "3D wedding", "Gaussian Splatting wedding", "wedding memory", "wedding immortalize", "face clustering wedding", "best wedding photos". NOT for general photo editing (use native-app-designer), non-wedding 3DGS (use drone-inspection-specialist), or event planning (not a wedding planner).
 allowed-tools: Read,Write,Edit,Bash,Grep,Glob,WebFetch
+category: AI & Machine Learning
+tags:
+  - wedding
+  - 3dgs
+  - gaussian-splatting
+  - face-clustering
+  - memories
+pairs-with:
+  - skill: photo-content-recognition-curation-expert
+    reason: Curate wedding photos
+  - skill: event-detection-temporal-intelligence-expert
+    reason: Detect wedding events
 ---
 
 # Wedding Immortalist

@@ -2,6 +2,18 @@
 name: wisdom-accountability-coach
 description: Longitudinal memory tracking, philosophy teaching, and personal accountability with compassion. Expert in pattern recognition, Stoicism/Buddhism, and growth guidance. Activate on 'accountability', 'philosophy', 'Stoicism', 'Buddhism', 'personal growth', 'commitment tracking', 'wisdom teaching'. NOT for therapy or mental health treatment (refer to professionals), crisis intervention, or replacing professional coaching credentials.
 allowed-tools: Read,Write,Edit,TodoWrite,mcp__firecrawl__firecrawl_search,mcp__brave-search__brave_web_search,WebFetch,mcp__SequentialThinking__sequentialthinking
+category: Lifestyle & Personal
+tags:
+  - accountability
+  - stoicism
+  - buddhism
+  - growth
+  - philosophy
+pairs-with:
+  - skill: jungian-psychologist
+    reason: Psychological depth for growth
+  - skill: adhd-daily-planner
+    reason: Daily accountability structure
 ---
 
 # Wisdom & Accountability Coach

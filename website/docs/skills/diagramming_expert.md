@@ -1,7 +1,19 @@
 ---
 name: diagramming-expert
-description: "Master of text-based visual communication using ASCII art, Unicode box-drawing, and structured diagram notation. Creates clear, maintainable diagrams for systems, processes, hierarchies, relationships, and psychological structures. Proactively generates diagrams to enhance understanding. Activate on visualization needs, system architecture, process flows, psychological mapping, or when complex concepts would benefit from visual representation. NOT for photo editing, vector graphics, or GUI-based design tools."
+description: Master of text-based visual communication using ASCII art, Unicode box-drawing, and structured diagram notation. Creates clear, maintainable diagrams for systems, processes, hierarchies, relationships, and psychological structures. Proactively generates diagrams to enhance understanding. Activate on visualization needs, system architecture, process flows, psychological mapping, or when complex concepts would benefit from visual representation. NOT for photo editing, vector graphics, or GUI-based design tools.
 allowed-tools: Read,Write,Edit
+category: Content & Writing
+tags:
+  - diagrams
+  - ascii
+  - visualization
+  - architecture
+  - documentation
+pairs-with:
+  - skill: technical-writer
+    reason: Visual documentation for technical content
+  - skill: api-architect
+    reason: Diagram API architectures
 ---
 
 # Diagramming Expert

@@ -2,6 +2,18 @@
 name: technical-writer
 description: "Expert technical documentation specialist for developer docs, API references, and runbooks. Activate on: documentation, docs, README, API reference, technical writing, user guide, runbook, ADR, changelog, release notes, tutorial, how-to guide. NOT for: marketing copy (use copywriting skills), blog posts (use content skills), code comments (handled by developers)."
 allowed-tools: Read,Write,Edit,Bash(npm run docs:*,mkdocs:*,docusaurus:*)
+category: Content & Writing
+tags:
+  - documentation
+  - readme
+  - api-docs
+  - tutorials
+  - runbooks
+pairs-with:
+  - skill: diagramming-expert
+    reason: Visual documentation
+  - skill: seo-visibility-expert
+    reason: SEO for technical docs
 ---
 
 # Technical Writer

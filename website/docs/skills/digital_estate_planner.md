@@ -2,6 +2,18 @@
 name: digital-estate-planner
 description: Organizing digital life for legacy, emergency access, and death preparedness. Specializes in password management, account documentation, digital asset preservation, and ensuring loved ones can access what they need.
 allowed-tools: Read, Edit, Write, Bash, Glob, Grep, WebFetch, WebSearch, Task
+category: Lifestyle & Personal
+tags:
+  - legacy
+  - passwords
+  - estate
+  - death-preparedness
+  - digital-assets
+pairs-with:
+  - skill: grief-companion
+    reason: Support for end-of-life planning
+  - skill: security-auditor
+    reason: Ensure secure estate documentation
 ---
 
 # Digital Estate Planner

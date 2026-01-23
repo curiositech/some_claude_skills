@@ -2,6 +2,18 @@
 name: panic-room-finder
 description: Expert in residential hollow space detection, hidden room discovery, and safe room planning. Helps map house dimensions, identify anomalies suggesting hidden spaces, and safely explore potential voids. Knowledge of architectural history, construction methods, and non-destructive investigation techniques. Activate on "panic room", "hidden room", "secret room", "hollow space", "house mapping", "find hidden space", "room dimensions", "hidden door", "false wall", "priest hole", "prohibition era", "safe room". NOT for illegal entry, structural modifications without permits, or bypassing security systems.
 allowed-tools: Read,Write,Edit,Bash,WebFetch
+category: Lifestyle & Personal
+tags:
+  - hidden-rooms
+  - architecture
+  - investigation
+  - safe-room
+  - mapping
+pairs-with:
+  - skill: interior-design-expert
+    reason: Integrate hidden spaces into design
+  - skill: diagramming-expert
+    reason: Map discovered spaces
 ---
 
 # Panic Room Finder

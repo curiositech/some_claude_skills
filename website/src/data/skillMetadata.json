@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-22T10:21:12.467Z",
+  "generatedAt": "2026-01-23T14:52:16.873Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
@@ -637,6 +637,18 @@
       "hasExamples": false,
       "hasChangelog": true
     },
+    "design-justice": {
+      "id": "design-justice",
+      "createdAt": null,
+      "updatedAt": null,
+      "totalLines": 1944,
+      "totalFiles": 5,
+      "skillMdSize": 12134,
+      "skillMdLines": 386,
+      "hasReferences": true,
+      "hasExamples": false,
+      "hasChangelog": false
+    },
     "design-system-creator": {
       "id": "design-system-creator",
       "createdAt": "2025-11-25T18:43:58-08:00",
@@ -940,7 +952,7 @@
     "knot-theory-educator": {
       "id": "knot-theory-educator",
       "createdAt": "2025-12-23T05:23:59-08:00",
-      "updatedAt": "2025-12-26T08:40:43-08:00",
+      "updatedAt": "2026-01-22T02:21:05-08:00",
       "totalLines": 972,
       "totalFiles": 2,
       "skillMdSize": 11102,
@@ -1168,7 +1180,7 @@
     "physics-rendering-expert": {
       "id": "physics-rendering-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
-      "updatedAt": "2025-12-26T08:40:43-08:00",
+      "updatedAt": "2026-01-22T02:21:05-08:00",
       "totalLines": 2036,
       "totalFiles": 6,
       "skillMdSize": 5641,
@@ -1681,6 +1693,18 @@
       "hasExamples": false,
       "hasChangelog": false
     },
+    "web-cloud-designer": {
+      "id": "web-cloud-designer",
+      "createdAt": null,
+      "updatedAt": null,
+      "totalLines": 1857,
+      "totalFiles": 5,
+      "skillMdSize": 18106,
+      "skillMdLines": 700,
+      "hasReferences": true,
+      "hasExamples": false,
+      "hasChangelog": true
+    },
     "web-design-expert": {
       "id": "web-design-expert",
       "createdAt": "2025-11-25T18:43:58-08:00",
@@ -1689,6 +1713,18 @@
       "totalFiles": 5,
       "skillMdSize": 5541,
       "skillMdLines": 153,
+      "hasReferences": true,
+      "hasExamples": false,
+      "hasChangelog": true
+    },
+    "web-wave-designer": {
+      "id": "web-wave-designer",
+      "createdAt": null,
+      "updatedAt": null,
+      "totalLines": 2227,
+      "totalFiles": 5,
+      "skillMdSize": 28067,
+      "skillMdLines": 1090,
       "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": true

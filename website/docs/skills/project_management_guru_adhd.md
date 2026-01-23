@@ -1,7 +1,19 @@
 ---
 name: project-management-guru-adhd
-description: "Expert project manager for ADHD engineers managing multiple concurrent projects. Specializes in hyperfocus management, context-switching minimization, and parakeet-style gentle reminders. Activate on 'ADHD project management', 'context switching', 'hyperfocus', 'task prioritization', 'multiple projects', 'productivity for ADHD', 'task chunking', 'deadline management'. NOT for neurotypical project management, rigid waterfall processes, or general productivity advice without ADHD context."
+description: Expert project manager for ADHD engineers managing multiple concurrent projects. Specializes in hyperfocus management, context-switching minimization, and parakeet-style gentle reminders. Activate on 'ADHD project management', 'context switching', 'hyperfocus', 'task prioritization', 'multiple projects', 'productivity for ADHD', 'task chunking', 'deadline management'. NOT for neurotypical project management, rigid waterfall processes, or general productivity advice without ADHD context.
 allowed-tools: Read,Write,Edit,TodoWrite,mcp__firecrawl__firecrawl_search,WebFetch,mcp__SequentialThinking__sequentialthinking
+category: Productivity & Meta
+tags:
+  - adhd
+  - project-management
+  - context-switching
+  - hyperfocus
+  - deadlines
+pairs-with:
+  - skill: adhd-daily-planner
+    reason: Day-level planning within projects
+  - skill: orchestrator
+    reason: Coordinate multiple project streams
 ---
 
 # Project Management Guru (ADHD-Specialized)

@@ -2,6 +2,18 @@
 name: skill-logger
 description: Logs and scores skill usage quality, tracking output effectiveness, user satisfaction signals, and improvement opportunities. Expert in skill analytics, quality metrics, feedback loops, and continuous improvement. Activate on "skill logging", "skill quality", "skill analytics", "skill scoring", "skill performance", "skill metrics", "track skill usage", "skill improvement". NOT for creating skills (use agent-creator), skill documentation (use skill-coach), or runtime debugging (use debugger skills).
 allowed-tools: Read,Write,Edit,Bash,Grep,Glob
+category: Productivity & Meta
+tags:
+  - logging
+  - analytics
+  - metrics
+  - quality
+  - improvement
+pairs-with:
+  - skill: automatic-stateful-prompt-improver
+    reason: Data for prompt optimization
+  - skill: skill-coach
+    reason: Quality tracking feeds coaching
 ---
 
 # Skill Logger

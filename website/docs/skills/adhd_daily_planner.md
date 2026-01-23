@@ -2,6 +2,18 @@
 name: adhd-daily-planner
 description: Time-blind friendly planning, executive function support, and daily structure for ADHD brains. Specializes in realistic time estimation, dopamine-aware task design, and building systems that actually work for neurodivergent minds.
 allowed-tools: Read, Edit, Write, Bash, Glob, Grep, WebFetch, WebSearch, Task
+category: Lifestyle & Personal
+tags:
+  - adhd
+  - productivity
+  - planning
+  - neurodivergent
+  - executive-function
+pairs-with:
+  - skill: project-management-guru-adhd
+    reason: Long-term project planning with ADHD context
+  - skill: wisdom-accountability-coach
+    reason: Accountability and habit tracking
 ---
 
 # ADHD Daily Planner

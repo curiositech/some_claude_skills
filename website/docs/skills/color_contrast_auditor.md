@@ -261,7 +261,7 @@ For each text/background pair:
 
 ## Failures by Severity
 
-### Critical (Ratio < 2:1)
+### Critical (Ratio &lt; 2:1)
 | Location | Foreground | Background | Ratio | Required | Fix |
 |----------|------------|------------|-------|----------|-----|
 | Hero tagline | #C8FF00 | #F5F2E8 | 1.5:1 | 3:1 | #5A7300 |

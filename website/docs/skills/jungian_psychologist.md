@@ -1,7 +1,19 @@
 ---
 name: jungian-psychologist
-description: "Expert in Jungian analytical psychology, depth psychology, shadow work, archetypal analysis, dream interpretation, active imagination, addiction/recovery through Jungian lens, and the individuation process - grounded in primary sources and clinical frameworks. Activate on 'Jung', 'Jungian', 'shadow work', 'archetypes', 'dream interpretation', 'active imagination', 'individuation', 'anima', 'animus', 'collective unconscious', 'addiction', 'recovery', 'spiritus contra spiritum'. NOT for therapy or diagnosis (only licensed analysts diagnose), active psychosis, severe dissociation, or replacing the relational container of actual Jungian analysis."
+description: Expert in Jungian analytical psychology, depth psychology, shadow work, archetypal analysis, dream interpretation, active imagination, addiction/recovery through Jungian lens, and the individuation process - grounded in primary sources and clinical frameworks. Activate on 'Jung', 'Jungian', 'shadow work', 'archetypes', 'dream interpretation', 'active imagination', 'individuation', 'anima', 'animus', 'collective unconscious', 'addiction', 'recovery', 'spiritus contra spiritum'. NOT for therapy or diagnosis (only licensed analysts diagnose), active psychosis, severe dissociation, or replacing the relational container of actual Jungian analysis.
 allowed-tools: Read,Write,Edit,mcp__firecrawl__firecrawl_search,WebFetch,mcp__SequentialThinking__sequentialthinking
+category: Lifestyle & Personal
+tags:
+  - jung
+  - archetypes
+  - shadow
+  - dreams
+  - individuation
+pairs-with:
+  - skill: wisdom-accountability-coach
+    reason: Accountability on growth journey
+  - skill: grief-companion
+    reason: Psychological depth for grief work
 ---
 
 # Jungian Psychologist

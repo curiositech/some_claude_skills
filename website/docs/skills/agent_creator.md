@@ -2,6 +2,18 @@
 name: agent-creator
 description: Meta-agent for creating new custom agents, skills, and MCP integrations. Expert in agent design, MCP development, skill architecture, and rapid prototyping. Activate on 'create agent', 'new skill', 'MCP server', 'custom tool', 'agent design'. NOT for using existing agents (invoke them directly), general coding (use language-specific skills), or infrastructure setup (use deployment-engineer).
 allowed-tools: Read,Write,Edit,Glob,Grep,Bash,mcp__firecrawl__firecrawl_search,WebFetch
+category: Productivity & Meta
+tags:
+  - agents
+  - mcp
+  - automation
+  - meta
+  - skill-development
+pairs-with:
+  - skill: skill-coach
+    reason: Quality review for created skills
+  - skill: mcp-creator
+    reason: When skills need external tool integration
 ---
 
 # Agent Creator

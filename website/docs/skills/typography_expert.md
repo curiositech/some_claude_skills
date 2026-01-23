@@ -1,322 +1,304 @@
 ---
 name: typography-expert
-description: Expert in typography, font selection, hierarchy, and typographic design principles
+description: Master typographer specializing in font pairing, typographic hierarchy, OpenType features, variable fonts, and performance-optimized web typography. Use for font selection, type scales, web font optimization, and typographic systems. Activate on "typography", "font pairing", "type scale", "variable fonts", "web fonts", "OpenType", "font loading". NOT for logo design, icon fonts, general CSS styling, or image-based typography.
+allowed-tools: Read,Write,Edit,WebFetch
+category: Design & Creative
+tags:
+  - typography
+  - fonts
+  - type-scale
+  - variable-fonts
+  - opentype
+pairs-with:
+  - skill: design-system-creator
+    reason: Typography in design systems
+  - skill: web-design-expert
+    reason: Typography for web projects
 ---
 
 # Typography Expert
 
-<SkillHeader
-  skillName="Typography Expert"
-  fileName="typography_expert"
-  description={"Master typographer specializing in font pairing, typographic hierarchy, OpenType features, variable fonts, and performance-optimized web typography. Use for font selection, type scales, web font optimization, and typographic systems. Activate on \"typography\", \"font pairing\", \"type scale\", \"variable fonts\", \"web fonts\", \"OpenType\", \"font loading\". NOT for logo design, icon fonts, general CSS styling, or image-based typography."}
-  tags={["analysis","design","advanced"]}
-/>
+Master typographer specializing in font pairing, typographic hierarchy, OpenType features, variable fonts, and performance-optimized web typography.
 
-**Master typographer specializing in font pairing, typographic hierarchy, OpenType features, variable fonts, and performance-optimized web typography.**
+## When to Use This Skill
+
+✅ **Use for:**
+- Font pairing recommendations for brand identity
+- Typographic hierarchy for design systems
+- Performance-optimized web font implementation
+- Variable font integration with CSS custom properties
+- Type scale calculations (modular, fluid, responsive)
+- Font loading strategies (FOUT/FOIT/FOFT prevention)
+- OpenType feature implementation (ligatures, small caps, numerals)
+- Accessibility compliance for typography (WCAG contrast, sizing)
+- Dark mode typography compensation
+- Multilingual typography support (RTL, CJK, diacritics)
+
+❌ **Do NOT use for:**
+- Logo design or wordmark creation → use design-system-creator
+- Icon font implementation → use web-design-expert
+- General CSS styling unrelated to type → not a typography issue
+- Image-based or rasterized typography → different domain
+- Brand strategy or naming → this is visual implementation only
+- Motion graphics with text → use native-app-designer
 
 ## Core Expertise
 
-### Font Selection & Pairing
-- **Font Psychology**: Understanding emotional impact and brand alignment through typeface selection
-- **Pairing Principles**: Contrast, harmony, hierarchy through strategic font combinations
-- **System Fonts**: Leveraging native system font stacks for performance
-- **Web Font Optimization**: Subsetting, format selection (WOFF2, variable fonts)
-- **Font Licensing**: Navigating commercial, open source, and custom font licensing
+### Font Selection Psychology
 
-### Typographic Hierarchy
-- **Scale Systems**: Modular scales, perfect fourths, golden ratio-based type scales
-- **Visual Hierarchy**: Size, weight, color, spacing to guide reader attention
-- **Responsive Typography**: Fluid type scales, viewport-based sizing, container queries
-- **Vertical Rhythm**: Baseline grids, line-height systems, consistent spacing
-- **Typographic Color**: Managing tonal contrast and visual weight
+**Serif vs Sans-Serif Decision Tree:**
+```
+IF formal/traditional/authoritative needed → Serif (Garamond, Minion, Crimson)
+IF modern/clean/technical needed → Sans-Serif (Inter, Helvetica, Roboto)
+IF humanist/friendly/approachable → Humanist Sans (Gill Sans, Fira Sans, Source Sans)
+IF geometric/structured/tech-forward → Geometric Sans (Futura, Avenir, Poppins)
+IF editorial/long-form reading → Transitional Serif (Georgia, Charter, Lora)
+```
 
-### Advanced OpenType
-- **OpenType Features**: Ligatures, small caps, old-style numerals, contextual alternates
-- **Variable Fonts**: Axis control (weight, width, optical size, custom axes)
-- **Font Feature Settings**: CSS `font-feature-settings`, `font-variant-*` properties
-- **Kerning & Tracking**: Optical vs. metric kerning, letterspacing for legibility
-- **Hyphenation & Justification**: Language-specific hyphenation, ragged vs. justified text
+**Pairing Rules (Expert Knowledge):**
+1. **Contrast, not conflict** - Pair fonts with distinct personalities but compatible x-heights
+2. **Same designer rule** - Fonts from same designer/foundry often pair well (Baskerville + Franklin Gothic)
+3. **Historical compatibility** - Fonts from same era share design DNA (Didot + Bodoni: both Didone)
+4. **Superfamily shortcut** - Use superfamily (Alegreya + Alegreya Sans) for guaranteed harmony
+
+### Type Scale Systems
+
+**Modular Scale Ratios:**
+| Ratio | Name | Use Case |
+|-------|------|----------|
+| 1.067 | Minor Second | Dense UIs, small screens |
+| 1.125 | Major Second | General web content |
+| 1.200 | Minor Third | **Most common**, balanced hierarchy |
+| 1.250 | Major Third | Marketing, headlines |
+| 1.333 | Perfect Fourth | Bold statements, hero sections |
+| 1.414 | Augmented Fourth | Editorial, dramatic hierarchy |
+| 1.618 | Golden Ratio | Classical, use sparingly (too large for most UI) |
+
+**Fluid Typography Formula (2024 Best Practice):**
+```css
+/* Base: 16px at 320px viewport, 20px at 1200px viewport */
+font-size: clamp(1rem, 0.875rem + 0.5vw, 1.25rem);
+
+/* Heading: 32px at 320px, 64px at 1200px */
+font-size: clamp(2rem, 1rem + 3.6vw, 4rem);
+```
+
+### Variable Fonts
+
+**Axis Control (Expert Knowledge):**
+| Axis | Tag | Range | Use Case |
+|------|-----|-------|----------|
+| Weight | wght | 100-900 | Adjust weight without loading multiple files |
+| Width | wdth | 75-125 | Responsive text that adapts to container |
+| Slant | slnt | -12-0 | Oblique without separate italic file |
+| Optical Size | opsz | 8-144 | Auto-adjust stroke contrast for size |
+| Grade | GRAD | -200-150 | Adjust weight without reflowing (dark mode) |
+
+**Critical: Dark Mode Compensation**
+```css
+/* Text appears lighter on dark backgrounds - compensate with grade or weight */
+@media (prefers-color-scheme: dark) {
+  body {
+    /* If variable font supports grade: */
+    font-variation-settings: "GRAD" 50;
+    /* Or bump weight slightly: */
+    font-weight: 450; /* Instead of 400 */
+  }
+}
+```
 
 ### Performance Optimization
-- **Font Loading Strategies**: FOUT, FOIT, FOFT strategies with `font-display`
-- **Subsetting**: Unicode-range subsetting, language-specific character sets
-- **Preloading**: Critical font preloading, resource hints
-- **Self-Hosting vs CDN**: Trade-offs for privacy, performance, caching
-- **Variable Font Compression**: Efficiency gains with multi-axis variable fonts
 
-### Accessibility & Readability
-- **Contrast Ratios**: WCAG AA/AAA compliance for text readability
-- **Font Size Guidelines**: Minimum sizes, mobile-first considerations
-- **Dyslexia-Friendly Typography**: Font choices, spacing, line length
-- **RTL & Internationalization**: Right-to-left scripts, CJK typography, diacritics
-- **Screen Reader Considerations**: Semantic markup for typographic emphasis
+**Font Loading Priority:**
+1. **Critical CSS first** - Inline @font-face for above-fold fonts
+2. **Preload primary** - `<link rel="preload" as="font" crossorigin>`
+3. **font-display: swap** - Show fallback immediately, swap when loaded
+4. **Subset aggressively** - Latin Extended covers most Western languages at ~30KB vs ~150KB full
 
-## Technical Implementation
+**Budget Guidelines:**
+| Performance Tier | Total Font Budget | Files |
+|-----------------|-------------------|-------|
+| Fast (Core Web Vitals) | Under 100KB | 2-3 WOFF2 |
+| Balanced | 100-200KB | 4-5 WOFF2 |
+| Rich Typography | 200-400KB | 6-8 WOFF2 |
 
-### CSS Typography
+**System Font Stack (Zero Budget):**
 ```css
-/* Modern type scale system */
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+             "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+             "Segoe UI Emoji";
+```
+
+## Common Anti-Patterns
+
+### Anti-Pattern: Too Many Typefaces
+**What it looks like:** 4+ different font families on one page
+**Why it's wrong:** Creates visual chaos, destroys hierarchy, massive performance hit
+**What to do instead:** Maximum 2 families (heading + body), use weight/style variations
+
+### Anti-Pattern: Ignoring x-Height Matching
+**What it looks like:** Body text and fallback system font have visibly different sizes at same px
+**Why it's wrong:** CLS (Cumulative Layout Shift) when web font loads
+**What to do instead:** Use `size-adjust` in @font-face to match fallback x-height
+
+```css
+@font-face {
+  font-family: "Inter";
+  src: url("inter.woff2") format("woff2");
+  size-adjust: 107%; /* Matches Arial x-height */
+}
+```
+
+### Anti-Pattern: Weight Jumps Too Large
+**What it looks like:** Using 400 for body and 700 for headings (300-point jump)
+**Why it's wrong:** Creates harsh hierarchy, especially at large sizes
+**What to do instead:** Use closer weights: 400/600 or 350/500 for subtle hierarchy
+
+### Anti-Pattern: Line Height as Unitless Number Everywhere
+**What it looks like:** `line-height: 1.5` applied globally
+**Why it's wrong:** Headings need tighter line-height (1.1-1.2), body needs looser (1.5-1.7)
+**What to do instead:** Set line-height per type level
+
+### Anti-Pattern: Fixed Font Sizes
+**What it looks like:** `font-size: 16px` hardcoded
+**Why it's wrong:** Breaks user preferences, accessibility issues, no responsive scaling
+**What to do instead:** Use rem units with clamp() for fluid sizing
+
+### Anti-Pattern: Loading Full Character Sets
+**What it looks like:** Loading 800KB font file with Cyrillic, Greek, Vietnamese
+**Why it's wrong:** 90%+ of file unused for English-only sites
+**What to do instead:** Subset to Latin or Latin Extended (~30KB)
+
+## OpenType Features
+
+**Features Worth Enabling:**
+```css
+/* Proper numerals for tabular data */
+font-feature-settings: "tnum" 1; /* Tabular numerals */
+
+/* Proper fractions */
+font-feature-settings: "frac" 1; /* 1/2 → ½ */
+
+/* Small caps for abbreviations */
+font-feature-settings: "smcp" 1, "c2sc" 1;
+
+/* Stylistic alternates for brand */
+font-feature-settings: "ss01" 1; /* Check font for available sets */
+```
+
+**Modern CSS Alternative:**
+```css
+font-variant-numeric: tabular-nums;
+font-variant-numeric: diagonal-fractions;
+font-variant-caps: small-caps;
+```
+
+## Vertical Rhythm & Baseline Grid
+
+**Expert Approach:**
+1. Set base line-height (e.g., 1.5 × 16px = 24px)
+2. All spacing (margin, padding) as multiples of 24px
+3. Headings snap to baseline (line-height: 48px for h1 at 36px)
+
+```css
 :root {
-  /* Fluid typography using clamp() */
-  --fs-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-  --fs-base: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
-  --fs-md: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);
-  --fs-lg: clamp(1.75rem, 1.5rem + 1.25vw, 2.5rem);
-  --fs-xl: clamp(2.5rem, 2rem + 2.5vw, 4rem);
-
-  /* Variable font axes */
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
-
-  /* Optical sizing for variable fonts */
-  font-variation-settings: 'opsz' auto;
+  --baseline: 1.5rem; /* 24px */
 }
 
-/* Performance-optimized font loading */
-@font-face {
-  font-family: 'CustomFont';
-  src: url('/fonts/custom-font.woff2') format('woff2');
-  font-weight: 100 900; /* Variable font weight range */
-  font-display: swap; /* Avoid FOIT */
-  unicode-range: U+0020-007F; /* Latin basic subset */
+h1 {
+  font-size: 2.25rem;
+  line-height: calc(var(--baseline) * 2); /* 48px */
+  margin-bottom: var(--baseline);
 }
 
-/* OpenType features */
-.sophisticated-text {
-  font-feature-settings:
-    'liga' 1,    /* Ligatures */
-    'kern' 1,    /* Kerning */
-    'smcp' 1,    /* Small caps */
-    'onum' 1;    /* Old-style numerals */
-}
-
-/* Responsive type scale with container queries */
-@container (min-width: 600px) {
-  .heading {
-    font-size: var(--fs-xl);
-    line-height: 1.1;
-  }
+p {
+  line-height: var(--baseline);
+  margin-bottom: var(--baseline);
 }
 ```
 
-### Variable Font Implementation
-```css
-/* Single variable font file with multiple axes */
-@font-face {
-  font-family: 'Inter Variable';
-  src: url('/fonts/Inter-Variable.woff2') format('woff2-variations');
-  font-weight: 100 900;
-  font-stretch: 75% 125%;
-  font-display: swap;
-}
+## Responsive Typography Breakpoints
 
-/* Fine-grained control over multiple axes */
-.dynamic-heading {
-  font-family: 'Inter Variable', sans-serif;
-  font-variation-settings:
-    'wght' 700,  /* Weight */
-    'wdth' 100,  /* Width */
-    'slnt' -10;  /* Slant */
-}
+**Decision Tree:**
+```
+Mobile (< 640px):
+  - Base: 16px
+  - Scale: 1.125 (Major Second)
+  - Tighter hierarchy
 
-/* Responsive weight adjustment */
-@media (prefers-color-scheme: dark) {
-  body {
-    font-variation-settings: 'wght' 450; /* Slightly heavier for dark mode */
-  }
-}
+Tablet (640-1024px):
+  - Base: 17px
+  - Scale: 1.2 (Minor Third)
+  - Standard hierarchy
+
+Desktop (> 1024px):
+  - Base: 18-20px
+  - Scale: 1.25 (Major Third)
+  - Expanded hierarchy
+
+Large Display (> 1440px):
+  - Consider max-width on prose (65-75ch)
+  - Don't keep scaling indefinitely
 ```
 
-### Font Loading Strategy
-```javascript
-// Critical font preloading
-<link rel="preload"
-  href="/fonts/inter-variable.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin />
+## Accessibility Requirements
 
-// Progressive font loading with Font Face Observer
-const font = new FontFaceObserver('Inter Variable');
-
-font.load().then(() => {
-  document.documentElement.classList.add('fonts-loaded');
-}).catch(() => {
-  // Fallback to system fonts
-  console.warn('Custom fonts failed to load');
-});
-```
-
-## Design Systems Integration
-
-### Typographic Tokens
-```javascript
-// Design token structure
-export const typography = {
-  fontFamilies: {
-    heading: 'Inter Variable, system-ui, sans-serif',
-    body: 'Inter Variable, system-ui, sans-serif',
-    mono: 'JetBrains Mono, Consolas, monospace',
-  },
-  fontSizes: {
-    xs: 'var(--fs-xs)',
-    sm: 'var(--fs-sm)',
-    base: 'var(--fs-base)',
-    md: 'var(--fs-md)',
-    lg: 'var(--fs-lg)',
-    xl: 'var(--fs-xl)',
-  },
-  fontWeights: {
-    light: 300,
-    regular: 400,
-    medium: 500,
-    semibold: 600,
-    bold: 700,
-  },
-  lineHeights: {
-    tight: 1.2,
-    base: 1.5,
-    relaxed: 1.75,
-  },
-  letterSpacing: {
-    tight: '-0.02em',
-    normal: '0',
-    wide: '0.05em',
-  },
-};
-```
-
-## Common Patterns
-
-### Classic Font Pairings
-1. **Serif + Sans-Serif**: Georgia (body) + Inter (headings)
-2. **Modern Tech**: SF Pro Display + SF Pro Text (Apple ecosystem)
-3. **Editorial**: Tiempos Text + Graphik
-4. **Minimalist**: Helvetica Neue + Helvetica Neue (weight contrast)
-5. **Elegant**: Playfair Display + Source Sans Pro
-
-### Responsive Type Scale
-```css
-/* Mobile-first type scale */
-.heading-1 { font-size: clamp(2rem, 5vw, 4rem); }
-.heading-2 { font-size: clamp(1.5rem, 4vw, 3rem); }
-.heading-3 { font-size: clamp(1.25rem, 3vw, 2rem); }
-.body { font-size: clamp(1rem, 2.5vw, 1.125rem); }
-.caption { font-size: clamp(0.875rem, 2vw, 1rem); }
-```
-
-### Performance Budget
-- **Maximum font files**: 2-3 WOFF2 files (or 1 variable font)
-- **Total font weight**: Less than 100KB (with subsetting)
-- **Flash of unstyled text (FOUT)**: Less than 100ms
-- **First contentful paint (FCP)**: Typography shouldn't block render
-
-## Tools & Technologies
-
-### Font Tools
-- **FontForge**: Open source font editor
-- **Glyphs / FontLab**: Professional font creation
-- **fonttools**: Python library for font manipulation
-- **Wakamaifondue**: Web-based font inspector (What can my font do?)
-- **Google Fonts Helper**: Self-hosting helper for Google Fonts
-
-### Performance Tools
-- **Font subsetting**: glyphhanger, pyftsubset
-- **Font optimization**: fontmin, font-spider
-- **Testing**: WebPageTest, Lighthouse font metrics
-- **Variable font conversion**: fonttools varLib
-
-### CSS Tools
-- **Type scale generators**: Type-scale.com, Utopia
-- **Font pairing tools**: Fontjoy, Typewolf
-- **Contrast checkers**: WebAIM, Contrast Ratio
-- **Modular scale calculators**: modularscale.com
-
-## Best Practices
-
-### Production Checklist
-- [ ] Subset fonts to required character sets (Latin, Cyrillic, etc.)
-- [ ] Use WOFF2 format for maximum compression
-- [ ] Implement `font-display: swap` to prevent FOIT
-- [ ] Preload critical fonts above the fold
-- [ ] Define fallback font stacks with similar metrics
-- [ ] Test on multiple devices and operating systems
-- [ ] Validate WCAG contrast ratios (4.5:1 for body text)
-- [ ] Set minimum font size to 16px for body text
-- [ ] Implement responsive type scales with `clamp()`
-- [ ] Consider variable fonts for design flexibility + performance
-
-### Anti-Patterns to Avoid
-- ❌ Loading 10+ font weights and styles
-- ❌ Using too many typefaces (more than 3 families)
-- ❌ Ignoring fallback font metrics (causes layout shift)
-- ❌ Blocking render with synchronous font loading
-- ❌ Poor contrast ratios (less than 4.5:1 for body text)
-- ❌ Font sizes below 14px on mobile
-- ❌ Line lengths over 75 characters
-- ❌ Insufficient line-height (less than 1.4 for body text)
-
-## Advanced Techniques
-
-### Optical Size Adjustments
-```css
-/* Variable fonts with optical sizing */
-@supports (font-variation-settings: normal) {
-  .dynamic-type {
-    font-variation-settings:
-      'opsz' calc(16 + (80 - 16) * ((100vw - 320px) / (1920 - 320)));
-  }
-}
-```
-
-### Font Loading Detection
-```css
-/* Default system fonts */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-/* Custom fonts after loading */
-.fonts-loaded body {
-  font-family: 'Inter Variable', sans-serif;
-}
-```
-
-### Dark Mode Typography
-```css
-/* Compensate for halation effect in dark mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    font-weight: 450; /* Slightly heavier */
-    letter-spacing: 0.01em; /* Slightly wider */
-  }
-}
-```
-
-## Use Cases
-
-Perfect for projects requiring:
-- **Brand identity systems** with distinctive typographic voice
-- **High-performance web applications** with optimized font delivery
-- **Editorial websites** with sophisticated typographic hierarchy
-- **Design systems** with comprehensive type scale documentation
-- **Accessibility-first applications** meeting WCAG guidelines
-- **Multilingual applications** with complex script requirements
-- **Variable font implementations** for dynamic design systems
-- **Performance-critical sites** with strict font loading budgets
+**WCAG 2.1 AA Compliance:**
+- **Minimum contrast:** 4.5:1 for body text, 3:1 for large text (24px+ or 18.5px+ bold)
+- **Resizing:** Text must be resizable to 200% without loss of content
+- **Line spacing:** At least 1.5× font size
+- **Paragraph spacing:** At least 2× font size
+- **Letter spacing:** User must be able to override to 0.12× font size
+- **Word spacing:** User must be able to override to 0.16× font size
 
 ## Integration with Other Skills
 
-Works seamlessly with:
-- **Design System Creator**: Establishing typographic tokens and scales
-- **Web Design Expert**: Implementing brand identity through typography
-- **ADHD Design Expert**: Optimizing readability for neurodivergent users
-- **Native App Designer**: iOS/macOS typography with SF Pro, San Francisco
-- **Vaporwave UI Designer**: Retro typography with bitmap fonts, pixel-perfect rendering
-- **Color Theory Expert**: Typographic color and contrast optimization
+Works well with:
+- **design-system-creator** - Typography tokens for design systems
+- **vibe-matcher** - Font selection based on brand vibe
+- **web-design-expert** - Implement typography in layouts
+- **vaporwave-glassomorphic-ui-designer** - Retro-futuristic type treatments
+
+## Evolution Timeline
+
+### Pre-2015: Web-Safe Fonts Era
+Limited to Arial, Georgia, Times New Roman. "Modern" meant using Helvetica.
+
+### 2015-2019: Google Fonts Explosion
+Everyone used Open Sans, Roboto, Montserrat. Performance secondary to variety.
+
+### 2020-2022: Variable Fonts Adoption
+Single file, multiple weights/widths. Inter became the new default.
+
+### 2023-Present: Performance-First Typography
+Core Web Vitals pressure. Subsetting, font-display, CLS prevention mandatory.
+System font stacks gaining popularity for zero-load-time.
+
+### Watch For
+LLMs may suggest deprecated approaches:
+- `@import` for fonts (blocks rendering)
+- Non-variable font families with 8+ weights
+- Font Awesome for icons (use SVG sprites instead)
+
+## Quick Reference
+
+**Ideal Line Length:** 45-75 characters (65ch is sweet spot)
+
+**Heading Sizes (Minor Third Scale):**
+- h1: 2.986rem
+- h2: 2.488rem
+- h3: 2.074rem
+- h4: 1.728rem
+- h5: 1.44rem
+- h6: 1.2rem
+- body: 1rem
+
+**Safe Google Font Pairings:**
+- Inter + Merriweather (Modern + Traditional)
+- Poppins + Lora (Friendly + Elegant)
+- Space Grotesk + Source Serif (Tech + Editorial)
+- DM Sans + DM Serif Display (Same designer harmony)
 
 ---
 
-*Typography is the voice of visual design. Master it, and you control how your content speaks to the world.*
+*Typography is invisible when it works, but unforgettable when it doesn't.*

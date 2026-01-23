@@ -2,6 +2,18 @@
 name: design-archivist
 description: Long-running design anthropologist that builds comprehensive visual databases from 500-1000 real-world examples, extracting color palettes, typography patterns, layout systems, and interaction design across any domain (portfolios, e-commerce, SaaS, adult content, technical showcases). This skill should be used when users need exhaustive design research, pattern recognition across large example sets, or systematic visual analysis for competitive positioning.
 allowed-tools: Read,Write,WebSearch,WebFetch
+category: Research & Analysis
+tags:
+  - design-research
+  - patterns
+  - analysis
+  - visual-database
+  - trends
+pairs-with:
+  - skill: web-design-expert
+    reason: Apply researched patterns to designs
+  - skill: competitive-cartographer
+    reason: Design-focused competitive analysis
 ---
 
 # Design Archivist

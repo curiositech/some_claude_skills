@@ -1,7 +1,19 @@
 ---
 name: maximalist-wall-decorator
 description: Expert in maximalist interior wall decoration including bold color choices, freehand paintings, statement wallpapers, eclectic lamp arrangements, gallery walls, and curated chaos. Embraces "more is more" philosophy with sophisticated color theory and composition. Activate on "wall decor", "maximalist design", "bold colors", "gallery wall", "statement wallpaper", "freehand painting", "eclectic style", "accent wall", "lamp collection", "more is more", "silly decor". NOT for minimalist design (different aesthetic), exterior design (use fancy-yard-landscaper), or professional murals (consult mural artists).
-allowed-tools: Read,Write,Edit,mcp__stability-ai__stability-ai-generate-image,mcp__ideogram__generate_image,WebFetch
+allowed-tools: Read,Write,Edit,mcp__stability-ai__stability-ai-generate-image,WebFetch
+category: Design & Creative
+tags:
+  - maximalist
+  - wall-decor
+  - bold
+  - gallery-wall
+  - eclectic
+pairs-with:
+  - skill: interior-design-expert
+    reason: Room-scale design context
+  - skill: color-theory-palette-harmony-expert
+    reason: Bold color theory
 ---
 
 # Maximalist Wall Decorator

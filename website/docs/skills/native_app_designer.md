@@ -2,6 +2,18 @@
 name: native-app-designer
 description: Creates breathtaking iOS/Mac and web apps with organic, non-AI aesthetic. Expert in SwiftUI, React animations, physics-based motion, and human-crafted design. Use for iOS/Mac app UI, React/Vue animations, native-feel web apps, physics-based motion design. Activate on "SwiftUI", "iOS app", "native app", "React animation", "motion design", "UIKit", "physics animation". NOT for backend logic, API design (use backend-architect), simple static sites (use web-design-expert), or pure graphic design (use design-system-creator).
 allowed-tools: Read,Write,Edit,Bash,mcp__magic__21st_magic_component_builder,mcp__magic__21st_magic_component_refiner,mcp__stability-ai__stability-ai-generate-image,mcp__firecrawl__firecrawl_search
+category: Design & Creative
+tags:
+  - ios
+  - swiftui
+  - react
+  - animations
+  - motion
+pairs-with:
+  - skill: metal-shader-expert
+    reason: GPU-accelerated visual effects
+  - skill: vaporwave-glassomorphic-ui-designer
+    reason: Aesthetic iOS design
 ---
 
 # Native App Designer
