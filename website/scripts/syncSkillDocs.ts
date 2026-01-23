@@ -63,13 +63,23 @@ function parseYamlFrontmatter(content: string): SkillFrontmatter | null {
   return result;
 }
 
-function getDocFilename(skillId: string): string {
-  return skillId.replace(/-/g, '_') + '.md';
+function getDocFolderName(skillId: string): string {
+  return skillId.replace(/-/g, '_');
+}
+
+/**
+ * Get the path to the doc file for a skill.
+ * ALWAYS uses folder structure (skill_name/index.md) to avoid duplicate route conflicts.
+ */
+function getDocPath(skillId: string): string {
+  const folderName = getDocFolderName(skillId);
+  const folderPath = path.join(DOCS_DIR, folderName);
+  return path.join(folderPath, 'index.md');
 }
 
 function createDocFile(skillId: string, skillMdPath: string): { created: boolean; reason?: string } {
-  const docFilename = getDocFilename(skillId);
-  const docPath = path.join(DOCS_DIR, docFilename);
+  const docPath = getDocPath(skillId);
+  const folderPath = path.dirname(docPath);
 
   // Read the SKILL.md content
   const content = fs.readFileSync(skillMdPath, 'utf-8');
@@ -100,9 +110,9 @@ function createDocFile(skillId: string, skillMdPath: string): { created: boolean
     transformedContent = sanitizationResult.content;
   }
 
-  // Ensure the docs/skills directory exists
-  if (!fs.existsSync(DOCS_DIR)) {
-    fs.mkdirSync(DOCS_DIR, { recursive: true });
+  // Ensure the skill doc folder exists
+  if (!fs.existsSync(folderPath)) {
+    fs.mkdirSync(folderPath, { recursive: true });
   }
 
   fs.writeFileSync(docPath, transformedContent);
@@ -110,8 +120,15 @@ function createDocFile(skillId: string, skillMdPath: string): { created: boolean
 }
 
 function updateDocFile(skillId: string, frontmatter: SkillFrontmatter, skillMdPath: string): { updated: boolean; created?: boolean; reason?: string } {
-  const docFilename = getDocFilename(skillId);
-  const docPath = path.join(DOCS_DIR, docFilename);
+  const docPath = getDocPath(skillId);
+  const folderName = getDocFolderName(skillId);
+
+  // Check for legacy flat file and remove it to prevent duplicate routes
+  const legacyFlatFile = path.join(DOCS_DIR, folderName + '.md');
+  if (fs.existsSync(legacyFlatFile)) {
+    fs.unlinkSync(legacyFlatFile);
+    console.log(`   🗑️  Removed legacy flat file: ${folderName}.md`);
+  }
 
   // If doc file doesn't exist, create it from SKILL.md
   if (!fs.existsSync(docPath)) {

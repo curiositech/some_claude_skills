@@ -1,7 +1,7 @@
 ---
 title: Tangle Physics
 sidebar_label: Tangle Physics
-sidebar_position: 3
+sidebar_position: 4
 ---
 # Tangle Physics
 
