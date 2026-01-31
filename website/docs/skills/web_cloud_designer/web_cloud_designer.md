@@ -529,7 +529,7 @@ For simpler, more performant clouds without SVG filters:
 
 ### Critical Rules
 
-1. **numOctaves <= 5** - Above 5 provides diminishing visual returns with exponential CPU cost
+1. **numOctaves &lt;= 5** - Above 5 provides diminishing visual returns with exponential CPU cost
 2. **Blur BEFORE displacement** - 40% more efficient than blur after
 3. **Avoid animating filter properties** - Use CSS transforms instead
 4. **Use `seed` for variation** - Free performance vs. changing baseFrequency

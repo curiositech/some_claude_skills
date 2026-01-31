@@ -104,9 +104,9 @@ Source -> feTurbulence -> feDisplacementMap -> feComponentTransfer -> feComposit
 | 0.03 | 0.03 | Square ripples (pond) |
 
 The ratio matters:
-- **X << Y**: Stretched horizontal waves (ocean)
+- **X &lt;&lt; Y**: Stretched horizontal waves (ocean)
 - **X == Y**: Circular ripples (pond, pool)
-- **X >> Y**: Vertical striations (waterfall)
+- **X &gt;&gt; Y**: Vertical striations (waterfall)
 
 ### 2. feDisplacementMap - Refraction Effect
 
@@ -813,7 +813,7 @@ For simple, high-performance waves without SVG filters:
 ### Critical Rules
 
 1. **Use `type="turbulence"`** - Correct type for water (not fractalNoise)
-2. **numOctaves <= 4** - Above 4 minimal visual gain, exponential CPU cost
+2. **numOctaves &lt;= 4** - Above 4 minimal visual gain, exponential CPU cost
 3. **Scale 10-30** - Above 40 becomes unrealistic and slower
 4. **Avoid animating baseFrequency** - Use CSS transforms or seed animation instead
 5. **GPU hints** - Add `will-change: transform` on animated layers

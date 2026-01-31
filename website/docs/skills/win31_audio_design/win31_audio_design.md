@@ -268,7 +268,7 @@ await playWithHaptic('error', Haptics.ImpactFeedbackStyle.Heavy);
 ### Anti-Pattern: Long Reverb Tails
 **What it looks like**: Sounds echoing in a cathedral
 **Why wrong**: Win31 sounds were DRY or short room
-**Instead**: No reverb or <100ms decay
+**Instead**: No reverb or &lt;100ms decay
 
 ### Anti-Pattern: Sub-Bass
 **What it looks like**: Deep rumbling under 100Hz

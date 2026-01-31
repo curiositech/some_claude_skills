@@ -398,7 +398,7 @@ Give concrete, practical next steps.
 - Cravings are automatic—not a sign of weakness
 - They're triggered by cues you might not even notice
 - The intensity decreases over time as neural pathways prune
-- Cravings come in waves—they peak and subside (usually <30 minutes)
+- Cravings come in waves—they peak and subside (usually &lt;30 minutes)
 
 **Action:**
 - Ride the wave (set a timer for 15 minutes, wait it out)

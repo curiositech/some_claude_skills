@@ -293,7 +293,7 @@ Neobrutalism for SaaS emphasizes **function over flourish**:
 
 | Breakpoint | Adjustments |
 |------------|-------------|
-| Mobile (<640px) | Shadow: 3px 3px, Border: 2px, Font scale down |
+| Mobile (&lt;640px) | Shadow: 3px 3px, Border: 2px, Font scale down |
 | Tablet (640-1024px) | Shadow: 4px 4px, Border: 3px, Standard fonts |
 | Desktop (>1024px) | Shadow: 6px 6px, Border: 4px, Oversized headlines |
 

@@ -217,7 +217,7 @@ Win31 used Multiple Document Interface. Apply this:
 
 | Breakpoint | Win31 Metaphor | Layout |
 |------------|----------------|--------|
-| Mobile (<640px) | Pocket computing | Single window, modal dialogs |
+| Mobile (&lt;640px) | Pocket computing | Single window, modal dialogs |
 | Tablet (640-1024px) | Laptop | Cascading windows |
 | Desktop (>1024px) | Full desktop | Tiled MDI windows |
 

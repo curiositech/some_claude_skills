@@ -213,7 +213,7 @@ Win95 mentally modeled multiple displays. Apply this:
 
 | Breakpoint | Win95 Metaphor | Layout |
 |------------|----------------|--------|
-| Mobile (<640px) | Pocket PC | Single window, taskbar bottom |
+| Mobile (&lt;640px) | Pocket PC | Single window, taskbar bottom |
 | Tablet (640-1024px) | Laptop | Cascading windows, taskbar |
 | Desktop (>1024px) | Full desktop | Multiple windows, desktop icons |
 

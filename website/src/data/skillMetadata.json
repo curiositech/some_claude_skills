@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-31T23:33:56.695Z",
+  "generatedAt": "2026-01-31T23:42:29.392Z",
   "skills": {
     "2000s-visualization-expert": {
       "id": "2000s-visualization-expert",
@@ -16,7 +16,7 @@
     "2026-legal-research-agent": {
       "id": "2026-legal-research-agent",
       "createdAt": "2026-02-01T08:20:51+09:00",
-      "updatedAt": "2026-02-01T08:20:51+09:00",
+      "updatedAt": "2026-01-31T23:34:21Z",
       "totalLines": 1244,
       "totalFiles": 4,
       "skillMdSize": 10030,
@@ -652,7 +652,7 @@
     "dark-mode-design-expert": {
       "id": "dark-mode-design-expert",
       "createdAt": "2026-02-01T08:20:51+09:00",
-      "updatedAt": "2026-02-01T08:20:51+09:00",
+      "updatedAt": "2026-01-31T23:34:21Z",
       "totalLines": 1699,
       "totalFiles": 4,
       "skillMdSize": 27603,
@@ -736,7 +736,7 @@
     "design-system-generator": {
       "id": "design-system-generator",
       "createdAt": "2026-02-01T08:20:51+09:00",
-      "updatedAt": "2026-02-01T08:20:51+09:00",
+      "updatedAt": "2026-01-31T23:34:21Z",
       "totalLines": 244,
       "totalFiles": 2,
       "skillMdSize": 2220,
@@ -1084,7 +1084,7 @@
     "launch-readiness-auditor": {
       "id": "launch-readiness-auditor",
       "createdAt": "2026-02-01T08:20:51+09:00",
-      "updatedAt": "2026-02-01T08:20:51+09:00",
+      "updatedAt": "2026-01-31T23:34:21Z",
       "totalLines": 211,
       "totalFiles": 1,
       "skillMdSize": 6319,
@@ -1240,7 +1240,7 @@
     "nextjs-app-router-expert": {
       "id": "nextjs-app-router-expert",
       "createdAt": "2026-02-01T08:20:51+09:00",
-      "updatedAt": "2026-02-01T08:20:51+09:00",
+      "updatedAt": "2026-01-31T23:34:21Z",
       "totalLines": 311,
       "totalFiles": 1,
       "skillMdSize": 9077,
@@ -1252,7 +1252,7 @@
     "oauth-oidc-implementer": {
       "id": "oauth-oidc-implementer",
       "createdAt": "2026-02-01T08:20:51+09:00",
-      "updatedAt": "2026-02-01T08:20:51+09:00",
+      "updatedAt": "2026-01-31T23:34:21Z",
       "totalLines": 372,
       "totalFiles": 1,
       "skillMdSize": 11220,
@@ -1264,7 +1264,7 @@
     "openapi-spec-writer": {
       "id": "openapi-spec-writer",
       "createdAt": "2026-02-01T08:20:51+09:00",
-      "updatedAt": "2026-02-01T08:20:51+09:00",
+      "updatedAt": "2026-01-31T23:34:21Z",
       "totalLines": 634,
       "totalFiles": 1,
       "skillMdSize": 16282,
@@ -1384,7 +1384,7 @@
     "playwright-e2e-tester": {
       "id": "playwright-e2e-tester",
       "createdAt": "2026-02-01T08:20:51+09:00",
-      "updatedAt": "2026-02-01T08:20:51+09:00",
+      "updatedAt": "2026-01-31T23:34:21Z",
       "totalLines": 233,
       "totalFiles": 1,
       "skillMdSize": 7494,
@@ -1396,7 +1396,7 @@
     "playwright-screenshot-inspector": {
       "id": "playwright-screenshot-inspector",
       "createdAt": "2026-02-01T08:20:51+09:00",
-      "updatedAt": "2026-02-01T08:20:51+09:00",
+      "updatedAt": "2026-01-31T23:34:21Z",
       "totalLines": 427,
       "totalFiles": 1,
       "skillMdSize": 13831,
@@ -1408,7 +1408,7 @@
     "postgresql-optimization": {
       "id": "postgresql-optimization",
       "createdAt": "2026-02-01T08:20:51+09:00",
-      "updatedAt": "2026-02-01T08:20:51+09:00",
+      "updatedAt": "2026-01-31T23:34:21Z",
       "totalLines": 279,
       "totalFiles": 1,
       "skillMdSize": 8558,
@@ -1816,7 +1816,7 @@
     "terraform-iac-expert": {
       "id": "terraform-iac-expert",
       "createdAt": "2026-02-01T08:20:51+09:00",
-      "updatedAt": "2026-02-01T08:20:51+09:00",
+      "updatedAt": "2026-01-31T23:34:21Z",
       "totalLines": 385,
       "totalFiles": 1,
       "skillMdSize": 10352,
@@ -1984,7 +1984,7 @@
     "web-weather-creator": {
       "id": "web-weather-creator",
       "createdAt": "2026-02-01T08:20:51+09:00",
-      "updatedAt": "2026-02-01T08:20:51+09:00",
+      "updatedAt": "2026-01-31T23:34:21Z",
       "totalLines": 2903,
       "totalFiles": 4,
       "skillMdSize": 43547,

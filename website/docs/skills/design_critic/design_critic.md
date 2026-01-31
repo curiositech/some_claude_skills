@@ -153,7 +153,7 @@ For each of the 6 dimensions:
 | 80-89 | WCAG AA, visible focus, semantic HTML, good color contrast |
 | 70-79 | WCAG AA minimum, basic focus states, some semantic issues |
 | 60-69 | Contrast issues, missing focus states, accessibility afterthought |
-| <60 | Failing WCAG AA, inaccessible to screen readers |
+| &lt;60 | Failing WCAG AA, inaccessible to screen readers |
 
 **Key checks**:
 - Text contrast ≥ 4.5:1 (AA) or ≥ 7:1 (AAA)
@@ -170,7 +170,7 @@ For each of the 6 dimensions:
 | 80-89 | Cohesive palette, good accent usage, balanced saturation |
 | 70-79 | Functional palette, some discord notes, safe choices |
 | 60-69 | Palette feels random, competing colors, no clear system |
-| <60 | Clashing colors, no color logic, jarring combinations |
+| &lt;60 | Clashing colors, no color logic, jarring combinations |
 
 **Harmony types to assess**:
 - Complementary (high energy)
@@ -186,7 +186,7 @@ For each of the 6 dimensions:
 | 80-89 | Clear hierarchy, good readability, intentional scale |
 | 70-79 | Adequate hierarchy, some sizing issues, passable pairing |
 | 60-69 | Weak hierarchy, poor line-height, questionable font choices |
-| <60 | No visible hierarchy, unreadable body text, font chaos |
+| &lt;60 | No visible hierarchy, unreadable body text, font chaos |
 
 **Key checks**:
 - Line length: 45-75 characters optimal
@@ -203,7 +203,7 @@ For each of the 6 dimensions:
 | 80-89 | Strong grid, good whitespace, balanced composition |
 | 70-79 | Functional grid, adequate spacing, some balance issues |
 | 60-69 | Weak grid adherence, cramped or sparse, visual weight imbalance |
-| <60 | No apparent grid, chaotic spacing, no visual logic |
+| &lt;60 | No apparent grid, chaotic spacing, no visual logic |
 
 **Key checks**:
 - Consistent spacing system (4px/8px base)
@@ -220,7 +220,7 @@ For each of the 6 dimensions:
 | 80-89 | Contemporary, follows 2024+ patterns, fresh feeling |
 | 70-79 | Current enough, some dated elements, safe choices |
 | 60-69 | Feels 2-3 years old, outdated patterns visible |
-| <60 | Clearly dated, 5+ year old design language |
+| &lt;60 | Clearly dated, 5+ year old design language |
 
 **Current trends (2024-2026)**:
 - Bento grids
@@ -246,7 +246,7 @@ For each of the 6 dimensions:
 | 80-89 | Clear affordances, logical grouping, good feedback |
 | 70-79 | Functional UX, some confusion points, adequate feedback |
 | 60-69 | Unclear CTAs, buried actions, weak feedback |
-| <60 | Confusing flow, hidden actions, no affordances |
+| &lt;60 | Confusing flow, hidden actions, no affordances |
 
 **Key checks**:
 - Primary CTA immediately visible
