@@ -8,33 +8,33 @@ Specialized visual patterns for depth psychology work.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                        COLLECTIVE UNCONSCIOUS                            │
-│                                                                          │
-│    Universal patterns shared by all humanity across time and culture     │
-│                                                                          │
+│                        COLLECTIVE UNCONSCIOUS                           │
+│                                                                         │
+│    Universal patterns shared by all humanity across time and culture    │
+│                                                                         │
 │    ┌─────────────────────────────────────────────────────────────────┐  │
-│    │                       ARCHETYPES                                 │  │
-│    │                                                                  │  │
-│    │    ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐            │  │
-│    │    │ Self │  │Shadow│  │Anima/│  │ Hero │  │ Wise │            │  │
-│    │    │      │  │      │  │Animus│  │      │  │ Old  │            │  │
-│    │    └──────┘  └──────┘  └──────┘  └──────┘  └──────┘            │  │
-│    │                                                                  │  │
-│    │    ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐            │  │
-│    │    │Great │  │Divine│  │Trick-│  │ Puer/│  │Mother│            │  │
-│    │    │Father│  │Child │  │ ster │  │Senex │  │      │            │  │
-│    │    └──────┘  └──────┘  └──────┘  └──────┘  └──────┘            │  │
-│    │                                                                  │  │
+│    │                       ARCHETYPES                                │  │
+│    │                                                                 │  │
+│    │    ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐             │  │
+│    │    │ Self │  │Shadow│  │Anima/│  │ Hero │  │ Wise │             │  │
+│    │    │      │  │      │  │Animus│  │      │  │ Old  │             │  │
+│    │    └──────┘  └──────┘  └──────┘  └──────┘  └──────┘             │  │
+│    │                                                                 │  │
+│    │    ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐             │  │
+│    │    │Great │  │Divine│  │Trick-│  │ Puer/│  │Mother│             │  │
+│    │    │Father│  │Child │  │ ster │  │Senex │  │      │             │  │
+│    │    └──────┘  └──────┘  └──────┘  └──────┘  └──────┘             │  │
+│    │                                                                 │  │
 │    └─────────────────────────────────────────────────────────────────┘  │
-│                                                                          │
-├──────────────────────────────────────────────────────────────────────────┤
-│                        PERSONAL UNCONSCIOUS                              │
-│                                                                          │
-│    Individual experiences, memories, and repressed material              │
-│                                                                          │
+│                                                                         │
+├─────────────────────────────────────────────────────────────────────────┤
+│                        PERSONAL UNCONSCIOUS                             │
+│                                                                         │
+│    Individual experiences, memories, and repressed material             │
+│                                                                         │
 │    ┌─────────────────────────────────────────────────────────────────┐  │
-│    │                        COMPLEXES                                 │  │
-│    │                                                                  │  │
+│    │                        COMPLEXES                                │  │
+│    │                                                                 │  │
 │    │   ┌───────────────┐  ┌───────────────┐  ┌───────────────┐       │  │
 │    │   │    Mother     │  │    Father     │  │  Inferiority  │       │  │
 │    │   │   Complex     │  │   Complex     │  │   Complex     │       │  │
@@ -43,22 +43,22 @@ Specialized visual patterns for depth psychology work.
 │    │   │ core + your   │  │ core + your   │  │ core + your   │       │  │
 │    │   │ experience    │  │ experience    │  │ experience    │       │  │
 │    │   └───────────────┘  └───────────────┘  └───────────────┘       │  │
-│    │                                                                  │  │
+│    │                                                                 │  │
 │    └─────────────────────────────────────────────────────────────────┘  │
-│                                                                          │
-├──────────────────────────────────────────────────────────────────────────┤
-│                              EGO                                         │
-│                                                                          │
-│    Center of consciousness. "I" — but NOT the whole Self.                │
-│    Mediates between inner and outer worlds.                              │
-│                                                                          │
-├──────────────────────────────────────────────────────────────────────────┤
-│                            PERSONA                                       │
-│                                                                          │
-│    The mask worn for social adaptation.                                  │
-│    From Latin: theatrical mask.                                          │
-│                                                                          │
-└──────────────────────────────────────────────────────────────────────────┘
+│                                                                         │
+├─────────────────────────────────────────────────────────────────────────┤
+│                              EGO                                        │
+│                                                                         │
+│    Center of consciousness. "I" — but NOT the whole Self.               │
+│    Mediates between inner and outer worlds.                             │
+│                                                                         │
+├─────────────────────────────────────────────────────────────────────────┤
+│                            PERSONA                                      │
+│                                                                         │
+│    The mask worn for social adaptation.                                 │
+│    From Latin: theatrical mask.                                         │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
                                     │
                                     │
                             OUTER WORLD
@@ -77,19 +77,19 @@ Specialized visual patterns for depth psychology work.
               ║       (social mask)               ║
               ╠═══════════════════════════════════╣
               ║              EGO                  ║
-              ║    (conscious "I")               ║
+              ║    (conscious "I")                ║
               ╠═══════════════════════════════════╣
               ║                                   ║
               ║     PERSONAL UNCONSCIOUS          ║
-              ║  ┌─────────┐  ┌─────────┐        ║
-              ║  │Complex A│  │Complex B│        ║
-              ║  └─────────┘  └─────────┘        ║
+              ║  ┌─────────┐  ┌─────────┐         ║
+              ║  │Complex A│  │Complex B│         ║
+              ║  └─────────┘  └─────────┘         ║
               ║                                   ║
               ╠═══════════════════════════════════╣
               ║                                   ║
               ║    COLLECTIVE UNCONSCIOUS         ║
               ║                                   ║
-              ║  Shadow ─ Anima/Animus ─ Self    ║
+              ║   Shadow ─ Anima/Animus ─ Self    ║
               ║                                   ║
               ╚═══════════════════════════════════╝
 ```
@@ -101,44 +101,44 @@ Specialized visual patterns for depth psychology work.
 ### Shadow Content Map
 
 ```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                         THE SHADOW                                       │
-│                                                                          │
-│   "Where there is light, there is shadow" — Jung                        │
-│                                                                          │
-├───────────────────────────────┬──────────────────────────────────────────┤
-│                               │                                          │
-│    DARK SHADOW                │         GOLDEN SHADOW                    │
-│    (Rejected Negative)        │         (Rejected Positive)              │
-│                               │                                          │
-│    ┌─────────────────────┐   │   ┌─────────────────────┐                │
-│    │ • Rage              │   │   │ • Creativity        │                │
-│    │ • Greed             │   │   │ • Power             │                │
-│    │ • Selfishness       │   │   │ • Beauty            │                │
-│    │ • Weakness          │   │   │ • Intelligence      │                │
-│    │ • Sexual impulses   │   │   │ • Leadership        │                │
-│    │ • Aggression        │   │   │ • Authenticity      │                │
-│    │ • Fear              │   │   │ • Spontaneity       │                │
-│    └─────────────────────┘   │   └─────────────────────┘                │
-│                               │                                          │
-│    "I am NOT that kind       │   "Who am I to be                        │
-│     of person"               │    brilliant/talented?"                   │
-│                               │                                          │
-├───────────────────────────────┼──────────────────────────────────────────┤
-│                               │                                          │
-│    UNLIVED LIFE               │         COLLECTIVE SHADOW                │
-│                               │                                          │
-│    ┌─────────────────────┐   │   ┌─────────────────────┐                │
-│    │ • Roads not taken   │   │   │ • Cultural denied   │                │
-│    │ • Dreams abandoned  │   │   │ • Historical trauma │                │
-│    │ • Potential denied  │   │   │ • Systemic injustice│                │
-│    │ • "What if I had..."│   │   │ • Group projection  │                │
-│    └─────────────────────┘   │   └─────────────────────┘                │
-│                               │                                          │
-│    Accumulates as             │   "Nice" cultures have                   │
-│    resentment & regret        │   the most brutal shadows                │
-│                               │                                          │
-└───────────────────────────────┴──────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────┐
+│                           THE SHADOW                                   │
+│                                                                        │
+│   "Where there is light, there is shadow" — Jung                       │
+│                                                                        │
+├───────────────────────────────────┬────────────────────────────────────┤
+│                                   │                                    │
+│    DARK SHADOW                    │    GOLDEN SHADOW                   │
+│    (Rejected Negative)            │    (Rejected Positive)             │
+│                                   │                                    │
+│    ┌─────────────────────┐        │    ┌─────────────────────┐         │
+│    │ • Rage              │        │    │ • Creativity        │         │
+│    │ • Greed             │        │    │ • Power             │         │
+│    │ • Selfishness       │        │    │ • Beauty            │         │
+│    │ • Weakness          │        │    │ • Intelligence      │         │
+│    │ • Sexual impulses   │        │    │ • Leadership        │         │
+│    │ • Aggression        │        │    │ • Authenticity      │         │
+│    │ • Fear              │        │    │ • Spontaneity       │         │
+│    └─────────────────────┘        │    └─────────────────────┘         │
+│                                   │                                    │
+│    "I am NOT that kind            │    "Who am I to be                 │
+│     of person"                    │    brilliant/talented?"            │
+│                                   │                                    │
+├───────────────────────────────────┼────────────────────────────────────┤
+│                                   │                                    │
+│    UNLIVED LIFE                   │    COLLECTIVE SHADOW               │
+│                                   │                                    │
+│    ┌─────────────────────┐        │    ┌─────────────────────┐         │
+│    │ • Roads not taken   │        │    │ • Cultural denied   │         │
+│    │ • Dreams abandoned  │        │    │ • Historical trauma │         │
+│    │ • Potential denied  │        │    │ • Systemic injustice│         │
+│    │ • "What if I had..."│        │    │ • Group projection  │         │
+│    └─────────────────────┘        │    └─────────────────────┘         │
+│                                   │                                    │
+│    Accumulates as                 │    "Nice" cultures have            │
+│    resentment & regret            │    the most brutal shadows         │
+│                                   │                                    │
+└───────────────────────────────────┴────────────────────────────────────┘
 ```
 
 ### Shadow Recognition Pattern
@@ -148,31 +148,31 @@ SHADOW RECOGNITION MARKERS
 ═══════════════════════════════════════════════════════════════════════════
 
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                        INTENSE REACTION                                  │
-│                                                                          │
+│                        INTENSE REACTION                                 │
+│                                                                         │
 │   Something in the other person triggers you disproportionately         │
-│                                                                          │
-│         ATTRACTION                           REPULSION                   │
-│             │                                    │                       │
-│             │    ┌───────────────────────┐      │                       │
-│             └───►│  PROJECTION ACTIVE    │◄─────┘                       │
-│                  │                       │                               │
-│                  │  "I can't stand       │                               │
-│                  │   people who..."      │                               │
-│                  │                       │                               │
-│                  │  "I'm so drawn to     │                               │
-│                  │   people who..."      │                               │
-│                  └───────────┬───────────┘                               │
-│                              │                                           │
-│                              ▼                                           │
-│                  ┌───────────────────────┐                               │
-│                  │    SHADOW CONTENT     │                               │
-│                  │                       │                               │
-│                  │  "Where does this     │                               │
-│                  │   quality live in     │                               │
-│                  │   ME?"                │                               │
-│                  └───────────────────────┘                               │
-│                                                                          │
+│                                                                         │
+│         ATTRACTION                          REPULSION                   │
+│             │                                  │                        │
+│             │    ┌───────────────────────┐     │                        │
+│             └───►│  PROJECTION ACTIVE    │◄────┘                        │
+│                  │                       │                              │
+│                  │  "I can't stand       │                              │
+│                  │   people who..."      │                              │
+│                  │                       │                              │
+│                  │  "I'm so drawn to     │                              │
+│                  │   people who..."      │                              │
+│                  └───────────┬───────────┘                              │
+│                              │                                          │
+│                              ▼                                          │
+│                  ┌───────────────────────┐                              │
+│                  │    SHADOW CONTENT     │                              │
+│                  │                       │                              │
+│                  │  "Where does this     │                              │
+│                  │   quality live in     │                              │
+│                  │   ME?"                │                              │
+│                  └───────────────────────┘                              │
+│                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 
 OTHER MARKERS:
@@ -192,33 +192,31 @@ OTHER MARKERS:
 ```
 ANIMA DEVELOPMENT STAGES (in male psyche)
 ════════════════════════════════════════════════════════════════════════
-
-    EVE                HELEN              MARY               SOPHIA
-     │                   │                  │                   │
-     ▼                   ▼                  ▼                   ▼
-┌─────────┐        ┌─────────┐        ┌─────────┐        ┌─────────┐
-│Biological│        │Romantic │        │Spiritual│        │ Wisdom  │
-│ Woman   │        │  Ideal  │        │ Mother  │        │  Guide  │
-│         │        │         │        │         │        │         │
-│ Object  │───────►│  Muse   │───────►│ Mediator│───────►│Integrated│
-│ of      │        │         │        │         │        │ Soul    │
-│ Desire  │        │         │        │         │        │         │
-└─────────┘        └─────────┘        └─────────┘        └─────────┘
+      EVE              HELEN              MARY             SOPHIA
+       │                 │                  │                 │
+       ▼                 ▼                  ▼                 ▼
+┌────────────┐     ┌────────────┐     ┌────────────┐     ┌────────────┐
+│ Biological │     │  Romantic  │     │  Spiritual │     │   Wisdom   │
+│   Woman    │     │   Ideal    │     │   Mother   │     │   Guide    │
+│            │     │            │     │            │     │            │
+│  Object    │────►│   Muse     │────►│  Mediator  │────►│ Integrated │
+│    of      │     │            │     │            │     │    Soul    │
+│  Desire    │     │            │     │            │     │            │
+└────────────┘     └────────────┘     └────────────┘     └────────────┘
 
          ANIMUS DEVELOPMENT STAGES (in female psyche)
-═════════════════════════════════════════════════════════════════════
-
-  PHYSICAL          ROMANTIC           WORD             MEANING
-   POWER              MAN             (Logos)           (Spirit)
-     │                  │                │                  │
-     ▼                  ▼                ▼                  ▼
-┌─────────┐        ┌─────────┐        ┌─────────┐        ┌─────────┐
-│ Athlete │        │ Romantic│        │ Teacher │        │  Wise   │
-│ Warrior │        │  Hero   │        │ Minister│        │  Guide  │
-│         │        │         │        │         │        │         │
-│ Strength│───────►│  Action │───────►│Conviction│──────►│Integrated│
-│ & Power │        │  & Deed │        │ & Ideas │        │ Spirit  │
-└─────────┘        └─────────┘        └─────────┘        └─────────┘
+════════════════════════════════════════════════════════════════════════
+   PHYSICAL          ROMANTIC            WORD            MEANING
+    POWER              MAN              (Logos)          (Spirit)
+       │                 │                 │                 │
+       ▼                 ▼                 ▼                 ▼
+┌────────────┐     ┌────────────┐     ┌────────────┐     ┌────────────┐
+│  Athlete   │     │  Romantic  │     │  Teacher   │     │    Wise    │
+│  Warrior   │     │    Hero    │     │  Minister  │     │   Guide    │
+│            │     │            │     │            │     │            │
+│ Strength   │────►│   Action   │────►│ Conviction │────►│ Integrated │
+│  & Power   │     │   & Deed   │     │  & Ideas   │     │   Spirit   │
+└────────────┘     └────────────┘     └────────────┘     └────────────┘
 ```
 
 ### Contemporary Model
@@ -228,10 +226,10 @@ CONTEMPORARY UNDERSTANDING OF ANIMA/ANIMUS
 ═══════════════════════════════════════════════════════════════════════════
 
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                                                                          │
+│                                                                         │
 │   Not bound by biological sex or gender identity                        │
 │   Represents the "Other" — the complementary force in the psyche        │
-│                                                                          │
+│                                                                         │
 │                        ┌───────────────────┐                            │
 │                        │                   │                            │
 │                        │   CONTRASEXUAL    │                            │
@@ -244,18 +242,18 @@ CONTEMPORARY UNDERSTANDING OF ANIMA/ANIMUS
 │                        │    unconscious    │                            │
 │                        │                   │                            │
 │                        └─────────┬─────────┘                            │
-│                                  │                                       │
+│                                  │                                      │
 │            ┌─────────────────────┼─────────────────────┐                │
 │            │                     │                     │                │
 │            ▼                     ▼                     ▼                │
-│    ┌───────────────┐    ┌───────────────┐    ┌───────────────┐         │
-│    │  PROJECTED    │    │  INTEGRATED   │    │   POSSESSED   │         │
-│    │               │    │               │    │               │         │
-│    │ Seen in       │    │ Inner        │    │ Mood swings   │         │
-│    │ romantic      │    │ creativity   │    │ Irrational    │         │
-│    │ partners      │    │ & depth      │    │ opinions      │         │
-│    └───────────────┘    └───────────────┘    └───────────────┘         │
-│                                                                          │
+│    ┌───────────────┐    ┌───────────────┐    ┌───────────────┐          │
+│    │  PROJECTED    │    │  INTEGRATED   │    │   POSSESSED   │          │
+│    │               │    │               │    │               │          │
+│    │ Seen in       │    │ Inner         │    │ Mood swings   │          │
+│    │ romantic      │    │ creativity    │    │ Irrational    │          │
+│    │ partners      │    │ & depth       │    │ opinions      │          │
+│    └───────────────┘    └───────────────┘    └───────────────┘          │
+│                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -276,9 +274,9 @@ CONTEMPORARY UNDERSTANDING OF ANIMA/ANIMUS
                                      │
                                      │
     ┌────────────────────────────────┴────────────────────────────────┐
-    │                        STAGE 5                                   │
-    │                   ONGOING INTEGRATION                            │
-    │                                                                  │
+    │                        STAGE 5                                  │
+    │                   ONGOING INTEGRATION                           │
+    │                                                                 │
     │   • Never complete in a lifetime                                │
     │   • Holding the tension of opposites                            │
     │   • Service to collective becomes possible                      │
@@ -286,9 +284,9 @@ CONTEMPORARY UNDERSTANDING OF ANIMA/ANIMUS
     └────────────────────────────────▲────────────────────────────────┘
                                      │
     ┌────────────────────────────────┴────────────────────────────────┐
-    │                        STAGE 4                                   │
-    │                     SELF ENCOUNTER                               │
-    │                                                                  │
+    │                        STAGE 4                                  │
+    │                     SELF ENCOUNTER                              │
+    │                                                                 │
     │   • Experience of organizing center                             │
     │   • Ego relativized but not destroyed                           │
     │   • Paradox: ego must be strong to surrender to Self            │
@@ -296,9 +294,9 @@ CONTEMPORARY UNDERSTANDING OF ANIMA/ANIMUS
     └────────────────────────────────▲────────────────────────────────┘
                                      │
     ┌────────────────────────────────┴────────────────────────────────┐
-    │                        STAGE 3                                   │
-    │                 ANIMA/ANIMUS INTEGRATION                         │
-    │                                                                  │
+    │                        STAGE 3                                  │
+    │                 ANIMA/ANIMUS INTEGRATION                        │
+    │                                                                 │
     │   • Working through projections in relationships                │
     │   • Accessing contrasexual creative energy                      │
     │   • No longer seeking wholeness through others                  │
@@ -306,9 +304,9 @@ CONTEMPORARY UNDERSTANDING OF ANIMA/ANIMUS
     └────────────────────────────────▲────────────────────────────────┘
                                      │
     ┌────────────────────────────────┴────────────────────────────────┐
-    │                        STAGE 2                                   │
-    │                    SHADOW ENCOUNTER                              │
-    │                                                                  │
+    │                        STAGE 2                                  │
+    │                    SHADOW ENCOUNTER                             │
+    │                                                                 │
     │   • Meeting the rejected aspects of self                        │
     │   • "Where there is light, there is shadow"                     │
     │   • Integration, not elimination, is the goal                   │
@@ -316,9 +314,9 @@ CONTEMPORARY UNDERSTANDING OF ANIMA/ANIMUS
     └────────────────────────────────▲────────────────────────────────┘
                                      │
     ┌────────────────────────────────┴────────────────────────────────┐
-    │                        STAGE 1                                   │
-    │                   PERSONA DISSOLUTION                            │
-    │                                                                  │
+    │                        STAGE 1                                  │
+    │                   PERSONA DISSOLUTION                           │
+    │                                                                 │
     │   • Crisis reveals persona isn't whole self                     │
     │   • Often triggered by failure, loss, illness                   │
     │   • "Midlife crisis" is classic but can happen anytime          │
@@ -381,38 +379,38 @@ EGO-SELF AXIS: THE STABILIZING CONNECTION
 ═══════════════════════════════════════════════════════════════════════════
 
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                                                                          │
+│                                                                         │
 │                         ┌─────────────────────┐                         │
 │                         │                     │                         │
-│                         │   ARCHETYPAL CORE   │  ◄── Universal,        │
-│                         │                     │      numinous energy   │
+│                         │   ARCHETYPAL CORE   │  ◄── Universal,         │
+│                         │                     │      numinous energy    │
 │                         │   (e.g., "Mother"   │                         │
 │                         │    archetype)       │                         │
 │                         │                     │                         │
 │                         └──────────┬──────────┘                         │
-│                                    │                                     │
-│                                    │                                     │
+│                                    │                                    │
+│                                    │                                    │
 │                         ┌──────────▼──────────┐                         │
 │                         │                     │                         │
-│                         │   PERSONAL SHELL    │  ◄── Your specific     │
-│                         │                     │      experiences       │
+│                         │   PERSONAL SHELL    │  ◄── Your specific      │
+│                         │                     │      experiences        │
 │                         │  (memories of YOUR  │                         │
 │                         │   mother, events,   │                         │
 │                         │   associations)     │                         │
 │                         │                     │                         │
 │                         └──────────┬──────────┘                         │
-│                                    │                                     │
-│                                    │                                     │
+│                                    │                                    │
+│                                    │                                    │
 │                         ┌──────────▼──────────┐                         │
 │                         │                     │                         │
-│                         │  AFFECTIVE CHARGE   │  ◄── Emotional         │
-│                         │                     │      intensity,        │
-│                         │  (emotional energy, │      autonomy,         │
-│                         │   power to "possess"│      can hijack ego    │
+│                         │  AFFECTIVE CHARGE   │  ◄── Emotional          │
+│                         │                     │      intensity,         │
+│                         │  (emotional energy, │      autonomy,          │
+│                         │   power to "possess"│      can hijack ego     │
 │                         │   the ego)          │                         │
 │                         │                     │                         │
 │                         └─────────────────────┘                         │
-│                                                                          │
+│                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -442,17 +440,17 @@ WHEN A COMPLEX IS ACTIVATED
                                    │
                                    │
                                    ▼
-                           ┌─────────────────┐
-                           │  EGO RESPONSE   │
-                           │                 │
-                           │  1. Notice      │
+                           ┌──────────────────┐
+                           │  EGO RESPONSE    │
+                           │                  │
+                           │  1. Notice       │
                            │  2. Differentiate│
-                           │  3. "I HAVE this│
-                           │     complex"    │
-                           │     (not "I AM")│
-                           │  4. Explore     │
-                           │  5. Integrate   │
-                           └─────────────────┘
+                           │  3. "I HAVE this │
+                           │     complex"     │
+                           │     (not "I AM") │
+                           │  4. Explore      │
+                           │  5. Integrate    │
+                           └──────────────────┘
 ```
 
 ---
@@ -462,9 +460,8 @@ WHEN A COMPLEX IS ACTIVATED
 ### Basic Parts Map
 
 ```
-                        PARTS WORK MAP
+                       PARTS WORK MAP
 ═══════════════════════════════════════════════════════════════════════════
-
                          ┌─────────────────┐
                          │                 │
                          │   WISE SELF     │
@@ -478,29 +475,29 @@ WHEN A COMPLEX IS ACTIVATED
         ┌─────────────────────────┼─────────────────────────┐
         │                         │                         │
         ▼                         ▼                         ▼
-┌───────────────┐         ┌───────────────┐         ┌───────────────┐
-│               │         │               │         │               │
-│   PROTECTOR   │◄───────►│   WOUNDED     │◄───────►│   MANAGER     │
-│               │ guards  │    CHILD      │ controls│               │
-│ • Anger       │         │               │         │ • Perfectionism│
-│ • Walls       │         │ • Vulnerability│         │ • Productivity│
-│ • Deflection  │         │ • Pain        │         │ • Hypervigilance│
-│               │         │ • Needs       │         │               │
-└───────────────┘         └───────────────┘         └───────────────┘
+┌─────────────────┐       ┌─────────────────┐       ┌─────────────────┐
+│                 │       │                 │       │                 │
+│   PROTECTOR     │◄─────►│    WOUNDED      │◄─────►│    MANAGER      │
+│                 │ guards│     CHILD       │control│                 │
+│ • Anger         │       │                 │       │ • Perfectionism │
+│ • Walls         │       │ • Vulnerability │       │ • Productivity  │
+│ • Deflection    │       │ • Pain          │       │ • Hypervigiltic │
+│                 │       │ • Needs         │       │                 │
+└─────────────────┘       └─────────────────┘       └─────────────────┘
         │                                                   │
         │                                                   │
         └───────────────────────┬───────────────────────────┘
                                 │
                                 ▼
-                         ┌───────────────┐
-                         │               │
-                         │    CRITIC     │
-                         │               │
-                         │ • Harsh voice │
-                         │ • Shame       │
-                         │ • "Not enough"│
-                         │               │
-                         └───────────────┘
+                         ┌─────────────────┐
+                         │                 │
+                         │     CRITIC      │
+                         │                 │
+                         │ • Harsh voice   │
+                         │ • Shame         │
+                         │ • "Not enough"  │
+                         │                 │
+                         └─────────────────┘
 ```
 
 ### Addiction Parts System
@@ -560,28 +557,26 @@ RECOVERY: Build relationship between WISE SELF and all parts.
 ### Basic Mandala Structure
 
 ```
-                    MANDALA: SYMBOL OF WHOLENESS
+                      MANDALA: SYMBOL OF WHOLENESS
 ═══════════════════════════════════════════════════════════════════════════
-
-                         ┌─────────────────┐
-                        ╱                   ╲
-                       ╱    ┌─────────┐      ╲
-                      ╱     │         │       ╲
-                     │      │  CENTER │        │
-                     │      │  (Self) │        │
-                     │      │         │        │
-                     │      └─────────┘        │
+                        ┌───────────────────┐
+                       ╱                     ╲
+                      ╱     ┌───────────┐     ╲
+                     ╱      │           │      ╲
+                    │       │  CENTER   │       │
+                    │       │  (Self)   │       │
+                    │       │           │       │
+                     ╲      └───────────┘      ╱
                       ╲                       ╱
                        ╲                     ╱
-                        ╲                   ╱
-                         └─────────────────┘
-
+                        └───────────────────┘
+    
     The mandala represents:
     • Wholeness and integration
     • The Self as organizing center
     • The goal of individuation
     • Psychic equilibrium
-
+    
     In Jung's own practice:
     • Drew mandalas daily during his "confrontation with the unconscious"
     • Called them "cryptograms on the state of my self"
@@ -623,58 +618,58 @@ RECOVERY: Build relationship between WISE SELF and all parts.
 
 ```
                     DREAM SCENE ANALYSIS
-═══════════════════════════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════════════════════
 
-┌─────────────────────────────────────────────────────────────────────────┐
-│                           SETTING                                        │
-│                                                                          │
-│   Location: ___________________    Time: ______________                 │
-│   Atmosphere: _________________    Familiar?: Y / N                     │
-│                                                                          │
-├─────────────────────────────────────────────────────────────────────────┤
-│                           CHARACTERS                                     │
-│                                                                          │
-│   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐                  │
-│   │   DREAMER   │   │  FIGURE 1   │   │  FIGURE 2   │                  │
-│   │    (Ego)    │   │             │   │             │                  │
-│   │             │   │ Name:       │   │ Name:       │                  │
-│   │             │   │ Known?: Y/N │   │ Known?: Y/N │                  │
-│   │             │   │ Feeling:    │   │ Feeling:    │                  │
-│   └──────┬──────┘   └──────┬──────┘   └──────┬──────┘                  │
-│          │                 │                 │                          │
-│          └─────────────────┼─────────────────┘                          │
-│                            │                                             │
-│                     RELATIONSHIPS                                        │
-│                                                                          │
-├─────────────────────────────────────────────────────────────────────────┤
-│                         KEY SYMBOLS                                      │
-│                                                                          │
-│   Symbol 1: ____________    Personal association: _______________       │
-│   Symbol 2: ____________    Personal association: _______________       │
-│   Symbol 3: ____________    Personal association: _______________       │
-│                                                                          │
-├─────────────────────────────────────────────────────────────────────────┤
-│                       INTERPRETATION LEVELS                              │
-│                                                                          │
-│   OBJECTIVE:    How does this relate to outer life situations?          │
-│   _________________________________________________________________     │
-│                                                                          │
-│   SUBJECTIVE:   What parts of ME are these figures?                     │
-│   _________________________________________________________________     │
-│                                                                          │
-│   ARCHETYPAL:   What universal pattern is active?                       │
-│   _________________________________________________________________     │
-│                                                                          │
-├─────────────────────────────────────────────────────────────────────────┤
-│                         COMPENSATION                                     │
-│                                                                          │
-│   What is my conscious attitude?                                        │
-│   _________________________________________________________________     │
-│                                                                          │
-│   How might this dream compensate/balance that?                         │
-│   _________________________________________________________________     │
-│                                                                          │
-└─────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────┐
+│                           SETTING                                   │
+│                                                                     │
+│   Location: ___________________    Time: ______________             │
+│   Atmosphere: _________________    Familiar?: Y / N                 │
+│                                                                     │
+├─────────────────────────────────────────────────────────────────────┤
+│                           CHARACTERS                                │
+│                                                                     │
+│   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐               │
+│   │   DREAMER   │   │  FIGURE 1   │   │  FIGURE 2   │               │
+│   │    (Ego)    │   │             │   │             │               │
+│   │             │   │ Name:       │   │ Name:       │               │
+│   │             │   │ Known?: Y/N │   │ Known?: Y/N │               │
+│   │             │   │ Feeling:    │   │ Feeling:    │               │
+│   └──────┬──────┘   └──────┬──────┘   └──────┬──────┘               │
+│          │                 │                 │                      │
+│          └─────────────────┼─────────────────┘                      │
+│                            │                                        │
+│                     RELATIONSHIPS                                   │
+│                                                                     │
+├─────────────────────────────────────────────────────────────────────┤
+│                         KEY SYMBOLS                                 │
+│                                                                     │
+│   Symbol 1: ____________    Personal association: _______________   │
+│   Symbol 2: ____________    Personal association: _______________   │
+│   Symbol 3: ____________    Personal association: _______________   │
+│                                                                     │
+├─────────────────────────────────────────────────────────────────────┤
+│                       INTERPRETATION LEVELS                         │
+│                                                                     │
+│   OBJECTIVE:    How does this relate to outer life situations?      │
+│   _______________________________________________________________   │
+│                                                                     │
+│   SUBJECTIVE:   What parts of ME are these figures?                 │
+│   _______________________________________________________________   │
+│                                                                     │
+│   ARCHETYPAL:   What universal pattern is active?                   │
+│   _______________________________________________________________   │
+│                                                                     │
+├─────────────────────────────────────────────────────────────────────┤
+│                         COMPENSATION                                │
+│                                                                     │
+│   What is my conscious attitude?                                    │
+│   _______________________________________________________________   │
+│                                                                     │
+│   How might this dream compensate/balance that?                     │
+│   _______________________________________________________________   │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -685,56 +680,56 @@ RECOVERY: Build relationship between WISE SELF and all parts.
 
 ```
                 ACTIVE IMAGINATION PROCESS
-═══════════════════════════════════════════════════════════════════════════
+═════════════════════════════════════════════════════════════════════
 
-┌─────────────────────────────────────────────────────────────────────────┐
-│                        1. INVOCATION                                     │
-│                                                                          │
-│   • Begin with an image (from dream, emotion, body sensation)           │
-│   • Quiet the ego but don't extinguish it                              │
-│   • Hold "alert passivity"                                              │
-│                                                                          │
-└────────────────────────────────┬────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────┐
+│                        1. INVOCATION                              │
+│                                                                   │
+│   • Begin with an image (from dream, emotion, body sensation)     │
+│   • Quiet the ego but don't extinguish it                         │
+│   • Hold "alert passivity"                                        │
+│                                                                   │
+└────────────────────────────────┬──────────────────────────────────┘
                                  │
                                  ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│                        2. ENGAGEMENT                                     │
-│                                                                          │
-│   • Allow the image to move, speak, act                                 │
-│   • DO NOT direct or control                                            │
-│   • Ego remains present as witness AND participant                      │
-│   • Ask questions, respond genuinely                                    │
-│                                                                          │
-└────────────────────────────────┬────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────┐
+│                        2. ENGAGEMENT                              │
+│                                                                   │
+│   • Allow the image to move, speak, act                           │
+│   • DO NOT direct or control                                      │
+│   • Ego remains present as witness AND participant                │
+│   • Ask questions, respond genuinely                              │
+│                                                                   │
+└────────────────────────────────┬──────────────────────────────────┘
                                  │
                                  ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│                     3. ETHICAL STANDPOINT                                │
-│                                                                          │
-│   • Ego MUST maintain values                                            │
-│   • You can disagree with the figure                                    │
-│   • Don't be swallowed by the unconscious                              │
-│   • "The unconscious is not God" — ego maintains responsibility         │
-│                                                                          │
-└────────────────────────────────┬────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────┐
+│                     3. ETHICAL STANDPOINT                         │
+│                                                                   │
+│   • Ego MUST maintain values                                      │
+│   • You can disagree with the figure                              │
+│   • Don't be swallowed by the unconscious                         │
+│   • "The unconscious is not God" — ego maintains responsibility   │
+│                                                                   │
+└────────────────────────────────┬──────────────────────────────────┘
                                  │
                                  ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│                        4. EMBODIMENT                                     │
-│                                                                          │
-│   • Record the experience (writing, painting, movement)                 │
-│   • Give it form in the outer world                                     │
-│   • Art-making as psychological work                                    │
-│                                                                          │
-└────────────────────────────────┬────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────┐
+│                        4. EMBODIMENT                              │
+│                                                                   │
+│   • Record the experience (writing, painting, movement)           │
+│   • Give it form in the outer world                               │
+│   • Art-making as psychological work                              │
+│                                                                   │
+└────────────────────────────────┬──────────────────────────────────┘
                                  │
                                  ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│                        5. INTEGRATION                                    │
-│                                                                          │
-│   • What does this mean for my life?                                    │
-│   • What action does it call for?                                       │
-│   • How does this change my conscious position?                         │
-│                                                                          │
-└─────────────────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────┐
+│                        5. INTEGRATION                             │
+│                                                                   │
+│   • What does this mean for my life?                              │
+│   • What action does it call for?                                 │
+│   • How does this change my conscious position?                   │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 ```
