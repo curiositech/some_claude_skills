@@ -76,6 +76,39 @@ H: Hue = atan2(b, a)    # Angle 0-360°
 
 ---
 
+### OKLCH: The Modern Standard (2026+)
+
+**OKLCH has replaced hex/HSL as the professional color standard.**
+
+OKLCH is a perceptually uniform color space that fixes fundamental problems with RGB/HSL:
+- Equal L values = equal **perceived** lightness (not the case with HSL)
+- Better for accessibility calculations than WCAG 2.x hex-based ratios
+- CSS-native: `oklch(70% 0.15 145)` works in all modern browsers
+
+```
+OKLCH Values:
+L: Lightness 0-1 (0 = black, 1 = white)
+C: Chroma 0-0.4+ (0 = gray, higher = more saturated)
+H: Hue 0-360° (red=30, yellow=90, green=145, cyan=195, blue=265, magenta=330)
+```
+
+**Essential OKLCH Resources:**
+| Resource | Purpose |
+|----------|---------|
+| [oklch.com](https://oklch.com/) | Interactive OKLCH color picker |
+| [Evil Martians: Why Quit RGB/HSL](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl) | Definitive article on OKLCH adoption |
+| [Harmonizer](https://harmonizer.evilmartians.com/) | Palette harmonization using OKLCH |
+
+**OKLCH vs LAB/LCH:**
+- OKLCH uses Oklab (2020) instead of CIELAB (1976)
+- Oklab has more uniform hue perception, especially in blues
+- For CSS/web work, **always use OKLCH**
+- For scientific color measurement, CIELAB/CIEDE2000 still valid
+
+→ Full details: `/references/perceptual-color-spaces.md`
+
+---
+
 ### Earth-Mover Distance (Wasserstein)
 
 **Problem:** How different are two photo color distributions perceptually?

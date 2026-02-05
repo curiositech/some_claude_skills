@@ -58,10 +58,43 @@ BRAND PERSONALITY:
 
 Each concept includes:
 - **Mood board** (3-5 references with rationale)
-- **Color palette** (primary, secondary, accent, neutrals)
+- **Color palette** (primary, secondary, accent, neutrals) — **Always in OKLCH format**
 - **Typography direction** (families, hierarchy)
 - **Layout philosophy** (grid vs freeform, density)
 - **Signature elements** (unique visual features)
+
+## OKLCH: The Modern Color Standard
+
+**⚠️ All color palettes must use OKLCH, not hex or HSL.**
+
+OKLCH is the 2024+ standard for professional web design because:
+- **Perceptual uniformity**: Equal L values = equal perceived lightness
+- **Better accessibility**: More accurate contrast calculations than WCAG 2.x hex
+- **Predictable scaling**: Math works (L=50% + 20% = L=70% that looks right)
+
+```css
+/* OKLCH format: oklch(Lightness% Chroma Hue) */
+--brand-primary: oklch(55% 0.22 265);    /* Vibrant blue */
+--brand-accent: oklch(75% 0.18 45);      /* Warm orange */
+--text-primary: oklch(20% 0.02 265);     /* Near-black */
+--bg-surface: oklch(98% 0.01 265);       /* Near-white */
+```
+
+**Essential OKLCH Resources:**
+| Resource | Purpose |
+|----------|---------|
+| [oklch.com](https://oklch.com/) | Interactive OKLCH color picker |
+| [Evil Martians: Why Quit RGB/HSL](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl) | The definitive article |
+| [Harmonizer](https://harmonizer.evilmartians.com/) | Generate harmonious OKLCH palettes |
+
+**When presenting color palettes:**
+```
+Primary: oklch(55% 0.22 265) — Vibrant blue, strong CTA presence
+Secondary: oklch(70% 0.08 265) — Muted blue, supporting elements
+Accent: oklch(75% 0.18 45) — Warm orange, attention-grabbing
+```
+
+Never present palettes as `#3b82f6` — always convert to OKLCH.
 
 ### 3. Design Principles
 

@@ -1,239 +1,301 @@
-# Advanced Cloudflare Patterns
+# Cloudflare Patterns
 
-Deep dive into Cloudflare Pages and Workers patterns for frontend applications.
+Edge deployment patterns, configuration, and best practices for Cloudflare Pages.
 
-## OpenNext for Next.js on Cloudflare
+## Project Setup
 
-Next.js on Cloudflare Pages requires OpenNext adapter:
+### wrangler.toml Configuration
 
-### Setup
+```toml
+# wrangler.toml for Next.js on Cloudflare Pages
+name = "project-name"
+compatibility_date = "2026-01-31"
+pages_build_output_dir = ".next"
 
-```bash
-npm install @opennext/cloudflare
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
+
+# Secrets (set via wrangler secret put)
+# PEXELS_API_KEY, DATABASE_URL, etc.
+
+# KV Namespaces
+[[kv_namespaces]]
+binding = "CACHE"
+id = "your-kv-namespace-id"
+preview_id = "your-preview-kv-id"
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "project-db"
+database_id = "your-database-id"
+
+# R2 Storage
+[[r2_buckets]]
+binding = "ASSETS"
+bucket_name = "project-assets"
+
+# Durable Objects
+[[durable_objects.bindings]]
+name = "RATE_LIMITER"
+class_name = "RateLimiter"
 ```
 
-### open-next.config.ts
+### next.config.js for Cloudflare
 
-```typescript
-import type { OpenNextConfig } from "@opennextjs/cloudflare";
-
-const config: OpenNextConfig = {
-  default: {
-    override: {
-      wrapper: "cloudflare-node",
-      converter: "edge",
-      // Use for KV caching
-      incrementalCache: async () => (await import("./cache.mjs")).default,
-    },
+```javascript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'standalone',
+  images: {
+    loader: 'custom',
+    loaderFile: './lib/cloudflare-image-loader.ts',
+    remotePatterns: [
+      { hostname: 'images.pexels.com' },
+      { hostname: 'images.unsplash.com' },
+    ],
+  },
+  // Experimental edge runtime
+  experimental: {
+    runtime: 'edge',
   },
 };
 
-export default config;
+module.exports = nextConfig;
 ```
 
-### Build and Deploy
+## Deployment Patterns
 
+### Preview Deployments
+
+```yaml
+# Every PR gets a preview URL
+Trigger: Pull Request opened/updated
+URL: https://preview-{branch-slug}.{project}.pages.dev
+
+# Use case: Stakeholder review
+# Share URL with:
+# - Design team for visual review
+# - QA for testing
+# - Product for feature approval
+```
+
+**Workflow:**
 ```bash
-# Build with OpenNext
-npx @opennext/cloudflare build
-
-# Deploy
-npx wrangler pages deploy .open-next
+# Automatic on PR (via GitHub integration)
+# Or manual:
+npx wrangler pages deploy .next \
+  --project-name=your-project \
+  --branch=feature-branch \
+  --commit-message="Feature: Add gallery"
 ```
 
----
-
-## Multi-Environment Setup
-
-### wrangler.toml
-
-```toml
-name = "my-app"
-compatibility_date = "2026-01-31"
-
-# Production
-[env.production]
-vars = { ENVIRONMENT = "production" }
-routes = [{ pattern = "app.example.com/*", zone_name = "example.com" }]
-
-# Staging
-[env.staging]
-vars = { ENVIRONMENT = "staging" }
-routes = [{ pattern = "staging.example.com/*", zone_name = "example.com" }]
-
-# Preview (default for branch deploys)
-[vars]
-ENVIRONMENT = "preview"
-```
-
-### Deploy Commands
-
-```bash
-# Deploy to production
-npx wrangler pages deploy .open-next --env production
-
-# Deploy to staging
-npx wrangler pages deploy .open-next --env staging
-
-# Deploy preview (automatic on PR)
-npx wrangler pages deploy .open-next
-```
-
----
-
-## Caching Patterns
-
-### KV-Based ISR Cache
+### Environment Management
 
 ```typescript
-// cache.mjs
-import { KVNamespace } from "@cloudflare/workers-types";
+// Environment detection
+const env = {
+  isProduction: process.env.CF_PAGES_BRANCH === 'main',
+  isPreview: process.env.CF_PAGES_BRANCH !== 'main' && !!process.env.CF_PAGES,
+  isDevelopment: !process.env.CF_PAGES,
+  branch: process.env.CF_PAGES_BRANCH,
+  commitSha: process.env.CF_PAGES_COMMIT_SHA,
+};
 
-export default class CloudflareKVCache {
-  private kv: KVNamespace;
-
-  constructor(kv: KVNamespace) {
-    this.kv = kv;
-  }
-
-  async get(key: string) {
-    const value = await this.kv.get(key, "json");
-    if (!value) return null;
-    return value;
-  }
-
-  async set(key: string, value: any, options?: { ttl?: number }) {
-    await this.kv.put(key, JSON.stringify(value), {
-      expirationTtl: options?.ttl || 86400,
-    });
-  }
-
-  async delete(key: string) {
-    await this.kv.delete(key);
-  }
-}
+// Feature flags per environment
+const features = {
+  newCheckout: env.isPreview || env.isDevelopment,
+  experimentalUI: env.branch === 'feature/new-ui',
+  analytics: env.isProduction,
+};
 ```
 
-### Edge Caching with Cache API
+### Production Deployment
+
+```yaml
+# Automatic on push to main
+Trigger: Push to main branch
+URL: https://your-domain.com
+
+# Custom domain setup in Cloudflare Dashboard:
+# 1. Add custom domain
+# 2. Wait for SSL provisioning
+# 3. Verify DNS propagation
+```
+
+## Edge Patterns
+
+### Middleware at the Edge
 
 ```typescript
-// functions/_middleware.ts
-export async function onRequest(context: EventContext<Env, string, unknown>) {
-  const cache = caches.default;
-  const cacheKey = new Request(context.request.url, context.request);
+// middleware.ts - runs on every request
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
-  // Check cache first
-  let response = await cache.match(cacheKey);
+export const config = {
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+};
 
-  if (response) {
-    // Add cache hit header
-    response = new Response(response.body, response);
-    response.headers.set("X-Cache", "HIT");
-    return response;
-  }
+export function middleware(request: NextRequest) {
+  const response = NextResponse.next();
 
-  // Get fresh response
-  response = await context.next();
+  // Add security headers
+  response.headers.set('X-Frame-Options', 'DENY');
+  response.headers.set('X-Content-Type-Options', 'nosniff');
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
 
-  // Cache if cacheable
-  if (response.status === 200) {
-    const responseToCache = new Response(response.body, response);
-    responseToCache.headers.set("Cache-Control", "public, max-age=3600");
-
-    context.waitUntil(cache.put(cacheKey, responseToCache.clone()));
-
-    responseToCache.headers.set("X-Cache", "MISS");
-    return responseToCache;
+  // Geolocation-based routing
+  const country = request.geo?.country || 'US';
+  if (country === 'EU') {
+    response.headers.set('X-GDPR-Required', 'true');
   }
 
   return response;
 }
 ```
 
----
+### KV-Based Feature Flags
 
-## Authentication Patterns
+```typescript
+// lib/feature-flags.ts
+export async function getFeatureFlags(env: { KV: KVNamespace }) {
+  const flags = await env.KV.get('feature-flags', 'json');
+  return flags || {};
+}
+
+// Usage in middleware
+export async function middleware(request: NextRequest) {
+  const flags = await getFeatureFlags(env);
+
+  if (flags.newHomepage && request.nextUrl.pathname === '/') {
+    return NextResponse.rewrite(new URL('/home-v2', request.url));
+  }
+
+  return NextResponse.next();
+}
+
+// Setting flags
+await env.KV.put('feature-flags', JSON.stringify({
+  newHomepage: true,
+  darkModeDefault: false,
+  experimentalFeature: 'variant-a',
+}));
+```
+
+### Edge Caching
+
+```typescript
+// API route with edge caching
+export const runtime = 'edge';
+
+export async function GET(request: Request) {
+  const cacheKey = new URL(request.url).pathname;
+
+  // Try cache first
+  const cached = await env.CACHE.get(cacheKey, 'json');
+  if (cached) {
+    return Response.json(cached, {
+      headers: { 'X-Cache': 'HIT' }
+    });
+  }
+
+  // Fetch and cache
+  const data = await fetchExpensiveData();
+  await env.CACHE.put(cacheKey, JSON.stringify(data), {
+    expirationTtl: 3600 // 1 hour
+  });
+
+  return Response.json(data, {
+    headers: { 'X-Cache': 'MISS' }
+  });
+}
+```
+
+## Auth Patterns
 
 ### Cloudflare Access Integration
 
 ```typescript
-// lib/auth.ts
-export function getAccessEmail(request: Request): string | null {
-  // Cloudflare Access sets this header
-  return request.headers.get("Cf-Access-Authenticated-User-Email");
+// lib/cloudflare-access.ts
+interface AccessUser {
+  email: string;
+  name?: string;
+  groups?: string[];
 }
 
-export function getAccessIdentity(request: Request): string | null {
-  // JWT from Access
-  return request.headers.get("Cf-Access-Jwt-Assertion");
+export async function verifyAccessToken(jwt: string | null): Promise<AccessUser | null> {
+  if (!jwt) return null;
+
+  try {
+    // Cloudflare Access provides JWT verification endpoint
+    const response = await fetch(
+      `https://${process.env.CF_ACCESS_TEAM_NAME}.cloudflareaccess.com/cdn-cgi/access/get-identity`,
+      { headers: { 'CF-Access-JWT-Assertion': jwt } }
+    );
+
+    if (!response.ok) return null;
+
+    return await response.json();
+  } catch {
+    return null;
+  }
 }
 
-// In your middleware or API route
-export async function onRequest(context: EventContext<Env, string, unknown>) {
-  const email = getAccessEmail(context.request);
+// Usage in API route
+export async function GET(request: Request) {
+  const jwt = request.headers.get('CF-Access-JWT-Assertion');
+  const user = await verifyAccessToken(jwt);
 
-  if (!email) {
-    return new Response("Unauthorized", { status: 401 });
+  if (!user) {
+    return new Response('Unauthorized', { status: 401 });
   }
 
-  // Check if user is allowed
-  const allowedEmails = (context.env.ALLOWED_EMAILS || "").split(",");
-  if (!allowedEmails.includes(email)) {
-    return new Response("Forbidden", { status: 403 });
+  if (!user.groups?.includes('admin')) {
+    return new Response('Forbidden', { status: 403 });
   }
 
-  return context.next();
+  // Admin-only logic
 }
 ```
 
-### Setting Up Cloudflare Access
+### Role-Based Access
 
-1. Go to Zero Trust dashboard
-2. Create an Access Application
-3. Set application domain (e.g., `internal.example.com`)
-4. Configure identity providers (GitHub, Google, etc.)
-5. Create Access policies (email domain, specific emails, etc.)
+```typescript
+// middleware.ts
+export async function middleware(request: NextRequest) {
+  const jwt = request.headers.get('CF-Access-JWT-Assertion');
+  const user = await verifyAccessToken(jwt);
 
----
+  const pathname = request.nextUrl.pathname;
+
+  // Route protection map
+  const protectedRoutes = {
+    '/admin': ['admin'],
+    '/beta': ['beta-testers', 'admin'],
+    '/internal': ['employee'],
+  };
+
+  for (const [route, requiredGroups] of Object.entries(protectedRoutes)) {
+    if (pathname.startsWith(route)) {
+      if (!user) {
+        return new Response('Unauthorized', { status: 401 });
+      }
+      if (!requiredGroups.some(g => user.groups?.includes(g))) {
+        return new Response('Forbidden', { status: 403 });
+      }
+    }
+  }
+
+  return NextResponse.next();
+}
+```
 
 ## Image Optimization
 
-### Using Cloudflare Images
+### Cloudflare Image Loader
 
 ```typescript
-// lib/images.ts
-export function getOptimizedUrl(
-  imageUrl: string,
-  options: {
-    width?: number;
-    height?: number;
-    fit?: "contain" | "cover" | "crop" | "pad";
-    quality?: number;
-  }
-): string {
-  const params = new URLSearchParams();
-
-  if (options.width) params.set("w", String(options.width));
-  if (options.height) params.set("h", String(options.height));
-  if (options.fit) params.set("fit", options.fit);
-  if (options.quality) params.set("q", String(options.quality));
-
-  // Cloudflare Images transform URL
-  return `https://imagedelivery.net/${ACCOUNT_ID}/${imageUrl}/public?${params}`;
-}
-```
-
-### next/image with Cloudflare
-
-```typescript
-// next.config.js
-module.exports = {
-  images: {
-    loader: "custom",
-    loaderFile: "./lib/cloudflare-image-loader.ts",
-  },
-};
-
 // lib/cloudflare-image-loader.ts
 export default function cloudflareLoader({
   src,
@@ -244,115 +306,61 @@ export default function cloudflareLoader({
   width: number;
   quality?: number;
 }) {
-  const params = [`width=${width}`];
-  if (quality) params.push(`quality=${quality}`);
+  // For external URLs (Pexels, Unsplash)
+  if (src.startsWith('http')) {
+    // Use Cloudflare Image Resizing
+    return `https://your-domain.com/cdn-cgi/image/width=${width},quality=${quality || 75}/${src}`;
+  }
 
-  // Using Cloudflare Image Resizing
-  return `https://your-domain.com/cdn-cgi/image/${params.join(",")}/${src}`;
+  // For local images
+  return `/_next/image?url=${encodeURIComponent(src)}&w=${width}&q=${quality || 75}`;
 }
 ```
 
----
-
-## A/B Testing at Edge
+### R2 Asset Storage
 
 ```typescript
-// functions/_middleware.ts
-const EXPERIMENT_COOKIE = "experiment_variant";
+// API route for uploading to R2
+export const runtime = 'edge';
 
-export async function onRequest(context: EventContext<Env, string, unknown>) {
-  const request = context.request;
-  const url = new URL(request.url);
+export async function POST(request: Request, { env }: { env: { ASSETS: R2Bucket } }) {
+  const formData = await request.formData();
+  const file = formData.get('file') as File;
 
-  // Only run experiment on specific paths
-  if (!url.pathname.startsWith("/pricing")) {
-    return context.next();
+  if (!file) {
+    return Response.json({ error: 'No file provided' }, { status: 400 });
   }
 
-  // Get or assign variant
-  const cookies = request.headers.get("Cookie") || "";
-  let variant = getCookie(cookies, EXPERIMENT_COOKIE);
+  const key = `uploads/${Date.now()}-${file.name}`;
+  await env.ASSETS.put(key, await file.arrayBuffer(), {
+    httpMetadata: { contentType: file.type },
+  });
 
-  if (!variant) {
-    // 50/50 split
-    variant = Math.random() < 0.5 ? "control" : "variant";
-  }
-
-  // Rewrite to variant
-  const response = await context.next();
-
-  // Set cookie for consistency
-  if (!getCookie(cookies, EXPERIMENT_COOKIE)) {
-    const newResponse = new Response(response.body, response);
-    newResponse.headers.append(
-      "Set-Cookie",
-      `${EXPERIMENT_COOKIE}=${variant}; Path=/; Max-Age=86400`
-    );
-    return newResponse;
-  }
-
-  return response;
-}
-
-function getCookie(cookies: string, name: string): string | null {
-  const match = cookies.match(new RegExp(`${name}=([^;]+)`));
-  return match ? match[1] : null;
+  return Response.json({
+    url: `https://assets.your-domain.com/${key}`,
+  });
 }
 ```
 
----
+## Monitoring & Debugging
 
-## Analytics at Edge
+### Request Logging
 
 ```typescript
-// functions/_middleware.ts
-export async function onRequest(context: EventContext<Env, string, unknown>) {
+// Log to Workers Analytics Engine
+export async function middleware(request: NextRequest) {
   const start = Date.now();
-  const response = await context.next();
+  const response = NextResponse.next();
   const duration = Date.now() - start;
 
-  // Log to Analytics Engine (Cloudflare)
-  context.waitUntil(
-    context.env.ANALYTICS.writeDataPoint({
-      blobs: [context.request.url, context.request.method],
-      doubles: [duration, response.status],
-      indexes: [context.request.headers.get("CF-Connecting-IP") || "unknown"],
-    })
-  );
+  // Log to analytics (if using Workers Analytics Engine)
+  env.ANALYTICS?.writeDataPoint({
+    blobs: [request.nextUrl.pathname],
+    doubles: [duration, response.status],
+    indexes: [request.method],
+  });
 
   return response;
-}
-```
-
----
-
-## Error Handling
-
-### Custom Error Pages
-
-```typescript
-// functions/_middleware.ts
-export async function onRequest(context: EventContext<Env, string, unknown>) {
-  try {
-    const response = await context.next();
-
-    // Handle 404s with custom page
-    if (response.status === 404) {
-      return context.env.ASSETS.fetch(
-        new Request(new URL("/404.html", context.request.url))
-      );
-    }
-
-    return response;
-  } catch (error) {
-    console.error("Middleware error:", error);
-
-    // Return custom 500 page
-    return new Response("Internal Server Error", {
-      status: 500,
-      headers: { "Content-Type": "text/html" },
-    });
-  }
 }
 ```
 
@@ -360,57 +368,40 @@ export async function onRequest(context: EventContext<Env, string, unknown>) {
 
 ```typescript
 // lib/error-tracking.ts
-export async function trackError(
-  error: Error,
-  context: { url: string; userAgent: string }
-) {
-  // Send to your error tracking service
-  await fetch("https://your-error-service.com/api/errors", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      message: error.message,
-      stack: error.stack,
-      url: context.url,
-      userAgent: context.userAgent,
-      timestamp: new Date().toISOString(),
-    }),
+export async function logError(error: Error, context: Record<string, unknown>) {
+  console.error('Application Error:', {
+    message: error.message,
+    stack: error.stack,
+    ...context,
+    timestamp: new Date().toISOString(),
+    environment: process.env.CF_PAGES_BRANCH,
   });
+
+  // If using external service
+  if (process.env.SENTRY_DSN) {
+    // Send to Sentry
+  }
 }
 ```
 
----
+## CLI Reference
 
-## Performance Monitoring
+```bash
+# Deploy preview
+npx wrangler pages deploy .next --project-name=gallery
 
-### Core Web Vitals Collection
+# Deploy production
+npx wrangler pages deploy .next --project-name=gallery --branch=main
 
-```typescript
-// app/layout.tsx (Next.js) or main entry
-"use client";
+# View logs
+npx wrangler pages deployment tail
 
-import { useReportWebVitals } from "next/web-vitals";
+# Set secrets
+npx wrangler pages secret put PEXELS_API_KEY
 
-export function WebVitals() {
-  useReportWebVitals((metric) => {
-    // Send to analytics
-    const body = JSON.stringify({
-      name: metric.name,
-      value: metric.value,
-      rating: metric.rating,
-      delta: metric.delta,
-      id: metric.id,
-      navigationType: metric.navigationType,
-    });
+# List deployments
+npx wrangler pages deployments list
 
-    // Use sendBeacon for reliability
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon("/api/vitals", body);
-    } else {
-      fetch("/api/vitals", { body, method: "POST", keepalive: true });
-    }
-  });
-
-  return null;
-}
+# Rollback
+npx wrangler pages deployments rollback
 ```

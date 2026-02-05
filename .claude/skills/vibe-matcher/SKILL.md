@@ -10,6 +10,8 @@ tags:
   - synesthesia
   - mood
 pairs-with:
+  - skill: design-system-generator
+    reason: Generate production token files from matched vibes
   - skill: web-design-expert
     reason: Apply matched vibes to designs
   - skill: color-theory-palette-harmony-expert
@@ -235,7 +237,16 @@ This skill is NOT appropriate for:
 
 ## Integration with Other Skills
 
+### Recommended Workflow: Vibe → Tokens → Implementation
+
+```
+1. vibe-matcher     → Clarify emotional direction, get Visual DNA specs
+2. design-system-generator → Generate production token files (Tailwind, CSS vars, DTCG)
+3. web-design-expert       → Implement the design system in actual components
+```
+
 Works well with:
+- **design-system-generator**: After vibe-matcher outputs Visual DNA, use design-system-generator to create production-ready token files (Tailwind config, CSS custom properties, DTCG JSON). This turns conceptual specs into actual code.
 - **Web Design Expert**: Vibe-matcher provides emotional direction, web-design-expert implements
 - **Typography Expert**: Vibe informs font selection, typography-expert provides pairing details
 - **Design Archivist**: Use pattern database to find examples matching desired vibe
