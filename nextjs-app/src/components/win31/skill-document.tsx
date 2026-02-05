@@ -788,6 +788,304 @@ function MarkdownTable({ lines }: { lines: string[] }) {
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
+ * DESIGN TOKEN DETECTION & VISUALIZATION
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+// Color patterns
+const COLOR_PATTERNS = {
+  hex: /^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$/,
+  rgb: /^rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(?:,\s*([0-9.]+))?\s*\)$/,
+  hsl: /^hsla?\(\s*(\d{1,3})\s*,\s*(\d{1,3})%\s*,\s*(\d{1,3})%\s*(?:,\s*([0-9.]+))?\s*\)$/,
+  oklch: /^oklch\(\s*([0-9.]+%?)\s+([0-9.]+)\s+([0-9.]+)\s*(?:\/\s*([0-9.]+%?))?\s*\)$/i,
+};
+
+// Size patterns
+const SIZE_PATTERN = /^(\d+(?:\.\d+)?)(px|rem|em|%|vw|vh|pt|ch)$/;
+
+// Font weight patterns
+const FONT_WEIGHT_PATTERN = /^(100|200|300|400|500|600|700|800|900|thin|extralight|light|normal|medium|semibold|bold|extrabold|black)$/i;
+
+// CSS variable pattern
+const CSS_VAR_PATTERN = /^--[\w-]+$/;
+
+type DesignTokenType = 'color' | 'size' | 'font-weight' | 'border-radius' | 'css-var' | 'font-family' | null;
+
+function detectDesignToken(value: string): DesignTokenType {
+  const trimmed = value.trim();
+  
+  // Check for colors
+  if (COLOR_PATTERNS.hex.test(trimmed)) return 'color';
+  if (COLOR_PATTERNS.rgb.test(trimmed)) return 'color';
+  if (COLOR_PATTERNS.hsl.test(trimmed)) return 'color';
+  if (COLOR_PATTERNS.oklch.test(trimmed)) return 'color';
+  
+  // Check for font weights
+  if (FONT_WEIGHT_PATTERN.test(trimmed)) return 'font-weight';
+  
+  // Check for CSS variables
+  if (CSS_VAR_PATTERN.test(trimmed)) return 'css-var';
+  
+  // Check for font families (quoted or common names)
+  if (/^["'].*["']$/.test(trimmed) || /^(sans-serif|serif|monospace|system-ui|Inter|Roboto|Arial|Helvetica)$/i.test(trimmed)) {
+    return 'font-family';
+  }
+  
+  // Check for sizes (must be last as it's more generic)
+  if (SIZE_PATTERN.test(trimmed)) {
+    // Distinguish border-radius context from general size
+    return 'size';
+  }
+  
+  return null;
+}
+
+function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(
+    hex.length === 4 ? hex.replace(/([a-f\d])/gi, '$1$1') : hex
+  );
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16),
+  } : null;
+}
+
+function getContrastColor(hexColor: string): string {
+  const rgb = hexToRgb(hexColor);
+  if (!rgb) return '#000000';
+  const luminance = (0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b) / 255;
+  return luminance > 0.5 ? '#000000' : '#ffffff';
+}
+
+interface ColorSwatchProps {
+  value: string;
+  showFormats?: boolean;
+}
+
+function ColorSwatch({ value, showFormats = true }: ColorSwatchProps) {
+  const [showTooltip, setShowTooltip] = React.useState(false);
+  const [copied, setCopied] = React.useState<string | null>(null);
+
+  // Normalize color for CSS
+  const cssColor = value;
+  
+  // Try to parse hex for format conversion
+  const isHex = COLOR_PATTERNS.hex.test(value);
+  const rgb = isHex ? hexToRgb(value) : null;
+  
+  const formats: { label: string; value: string }[] = [
+    { label: 'Original', value },
+  ];
+  
+  if (rgb) {
+    formats.push({ label: 'RGB', value: `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})` });
+    // Approximate OKLCH (simplified)
+    const l = (0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b) / 255;
+    formats.push({ label: 'OKLCH', value: `oklch(${(l * 100).toFixed(1)}% 0.1 0)` });
+  }
+
+  const handleCopy = async (format: string) => {
+    await navigator.clipboard.writeText(format);
+    setCopied(format);
+    setTimeout(() => setCopied(null), 1500);
+  };
+
+  const contrastColor = isHex ? getContrastColor(value) : '#000';
+
+  return (
+    <span 
+      className="relative inline-flex items-center gap-1"
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
+      {/* Color swatch */}
+      <span
+        className="inline-flex h-5 w-5 items-center justify-center rounded border border-win31-gray-darker shadow-sm"
+        style={{ backgroundColor: cssColor }}
+        title={value}
+      />
+      {/* Color value */}
+      <code className="rounded-sm bg-win31-gray-light px-1.5 py-0.5 font-mono text-xs text-win31-navy border border-win31-gray-darker">
+        {value}
+      </code>
+      
+      {/* Tooltip with formats */}
+      {showTooltip && showFormats && (
+        <span className="absolute left-0 top-full z-50 mt-1 min-w-[200px] rounded border border-win31-gray-darker bg-white p-2 shadow-lg">
+          <span className="mb-2 block text-xs font-semibold text-win31-navy">Color Formats</span>
+          <span className="space-y-1">
+            {formats.map(({ label, value: fmt }) => (
+              <span 
+                key={label} 
+                className="flex items-center justify-between gap-2 text-xs cursor-pointer hover:bg-win31-gray-light rounded px-1"
+                onClick={() => handleCopy(fmt)}
+              >
+                <span className="text-win31-gray-darker">{label}:</span>
+                <span className="font-mono">{fmt}</span>
+                {copied === fmt && <Check className="h-3 w-3 text-emerald-500" />}
+              </span>
+            ))}
+          </span>
+          {/* Large preview */}
+          <span 
+            className="mt-2 flex h-8 w-full items-center justify-center rounded border text-xs font-medium"
+            style={{ backgroundColor: cssColor, color: contrastColor }}
+          >
+            Preview
+          </span>
+        </span>
+      )}
+    </span>
+  );
+}
+
+interface SizeVisualizerProps {
+  value: string;
+  type?: 'size' | 'border-radius';
+}
+
+function SizeVisualizer({ value, type = 'size' }: SizeVisualizerProps) {
+  const match = value.match(SIZE_PATTERN);
+  if (!match) return <code className="rounded-sm bg-win31-gray-light px-1.5 py-0.5 font-mono text-xs">{value}</code>;
+  
+  const [, num, unit] = match;
+  const numValue = parseFloat(num);
+  
+  // Convert to pixels for visualization (approximate)
+  let pxValue = numValue;
+  if (unit === 'rem') pxValue = numValue * 16;
+  if (unit === 'em') pxValue = numValue * 16;
+  
+  // Cap visualization size
+  const visualSize = Math.min(Math.max(pxValue, 4), 48);
+  
+  if (type === 'border-radius') {
+    return (
+      <span className="inline-flex items-center gap-1.5">
+        <code className="rounded-sm bg-win31-gray-light px-1.5 py-0.5 font-mono text-xs text-win31-navy border border-win31-gray-darker">
+          {value}
+        </code>
+        <span 
+          className="inline-block h-5 w-5 border-2 border-win31-navy bg-win31-gray-light"
+          style={{ borderRadius: `${Math.min(visualSize, 10)}px` }}
+          title={`Border radius: ${value}`}
+        />
+      </span>
+    );
+  }
+  
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <code className="rounded-sm bg-win31-gray-light px-1.5 py-0.5 font-mono text-xs text-win31-navy border border-win31-gray-darker">
+        {value}
+      </code>
+      {/* Size bar */}
+      <span 
+        className="inline-block h-2 bg-win31-navy rounded-sm"
+        style={{ width: `${visualSize}px`, minWidth: '4px', maxWidth: '48px' }}
+        title={`${value}${unit !== 'px' ? ` ≈ ${pxValue.toFixed(0)}px` : ''}`}
+      />
+    </span>
+  );
+}
+
+interface FontWeightVisualizerProps {
+  value: string;
+}
+
+function FontWeightVisualizer({ value }: FontWeightVisualizerProps) {
+  const weightMap: Record<string, number> = {
+    thin: 100, extralight: 200, light: 300, normal: 400,
+    medium: 500, semibold: 600, bold: 700, extrabold: 800, black: 900,
+  };
+  
+  const numericWeight = weightMap[value.toLowerCase()] || parseInt(value, 10) || 400;
+  
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <code className="rounded-sm bg-win31-gray-light px-1.5 py-0.5 font-mono text-xs text-win31-navy border border-win31-gray-darker">
+        {value}
+      </code>
+      <span 
+        className="inline-block px-1.5 py-0.5 text-xs bg-win31-navy text-white rounded-sm"
+        style={{ fontWeight: numericWeight }}
+      >
+        Aa
+      </span>
+    </span>
+  );
+}
+
+interface FontFamilyVisualizerProps {
+  value: string;
+}
+
+function FontFamilyVisualizer({ value }: FontFamilyVisualizerProps) {
+  const cleanValue = value.replace(/["']/g, '');
+  
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <code className="rounded-sm bg-win31-gray-light px-1.5 py-0.5 font-mono text-xs text-win31-navy border border-win31-gray-darker">
+        {value}
+      </code>
+      <span 
+        className="inline-block px-1.5 py-0.5 text-xs bg-win31-gray border border-win31-gray-darker rounded-sm"
+        style={{ fontFamily: cleanValue }}
+      >
+        The quick brown fox
+      </span>
+    </span>
+  );
+}
+
+interface CssVarVisualizerProps {
+  value: string;
+}
+
+function CssVarVisualizer({ value }: CssVarVisualizerProps) {
+  return (
+    <span className="inline-flex items-center gap-1">
+      <span className="rounded-sm bg-purple-100 px-1 py-0.5 text-xs text-purple-700 border border-purple-300">
+        var
+      </span>
+      <code className="rounded-sm bg-win31-gray-light px-1.5 py-0.5 font-mono text-xs text-purple-700 border border-win31-gray-darker">
+        {value}
+      </code>
+    </span>
+  );
+}
+
+function renderDesignToken(value: string, key: number): React.ReactNode {
+  const tokenType = detectDesignToken(value);
+  
+  switch (tokenType) {
+    case 'color':
+      return <ColorSwatch key={key} value={value} />;
+    case 'size':
+      return <SizeVisualizer key={key} value={value} />;
+    case 'border-radius':
+      return <SizeVisualizer key={key} value={value} type="border-radius" />;
+    case 'font-weight':
+      return <FontWeightVisualizer key={key} value={value} />;
+    case 'font-family':
+      return <FontFamilyVisualizer key={key} value={value} />;
+    case 'css-var':
+      return <CssVarVisualizer key={key} value={value} />;
+    default:
+      return (
+        <code
+          key={key}
+          className="rounded-sm bg-win31-gray-light px-1.5 py-0.5 font-mono text-xs text-win31-navy border border-win31-gray-darker"
+        >
+          {value}
+        </code>
+      );
+  }
+}
+
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
  * INLINE RENDERING
  * ═══════════════════════════════════════════════════════════════════════════
  */
@@ -820,20 +1118,14 @@ function renderInline(text: string): React.ReactNode {
       continue;
     }
 
-    // Inline code
+    // Inline code - with design token detection
     const codeMatch = remaining.match(/`([^`]+)`/);
     if (codeMatch && codeMatch.index !== undefined) {
       if (codeMatch.index > 0) {
         parts.push(remaining.slice(0, codeMatch.index));
       }
-      parts.push(
-        <code
-          key={key++}
-          className="rounded-sm bg-win31-gray-light px-1.5 py-0.5 font-mono text-xs text-win31-navy border border-win31-gray-darker"
-        >
-          {codeMatch[1]}
-        </code>
-      );
+      // Check if it's a design token
+      parts.push(renderDesignToken(codeMatch[1], key++));
       remaining = remaining.slice(codeMatch.index + codeMatch[0].length);
       continue;
     }
