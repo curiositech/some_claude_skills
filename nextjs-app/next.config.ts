@@ -4,28 +4,16 @@ const nextConfig: NextConfig = {
   // Enable React strict mode
   reactStrictMode: true,
 
-  // Output standalone for Cloudflare Pages
-  output: 'standalone',
+  // Static export for Cloudflare Pages
+  output: 'export',
 
-  // Image optimization settings
+  // Image optimization - use unoptimized for static export
   images: {
-    // Use Cloudflare's image optimization when deployed
-    loader: 'default',
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
+    unoptimized: true,
   },
 
-  // Experimental features
-  experimental: {
-    // Enable server actions
-    serverActions: {
-      bodySizeLimit: '2mb',
-    },
-  },
+  // Trailing slashes for static hosting
+  trailingSlash: true,
 };
 
 export default nextConfig;
