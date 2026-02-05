@@ -1,6 +1,5 @@
-import type { Config } from 'tailwindcss';
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   // Enable dark mode via class strategy (for Docusaurus compatibility)
   darkMode: ['class', '[data-theme="dark"]'],
 
@@ -9,9 +8,6 @@ const config: Config = {
     './src/**/*.{js,jsx,ts,tsx,mdx}',
     './docs/**/*.{md,mdx}',
   ],
-
-  // Prefix Tailwind classes to avoid conflicts with Infima/Docusaurus
-  prefix: '',
 
   theme: {
     // Container defaults
@@ -144,22 +140,11 @@ const config: Config = {
       // ═══════════════════════════════════════════════════════════════════
       boxShadow: {
         // Win31 beveled outset (raised)
-        'win31-outset': `
-          inset 1px 1px 0 #ffffff,
-          inset -1px -1px 0 #808080,
-          2px 2px 0 rgba(0, 0, 0, 0.25)
-        `,
+        'win31-outset': 'inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080, 2px 2px 0 rgba(0, 0, 0, 0.25)',
         // Win31 beveled inset (pressed)
-        'win31-inset': `
-          inset -1px -1px 0 #ffffff,
-          inset 1px 1px 0 #808080
-        `,
+        'win31-inset': 'inset -1px -1px 0 #ffffff, inset 1px 1px 0 #808080',
         // Win31 window shadow
-        'win31-window': `
-          inset 2px 2px 0 #ffffff,
-          inset -2px -2px 0 #808080,
-          6px 6px 0 rgba(0, 0, 0, 0.4)
-        `,
+        'win31-window': 'inset 2px 2px 0 #ffffff, inset -2px -2px 0 #808080, 6px 6px 0 rgba(0, 0, 0, 0.4)',
       },
 
       // ═══════════════════════════════════════════════════════════════════
@@ -212,10 +197,5 @@ const config: Config = {
     },
   },
 
-  plugins: [
-    // Add animate plugin for Radix animations if needed
-    // require('tailwindcss-animate'),
-  ],
+  plugins: [],
 };
-
-export default config;
