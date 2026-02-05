@@ -1,250 +1,231 @@
 /*
  * ═══════════════════════════════════════════════════════════════════════════
- * GOOGLE FONTS IMPORT - Must be first
+ * GOOGLE FONTS - Must be first
  * ═══════════════════════════════════════════════════════════════════════════
  */
-@import url('https://fonts.googleapis.com/css2?family=VT323&family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
 
 @import "tailwindcss";
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
- * TAILWIND CSS v4 THEME CONFIGURATION
- * Windows 3.1 Design System + shadcn/ui tokens
+ * WINDOWS 3.1 POCKET EDITION - Clean Mobile-First Design
+ * "What if Microsoft made a smartphone in 1992?"
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 @theme {
   /* ─────────────────────────────────────────────────────────────────────────
-     COLORS - Windows 3.1 Palette
+     WINDOWS 3.1 PALETTE - Clean & Minimal
      ───────────────────────────────────────────────────────────────────────── */
   
-  /* Classic Win31 Grays */
+  /* Core Grays - The soul of Win31 */
   --color-win31-gray: #c0c0c0;
-  --color-win31-dark-gray: #808080;
-  --color-win31-light-gray: #dfdfdf;
+  --color-win31-gray-dark: #a0a0a0;
+  --color-win31-gray-darker: #808080;
+  --color-win31-gray-light: #dfdfdf;
   --color-win31-white: #ffffff;
   --color-win31-black: #000000;
 
-  /* Classic Win31 Colors */
+  /* System Colors */
   --color-win31-navy: #000080;
-  --color-win31-blue: #0000ff;
+  --color-win31-blue: #1084d0;
   --color-win31-teal: #008080;
-  --color-win31-desktop: #008080;
-
-  /* Vibrant Accents */
-  --color-win31-yellow: #ffff00;
-  --color-win31-bright-yellow: #ffd700;
-  --color-win31-red: #ff0000;
-  --color-win31-bright-red: #dc143c;
-  --color-win31-magenta: #ff00ff;
-  --color-win31-lime: #00ff00;
   --color-win31-cyan: #00ffff;
 
-  /* ─────────────────────────────────────────────────────────────────────────
-     SEMANTIC COLORS (shadcn/ui compatible)
-     ───────────────────────────────────────────────────────────────────────── */
-  
-  --color-background: #ffffff;
-  --color-foreground: #0f172a;
-  --color-card: #ffffff;
-  --color-card-foreground: #0f172a;
-  --color-popover: #ffffff;
-  --color-popover-foreground: #0f172a;
-  --color-primary: #6366f1;
-  --color-primary-foreground: #ffffff;
-  --color-secondary: #f1f5f9;
-  --color-secondary-foreground: #0f172a;
-  --color-muted: #f1f5f9;
-  --color-muted-foreground: #64748b;
-  --color-accent: #f1f5f9;
-  --color-accent-foreground: #0f172a;
-  --color-destructive: #ef4444;
-  --color-destructive-foreground: #ffffff;
-  --color-success: #22c55e;
-  --color-success-foreground: #ffffff;
-  --color-warning: #f59e0b;
-  --color-warning-foreground: #000000;
-  --color-border: #e2e8f0;
-  --color-input: #e2e8f0;
-  --color-ring: #6366f1;
+  /* Accent Colors - Muted for clean look */
+  --color-win31-green: #008000;
+  --color-win31-lime: #00ff00;
+  --color-win31-yellow: #ffff00;
+  --color-win31-red: #c00000;
+  --color-win31-magenta: #ff00ff;
+
+  /* Desktop - Classic teal */
+  --color-win31-desktop: #008080;
+  --color-win31-desktop-pattern: #007070;
+
+  /* Semantic mappings */
+  --color-background: var(--color-win31-gray);
+  --color-foreground: var(--color-win31-black);
+  --color-surface: var(--color-win31-gray);
+  --color-surface-raised: var(--color-win31-gray-light);
+  --color-surface-sunken: var(--color-win31-white);
+  --color-border: var(--color-win31-black);
+  --color-border-light: var(--color-win31-white);
+  --color-border-dark: var(--color-win31-gray-darker);
+  --color-primary: var(--color-win31-navy);
+  --color-primary-foreground: var(--color-win31-white);
 
   /* ─────────────────────────────────────────────────────────────────────────
-     TYPOGRAPHY - Font Families
+     TYPOGRAPHY - Clean & Readable
      ───────────────────────────────────────────────────────────────────────── */
   
-  --font-display: 'Press Start 2P', cursive;
-  --font-window: 'VT323', monospace;
-  --font-system: 'IBM Plex Mono', monospace;
-  --font-body: 'Courier Prime', 'Courier New', monospace;
-  --font-code: 'IBM Plex Mono', 'Courier New', monospace;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-system: 'IBM Plex Mono', 'Consolas', monospace;
+  --font-display: 'VT323', monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
 
   /* ─────────────────────────────────────────────────────────────────────────
-     BORDER RADIUS
+     SPACING - Touch-Friendly (44px minimum touch targets)
      ───────────────────────────────────────────────────────────────────────── */
   
-  --radius-win31: 0px;
-  --radius-sm: 0.25rem;
-  --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.75rem;
-  --radius-2xl: 1rem;
-  --radius-full: 9999px;
+  --spacing-touch: 44px;
+  --spacing-touch-sm: 36px;
 
   /* ─────────────────────────────────────────────────────────────────────────
-     BOX SHADOWS - Win31 Beveled Effects
+     SHADOWS - Clean Bevels
      ───────────────────────────────────────────────────────────────────────── */
   
-  --shadow-win31-outset: 
-    inset 1px 1px 0 #ffffff,
-    inset -1px -1px 0 #808080,
-    2px 2px 0 rgba(0, 0, 0, 0.25);
+  --shadow-bevel-out: 
+    inset 1px 1px 0 var(--color-win31-white),
+    inset -1px -1px 0 var(--color-win31-gray-darker);
   
-  --shadow-win31-inset: 
-    inset -1px -1px 0 #ffffff,
-    inset 1px 1px 0 #808080;
+  --shadow-bevel-in: 
+    inset -1px -1px 0 var(--color-win31-white),
+    inset 1px 1px 0 var(--color-win31-gray-darker);
   
-  --shadow-win31-window: 
-    inset 2px 2px 0 #ffffff,
-    inset -2px -2px 0 #808080,
-    6px 6px 0 rgba(0, 0, 0, 0.4);
+  --shadow-window: 
+    2px 2px 0 rgba(0, 0, 0, 0.3);
 
   /* ─────────────────────────────────────────────────────────────────────────
-     ANIMATIONS
+     ANIMATIONS - Subtle & Snappy
      ───────────────────────────────────────────────────────────────────────── */
   
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-  --animate-fade-in: fade-in 0.2s ease-out;
-  --animate-fade-out: fade-out 0.2s ease-out;
-  --animate-slide-in-from-top: slide-in-from-top 0.3s ease-out;
-  --animate-slide-in-from-bottom: slide-in-from-bottom 0.3s ease-out;
-
-  @keyframes accordion-down {
-    from { height: 0; }
-    to { height: var(--radix-accordion-content-height); }
-  }
-
-  @keyframes accordion-up {
-    from { height: var(--radix-accordion-content-height); }
-    to { height: 0; }
-  }
+  --animate-fade-in: fade-in 0.15s ease-out;
+  --animate-slide-up: slide-up 0.2s ease-out;
+  --animate-press: press 0.1s ease-out;
 
   @keyframes fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
   }
 
-  @keyframes fade-out {
-    from { opacity: 1; }
-    to { opacity: 0; }
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes slide-in-from-top {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
-  }
-
-  @keyframes slide-in-from-bottom {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
+  @keyframes press {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.97); }
+    100% { transform: scale(1); }
   }
 }
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
- * DARK MODE OVERRIDES
- * ═══════════════════════════════════════════════════════════════════════════
- */
-
-@media (prefers-color-scheme: dark) {
-  @theme {
-    --color-background: #0f172a;
-    --color-foreground: #f8fafc;
-    --color-card: #1e293b;
-    --color-card-foreground: #f8fafc;
-    --color-popover: #1e293b;
-    --color-popover-foreground: #f8fafc;
-    --color-primary: #818cf8;
-    --color-primary-foreground: #ffffff;
-    --color-secondary: #334155;
-    --color-secondary-foreground: #f8fafc;
-    --color-muted: #334155;
-    --color-muted-foreground: #94a3b8;
-    --color-accent: #334155;
-    --color-accent-foreground: #f8fafc;
-    --color-destructive: #7f1d1d;
-    --color-destructive-foreground: #f8fafc;
-    --color-border: #334155;
-    --color-input: #334155;
-    --color-ring: #6366f1;
-  }
-}
-
-/*
- * ═══════════════════════════════════════════════════════════════════════════
- * BASE LAYER
+ * BASE STYLES
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 @layer base {
   * {
-    @apply border-border;
+    -webkit-tap-highlight-color: transparent;
   }
 
   html {
     @apply scroll-smooth;
+    font-size: 16px;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-win31-desktop text-win31-black antialiased;
+    font-family: var(--font-system);
+  }
+
+  /* Selection color */
+  ::selection {
+    background: var(--color-win31-navy);
+    color: var(--color-win31-white);
   }
 }
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
- * WIN31 UTILITY CLASSES
+ * UTILITY CLASSES - Win31 Pocket Edition
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-@utility bevel-outset {
-  border-style: solid;
-  border-width: 2px;
-  border-top-color: var(--color-win31-white);
-  border-left-color: var(--color-win31-white);
-  border-bottom-color: var(--color-win31-black);
-  border-right-color: var(--color-win31-black);
-  box-shadow: 
-    inset -1px -1px 0 var(--color-win31-dark-gray),
-    inset 1px 1px 0 var(--color-win31-light-gray);
-}
-
-@utility bevel-inset {
-  border-style: solid;
-  border-width: 2px;
-  border-top-color: var(--color-win31-black);
-  border-left-color: var(--color-win31-black);
-  border-bottom-color: var(--color-win31-white);
-  border-right-color: var(--color-win31-white);
-  box-shadow: inset 1px 1px 0 var(--color-win31-dark-gray);
-}
-
-@utility win31-window {
+/* Beveled surfaces */
+@utility bevel-out {
   background: var(--color-win31-gray);
-  border: 3px solid var(--color-win31-black);
-  box-shadow: var(--shadow-win31-window);
+  box-shadow: var(--shadow-bevel-out);
 }
 
-@utility win31-titlebar {
-  background: linear-gradient(90deg, var(--color-win31-navy), var(--color-win31-blue));
+@utility bevel-in {
+  background: var(--color-win31-gray);
+  box-shadow: var(--shadow-bevel-in);
+}
+
+/* Window chrome */
+@utility win-chrome {
+  background: var(--color-win31-gray);
+  border: 2px solid var(--color-win31-black);
+  box-shadow: 
+    inset 1px 1px 0 var(--color-win31-white),
+    inset -1px -1px 0 var(--color-win31-gray-darker),
+    var(--shadow-window);
+}
+
+/* Title bar */
+@utility win-titlebar {
+  background: linear-gradient(90deg, var(--color-win31-navy) 0%, var(--color-win31-blue) 100%);
   color: var(--color-win31-white);
-  padding: 2px 4px;
-  font-family: var(--font-window);
-  font-size: 14px;
+  font-family: var(--font-system);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
 }
 
-@utility win31-desktop {
-  background-color: var(--color-win31-teal);
-  min-height: 100vh;
+/* Inactive title bar */
+@utility win-titlebar-inactive {
+  background: linear-gradient(90deg, var(--color-win31-gray-darker) 0%, var(--color-win31-gray-dark) 100%);
+}
+
+/* Desktop background */
+@utility win-desktop {
+  background: var(--color-win31-desktop);
+  min-height: 100dvh;
+}
+
+/* Content well (sunken area) */
+@utility win-well {
+  background: var(--color-win31-white);
+  box-shadow: var(--shadow-bevel-in);
+  border: 1px solid var(--color-win31-gray-darker);
+}
+
+/* Touch-friendly sizing */
+@utility touch-target {
+  min-height: var(--spacing-touch);
+  min-width: var(--spacing-touch);
+}
+
+@utility touch-target-sm {
+  min-height: var(--spacing-touch-sm);
+  min-width: var(--spacing-touch-sm);
+}
+
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
+ * MOBILE-SPECIFIC PATTERNS
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+/* Safe area handling for notched phones */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Prevent overscroll bounce on iOS */
+@utility no-bounce {
+  overscroll-behavior: none;
 }
