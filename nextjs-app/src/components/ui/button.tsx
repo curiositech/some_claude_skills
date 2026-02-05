@@ -33,6 +33,22 @@ const buttonVariants = cva(
           'hover:bg-win31-blue',
           'active:shadow-[inset_-1px_-1px_0_var(--color-win31-blue),inset_1px_1px_0_#000040]',
         ],
+        // Alias for win31 (same as default)
+        win31: [
+          'bg-win31-gray text-win31-black',
+          'border-2 border-win31-black',
+          'shadow-[inset_1px_1px_0_var(--color-win31-white),inset_-1px_-1px_0_var(--color-win31-gray-darker)]',
+          'hover:bg-win31-gray-light',
+          'active:shadow-[inset_-1px_-1px_0_var(--color-win31-white),inset_1px_1px_0_var(--color-win31-gray-darker)]',
+        ],
+        // Alias for win31Primary (same as primary)
+        win31Primary: [
+          'bg-win31-navy text-win31-white',
+          'border-2 border-win31-black',
+          'shadow-[inset_1px_1px_0_var(--color-win31-blue),inset_-1px_-1px_0_#000040]',
+          'hover:bg-win31-blue',
+          'active:shadow-[inset_-1px_-1px_0_var(--color-win31-blue),inset_1px_1px_0_#000040]',
+        ],
         // Minimal - for toolbars
         ghost: [
           'bg-transparent text-win31-black',

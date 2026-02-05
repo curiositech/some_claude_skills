@@ -21,6 +21,12 @@ const stackVariants = cva('flex', {
       '8': 'gap-8',
       '10': 'gap-10',
       '12': 'gap-12',
+      // Semantic aliases
+      xs: 'gap-1',
+      sm: 'gap-2',
+      md: 'gap-4',
+      lg: 'gap-6',
+      xl: 'gap-8',
     },
     align: {
       start: 'items-start',
