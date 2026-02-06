@@ -28,6 +28,10 @@ Traditional KE built expert systems with formal rules. We build skills with natu
 
 **The gold**: The moments where the expert says "well, obviously you wouldn't..." or "the trick here is..." or "most people get this wrong because...". These are shibboleths. They go in the anti-patterns section.
 
+**Real-world example (University of Southampton)**: A geologist analyzing a hand specimen narrated: "it's obviously a fairly coarse-grained rock... and you've got some nice big orthoclase crystals... quartz, which is this fairly clear mineral." From this, production rules were extracted: `IF grain size is large THEN rock is plutonic`. The verbalization exposed classification logic that the expert used automatically but had never articulated.
+
+**Practical note**: Train the expert to think aloud first using a simple warm-up task (like long multiplication). Uninhibited verbalization is a learned skill. Keep sessions short — they are mentally exhausting, especially for automatized knowledge the expert has never had to explain.
+
 ### Repertory Grid Technique
 
 **What**: Elicit the expert's personal construct system — the dimensions along which they evaluate things in their domain.
@@ -40,6 +44,10 @@ Traditional KE built expert systems with formal rules. We build skills with natu
 5. Rate all examples on all constructs
 
 **What you're extracting**: The expert's **evaluative framework** — the axes along which they judge quality. These map to the skill's evaluation criteria and to the skill-grader's axes for this domain.
+
+**Real-world example (Boeing, 1983-1989)**: Boeing's Expertise Transfer System (ETS) and its successor Aquinas used repertory grids to build 100+ expert system prototypes. In a typical 30-minute session, an associate sat with a domain expert (e.g., a DBMS advisor). The expert listed solutions (database systems), ETS presented triads and elicited discriminating traits, and within an hour a working prototype with production rules was generated. Experts found the process *engaging* rather than threatening — the analysis tools surfaced implications in their own knowledge they hadn't consciously recognized.
+
+**Practical note**: Grids become unwieldy beyond ~15-20 elements. Boeing found a 38×35 grid "hard for the expert to use and manage." The solution: hierarchical decomposition — break a large domain into sub-grids at different abstraction levels.
 
 ### Card Sorting
 
@@ -64,6 +72,10 @@ Traditional KE built expert systems with formal rules. We build skills with natu
 3. Extract: failure modes, recovery strategies, early warning signs
 
 **What you're extracting**: The expert's **failure knowledge** — what goes wrong and how to prevent it. These map directly to anti-patterns and shibboleths. This is often the most valuable knowledge because it's the hardest to acquire any other way.
+
+**Real-world example (Healthcare, Ireland 2020)**: Researchers used CIT to study interdisciplinary team interventions. Seventeen informants described critical incidents, producing seven Context-Mechanism-Outcome Configurations. Two findings emerged ONLY through CIT: prior personal relationships as a contextual enabler and inter-professional tensions as a barrier — neither identified in the literature review.
+
+**Real-world example (Flanagan's WWII pilot studies)**: The original CIT application asked trainees and observers to recount incidents of success and failure. Common threads in aptitude, proficiency, and temperament were extracted and used to formulate selection tests for pilots. Incidents "need not be spectacular" — significance, not drama, defines criticality.
 
 ### Concept Mapping
 
@@ -193,6 +205,70 @@ flowchart TD
   V --> D[Deploy to catalog]
   D --> R[Rank from execution data]
 ```
+
+---
+
+## Source Material: Books That Expose Expert Thinking
+
+For the corpus distillation pipeline (`very-long-text-summarization`), these books expose HOW experts think, not just what they know. Organized by the type of knowledge they yield.
+
+### Cross-Domain (How Expertise Itself Works)
+
+| Book | Author | What It Yields |
+|------|--------|---------------|
+| **Sources of Power** | Gary Klein | Recognition-Primed Decision model: experts pattern-match, simulate one option, act. Firefighters, nurses, pilots, military. |
+| **The Reflective Practitioner** | Donald Schön | "Reflection-in-action" across 5 professions (engineering, architecture, management, therapy, planning). Professionals know more than they can say. |
+| **Thinking in Systems** | Donella Meadows | Feedback loops, stocks and flows, leverage points. The meta-mental-model for any complex system. |
+| **Seeing Like a State** | James C. Scott | Mētis (practical, local, embodied knowledge) vs. legibility (top-down simplification). Why abstract models destroy the knowledge that makes systems work. |
+| **Range** | David Epstein | Generalists outperform specialists in complex domains. Analogical transfer across fields. |
+
+### Software Engineering
+
+| Book | What It Yields for Skills |
+|------|--------------------------|
+| **A Philosophy of Software Design** (Ousterhout) | Deep vs. shallow modules, information hiding, complexity as the root enemy. Empirically tested heuristics. |
+| **The Pragmatic Programmer** (Hunt & Thomas) | DRY, tracer bullets, broken window theory, programming by coincidence. A practitioner's operating system. |
+| **The Mythical Man-Month** (Brooks) | Conceptual integrity, Brooks' Law, surgical team model. Human topology of projects. |
+
+### Architecture & Design
+
+| Book | What It Yields for Skills |
+|------|--------------------------|
+| **A Pattern Language** (Alexander) | 253 problem-solution patterns composable into designs. Origin of pattern thinking. |
+| **How Buildings Learn** (Brand) | Shearing layers: 6 layers changing at different rates. Design for adaptability. |
+
+### Mathematics
+
+| Book | What It Yields for Skills |
+|------|--------------------------|
+| **How to Solve It** (Pólya) | 67 heuristics: analogy, generalization, working backward, auxiliary problems. The foundation of structured problem-solving. |
+| **Proofs and Refutations** (Lakatos) | Math proceeds by conjecture → proof → counterexample → revision, not clean deduction. Messy iteration as the actual method. |
+
+### Medicine
+
+| Book | What It Yields for Skills |
+|------|--------------------------|
+| **How Doctors Think** (Groopman) | Specific cognitive errors: anchoring, availability, commission bias. Thinking process made visible. |
+| **The Checklist Manifesto** (Gawande) | When to rely on expert judgment vs. systematic process. The boundary that defines skill structure. |
+
+### Finance
+
+| Book | What It Yields for Skills |
+|------|--------------------------|
+| **Poor Charlie's Almanack** (Munger) | Latticework of mental models from every discipline. Inversion, fat pitches, Lollapalooza Effect. |
+| **Thinking in Bets** (Annie Duke) | Separate decision quality from outcome quality. Think in probabilities, not certainties. |
+
+### The Distillation Pipeline
+
+Feed these books through `very-long-text-summarization` in skill-draft mode:
+1. Haiku army extracts process patterns, decision heuristics, failure stories, aha! moments, metaphors
+2. Sonnet synthesizes into a structured knowledge map
+3. Opus crystallizes into a SKILL.md
+4. skill-grader validates quality (must score B+ or above)
+
+Cost: ~$0.19 per 300-page book. The entire cross-domain reading list (~12 books, ~3,600 pages) costs ~$2.30 to distill.
+
+---
 
 ### Quality Gate
 
