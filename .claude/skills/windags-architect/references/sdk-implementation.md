@@ -440,20 +440,37 @@ class ToolDefinition:
 
 ---
 
-## Durable Execution (Temporal Pattern)
+## Durable Execution with Temporal
 
-For production web service deployments, wrap DAG execution in a durable workflow engine:
+For production web service deployments, Temporal provides durable execution where every agent action is an Activity with automatic retries, fault tolerance, and full state persistence. If a worker crashes mid-DAG, execution resumes from the last completed Activity without re-executing completed nodes.
+
+### Why Temporal for winDAGs
+
+- **Persistent state** for long-running or multi-step DAGs
+- **Automatic retries** with configurable exponential backoff per Activity
+- **Deterministic replay** — on crash, Temporal replays the workflow's progress from event history without re-executing completed Activities
+- **Human-in-the-loop** via Signals for approval gates
+- **Observability** via Queries to inspect DAG state without affecting execution
+- **Multi-agent coordination** via Child Workflows for parallel node execution
+
+### Core Pattern: DAG Nodes as Activities
+
+Each DAG node becomes a Temporal Activity. The DAG Workflow orchestrates them in topological order with parallel batches:
 
 ```python
-# Using Temporal for durable execution
 from temporalio import workflow, activity
+from temporalio.common import RetryPolicy
+from datetime import timedelta
 
 @activity.defn
 async def execute_dag_node(node_config: dict, inputs: dict) -> dict:
-    """Each node is a Temporal activity — retryable, observable, durable."""
+    """Each DAG node is a Temporal Activity — retryable, observable, durable."""
     router = ProviderRouter()
     skill_content = load_skill_for_node(node_config)
     system_prompt = build_subagent_prompt(node_config, skill_content)
+    
+    # Heartbeat for long-running nodes (enables fast failure detection)
+    activity.heartbeat(f"Executing {node_config['id']} with {node_config['agent']['model']}")
     
     response = await router.execute(
         model=node_config['agent']['model'],
@@ -462,29 +479,226 @@ async def execute_dag_node(node_config: dict, inputs: dict) -> dict:
         max_tokens=node_config['resources'].get('max_tokens', 8192),
     )
     
-    return {"status": "completed", "output": response.content, "metadata": {...}}
+    return {
+        "status": "completed",
+        "output": response.content,
+        "metadata": {
+            "model": response.model,
+            "input_tokens": response.input_tokens,
+            "output_tokens": response.output_tokens,
+            "cost_usd": response.cost_usd,
+        }
+    }
+```
 
+### DAG Workflow with Parallel Batches
+
+```python
 @workflow.defn
 class DAGWorkflow:
+    def __init__(self):
+        self._completed = {}
+        self._current_batch = []
+        self._human_approval = None
+    
     @workflow.run
     async def run(self, dag_config: dict) -> dict:
         batches = topological_sort_parallel(dag_config)
-        completed = {}
         
         for batch in batches:
-            results = await asyncio.gather(*[
-                workflow.execute_activity(
-                    execute_dag_node,
-                    args=[node, gather_inputs(node, completed)],
-                    start_to_close_timeout=timedelta(seconds=node['execution']['timeout']),
-                    retry_policy=RetryPolicy(maximum_attempts=node['execution']['retries']),
-                )
-                for node in batch
-            ])
-            for node, result in zip(batch, results):
-                completed[node['id']] = result
+            self._current_batch = [n['id'] for n in batch]
+            
+            # Check for human gate nodes
+            human_gates = [n for n in batch if n.get('type') == 'human-in-the-loop']
+            agent_nodes = [n for n in batch if n.get('type') != 'human-in-the-loop']
+            
+            # Execute agent nodes in parallel
+            if agent_nodes:
+                results = await asyncio.gather(*[
+                    workflow.execute_activity(
+                        execute_dag_node,
+                        args=[node, self._gather_inputs(node)],
+                        start_to_close_timeout=timedelta(
+                            seconds=node['execution'].get('timeout', 300)
+                        ),
+                        heartbeat_timeout=timedelta(seconds=30),
+                        retry_policy=self._retry_policy_for(node),
+                    )
+                    for node in agent_nodes
+                ])
+                for node, result in zip(agent_nodes, results):
+                    self._completed[node['id']] = result
+            
+            # Handle human gates (wait for Signal)
+            for gate in human_gates:
+                self._human_approval = None
+                await workflow.wait_condition(lambda: self._human_approval is not None)
+                self._completed[gate['id']] = self._human_approval
         
-        return completed
+        return self._completed
+    
+    @workflow.signal
+    async def human_decision(self, decision: dict):
+        """Receive human approval/rejection via Signal."""
+        self._human_approval = decision
+    
+    @workflow.query
+    def get_progress(self) -> dict:
+        """Query DAG progress without interrupting execution."""
+        return {
+            "completed": list(self._completed.keys()),
+            "current_batch": self._current_batch,
+            "total_completed": len(self._completed),
+        }
+    
+    def _retry_policy_for(self, node: dict) -> RetryPolicy:
+        """Per-node retry policy based on node type."""
+        model = node['agent'].get('model', 'claude-sonnet')
+        
+        if 'haiku' in model:
+            # Cheap model: retry aggressively
+            return RetryPolicy(
+                initial_interval=timedelta(seconds=1),
+                backoff_coefficient=2.0,
+                maximum_interval=timedelta(seconds=30),
+                maximum_attempts=10,
+            )
+        elif 'opus' in model:
+            # Expensive model: retry cautiously
+            return RetryPolicy(
+                initial_interval=timedelta(seconds=2),
+                backoff_coefficient=2.0,
+                maximum_interval=timedelta(minutes=2),
+                maximum_attempts=3,
+            )
+        else:
+            # Default: balanced retry
+            return RetryPolicy(
+                initial_interval=timedelta(seconds=1),
+                backoff_coefficient=2.0,
+                maximum_interval=timedelta(minutes=1),
+                maximum_attempts=5,
+                non_retryable_error_types=["InvalidInputError"],
+            )
 ```
 
-**Why Temporal**: Handles retries, timeouts, and node failures durably. If the worker crashes mid-DAG, execution resumes from the last completed node. The Temporal UI provides the Timeline/Compact/Full History views discussed in the visualization section.
+### Multi-Agent Coordination via Child Workflows
+
+For complex DAGs with sub-DAGs, use Child Workflows:
+
+```python
+@workflow.defn
+class MetaDAGWorkflow:
+    """The meta-DAG: uses a DAG of agents to create and execute another DAG."""
+    
+    @workflow.run
+    async def run(self, problem: str) -> dict:
+        # Step 1: Decompose problem (Haiku — cheap)
+        sub_tasks = await workflow.execute_activity(
+            execute_dag_node,
+            args=[decomposer_node(problem), {}],
+            start_to_close_timeout=timedelta(seconds=30),
+        )
+        
+        # Step 2: Build the execution DAG (Sonnet — smart)
+        dag_config = await workflow.execute_activity(
+            execute_dag_node,
+            args=[architect_node(sub_tasks), {}],
+            start_to_close_timeout=timedelta(seconds=60),
+        )
+        
+        # Step 3: Execute the generated DAG as a Child Workflow
+        result = await workflow.execute_child_workflow(
+            DAGWorkflow,
+            args=[dag_config['output']],
+            workflow_id=f"exec-{workflow.info().workflow_id}",
+        )
+        
+        # Step 4: Evaluate results (Haiku — cheap)
+        evaluation = await workflow.execute_activity(
+            execute_dag_node,
+            args=[evaluator_node(result), {}],
+            start_to_close_timeout=timedelta(seconds=30),
+        )
+        
+        if evaluation['output']['quality'] < 0.8:
+            # Mutate and re-execute
+            mutated_dag = await workflow.execute_activity(
+                execute_dag_node,
+                args=[mutator_node(dag_config, evaluation), {}],
+                start_to_close_timeout=timedelta(seconds=30),
+            )
+            result = await workflow.execute_child_workflow(
+                DAGWorkflow,
+                args=[mutated_dag['output']],
+                workflow_id=f"retry-{workflow.info().workflow_id}",
+            )
+        
+        return result
+```
+
+### Sending Signals for Human Gates
+
+From the web dashboard:
+
+```python
+# Client-side: send approval to a running DAG
+from temporalio.client import Client
+
+client = await Client.connect("localhost:7233")
+handle = client.get_workflow_handle(workflow_id="dag-abc123")
+
+# Approve a human gate
+await handle.signal("human_decision", {
+    "decision": "approve",
+    "notes": "Looks good, proceed",
+    "modified_params": None,
+})
+
+# Or reject
+await handle.signal("human_decision", {
+    "decision": "reject",
+    "reason": "Budget too high, try cheaper approach",
+})
+```
+
+### Querying DAG Progress for Visualization
+
+The dashboard polls or subscribes to progress:
+
+```python
+# Query current state for visualization
+handle = client.get_workflow_handle(workflow_id="dag-abc123")
+progress = await handle.query("get_progress")
+# Returns: {"completed": ["node-1", "node-2"], "current_batch": ["node-3", "node-4"], ...}
+```
+
+This feeds directly into the ReactFlow visualization — each query result updates node colors on the dashboard.
+
+### Retry Policy Recommendations for winDAGs
+
+```
+Retry interval = min(initial_interval × backoff_coefficient^retry_count, maximum_interval)
+```
+
+| Node Type | initial_interval | backoff | max_interval | max_attempts | Why |
+|-----------|-----------------|---------|-------------|-------------|-----|
+| Haiku classifier | 1s | 2.0 | 30s | 10 | Cheap, retry aggressively |
+| Sonnet worker | 1s | 2.0 | 1min | 5 | Balanced cost/reliability |
+| Opus reasoner | 2s | 2.0 | 2min | 3 | Expensive, fail fast to human |
+| External API tool | 2s | 2.0 | 5min | unlimited | Outages recover eventually |
+| Human gate | N/A | N/A | N/A | 1 | Signal-based, no retry |
+
+### Why Temporal Over Custom Execution Engine
+
+| Concern | Custom asyncio | Temporal |
+|---------|---------------|---------|
+| Worker crash mid-DAG | Lost — start over | Resumes from last Activity |
+| Rate limit retry | Manual backoff code | Declarative RetryPolicy |
+| Human gate timeout | Custom timer logic | Signal + wait_condition |
+| DAG progress query | Custom state tracking | @workflow.query |
+| Multi-DAG coordination | Manual semaphores | Child Workflows |
+| Execution history | Build your own logging | Event History built-in |
+| Visualization | Build from scratch | Temporal UI + custom Query integration |
+
+For local development and prototyping, the custom asyncio executor from `execution-engines.md` is fine. For production web service, Temporal is the right answer.

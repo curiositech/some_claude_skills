@@ -95,10 +95,10 @@ Client → API → Task Queue → Worker Pool → Result Store
 ```
 
 Technologies:
-- **Celery** (Python): Mature, widely used, Redis/RabbitMQ backends
-- **Bull/BullMQ** (Node.js): Redis-backed, good for TypeScript
-- **Temporal** (any language): Most robust for durable workflows with built-in retry/timeout
-- **Custom**: asyncio + Redis pubsub for lightweight deployments
+- **Temporal** (Python/Go/Java/TS): **Recommended.** Most robust for durable agent workflows. Each DAG node is an Activity with automatic retries, heartbeats, and deterministic replay. Human-in-the-loop via Signals. Full implementation in `references/sdk-implementation.md`.
+- **Celery** (Python): Mature, widely used, Redis/RabbitMQ backends. Simpler than Temporal but no durable replay.
+- **Bull/BullMQ** (Node.js): Redis-backed, good for TypeScript. No durable replay.
+- **Custom**: asyncio + Redis pubsub for lightweight deployments. Good for prototyping, not production.
 
 ---
 
