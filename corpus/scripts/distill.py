@@ -22,17 +22,9 @@ import os
 import json
 import asyncio
 import argparse
-import traceback
 from pathlib import Path
 from dataclasses import dataclass, asdict
 from typing import Optional
-
-# ============================================================================
-# Model Configuration — change these if your SDK version uses different IDs
-# ============================================================================
-HAIKU_MODEL = os.environ.get("DISTILL_HAIKU_MODEL", "claude-3-5-haiku-20241022")
-SONNET_MODEL = os.environ.get("DISTILL_SONNET_MODEL", "claude-sonnet-4-20250514")
-OPUS_MODEL = os.environ.get("DISTILL_OPUS_MODEL", "claude-sonnet-4-20250514")  # Default to Sonnet for cost
 
 # ============================================================================
 # Text Extraction
@@ -185,6 +177,35 @@ def extract_text_from_pages(path: str) -> str:
     return "\n\n".join(text_parts)
 
 
+def extract_text_from_epub(path: str) -> str:
+    """Extract text from EPUB file."""
+    try:
+        from ebooklib import epub
+        from bs4 import BeautifulSoup
+    except ImportError:
+        print("Install libraries: pip install ebooklib beautifulsoup4")
+        sys.exit(1)
+
+    book = epub.read_epub(path)
+    text_parts = []
+
+    for item in book.get_items():
+        if item.get_type() == 9:  # EBOOKLIB_TYPE_DOCUMENT
+            content = item.get_content().decode('utf-8', errors='replace')
+            soup = BeautifulSoup(content, 'html.parser')
+            # Remove scripts, styles, and navigation
+            for tag in soup(['script', 'style', 'nav']):
+                tag.decompose()
+            text = soup.get_text(separator='\n', strip=True)
+            if text.strip():
+                text_parts.append(text)
+
+    if not text_parts:
+        raise ValueError(f"Could not extract text from EPUB: {path}")
+
+    return "\n\n".join(text_parts)
+
+
 def extract_text(path: str) -> str:
     """Extract text from any supported format."""
     ext = Path(path).suffix.lower()
@@ -198,6 +219,8 @@ def extract_text(path: str) -> str:
         return extract_text_from_mhtml(path)
     elif ext == '.pages':
         return extract_text_from_pages(path)
+    elif ext == '.epub':
+        return extract_text_from_epub(path)
     elif ext in ('.htm', '.html'):
         try:
             from bs4 import BeautifulSoup
@@ -287,7 +310,7 @@ async def extract_chunk(client, chunk: dict, semaphore: asyncio.Semaphore) -> di
     async with semaphore:
         try:
             response = await client.messages.create(
-                model=HAIKU_MODEL,
+                model="claude-haiku-4-5",  # Haiku 4.5 released Oct 2025: $1/$5 per MTok
                 max_tokens=2000,
                 messages=[{
                     "role": "user",
@@ -315,10 +338,9 @@ async def extract_chunk(client, chunk: dict, semaphore: asyncio.Semaphore) -> di
                 "output_tokens": response.usage.output_tokens,
             }
         except Exception as e:
-            print(f"      ⚠ Chunk {chunk['id']} failed: {e}", file=sys.stderr)
             return {
                 "chunk_id": chunk["id"],
-                "extraction": {"error": str(e), "traceback": traceback.format_exc()},
+                "extraction": {"error": str(e)},
                 "input_tokens": 0,
                 "output_tokens": 0,
             }
@@ -391,12 +413,12 @@ async def pass2_synthesize(client, extractions: list[dict]) -> dict:
         extraction_text = extraction_text[:150000] + "\n... (truncated)"
     
     response = await client.messages.create(
-        model=SONNET_MODEL,
+        model="claude-sonnet-4-5-20250929",  # Fixed: Sonnet 4.5 is the latest
         max_tokens=8000,
         messages=[{
             "role": "user",
             "content": SYNTHESIS_PROMPT + extraction_text
-        }],
+        }]
     )
     
     text = response.content[0].text.strip()
@@ -456,7 +478,7 @@ KNOWLEDGE MAP:
 async def pass3_skill_draft(client, knowledge_map: dict) -> str:
     """Pass 3: Opus creates a SKILL.md from the knowledge map."""
     response = await client.messages.create(
-        model=OPUS_MODEL,  # Default: Sonnet for cost; set DISTILL_OPUS_MODEL for Opus
+        model="claude-sonnet-4-5-20250929",  # Using Sonnet 4.5 for cost; upgrade to Opus 4.5 for quality
         max_tokens=8000,
         messages=[{
             "role": "user",
@@ -489,7 +511,6 @@ async def distill_file(
     print(f"\n{'='*60}")
     print(f"Distilling: {filepath}")
     print(f"Output mode: {output_mode}")
-    print(f"Models: Haiku={HAIKU_MODEL}, Sonnet={SONNET_MODEL}")
     print(f"{'='*60}")
     
     # Extract text
@@ -580,39 +601,17 @@ async def main():
     
     if input_path.is_dir():
         # Process all supported files in directory
-        SUPPORTED = ('.pdf', '.docx', '.md', '.txt', '.text', '.mhtml', '.pages', '.html', '.htm')
+        SUPPORTED = ('.pdf', '.docx', '.md', '.txt', '.text', '.mhtml', '.pages', '.html', '.htm', '.epub')
         files = sorted([
             str(f) for f in input_path.iterdir()
             if f.suffix.lower() in SUPPORTED
         ])
         print(f"Found {len(files)} files to process")
-        print(f"Models: Haiku={HAIKU_MODEL}, Sonnet={SONNET_MODEL}, Opus={OPUS_MODEL}")
-        print(f"Override with env vars: DISTILL_HAIKU_MODEL, DISTILL_SONNET_MODEL, DISTILL_OPUS_MODEL\n")
-        
-        succeeded = []
-        failed = []
         for filepath in files:
             try:
-                result = await distill_file(filepath, args.output_dir, args.output_mode, args.max_concurrent)
-                succeeded.append((filepath, result.get("total_cost", 0) if isinstance(result, dict) else 0))
+                await distill_file(filepath, args.output_dir, args.output_mode, args.max_concurrent)
             except Exception as e:
                 print(f"\n❌ Error processing {filepath}: {e}")
-                traceback.print_exc()
-                failed.append((filepath, str(e)))
-        
-        # Summary
-        print(f"\n{'='*60}")
-        print(f"DISTILLATION SUMMARY")
-        print(f"{'='*60}")
-        print(f"  Succeeded: {len(succeeded)}")
-        for fp, cost in succeeded:
-            print(f"    ✓ {Path(fp).name} (${cost:.4f})")
-        if failed:
-            print(f"  Failed: {len(failed)}")
-            for fp, err in failed:
-                print(f"    ✗ {Path(fp).name}: {err[:80]}")
-        total_cost = sum(c for _, c in succeeded)
-        print(f"  Total cost: ${total_cost:.4f}")
     elif input_path.is_file():
         await distill_file(str(input_path), args.output_dir, args.output_mode, args.max_concurrent)
     else:

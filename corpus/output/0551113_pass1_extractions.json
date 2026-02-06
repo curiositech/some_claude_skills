@@ -1,0 +1,67 @@
+[
+  {
+    "chunk_id": 0,
+    "extraction": {
+      "summary": "This book review examines Jerome Groopman's 'How Doctors Think,' which analyzes diagnostic and treatment decision-making in medicine through case studies of both errors and successes. The reviewer highlights the book's identification of common cognitive biases in clinical practice while noting its limitation in not quantifying the prevalence of such errors.",
+      "key_claims": [
+        "Physicians make diagnostic and treatment decisions through cognitive processes that can be improved",
+        "Language remains the foundation of clinical medicine despite available technologies",
+        "Algorithms must be applied within the context of the specific patient being treated",
+        "How choices are presented to patients strongly influences their decisions",
+        "Medical curricula teach little about cognitive errors and biases in clinical decision-making",
+        "Understanding why physicians get things wrong is essential to understanding how to get things right"
+      ],
+      "processes": [
+        "Case-based analysis of diagnostic errors and correct diagnoses to identify cognitive patterns",
+        "Comparison of cognitive processes between erroneous and successful diagnostic cases"
+      ],
+      "decisions": [
+        "Decision point: whether to treat or not, biased toward action (commission bias)",
+        "Decision point: when to apply diagnostic algorithms versus choosing alternative treatments",
+        "Decision point: how to frame treatment options to patients (framing effect in patient choice)"
+      ],
+      "failures": [
+        "Commission bias: tendency toward action rather than inaction, leading to unnecessary treatment",
+        "Satisfaction of search: stopping diagnostic search prematurely after finding something of interest",
+        "Availability error: applying common experiences to new cases while ignoring important differences",
+        "Anchoring error: allowing initial symptoms or findings to cloud clinical judgment",
+        "Attribution error: fitting patients into stereotyped roles based on past experiences or colleague reports"
+      ],
+      "aha_moments": [
+        "Finding something satisfactory in diagnosis is not equivalent to finding everything necessary",
+        "Clinically equivalent statements framed differently produce different patient responses",
+        "The ability to know when to deviate from algorithms improves with patient experience",
+        "Medical curricula inadequately prepare students for understanding cognitive biases in decision-making"
+      ],
+      "metaphors": [
+        "Cognitive traps as pitfalls physicians fall into during decision-making"
+      ],
+      "temporal": [
+        "Before reading the book: medical students learn little about cognitive errors and biases",
+        "After reading the book: understanding of how to recognize and correct cognitive biases improves",
+        "Temporal progression: ability to apply algorithms contextually improves the more patients one treats"
+      ],
+      "quotes": [
+        "Language is still the foundation of clinical medicine",
+        "Understanding why we sometimes get things wrong is important\u2014if not essential\u2014to understanding how to get things right",
+        "A 30% chance of improvement might be more positively received than a 70% chance of failure and death, even though both statements are clinically equivalent"
+      ],
+      "domain_terms": [
+        "Cognitive bias",
+        "Commission bias",
+        "Satisfaction of search",
+        "Availability error",
+        "Anchoring error",
+        "Attribution error",
+        "Diagnostic error",
+        "Clinical decision-making",
+        "Diagnostic algorithms",
+        "Pathophysiology",
+        "Preclerkship years",
+        "Framing effect"
+      ]
+    },
+    "input_tokens": 1702,
+    "output_tokens": 783
+  }
+]

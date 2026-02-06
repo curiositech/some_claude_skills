@@ -1,0 +1,392 @@
+{
+  "document_summary": "George Polya's 'How to Solve It' presents a systematic, heuristic approach to mathematical problem-solving that revolutionized mathematics education. Originally written in German during the 1930s and published in English in 1945, the book argues that problem-solving is a teachable practical skill acquired through imitation and practice, not just innate talent. Polya introduces a four-phase framework (understanding the problem, devising a plan, carrying out the plan, and looking back) supported by general questions and suggestions applicable across all subject matters. The work emphasizes that mathematics has two faces\u2014the rigorous Euclidean deductive science and the experimental, inductive science of discovery\u2014and advocates teaching students the process of mathematical invention ('in statu nascendi') rather than just final solutions. Through teacher-student dialogues, a comprehensive dictionary of heuristic techniques, and practice problems, Polya demonstrates that understanding how solutions are invented develops intellectual abilities and creates lasting engagement with logical thinking.",
+  "core_concepts": [
+    {
+      "concept": "Heuristic reasoning",
+      "definition": "Plausible reasoning and conjecture-making that precedes certainty in problem-solving; exploratory thinking that suggests solutions before formal proof",
+      "relationships": [
+        "Contrasts with Euclidean rigorous deduction but is necessary to eventually reach certainty",
+        "Relies on analogy, induction, and pattern recognition rather than formal logic",
+        "Connects to bright ideas through gradual accumulation of plausible insights"
+      ]
+    },
+    {
+      "concept": "The four-phase framework",
+      "definition": "Problem-solving methodology consisting of: (1) Understanding the problem, (2) Devising a plan, (3) Carrying out the plan, (4) Looking back at the solution",
+      "relationships": [
+        "Each phase has specific questions and techniques associated with it",
+        "Phases may overlap but represent distinct cognitive shifts in outlook",
+        "Looking back connects current problem to future problems through method generalization"
+      ]
+    },
+    {
+      "concept": "Principal parts of a problem",
+      "definition": "For problems to find: the unknown, the data, and the condition. For problems to prove: the hypothesis and conclusion",
+      "relationships": [
+        "Identifying principal parts is the foundation of understanding any problem",
+        "Connection between data and unknown is the essence of devising a plan",
+        "Examination of principal parts from various angles reveals related problems"
+      ]
+    },
+    {
+      "concept": "Analogy",
+      "definition": "Similarity based on relations between parts rather than mere similarity of objects; analogous objects agree in certain relations of their respective parts",
+      "relationships": [
+        "Simpler analogous problems provide both method and results applicable to harder problems",
+        "Quality of analogy matters more than quantity\u2014clear-cut analogies outweigh vague similarities",
+        "Analogical reasoning is fundamental to mathematical discovery and conjecture formation"
+      ]
+    },
+    {
+      "concept": "Mobilization and organization",
+      "definition": "Inseparable aspects of problem-solving: mobilization recalls relevant knowledge from memory; organization combines facts in new ways adapted to the problem",
+      "relationships": [
+        "Both processes occur simultaneously as conception of the problem deepens",
+        "Variation of problem formulation aids both mobilization and organization",
+        "Leads to gradual enrichment of problem understanding punctuated by bright ideas"
+      ]
+    },
+    {
+      "concept": "Auxiliary problems",
+      "definition": "Related or simpler problems that serve as stepping stones toward solving the main problem when direct connection between data and unknown is not visible",
+      "relationships": [
+        "Can be more general, more special, or analogous to the original problem",
+        "May provide methods even if their results don't directly apply",
+        "Help when the main problem seems inaccessible or requires extensive preliminary knowledge"
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "name": "Understanding the problem",
+      "steps": [
+        "State the problem clearly and repeat it to ensure comprehension",
+        "Identify the unknown (what you are seeking)",
+        "Identify the data (what you are given)",
+        "Identify the condition (what relationships must hold)",
+        "Draw a figure or diagram if applicable",
+        "Introduce suitable notation",
+        "Separate parts of the condition",
+        "Check if the condition is satisfiable, sufficient, insufficient, redundant, or contradictory"
+      ],
+      "decision_points": [
+        "Is it foolish to proceed? (Don't answer questions you don't understand)",
+        "Is the condition sufficient to determine the unknown?",
+        "Should parts of the condition be treated separately?"
+      ],
+      "common_mistakes": [
+        "Embarking on calculations without understanding the problem",
+        "Working toward an end you do not desire",
+        "Not visualizing the problem as a whole before examining details"
+      ]
+    },
+    {
+      "name": "Devising a plan",
+      "steps": [
+        "Look at the unknown and think of familiar problems with similar unknowns",
+        "Consider related problems and useful theorems",
+        "Try to find connection between data and unknown",
+        "If no immediate connection exists, consider auxiliary problems",
+        "Restate the problem in different forms",
+        "Go back to definitions",
+        "Consider more general, more special, or analogous problems",
+        "Solve part of the problem by keeping some conditions and dropping others",
+        "Use all the data and the whole condition"
+      ],
+      "decision_points": [
+        "Should auxiliary elements be introduced?",
+        "Should the unknown or data be varied?",
+        "Is a related problem more accessible?",
+        "Can the result or method of a related problem be used?"
+      ],
+      "common_mistakes": [
+        "Not recognizing connections to previously solved problems",
+        "Failing to consider analogous simpler problems",
+        "Forgetting to use all available data or the complete condition",
+        "Starting calculations without seeing the main connection"
+      ]
+    },
+    {
+      "name": "Carrying out the plan",
+      "steps": [
+        "Start from the lucky idea or main connection when confident",
+        "Execute each step of the solution",
+        "Check correctness of each step through formal reasoning or intuitive insight",
+        "For complex problems, distinguish great steps from small steps",
+        "Examine great steps first before checking small details",
+        "Convince yourself that each step is correct"
+      ],
+      "decision_points": [
+        "Is the grasp of the main connection secure enough to begin?",
+        "Should formal reasoning or intuitive insight be used for verification?",
+        "Are there great steps that need examination before small steps?"
+      ],
+      "common_mistakes": [
+        "Proceeding without confidence in the main idea",
+        "Not verifying steps during execution",
+        "Getting lost in details without checking the overall structure"
+      ]
+    },
+    {
+      "name": "Looking back",
+      "steps": [
+        "Check the result and the argument",
+        "Consider the solution from various sides and angles",
+        "Try to derive the result differently",
+        "See the solution at a glance by viewing the whole",
+        "Simplify details and survey larger parts",
+        "Try to improve the solution and make it more intuitive",
+        "Scrutinize the method and consider its applicability to other problems",
+        "Fit the solution into previously acquired knowledge"
+      ],
+      "decision_points": [
+        "Can the result be checked independently?",
+        "Is there a simpler or more intuitive approach?",
+        "Can the method be used for other problems?",
+        "What new facts can be discovered from this solution?"
+      ],
+      "common_mistakes": [
+        "Failing to reexamine the completed solution",
+        "Not considering alternative approaches",
+        "Missing opportunities to generalize the method",
+        "Losing the best educational effects by not reflecting on the process"
+      ]
+    },
+    {
+      "name": "Solving by analogy",
+      "steps": [
+        "Identify the original problem's structure and principal parts",
+        "Find a simpler analogous problem with similar relations between parts",
+        "Solve the simpler analogous problem completely",
+        "Use the method from the analogous problem as a model",
+        "Adapt the result from the analogous problem if applicable",
+        "Verify the adapted solution independently",
+        "Check for patterns suggesting further generalizations"
+      ],
+      "decision_points": [
+        "What dimension or complexity level should the analogous problem have?",
+        "Can both method and result be transferred, or only one?",
+        "Does the pattern suggest continuation to higher dimensions or more complex cases?"
+      ],
+      "common_mistakes": [
+        "Using vague or incomplete analogies",
+        "Assuming analogous solutions transfer directly without modification",
+        "Disregarding plausible conjectures based on analogy",
+        "Neglecting independent verification of adapted solutions"
+      ]
+    }
+  ],
+  "expertise_patterns": [
+    {
+      "pattern": "Experts systematically ask themselves general questions applicable across problems rather than treating each problem as unique",
+      "novice_mistake": "Novices dive into calculations without understanding the problem structure or identifying principal parts",
+      "aha_moment": "Realizing that the same questioning approach that helps students also helps oneself, and that plain common sense can be stated in general terms applicable to all problems"
+    },
+    {
+      "pattern": "Experts mobilize and organize knowledge simultaneously, varying their conception of the problem from multiple angles until connections emerge",
+      "novice_mistake": "Novices get stuck on a single formulation and become discouraged without trying alternative perspectives or related problems",
+      "aha_moment": "Understanding that mode of conception changes as you examine problems from different sides, and that progress involves enriching your view even without immediate solutions"
+    },
+    {
+      "pattern": "Experts look back at completed solutions to extract generalizable methods and discover new facts rather than moving immediately to the next problem",
+      "novice_mistake": "Novices abandon problems once a solution is found, missing opportunities to understand deeper patterns and develop transferable techniques",
+      "aha_moment": "Recognition that the best effects of problem-solving come from reflection, and that understanding how solutions are invented is as important as the solutions themselves"
+    },
+    {
+      "pattern": "Experts use high-quality analogies based on clear structural relationships rather than surface similarities",
+      "novice_mistake": "Novices rely on vague analogies or superficial pattern-matching that leads to false connections",
+      "aha_moment": "Discovering that analogous objects agree in relations between parts rather than appearance, and that a well-chosen simpler problem can model the solution to a complex one"
+    },
+    {
+      "pattern": "Experts treat auxiliary problems and decompositions as stepping stones, comfortable with heuristic reasoning before achieving certainty",
+      "novice_mistake": "Novices demand immediate certainty and become paralyzed when direct paths to solutions aren't visible",
+      "aha_moment": "Accepting that being satisfied with plausible guesses is necessary before obtaining complete certainty, and that indirect approaches often succeed where direct ones fail"
+    }
+  ],
+  "temporal_evolution": [
+    {
+      "period": "Before Polya's work (pre-1945)",
+      "paradigm": "Heuristic study was not in fashion; mathematics was presented only in rigorous Euclidean form as finished products; problem-solving ability was considered innate rather than teachable",
+      "change_trigger": "Polya's personal experience as a student wondering how solutions were invented, combined with his teaching experience revealing that systematic methods could be taught"
+    },
+    {
+      "period": "Ancient Greek mathematics (Euclid's era)",
+      "paradigm": "Definitions were viewed as formal declarations; mathematics emphasized deductive rigor and proof",
+      "change_trigger": "Evolution to viewing definitions as intuitive illustrations that help understanding rather than formal declarations"
+    },
+    {
+      "period": "Modern engineering (20th century context)",
+      "paradigm": "Engineers cannot rely solely on common sense; must calculate using mathematical theory such as elasticity theory for new and daring designs",
+      "change_trigger": "Increasing complexity and novelty of engineering projects requiring theoretical foundations beyond traditional methods"
+    },
+    {
+      "period": "Post-publication of How to Solve It (1945-present)",
+      "paradigm": "Problem-solving methods can be systematically taught; mathematics education should show mathematics 'in statu nascendi' (in the process of being invented)",
+      "change_trigger": "Book's enormous success and influence, becoming one of the most successful mathematical books of all time"
+    }
+  ],
+  "key_metaphors": [
+    {
+      "metaphor": "Problem-solving as swimming\u2014a practical skill acquired by imitation and practice",
+      "maps_to": "The fundamental nature of learning: you cannot learn to solve problems by merely observing; you must engage actively, try, fail, and develop technique through repeated practice"
+    },
+    {
+      "metaphor": "Mathematics has two faces: rigorous Euclidean deductive science versus experimental, inductive science in the making",
+      "maps_to": "The distinction between finished mathematical products (theorems and proofs) and the messy process of discovery involving guessing, testing, and refining"
+    },
+    {
+      "metaphor": "Stepping stones\u2014simpler related problems that lead toward the main solution",
+      "maps_to": "The intermediate connections between data and unknown that may not directly solve the problem but create paths forward"
+    },
+    {
+      "metaphor": "Bright idea as an abrupt reorganization of outlook",
+      "maps_to": "The sudden gestalt shift in problem conception when elements previously mobilized suddenly organize into a coherent plan"
+    },
+    {
+      "metaphor": "Teacher putting themselves in the student's place",
+      "maps_to": "Natural help\u2014guidance that asks questions the student could have asked themselves, fostering independent development"
+    },
+    {
+      "metaphor": "Mental work as exercise desirable as a fast game of tennis",
+      "maps_to": "Problem-solving should be enjoyable and engaging, not drudgery; the intrinsic satisfaction of intellectual activity"
+    },
+    {
+      "metaphor": "Fibers (parallel strips in geometric objects)",
+      "maps_to": "A way of conceiving continuous objects as composed of simpler elements to understand properties like center of gravity"
+    }
+  ],
+  "anti_patterns": [
+    {
+      "name": "Drilling routine operations",
+      "description": "Teachers filling time with repetitive calculation exercises without context or purpose, treating mathematics as memorization and mechanical procedures",
+      "why_wrong": "Kills student interest, hampers intellectual development, and misses the opportunity to develop genuine problem-solving ability and mathematical thinking",
+      "fix": "Present problems that require understanding and invention, guide students through the problem-solving process, help them discover solutions rather than memorize procedures"
+    },
+    {
+      "name": "Teaching mathematics only in Euclidean finished form",
+      "description": "Presenting mathematics only as completed rigorous proofs and theorems without showing the experimental, inductive process of discovery",
+      "why_wrong": "Students never see mathematics 'in statu nascendi' (being invented) and miss understanding how mathematical knowledge is actually created through guessing, testing, and refinement",
+      "fix": "Show both faces of mathematics\u2014the rigorous results and the heuristic discovery process; let students experience mathematical invention"
+    },
+    {
+      "name": "Helping too much or too little",
+      "description": "Teachers either solving problems for students or providing no guidance, not allowing students a reasonable share of the work",
+      "why_wrong": "Students need to do intellectual work themselves to develop abilities, but also need appropriate guidance when genuinely stuck",
+      "fix": "Ask natural questions that students could ask themselves; provide hints that suggest directions without revealing complete solutions; let students experience discovery"
+    },
+    {
+      "name": "Passive mathematical learning",
+      "description": "Treating mathematics as a spectator sport where students watch demonstrations without actively engaging in problem-solving",
+      "why_wrong": "Understanding mathematics means being able to do mathematics; observation alone cannot develop problem-solving ability",
+      "fix": "Ensure students actively attempt problems, struggle productively, and develop skills through imitation and practice like any practical skill"
+    },
+    {
+      "name": "Abandoning problems when stuck",
+      "description": "Students or teachers giving up on problems when immediate solution paths aren't visible, without varying the problem formulation or seeking related problems",
+      "why_wrong": "Misses the opportunity to develop perseverance and the heuristic techniques that make difficult problems accessible",
+      "fix": "Vary the problem: restate it, find analogous problems, consider special or general cases, decompose it, look for auxiliary problems that serve as stepping stones"
+    },
+    {
+      "name": "Proceeding without understanding the problem",
+      "description": "Starting calculations or constructions before clearly identifying the unknown, data, conditions, and overall problem structure",
+      "why_wrong": "Foolish to answer questions you don't understand; work becomes aimless and is unlikely to succeed",
+      "fix": "Always begin with the understanding phase: state the problem clearly, identify principal parts, visualize the whole, and desire the solution before proceeding"
+    }
+  ],
+  "notable_quotes": [
+    "Yes, the solution seems to work, it appears to be correct; but how is it possible to invent such a solution?",
+    "Mathematics has two faces; it is the rigorous science of Euclid but it is also something else.",
+    "The teacher should help, but not too much and not too little, so that the student shall have a reasonable share of the work.",
+    "Solving problems is a practical skill like, let us say, swimming. We acquire any practical skill by imitation and practice.",
+    "Mathematics, you see, is not a spectator sport. To understand mathematics means to be able to do mathematics.",
+    "If you cannot solve the proposed problem try to solve first some related problem.",
+    "It is foolish to answer a question you do not understand. It is sad to work for an end you do not desire.",
+    "simplex sigillum veri (simplicity is the seal of truth)",
+    "If you can't solve a problem, then there is an easier problem you can't solve: find it.",
+    "All the questions and suggestions of our list are natural, simple, obvious, just plain common sense; but they state plain common sense in general terms.",
+    "The modern engineer cannot rely on common sense alone, especially if his project is of a new and daring design; he has to calculate the resistance of the projected dam",
+    "A sudden advance toward the solution is called a BRIGHT IDEA, a good idea, a happy thought, a brain-wave...An abrupt and momentous change of our outlook, a sudden reorganization of our mode of conceiving the problem"
+  ],
+  "domain_vocabulary": [
+    {
+      "term": "heuristic",
+      "definition": "Methods and techniques for discovery and invention in problem-solving; exploratory procedures that suggest solutions but do not guarantee certainty"
+    },
+    {
+      "term": "unknown",
+      "definition": "What you are required to find in a problem to find; the object being sought"
+    },
+    {
+      "term": "data",
+      "definition": "What you are given in a problem; the known quantities and facts"
+    },
+    {
+      "term": "condition",
+      "definition": "The relationship that must hold between the data and unknown; can be satisfiable, sufficient, insufficient, redundant, or contradictory"
+    },
+    {
+      "term": "problems to find",
+      "definition": "Problems where the goal is to discover an unknown object satisfying certain conditions"
+    },
+    {
+      "term": "problems to prove",
+      "definition": "Problems where the goal is to validate or refute an assertion by showing a hypothesis leads or doesn't lead to a conclusion"
+    },
+    {
+      "term": "auxiliary problem",
+      "definition": "A related or simpler problem introduced as a stepping stone when no immediate connection between data and unknown is visible"
+    },
+    {
+      "term": "auxiliary elements",
+      "definition": "Additional components introduced into a problem to facilitate finding connections or using known theorems"
+    },
+    {
+      "term": "in statu nascendi",
+      "definition": "Latin phrase meaning 'in the state of being born'; mathematics shown in the process of being invented rather than as finished product"
+    },
+    {
+      "term": "bright idea",
+      "definition": "An abrupt and momentous change of outlook; sudden reorganization of problem conception that provides confident prevision of solution steps"
+    },
+    {
+      "term": "mobilization",
+      "definition": "The process of recalling relevant facts and knowledge from memory in relation to a problem"
+    },
+    {
+      "term": "organization",
+      "definition": "The process of combining and arranging mobilized facts in new ways adapted to the specific problem"
+    },
+    {
+      "term": "analogous objects",
+      "definition": "Objects that agree in certain relations of their respective parts, not merely similar in appearance"
+    },
+    {
+      "term": "bounding elements",
+      "definition": "The elements that form the boundary of a geometric object (endpoints of segments, sides of polygons, faces of polyhedra)"
+    },
+    {
+      "term": "median (triangle)",
+      "definition": "A line segment joining a vertex of a triangle to the midpoint of the opposite side"
+    },
+    {
+      "term": "median plane (tetrahedron)",
+      "definition": "A plane containing an edge of a tetrahedron and the midpoint of the opposite edge"
+    },
+    {
+      "term": "lemma",
+      "definition": "An auxiliary theorem used in proving another theorem"
+    },
+    {
+      "term": "corollary",
+      "definition": "A theorem that follows readily from a previously proved theorem"
+    },
+    {
+      "term": "reductio ad absurdum",
+      "definition": "Proof method showing a proposition is true by demonstrating that assuming its falsity leads to contradiction"
+    },
+    {
+      "term": "quaesitum",
+      "definition": "Latin term for that which is sought; the unknown in a problem to find"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "chunk_id": 0,
+    "extraction": {
+      "summary": "Design patterns are reusable solutions to common design problems in object-oriented software, organized by purpose (creational, structural, behavioral) and scope (class or object). The Facade pattern exemplifies how patterns provide higher-level interfaces to complex subsystems while maintaining loose coupling between components.",
+      "key_claims": [
+        "A design pattern has 4 essential elements: pattern name, problem, solution, and consequences",
+        "Design patterns are descriptions of communicating objects and classes customized to solve general design problems in particular contexts",
+        "Creational patterns concern object creation, structural patterns deal with composition, behavioral patterns characterize interaction and responsibility distribution",
+        "An object's internal state is encapsulated and cannot be accessed directly from outside",
+        "Interfaces are fundamental in object-oriented systems; objects are only known through their interface",
+        "Programming to an interface rather than implementation allows clients to remain unaware of specific object types",
+        "Object composition is an alternative to class inheritance that is defined dynamically at run-time",
+        "Class inheritance breaks encapsulation by exposing subclass to parent implementation details",
+        "An object-oriented program's run-time structure often bears little resemblance to its code structure",
+        "Loose coupling increases the probability that a class can be reused in isolation",
+        "The Facade pattern provides a simple interface to a complex subsystem and decouples subsystem from clients"
+      ],
+      "processes": [
+        "Specifying object interfaces by identifying key elements and types of data sent across interfaces",
+        "Relating run-time and compile-time structures by designing object and type relationships with care",
+        "Using abstract coupling and layering techniques to promote loosely coupled systems",
+        "Facade forwards client requests to appropriate subsystem objects after translating its interface to subsystem interfaces"
+      ],
+      "decisions": [
+        "When to apply a pattern is described in the 'problem' element",
+        "Choose between class inheritance and object composition based on flexibility and encapsulation needs",
+        "Favor object composition over class inheritance to keep each class encapsulated and focused",
+        "Design patterns should only be applied when the flexibility they afford is actually needed",
+        "Use delegation as a way to make composition as powerful for reuse as inheritance"
+      ],
+      "failures": [
+        "Tight coupling between classes makes them hard to reuse in isolation",
+        "Tight coupling leads to monolithic systems where you cannot change or remove a class without understanding many others",
+        "Inheritance breaks encapsulation by exposing subclass to parent implementation details",
+        "Implementation dependencies in inheritance limit flexibility and reusability",
+        "Design patterns introduce additional levels of indirection that can complicate design and cost performance",
+        "Indiscriminate application of design patterns can overcomplicate a design"
+      ],
+      "aha_moments": [
+        "An object-oriented program's run-time structure often bears little resemblance to its code structure",
+        "Programming to an interface rather than implementation fundamentally changes how clients interact with objects",
+        "Loose coupling boosts the likelihood that one class of object can cooperate with several others",
+        "Delegation enables composition to be as powerful for reuse as inheritance"
+      ],
+      "metaphors": [
+        "Pattern name is a 'handle' for describing design problems and solutions at a higher level of abstraction",
+        "Objects 'package' both data and procedures that operate on that data",
+        "Facade 'shields' clients from subsystem components"
+      ],
+      "temporal": [
+        "Before: class inheritance defined statically at compile-time with tight coupling; After: object composition defined dynamically at run-time allows substitution and loose coupling",
+        "Before: code structure frozen at compile-time; After: run-time structure consists of rapidly changing network of communicating objects"
+      ],
+      "quotes": [
+        "inheritance breaks encapsulation",
+        "clients remain unaware of the specific types of objects they use, as long as the objects adhere to the interface that clients expect",
+        "a design pattern should only be applied when the flexibility it affords is actually needed"
+      ],
+      "domain_terms": [
+        "design pattern",
+        "creational patterns",
+        "structural patterns",
+        "behavioral patterns",
+        "class patterns",
+        "object patterns",
+        "method",
+        "operation",
+        "request",
+        "message",
+        "encapsulation",
+        "interface",
+        "dynamic binding",
+        "polymorphism",
+        "class inheritance",
+        "interface inheritance",
+        "subtyping",
+        "abstract class",
+        "object composition",
+        "delegation",
+        "parameterized types",
+        "run-time structure",
+        "compile-time structure",
+        "loose coupling",
+        "tight coupling",
+        "Facade pattern",
+        "subsystem"
+      ]
+    },
+    "input_tokens": 2094,
+    "output_tokens": 1128
+  }
+]

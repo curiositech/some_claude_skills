@@ -1,0 +1,279 @@
+[
+  {
+    "chunk_id": 0,
+    "extraction": {
+      "summary": "This is a table of contents and excerpt from John Ousterhout's 'A Philosophy of Software Design', covering fundamental principles of managing software complexity through modular design, information hiding, deep modules, and clear communication. The text establishes that complexity is the primary problem in software engineering and advocates for strategic, long-term thinking over tactical quick fixes.",
+      "key_claims": [
+        "The most fundamental problem in computer science is problem decomposition",
+        "Complexity is more apparent to readers than writers",
+        "Complexity accumulates incrementally through small chunks, not catastrophic errors",
+        "Tactical programming is short-sighted; strategic programming requires investing 10-20% of development time in design",
+        "The best modules have simple interfaces but rich implementations (deep modules)",
+        "General-purpose modules are deeper and simpler than special-purpose modules",
+        "Information hiding reduces complexity by simplifying interfaces and enabling independent evolution",
+        "Small classes often produce tremendous complexity from accumulated interfaces",
+        "Temporal decomposition structures systems by time order rather than knowledge, leading to complexity"
+      ],
+      "processes": [
+        "Incremental development: iterate design so each iteration exposes problems that are fixed before next features",
+        "Strategic programming: invest time to improve system design; evaluate multiple alternative designs before choosing",
+        "Information hiding: encapsulate design decisions in single modules to reduce dependencies",
+        "Addressing information leakage: pull shared information into new dedicated class when multiple modules contain same knowledge"
+      ],
+      "decisions": [
+        "Waterfall vs Agile model choice for development approach",
+        "When to merge classes to hide leaked information versus keeping them separate",
+        "Whether to design special-purpose or general-purpose modules",
+        "When interfaces should expose information versus hide it",
+        "Trade-off between simplicity and functionality in module design"
+      ],
+      "failures": [
+        "Classitis: small classes that are individually simple but create tremendous complexity from accumulated interfaces",
+        "Temporal decomposition: structuring modules by time order of operations instead of knowledge needed",
+        "Information leakage: same design decision reflected in multiple modules creating unnecessary dependencies",
+        "Tactical programming mindset: rushing features without considering long-term system structure",
+        "Obscurity: important information not obvious, creating unknown unknowns and high cognitive load"
+      ],
+      "aha_moments": [
+        "Sometimes more lines of code is actually simpler because it reduces cognitive load",
+        "Complexity is subtle because it's easy to convince yourself small additions are acceptable, but they accumulate rapidly",
+        "Obvious systems allow developers to quickly understand code and what changes are needed",
+        "Deep modules with simple interfaces are more valuable than shallow modules with complex interfaces",
+        "General-purpose interfaces reduce cognitive load more than special-purpose APIs",
+        "Beautiful design reflects balance between competing ideas and approaches"
+      ],
+      "metaphors": [
+        "Module depth: thinking of depth as cost (interface complexity) versus benefit (functionality)",
+        "Information hiding: encapsulating knowledge like hiding details from view",
+        "Strategic vs tactical: long-term investment mindset versus short-term quick fixes"
+      ],
+      "temporal": [
+        "Before: tactical programming mindset focused on quick features; After: strategic programming with design investment",
+        "Before: initial design phase; After: incremental continuous redesign throughout system lifecycle",
+        "Complexity wasn't always there: it accumulates incrementally as small chunks are added over time"
+      ],
+      "quotes": [
+        "Your job as a developer is not just to create code that you can work with easily, but to create code that others can also work with easily",
+        "The best modules are deep: they have a lot of functionality behind a simple interface",
+        "Beautiful design reflects a balance between competing ideas and approaches"
+      ],
+      "domain_terms": [
+        "modular design",
+        "information hiding",
+        "information leakage",
+        "deep modules",
+        "shallow modules",
+        "classitis",
+        "cognitive load",
+        "change amplification",
+        "unknown unknowns",
+        "temporal decomposition",
+        "dependencies",
+        "obscurity",
+        "interface",
+        "implementation",
+        "abstraction",
+        "tactical programming",
+        "strategic programming",
+        "waterfall model",
+        "agile model",
+        "incremental development"
+      ]
+    },
+    "input_tokens": 4033,
+    "output_tokens": 1020
+  },
+  {
+    "chunk_id": 1,
+    "extraction": {
+      "summary": "This section covers advanced software design principles including module decomposition, abstraction layers, complexity management, error handling, iterative design, and documentation. Key themes are designing simple interfaces, pulling complexity downward, keeping related code together, and reducing exception handling through thoughtful API design.",
+      "key_claims": [
+        "General-purpose interfaces reduce cognitive load compared to special-purpose approaches",
+        "Pass-through methods indicate confusion over division of responsibilities",
+        "Exception handling is one of the worst sources of complexity in software systems",
+        "Comments capture design information that cannot be represented in code",
+        "Designing software twice with multiple approaches produces better results than first-attempt designs",
+        "If users must read method code to use it, there is no abstraction",
+        "More important for a module to have a simple interface than simple implementation",
+        "Each layer in a well-designed system should provide different abstraction from adjacent layers"
+      ],
+      "processes": [
+        "Eliminate pass-through methods: expose lower level class directly, remove responsibility from higher level, redistribute functionality, or merge classes",
+        "Eliminate pass-through variables using context objects that store application global state",
+        "Design it twice: sketch multiple radical approaches, list pros and cons, compare on simplicity/generality/efficiency",
+        "Exception aggregation: handle many exceptions with single piece of code using exception hierarchy"
+      ],
+      "decisions": [
+        "When designing modules focus on knowledge needed per task, not order of task occurrence",
+        "Simplest interface that covers current needs",
+        "Can several special-purpose methods be replaced with single general-purpose method",
+        "Is API easy to use for current needs without writing lots of additional code",
+        "Should two pieces of functionality be together or apart based on sharing information, usage patterns, conceptual overlap, and understandability",
+        "Should decorator functionality be added directly to class, merged with use case, or wrapped",
+        "Should method be split if it results in cleaner abstraction",
+        "For configuration parameters: can users find value better than internal determination"
+      ],
+      "failures": [
+        "Dividing system into too many small components increases interfaces and complexity",
+        "Poor design creates extra complexity and cognitive load that persists long-term",
+        "Exception handling code is rarely executed so bugs often go undetected without tests",
+        "Secondary exceptions during recovery can be more subtle and complex than primary exceptions",
+        "Over-defensive coding style results from too many unnecessary exception definitions",
+        "Special cases with many if statements make code hard to understand",
+        "First design is rarely the best design, especially under time pressure"
+      ],
+      "aha_moments": [
+        "If classes are small and closely tied sharing information, merging them eliminates duplication and simplifies design",
+        "Pulling complexity downward into modules with simple interfaces makes life easier for users despite extra work for developers",
+        "Masking exceptions at low levels reduces complexity because higher levels don't need awareness of conditions",
+        "Special cases can be designed out of existence by making normal case automatically handle special conditions",
+        "Writing comments improves system design as an ongoing process, not just documentation afterward"
+      ],
+      "metaphors": [
+        "Software systems composed in layers like a cake where higher layers use facilities of lower layers",
+        "Pass-through methods and variables create chains that add awareness requirements",
+        "Pulling complexity downward contrasted with punting hard problems to someone else",
+        "Context objects store application's global state like a shared nervous system"
+      ],
+      "temporal": [
+        "Before temporal decomposition, systems structured by task order; after, modules designed by knowledge needed per task",
+        "Before design-it-twice approach, designers feel pressure to get first attempt right; after, multiple alternatives considered",
+        "Before pulling complexity downward, users deal with configuration; after, intelligent defaults reduce user burden"
+      ],
+      "quotes": [
+        "If users must read the code of a method in order to use it, then there is no abstraction",
+        "More important for a module to have a simple interface than a simple implementation",
+        "Exception handling is one of the worst sources of complexity in software systems"
+      ],
+      "domain_terms": [
+        "abstraction",
+        "encapsulation",
+        "pass-through method",
+        "pass-through variable",
+        "decorator",
+        "context object",
+        "exception aggregation",
+        "cognitive load",
+        "general-purpose",
+        "special-purpose",
+        "dispatcher method",
+        "temporal decomposition",
+        "module",
+        "interface",
+        "implementation",
+        "API",
+        "masking exceptions",
+        "unknown unknowns"
+      ]
+    },
+    "input_tokens": 3572,
+    "output_tokens": 1086
+  },
+  {
+    "chunk_id": 2,
+    "extraction": {
+      "summary": "This section covers the critical importance of code comments and documentation in software design, explaining how comments capture design intent that code alone cannot express, while also providing practical guidance on naming conventions, writing comments first, maintaining code through strategic refactoring, and ensuring consistency and obviousness in code.",
+      "key_claims": [
+        "Comments are essential for helping developers understand systems and work efficiently",
+        "Documentation plays an important role in abstraction and hiding complexity",
+        "Good code is self-documenting, but cannot represent all design information without comments",
+        "Good comments will take no more than 10% of development time",
+        "Code reviews are an effective mechanism for detecting and fixing stale comments",
+        "Comments capture information that was in the mind of the designer but couldn't be represented in code",
+        "Selecting names for variables, methods, and entities is one of the most underrated aspects of software design",
+        "Good names have two properties: precision and consistency",
+        "The best time to write comments is at the beginning of the design process",
+        "It's not possible to conceive the right design for a system at the outset; design is determined by changes during evolution",
+        "Consistency is a powerful tool for reducing complexity and making behavior more obvious",
+        "Software should be designed for ease of reading, not ease of writing",
+        "Clean design and high performance are compatible"
+      ],
+      "processes": [
+        "Writing comments first: start with class interface comment, write interface comments and signatures for important public methods with empty bodies, iterate over comments until structure feels right, write declarations and comments for instance variables, fill in method bodies with implementation comments",
+        "Maintaining comments during code modifications: position comments close to the code they describe, check diffs to ensure changes are reflected in comments during PR process, reference external sources instead of duplicating documentation",
+        "Ensuring consistency: create documents listing important conventions, write tools to check for violations and prevent commits that violate them, use code reviews for education, avoid changing established conventions",
+        "Designing for performance: measure system's existing behavior first, find where biggest impact can be made, remove special cases from critical path"
+      ],
+      "decisions": [
+        "Use interface, data structure member, implementation, and cross-module comment conventions",
+        "Write lower-level comments for precision about units, boundary conditions, null values, side effects",
+        "Write higher-level comments to enhance intuition about reasoning and fundamental characteristics",
+        "Separate interface comments from implementation comments",
+        "Use design_notes central file with references for cross-module design decisions",
+        "Create an image in reader's mind with good names",
+        "Ensure names contain no more than two or three words",
+        "Always use common names consistently for given purposes and never use them for other purposes",
+        "Make purpose of names narrow enough that all variables with the name have the same behavior",
+        "Use composition before implementation inheritance",
+        "Write tests first when fixing bugs to replicate the issue"
+      ],
+      "failures": [
+        "Poor name choices increase complexity and create ambiguities that result in bugs",
+        "Names that are too generic or vague fail to be precise",
+        "Delayed comments often don't get written and lose important facts from the design process",
+        "Difficulty naming a variable is a red flag that it may not have a clear definition or purpose",
+        "Event-driven programming makes code flow hard to follow",
+        "Generic containers with grouped elements reduce obviousness",
+        "Code that violates reader's expectations makes code less obvious",
+        "Developers making smallest possible change without strategic refactoring miss opportunities to improve system design",
+        "Duplication of external documentation in code creates maintenance burden",
+        "Repeating the code in comments is ineffective documentation"
+      ],
+      "aha_moments": [
+        "The process of writing comments will improve a system's design",
+        "If users must read the code of a method to use it, then there is no abstraction",
+        "Comments capture information that was in the mind of the designer but couldn't be represented in the code",
+        "Difficulty choosing a precise name is a red flag indicating design weaknesses",
+        "Name choice is an example of the principle that complexity is incremental",
+        "Writing comments first as part of the design process produces better comments and indicates complexity before code is written",
+        "Higher-level comments are easier to maintain because they don't reflect low-level code details",
+        "Obvious code can be read quickly without much thought, while unobvious code requires significant time and energy",
+        "Deep classes are more efficient than shallow classes because they accomplish more work per function call",
+        "Simpler code runs faster than complex code"
+      ],
+      "metaphors": [
+        "Names are a form of abstraction: they provide a simplified way of thinking about a more complex underlying entity",
+        "Creating an image in the mind of the reader about the nature of the thing being named",
+        "Comments reduce cognitive load by providing information developers need to make changes and allowing them to ignore irrelevant information",
+        "Documentation can reduce unknown unknowns by clarifying system structure"
+      ],
+      "temporal": [
+        "Before writing comments: design information only exists in developer's mind; after comments: information is captured for future reference",
+        "Before good naming conventions: developers think about what is the smallest change they can make; after strategic approach: system design improves over time",
+        "Before code reviews: stale comments go undetected; after code reviews: stale comments are identified and fixed",
+        "Design of a mature system is determined more by changes made during evolution than by initial conception",
+        "When delaying documentation: important facts and design intent are forgotten; when writing comments first: key design issues are fresh in mind"
+      ],
+      "quotes": [
+        "If users must read the code of a method in order to use it, then there is no abstraction",
+        "Comments capture information that was in the mind of the designer but couldn't be represented in the code",
+        "Software should be designed for ease of reading, not ease of writing"
+      ],
+      "domain_terms": [
+        "abstraction",
+        "interface comment",
+        "implementation comment",
+        "cross-module comment",
+        "data structure member comment",
+        "cognitive load",
+        "unknown unknowns",
+        "code review",
+        "interface inheritance",
+        "implementation inheritance",
+        "information hiding",
+        "composition",
+        "refactoring",
+        "code smell",
+        "obviousness",
+        "consistency",
+        "naming conventions",
+        "design patterns",
+        "test-driven development",
+        "unit tests",
+        "agile development"
+      ]
+    },
+    "input_tokens": 3306,
+    "output_tokens": 1529
+  }
+]

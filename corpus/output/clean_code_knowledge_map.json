@@ -1,0 +1,526 @@
+{
+  "document_summary": "Robert C. Martin's 'Clean Code: A Handbook of Agile Software Craftsmanship' presents a comprehensive philosophy and practical methodology for writing maintainable, readable software. The book argues that code quality is not merely aesthetic but economically critical\u2014bad code progressively degrades development velocity while clean code accelerates it. Martin synthesizes principles across naming, function design, error handling, object-oriented versus procedural design, testing, concurrency, and system architecture. The central thesis is that professionalism in software development comes from disciplined values rather than rote rule-following, emphasizing incremental improvement (the Boy Scout Rule), separation of concerns, and the recognition that writing code and writing clean code are distinct activities requiring different mindsets. The book bridges tactical code-level practices with strategic architectural thinking, showing how local cleanliness enables global system evolution.",
+  "core_concepts": [
+    {
+      "concept": "Code Readability as Economic Driver",
+      "definition": "The ease with which existing code can be read directly determines the speed at which new code can be written; readability is an investment with compounding returns",
+      "relationships": [
+        "Connects to Boy Scout Rule because incremental readability improvements prevent code rot",
+        "Connects to naming conventions because names constitute 90% of readability",
+        "Connects to function design because readable functions enable faster comprehension of system behavior",
+        "Underlies test-driven development because tests enable confident refactoring toward readability"
+      ]
+    },
+    {
+      "concept": "Single Responsibility Principle",
+      "definition": "A class, function, or module should have one and only one reason to change; it should do one thing, do it well, and do it only",
+      "relationships": [
+        "Connects to error handling as separate concern\u2014logic and error handling are different responsibilities",
+        "Connects to cohesion\u2014high cohesion indicates single responsibility",
+        "Connects to class design\u2014ambiguous class names signal multiple responsibilities",
+        "Enables Open-Close Principle by making extensions independent of modifications"
+      ]
+    },
+    {
+      "concept": "Objects vs Data Structures Dichotomy",
+      "definition": "Objects hide data and expose behavior; data structures expose data with no significant behavior. OO code makes adding new classes easy but adding new functions hard; procedural code makes adding new functions easy but adding new data structures hard",
+      "relationships": [
+        "Connects to polymorphism as mechanism for hiding type-dependent behavior",
+        "Connects to architectural decisions about flexibility needs\u2014choose based on anticipated changes",
+        "Connects to Law of Demeter which protects object internals",
+        "Relates to switch statement elimination through polymorphic classes"
+      ]
+    },
+    {
+      "concept": "Separation of Concerns",
+      "definition": "Different aspects of system behavior should be independently addressable and modifiable without entanglement",
+      "relationships": [
+        "Enables incremental architectural growth without upfront perfect design",
+        "Connects to error handling treated independently from main logic",
+        "Connects to concurrency as decoupling strategy separating what from when",
+        "Enables dependency injection for testability",
+        "Underlies system boundary management with third-party code"
+      ]
+    },
+    {
+      "concept": "Boy Scout Rule",
+      "definition": "Leave the code cleaner than you found it; clean code incrementally in the same day/hour rather than deferring",
+      "relationships": [
+        "Prevents code rot by continuous small improvements",
+        "Connects to refactoring discipline enabled by test coverage",
+        "Economic principle: immediate cleanup is exponentially easier than cleaning rotted code",
+        "Requires test coverage to enable confident changes"
+      ]
+    },
+    {
+      "concept": "Law of Demeter / Writing Shy Code",
+      "definition": "A module should not know about the innards of objects it manipulates; it should only talk to immediate collaborators, not navigate entire object graphs",
+      "relationships": [
+        "Protects object encapsulation from being violated by clients",
+        "Connects to interface design\u2014tight interfaces reduce coupling",
+        "Relates to data structure exposure issues",
+        "Violated by chaining method calls through object hierarchies"
+      ]
+    },
+    {
+      "concept": "Code Rot",
+      "definition": "Progressive degradation where initial poor structure creates hidden tangled dependencies that become exponentially more expensive to fix",
+      "relationships": [
+        "Prevented by Boy Scout Rule applied consistently",
+        "Accelerated by fear of making changes due to lack of test coverage",
+        "Connects to economic impact\u2014nothing degrades development more profoundly long-term",
+        "Creates cascading failures where modules insinuate themselves into each other"
+      ]
+    },
+    {
+      "concept": "Concurrency as Decoupling Strategy",
+      "definition": "Separates what gets done from when it gets done; objects are abstractions of processing while threads are abstractions of schedule",
+      "relationships": [
+        "Requires fundamental design changes, not just implementation tweaks",
+        "Connects to Single Responsibility Principle\u2014separate thread-aware from thread-ignorant code",
+        "Introduces complexity through shared data and timing dependencies",
+        "Requires different testing strategies including Monte Carlo testing"
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "name": "Test-Driven Development (TDD) Workflow",
+      "steps": [
+        "Write a failing test that defines desired improvement or new function",
+        "Write minimal production code to make test pass",
+        "Refactor code while keeping tests green",
+        "Repeat cycle maintaining all three laws: don't write production code without failing test, don't write more test than needed to fail, don't write more production code than needed to pass"
+      ],
+      "decision_points": [
+        "When test passes, decide whether code needs refactoring for cleanliness",
+        "Choose level of test granularity\u2014balance documentation value vs speed",
+        "Decide when design is clean enough to proceed to next test"
+      ],
+      "common_mistakes": [
+        "Writing production code before writing failing test",
+        "Turning off failing tests with intention to fix later",
+        "Stopping after code works without refactoring for cleanliness",
+        "Writing dirty test code that makes changes difficult"
+      ]
+    },
+    {
+      "name": "Successive Refinement",
+      "steps": [
+        "Write rough draft that works",
+        "With tests in place, refactor iteratively",
+        "Make small changes, running tests after each",
+        "Continue refinement through multiple drafts until code is clean",
+        "Keep tests passing throughout entire process"
+      ],
+      "decision_points": [
+        "Recognize when working code is structurally broken and needs refinement",
+        "Decide how many refinement passes are sufficient",
+        "Choose when to break functions along lines of abstraction"
+      ],
+      "common_mistakes": [
+        "Stopping after getting code to work without cleaning",
+        "Making massive structural changes that break functionality",
+        "Refactoring without test coverage providing safety net",
+        "Treating working code as finished code"
+      ]
+    },
+    {
+      "name": "Managing Third-Party Boundaries",
+      "steps": [
+        "Write learning tests to explore and understand third-party library",
+        "Define your own interface even if third-party code already exists",
+        "Use Adapter Pattern to encapsulate interaction with external API",
+        "Keep boundary interfaces like Map inside classes, not in public APIs",
+        "Update adapters when third-party code changes"
+      ],
+      "decision_points": [
+        "Choose whether to wrap third-party API or use directly",
+        "Decide granularity of adapter interface",
+        "Determine which third-party functionality to expose vs hide"
+      ],
+      "common_mistakes": [
+        "Exposing boundary interfaces throughout codebase in public APIs",
+        "Letting too much code know about third-party particulars",
+        "Not writing tests around third-party integration points",
+        "Depending on what you don't control, allowing it to control you"
+      ]
+    },
+    {
+      "name": "Error Handling as Separate Concern",
+      "steps": [
+        "Write tests that force exceptions first",
+        "Add behavior to exception handlers to satisfy tests",
+        "Extract try/catch blocks into functions of their own",
+        "Use Special Case Pattern to handle exceptional behavior without client complexity",
+        "Return empty collections instead of null",
+        "Wrap third-party APIs to provide common exception types"
+      ],
+      "decision_points": [
+        "Prefer exceptions over error codes for cleaner call sites",
+        "Choose between Special Case Pattern vs explicit error handling",
+        "Decide exception granularity and hierarchy"
+      ],
+      "common_mistakes": [
+        "Error handling obscuring logic",
+        "Returning null forcing callers to handle special cases",
+        "Passing null into methods creating boundary errors",
+        "Mixing error handling logic with business logic"
+      ]
+    },
+    {
+      "name": "Concurrent System Testing",
+      "steps": [
+        "Write code and test outside threading first",
+        "Write tests with potential to expose concurrency problems",
+        "Run tests frequently with different configurations",
+        "Use more threads than processors to encourage task swapping",
+        "Run on different platforms and configurations",
+        "Instrument code to force different execution orderings",
+        "Use Monte Carlo testing with flexible, tunable parameters"
+      ],
+      "decision_points": [
+        "Choose between client-based, server-based, or adapted server locking",
+        "Decide data partitioning strategy for independent thread operation",
+        "Select concurrency testing tools and instrumentation approaches"
+      ],
+      "common_mistakes": [
+        "Treating concurrency failures as one-offs",
+        "Chasing threading bugs and non-threading bugs simultaneously",
+        "Testing only on single configuration",
+        "Not considering shutdown code design early",
+        "Making synchronized sections too large"
+      ]
+    },
+    {
+      "name": "Preventing Deadlock",
+      "steps": [
+        "Identify four required conditions: Mutual Exclusion, Lock & Wait, No Preemption, Circular Wait",
+        "Choose strategy: break one of the four conditions or isolate thread-related code",
+        "Most common: break Circular Wait through global resource ordering",
+        "Ensure all threads acquire resources in same order across entire system",
+        "Design for graceful shutdown early"
+      ],
+      "decision_points": [
+        "Which deadlock condition is most practical to break",
+        "Whether to use global ordering vs other deadlock prevention",
+        "How to partition data for independent operation"
+      ],
+      "common_mistakes": [
+        "Acquiring resources in different orders across threads",
+        "Not considering shutdown code complexity",
+        "Calling one locked section from another",
+        "Making locks too coarse-grained"
+      ]
+    }
+  ],
+  "expertise_patterns": [
+    {
+      "pattern": "Experts separate the act of writing code from writing clean code",
+      "novice_mistake": "Novices believe code is done when it works",
+      "aha_moment": "Working code that isn't clean is badly broken; cleaning immediately is exponentially easier than cleaning rotted code later"
+    },
+    {
+      "pattern": "Experts invest time in choosing intention-revealing names and reevaluate them as software evolves",
+      "novice_mistake": "Novices choose quick names and never revisit them as meanings drift",
+      "aha_moment": "Names are 90% of what makes software readable; name length should correspond to scope size"
+    },
+    {
+      "pattern": "Experts see comments as failures to express intent in code",
+      "novice_mistake": "Novices add comments to explain unclear code",
+      "aha_moment": "The proper use of comments is to compensate for our failure to express ourselves in code; effort should go into making code expressive"
+    },
+    {
+      "pattern": "Experts recognize tension between object-oriented and procedural approaches and choose deliberately",
+      "novice_mistake": "Novices believe OO is always better or don't recognize the tradeoff",
+      "aha_moment": "OO makes adding types easy but behaviors hard; procedural makes adding behaviors easy but types hard\u2014choose based on anticipated flexibility needs"
+    },
+    {
+      "pattern": "Experts treat test code with equal care to production code",
+      "novice_mistake": "Novices write dirty test code that becomes maintenance burden",
+      "aha_moment": "Test code enables refactoring; dirty tests make changes difficult, creating fear that leads to code rot; tests are as important as production code"
+    },
+    {
+      "pattern": "Experts understand breaking a function along lines of abstraction reveals new hidden abstractions",
+      "novice_mistake": "Novices see functions as already-defined units",
+      "aha_moment": "Refactoring toward cleanliness exposes structure that was obscured; functions become transparent through well-named intermediate values"
+    },
+    {
+      "pattern": "Experts recognize that architecture can grow incrementally with proper separation of concerns",
+      "novice_mistake": "Novices believe architecture must be right upfront",
+      "aha_moment": "Implement today's stories, then refactor and expand for tomorrow's; design grows rather than being perfect initially"
+    },
+    {
+      "pattern": "Experts see concurrency as fundamental design requiring separation of concerns",
+      "novice_mistake": "Novices treat concurrency as implementation detail added later",
+      "aha_moment": "Concurrency requires fundamental design changes; separating thread-aware from thread-ignorant code is architectural"
+    }
+  ],
+  "temporal_evolution": [
+    {
+      "period": "Before clean code discipline",
+      "paradigm": "Code is done when it works; comments explain unclear code; large files are acceptable; cleanup can be deferred",
+      "change_trigger": "Recognition that code rot has profound long-term economic impact and that readability directly affects development velocity"
+    },
+    {
+      "period": "Before test-driven development",
+      "paradigm": "Tests were ad-hoc code written via simple drivers; testing happened after implementation",
+      "change_trigger": "Standardized test runners and TDD methodology showing that tests enable confident refactoring and improve design"
+    },
+    {
+      "period": "Before agile/incremental architecture",
+      "paradigm": "Architecture must be right upfront; all design decisions made early",
+      "change_trigger": "Recognition that proper separation of concerns enables incremental growth; postpone decisions until last responsible moment"
+    },
+    {
+      "period": "Transition from procedural to object-oriented",
+      "paradigm": "Procedural code was norm; OO emerged as seemingly superior approach",
+      "change_trigger": "Recognition of tradeoff: OO optimizes for adding types, procedural for adding functions; neither universally better"
+    },
+    {
+      "period": "Evolution of concurrency understanding",
+      "paradigm": "Concurrency seen as implementation detail; simple strategies like locking appeared sufficient",
+      "change_trigger": "Recognition of complexity in deadlock, livelock, starvation; understanding that concurrency requires fundamental design and separation of concerns"
+    }
+  ],
+  "key_metaphors": [
+    {
+      "metaphor": "The Newspaper Metaphor",
+      "maps_to": "Source code organization: headlines (class/function names) at top, synopsis (high-level methods) in first section, increasing details as you read down; related content kept vertically close"
+    },
+    {
+      "metaphor": "The Boy Scout Rule",
+      "maps_to": "Incremental code improvement: leave campground cleaner than you found it; no module immune from improvement; prevents rot through continuous small cleanup"
+    },
+    {
+      "metaphor": "Objects as Abstractions of Processing, Threads as Abstractions of Schedule",
+      "maps_to": "Concurrency design principle: objects encapsulate what gets done, threads encapsulate when; concurrent apps look like many collaborating computers rather than one big loop"
+    },
+    {
+      "metaphor": "Code Rot as Progressive Disease",
+      "maps_to": "Technical debt accumulation: modules insinuate themselves creating tangled dependencies; becomes exponentially harder to clean; eventually degrades development profoundly"
+    },
+    {
+      "metaphor": "Dining Philosophers Problem",
+      "maps_to": "Resource contention in enterprise systems: philosophers are threads, forks are resources; demonstrates deadlock and livelock in systems competing for limited resources"
+    },
+    {
+      "metaphor": "Law of Demeter / Writing Shy Code",
+      "maps_to": "Encapsulation protection: modules should know only immediate collaborators, like people who only talk to friends, not friends-of-friends-of-friends"
+    },
+    {
+      "metaphor": "Livelock as Resonance",
+      "maps_to": "Threads in lockstep unable to make progress despite activity, like resonance phenomenon where motion exists without net progress"
+    }
+  ],
+  "anti_patterns": [
+    {
+      "name": "Returning Null",
+      "description": "Functions returning null to indicate absence or error conditions, forcing all callers to check for null",
+      "why_wrong": "Shifts responsibility to every caller; creates opportunity for NullPointerException; clutters calling code with special case handling",
+      "fix": "Return empty collections, use Special Case Pattern, or throw exceptions; never return null from methods"
+    },
+    {
+      "name": "Passing Null as Argument",
+      "description": "Allowing null to be passed into methods as parameter value",
+      "why_wrong": "Creates boundary condition errors; forces defensive null checks throughout implementation; ambiguous meaning",
+      "fix": "Forbid null as argument through API design; use overloading or Optional pattern; fail fast if null received"
+    },
+    {
+      "name": "Switch Statements for Type Selection",
+      "description": "Using switch/case or if/else chains based on type codes appearing in multiple places",
+      "why_wrong": "Violates Open-Close Principle; adding new type requires finding and modifying all switch statements; represents missed polymorphism opportunity",
+      "fix": "One Switch Rule: single switch to create polymorphic objects, then all other code uses polymorphism; replace type codes with subclasses"
+    },
+    {
+      "name": "Exposed Boundary Interfaces",
+      "description": "Passing third-party interfaces like Map through public APIs, exposing them throughout codebase",
+      "why_wrong": "Creates coupling to third-party particulars; makes library changes ripple through system; gives up control to external API",
+      "fix": "Keep boundary interfaces inside classes; use Adapter Pattern; define your own interface encapsulating third-party code"
+    },
+    {
+      "name": "Mixing Error Handling with Logic",
+      "description": "Try/catch blocks interleaved with business logic; error handling obscuring main algorithm",
+      "why_wrong": "Violates separation of concerns; makes both logic and error handling hard to understand; prevents independent reasoning",
+      "fix": "Extract try/catch blocks into their own functions; treat error handling as separate concern; use Special Case Pattern"
+    },
+    {
+      "name": "Dirty Test Code",
+      "description": "Tests that are poorly written, hard to maintain, and tangled with implementation details",
+      "why_wrong": "Creates fear of making changes; tests become maintenance burden rather than asset; prevents refactoring and improvement",
+      "fix": "Treat test code with equal care to production code; refactor tests into domain-specific testing language; follow FIRST principles"
+    },
+    {
+      "name": "Large Synchronized Sections",
+      "description": "Locking too much code or holding locks while calling external methods",
+      "why_wrong": "Locks are expensive; creates delays and overhead; reduces concurrency benefits; increases likelihood of deadlock",
+      "fix": "Keep synchronized sections small; lock only regions needing protection; avoid calling one locked section from another"
+    },
+    {
+      "name": "Hidden Temporal Coupling",
+      "description": "Functions that must be called in specific order without structure enforcing the order",
+      "why_wrong": "Creates fragile code prone to ordering bugs; forces mental mapping; nothing prevents incorrect usage",
+      "fix": "Structure function arguments so required order is obvious; use return values to enforce sequence; encapsulate ordering in higher-level function"
+    },
+    {
+      "name": "Magic Numbers",
+      "description": "Literal numbers appearing in code without named constants explaining their meaning",
+      "why_wrong": "Obscures intent; makes changing value require finding all occurrences; no central place for configuration",
+      "fix": "Replace with well-named constants; keep configurable data at high levels; use enums for sets of related constants"
+    },
+    {
+      "name": "Dead Code",
+      "description": "Functions, classes, variables, or comments that are no longer used or relevant",
+      "why_wrong": "Clutters codebase; misleads developers; creates maintenance burden; obscures active code",
+      "fix": "Delete dead code immediately; rely on version control for history; remove commented-out code; delete unused functions"
+    },
+    {
+      "name": "Insufficient Test Coverage",
+      "description": "Tests that don't cover all conditions that could possibly break; skipping tests deemed too trivial",
+      "why_wrong": "Bugs congregate in untested code; trivial tests have documentation value; creates false confidence; prevents fearless refactoring",
+      "fix": "Test everything that could possibly break; don't skip trivial tests; aim for high coverage percentage; test near found bugs exhaustively"
+    },
+    {
+      "name": "Feature Envy",
+      "description": "Functions that seem more interested in other classes than their own; excessive navigation of object graphs",
+      "why_wrong": "Violates Law of Demeter; creates tight coupling; exposes object internals; makes changes ripple",
+      "fix": "Move functionality to the class that has the data; tell don't ask; create methods on collaborators rather than reaching through them"
+    }
+  ],
+  "notable_quotes": [
+    "Functions are the first line of organization in any program. Functions should do one thing. They should do it well. They should do it only.",
+    "The proper use of comments is to compensate for our failure to express ourself in code.",
+    "Objects expose behavior and hide data. This makes it easy to add new kinds of objects without changing existing behaviors. It also makes it hard to add new behaviors to existing objects.",
+    "Clean code is readable, but it must also be robust. These are not conflicting goals. We can write robust clean code if we see error handling as a separate concern, something that is viewable independently of our main logic.",
+    "A class or module should have one, and only one, reason to change.",
+    "Code at the boundaries needs clear separation and tests that define expectations. We should avoid letting too much of our code know about the third-party particulars. It's better to depend on something you control than on something you don't control, lest it end up controlling you.",
+    "Nothing has a more profound and long-term degrading effect upon a development program than bad code.",
+    "No module is immune from improvement, and each of us has the responsibility to leave the code a little better than we found it.",
+    "Concurrent code is difficult to get right. Code that is simple to follow can become nightmarish when multiple threads and shared data get into the mix.",
+    "Clean code is not written by following a set of rules. You don't become a software craftsman by learning a list of heuristics. Professionalism and craftsmanship come from values that drive disciplines.",
+    "Names in software are 90% of what makes software readable.",
+    "A slow test is a test that won't get run."
+  ],
+  "domain_vocabulary": [
+    {
+      "term": "Boy Scout Rule",
+      "definition": "Leave the code cleaner than you found it; perform incremental cleanup to prevent code rot"
+    },
+    {
+      "term": "Law of Demeter",
+      "definition": "A module should not know about the innards of objects it manipulates; only talk to immediate friends"
+    },
+    {
+      "term": "Data Transfer Objects (DTOs)",
+      "definition": "Data structures with public variables and no significant behavior, used for transferring data between processes"
+    },
+    {
+      "term": "Special Case Pattern",
+      "definition": "Create a class or object to handle exceptional cases so client code doesn't deal with exceptional behavior"
+    },
+    {
+      "term": "Adapter Pattern",
+      "definition": "Wrapper that encapsulates interaction with external API, translating between interfaces"
+    },
+    {
+      "term": "Single Responsibility Principle",
+      "definition": "A class or module should have one and only one reason to change"
+    },
+    {
+      "term": "Open-Close Principle",
+      "definition": "Software entities should be open for extension but closed for modification"
+    },
+    {
+      "term": "Three Laws of TDD",
+      "definition": "Don't write production code without failing test; don't write more test than needed to fail; don't write more production code than needed to pass"
+    },
+    {
+      "term": "Code smell",
+      "definition": "Surface indication of deeper problem in code; symptoms suggesting refactoring needed"
+    },
+    {
+      "term": "Temporal coupling",
+      "definition": "When functions must be called in specific order due to hidden dependencies"
+    },
+    {
+      "term": "FIRST (testing)",
+      "definition": "Fast, Independent, Repeatable, Self-validating, Timely - principles for clean tests"
+    },
+    {
+      "term": "Mutual Exclusion",
+      "definition": "Only one thread can access shared resource at a time; first condition required for deadlock"
+    },
+    {
+      "term": "Lock & Wait",
+      "definition": "Thread holding resource waits to acquire another; second condition for deadlock"
+    },
+    {
+      "term": "No Preemption",
+      "definition": "Resources cannot be forcibly taken from threads; third condition for deadlock"
+    },
+    {
+      "term": "Circular Wait",
+      "definition": "Chain of threads each waiting for resource held by next; fourth condition for deadlock"
+    },
+    {
+      "term": "Starvation",
+      "definition": "One thread unable to acquire resources needed to proceed due to other threads consuming them"
+    },
+    {
+      "term": "Livelock",
+      "definition": "Threads in lockstep repeatedly acquiring and releasing resources without making progress"
+    },
+    {
+      "term": "Deadlock",
+      "definition": "Two or more threads permanently blocked waiting for each other to release resources"
+    },
+    {
+      "term": "Cohesion",
+      "definition": "Degree to which elements of module belong together; high cohesion means methods manipulate many instance variables"
+    },
+    {
+      "term": "Feature Envy",
+      "definition": "Code smell where method seems more interested in other class than its own"
+    },
+    {
+      "term": "One Switch Rule",
+      "definition": "There may be no more than one switch statement per type of selection; use polymorphism instead"
+    },
+    {
+      "term": "Principle of Least Surprise",
+      "definition": "Functions should implement behaviors other programmers would reasonably expect"
+    },
+    {
+      "term": "Monte Carlo Testing",
+      "definition": "Testing approach with flexible, tunable parameters that logs failure conditions for later analysis"
+    },
+    {
+      "term": "Producer-Consumer",
+      "definition": "Concurrency pattern where producers write to queue and signal, consumers read and signal"
+    },
+    {
+      "term": "Readers-Writers",
+      "definition": "Concurrency problem of coordinating readers and writers to balance throughput and staleness"
+    },
+    {
+      "term": "Dining Philosophers",
+      "definition": "Classic concurrency problem demonstrating deadlock and livelock with threads competing for resources"
+    },
+    {
+      "term": "Code rot",
+      "definition": "Progressive degradation where initial poor structure creates tangled dependencies becoming exponentially harder to fix"
+    },
+    {
+      "term": "Dependency Injection",
+      "definition": "Design pattern providing dependencies from outside rather than creating them internally, enabling testability"
+    },
+    {
+      "term": "Domain Specific Language (DSL)",
+      "definition": "Specialized vocabulary and idioms for specific problem domain, applied to testing creates readable test code"
+    },
+    {
+      "term": "Bound Resource",
+      "definition": "Fixed-size or fixed-number resource in concurrent environment like database connections or fixed-size buffers"
+    }
+  ]
+}

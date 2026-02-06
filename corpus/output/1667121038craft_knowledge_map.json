@@ -1,0 +1,399 @@
+{
+  "document_summary": "The Craft of Research (4th edition) is a comprehensive guide to research methodology and academic writing that treats research as a learnable craft rather than mysterious talent. It presents research as an iterative, non-linear social process built on a five-element argument structure (claim, reasons, evidence, acknowledgment/response, warrant). The book emphasizes that effective research requires understanding audience needs, formulating problems readers care about, and organizing arguments to guide readers through collaborative exploration rather than adversarial debate. Across all fields, researchers must transform topics into questions, questions into problems with consequences, and problems into arguments supported by credible evidence. The work addresses researchers at all levels from undergraduates to professionals, with updated guidance on digital research tools while maintaining focus on timeless principles of rigorous inquiry and ethical practice.",
+  "core_concepts": [
+    {
+      "concept": "Research Problem",
+      "definition": "A two-part structure consisting of (1) a condition of incomplete knowledge or misunderstanding, and (2) the undesirable consequences or costs of that gap. Problems must matter to readers, not just the researcher.",
+      "relationships": [
+        "Transforms research questions into investigations readers care about by connecting to consequences",
+        "Distinguishes between practical problems (tangible costs in the world) and conceptual problems (gaps in understanding)",
+        "Determines the type of claim needed (fact, definition, cause, evaluation, or policy)",
+        "Drives the entire research process from question formulation through evidence collection to argument construction"
+      ]
+    },
+    {
+      "concept": "Five-Element Argument Structure",
+      "definition": "Research arguments consist of claim (main point), reasons (assertions supporting the claim), evidence (data supporting reasons), acknowledgment/response (addressing counterarguments), and warrant (principle connecting reasons to claims).",
+      "relationships": [
+        "Reasons are products of mind; evidence must be searched for in the world and made visible",
+        "Evidence stands alone; all other elements may require their own supporting sub-arguments",
+        "Warrants are field-specific principles that connect general circumstances to general consequences",
+        "Each element can be challenged by readers, requiring writers to anticipate and respond to objections"
+      ]
+    },
+    {
+      "concept": "Ethos",
+      "definition": "The character and credibility a writer projects through their argument. The tacit sixth element in every argument that answers 'Can I trust you?'",
+      "relationships": [
+        "Built through acknowledging limitations, addressing counterarguments, and citing sources accurately",
+        "Damaged by arrogant certainty, overreaching claims, or careless documentation",
+        "Enhanced paradoxically by modest acknowledgment of limits rather than forceful certainty",
+        "Determines whether readers will accept arguments even when evidence is strong"
+      ]
+    },
+    {
+      "concept": "Primary, Secondary, and Tertiary Sources",
+      "definition": "Classifications relative to a researcher's specific project: primary sources provide original data closest to the phenomenon; secondary sources analyze or interpret primary sources; tertiary sources synthesize multiple secondary sources.",
+      "relationships": [
+        "Classification depends on research focus\u2014same source can be primary or secondary in different projects",
+        "Tertiary sources useful for initial exploration; secondary sources for scholarly arguments",
+        "Researchers should get as close to primary sources as possible for important evidence",
+        "Citation chains trace from primary evidence through reports to final written work"
+      ]
+    },
+    {
+      "concept": "Significance",
+      "definition": "The quality of a research claim measured by how many other beliefs readers must change if they accept it, and whether it helps readers understand something more important.",
+      "relationships": [
+        "Established through the 'So what?' test\u2014repeatedly asking why the answer matters",
+        "Moves research from personal interest to community value",
+        "Connects smaller questions to larger, more important questions through nested problems",
+        "Distinguishes college-level research from high school information assembly"
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "name": "Topic to Problem Transformation",
+      "steps": [
+        "Find a subject area of interest within your field",
+        "Narrow the subject to a specific topic (4-5 words with action-derived nouns)",
+        "Formulate questions about the topic's history, structure, categorization, or source disagreements",
+        "Focus on 'how' and 'why' questions rather than 'who, what, when, where'",
+        "Test questions by asking 'So what?' to identify consequences",
+        "Frame as problem: 'I am studying X because I want to find out Y in order to help readers understand Z'",
+        "Identify the condition (gap in knowledge) and costs (consequences of not knowing)",
+        "Verify that readers will care about the costs, not just that you care"
+      ],
+      "decision_points": [
+        "Choose between practical problem (tangible costs) or conceptual problem (understanding gaps)",
+        "Decide if consequences are significant enough to motivate readers",
+        "Determine if existing research already answers the question",
+        "Choose to pursue pure research (understanding only) or applied research (understanding plus doing)"
+      ],
+      "common_mistakes": [
+        "Confusing a topic with a problem\u2014having something to study without a question worth asking",
+        "Gathering information aimlessly without a guiding question",
+        "Framing problems from researcher's perspective rather than reader's perspective",
+        "Failing to articulate consequences, leaving readers to ask 'So what?'",
+        "Making the problem too broad or too narrow to be researchable"
+      ]
+    },
+    {
+      "name": "Argument Construction",
+      "steps": [
+        "Begin planning argument as soon as you understand your problem and likely solution",
+        "State your main claim as specifically as possible",
+        "Support claim with reasons (assertions you think up)",
+        "Ground each reason in evidence (data you search for and make visible)",
+        "Anticipate reader questions and objections about reasons and evidence",
+        "Add acknowledgments and responses to address alternative views",
+        "Include warrants when readers might not see connection between reasons and claims",
+        "Organize using storyboard: write claim and reasons on cards, list evidence below each",
+        "Test structure by reading only the reasons to verify logical order",
+        "Identify gaps where more evidence is needed"
+      ],
+      "decision_points": [
+        "Determine what kind of claim to make based on problem type",
+        "Choose which reasons are necessary and sufficient to support the claim",
+        "Decide how to respond to counterarguments (concede, refute, or limit claim)",
+        "Determine whether to state warrants explicitly or leave them tacit",
+        "Choose between stating main point in introduction or delaying until conclusion"
+      ],
+      "common_mistakes": [
+        "Treating reasons and evidence as synonyms when they are fundamentally different",
+        "Basing evidence on reasons rather than basing reasons on evidence",
+        "Failing to anticipate and address reader objections",
+        "Making claims with arrogant certainty instead of appropriate qualification",
+        "Organizing papers as narratives of research process rather than supporting arguments"
+      ]
+    },
+    {
+      "name": "Top-Down Revision",
+      "steps": [
+        "Let draft cool before revision to gain fresh perspective",
+        "Analyze global structure first: introduction, sections, conclusion",
+        "Check that key terms from main point run through entire paper",
+        "Verify each major section supports a reason from the main claim",
+        "Examine section organization and signaling of relationships",
+        "Review paragraph coherence, ensuring points appear at beginning or end",
+        "Check sentence clarity and word choice",
+        "Proofread for spelling, punctuation, and citation accuracy last"
+      ],
+      "decision_points": [
+        "Decide whether to rewrite passages that lack key terms or discard them",
+        "Choose when to use hedging language to appropriately qualify claims",
+        "Determine if evidence-to-explanation ratio is appropriate (at least one-third evidence)",
+        "Decide whether to shoehorn in key terms or restructure sections"
+      ],
+      "common_mistakes": [
+        "Revising bottom-up from sentences to structure instead of top-down",
+        "Thinking drafting completes the work rather than beginning revision process",
+        "Burying paragraph points in the middle instead of at beginning or end",
+        "Creating paragraphs that are too choppy (underdeveloped) or too long (digressing)",
+        "Failing to let draft cool before revision, missing obvious problems"
+      ]
+    },
+    {
+      "name": "Source Engagement and Note-Taking",
+      "steps": [
+        "Record complete bibliographic information before taking any notes",
+        "Separate notes on different topics even from the same source",
+        "Distinguish quotations from paraphrases/summaries from your own thoughts using visual markers",
+        "For quotations: copy exactly and mark with quotation marks immediately",
+        "For paraphrases: read passage, look away, think about it, write from memory, check accuracy",
+        "Record not just conclusions but the reasoning supporting them",
+        "Note whether claims are central arguments or minor qualifications",
+        "Read sources twice: first generously, then critically",
+        "Look for creative agreement (extending claims) or creative disagreement (finding contradictions)"
+      ],
+      "decision_points": [
+        "Choose whether to quote, paraphrase, or summarize based on how you'll use the source",
+        "Decide whether to use paper notes (aids thinking) or digital notes (organized, searchable)",
+        "Determine when checking primary sources is necessary versus relying on secondary reports",
+        "Choose appropriate note-taking technology based on project scope and collaboration needs"
+      ],
+      "common_mistakes": [
+        "Losing track of which words are borrowed versus original during notetaking",
+        "Hand-copying quotations and introducing transcription errors",
+        "Failing to record context and supporting reasoning for claims",
+        "Confusing source material with your own analysis through poor documentation",
+        "Taking notes on everything without a guiding research question"
+      ]
+    }
+  ],
+  "expertise_patterns": [
+    {
+      "pattern": "Expert researchers loop back and forth through research stages rather than moving linearly",
+      "novice_mistake": "Novices expect research to follow a straight path from topic selection through data gathering to writing, treating each stage as complete before moving to the next",
+      "aha_moment": "Research is inherently iterative\u2014writing can reveal problems in arguments, drafting introductions can prompt more research, and organizing notes can generate new insights"
+    },
+    {
+      "pattern": "Experts begin planning arguments as soon as they understand their problem, modifying plans as research progresses",
+      "novice_mistake": "Beginners gather all available information first without a guiding question, leading to aimless and endless data collection",
+      "aha_moment": "Questions drive information selection\u2014without a specific question, you cannot determine when you have enough data or which data are relevant"
+    },
+    {
+      "pattern": "Experienced researchers acknowledge limitations and alternative views to enhance credibility",
+      "novice_mistake": "Beginners fear that acknowledging weaknesses or alternatives will undermine their arguments",
+      "aha_moment": "Modest acknowledgment of limits makes arguments stronger and more credible than arrogant certainty; readers respect writers who have considered alternatives thoughtfully"
+    },
+    {
+      "pattern": "Experts distinguish between reasons (assertions) and evidence (data), never confusing the two",
+      "novice_mistake": "Novices accept reasons at face value without demanding supporting evidence, or present their own assertions as if they were evidence",
+      "aha_moment": "Evidence is only what readers agree not to question\u2014what seems like hard evidence to a writer may be merely soft reasons to a skeptical reader"
+    },
+    {
+      "pattern": "Expert researchers frame problems from readers' perspectives, showing costs to readers rather than just personal interest",
+      "novice_mistake": "Beginners write as if solving their own curiosity is sufficient motivation for readers",
+      "aha_moment": "Readers judge problem significance by the cost to them, not the cost to the writer\u2014research must address what the community wants to solve"
+    },
+    {
+      "pattern": "Experienced writers revise top-down from global structure to local sentences, not bottom-up",
+      "novice_mistake": "New researchers perfect sentences and paragraphs before ensuring the overall argument structure is sound",
+      "aha_moment": "Revising structure first saves time by avoiding perfecting passages that may need to be cut or relocated; local clarity cannot fix global incoherence"
+    }
+  ],
+  "temporal_evolution": [
+    {
+      "period": "19th century",
+      "paradigm": "Historians originated the distinction between primary and secondary sources",
+      "change_trigger": "Need to establish methodological rigor in historical research"
+    },
+    {
+      "period": "300 years ago (early experimental science)",
+      "paradigm": "Scientific evidence required witness testimony for verification",
+      "change_trigger": "Development of standardized methodologies replaced personal testimony with reproducible procedures"
+    },
+    {
+      "period": "Pre-digital era",
+      "paradigm": "Researchers used index cards for note-taking; citation indexing required hours or days with printed indexes",
+      "change_trigger": "Digital databases and search engines made citation indexing instant and note-taking digital, though paper notes may still enhance thinking"
+    },
+    {
+      "period": "Across academic fields over time",
+      "paradigm": "Pure research aimed to provide final answers to known questions",
+      "change_trigger": "Shift toward recognizing that the most stimulating research raises new questions rather than closing debates"
+    }
+  ],
+  "key_metaphors": [
+    {
+      "metaphor": "Research as conversation spanning millennia",
+      "maps_to": "Research is fundamentally social, with imagined voices of past and future researchers even in solitary work; researchers join ongoing conversations through citation and contribution"
+    },
+    {
+      "metaphor": "Research as zigzagging up a foggy hill through overgrown woods",
+      "maps_to": "The non-linear, uncertain nature of research where the destination is unrecognizable until reached, with unexpected turns and sometimes dead ends"
+    },
+    {
+      "metaphor": "Evidence as foundation or bedrock",
+      "maps_to": "Good evidence provides solid, hard foundation for arguments; bad evidence is flimsy, weak, or thin\u2014but all 'evidence' is actually constructed through reports, not direct presentation"
+    },
+    {
+      "metaphor": "Argument structure as building or edifice",
+      "maps_to": "Claims rest on reasons, reasons rest on evidence, all must be sound for the structure to stand; warrants are the architectural principles connecting floors"
+    },
+    {
+      "metaphor": "Introduction structure as fairy tale narrative",
+      "maps_to": "Both establish stable context, introduce disrupting problem, then provide resolution\u2014readers are drawn to problems that disrupt what they thought they knew"
+    },
+    {
+      "metaphor": "Paragraph breaks as conversational pauses",
+      "maps_to": "Breaks function like pauses in speech, giving readers time to process information or signaling transitions between ideas"
+    },
+    {
+      "metaphor": "Following bibliographic trails",
+      "maps_to": "Citations create paths through scholarly literature, allowing readers to trace back to primary sources and forward to newer research building on the work"
+    }
+  ],
+  "anti_patterns": [
+    {
+      "name": "Patch Writing or Data Dump",
+      "description": "Stringing together quotations and summaries from sources without original analysis, creating a pastiche of vaguely related information",
+      "why_wrong": "Lacks original thinking; readers cannot distinguish writer's contribution from source material; risks plagiarism charges; fails to answer a specific question worth asking",
+      "fix": "Formulate a specific research question first; use sources to support your own argument structure; clearly distinguish borrowed material from original analysis; ensure key terms from your claim run through all sections"
+    },
+    {
+      "name": "Narrative Organization",
+      "description": "Organizing paper as a chronology of the research process ('First I looked at X, then I compared Y, then I discovered Z') rather than as an argument supporting a claim",
+      "why_wrong": "Readers need logical support for claims, not a story of the writer's thinking; undermines argument structure; makes paper read like a diary rather than research",
+      "fix": "Organize by reasons supporting the main claim; use storyboard to plan logical structure; ensure each section answers one of the five core argument questions; remove process language"
+    },
+    {
+      "name": "Arrogant Certainty",
+      "description": "Stating claims with absolute confidence without acknowledging limitations, alternatives, or counterarguments",
+      "why_wrong": "Damages ethos more than any other mistake; experienced researchers know no argument is entirely unassailable; suggests writer hasn't considered alternatives",
+      "fix": "Use appropriate hedging language (probably, most, often, may); acknowledge limiting conditions readers might plausibly think of; address counterarguments and alternative views; frame as collaborative exploration"
+    },
+    {
+      "name": "Confusing Reasons with Evidence",
+      "description": "Treating assertions you think up (reasons) as if they were data you found in the world (evidence), or presenting evidence without grounding reasons in it",
+      "why_wrong": "Violates fundamental logic of research arguments; readers demand evidence underlying reasons; reasons not grounded in evidence are merely opinions",
+      "fix": "Remember: you base reasons on evidence, never evidence on reasons; make evidence visible to readers through quotations, numbers, tables, or images; ensure each reason has its own foundation of evidence"
+    },
+    {
+      "name": "Burying the Problem",
+      "description": "Failing to articulate the consequences of not solving the problem, or framing problems from writer's perspective rather than readers'",
+      "why_wrong": "Readers ask 'So what?' when costs aren't clear; problems that matter only to the writer fail to motivate the research community",
+      "fix": "Complete the three-step formula: 'I am studying X because I want to find out Y in order to help my reader understand Z'; explicitly state consequences; frame costs from readers' perspective"
+    },
+    {
+      "name": "Close Paraphrasing",
+      "description": "Restating source material by changing a few words or rearranging sentence structure while keeping the same essential wording and order",
+      "why_wrong": "Constitutes plagiarism even when cited; fails to demonstrate understanding; easy to detect by comparing to original source",
+      "fix": "Read passage, look away, think about what it means, paraphrase from memory, then check for accuracy; if wording is too close, use direct quotation with quotation marks"
+    }
+  ],
+  "notable_quotes": [
+    "Experienced researchers loop back and forth, move forward a step or two before going back in order to move ahead again, change directions, all the while anticipating stages not yet begun.",
+    "Without trustworthy published research, we all would be locked in the opinions of the moment, prisoners of what we alone experience or dupes to whatever we're told.",
+    "If you can't sum up a passage in your mind, you don't understand it well enough to disagree.",
+    "Nothing damages your ethos more than arrogant certainty. As paradoxical as it seems, you make your argument stronger and more credible by modestly acknowledging its limits.",
+    "We base reasons on evidence; we do not base evidence on reasons.",
+    "Evidence never speaks for itself, especially not long quotations or complex sets of numbers. You must speak for such evidence.",
+    "The worst response a researcher can get: not I don't agree, but I don't care.",
+    "You can't really understand what you think until you understand why a rational person might think differently.",
+    "Those who find a new problem or clarify an old one often make a bigger contribution to their field than those who solve a problem already defined.",
+    "Facts are shaped by those who collect them and again by the intentions of those who use them.",
+    "Your reputation is the tacit sixth element in every argument you write. It answers the unspoken question, Can I trust you?",
+    "When you cite sources fully and accurately, you sustain and enrich the sense of community that gives written research both its scholarly and social value."
+  ],
+  "domain_vocabulary": [
+    {
+      "term": "Research Problem",
+      "definition": "A two-part structure consisting of a condition of incomplete knowledge and the consequences or costs of that gap; must matter to readers, not just the researcher"
+    },
+    {
+      "term": "Claim",
+      "definition": "The main point or conclusion of an argument; what the researcher wants readers to accept as true; also called hypothesis, thesis, solution, or answer depending on context"
+    },
+    {
+      "term": "Reason",
+      "definition": "An assertion that supports a claim; a product of the mind that must itself be supported by evidence; also called subclaim when supporting another reason"
+    },
+    {
+      "term": "Evidence",
+      "definition": "Data that readers agree not to question for purposes of the argument; must be accurate, precise, sufficient, representative, and authoritative; the only argument element that 'stands alone'"
+    },
+    {
+      "term": "Warrant",
+      "definition": "A general principle connecting a reason to a claim by showing how a specific instance fits a broader pattern; consists of general circumstance and general consequence; field-specific and often unstated"
+    },
+    {
+      "term": "Ethos",
+      "definition": "The credibility and trustworthiness a writer projects; the tacit sixth element in every argument; built through acknowledging limits, citing sources accurately, and addressing counterarguments"
+    },
+    {
+      "term": "Primary Sources",
+      "definition": "Sources providing original data closest to the phenomenon being studied; classification is relative to researcher's specific project, not absolute"
+    },
+    {
+      "term": "Secondary Sources",
+      "definition": "Sources that analyze, interpret, or synthesize primary sources; scholarly arguments typically rely on secondary sources while citing primary sources when available"
+    },
+    {
+      "term": "Tertiary Sources",
+      "definition": "Sources that synthesize multiple secondary sources; useful for initial exploration but should not be cited in scholarly arguments (e.g., encyclopedias, textbooks)"
+    },
+    {
+      "term": "Storyboard",
+      "definition": "A planning tool where main claim and reasons are written on separate cards with supporting evidence listed below, allowing visual arrangement to show logical relationships"
+    },
+    {
+      "term": "Significance",
+      "definition": "The importance of a research claim measured by how many other beliefs readers must change if they accept it, and whether it helps understand something more important"
+    },
+    {
+      "term": "Acknowledgment and Response",
+      "definition": "The fourth element of research arguments where writers recognize alternative views, counterarguments, or limitations, then respond by conceding, refuting, or limiting the claim"
+    },
+    {
+      "term": "Conceptual Problem",
+      "definition": "A gap in understanding where the condition is not knowing or misunderstanding something, and the cost is failing to understand something more important"
+    },
+    {
+      "term": "Practical Problem",
+      "definition": "A condition in the world imposing tangible costs (time, money, security, opportunity) that requires action to address"
+    },
+    {
+      "term": "Pure Research",
+      "definition": "Research that only improves understanding within a research community without direct practical application"
+    },
+    {
+      "term": "Applied Research",
+      "definition": "Research where improved understanding enables practical action or policy; conceptual understanding must precede and enable the doing"
+    },
+    {
+      "term": "Hedge",
+      "definition": "Qualifying words or phrases (probably, most, often, may) that appropriately limit certainty in claims; necessary to avoid arrogant overreach"
+    },
+    {
+      "term": "Limiting Conditions",
+      "definition": "Circumstances under which a claim does not hold; acknowledging these enhances credibility rather than weakening arguments"
+    },
+    {
+      "term": "Citation Indexing",
+      "definition": "Following sources backward (what a source cites) or forward (what cites a source) to assess influence and build bibliographic trails"
+    },
+    {
+      "term": "Plagiarism",
+      "definition": "Using others' words, ideas, or methods without attribution; includes failing to cite paraphrases, summaries, or borrowed reasoning patterns; damages credibility and can be career-ending"
+    },
+    {
+      "term": "Paraphrase",
+      "definition": "Restating source content in your own words while maintaining the original meaning; must be cited even though wording differs from the original"
+    },
+    {
+      "term": "Key Concepts/Terms",
+      "definition": "4-5 words from the problem and main point that should run throughout the entire paper to create coherence; distinct from section-specific terms"
+    },
+    {
+      "term": "So What? Test",
+      "definition": "Repeatedly asking 'So what?' after stating a research finding to determine if consequences are significant enough to motivate readers; readers acknowledge a problem when they stop asking 'So what?' and start asking 'What do we do about it?'"
+    },
+    {
+      "term": "Impact Factor",
+      "definition": "A measure of how often a source is cited by other scholars; high-impact sources are those cited repeatedly, indicating influence and credibility in the field"
+    }
+  ]
+}

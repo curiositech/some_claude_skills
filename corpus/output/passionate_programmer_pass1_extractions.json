@@ -1,0 +1,202 @@
+[
+  {
+    "chunk_id": 0,
+    "extraction": {
+      "summary": "This section from \"The Passionate Programmer\" presents 41 tips across five categories for advancing a software development career: choosing your market wisely through technology and specialization decisions, investing in both technical and business knowledge, executing work with urgency and discipline, and building a professional brand through perception management and open contribution. The overarching theme emphasizes that career success requires deliberate choices about specialization, continuous learning, strong execution, and strategic self-marketing.",
+      "key_claims": [
+        "Both ends of the technology adoption curve might prove lucrative",
+        "You cannot compete against offshore programmers on price, but you can compete on ability",
+        "Coding alone doesn't cut it anymore - domain expertise in your industry is essential",
+        "Being the worst person in the group accelerates learning",
+        "More technically competent people seek diverse experience",
+        "Passion and enjoyment are prerequisites for excellence",
+        "Generalists who can connect dots across technologies have competitive advantage",
+        "Specialists must understand layers beneath their abstractions",
+        "Vendor lock-in is myopic; prefer open source technologies",
+        "The best software people become experts in their business domains",
+        "Parkinson's Law: work expands to fill available time",
+        "There is no objective way to measure knowledge worker quality; perception matters",
+        "Your reputation is built on consistently saying what you'll do, doing it, and showing it"
+      ],
+      "processes": [
+        "Reading trends to choose which technologies to invest in learning",
+        "Finding your niche by identifying unique value adds and skillsets",
+        "Deliberately selecting industries to serve with same care as technologies",
+        "Stepping outside comfort zone to learn diverse paradigms (e.g., learning functional programming alongside OOP)",
+        "Eight-Hour Burn work schedule: 4 hours focused work, break, 4 hours focused work",
+        "Handling failures: raise issue early, take blame, offer solution, ask for help",
+        "Say It, Do It, Show It execution: plan work, track accomplishments, demonstrate completion",
+        "Using task management systems like Getting Things Done and Pomodoro technique",
+        "Anticipating customer needs before they articulate them",
+        "Creating mini-deadlines to maintain sense of accomplishment"
+      ],
+      "decisions": [
+        "Jump on new technology vs. master entrenched technology vs. become expert in niche/dying field",
+        "Compete on mainstream technology at higher skill level vs. learn what offshore companies won't",
+        "Specialize in particular industry vs. remain generalist across industries",
+        "Seek mentorship vs. become mentor to others",
+        "Practice off the job vs. only practice on the job",
+        "Say yes to commitments vs. honestly say no when unable to meet them",
+        "Focus on goal vs. focus on present moment",
+        "Embrace maintenance work vs. avoid it"
+      ],
+      "failures": [
+        "Being a 'dime a dozen coder' by learning entrenched technology without differentiation",
+        "Following mainstream jobs leads to price competition with offshore developers",
+        "Being 'just a programmer' without domain expertise limits relevance",
+        "Fear-driven career decisions limit potential",
+        "Fear consuming you prevents excellence",
+        "Practicing only on the job rather than structured practice",
+        "Vendor-centric views that create lock-in dependencies",
+        "Not understanding business problems you're solving",
+        "Panic during crises leads to subpar performance",
+        "Making commitments you know you can't meet",
+        "Allowing success to blind you to your replaceability",
+        "Complacency about your own value",
+        "Low-quality writing that damages professional perception"
+      ],
+      "aha_moments": [
+        "Learning a technology like Angular, even when it becomes obsolete, teaches principles (MVC) that make you a better programmer",
+        "Being able to think in different ways (learning functional programming as an OOP developer) makes better problem solvers",
+        "A mentor telling you to go deeper into a topic transforms shallow knowledge into deep expertise",
+        "Teaching something to others is the best way to really learn it",
+        "Focusing on the present moment gets you further toward goals than focusing on the goal itself",
+        "Urgency, even if manufactured, doubles or triples productivity",
+        "Reputation is built not on perfection but on how you recover from setbacks",
+        "Being honest about limits builds trust more than pretending omniscience",
+        "Writing skill directly impacts professional perception"
+      ],
+      "metaphors": [
+        "Being 'the worst guy in the band' - positioning yourself among better people for growth",
+        "Don't put eggs in someone else's basket - vendor independence as financial independence",
+        "Learn to fish - self-sufficiency across the technology stack",
+        "A pebble in a bucket of water - insignificance despite individual success",
+        "Eight-Hour Burn - sustainable high-intensity work like athletic training",
+        "Heroes never panic - composure under pressure",
+        "A mission to effect change - purposeful work beyond job requirements",
+        "Your name is your brand - identity as marketable asset",
+        "Craftsperson and artist - professional identity beyond employee role"
+      ],
+      "temporal": [
+        "Before: following jobs in mainstream technology / After: competing on ability and skill level",
+        "Before: practicing only on the job / After: structured deliberate practice expands capabilities",
+        "Before: not understanding business / After: becoming domain expert leads to better products",
+        "Before: fear-driven decisions / After: calculated risks and passion-driven choices",
+        "Before: complacency about success / After: remembering replaceability maintains humility",
+        "Before: shallow breadth of knowledge / After: deep understanding of underlying layers",
+        "Before: reactive crisis management / After: proactive communication of issues"
+      ],
+      "quotes": [
+        "Both ends of the technology adoption curve might prove to be lucrative",
+        "There is no way to objectively measure the quality of a knowledge worker or their work, so you are measured on someone else's perception of you",
+        "If you say what you're going to do and then you do it and show that it's done, you develop a reputation for being a doer"
+      ],
+      "domain_terms": [
+        "Technology adoption curve",
+        "Offshore programming",
+        "Domain expertise",
+        "MVC (Model-View-Controller)",
+        "Functional programming",
+        "OOP (Object-Oriented Programming)",
+        "Open source",
+        "Vendor lock-in",
+        "Design patterns",
+        "Algorithms",
+        "Stack (technology stack)",
+        "MVP (Minimum Viable Product)",
+        "Parkinson's Law",
+        "Eight-Hour Burn",
+        "Pomodoro technique",
+        "Getting Things Done",
+        "Brand (professional brand)"
+      ]
+    },
+    "input_tokens": 4092,
+    "output_tokens": 1608
+  },
+  {
+    "chunk_id": 1,
+    "extraction": {
+      "summary": "This section provides career development advice across 20 tips, covering professional communication, personal branding, continuous learning, and adaptive career planning. The guidance emphasizes becoming remarkable through distinctive contributions, maintaining relevance through constant skill development, and approaching career growth as an iterative journey rather than a fixed plan.",
+      "key_claims": [
+        "People base their perceptions of you on your writing ability",
+        "Success breeds hubris, which breeds complacency",
+        "The real meat of your career is time spent working on yourself and your skills, not advancements",
+        "It's hard to be remarkable at a big company",
+        "Big organizations breed bureaucracy and kill innovation",
+        "To be remarkable, you have to be significantly different from those around you",
+        "The industry is always evolving and continuous learning is necessary to avoid obsolescence",
+        "If you believe something so strongly that you no longer objectively question it, you have blind spots",
+        "Contributing to open source demonstrates passion for your field and raises your profile",
+        "Your name is your brand and you are the most potentially destructive force for Brand You"
+      ],
+      "processes": [
+        "Refactorum process: take open source code with unit tests, run through test coverage analyzer, find least tested part, write tests to improve coverage, refactor to make testable, submit as patch",
+        "Career planning through iteration: take a windy road toward goals with flexibility to change paths",
+        "Daily incremental improvement approach: make small improvements each day to solve big problems",
+        "Market monitoring: watch alpha geeks and industry developments to stay current"
+      ],
+      "decisions": [
+        "Decide whether to work for big companies (kills innovation) or go independent (allows remarkability)",
+        "Choose between fixed career destinations versus iterative, adaptive paths",
+        "Determine your skill story and whether you're wandering or structured in your learning",
+        "Decide to pursue a niche and dominate it versus generalist approach"
+      ],
+      "failures": [
+        "Complacency from initial success",
+        "Tunnel vision focusing on distant future goals",
+        "Blind spots from unchallenged beliefs",
+        "Inability to see gradual change in yourself without external feedback",
+        "Lousy work damaging your brand",
+        "Being a 'dick' and destroying your reputation",
+        "Only having one tool in your skillset (if you only know how to hammer, everything looks like a nail)"
+      ],
+      "aha_moments": [
+        "Your job involves writing and it shapes how people perceive you",
+        "You need to understand the business bottom line and how you contribute to it",
+        "You're a craftsperson and artist within an industry, not just a cog in a wheel",
+        "The journey of self-improvement matters more than career advancement titles",
+        "Iterative approaches are less stressful and more effective than waterfall planning",
+        "Change is inevitable and requires adaptability",
+        "Getting honest feedback helps you see what you cannot see about yourself"
+      ],
+      "metaphors": [
+        "Your name is your brand",
+        "You're not a cog in the wheel",
+        "If you only know how to hammer, everything looks like a nail",
+        "The South Indian Monkey Trap - beliefs you hold so strongly you no longer question them",
+        "Aiming for the moon and missing still gets you far",
+        "Career as journey, not destination",
+        "Life is reps"
+      ],
+      "temporal": [
+        "Success breeds hubris, which breeds complacency over time",
+        "Before learning about market trends vs after staying current with industry developments",
+        "Before feedback vs after receiving honest assessment of your progress",
+        "Before continuous learning vs after staying relevant in evolving industry"
+      ],
+      "quotes": [
+        "Much of your job involves writing and people base their perceptions of you based on your writing ability so you need to get good at it",
+        "Your name is your brand. Make your mark so that people recognize it and make sure that your mark is associated with positive traits. The most potentially destructive force for Brand You is yourself.",
+        "The key to successfully solving big problems is to make small, incremental improvements each day."
+      ],
+      "domain_terms": [
+        "alpha geeks",
+        "test coverage analyzer",
+        "unit tests",
+        "refactor",
+        "patch",
+        "open source",
+        "bottom line",
+        "brand",
+        "waterfall career planning",
+        "bureaucracy",
+        "remarkability",
+        "blind spots",
+        "obsolescence"
+      ]
+    },
+    "input_tokens": 1647,
+    "output_tokens": 1077
+  }
+]

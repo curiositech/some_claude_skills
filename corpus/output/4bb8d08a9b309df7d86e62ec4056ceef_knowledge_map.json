@@ -1,0 +1,492 @@
+{
+  "document_summary": "This is a comprehensive guide to human-centered design principles for everyday objects, originally published in 1988 and revised in 2013. Norman argues that most 'human errors' are actually design failures, and presents a framework based on human psychology\u2014including the seven stages of action, conceptual models, affordances, signifiers, constraints, mappings, and feedback\u2014to create products that are discoverable, understandable, and error-resistant. The book bridges cognitive psychology, design practice, and real-world constraints (business, technology, culture), emphasizing that good design must accommodate actual human behavior rather than expecting humans to adapt to machines. Core insights include the distinction between knowledge in the world versus in the head, the classification of errors into slips and mistakes, and the principle that design should focus on failure cases, not just normal operation.",
+  "core_concepts": [
+    {
+      "concept": "Discoverability",
+      "definition": "The ability to determine what actions are possible and where they should take place through visible cues",
+      "relationships": [
+        "Depends on affordances and signifiers being perceivable",
+        "Enabled by natural mappings and constraints",
+        "Critical for bridging the Gulf of Execution"
+      ]
+    },
+    {
+      "concept": "Affordances",
+      "definition": "The relationship between object properties and agent capabilities that determines what actions are possible, regardless of whether they are perceivable",
+      "relationships": [
+        "Different from signifiers\u2014affordances determine possibility, signifiers communicate location",
+        "Must be discoverable to be effective in design",
+        "Anti-affordances prevent certain actions"
+      ]
+    },
+    {
+      "concept": "Signifiers",
+      "definition": "Perceivable indicators that communicate where actions should take place and what behavior is appropriate; can be deliberate or accidental",
+      "relationships": [
+        "More important than affordances for designers because they communicate how to use something",
+        "Must be perceivable or they fail to function",
+        "Can be words, graphics, sounds, or physical device properties"
+      ]
+    },
+    {
+      "concept": "Conceptual Models",
+      "definition": "Simplified mental representations of how something works; don't need to be accurate, only useful for predicting behavior",
+      "relationships": [
+        "Communicated through the system image\u2014all perceivable information",
+        "Transform arbitrary tasks into meaningful ones when correctly discovered",
+        "Enable troubleshooting when normal operation fails"
+      ]
+    },
+    {
+      "concept": "Natural Mapping",
+      "definition": "Control arrangements that leverage spatial analogies or cultural conventions to create immediately understandable relationships between controls and outcomes",
+      "relationships": [
+        "Reduces cognitive load by placing relationship information in the world",
+        "Based on spatial correspondence, cultural norms, or Gestalt principles",
+        "What feels 'natural' is culturally specific, not universal"
+      ]
+    },
+    {
+      "concept": "Constraints (Physical, Cultural, Semantic, Logical)",
+      "definition": "Limitations that guide behavior and reduce possible actions; physical constraints from object properties, cultural from conventions, semantic from meaning, logical from elimination",
+      "relationships": [
+        "Multiple constraints working together dramatically reduce decision spaces",
+        "Cultural constraints are as powerful as physical but invisible to outsiders",
+        "Forcing functions are physical constraints that prevent progression after failures"
+      ]
+    },
+    {
+      "concept": "Feedback",
+      "definition": "Information about action results; must be immediate, informative, prioritized, and unobtrusive",
+      "relationships": [
+        "Critical for bridging the Gulf of Evaluation",
+        "Poor feedback can be worse than no feedback",
+        "Delays of more than 0.1 seconds are disconcerting"
+      ]
+    },
+    {
+      "concept": "Knowledge in the World vs. Knowledge in the Head",
+      "definition": "Information can be externalized in environmental cues (world) or internalized in memory (head); world knowledge requires no learning but head knowledge is more efficient once learned",
+      "relationships": [
+        "Knowledge in the world acts as its own reminder",
+        "Tradeoff between learning burden and operational efficiency",
+        "External knowledge only valuable if available at right time and place"
+      ]
+    },
+    {
+      "concept": "Gulf of Execution and Gulf of Evaluation",
+      "definition": "Two gaps users must bridge: figuring out how to use something (execution) and understanding what happened (evaluation)",
+      "relationships": [
+        "Signifiers, mappings, and constraints bridge the Gulf of Execution",
+        "Feedback and conceptual models bridge the Gulf of Evaluation",
+        "Designer's role is to help users bridge both gulfs"
+      ]
+    },
+    {
+      "concept": "Seven Stages of Action",
+      "definition": "Goal \u2192 Plan \u2192 Specify \u2192 Perform \u2192 Perceive \u2192 Interpret \u2192 Compare; describes how people execute tasks and evaluate results through cycles of planning, execution, and interpretation",
+      "relationships": [
+        "Not all stages are conscious; most operate subconsciously",
+        "Can be goal-driven (top-down) or event-driven (bottom-up)",
+        "Different types of errors occur at different stages"
+      ]
+    },
+    {
+      "concept": "Three Levels of Processing (Visceral, Behavioral, Reflective)",
+      "definition": "Visceral: fast automatic responses; Behavioral: learned subconscious skills; Reflective: conscious thought and reasoning",
+      "relationships": [
+        "All three levels must be addressed in design",
+        "Reflective memories often matter more than actual experience",
+        "Cognition and emotion are intertwined at all levels"
+      ]
+    },
+    {
+      "concept": "Slips vs. Mistakes",
+      "definition": "Slips: correct goal but wrong execution (action-based or memory lapses); Mistakes: wrong goal or plan (rule-based, knowledge-based, or memory lapses)",
+      "relationships": [
+        "Slips are subconscious and more common in experts; mistakes are conscious deliberations",
+        "Slips occur at execution stages; mistakes occur at goal/planning stages",
+        "Different design interventions needed for each type"
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "name": "Human-Centered Design (HCD)",
+      "steps": [
+        "Observe people in actual contexts to understand real needs",
+        "Avoid premature problem specification",
+        "Generate ideas through rapid prototyping and testing",
+        "Iterate through repeated approximations",
+        "Modify both approach and problem definition based on results"
+      ],
+      "decision_points": [
+        "When to focus on incremental vs. radical innovation (HCD appropriate for incremental)",
+        "Whether to use activity-centered vs. human-centered approach"
+      ],
+      "common_mistakes": [
+        "Specifying the problem upfront without iteration",
+        "Designers assuming they understand people because 'we are people ourselves'",
+        "Focusing only on normal operation instead of failure cases"
+      ]
+    },
+    {
+      "name": "Root Cause Analysis with Five Whys",
+      "steps": [
+        "Investigate accident or error to identify immediate cause",
+        "Ask 'Why did this happen?' repeatedly (typically 5+ times)",
+        "Continue until true underlying systemic causes are uncovered",
+        "Redesign system to address root causes, not just proximate causes"
+      ],
+      "decision_points": [
+        "When to stop asking 'why'\u2014don't stop at human error",
+        "Whether to blame individuals or redesign systems"
+      ],
+      "common_mistakes": [
+        "Stopping investigation when human error is identified",
+        "Treating high-frequency errors as individual failures rather than design problems",
+        "Focusing on symptoms rather than underlying organizational or design issues"
+      ]
+    },
+    {
+      "name": "Natural Mapping Implementation",
+      "steps": [
+        "Arrange controls in same spatial pattern as controlled items",
+        "Use vertical position to represent intensity or hierarchy",
+        "Group related controls using Gestalt principles",
+        "Place controls close to items being controlled"
+      ],
+      "decision_points": [
+        "Choose between controls mounted on item, adjacent, or in spatial correspondence",
+        "Prioritize spatial mapping vs. other design constraints"
+      ],
+      "common_mistakes": [
+        "Arranging controls linearly when items are in 2D space",
+        "Ignoring existing cultural conventions about control direction",
+        "Prioritizing aesthetics over usability in control placement"
+      ]
+    },
+    {
+      "name": "Error Prevention and Recovery",
+      "steps": [
+        "Classify potential errors as slips or mistakes",
+        "Design to prevent errors at the source",
+        "Make errors immediately detectable when they occur",
+        "Provide clear feedback about error consequences",
+        "Enable easy reversal or correction"
+      ],
+      "decision_points": [
+        "When to use forcing functions vs. warnings",
+        "Whether to prevent errors or make them cost-free"
+      ],
+      "common_mistakes": [
+        "Designing systems that allow catastrophic single-action failures",
+        "Providing error messages without explaining correct format",
+        "Creating security requirements so strict people disable them"
+      ]
+    }
+  ],
+  "expertise_patterns": [
+    {
+      "pattern": "Experts minimize conscious reasoning through automation of action cycles, performing routine tasks subconsciously",
+      "novice_mistake": "Novices must consciously deliberate each stage of action, dividing attention across multiple components",
+      "aha_moment": "Civilization advances by extending operations we can perform without thinking about them (Whitehead); skilled performance requires minimal conscious control"
+    },
+    {
+      "pattern": "Experts use approximate models and estimation techniques that are 'good enough' rather than pursuing absolute accuracy",
+      "novice_mistake": "Novices attempt precise calculations when speed matters more than accuracy, overwhelming short-term memory",
+      "aha_moment": "Science deals in truth, but practice deals with approximations; simplified conceptual models need only be useful, not accurate"
+    },
+    {
+      "pattern": "Experts leverage knowledge in the world through external aids, standardized locations, and visible organization",
+      "novice_mistake": "Novices rely on memory in the head, creating unnecessary cognitive burden and memory-lapse errors",
+      "aha_moment": "The most effective way to help people remember is to make memory unnecessary by externalizing information"
+    },
+    {
+      "pattern": "Expert designers focus on failure cases and error recovery, not just normal operation",
+      "novice_mistake": "Novice designers create products that work well only when everything goes as planned",
+      "aha_moment": "It's easy to design for success; the hard and necessary part is making things work well when things go wrong"
+    },
+    {
+      "pattern": "Experts recognize that high-frequency errors indicate systemic design failures, not individual incompetence",
+      "novice_mistake": "Novices blame users for errors and label problems as 'human error' without investigating why",
+      "aha_moment": "When 75-95% of accidents are attributed to human error, the design is the problem, not human nature"
+    }
+  ],
+  "temporal_evolution": [
+    {
+      "period": "Pre-1988 (Original Edition)",
+      "paradigm": "Engineers designed based on technical specifications, ignorant of human behavior; users blamed themselves for difficulties with poorly designed objects",
+      "change_trigger": "Recognition that difficulties with technology were caused by the technology, not the people; Three Mile Island investigation revealed poor control room design, not operator error"
+    },
+    {
+      "period": "1988-2013 (First Edition Era)",
+      "paradigm": "Human-centered design emerged as methodology; affordances concept spread through design community but became misused; focus on usability and user experience",
+      "change_trigger": "Technology explosion (Internet, cell phones, exponential computing power growth); need to update examples and incorporate emotional design"
+    },
+    {
+      "period": "2013-Present (Revised Edition)",
+      "paradigm": "Signifiers distinguished from affordances; emotion integrated into action model; activity-centered design as alternative to HCD; recognition that design must address all three processing levels",
+      "change_trigger": "Touch-screen interfaces revealing new interaction metaphors; increasing technology dependence; proliferation of complex devices requiring better design principles"
+    },
+    {
+      "period": "Evolution of Conceptual Models",
+      "paradigm": "Before: oral traditions allowed variation; word-for-word accuracy emerged only after printing; Now: expectation of perfect accuracy but recognition that approximate models are often sufficient",
+      "change_trigger": "Technology of printing enabled exact reproduction; later recognition that practical utility matters more than technical accuracy"
+    },
+    {
+      "period": "Convention Standardization",
+      "paradigm": "Before: no standards for controls, traffic, measurements; After: international conventions emerged but resistance to change remains strong (metric system failure in US)",
+      "change_trigger": "Need for interoperability and safety; cultural inertia prevents adoption despite technical superiority"
+    }
+  ],
+  "key_metaphors": [
+    {
+      "metaphor": "Gulfs of Execution and Evaluation as unbridged gaps between user intent and device operation",
+      "maps_to": "The cognitive distance users must traverse to figure out how to use something and understand what happened; designer's role is to build bridges using signifiers, mappings, constraints, and feedback"
+    },
+    {
+      "metaphor": "Knowledge in the World vs. Knowledge in the Head",
+      "maps_to": "Tradeoff between externalized information (visible, requires no learning, always accessible) and internalized memory (efficient once learned, portable, but subject to forgetting)"
+    },
+    {
+      "metaphor": "Swiss Cheese Model of Accidents",
+      "maps_to": "Multiple system layers with holes (failures) that align to allow accidents; no single root cause but confluence of multiple failures"
+    },
+    {
+      "metaphor": "Moving Window vs. Moving Text",
+      "maps_to": "Two competing interaction metaphors for scrolling\u2014whether the viewport moves over content or content moves under viewport; choice dictates proper design"
+    },
+    {
+      "metaphor": "Things Make Us Smart",
+      "maps_to": "The combination of technology and people creates super-powerful beings; neither alone is sufficient; external tools extend human cognitive capabilities"
+    },
+    {
+      "metaphor": "Conceptual Models as Stories",
+      "maps_to": "People naturally construct narratives to explain observations; models don't need technical accuracy, only usefulness for predicting behavior and troubleshooting"
+    },
+    {
+      "metaphor": "Design as Communication Triangle",
+      "maps_to": "Designer's model \u2192 System image \u2192 User's model; designers cannot communicate directly with users\u2014entire burden rests on the system image"
+    }
+  ],
+  "anti_patterns": [
+    {
+      "name": "Norman Doors",
+      "description": "Doors requiring signs to indicate push/pull/slide direction; identical hardware for push and pull doors",
+      "why_wrong": "When simple devices need instructions, design has failed; visible structure should communicate intended operation",
+      "fix": "Use flat plates for push, handles for pull; eliminate ambiguous hardware; ensure visible hinges and structure indicate operation"
+    },
+    {
+      "name": "Stopping Root Cause Analysis at Human Error",
+      "description": "Blaming individuals when accidents occur and ending investigation after identifying 'human error'",
+      "why_wrong": "When 75-95% of accidents are human error, the system design is the problem; blaming individuals prevents organizational restructuring",
+      "fix": "Continue asking 'why' when human error is found; investigate why error occurred and redesign system to prevent recurrence"
+    },
+    {
+      "name": "Mode Errors Through Poor Visibility",
+      "description": "Devices where controls have different meanings in different states without clear indication of current mode",
+      "why_wrong": "Mode confusion has caused serious accidents; users cannot know how controls will behave without mode awareness",
+      "fix": "Minimize modes; make current mode extremely obvious; provide clear mode indicators; use forcing functions to prevent mode confusion"
+    },
+    {
+      "name": "Complex Security Requirements",
+      "description": "Password requirements so complex that people write them down in accessible locations or reuse simple passwords",
+      "why_wrong": "Paradoxically reduces security by forcing workarounds that overcome memory limitations; creates 'unwitting tyranny'",
+      "fix": "Use multi-factor authentication (something you have + something you know); accept that human memory is limited; design for actual human capabilities"
+    },
+    {
+      "name": "Aesthetics Over Usability",
+      "description": "Invisible controls that meld into structure; cabinet doors requiring guesswork; faucets with no visible signifiers",
+      "why_wrong": "Knowledge in the world is replaced by knowledge in the head; increases cognitive burden and guarantees errors",
+      "fix": "Prioritize discoverability; make controls visible and operations obvious; don't sacrifice usability for aesthetic elegance"
+    },
+    {
+      "name": "Designing for Normal Operation Only",
+      "description": "Products that work well when everything goes as planned but fail catastrophically when problems occur",
+      "why_wrong": "Hard and necessary part of design is making things work well when things go wrong; focus must be on failure cases",
+      "fix": "Design for error recovery; provide clear feedback when problems occur; enable easy correction and reversal"
+    },
+    {
+      "name": "Linear Control Arrangements for 2D Spaces",
+      "description": "Stove burners in rectangular 2D pattern with controls in 1D row; light switches in row for 2D room layout",
+      "why_wrong": "Poor mapping requires memorization; natural spatial correspondence is replaced with arbitrary learned relationships",
+      "fix": "Arrange controls in same spatial pattern as controlled items; use natural mapping to reduce cognitive load"
+    },
+    {
+      "name": "Forcing Humans to Behave Like Machines",
+      "description": "Requiring precise input formats, sustained alertness, multitasking without interruption recovery, rigid interaction sequences",
+      "why_wrong": "Humans are creative and flexible but poor at precision; machines should accommodate human behavior, not vice versa",
+      "fix": "Accept multiple input formats; design for interruptions; enable approximation and error; accommodate actual human capabilities"
+    }
+  ],
+  "notable_quotes": [
+    "Good design is actually a lot harder to notice than poor design, in part because good designs fit our needs so well that the design is invisible, serving us without drawing attention to itself.",
+    "The principles of human psychology will remain the same, which means that the design principles here, based on psychology, on the nature of human cognition, emotion, action, and interaction with the world, will remain unchanged.",
+    "We have to accept human behavior the way it is, not the way we would wish it to be.",
+    "It is the machine and its design that are at fault. It is the duty of machines and those who design them to understand people. It is not our duty to understand the arbitrary, meaningless dictates of machines.",
+    "When root cause analysis discovers a human error in the chain, its work has just begun: now we apply the analysis to understand why the error occurred, and what can be done to prevent it.",
+    "If the system lets you make the error, it is badly designed. And if the system induces you to make the error, then it is really badly designed.",
+    "Affordances determine what actions are possible. Signifiers communicate where the action should take place. We need both.",
+    "The most effective way of helping people remember is to make it unnecessary.",
+    "It is a profoundly erroneous truism that we should cultivate the habit of thinking of what we are doing. The precise opposite is the case. Civilization advances by extending the number of important operations which we can perform without thinking about them.",
+    "When something goes wrong but the machine highlights the problems, then the person understands the issue, takes the proper actions, and the problem is solved. When this happens smoothly, the collaboration of person and device feels wonderful.",
+    "Reflective memories are often more important than reality.",
+    "Mode error is really design error.",
+    "The same technology that simplifies life by providing more functions in each device also complicates life by making the device harder to learn, harder to use. This is the paradox of technology and the challenge for the designer.",
+    "Good conceptual models are the key to understandable, enjoyable products: good communication is the key to good conceptual models.",
+    "We need to remove the word failure from our vocabulary, replacing it instead with learning experience.",
+    "The day the product team is announced, it is behind schedule and over its budget.",
+    "Out of sight, out of mind."
+  ],
+  "domain_vocabulary": [
+    {
+      "term": "Affordances",
+      "definition": "The relationship between object properties and agent capabilities that determines what actions are possible, regardless of perception"
+    },
+    {
+      "term": "Signifiers",
+      "definition": "Perceivable indicators that communicate where actions should take place and what behavior is appropriate"
+    },
+    {
+      "term": "Conceptual Model",
+      "definition": "Simplified mental representation of how something works; need only be useful, not accurate"
+    },
+    {
+      "term": "Natural Mapping",
+      "definition": "Control arrangements leveraging spatial analogies or cultural conventions for immediate understanding"
+    },
+    {
+      "term": "Constraints",
+      "definition": "Physical, cultural, semantic, or logical limitations that guide behavior and reduce possible actions"
+    },
+    {
+      "term": "Feedback",
+      "definition": "Immediate information about action results; must be informative, prioritized, and unobtrusive"
+    },
+    {
+      "term": "Gulf of Execution",
+      "definition": "The gap between user goals and required actions to achieve them"
+    },
+    {
+      "term": "Gulf of Evaluation",
+      "definition": "The gap between system state and user's ability to perceive and interpret it"
+    },
+    {
+      "term": "Knowledge in the World",
+      "definition": "Information externalized in environmental cues; requires no learning and acts as own reminder"
+    },
+    {
+      "term": "Knowledge in the Head",
+      "definition": "Information stored in memory; efficient once learned but subject to forgetting"
+    },
+    {
+      "term": "Forcing Functions",
+      "definition": "Physical constraints preventing progression after failures; includes interlocks, lock-ins, lockouts"
+    },
+    {
+      "term": "Slips",
+      "definition": "Execution failures where goal is correct but actions go wrong; includes action-based and memory lapses"
+    },
+    {
+      "term": "Mistakes",
+      "definition": "Planning/goal failures; includes rule-based, knowledge-based, and memory-lapse mistakes"
+    },
+    {
+      "term": "Visceral Level",
+      "definition": "Fast, automatic, subconscious responses to immediate environmental stimuli"
+    },
+    {
+      "term": "Behavioral Level",
+      "definition": "Learned skills executed largely subconsciously; driven by expectations"
+    },
+    {
+      "term": "Reflective Level",
+      "definition": "Conscious cognition, deep understanding, reasoning, and decision-making"
+    },
+    {
+      "term": "System Image",
+      "definition": "All perceivable information from physical structure, documentation, and signifiers that communicates designer's model"
+    },
+    {
+      "term": "Human-Centered Design (HCD)",
+      "definition": "Design philosophy starting with observation of actual needs, iterating through rapid testing and modification"
+    },
+    {
+      "term": "Activity-Centered Design",
+      "definition": "Design focused on activities being performed rather than individual human capabilities"
+    },
+    {
+      "term": "Discoverability",
+      "definition": "Ability to determine what actions are possible through visible cues"
+    },
+    {
+      "term": "Anti-affordance",
+      "definition": "Property that prevents or discourages certain actions"
+    },
+    {
+      "term": "Transactive Memory",
+      "definition": "Collective memory where multiple minds together remember what no single person could alone"
+    },
+    {
+      "term": "Prospective Memory",
+      "definition": "Remembering to do activities at future times"
+    },
+    {
+      "term": "Root Cause Analysis",
+      "definition": "Investigation technique to identify underlying systemic causes rather than proximate causes"
+    },
+    {
+      "term": "Five Whys",
+      "definition": "Technique of repeatedly asking 'why' to uncover true underlying causes of problems"
+    },
+    {
+      "term": "Mode Error",
+      "definition": "Error occurring when controls have different meanings in different device states and user is unaware of current mode"
+    },
+    {
+      "term": "Capture Error",
+      "definition": "Slip where more frequent activity 'captures' intended action when sequences share identical opening steps"
+    },
+    {
+      "term": "Description-Similarity Slip",
+      "definition": "Error when target description is too vague to distinguish from similar objects"
+    },
+    {
+      "term": "Rule-Based Mistake",
+      "definition": "Error from correct diagnosis but wrong rule selection"
+    },
+    {
+      "term": "Knowledge-Based Mistake",
+      "definition": "Error from problem misdiagnosis due to erroneous or incomplete knowledge"
+    },
+    {
+      "term": "Learned Helplessness",
+      "definition": "Belief in personal incompetence from repeated failures, leading to stopped effort"
+    },
+    {
+      "term": "Hindsight Bias",
+      "definition": "Tendency to judge past decisions as obvious with information not available at the time"
+    },
+    {
+      "term": "Skeuomorphic Design",
+      "definition": "New technologies adopting visual characteristics of older technologies to ease transition"
+    },
+    {
+      "term": "Legacy Problem",
+      "definition": "Design constraints from existing standards making superior solutions difficult to adopt"
+    },
+    {
+      "term": "Norman Doors",
+      "definition": "Doors requiring signs to indicate operation; exemplar of poor design"
+    },
+    {
+      "term": "Dead Man's Switch",
+      "definition": "Control requiring continuous activation; releases when operator becomes incapacitated"
+    },
+    {
+      "term": "Gestalt Principles",
+      "definition": "Perceptual organization principles including grouping and proximity"
+    }
+  ]
+}
