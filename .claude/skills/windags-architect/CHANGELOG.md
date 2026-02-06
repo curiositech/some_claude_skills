@@ -15,6 +15,11 @@
 - `references/visualization-research.md` — Deep research on DAG visualization libraries (ReactFlow, Cytoscape, GoJS, JointJS, dagre, ELKjs, d3-dag), UX patterns from Temporal/Dagster/Prefect/LangGraph/CrewAI, custom agent node React component, WebSocket state streaming, CSS animations
 - `references/execution-engines.md` — Execution models, topological scheduling, failure handling matrix, DAG mutation on failure, node state machine, cost tracking
 
+### Business Model + Skill Lifecycle (v1.0.3)
+- `references/business-model.md` — Three-layer business (open core + cloud SaaS + skill marketplace). Skill marketplace with Elo-based ranking powered by execution data. Network effect flywheel. Competitive positioning vs LangGraph/CrewAI/Temporal/n8n. Go-to-market in 4 phases. Revenue projections.
+- `references/skill-lifecycle.md` — Four evaluators (self/peer/downstream/human) with trust weighting. Elo-based multi-dimensional skill ranking. Full skill lifecycle state machine: Crystallization → Ranking → Improvement → Kuhnian Revolution → Retirement. Automated paradigm shift detection. Skill crystallization from successful executions. Code for all key algorithms.
+- SKILL.md: Added Section 7 "Skill Lifecycle" summarizing the four evaluators, Elo ranking, and Kuhnian revolution.
+
 ### LLM Routing (v1.0.2)
 - `references/llm-routing.md` — Comprehensive LLM routing guide based on Martian, Unify.ai, and RouteLLM research. Covers: tier-based static routing (node role → model class), adaptive routing (learns from execution history), cascading router (try cheap first, escalate on low quality), RouteLLM integration (matrix factorization on preference data). Cost model showing 76-92% savings. 4-phase adoption roadmap.
 

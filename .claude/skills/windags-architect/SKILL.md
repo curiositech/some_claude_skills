@@ -461,26 +461,25 @@ Combine the best from each:
 ### Example: "Build a Portfolio Website"
 
 ```mermaid
-flowchart TD
-  A[Interview User] -->|preferences| B[Research Examples]
-  A -->|resume data| C[Content Writer]
-  B --> D[Design System]
+flowchart LR
+  A[Interview] -->|prefs| B[Research]
+  A -->|data| C[Write Content]
+  B --> D[Design]
   C --> D
-  D --> E[Frontend Builder]
-  E --> F[Deploy Preview]
-  F --> G{Human Review}
-  G -->|Approve| H[Deploy Production]
-  G -->|Revise| I[Revision Agent]
-  I --> E
+  D --> E[Build] --> F[Deploy] --> G{Human?}
+  G -->|OK| H[Ship]
+  G -->|Revise| E
 ```
 
-**Meta-DAG generates this by**:
-1. Problem Decomposer: "Portfolio website" → interview, research, content, design, build, deploy, review
-2. DAG Architect: Designs topology with parallel paths (research || content) and human gate
-3. Skill Selector: interview-skill, web-research, copywriting, design-system-creator, frontend-builder, deployment-automation
-4. Validator: Checks contracts, estimates cost (~$2.50), approves
-5. Executor: Runs the DAG, streams state to UI
-6. Evaluator: Grades output, user satisfied → done
+---
+
+## 7. Skill Lifecycle: Self-Evaluation → Ranking → Revolution
+
+Every DAG execution generates quality signals that feed back into the skill library. Four evaluators score each node: **self-evaluation** (agent grades itself, cheap but biased), **peer evaluation** (Haiku + skill-grader judges output), **downstream evaluation** (next node reports whether input was usable), and **human evaluation** (approval gates, gold standard). Weighted aggregate: human > downstream > peer > self.
+
+Signals feed an **Elo ranking** per skill per domain. Skills with high downstream acceptance on cheap models rank highest. Declining skills get flagged for improvement or replacement. When anomalies accumulate past a threshold (a **Kuhnian crisis** — the paradigm shifted but the skill didn't), the system seeks or crystallizes a replacement. New skills enter unranked and must earn their way up.
+
+This lifecycle is the core network effect: every execution makes the skill library smarter. See `references/skill-lifecycle.md` and `references/business-model.md`.
 
 ---
 
@@ -490,6 +489,8 @@ Consult for deep dives:
 
 | File | Consult When |
 |------|-------------|
+| `references/business-model.md` | Monetization (open core + cloud + marketplace); skill marketplace network effects; go-to-market |
+| `references/skill-lifecycle.md` | Four evaluators (self/peer/downstream/human); Elo ranking; Kuhnian revolution; crystallization pipeline |
 | `references/llm-routing.md` | Choosing which model per DAG node; tier-based, adaptive, cascading, and RouteLLM approaches; cost model |
 | `references/sdk-implementation.md` | Implementing on Claude SDK, OpenAI, Ollama; LLM-agnostic provider layer; streaming; Temporal durable execution |
 | `references/skills-vs-research.md` | Understanding when skill libraries help vs. on-the-fly research agents; cost model; hybrid architecture |
