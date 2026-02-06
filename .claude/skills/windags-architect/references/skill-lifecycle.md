@@ -49,7 +49,7 @@ Return JSON: {{"completeness": 0.X, "contract": 0.X, "confidence": 0.X, "adheren
 
 **What it catches**: Contract violations, obvious omissions, cases where the agent knows it's uncertain.
 
-**What it misses**: Self-evaluation has a **sycophancy bias** — models tend to rate their own output higher than warranted. Calibration varies by model: Opus self-evaluates more accurately than Haiku. Self-scores should be weighted ~0.3x compared to downstream/human scores.
+**What it misses**: Self-evaluation has a **sycophancy bias** — models systematically overrate their own output. Research (Wataoka et al. 2024) quantified this: GPT-4's self-preference bias is 0.749 on Demographic Parity metrics. The mechanism is perplexity-driven: models assign higher scores to outputs with lower perplexity relative to their own distribution, and their own outputs naturally have the lowest perplexity. Even Llama-3.1 exhibits this artifact. Calibration varies by model: Opus self-evaluates more accurately than Haiku. Self-scores should be weighted ~0.15x (lowest of the four evaluators).
 
 **Cost**: ~$0.001 if using Haiku, ~$0 if appended to the same conversation.
 
@@ -81,6 +81,10 @@ async def peer_evaluate(output: dict, task: str, skill_used: str) -> dict:
 **Cost**: ~$0.001-0.003 per evaluation (Haiku). Worth it for any node whose output feeds a human gate or final deliverable.
 
 **Key insight**: A Haiku judge with the skill-grader skill is surprisingly effective. The rubric is mechanical enough that even a cheap model can follow it accurately. You're paying for the SKILL's structure, not the model's reasoning.
+
+**Debiasing**: Use position swapping (MT-Bench pattern): call the judge twice with the output and reference in swapped order. Only count as a positive verdict when both orderings agree. This neutralizes position bias, which can be as high as 75% inconsistency on weaker judges (Claude-v1: 23.8% consistency after swap). GPT-4 class models reach ~65% consistency without swapping, ~77.5% with few-shot examples.
+
+**Ensemble judging**: Aggregating judgments from two different model families (e.g., Claude Haiku + GPT-4o-mini) further reduces self-enhancement bias, where a model family's judge systematically rates its own family higher. Arena-Hard-Auto found ensemble judges achieve 96.5% correlation with human preference vs. 93.2% for a single judge.
 
 ### Evaluator 3: Downstream Evaluation (The Next Node Grades It)
 
@@ -206,164 +210,286 @@ Domain: Code Review
 
 ---
 
-## Skill Lifecycle: Creation → Improvement → Revolution
-
-### The Full Lifecycle
+## Skill Lifecycle States
 
 ```mermaid
 stateDiagram-v2
-  [*] --> Crystallized: Research agent discovers effective process
-  Crystallized --> Unranked: New skill created
-  Unranked --> Rising: Positive execution signals
-  Rising --> Established: 100+ successful executions
-  Established --> Dominant: Becomes top-ranked for domain
-  Established --> Declining: Downstream acceptance drops
-  Declining --> Improved: Skill-architect updates it
-  Improved --> Rising: Re-enters ranking
-  Declining --> Challenged: New skill outperforms it
-  Challenged --> Superseded: New skill takes #1 rank
+  [*] --> Crystallized: Extracted from successful execution or contributed
+  Crystallized --> Unranked: Enters the catalog
+  Unranked --> Rising: Quality signals exceed baseline
+  Rising --> Established: 100+ executions, stable Elo
+  Established --> Dominant: Top-ranked for its domain
+  Established --> Declining: Downstream acceptance falling
+  Declining --> Improved: Diagnosed and updated
+  Improved --> Rising: Re-enters ranking competition
+  Declining --> Challenged: A rising skill outperforms it
+  Challenged --> Superseded: Challenger takes #1 rank
   Superseded --> Retired: Removed from active recommendations
   Retired --> [*]
-  
-  Dominant --> Challenged: Paradigm shift (new framework, new model capabilities)
+  Dominant --> Challenged: Paradigm shift detected
 ```
 
-### Phase 1: Crystallization (Birth)
+### Crystallized (Birth)
 
-A new skill is born when:
-- A research agent discovers an effective process for a novel domain
-- A user contributes a skill from their own expertise
-- The meta-DAG's evaluator notices a recurring pattern across successful executions
+A new skill enters existence. It has no execution history and no ranking.
+
+- **Triggers**: A research agent discovers a repeatable process. A user contributes domain expertise. The meta-DAG's evaluator detects a recurring successful pattern across multiple executions that had no pre-built skill.
+- **Mechanism**: An Opus agent with `skill-architect` extracts the process from the execution trace into a SKILL.md following the standard template (When to Use, NOT for, Core Process, Anti-Patterns, Output Contract).
+- **Exit condition**: The skill is syntactically valid and passes `skill-grader` with at least a C overall.
+
+### Unranked (Catalog Entry)
+
+The skill exists in the catalog but has no performance data. It appears in search results but is not recommended by default.
+
+- **Elo**: Initialized at 1500 (baseline).
+- **K-factor**: 32 (high volatility — early executions move the rating quickly).
+- **Visibility**: Available if explicitly requested or if Thompson sampling selects it for exploration (see below).
+- **Exit condition**: 10+ executions produce quality signals.
+
+### Rising (Gaining Confidence)
+
+Quality signals are net positive. The skill's Elo is climbing. It begins appearing in recommendations.
+
+- **Elo**: Trending upward from 1500.
+- **K-factor**: 32 (still volatile — the system is still learning about this skill).
+- **Visibility**: Included in recommendations when Thompson sampling draws a high sample.
+- **Exit condition**: 100+ successful executions and Elo stable within ±20 for 2 weeks.
+
+### Established (Proven)
+
+The skill has enough execution history for its ranking to be statistically meaningful. It is a standard recommendation for its domain.
+
+- **Elo**: Stable, typically 1600-1800.
+- **K-factor**: 16 (moderate — updates are dampened to prevent noise).
+- **Visibility**: Default recommendation for matching tasks.
+- **Monitoring**: Drift detection runs on a rolling 30-day window (see Anomaly Detection below).
+- **Exit condition (up)**: Reaches #1 rank in its domain → Dominant.
+- **Exit condition (down)**: Downstream acceptance drops >10% over 30 days → Declining.
+
+### Dominant (Top-Ranked)
+
+The skill is the best-performing option for its domain. It is the default selection.
+
+- **Elo**: Typically 1800+, highest in its domain.
+- **K-factor**: 8 (low — established skills resist noise).
+- **Visibility**: First recommendation. Used as the baseline for evaluating challengers.
+- **Risk**: Complacency. The skill may become stale if the underlying domain evolves (framework changes, model capability shifts, new anti-patterns emerge).
+- **Exit condition**: A challenger's Elo overtakes it, or anomaly detection flags a paradigm shift.
+
+### Declining (Quality Dropping)
+
+Something changed — the domain evolved, a dependency shifted, or the skill's advice became subtly wrong. Downstream acceptance is falling but no single failure is dramatic.
+
+- **Signals**: Downstream rejection rate increasing. Self-score diverging from peer/downstream scores (sycophancy drift). Contract violations increasing on specific output fields.
+- **Diagnosis**: The system runs `skill-grader` and `diagnose_declining_skill()` to identify which axes are degrading and why.
+- **Actions**: Generate specific improvement recommendations. Flag for human review if urgency is high.
+- **Exit condition (up)**: Improvements applied → Improved state.
+- **Exit condition (lateral)**: A rising skill outperforms it → Challenged state.
+
+### Improved (Updated)
+
+The skill has been diagnosed and updated — either automatically (Sonnet + skill-architect) or by a human maintainer. It re-enters the ranking competition as if newly rising.
+
+- **Elo**: Reset to its pre-decline level (not back to 1500 — it retains historical credit).
+- **K-factor**: 16 (moderate — needs to re-prove itself but isn't starting from scratch).
+- **Changelog**: A new version entry documents what changed and why.
+- **Exit condition**: Elo stabilizes above its domain median → back to Established.
+
+### Challenged (Competitor Emerging)
+
+A newer skill is outperforming this one on the same domain. Both are being served (Thompson sampling allocates traffic between them) while the system gathers comparative data.
+
+- **Mechanism**: Thompson sampling naturally handles this — it routes some traffic to the challenger even while the incumbent has higher expected value, because the challenger's uncertainty (wider posterior) means it occasionally draws higher samples.
+- **Duration**: Typically 50-200 executions of comparative data.
+- **Exit condition**: Challenger's Elo exceeds incumbent's for 2 consecutive weeks → Superseded.
+
+### Superseded (Replaced)
+
+The challenger has won. The old skill is no longer the default recommendation.
+
+- **Visibility**: Demoted from recommendations. Still available if explicitly requested.
+- **Temporal marker**: The skill's SKILL.md receives a deprecation notice: "As of [date], use [new-skill] instead. This skill covers the pre-[paradigm] approach."
+- **Retention period**: 90 days in the catalog for backward compatibility.
+- **Exit condition**: 90 days with <5 executions → Retired.
+
+### Retired (Removed)
+
+The skill is archived. It no longer appears in the catalog or search results.
+
+- **Archived**: Stored with full execution history for analysis.
+- **Recoverable**: Can be un-retired if the paradigm shifts back (rare but possible — e.g., a framework reverts a breaking change).
+
+---
+
+## Thompson Sampling for Skill Exploration
+
+Pure Elo-based ranking has an **exploitation problem**: the top-ranked skill always gets selected, so new or improved skills never get enough traffic to prove themselves. Thompson sampling solves this.
+
+### The Intuition
+
+Instead of always picking the skill with the highest Elo (exploitation), model each skill's true quality as a **probability distribution** (Beta distribution parameterized by successes and failures). On each execution, sample from each skill's distribution and pick the one with the highest sample. Skills with high expected quality get picked most often (exploitation), but skills with high uncertainty occasionally draw lucky samples (exploration).
 
 ```python
-async def crystallize_skill_from_execution(
-    successful_dag: dict,
-    node_id: str,
-    execution_trace: dict,
-) -> str:
-    """Extract a new skill from a successful DAG execution."""
+import numpy as np
+
+class ThompsonSkillSelector:
+    """Select skills using Thompson sampling for explore/exploit balance."""
     
-    node = find_node(successful_dag, node_id)
-    trace = execution_trace[node_id]
+    def __init__(self):
+        # Beta distribution parameters per (skill, domain)
+        # alpha = successes + 1, beta = failures + 1 (prior: Beta(1,1) = uniform)
+        self.params: dict[tuple[str, str], tuple[float, float]] = {}
     
-    # Use Opus to extract the process that worked
-    skill_draft = await execute_with_model(
+    def select(self, candidates: list[str], domain: str) -> str:
+        """Sample from each candidate's posterior, pick the highest draw."""
+        samples = {}
+        for skill in candidates:
+            alpha, beta = self.params.get((skill, domain), (1.0, 1.0))
+            samples[skill] = np.random.beta(alpha, beta)
+        return max(samples, key=samples.get)
+    
+    def update(self, skill: str, domain: str, quality_score: float):
+        """Update posterior after observing an execution outcome."""
+        alpha, beta = self.params.get((skill, domain), (1.0, 1.0))
+        # Treat quality_score as a continuous reward in [0, 1]
+        alpha += quality_score
+        beta += (1.0 - quality_score)
+        self.params[(skill, domain)] = (alpha, beta)
+```
+
+### Why This Matters for the Lifecycle
+
+- **New skills** (Unranked/Rising) have wide posteriors (high uncertainty). Thompson sampling will occasionally route traffic to them, giving them a chance to prove themselves without requiring explicit A/B tests.
+- **Established skills** have tight posteriors (low uncertainty). They get selected most of the time, but not 100% — leaving room for challengers.
+- **Challenged skills** compete head-to-head naturally. Thompson sampling allocates traffic proportionally to each skill's probability of being the best, converging toward the true winner as data accumulates.
+- **Skill variants** (e.g., v1 vs. v2 of the same skill, or two competing approaches to the same task) are explored automatically. No manual A/B test configuration needed.
+
+### Warring Heuristics
+
+Thompson sampling also enables **competitive evaluation of alternative approaches** to the same problem:
+
+```
+Task: "Review this TypeScript PR"
+
+Candidate skills, each a different heuristic:
+  - code-review-skill (structured rubric approach)
+  - pair-programming-reviewer (conversational approach)
+  - security-first-reviewer (security-centric approach)
+
+Thompson sampling routes traffic across all three.
+After 200 executions: code-review-skill Elo 1820, security-first 1740, pair-programming 1650.
+Routing converges to ~70% / 20% / 10%.
+```
+
+The system doesn't need to know in advance which approach is best. It discovers it through competitive execution.
+
+---
+
+## Anomaly Detection for Kuhnian Revolution
+
+Paradigm shifts in skills follow Thomas Kuhn's model of scientific revolutions. The detection system borrows from ML drift monitoring (Evidently AI, WhyLabs, Arize patterns).
+
+### The Kuhn Cycle Applied to Skills
+
+**Normal operation**: The skill works within a stable paradigm. Rankings are stable. Downstream acceptance is high. No anomalies.
+
+**Anomaly accumulation**: The world changes (new framework version, new model capabilities, new anti-patterns emerge). The skill's advice is subtly wrong more often. Downstream rejection rate creeps upward. But no single failure is dramatic enough to trigger replacement.
+
+**Crisis**: Anomalies cross a statistical threshold. The skill's effectiveness has degraded significantly compared to its 6-month baseline. The system flags it for review.
+
+**Revolution**: A new skill is crystallized (from research, from a user, from successful improvisation) that addresses the new paradigm. Thompson sampling routes traffic to it. If it outperforms the incumbent over ~100 executions, it supersedes it.
+
+**New paradigm**: The new skill becomes dominant. The old skill is deprecated with a temporal marker.
+
+```mermaid
+timeline
+  title Kuhnian Skill Revolution: React State Management
+  2020 : redux-expert dominant (Elo 1850)
+       : Normal operation — Redux for everything
+  2021 : Anomalies: Zustand, Jotai appear
+       : redux-expert Elo drifts to 1780
+  2022 : Crisis: React Server Components ship
+       : Downstream rejection hits 25%
+  2023 : Revolution: modern-state-management crystallized
+       : Thompson sampling routes traffic to challenger
+  2024 : New paradigm: modern-state-management Elo 1860
+       : redux-expert retired with temporal marker
+```
+
+### Statistical Drift Detection
+
+Borrow from ML production monitoring. Use the same algorithms that Evidently AI, WhyLabs, and Arize use for concept drift, applied to skill execution metrics:
+
+- **Baseline**: The skill's 6-month rolling average on each quality axis.
+- **Current window**: The most recent 30 days of executions.
+- **Detection method**: Population Stability Index (PSI) on the distribution of downstream acceptance scores. PSI < 0.10 = stable. PSI 0.10-0.25 = moderate drift, flag for monitoring. PSI ≥ 0.25 = significant drift, flag as crisis.
+- **Complementary signal**: Hellinger distance on the distribution of quality scores across evaluators. More robust than PSI for small sample sizes.
+
+```python
+def detect_paradigm_shift(domain: str) -> list[dict]:
+    """Detect skills undergoing Kuhnian crisis using drift detection."""
+    skills = get_skills_for_domain(domain)
+    crises = []
+    
+    for skill in skills:
+        baseline = get_quality_distribution(skill, days=180)
+        current = get_quality_distribution(skill, days=30)
+        
+        # PSI: Population Stability Index
+        psi = compute_psi(baseline, current)
+        
+        # Hellinger distance for robustness
+        hellinger = compute_hellinger(baseline, current)
+        
+        # Two-tier alerting
+        if psi >= 0.25 or hellinger >= 0.3:
+            severity = "crisis"
+        elif psi >= 0.10 or hellinger >= 0.15:
+            severity = "warning"
+        else:
+            continue
+        
+        challengers = find_rising_skills(domain, min_elo_delta=50, days=30)
+        
+        crises.append({
+            "skill": skill.name,
+            "domain": domain,
+            "severity": severity,
+            "psi": psi,
+            "hellinger": hellinger,
+            "challengers": [c.name for c in challengers],
+            "recommendation": (
+                "SUPERSEDE" if challengers and severity == "crisis" else
+                "IMPROVE" if severity == "warning" else
+                "RETIRE"
+            ),
+        })
+    
+    return crises
+```
+
+### Crystallization from Successful Improvisation
+
+When a DAG node succeeds without a pre-built skill, and that pattern repeats 3+ times, the system extracts a new skill:
+
+```python
+async def crystallize_skill(node_id: str, traces: list[dict]) -> str:
+    """Extract a new skill from repeated successful improvisation."""
+    return await execute_with_model(
         model='claude-opus-4',
         system=load_skill('skill-architect'),
         prompt=f"""
-        This DAG node succeeded without a pre-built skill. Extract the process
-        it used into a reusable skill.
+        These {len(traces)} DAG executions succeeded on similar tasks without
+        a pre-built skill. Extract the common process into a reusable skill.
         
-        Node role: {node['agent']['role']}
-        Task: {trace['task']}
-        Approach taken: {trace['reasoning']}
-        Output produced: {trace['output']}
-        Downstream acceptance: {trace['downstream_accepted']}
+        Execution traces:
+        {json.dumps(traces, indent=2)}
         
         Create a SKILL.md following the skill-architect template.
         Include: When to Use, NOT for, Core Process (numbered steps),
         Anti-Patterns (at least 1), Output Contract.
         """,
     )
-    
-    return skill_draft
-```
-
-### Phase 2: Ranking (Growth)
-
-New skills start unranked. Every execution generates quality signals. After ~50 executions, the ranking stabilizes. After ~200, the skill is "established" — its Elo reflects real-world performance.
-
-### Phase 3: Improvement (Maintenance)
-
-When a skill's ranking starts declining:
-
-1. **Automated diagnosis**: Which axis is declining? Effectiveness? Reliability? Freshness?
-2. **Improvement suggestions**: The skill-grader runs a full audit and produces specific recommendations
-3. **Automated or human improvement**: Either a Sonnet agent with skill-architect applies the fixes, or a human skill maintainer does
-
-```python
-async def diagnose_declining_skill(skill_name: str, domain: str) -> dict:
-    """Identify why a skill's ranking is declining."""
-    recent_executions = get_recent_executions(skill_name, domain, limit=50)
-    
-    failure_patterns = analyze_failures(recent_executions)
-    # e.g., "downstream_rejection_rate increased from 5% to 22% in last 30 days"
-    # e.g., "contract_violation on 'recommendations' field in 15% of executions"
-    # e.g., "self_score high but downstream_score low = sycophancy drift"
-    
-    return {
-        "skill": skill_name,
-        "domain": domain,
-        "declining_axes": failure_patterns,
-        "suggested_improvements": generate_improvements(failure_patterns),
-        "urgency": "high" if failure_patterns["effectiveness_drop"] > 0.15 else "medium",
-    }
-```
-
-### Phase 4: Kuhnian Revolution (Paradigm Shift)
-
-This is the genuinely novel idea. Thomas Kuhn's model of scientific revolutions applies to skills:
-
-**Normal science** = Skills operate within a stable paradigm (e.g., "React uses class components for state management"). The skill works, rankings are stable, everyone uses it.
-
-**Anomalies accumulate** = The world changes (React 16.8 introduces Hooks). The existing skill starts producing advice that downstream nodes reject more often. Ranking declines. But no single failure is dramatic enough to trigger replacement.
-
-**Crisis** = The anomaly rate crosses a threshold. The skill's Elo drops below a "crisis threshold." The system flags it for review.
-
-**Revolution** = A new skill is crystallized (from research, from a user, from successful improvisation) that addresses the new paradigm. It enters the ranking. If it outperforms the incumbent over ~100 executions, it supersedes it.
-
-**New normal science** = The new skill becomes dominant. The old skill is deprecated with a temporal marker ("Pre-React 16.8: this skill. Post-React 16.8: use hooks-expert instead.").
-
-```mermaid
-timeline
-  title Kuhnian Skill Revolution: React State Management
-  2020 : redux-expert dominant (Elo 1850)
-       : "Normal science" - Redux for everything
-  2021 : Anomalies: Zustand/Jotai appear
-       : redux-expert Elo drops to 1780
-  2022 : Crisis: React Server Components
-       : redux-expert downstream rejection 25%
-  2023 : Revolution: modern-state-management crystallized
-       : Covers Zustand, React Query, RSC patterns
-  2024 : New normal: modern-state-management Elo 1860
-       : redux-expert retired (Elo 1520, declining)
-```
-
-### Automated Revolution Detection
-
-```python
-def detect_paradigm_shift(domain: str) -> list[dict]:
-    """Detect skills undergoing Kuhnian crisis."""
-    skills = get_skills_for_domain(domain)
-    crises = []
-    
-    for skill in skills:
-        # Get rolling 30-day metrics
-        recent = get_metrics(skill, days=30)
-        historical = get_metrics(skill, days=180)
-        
-        # Anomaly detection: is effectiveness dropping significantly?
-        effectiveness_delta = recent.effectiveness - historical.effectiveness
-        rejection_rate_delta = recent.downstream_rejection - historical.downstream_rejection
-        
-        if effectiveness_delta < -0.15 or rejection_rate_delta > 0.10:
-            # Check if a challenger exists
-            challengers = find_rising_skills(domain, min_elo_delta=50, days=30)
-            
-            crises.append({
-                "skill": skill.name,
-                "domain": domain,
-                "crisis_severity": abs(effectiveness_delta),
-                "rejection_rate_increase": rejection_rate_delta,
-                "challengers": [c.name for c in challengers],
-                "recommendation": (
-                    "SUPERSEDE" if challengers else
-                    "IMPROVE" if effectiveness_delta > -0.25 else
-                    "RETIRE"
-                ),
-            })
-    
-    return crises
 ```
 
 ---
