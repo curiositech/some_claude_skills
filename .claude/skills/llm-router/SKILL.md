@@ -74,11 +74,11 @@ Assign model by task type at DAG design time. No runtime logic. Gets 60-70% of p
 ```yaml
 nodes:
   - id: classify
-    model: claude-haiku-3.5     # Tier 1: $0.001
+    model: claude-haiku-4.5     # Tier 1: $0.001
   - id: implement
-    model: claude-sonnet-4      # Tier 2: $0.01  
+    model: claude-sonnet-4.5    # Tier 2: $0.01  
   - id: evaluate
-    model: claude-opus-4        # Tier 3: $0.10
+    model: claude-opus-4.6      # Tier 3: $0.10
 ```
 
 ### Strategy 2: Cascading (Try Cheap First)

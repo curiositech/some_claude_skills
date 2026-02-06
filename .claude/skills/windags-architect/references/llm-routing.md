@@ -37,8 +37,8 @@ from routellm.controller import Controller
 
 client = Controller(
     routers=["mf"],  # matrix factorization router
-    strong_model="claude-sonnet-4",
-    weak_model="claude-haiku-3.5",
+    strong_model="claude-sonnet-4.5",
+    weak_model="claude-haiku-4.5",
 )
 
 async def route_and_execute(node: dict, prompt: str) -> dict:

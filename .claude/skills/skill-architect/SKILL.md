@@ -311,20 +311,23 @@ Expert knowledge that separates novices from experts. Things LLMs get wrong due 
 
 ---
 
-## Self-Contained Tool Decision Matrix
+## Self-Contained Tools and the Extension Taxonomy
 
-| Need | Tool Type | Key Requirement |
-|------|-----------|-----------------|
-| External API + auth | MCP Server | Working server + setup README |
-| Multi-step orchestration | Subagent | Defined prompt, tools, workflow |
-| Repeatable operation | Script | Actually runs (not a template) |
-| Domain validation | Script | CLI args, error handling, minimal deps |
-| Templates/boilerplate | Assets | Ready to use, no placeholders |
-| Deep reference docs | References | Separate files, loaded on demand |
+Skills are one of six Claude extension types: **Skills** (domain knowledge), **MCP Servers** (external APIs + auth), **Scripts** (local operations), **Slash Commands** (user-triggered skills), **Hooks** (lifecycle automation), and **SDK Tools** (API integration). Most skills should include scripts. MCPs are only for auth/state boundaries.
 
-**Evolution path**: Script → Multiple Scripts → Helper Library → MCP Server. Only promote when complexity justifies it.
+| Need | Extension Type | Key Requirement |
+|------|---------------|-----------------|
+| Domain expertise / process | **Skill** (SKILL.md) | Decision trees, anti-patterns, output contracts |
+| External API + auth | **MCP Server** | Working server + setup README |
+| Repeatable local operation | **Script** | Actually runs (not a template), minimal deps |
+| Multi-step orchestration | **Subagent** | 4-section prompt, skills, workflow |
+| User-triggered action | **Slash Command** | Skill with `user-invocable: true` |
+| Deep reference docs | **References** | Separate files, loaded on demand |
 
-**Detailed patterns**: See `references/self-contained-tools.md`
+**Evolution path**: Skill → Skill + Scripts → Skill + MCP Server → Skill + Subagent. Only promote when complexity justifies it.
+
+**Full taxonomy with examples and common mistakes**: See `references/claude-extension-taxonomy.md`
+**Detailed tool patterns**: See `references/self-contained-tools.md`
 
 ---
 
@@ -401,6 +404,7 @@ Consult these for deep dives — they are NOT loaded by default:
 | `references/antipatterns.md` | Looking for shibboleths, case studies, or temporal patterns |
 | `references/self-contained-tools.md` | Adding scripts, MCP servers, or subagents to a skill |
 | `references/subagent-design.md` | Designing skills for subagent consumption or orchestration |
+| `references/claude-extension-taxonomy.md` | Skills vs MCPs vs scripts vs slash commands vs hooks vs SDK tools |
 | `references/visual-artifacts.md` | Adding Mermaid diagrams: type catalog, YAML config, best practices |
 | `references/mcp-template.md` | Building an MCP server for a skill |
 | `references/subagent-template.md` | Defining subagent prompts and multi-agent pipelines |

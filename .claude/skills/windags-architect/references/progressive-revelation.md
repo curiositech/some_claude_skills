@@ -96,7 +96,7 @@ async def expand_vague_node(
     
     # The DAG Expander agent decomposes the vague node
     expansion = await execute_with_model(
-        model='claude-sonnet-4',
+        model='claude-sonnet-4.5',
         system=build_expander_prompt(meta_skill, context),
         prompt=f"""
         This vague node must now be expanded into concrete sub-tasks.
