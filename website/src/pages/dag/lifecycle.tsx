@@ -12,7 +12,7 @@ import React, { useState, useCallback, useEffect, useRef } from 'react';
 import Layout from '@theme/Layout';
 import { DAGVisualizer } from '../../components/DAG/DAGVisualizer';
 import type { DAG, DAGNode, NodeId, TaskState } from '../../dag/types';
-import { DEFAULT_TASK_CONFIG, NodeId as NodeIdFn } from '../../dag/types';
+import { DEFAULT_TASK_CONFIG, DEFAULT_DAG_CONFIG, NodeId as NodeIdFn } from '../../dag/types';
 
 // ============================================================================
 // LIFECYCLE PHASES
@@ -93,12 +93,19 @@ function makePortfolioDAG(): DAG {
         'vercel-deployment', [NodeIdFn('review')], 'haiku'
       )],
     ]),
-    config: {
-      maxConcurrency: 3,
-      defaultTimeout: 300000,
-      maxRetries: 2,
-      enableParallelWaves: true,
-    },
+    edges: new Map([
+      [NodeIdFn('interview'), [NodeIdFn('research'), NodeIdFn('content')]],
+      [NodeIdFn('research'), [NodeIdFn('design')]],
+      [NodeIdFn('content'), [NodeIdFn('design')]],
+      [NodeIdFn('design'), [NodeIdFn('build')]],
+      [NodeIdFn('build'), [NodeIdFn('review')]],
+      [NodeIdFn('review'), [NodeIdFn('deploy')]],
+    ]),
+    config: DEFAULT_DAG_CONFIG,
+    inputs: [],
+    outputs: [{ name: 'portfolio', description: 'Deployed portfolio website', sourceNodeId: NodeIdFn('deploy') }],
+    createdAt: new Date(),
+    updatedAt: new Date(),
   };
 }
 

@@ -93,7 +93,7 @@ async function generateSkillZips() {
 
   // Get all skill directories
   const skillDirs = await fs.readdir(SKILLS_DIR, { withFileTypes: true });
-  const skills = skillDirs.filter(dirent => dirent.isDirectory());
+  const skills = skillDirs.filter(dirent => dirent.isDirectory() && !dirent.name.startsWith('.'));
 
   // First pass: validate all skills
   console.log('🔍 Validating skills...\n');
