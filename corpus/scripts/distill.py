@@ -22,9 +22,17 @@ import os
 import json
 import asyncio
 import argparse
+import traceback
 from pathlib import Path
 from dataclasses import dataclass, asdict
 from typing import Optional
+
+# ============================================================================
+# Model Configuration — change these if your SDK version uses different IDs
+# ============================================================================
+HAIKU_MODEL = os.environ.get("DISTILL_HAIKU_MODEL", "claude-3-5-haiku-20241022")
+SONNET_MODEL = os.environ.get("DISTILL_SONNET_MODEL", "claude-sonnet-4-20250514")
+OPUS_MODEL = os.environ.get("DISTILL_OPUS_MODEL", "claude-sonnet-4-20250514")  # Default to Sonnet for cost
 
 # ============================================================================
 # Text Extraction
@@ -279,7 +287,7 @@ async def extract_chunk(client, chunk: dict, semaphore: asyncio.Semaphore) -> di
     async with semaphore:
         try:
             response = await client.messages.create(
-                model="claude-haiku-4-20250514",
+                model=HAIKU_MODEL,
                 max_tokens=2000,
                 messages=[{
                     "role": "user",
@@ -307,9 +315,10 @@ async def extract_chunk(client, chunk: dict, semaphore: asyncio.Semaphore) -> di
                 "output_tokens": response.usage.output_tokens,
             }
         except Exception as e:
+            print(f"      ⚠ Chunk {chunk['id']} failed: {e}", file=sys.stderr)
             return {
                 "chunk_id": chunk["id"],
-                "extraction": {"error": str(e)},
+                "extraction": {"error": str(e), "traceback": traceback.format_exc()},
                 "input_tokens": 0,
                 "output_tokens": 0,
             }
@@ -382,12 +391,12 @@ async def pass2_synthesize(client, extractions: list[dict]) -> dict:
         extraction_text = extraction_text[:150000] + "\n... (truncated)"
     
     response = await client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model=SONNET_MODEL,
         max_tokens=8000,
         messages=[{
             "role": "user",
             "content": SYNTHESIS_PROMPT + extraction_text
-        }]
+        }],
     )
     
     text = response.content[0].text.strip()
@@ -447,7 +456,7 @@ KNOWLEDGE MAP:
 async def pass3_skill_draft(client, knowledge_map: dict) -> str:
     """Pass 3: Opus creates a SKILL.md from the knowledge map."""
     response = await client.messages.create(
-        model="claude-sonnet-4-20250514",  # Using Sonnet for cost; upgrade to Opus for quality
+        model=OPUS_MODEL,  # Default: Sonnet for cost; set DISTILL_OPUS_MODEL for Opus
         max_tokens=8000,
         messages=[{
             "role": "user",
@@ -480,6 +489,7 @@ async def distill_file(
     print(f"\n{'='*60}")
     print(f"Distilling: {filepath}")
     print(f"Output mode: {output_mode}")
+    print(f"Models: Haiku={HAIKU_MODEL}, Sonnet={SONNET_MODEL}")
     print(f"{'='*60}")
     
     # Extract text
@@ -576,11 +586,33 @@ async def main():
             if f.suffix.lower() in SUPPORTED
         ])
         print(f"Found {len(files)} files to process")
+        print(f"Models: Haiku={HAIKU_MODEL}, Sonnet={SONNET_MODEL}, Opus={OPUS_MODEL}")
+        print(f"Override with env vars: DISTILL_HAIKU_MODEL, DISTILL_SONNET_MODEL, DISTILL_OPUS_MODEL\n")
+        
+        succeeded = []
+        failed = []
         for filepath in files:
             try:
-                await distill_file(filepath, args.output_dir, args.output_mode, args.max_concurrent)
+                result = await distill_file(filepath, args.output_dir, args.output_mode, args.max_concurrent)
+                succeeded.append((filepath, result.get("total_cost", 0) if isinstance(result, dict) else 0))
             except Exception as e:
                 print(f"\n❌ Error processing {filepath}: {e}")
+                traceback.print_exc()
+                failed.append((filepath, str(e)))
+        
+        # Summary
+        print(f"\n{'='*60}")
+        print(f"DISTILLATION SUMMARY")
+        print(f"{'='*60}")
+        print(f"  Succeeded: {len(succeeded)}")
+        for fp, cost in succeeded:
+            print(f"    ✓ {Path(fp).name} (${cost:.4f})")
+        if failed:
+            print(f"  Failed: {len(failed)}")
+            for fp, err in failed:
+                print(f"    ✗ {Path(fp).name}: {err[:80]}")
+        total_cost = sum(c for _, c in succeeded)
+        print(f"  Total cost: ${total_cost:.4f}")
     elif input_path.is_file():
         await distill_file(str(input_path), args.output_dir, args.output_mode, args.max_concurrent)
     else:
