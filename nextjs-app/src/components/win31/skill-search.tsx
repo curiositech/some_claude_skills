@@ -1,8 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Search, Globe, Sparkles, ArrowRight, Star } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Search, Sparkles, ArrowRight, Star } from 'lucide-react';
 import { type Skill, skills } from '@/lib/skills';
 import { Button } from '@/components/ui/button';
 
@@ -122,11 +121,14 @@ export function SkillSearch({ onSelectSkill }: SkillSearchProps) {
           {/* Search Portal Header */}
           <div className="mb-8 text-center">
             {/* Dageeves Logo */}
-            <div className="mb-4 inline-flex items-center gap-3">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-indigo-700 text-3xl shadow-lg">
-                🎩
-              </div>
-              <div>
+            <div className="mb-4 inline-flex items-center gap-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="/img/ask-dageeves.webp" 
+                alt="Ask Dageeves butler mascot"
+                className="h-24 w-24 object-contain drop-shadow-lg"
+              />
+              <div className="text-left">
                 <h1 className="font-serif text-4xl font-bold tracking-tight">
                   <span className="text-purple-700">Ask</span>{' '}
                   <span className="text-indigo-600">Dageeves</span>
@@ -197,33 +199,64 @@ export function SkillSearch({ onSelectSkill }: SkillSearchProps) {
           {/* Marquee of Skills */}
           <SkillMarquee skills={skills} onSelectSkill={onSelectSkill} />
 
-          {/* Advertisement Banners */}
+          {/* Advertisement Banners - Using actual images */}
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            <AdBanner
-              title="🛠️ Build Your Own Skill"
-              subtitle="It's easier than you think!"
-              color="from-emerald-500 to-teal-600"
+            {/* Learn to Build Skills */}
+            <button
               onClick={() => window.open('https://github.com/erichowens/some_claude_skills', '_blank')}
-            />
-            <AdBanner
-              title="📚 Skills Tutorial"
-              subtitle="Learn the basics in 5 min"
-              color="from-amber-500 to-orange-600"
+              className="group relative overflow-hidden rounded-sm border-4 border-win31-black bg-win31-gray shadow-[4px_4px_0_var(--color-win31-black)] transition-transform hover:scale-105"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="/img/learn_to_build_skills.webp" 
+                alt="Learn to Build Skills"
+                className="h-24 w-full object-cover"
+              />
+              <div className="bg-win31-yellow px-2 py-1 text-center text-xs font-bold text-win31-black">
+                CLICK HERE!
+              </div>
+            </button>
+
+            {/* winDAGs.AI Banner */}
+            <button
               onClick={() => {}}
-            />
-            <AdBanner
-              title="🔮 winDAGs.AI"
-              subtitle="Coming Soon: AI Workflows"
-              color="from-purple-500 to-pink-600"
+              className="group relative overflow-hidden rounded-sm border-4 border-win31-black bg-win31-gray shadow-[4px_4px_0_var(--color-win31-black)] transition-transform hover:scale-105"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="/img/windags-banner.webp" 
+                alt="winDAGs.AI - The Future of AI Workflows"
+                className="h-24 w-full object-cover"
+              />
+              <div className="absolute -right-6 top-2 rotate-45 bg-win31-lime px-8 py-0.5 text-xs font-bold text-win31-black shadow">
+                NEW
+              </div>
+            </button>
+
+            {/* Smaller winDAGs Logo */}
+            <button
               onClick={() => {}}
-              badge="NEW"
-            />
+              className="group relative flex items-center justify-center overflow-hidden rounded-sm border-4 border-win31-black bg-gradient-to-br from-purple-900 to-indigo-900 shadow-[4px_4px_0_var(--color-win31-black)] transition-transform hover:scale-105"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="/img/smaller-windags-logo.webp" 
+                alt="winDAGs.AI"
+                className="h-24 w-full object-contain p-2"
+              />
+            </button>
           </div>
 
           {/* Cool Site Awards Footer */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4 border-t-2 border-dashed border-win31-gray-darker pt-6">
-            <CoolSiteBadge text="Cool Skill Site 2026" />
-            <CoolSiteBadge text="Best of Claude" />
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 border-t-2 border-dashed border-win31-gray-darker pt-6">
+            {/* Main Cool Skill Badge - actual image */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/img/cool-skill-of-the-day-transparent-bg.webp" 
+              alt="Cool Skill of the Day"
+              className="h-20 w-auto drop-shadow-lg"
+            />
+            <CoolSiteBadge text="Best of Claude 2026" />
             <CoolSiteBadge text="Top 100 AI Tools" />
           </div>
         </div>
@@ -241,7 +274,12 @@ function BrowserChrome() {
       {/* Title Bar */}
       <div className="flex items-center justify-between bg-gradient-to-r from-win31-navy to-win31-blue px-3 py-1">
         <div className="flex items-center gap-2">
-          <Globe className="h-4 w-4 text-win31-lime" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src="/img/webscape-logo-transparent-bg.webp" 
+            alt="Webscape Navigator"
+            className="h-5 w-5 object-contain"
+          />
           <span className="font-mono text-sm font-bold text-white">
             Webscape Navigator 3.1
           </span>
@@ -368,37 +406,6 @@ function SkillMarquee({ skills, onSelectSkill }: { skills: Skill[]; onSelectSkil
         ))}
       </div>
     </div>
-  );
-}
-
-/*
- * Advertisement Banner
- */
-interface AdBannerProps {
-  title: string;
-  subtitle: string;
-  color: string;
-  onClick: () => void;
-  badge?: string;
-}
-
-function AdBanner({ title, subtitle, color, onClick, badge }: AdBannerProps) {
-  return (
-    <button
-      onClick={onClick}
-      className={cn(
-        'relative overflow-hidden rounded-sm border-2 border-win31-black p-4 text-left text-white transition-transform hover:scale-105',
-        `bg-gradient-to-br ${color}`
-      )}
-    >
-      {badge && (
-        <span className="absolute -right-6 top-2 rotate-45 bg-win31-lime px-8 py-0.5 text-xs font-bold text-win31-black">
-          {badge}
-        </span>
-      )}
-      <p className="font-bold">{title}</p>
-      <p className="text-sm opacity-90">{subtitle}</p>
-    </button>
   );
 }
 
