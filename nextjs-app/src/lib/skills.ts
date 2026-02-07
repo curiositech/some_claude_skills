@@ -1,7 +1,7 @@
 /*
  * ═══════════════════════════════════════════════════════════════════════════
  * SKILL DATA - AUTO-GENERATED FROM DOCUSAURUS
- * Generated: 2026-02-07T01:34:48.391Z
+ * Generated: 2026-02-07T01:37:44.637Z
  * Total Skills: 165
  * 
  * DO NOT EDIT - Run 'npm run import:skills' to regenerate
