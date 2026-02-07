@@ -229,3 +229,283 @@
 @utility no-bounce {
   overscroll-behavior: none;
 }
+
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
+ * MARQUEE ANIMATION - Classic 90s Scrolling Banner
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
+ * TYPORA-INSPIRED PROSE STYLES - Beautiful Markdown Rendering
+ * Clean, elegant, reader-focused typography
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+.prose-typora {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: #1a1a1a;
+  max-width: 42rem;
+}
+
+.prose-typora h1,
+.prose-typora h2,
+.prose-typora h3,
+.prose-typora h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  line-height: 1.3;
+}
+
+.prose-typora h1 { font-size: 2rem; }
+.prose-typora h2 { font-size: 1.5rem; border-bottom: 1px solid #e5e5e5; padding-bottom: 0.3em; }
+.prose-typora h3 { font-size: 1.25rem; }
+.prose-typora h4 { font-size: 1rem; }
+
+.prose-typora p {
+  margin-bottom: 1em;
+}
+
+.prose-typora a {
+  color: var(--color-win31-navy);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: all 0.15s ease;
+}
+
+.prose-typora a:hover {
+  color: var(--color-win31-blue);
+  border-bottom-width: 2px;
+}
+
+/* Inline code - subtle, not shouty */
+.prose-typora code:not([class*="language-"]) {
+  font-family: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+  font-size: 0.9em;
+  background: #f4f4f4;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  color: #d14;
+}
+
+/* Code blocks - clean with subtle border */
+.prose-typora pre {
+  font-family: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+/* Blockquotes - elegant left border */
+.prose-typora blockquote {
+  border-left: 4px solid var(--color-win31-navy);
+  margin: 1.5em 0;
+  padding: 0.5em 0 0.5em 1em;
+  color: #555;
+  font-style: italic;
+}
+
+.prose-typora blockquote p {
+  margin-bottom: 0;
+}
+
+/* Lists - proper spacing */
+.prose-typora ul,
+.prose-typora ol {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+.prose-typora li {
+  margin: 0.3em 0;
+}
+
+.prose-typora li > ul,
+.prose-typora li > ol {
+  margin: 0.3em 0;
+}
+
+/* Tables - clean and minimal */
+.prose-typora table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.9em;
+}
+
+.prose-typora th,
+.prose-typora td {
+  border: 1px solid #e5e5e5;
+  padding: 0.6em 1em;
+  text-align: left;
+}
+
+.prose-typora th {
+  background: #fafafa;
+  font-weight: 600;
+}
+
+.prose-typora tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Horizontal rule */
+.prose-typora hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 2em 0;
+}
+
+/* Images */
+.prose-typora img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin: 1.5em 0;
+}
+
+/* Definition lists */
+.prose-typora dt {
+  font-weight: 600;
+  margin-top: 1em;
+}
+
+.prose-typora dd {
+  margin-left: 1.5em;
+  color: #555;
+}
+
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
+ * SKILL/REFERENCE LINKS - Interactive Mentions
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+.skill-link,
+.reference-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  padding: 0.1em 0.5em;
+  margin: 0 0.1em;
+  border-radius: 4px;
+  font-family: var(--font-system);
+  font-size: 0.9em;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.skill-link {
+  background: linear-gradient(135deg, #e8f0ff 0%, #f0e8ff 100%);
+  color: var(--color-win31-navy);
+  border: 1px solid #c0d0ff;
+}
+
+.skill-link:hover {
+  background: linear-gradient(135deg, #d0e0ff 0%, #e0d0ff 100%);
+  border-color: var(--color-win31-navy);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 128, 0.15);
+}
+
+.skill-link::before {
+  content: '⚡';
+  font-size: 0.85em;
+}
+
+.reference-link {
+  background: linear-gradient(135deg, #e8fff0 0%, #e8f8ff 100%);
+  color: var(--color-win31-teal);
+  border: 1px solid #a0e0c0;
+}
+
+.reference-link:hover {
+  background: linear-gradient(135deg, #d0ffe0 0%, #d0f0ff 100%);
+  border-color: var(--color-win31-teal);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 128, 128, 0.15);
+}
+
+.reference-link::before {
+  content: '📄';
+  font-size: 0.85em;
+}
+
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
+ * CALLOUT BOXES - Enhanced Visual Styling
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+.callout {
+  margin: 1.5em 0;
+  padding: 1em 1.25em;
+  border-radius: 4px;
+  border-left: 4px solid;
+}
+
+.callout-do {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border-color: #10b981;
+}
+
+.callout-dont {
+  background: linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%);
+  border-color: #ef4444;
+}
+
+.callout-tip {
+  background: linear-gradient(135deg, #eff6ff 0%, #eef2ff 100%);
+  border-color: #3b82f6;
+}
+
+.callout-warning {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border-color: #f59e0b;
+}
+
+.callout-note {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-color: #64748b;
+}
+
+.callout-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 600;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5em;
+}
+
+.callout-content {
+  font-size: 0.95em;
+  line-height: 1.6;
+}

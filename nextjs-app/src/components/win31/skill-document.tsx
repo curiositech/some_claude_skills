@@ -43,12 +43,25 @@ interface SkillDocumentProps {
 
 export function SkillDocument({ skill, onClose, onNavigate }: SkillDocumentProps) {
   const [copied, setCopied] = React.useState(false);
+  const [activeReference, setActiveReference] = React.useState<string | null>(null);
   const category = categoryMeta[skill.category];
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(skill.installCommand);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  // Handle skill link clicks
+  const handleSkillClick = (skillId: string) => {
+    if (onNavigate) {
+      onNavigate(skillId);
+    }
+  };
+
+  // Handle reference link clicks
+  const handleReferenceClick = (refPath: string) => {
+    setActiveReference(refPath);
   };
 
   // Parse content into sections for progressive disclosure
@@ -266,6 +279,8 @@ export function SkillDocument({ skill, onClose, onNavigate }: SkillDocumentProps
                   key={index}
                   section={section}
                   defaultOpen={index < 2} // First two sections open by default
+                  onSkillClick={handleSkillClick}
+                  onReferenceClick={handleReferenceClick}
                 />
               ))}
             </div>
@@ -289,7 +304,91 @@ export function SkillDocument({ skill, onClose, onNavigate }: SkillDocumentProps
           </div>
         </div>
       </div>
+
+      {/* Reference Viewer Modal */}
+      {activeReference && (
+        <ReferenceViewer
+          skill={skill}
+          referencePath={activeReference}
+          onClose={() => setActiveReference(null)}
+        />
+      )}
     </Window>
+  );
+}
+
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
+ * REFERENCE VIEWER MODAL
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+interface ReferenceViewerProps {
+  skill: Skill;
+  referencePath: string;
+  onClose: () => void;
+}
+
+function ReferenceViewer({ skill, referencePath, onClose }: ReferenceViewerProps) {
+  // Try to find the reference in the skill's references
+  const reference = skill.references?.find(ref => 
+    ref.title.toLowerCase().includes(referencePath.toLowerCase()) ||
+    ref.url.includes(referencePath)
+  );
+
+  // Get the reference content (in a real implementation, this would fetch the actual file)
+  const referenceContent = reference?.description || 
+    `Reference file: ${referencePath}\n\nThis is a reference file included with the ${skill.title} skill. In a full implementation, this would display the actual file contents from the skill's references folder.`;
+
+  return (
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+      onClick={onClose}
+    >
+      <div 
+        className="w-full max-w-2xl max-h-[80vh] flex flex-col bg-win31-gray border-4 border-win31-black shadow-[8px_8px_0_rgba(0,0,0,0.5)]"
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Title Bar */}
+        <div className="flex items-center justify-between bg-gradient-to-r from-win31-teal to-emerald-600 px-3 py-2">
+          <div className="flex items-center gap-2">
+            <FileText className="h-4 w-4 text-white" />
+            <span className="font-mono text-sm font-bold text-white">
+              {referencePath}
+            </span>
+          </div>
+          <button
+            onClick={onClose}
+            className="flex h-6 w-6 items-center justify-center border-2 border-win31-black bg-win31-gray text-xs font-bold hover:bg-win31-gray-light"
+          >
+            ✕
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 overflow-auto p-4 bg-white">
+          <pre className="whitespace-pre-wrap font-mono text-sm text-win31-black leading-relaxed">
+            {referenceContent}
+          </pre>
+        </div>
+
+        {/* Footer */}
+        <div className="flex items-center justify-between border-t-2 border-win31-gray-darker bg-win31-gray px-3 py-2">
+          <span className="text-xs text-win31-gray-darker">
+            From: {skill.title}/references/
+          </span>
+          <a
+            href={`https://github.com/erichowens/some_claude_skills/tree/main/.claude/skills/${skill.id}/references`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-xs text-win31-teal hover:underline"
+          >
+            View on GitHub
+            <ExternalLink className="h-3 w-3" />
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -397,9 +496,11 @@ function parseContentSections(content: string): ContentSection[] {
 interface CollapsibleSectionProps {
   section: ContentSection;
   defaultOpen?: boolean;
+  onSkillClick?: (skillId: string) => void;
+  onReferenceClick?: (refPath: string) => void;
 }
 
-function CollapsibleSection({ section, defaultOpen = false }: CollapsibleSectionProps) {
+function CollapsibleSection({ section, defaultOpen = false, onSkillClick, onReferenceClick }: CollapsibleSectionProps) {
   const [isOpen, setIsOpen] = React.useState(defaultOpen);
 
   // Detect section type for styling
@@ -445,8 +546,12 @@ function CollapsibleSection({ section, defaultOpen = false }: CollapsibleSection
       {/* Expanded content */}
       {isOpen && (
         <div className="mt-4 pt-4 border-t border-win31-gray-darker/30">
-          <div className="prose-win31">
-            <MarkdownContent content={section.content} />
+          <div className="prose-typora">
+            <MarkdownContent 
+              content={section.content} 
+              onSkillClick={onSkillClick}
+              onReferenceClick={onReferenceClick}
+            />
           </div>
         </div>
       )}
@@ -709,13 +814,22 @@ function detectCalloutType(text: string): { type: CalloutType; cleanText: string
   return null;
 }
 
-function MarkdownContent({ content }: { content: string }) {
+interface MarkdownContentProps {
+  content: string;
+  onSkillClick?: (skillId: string) => void;
+  onReferenceClick?: (refPath: string) => void;
+}
+
+function MarkdownContent({ content, onSkillClick, onReferenceClick }: MarkdownContentProps) {
   const lines = content.split('\n');
   const elements: React.ReactNode[] = [];
   let inCodeBlock = false;
   let codeBlockContent: string[] = [];
   let codeBlockLang = '';
   let calloutBuffer: { type: CalloutType; items: string[] } | null = null;
+
+  // Context for inline rendering
+  const renderContext: InlineRenderContext = { onSkillClick, onReferenceClick };
 
   const flushCalloutBuffer = (key: number) => {
     if (calloutBuffer && calloutBuffer.items.length > 0) {
@@ -728,7 +842,7 @@ function MarkdownContent({ content }: { content: string }) {
           </div>
           <ul className="space-y-1 pl-6">
             {calloutBuffer.items.map((item, i) => (
-              <li key={i} className="list-disc text-sm">{renderInline(item)}</li>
+              <li key={i} className="list-disc text-sm">{renderInline(item, renderContext)}</li>
             ))}
           </ul>
         </div>
@@ -791,7 +905,7 @@ function MarkdownContent({ content }: { content: string }) {
       } else {
         flushCalloutBuffer(i);
         elements.push(
-          <li key={i} className="ml-4 list-disc text-sm">{renderInline(itemText)}</li>
+          <li key={i} className="ml-4 list-disc text-sm">{renderInline(itemText, renderContext)}</li>
         );
       }
       continue;
@@ -800,7 +914,7 @@ function MarkdownContent({ content }: { content: string }) {
     if (/^\d+\. /.test(line)) {
       flushCalloutBuffer(i);
       elements.push(
-        <li key={i} className="ml-4 list-decimal text-sm">{renderInline(line.replace(/^\d+\. /, ''))}</li>
+        <li key={i} className="ml-4 list-decimal text-sm">{renderInline(line.replace(/^\d+\. /, ''), renderContext)}</li>
       );
       continue;
     }
@@ -822,7 +936,7 @@ function MarkdownContent({ content }: { content: string }) {
         j++;
       }
       if (tableLines.length >= 2) {
-        elements.push(<MarkdownTable key={i} lines={tableLines} />);
+        elements.push(<MarkdownTable key={i} lines={tableLines} context={renderContext} />);
         i = j - 1;
       }
       continue;
@@ -837,7 +951,7 @@ function MarkdownContent({ content }: { content: string }) {
         <div key={i} className={cn('my-4 border-l-4 p-4 rounded-r-sm', config.bgColor, config.borderColor)}>
           <div className={cn('flex items-center gap-2 font-semibold text-sm', config.textColor)}>
             {config.icon}
-            <span>{renderInline(blockCallout.cleanText)}</span>
+            <span>{renderInline(blockCallout.cleanText, renderContext)}</span>
           </div>
         </div>
       );
@@ -847,7 +961,7 @@ function MarkdownContent({ content }: { content: string }) {
     // Regular paragraphs
     flushCalloutBuffer(i);
     elements.push(
-      <p key={i} className="text-sm leading-relaxed">{renderInline(line)}</p>
+      <p key={i} className="text-sm leading-relaxed">{renderInline(line, renderContext)}</p>
     );
   }
 
@@ -932,7 +1046,12 @@ function CodeBlock({ code, language }: CodeBlockProps) {
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-function MarkdownTable({ lines }: { lines: string[] }) {
+interface MarkdownTableProps {
+  lines: string[];
+  context?: InlineRenderContext;
+}
+
+function MarkdownTable({ lines, context }: MarkdownTableProps) {
   const parseRow = (line: string) => line.split('|').slice(1, -1).map(cell => cell.trim());
   const headers = parseRow(lines[0]);
   const rows = lines.slice(2).map(parseRow);
@@ -944,7 +1063,7 @@ function MarkdownTable({ lines }: { lines: string[] }) {
           <tr className="bg-win31-gray">
             {headers.map((header, i) => (
               <th key={i} className="border border-win31-gray-darker px-3 py-2 text-left font-semibold text-win31-navy">
-                {renderInline(header)}
+                {renderInline(header, context)}
               </th>
             ))}
           </tr>
@@ -953,7 +1072,7 @@ function MarkdownTable({ lines }: { lines: string[] }) {
           {rows.map((row, i) => (
             <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-win31-gray-light/50'}>
               {row.map((cell, j) => (
-                <td key={j} className="border border-win31-gray-darker px-3 py-2">{renderInline(cell)}</td>
+                <td key={j} className="border border-win31-gray-darker px-3 py-2">{renderInline(cell, context)}</td>
               ))}
             </tr>
           ))}
@@ -1062,11 +1181,51 @@ function renderDesignToken(value: string, key: number): React.ReactNode {
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
- * INLINE RENDERING
+ * SKILL & REFERENCE DETECTION PATTERNS
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-function renderInline(text: string): React.ReactNode {
+// Common skill ID pattern: kebab-case identifiers
+const SKILL_ID_PATTERN = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)+$/;
+
+/* Reference file patterns - for future use with full reference parsing
+const REFERENCE_PATTERNS = [
+  /`\.?\/references\/([^`]+)`/g,   // `./references/file.md` or `/references/file.md`
+  /`references\/([^`]+)`/g,         // `references/file.md`
+  /→\s*See\s+`([^`]+)`/g,           // → See `filename.md`
+];
+*/
+
+// Check if a code string looks like a skill ID
+function isLikelySkillId(value: string): boolean {
+  return SKILL_ID_PATTERN.test(value) && value.length > 5 && value.length < 50;
+}
+
+// Check if a code string looks like a reference path
+function isLikelyReference(value: string): boolean {
+  return value.includes('references/') || 
+         value.endsWith('.md') || 
+         value.endsWith('.yaml') || 
+         value.endsWith('.yml') ||
+         value.endsWith('.graphql') ||
+         value.endsWith('.proto') ||
+         value.endsWith('.ts') ||
+         value.endsWith('.json');
+}
+
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
+ * INLINE RENDERING WITH SKILL/REFERENCE DETECTION
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+// Navigation context for skill/reference clicks
+interface InlineRenderContext {
+  onSkillClick?: (skillId: string) => void;
+  onReferenceClick?: (refPath: string) => void;
+}
+
+function renderInline(text: string, context?: InlineRenderContext): React.ReactNode {
   const parts: React.ReactNode[] = [];
   let remaining = text;
   let key = 0;
@@ -1091,7 +1250,41 @@ function renderInline(text: string): React.ReactNode {
     const codeMatch = remaining.match(/`([^`]+)`/);
     if (codeMatch && codeMatch.index !== undefined) {
       if (codeMatch.index > 0) parts.push(remaining.slice(0, codeMatch.index));
-      parts.push(renderDesignToken(codeMatch[1], key++));
+      
+      const codeValue = codeMatch[1];
+      
+      // Check if this looks like a reference path
+      if (isLikelyReference(codeValue)) {
+        const refName = codeValue.replace(/^\.?\/references\//, '').replace(/^references\//, '');
+        parts.push(
+          <button
+            key={key++}
+            onClick={() => context?.onReferenceClick?.(refName)}
+            className="reference-link"
+            title={`Open ${refName}`}
+          >
+            {refName}
+          </button>
+        );
+      }
+      // Check if this looks like a skill ID
+      else if (isLikelySkillId(codeValue)) {
+        parts.push(
+          <button
+            key={key++}
+            onClick={() => context?.onSkillClick?.(codeValue)}
+            className="skill-link"
+            title={`View ${codeValue} skill`}
+          >
+            {codeValue}
+          </button>
+        );
+      }
+      // Default: render as design token or plain code
+      else {
+        parts.push(renderDesignToken(codeValue, key++));
+      }
+      
       remaining = remaining.slice(codeMatch.index + codeMatch[0].length);
       continue;
     }
@@ -1108,6 +1301,29 @@ function renderInline(text: string): React.ReactNode {
       );
       remaining = remaining.slice(linkMatch.index + linkMatch[0].length);
       continue;
+    }
+
+    // Check for arrow references like "→ skill-name" or "use skill-name"
+    const arrowRefMatch = remaining.match(/→\s*`?([a-z][a-z0-9-]+)`?|use\s+`?([a-z][a-z0-9-]+)`?/);
+    if (arrowRefMatch && arrowRefMatch.index !== undefined) {
+      const skillId = arrowRefMatch[1] || arrowRefMatch[2];
+      if (isLikelySkillId(skillId)) {
+        if (arrowRefMatch.index > 0) parts.push(remaining.slice(0, arrowRefMatch.index));
+        parts.push(
+          <span key={key++}>
+            {arrowRefMatch[0].startsWith('→') ? '→ ' : 'use '}
+            <button
+              onClick={() => context?.onSkillClick?.(skillId)}
+              className="skill-link"
+              title={`View ${skillId} skill`}
+            >
+              {skillId}
+            </button>
+          </span>
+        );
+        remaining = remaining.slice(arrowRefMatch.index + arrowRefMatch[0].length);
+        continue;
+      }
     }
 
     parts.push(remaining);

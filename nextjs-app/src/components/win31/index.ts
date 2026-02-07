@@ -11,3 +11,5 @@ export { StartMenu, StartMenuItem, StartMenuDivider } from './start-menu';
 export { SkillBrowser } from './skill-browser';
 
 export { SkillDocument } from './skill-document';
+
+export { SkillSearch } from './skill-search';
