@@ -1,0 +1,45 @@
+name: Deploy Next.js to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+      - cursor/modern-ui-architecture-326f
+    paths:
+      - 'nextjs-app/**'
+      - '.github/workflows/deploy-nextjs-cloudflare.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Deploy to Cloudflare Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: 'nextjs-app/package-lock.json'
+
+      - name: Install dependencies
+        working-directory: nextjs-app
+        run: npm ci
+
+      - name: Build
+        working-directory: nextjs-app
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy out --project-name=some-claude-skills-dev
+          workingDirectory: nextjs-app
