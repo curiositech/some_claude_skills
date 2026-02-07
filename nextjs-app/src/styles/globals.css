@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
 
 @import "tailwindcss";
+@import "./memphis-win31.css";
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
