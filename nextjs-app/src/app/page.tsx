@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { skills, type Skill, getSkillById, type SkillCategory } from '@/lib/skills';
+import { skills, type Skill, getSkillById, type SkillCategory, categoryMeta } from '@/lib/skills';
 import {
   ProgramManager,
   Win31Window,
@@ -18,8 +18,9 @@ import { SkillDocument } from '@/components/win31';
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
- * MEMPHIS × WINDOWS 3.1 - Some Claude Skills
- * Program Manager shell with skill gallery
+ * SOME CLAUDE SKILLS - Memphis × Windows 3.1
+ * 
+ * Authentic Program Manager with skill groups organized by category/domain
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -29,13 +30,11 @@ type ActiveView =
   | { type: 'skill'; skill: Skill }
   | { type: 'tutorial'; id: TutorialId }
   | { type: 'readme' }
-  | { type: 'about' }
-  | { type: 'search' };
+  | { type: 'about' };
 
 export default function HomePage() {
   const [activeView, setActiveView] = React.useState<ActiveView>({ type: 'desktop' });
   const [showWelcome, setShowWelcome] = React.useState(false);
-  const [desktopScene, setDesktopScene] = React.useState<'default' | 'skills' | 'tutorials' | 'windags'>('default');
 
   // Check for first visit
   React.useEffect(() => {
@@ -46,114 +45,115 @@ export default function HomePage() {
     }
   }, []);
 
-  // Group skills by category for display
+  // Group skills by category
   const skillsByCategory = React.useMemo(() => {
     const grouped = new Map<SkillCategory, Skill[]>();
     skills.forEach(skill => {
-      const cat = skill.category;
-      if (!grouped.has(cat)) {
-        grouped.set(cat, []);
+      if (!grouped.has(skill.category)) {
+        grouped.set(skill.category, []);
       }
-      grouped.get(cat)!.push(skill);
+      grouped.get(skill.category)!.push(skill);
     });
     return grouped;
   }, []);
 
-  // Program groups for Program Manager
-  const programGroups: ProgramGroup[] = React.useMemo(() => [
-    {
+  // Build Program Groups from skill categories
+  const programGroups: ProgramGroup[] = React.useMemo(() => {
+    const groups: ProgramGroup[] = [];
+
+    // Main group - always first
+    groups.push({
       id: 'main',
       title: 'Main',
+      position: { x: 8, y: 8 },
       icons: [
         { id: 'file-manager', label: 'Skill Browser', icon: '📁' },
-        { id: 'search', label: 'Skill Search', icon: '🔍' },
         { id: 'readme', label: 'Read Me', icon: '📖' },
         { id: 'about', label: 'About', icon: 'ℹ️' },
       ],
-    },
-    {
+    });
+
+    // Tutorials group
+    groups.push({
       id: 'tutorials',
       title: 'Tutorials',
-      icons: Object.entries(TUTORIALS).map(([id, tutorial]) => ({
+      position: { x: 200, y: 8 },
+      icons: Object.entries(TUTORIALS).map(([id, t]) => ({
         id,
-        label: tutorial.title.replace('Claude ', ''),
-        icon: tutorial.icon,
+        label: t.title.substring(0, 12),
+        icon: t.icon,
       })),
-    },
-    {
-      id: 'skills-development',
-      title: 'Development Skills',
-      icons: (skillsByCategory.get('development') || []).slice(0, 12).map(skill => ({
-        id: `skill-${skill.id}`,
-        label: skill.title.substring(0, 15),
-        icon: skill.icon || '💻',
-      })),
-    },
-    {
-      id: 'skills-design',
-      title: 'Design Skills',
-      icons: (skillsByCategory.get('design') || []).slice(0, 12).map(skill => ({
-        id: `skill-${skill.id}`,
-        label: skill.title.substring(0, 15),
-        icon: skill.icon || '🎨',
-      })),
-    },
-    {
-      id: 'skills-devops',
-      title: 'DevOps Skills',
-      icons: (skillsByCategory.get('devops') || []).slice(0, 12).map(skill => ({
-        id: `skill-${skill.id}`,
-        label: skill.title.substring(0, 15),
-        icon: skill.icon || '🔧',
-      })),
-    },
-    {
-      id: 'accessories',
-      title: 'Accessories',
-      icons: [
-        { id: 'clock', label: 'Clock', icon: '🕐' },
-        { id: 'solitaire', label: 'Solitaire', icon: '🃏' },
-        { id: 'gorillas', label: 'GORILLA.BAS', icon: '🦍' },
-      ],
-    },
-    {
+    });
+
+    // Skill category groups
+    let col = 0;
+    let row = 1;
+    
+    const categoryOrder: SkillCategory[] = [
+      'development', 'design', 'devops', 'architecture', 
+      'data', 'testing', 'documentation', 'security'
+    ];
+
+    categoryOrder.forEach((cat) => {
+      const catSkills = skillsByCategory.get(cat);
+      if (!catSkills || catSkills.length === 0) return;
+
+      const meta = categoryMeta[cat];
+      
+      groups.push({
+        id: `skills-${cat}`,
+        title: meta.label,
+        position: { x: 8 + (col % 4) * 185, y: 8 + row * 130 },
+        icons: catSkills.slice(0, 9).map(s => ({
+          id: `skill:${s.id}`,
+          label: s.title.substring(0, 11),
+          icon: s.icon || meta.icon,
+        })),
+      });
+
+      col++;
+      if (col >= 4) {
+        col = 0;
+        row++;
+      }
+    });
+
+    // winDAGs group (coming soon)
+    groups.push({
       id: 'windags',
-      title: 'winDAGs.AI (Coming Soon)',
+      title: 'winDAGs.AI',
+      position: { x: 8 + 3 * 185, y: 8 },
+      minimized: true,
       icons: [
         { id: 'dag-builder', label: 'DAG Builder', icon: '🔀' },
-        { id: 'skill-matcher', label: 'Skill Matcher', icon: '🎯' },
-        { id: 'workflow-editor', label: 'Workflow Editor', icon: '⚙️' },
+        { id: 'skill-matcher', label: 'Skill Match', icon: '🎯' },
       ],
-    },
-  ], [skillsByCategory]);
+    });
+
+    return groups;
+  }, [skillsByCategory]);
 
   const handleOpenProgram = (programId: string) => {
-    // Check if it's a tutorial
+    // Tutorial
     if (programId in TUTORIALS) {
       setActiveView({ type: 'tutorial', id: programId as TutorialId });
-      setDesktopScene('tutorials');
       return;
     }
 
-    // Check if it's a skill
-    if (programId.startsWith('skill-')) {
-      const skillId = programId.replace('skill-', '');
+    // Skill (prefixed with "skill:")
+    if (programId.startsWith('skill:')) {
+      const skillId = programId.replace('skill:', '');
       const skill = getSkillById(skillId);
       if (skill) {
         setActiveView({ type: 'skill', skill });
-        setDesktopScene('skills');
       }
       return;
     }
 
-    // Handle main programs
+    // Main programs
     switch (programId) {
       case 'file-manager':
         setActiveView({ type: 'file-manager' });
-        setDesktopScene('skills');
-        break;
-      case 'search':
-        setActiveView({ type: 'search' });
         break;
       case 'readme':
         setActiveView({ type: 'readme' });
@@ -161,111 +161,56 @@ export default function HomePage() {
       case 'about':
         setActiveView({ type: 'about' });
         break;
-      case 'dag-builder':
-      case 'skill-matcher':
-      case 'workflow-editor':
-        setDesktopScene('windags');
-        // Show coming soon dialog or navigate to windags section
-        break;
-      default:
-        // Accessories don't change view, they're decorative
-        break;
     }
   };
 
   const handleSelectSkill = (skill: Skill) => {
     setActiveView({ type: 'skill', skill });
-    setDesktopScene('skills');
-  };
-
-  const handleNavigateToSkill = (skillId: string) => {
-    const skill = getSkillById(skillId);
-    if (skill) {
-      setActiveView({ type: 'skill', skill });
-    }
   };
 
   const goToDesktop = () => {
     setActiveView({ type: 'desktop' });
-    setDesktopScene('default');
   };
 
   const goToFileManager = () => {
     setActiveView({ type: 'file-manager' });
-    setDesktopScene('skills');
   };
 
   return (
-    <DesktopScene scene={desktopScene}>
+    <DesktopScene scene="default">
       <div className="min-h-screen flex flex-col">
         {/* Main Content */}
         <main className="flex-1 overflow-hidden">
           {/* Desktop / Program Manager */}
           {activeView.type === 'desktop' && (
-            <div className="h-full p-2 md:p-4">
-              {/* Header Banner */}
-              <Win31Window
-                title="Some Claude Skills - Memphis Edition"
-                menuItems={[]}
-                className="mx-auto max-w-4xl mb-4"
-              >
-                <div className="p-4 bg-[var(--memphis-cream)] flex flex-col md:flex-row gap-4 items-center">
-                  <div className="text-6xl">🎨</div>
-                  <div className="flex-1 text-center md:text-left">
-                    <h1 className="text-xl font-bold text-[var(--memphis-purple)] mb-1">
-                      173 Curated Claude Code Skills
-                    </h1>
-                    <p className="text-sm text-[var(--memphis-black)]">
-                      Transform Claude into an expert in any domain. Double-click a skill to explore!
-                    </p>
-                  </div>
-                  <div className="flex gap-2">
-                    <Win31Button onClick={() => setActiveView({ type: 'file-manager' })} variant="primary">
-                      Browse Skills
-                    </Win31Button>
-                    <Win31Button onClick={() => setActiveView({ type: 'tutorial', id: 'what-is-a-skill' })}>
-                      What&apos;s a Skill?
-                    </Win31Button>
-                  </div>
-                </div>
-              </Win31Window>
-
-              {/* Program Manager */}
-              <div className="h-[calc(100vh-200px)] max-w-6xl mx-auto">
-                <ProgramManager
-                  groups={programGroups}
-                  onOpenProgram={handleOpenProgram}
-                >
-                  {/* Decorative elements positioned within Program Manager */}
-                </ProgramManager>
-              </div>
+            <div className="h-screen">
+              <ProgramManager
+                groups={programGroups}
+                onOpenProgram={handleOpenProgram}
+              />
             </div>
           )}
 
-          {/* File Manager / Skill Browser */}
+          {/* File Manager */}
           {activeView.type === 'file-manager' && (
-            <div className="h-full p-2 md:p-4 flex items-center justify-center">
-              <div className="w-full max-w-4xl">
+            <div className="h-full p-2 flex items-start justify-center pt-8">
+              <div className="w-full max-w-3xl">
                 <FileManager
                   skills={skills}
                   onSelectSkill={handleSelectSkill}
+                  onClose={goToDesktop}
                 />
-                <div className="mt-2 flex justify-end">
-                  <Win31Button onClick={goToDesktop}>
-                    ← Back to Desktop
-                  </Win31Button>
-                </div>
               </div>
             </div>
           )}
 
           {/* Skill Document */}
           {activeView.type === 'skill' && (
-            <div className="h-full p-2 md:p-4 overflow-auto">
-              <div className="max-w-6xl mx-auto">
+            <div className="h-full p-2 overflow-auto">
+              <div className="max-w-5xl mx-auto">
                 <div className="mb-2 flex gap-2">
                   <Win31Button onClick={goToFileManager}>
-                    ← Browse Skills
+                    ← Skills
                   </Win31Button>
                   <Win31Button onClick={goToDesktop}>
                     🏠 Desktop
@@ -274,13 +219,16 @@ export default function HomePage() {
                 <SkillDocument
                   skill={activeView.skill}
                   onClose={goToFileManager}
-                  onNavigate={handleNavigateToSkill}
+                  onNavigate={(id) => {
+                    const skill = getSkillById(id);
+                    if (skill) setActiveView({ type: 'skill', skill });
+                  }}
                 />
               </div>
             </div>
           )}
 
-          {/* Tutorial Wizard */}
+          {/* Tutorial */}
           {activeView.type === 'tutorial' && (
             <TutorialWizard
               title={TUTORIALS[activeView.id].title}
@@ -292,65 +240,49 @@ export default function HomePage() {
 
           {/* README */}
           {activeView.type === 'readme' && (
-            <div className="h-full p-2 md:p-4 flex items-center justify-center">
+            <div className="h-full p-4 flex items-start justify-center pt-8">
               <Win31Window
-                title="README.TXT - Welcome to Some Claude Skills"
-                menuItems={['File', 'Edit', 'Help']}
-                className="w-full max-w-2xl"
+                title="README.TXT"
+                icon="📖"
                 onClose={goToDesktop}
+                menuItems={[
+                  { label: 'File', accel: 'F' },
+                  { label: 'Edit', accel: 'E' },
+                ]}
+                className="w-full max-w-lg"
               >
-                <div className="p-6 bg-white overflow-auto max-h-[70vh]">
-                  <div className="prose-typora">
-                    <h1>Some Claude Skills</h1>
-                    <p className="text-lg text-gray-600">
-                      A curated collection of 173 expert AI agents for Claude Code.
-                    </p>
-
-                    <hr />
-
-                    <h2>What are Skills?</h2>
-                    <p>
-                      Skills are specialized markdown files that transform Claude into an expert 
-                      in a specific domain. Each skill contains instructions, best practices, 
-                      and patterns for tasks like TypeScript development, system architecture, 
-                      DevOps, design systems, and more.
-                    </p>
-
-                    <h2>Getting Started</h2>
-                    <ol>
-                      <li><strong>Browse Skills</strong> - Open the Skill Browser (File Manager) to explore</li>
-                      <li><strong>Learn the Basics</strong> - Check out the Tutorials group</li>
-                      <li><strong>Install a Skill</strong> - Copy the install command from any skill page</li>
-                      <li><strong>Use It!</strong> - Claude will automatically apply the skill&apos;s expertise</li>
-                    </ol>
-
-                    <h2>About This Interface</h2>
-                    <p>
-                      This is <strong>Memphis × Windows 3.1</strong> - imagining what Microsoft
-                      would have created if they hired Ettore Sottsass in 1992.
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      Built with Next.js 15, Tailwind CSS v4, and deployed on Cloudflare Pages.
-                    </p>
-
-                    <div className="bg-[var(--memphis-cyan)]/10 border border-[var(--memphis-cyan)] p-4 rounded mt-6">
-                      <h3 className="mt-0">Quick Tips</h3>
-                      <ul className="mb-0">
-                        <li>Double-click icons to open programs</li>
-                        <li>Program groups contain related skills</li>
-                        <li>Tutorials teach you how to use skills effectively</li>
-                        <li>winDAGs.AI features are coming soon!</li>
-                      </ul>
-                    </div>
+                <div className="p-3 bg-[var(--win31-white)] overflow-auto max-h-[60vh] text-[11px] font-[var(--font-win31)] leading-tight">
+                  <h1 className="text-[14px] font-bold mb-2">SOME CLAUDE SKILLS</h1>
+                  <p className="mb-2">173 curated expert agents for Claude Code.</p>
+                  
+                  <hr className="border-[var(--bevel-dark)] my-2" />
+                  
+                  <h2 className="font-bold mb-1">WHAT ARE SKILLS?</h2>
+                  <p className="mb-2">
+                    Skills are markdown files that transform Claude into 
+                    domain experts. Install them to get specialized help 
+                    with TypeScript, React, DevOps, design systems, and more.
+                  </p>
+                  
+                  <h2 className="font-bold mb-1">GETTING STARTED</h2>
+                  <p className="mb-1">1. Double-click a skill icon to view it</p>
+                  <p className="mb-1">2. Copy the install command</p>
+                  <p className="mb-1">3. Paste in Claude Code</p>
+                  <p className="mb-2">4. Claude now has that expertise!</p>
+                  
+                  <h2 className="font-bold mb-1">KEYBOARD SHORTCUTS</h2>
+                  <p className="mb-1">Alt+F = File menu</p>
+                  <p className="mb-1">Double-click = Open</p>
+                  <p className="mb-2">Esc = Close window</p>
+                  
+                  <div className="bg-[var(--memphis-surface)] border border-[var(--bevel-dark)] p-2 mt-2">
+                    <p className="font-bold">Memphis × Windows 3.1 Edition</p>
+                    <p className="text-[10px]">Built with Next.js 15 + Tailwind v4</p>
                   </div>
                 </div>
-                <div className="p-3 bg-[var(--memphis-cream)] border-t border-[var(--memphis-shadow)] flex justify-end gap-2">
-                  <Win31Button onClick={goToFileManager} variant="primary">
-                    Browse Skills
-                  </Win31Button>
-                  <Win31Button onClick={goToDesktop}>
-                    OK
-                  </Win31Button>
+                <div className="p-2 flex justify-end gap-2 bg-[var(--memphis-surface)]">
+                  <Win31Button onClick={goToFileManager}>Browse Skills</Win31Button>
+                  <Win31Button onClick={goToDesktop} isDefault>OK</Win31Button>
                 </div>
               </Win31Window>
             </div>
@@ -358,154 +290,91 @@ export default function HomePage() {
 
           {/* About */}
           {activeView.type === 'about' && (
-            <div className="h-full p-2 md:p-4 flex items-center justify-center">
+            <div className="h-full p-4 flex items-start justify-center pt-8">
               <Win31Window
                 title="About Some Claude Skills"
-                menuItems={[]}
-                className="w-full max-w-md"
+                icon="ℹ️"
                 onClose={goToDesktop}
+                className="w-full max-w-xs"
               >
-                <div className="p-6 bg-[var(--memphis-cream)] text-center">
-                  <div className="text-6xl mb-4">🎨🖥️</div>
-                  <h1 className="text-xl font-bold text-[var(--memphis-purple)] mb-1">
-                    Some Claude Skills
-                  </h1>
-                  <p className="text-sm mb-4">
+                <div className="p-4 bg-[var(--memphis-surface)] text-center text-[11px]">
+                  {/* Memphis Carlton-inspired decoration */}
+                  <div className="memphis-carlton mb-3 mx-auto w-32">
+                    <div className="memphis-carlton-shelf" />
+                    <div className="memphis-carlton-shelf" />
+                    <div className="memphis-carlton-shelf" />
+                    <div className="memphis-carlton-shelf" />
+                    <div className="memphis-carlton-shelf" />
+                  </div>
+
+                  <h1 className="text-[14px] font-bold">Some Claude Skills</h1>
+                  <p className="text-[10px] text-[var(--win31-gray-dark)]">
                     Memphis × Windows 3.1 Edition
                   </p>
-                  <p className="text-xs text-[var(--memphis-shadow)] mb-4">
-                    Version 1.0.0
-                  </p>
+                  <p className="text-[10px] mb-3">Version 1.0.0</p>
 
-                  <div className="text-xs space-y-1 mb-4">
+                  <div className="text-[10px] mb-3">
                     <p>© 2024 Erich Owens</p>
-                    <p className="text-[var(--memphis-shadow)]">Ex-Meta ML Engineer</p>
+                    <p className="text-[var(--win31-gray-dark)]">Ex-Meta ML Engineer</p>
                   </div>
 
-                  <div className="bg-white border border-[var(--memphis-shadow)] p-3 text-left text-xs">
-                    <p className="font-semibold mb-2">System Info:</p>
-                    <p>• Next.js 15 (App Router)</p>
-                    <p>• Tailwind CSS v4</p>
-                    <p>• Radix UI Primitives</p>
-                    <p>• Cloudflare Pages</p>
-                    <p>• 173 Curated Skills</p>
+                  <div className="bevel-in p-2 text-[10px] text-left">
+                    <p>Skills: 173</p>
+                    <p>Categories: 8</p>
+                    <p>Next.js 15 + Tailwind v4</p>
+                    <p>Cloudflare Pages</p>
                   </div>
 
-                  <div className="mt-4 flex gap-2 justify-center">
-                    {['#FF6B9D', '#00D4FF', '#FFE156', '#FF7F6B', '#7DFFC2', '#6B5CE7'].map(color => (
-                      <div
-                        key={color}
-                        className="w-6 h-6 border border-[var(--memphis-black)]"
-                        style={{ backgroundColor: color }}
-                        title={color}
-                      />
-                    ))}
+                  {/* Memphis color bar */}
+                  <div className="flex mt-3 h-2">
+                    <div className="flex-1 bg-[var(--memphis-red)]" />
+                    <div className="flex-1 bg-[var(--memphis-yellow)]" />
+                    <div className="flex-1 bg-[var(--memphis-blue)]" />
+                    <div className="flex-1 bg-[var(--memphis-green)]" />
+                    <div className="flex-1 bg-[var(--memphis-pink)]" />
+                    <div className="flex-1 bg-[var(--memphis-purple)]" />
                   </div>
                 </div>
-                <div className="p-3 bg-[var(--memphis-cream)] border-t border-[var(--memphis-shadow)] flex justify-center">
-                  <Win31Button onClick={goToDesktop}>
-                    OK
-                  </Win31Button>
-                </div>
-              </Win31Window>
-            </div>
-          )}
-
-          {/* Search (Placeholder) */}
-          {activeView.type === 'search' && (
-            <div className="h-full p-2 md:p-4 flex items-center justify-center">
-              <Win31Window
-                title="Skill Search - AI-Powered"
-                menuItems={['Search', 'Options', 'Help']}
-                className="w-full max-w-2xl"
-                onClose={goToDesktop}
-              >
-                <div className="p-6 bg-[var(--memphis-cream)]">
-                  <div className="flex gap-2 mb-4">
-                    <input
-                      type="text"
-                      placeholder="Describe what you want to do..."
-                      className="win31-input flex-1 py-2 px-3"
-                    />
-                    <Win31Button variant="primary">
-                      🔍 Search
-                    </Win31Button>
-                  </div>
-                  <p className="text-sm text-[var(--memphis-shadow)] text-center">
-                    AI-powered semantic search coming soon!
-                    <br />
-                    For now, browse skills in the File Manager.
-                  </p>
-                </div>
-                <div className="p-3 bg-[var(--memphis-cream)] border-t border-[var(--memphis-shadow)] flex justify-end gap-2">
-                  <Win31Button onClick={goToFileManager}>
-                    Open File Manager
-                  </Win31Button>
-                  <Win31Button onClick={goToDesktop}>
-                    Close
-                  </Win31Button>
+                <div className="p-2 flex justify-center bg-[var(--memphis-surface)]">
+                  <Win31Button onClick={goToDesktop} isDefault>OK</Win31Button>
                 </div>
               </Win31Window>
             </div>
           )}
         </main>
 
-        {/* Status Bar */}
-        <footer className="win31-statusbar sticky bottom-0 z-50">
-          <span className="win31-statusbar-section">
-            {activeView.type === 'desktop' ? 'Ready' : 
-             activeView.type === 'skill' ? `Viewing: ${activeView.skill.title}` :
-             activeView.type === 'file-manager' ? `${skills.length} skills available` :
-             'Some Claude Skills'}
-          </span>
-          <span className="win31-statusbar-section">
-            {new Date().toLocaleDateString()}
-          </span>
-          <span className="win31-statusbar-section">
-            Memphis Edition
-          </span>
-        </footer>
-
-        {/* Welcome Dialog for First-Time Visitors */}
+        {/* Welcome Dialog */}
         {showWelcome && (
           <Win31Dialog
-            title="Welcome to Some Claude Skills!"
+            title="Welcome"
             icon="info"
             buttons={[
               {
-                label: 'Take Tutorial',
+                label: 'Tutorial',
                 onClick: () => {
                   setShowWelcome(false);
                   setActiveView({ type: 'tutorial', id: 'what-is-a-skill' });
                 },
-                isDefault: true,
               },
               {
-                label: 'Browse Skills',
+                label: 'Browse',
                 onClick: () => {
                   setShowWelcome(false);
                   setActiveView({ type: 'file-manager' });
                 },
+                isDefault: true,
               },
               {
-                label: 'Explore Desktop',
+                label: 'OK',
                 onClick: () => setShowWelcome(false),
               },
             ]}
             onClose={() => setShowWelcome(false)}
           >
-            <div className="space-y-2">
-              <p>
-                Welcome! This site contains <strong>173 curated skills</strong> that transform
-                Claude into an expert in specific domains.
-              </p>
-              <p>
-                <strong>New to skills?</strong> Take the tutorial to learn how they work.
-              </p>
-              <p>
-                <strong>Ready to browse?</strong> Jump straight into the skill library.
-              </p>
-            </div>
+            <p className="mb-2">
+              <strong>173 Claude Code Skills</strong> organized by category.
+            </p>
+            <p>Double-click icons to explore. Tutorials teach you how to use skills.</p>
           </Win31Dialog>
         )}
       </div>

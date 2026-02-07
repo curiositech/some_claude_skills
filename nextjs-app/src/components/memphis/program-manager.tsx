@@ -5,25 +5,28 @@ import { cn } from '@/lib/utils';
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
- * PROGRAM MANAGER - Memphis Group × Windows 3.1
- * The shell that holds everything
+ * PROGRAM MANAGER - Authentic Windows 3.1
+ * 
+ * - Icon left, centered title, controls right
+ * - 3×N icon grids in group windows
+ * - Minimize = icon at bottom of screen
+ * - Dense spacing, bitmap fonts
  * ═══════════════════════════════════════════════════════════════════════════
  */
+
+export interface ProgramIcon {
+  id: string;
+  label: string;
+  icon: string; // emoji or image URL
+  onClick?: () => void;
+}
 
 export interface ProgramGroup {
   id: string;
   title: string;
   icons: ProgramIcon[];
   position?: { x: number; y: number };
-  size?: { width: number; height: number };
   minimized?: boolean;
-}
-
-export interface ProgramIcon {
-  id: string;
-  label: string;
-  icon: string; // URL or emoji
-  onClick?: () => void;
 }
 
 interface ProgramManagerProps {
@@ -33,134 +36,185 @@ interface ProgramManagerProps {
 }
 
 export function ProgramManager({ groups, onOpenProgram, children }: ProgramManagerProps) {
-  const [openGroups, setOpenGroups] = React.useState<string[]>(groups.map(g => g.id));
-  const [selectedIcon, setSelectedIcon] = React.useState<string | null>(null);
+  const [groupStates, setGroupStates] = React.useState<Record<string, {
+    minimized: boolean;
+    position: { x: number; y: number };
+  }>>(() => {
+    // Initialize group positions in a grid
+    const states: Record<string, { minimized: boolean; position: { x: number; y: number } }> = {};
+    groups.forEach((group, i) => {
+      const col = i % 3;
+      const row = Math.floor(i / 3);
+      states[group.id] = {
+        minimized: group.minimized || false,
+        position: group.position || { x: 8 + col * 200, y: 24 + row * 140 },
+      };
+    });
+    return states;
+  });
 
-  const toggleGroup = (groupId: string) => {
-    setOpenGroups(prev => 
-      prev.includes(groupId) 
-        ? prev.filter(id => id !== groupId)
-        : [...prev, groupId]
-    );
+  const [selectedIcon, setSelectedIcon] = React.useState<string | null>(null);
+  const [activeGroup, setActiveGroup] = React.useState<string | null>(null);
+
+  const minimizeGroup = (groupId: string) => {
+    setGroupStates(prev => ({
+      ...prev,
+      [groupId]: { ...prev[groupId], minimized: true },
+    }));
   };
 
-  const handleIconClick = (iconId: string) => {
+  const restoreGroup = (groupId: string) => {
+    setGroupStates(prev => ({
+      ...prev,
+      [groupId]: { ...prev[groupId], minimized: false },
+    }));
+    setActiveGroup(groupId);
+  };
+
+  const handleIconClick = (iconId: string, groupId: string) => {
     setSelectedIcon(iconId);
+    setActiveGroup(groupId);
   };
 
   const handleIconDoubleClick = (iconId: string) => {
     onOpenProgram?.(iconId);
   };
 
+  const minimizedGroups = groups.filter(g => groupStates[g.id]?.minimized);
+  const openGroups = groups.filter(g => !groupStates[g.id]?.minimized);
+
   return (
     <div className="win31-window flex flex-col h-full">
       {/* Title Bar */}
       <div className="win31-titlebar">
-        <button className="win31-sysmenu" />
+        <button className="win31-sysmenu" aria-label="System menu" />
         <span className="win31-titlebar-text">Program Manager</span>
-        <button className="win31-titlebar-btn win31-titlebar-btn-minimize" />
-        <button className="win31-titlebar-btn win31-titlebar-btn-maximize" />
+        <div className="win31-titlebar-controls">
+          <button className="win31-titlebar-btn win31-btn-minimize" aria-label="Minimize" />
+          <button className="win31-titlebar-btn win31-btn-maximize" aria-label="Maximize" />
+        </div>
       </div>
 
-      {/* Menu Bar */}
+      {/* Menu Bar with Accelerators */}
       <div className="win31-menubar">
         <span className="win31-menubar-item">
-          <span className="win31-menubar-item-underline">F</span>ile
+          <span className="accel">F</span>ile
         </span>
         <span className="win31-menubar-item">
-          <span className="win31-menubar-item-underline">O</span>ptions
+          <span className="accel">O</span>ptions
         </span>
         <span className="win31-menubar-item">
-          <span className="win31-menubar-item-underline">W</span>indow
+          <span className="accel">W</span>indow
         </span>
         <span className="win31-menubar-item">
-          <span className="win31-menubar-item-underline">H</span>elp
+          <span className="accel">H</span>elp
         </span>
       </div>
 
       {/* MDI Client Area */}
-      <div className="flex-1 bg-[var(--memphis-cream-dark)] p-2 overflow-auto relative">
-        {/* Program Groups */}
-        <div className="flex flex-wrap gap-4 p-2">
-          {groups.map((group) => (
-            <ProgramGroupWindow
-              key={group.id}
-              group={group}
-              isOpen={openGroups.includes(group.id)}
-              onToggle={() => toggleGroup(group.id)}
-              selectedIcon={selectedIcon}
-              onIconClick={handleIconClick}
-              onIconDoubleClick={handleIconDoubleClick}
-            />
-          ))}
-        </div>
+      <div 
+        className="flex-1 overflow-hidden relative"
+        style={{ background: 'var(--memphis-surface-dark)' }}
+      >
+        {/* Open Group Windows */}
+        {openGroups.map((group) => (
+          <GroupWindow
+            key={group.id}
+            group={group}
+            position={groupStates[group.id]?.position || { x: 0, y: 0 }}
+            isActive={activeGroup === group.id}
+            selectedIcon={selectedIcon}
+            onMinimize={() => minimizeGroup(group.id)}
+            onActivate={() => setActiveGroup(group.id)}
+            onIconClick={(id) => handleIconClick(id, group.id)}
+            onIconDoubleClick={handleIconDoubleClick}
+          />
+        ))}
 
-        {/* Additional content (animated backgrounds, etc.) */}
+        {/* Decorative elements */}
         {children}
       </div>
+
+      {/* Minimized Windows Bar - Bottom of screen */}
+      {minimizedGroups.length > 0 && (
+        <div className="win31-minimized-bar">
+          {minimizedGroups.map((group) => (
+            <button
+              key={group.id}
+              className="win31-minimized-icon"
+              onClick={() => restoreGroup(group.id)}
+              onDoubleClick={() => restoreGroup(group.id)}
+            >
+              <span className="win31-minimized-icon-img">
+                {group.icons[0]?.icon || '📁'}
+              </span>
+              <span className="truncate">{group.title}</span>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
- * PROGRAM GROUP WINDOW - The iconic collapsible groups
+ * GROUP WINDOW - Child MDI window with 3×N icon grid
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-interface ProgramGroupWindowProps {
+interface GroupWindowProps {
   group: ProgramGroup;
-  isOpen: boolean;
-  onToggle: () => void;
+  position: { x: number; y: number };
+  isActive: boolean;
   selectedIcon: string | null;
+  onMinimize: () => void;
+  onActivate: () => void;
   onIconClick: (id: string) => void;
   onIconDoubleClick: (id: string) => void;
 }
 
-function ProgramGroupWindow({
+function GroupWindow({
   group,
-  isOpen,
-  onToggle,
+  position,
+  isActive,
   selectedIcon,
+  onMinimize,
+  onActivate,
   onIconClick,
   onIconDoubleClick,
-}: ProgramGroupWindowProps) {
-  if (!isOpen) {
-    // Minimized state - just show as an icon
-    return (
-      <div
-        className="win31-icon cursor-pointer"
-        onDoubleClick={onToggle}
-      >
-        <div className="w-8 h-8 bg-[var(--memphis-cyan)] border border-[var(--memphis-black)] flex items-center justify-center">
-          <span className="text-xs">📁</span>
-        </div>
-        <span className="win31-icon-label">{group.title}</span>
-      </div>
-    );
-  }
-
+}: GroupWindowProps) {
   return (
     <div
-      className="win31-program-group min-w-[200px]"
+      className={cn(
+        'win31-group absolute',
+        !isActive && 'opacity-90'
+      )}
       style={{
-        width: group.size?.width || 'auto',
-        height: group.size?.height || 'auto',
+        left: position.x,
+        top: position.y,
+        zIndex: isActive ? 10 : 1,
       }}
+      onClick={onActivate}
     >
       {/* Group Title Bar */}
-      <div className="win31-program-group-titlebar">
-        <span>{group.title}</span>
+      <div className={cn(
+        'win31-group-titlebar',
+        !isActive && 'win31-titlebar-inactive'
+      )}>
+        <span className="truncate text-[10px]">{group.title}</span>
         <button
-          onClick={onToggle}
-          className="w-4 h-3 bg-[var(--memphis-cream)] border border-[var(--memphis-black)] text-[8px] leading-none flex items-center justify-center"
+          onClick={(e) => { e.stopPropagation(); onMinimize(); }}
+          className="w-12px h-10px bg-[var(--memphis-surface)] border border-[var(--win31-black)] text-[8px] leading-none flex items-center justify-center hover:bg-[var(--memphis-surface-light)]"
+          style={{ width: 12, height: 10 }}
+          aria-label="Minimize"
         >
           ▼
         </button>
       </div>
 
-      {/* Group Icons */}
-      <div className="win31-program-group-content">
+      {/* Icon Grid - 3 columns */}
+      <div className="win31-group-content">
         {group.icons.map((icon) => (
           <ProgramIconComponent
             key={icon.id}
@@ -177,7 +231,7 @@ function ProgramGroupWindow({
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
- * PROGRAM ICON - Clickable program launcher
+ * PROGRAM ICON - 32×32 with tight label
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -194,84 +248,117 @@ function ProgramIconComponent({
   onClick,
   onDoubleClick,
 }: ProgramIconComponentProps) {
+  const isImageUrl = icon.icon.startsWith('/') || icon.icon.startsWith('http');
+
   return (
-    <div
+    <button
       className={cn('win31-icon', isSelected && 'win31-icon-selected')}
       onClick={onClick}
       onDoubleClick={onDoubleClick}
+      tabIndex={0}
     >
-      {icon.icon.startsWith('/') || icon.icon.startsWith('http') ? (
+      {isImageUrl ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={icon.icon}
-          alt={icon.label}
+          alt=""
           className="win31-icon-image"
         />
       ) : (
-        <div className="w-8 h-8 flex items-center justify-center text-2xl">
-          {icon.icon}
-        </div>
+        <span className="win31-icon-emoji">{icon.icon}</span>
       )}
       <span className="win31-icon-label">{icon.label}</span>
-    </div>
+    </button>
   );
 }
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
- * WIN31 WINDOW - Reusable window component
+ * WIN31 WINDOW - Standalone window component
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 interface Win31WindowProps {
   title: string;
+  icon?: string;
   children: React.ReactNode;
   onClose?: () => void;
   onMinimize?: () => void;
   onMaximize?: () => void;
   className?: string;
-  menuItems?: string[];
+  menuItems?: Array<{ label: string; accel?: string } | string>;
   statusText?: string;
+  resizable?: boolean;
 }
 
 export function Win31Window({
   title,
+  icon,
   children,
   onClose,
   onMinimize,
   onMaximize,
   className,
-  menuItems = ['File', 'Edit', 'View', 'Help'],
+  menuItems = [],
   statusText,
+  resizable = false,
 }: Win31WindowProps) {
   return (
-    <div className={cn('win31-window flex flex-col', className)}>
+    <div className={cn(
+      'win31-window flex flex-col',
+      resizable && 'win31-window-resizable',
+      className
+    )}>
       {/* Title Bar */}
       <div className="win31-titlebar">
-        <button className="win31-sysmenu" onClick={onClose} />
+        <button className="win31-sysmenu" onClick={onClose} aria-label="System menu">
+          {icon && <span className="text-[8px]">{icon}</span>}
+        </button>
         <span className="win31-titlebar-text">{title}</span>
-        {onMinimize && (
-          <button className="win31-titlebar-btn win31-titlebar-btn-minimize" onClick={onMinimize} />
-        )}
-        {onMaximize && (
-          <button className="win31-titlebar-btn win31-titlebar-btn-maximize" onClick={onMaximize} />
-        )}
-        {onClose && (
-          <button className="win31-titlebar-btn win31-titlebar-btn-close" onClick={onClose}>
-            ✕
-          </button>
-        )}
+        <div className="win31-titlebar-controls">
+          {onMinimize && (
+            <button 
+              className="win31-titlebar-btn win31-btn-minimize" 
+              onClick={onMinimize}
+              aria-label="Minimize"
+            />
+          )}
+          {onMaximize && (
+            <button 
+              className="win31-titlebar-btn win31-btn-maximize" 
+              onClick={onMaximize}
+              aria-label="Maximize"
+            />
+          )}
+        </div>
       </div>
 
       {/* Menu Bar */}
       {menuItems.length > 0 && (
         <div className="win31-menubar">
-          {menuItems.map((item, i) => (
-            <span key={i} className="win31-menubar-item">
-              <span className="win31-menubar-item-underline">{item[0]}</span>
-              {item.slice(1)}
-            </span>
-          ))}
+          {menuItems.map((item, i) => {
+            // Handle string format
+            if (typeof item === 'string') {
+              return (
+                <span key={i} className="win31-menubar-item">
+                  <span className="accel">{item[0]}</span>{item.slice(1)}
+                </span>
+              );
+            }
+            // Handle object format
+            return (
+              <span key={i} className="win31-menubar-item">
+                {item.accel ? (
+                  <>
+                    <span className="accel">{item.accel}</span>
+                    {item.label.replace(item.accel, '')}
+                  </>
+                ) : (
+                  item.label
+                )}
+              </span>
+            );
+          })}
         </div>
       )}
 
@@ -283,7 +370,7 @@ export function Win31Window({
       {/* Status Bar */}
       {statusText && (
         <div className="win31-statusbar">
-          <span className="win31-statusbar-section flex-1">{statusText}</span>
+          <span className="win31-statusbar-section">{statusText}</span>
         </div>
       )}
     </div>
@@ -292,7 +379,7 @@ export function Win31Window({
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
- * WIN31 BUTTON - Pixel-perfect button
+ * WIN31 BUTTON - With focus rectangle
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -311,7 +398,7 @@ export function Win31Button({
   return (
     <button
       className={cn(
-        'win31-button',
+        'win31-button relative',
         variant === 'primary' && 'win31-button-primary',
         isDefault && 'win31-button-default',
         className
@@ -325,7 +412,7 @@ export function Win31Button({
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
- * WIN31 DIALOG - Modal dialog box
+ * WIN31 DIALOG - Modal with icon
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -356,22 +443,28 @@ export function Win31Dialog({
   onClose,
 }: Win31DialogProps) {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      <div className="win31-dialog max-w-md">
+    <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.4)' }}>
+      <div className="win31-dialog max-w-sm">
         {/* Title Bar */}
         <div className="win31-titlebar">
           <span className="win31-titlebar-text">{title}</span>
           {onClose && (
-            <button className="win31-titlebar-btn win31-titlebar-btn-close" onClick={onClose}>
-              ✕
-            </button>
+            <div className="win31-titlebar-controls">
+              <button 
+                className="win31-titlebar-btn" 
+                onClick={onClose}
+                aria-label="Close"
+              >
+                <span className="text-[8px] font-bold">×</span>
+              </button>
+            </div>
           )}
         </div>
 
         {/* Content */}
         <div className="win31-dialog-content">
           {icon && (
-            <div className="win31-dialog-icon text-3xl">
+            <div className="win31-dialog-icon">
               {DIALOG_ICONS[icon]}
             </div>
           )}
