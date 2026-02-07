@@ -1,21 +1,17 @@
 # Changelog
 
-All notable changes to the design-critic skill.
-
 ## [1.0.0] - 2026-01-31
 
 ### Added
 - Initial release of design-critic skill
 - 6-dimension scoring system (Accessibility, Color Harmony, Typography, Layout, Modernity, Usability)
-- Assessment workflow with 200ms first impression test
-- Detailed scoring rubric in `/references/assessment-rubric.md`
-- Design trend timeline in `/references/trend-timeline.md`
-- Remix patterns with before/after examples in `/references/remix-patterns.md`
-- Integration guidance for web-design-expert and color-contrast-auditor
-- Anti-patterns section for common design mistakes
-- Output format template for consistent assessments
+- Chain-of-thought analysis protocol
+- Remix strategies for common design issues
+- Pattern detection integrated with design catalog
+- Taste calibration reference with award-level examples
 
-### Technical
-- Read-only tool permissions (Read, Glob, Grep, WebFetch, WebSearch)
-- Proper NOT clause to avoid false activation
-- Under 500 lines in SKILL.md (progressive disclosure)
+### Reference Documents
+- `assessment-rubric.md` - Detailed scoring criteria per dimension
+- `pattern-scoring.md` - Trend detection and scoring algorithms
+- `remix-strategies.md` - Quick wins to high-impact improvements
+- `taste-calibration.md` - Reference points for consistent judgment
