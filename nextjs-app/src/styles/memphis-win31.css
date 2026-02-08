@@ -824,3 +824,151 @@
 .win31-group {
   transition: none;
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   WCAG AAA COMPLIANCE
+   - 7:1 contrast ratio for normal text
+   - 4.5:1 for large text
+   - Visible focus indicators
+   - Reduced motion support
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* High contrast focus indicators */
+:focus {
+  outline: 3px solid var(--memphis-purple);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--memphis-purple);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px rgba(107, 92, 231, 0.3);
+}
+
+/* Win31 specific focus styles */
+.win31-button:focus-visible,
+.win31-icon:focus-visible,
+.win31-menubar-item:focus-visible {
+  outline: 2px dotted var(--win31-black);
+  outline-offset: -3px;
+  background: var(--memphis-yellow);
+}
+
+.win31-listbox-item:focus-visible {
+  outline: 2px solid var(--memphis-purple);
+  outline-offset: -1px;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--memphis-purple);
+  color: white;
+  padding: 8px 16px;
+  z-index: 9999;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 8px;
+}
+
+/* Ensure sufficient contrast for text */
+.win31-titlebar-text {
+  color: var(--win31-white);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.8);
+}
+
+.win31-icon-label {
+  color: var(--win31-black);
+  background: var(--memphis-surface);
+}
+
+.win31-icon-selected .win31-icon-label,
+.win31-icon:focus .win31-icon-label {
+  background: var(--memphis-purple);
+  color: var(--win31-white);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-blink,
+  .animate-marquee {
+    animation: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  :root {
+    --memphis-surface: #ffffff;
+    --memphis-surface-dark: #e0e0e0;
+    --bevel-dark: #000000;
+    --bevel-light: #ffffff;
+  }
+  
+  .win31-window,
+  .win31-button,
+  .win31-group {
+    border-width: 2px;
+  }
+  
+  .win31-titlebar {
+    background: var(--win31-black);
+  }
+}
+
+/* Ensure minimum touch target size (44x44px) */
+.win31-button,
+.win31-icon,
+.win31-menubar-item {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (pointer: fine) {
+  /* Smaller targets OK for mouse users */
+  .win31-button {
+    min-height: 24px;
+    min-width: 60px;
+  }
+  
+  .win31-icon {
+    min-height: auto;
+    min-width: auto;
+  }
+  
+  .win31-menubar-item {
+    min-height: auto;
+    min-width: auto;
+  }
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

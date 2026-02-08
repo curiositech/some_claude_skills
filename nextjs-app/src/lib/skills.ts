@@ -1,7 +1,7 @@
 /*
  * ═══════════════════════════════════════════════════════════════════════════
  * SKILL DATA - IMPORTED FROM .claude/skills/
- * Generated: 2026-02-07T19:17:48.055Z
+ * Generated: 2026-02-08T10:21:21.420Z
  * Total Skills: 173
  * 
  * DO NOT EDIT - Run 'npm run import:skills' to regenerate
