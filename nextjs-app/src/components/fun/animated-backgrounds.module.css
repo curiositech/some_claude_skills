@@ -155,13 +155,13 @@
 }
 
 /* Responsive - hide on small screens */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .backgroundsContainer > div:nth-child(n+3) {
     display: none;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .backgroundsContainer {
     display: none;
   }

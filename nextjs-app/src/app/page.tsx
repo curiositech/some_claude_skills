@@ -567,7 +567,7 @@ function MainAppContent() {
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
   const [minimizedGroups, setMinimizedGroups] = useState<Set<SkillCategory>>(new Set());
   const [openGroups, setOpenGroups] = useState<Set<SkillCategory>>(new Set());
-  const [showBrowser, setShowBrowser] = useState(true); // Open with browser!
+  const [showBrowser, setShowBrowser] = useState(false); // Don't block view on first load
   const [showBackgrounds, setShowBackgrounds] = useState(true);
   
   const playClick = useSound('/audio/click.mp3');
@@ -741,6 +741,73 @@ function MainAppContent() {
           background: theme === 'hotdog' ? '#FFFF00' : '#008080',
           overflow: 'hidden',
         }}>
+          {/* Welcome Banner - Featured Skills */}
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(255,105,180,0.9) 0%, rgba(0,206,209,0.9) 50%, rgba(255,215,0,0.9) 100%)',
+            margin: 8,
+            padding: 12,
+            border: '2px solid #000',
+            boxShadow: '4px 4px 0 rgba(0,0,0,0.3)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 12,
+            alignItems: 'center',
+          }}>
+            <div style={{ flex: 1, minWidth: 200 }}>
+              <div style={{ 
+                fontFamily: 'var(--font-display)', 
+                fontSize: 16, 
+                color: '#000080',
+                textShadow: '1px 1px 0 #FFF',
+                marginBottom: 4,
+              }}>
+                🎯 Welcome to Some Claude Skills!
+              </div>
+              <div style={{ 
+                fontFamily: 'var(--font-system)', 
+                fontSize: 11, 
+                color: '#333',
+              }}>
+                173 skills to supercharge your Claude AI. Double-click a category to explore.
+              </div>
+            </div>
+            <button
+              onClick={() => setShowBrowser(true)}
+              style={{
+                background: '#000080',
+                color: '#FFF',
+                border: '2px solid',
+                borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
+                padding: '8px 16px',
+                fontFamily: 'var(--font-system)',
+                fontSize: 11,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+              }}
+            >
+              🔍 Search Skills
+            </button>
+            <button
+              onClick={() => {
+                const skill = skills.find(s => s.id === 'prompt-engineer');
+                if (skill) setSelectedSkill(skill);
+              }}
+              style={{
+                background: '#C0C0C0',
+                border: '2px solid',
+                borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
+                padding: '8px 16px',
+                fontFamily: 'var(--font-system)',
+                fontSize: 11,
+                cursor: 'pointer',
+              }}
+            >
+              ⭐ Start with Prompt Engineer
+            </button>
+          </div>
+
           {/* Category Group Icons */}
           <div style={{
             display: 'grid',

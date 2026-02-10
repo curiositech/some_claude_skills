@@ -351,11 +351,17 @@
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .browserWindow {
     width: 98%;
-    height: 95vh;
+    height: 90vh;
     max-height: none;
+    top: 5vh;
+    transform: translateX(-50%);
+  }
+  
+  .toolbar {
+    display: none; /* Hide toolbar on mobile */
   }
   
   .searchInput {
@@ -368,6 +374,46 @@
   }
   
   .dagoogleMain span {
-    font-size: 32px !important;
+    font-size: 24px !important;
+  }
+  
+  .searchEngineToggle {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .content {
+    padding: 12px;
+  }
+  
+  .adBanner {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .browserWindow {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    transform: translate(-50%, 0);
+    border-radius: 0;
+    border: none;
+  }
+  
+  .menuBar {
+    overflow-x: auto;
+  }
+  
+  .addressBar {
+    flex-wrap: wrap;
+  }
+  
+  .addressInput {
+    width: 100%;
+  }
+  
+  .goButton {
+    display: none;
   }
 }
