@@ -1,305 +1,189 @@
 /**
- * ═══════════════════════════════════════════════════════════════════════════
- * SKILL ART GENERATOR - Icons + Hero Splash Images
+ * Generate all skill icons and hero images using Ideogram API
  * 
- * Generates for each skill:
- * 1. 32x32 icon (transparent bg, no border, Win3.1 style)
- * 2. Wide hero splash (16:9, detailed, vaporwave/Memphis style)
- * ═══════════════════════════════════════════════════════════════════════════
+ * Usage: npx ts-node scripts/generate-all-skill-art.ts
+ * 
+ * Icons: 32x32 pixel art, transparent background, VGA palette
+ * Heroes: 16:9 wide cinematic splash art (COLORFUL, BRIGHT, 90s UTOPIAN)
  */
 
-import * as fs from 'fs';
-import * as path from 'path';
+import fs from 'fs';
+import path from 'path';
 
-const IDEOGRAM_API_KEY = process.env.IDEOGRAM_API_KEY;
-const IDEOGRAM_API_URL = 'https://api.ideogram.ai/generate';
+const IDEOGRAM_API_KEY = process.env.IDEOGRAM_API_KEY || 'HpTCWkjQKGy3N-N75SwPUWw_FgdTv_4JuEuyChHJBSjwpira632amU124iHLitHGEIwGIahu0FXLr3ZNsOYvlA';
 
-// Rate limiting
-const BATCH_SIZE = 3;
-const BATCH_DELAY_MS = 5000;
-const MAX_RETRIES = 3;
-
-// Output directories
-const ICONS_DIR = path.join(__dirname, '../public/img/skill-icons');
-const HEROES_DIR = path.join(__dirname, '../public/img/skill-heroes');
-
-interface SkillInfo {
+interface Skill {
   id: string;
   title: string;
   description: string;
-  category: string;
-  tags: string[];
+  icon: string;
 }
 
-// Extract skill info from skills.ts
-function loadSkills(): SkillInfo[] {
+// Extract skills from skills.ts
+function getSkillsFromSource(): Skill[] {
   const skillsPath = path.join(__dirname, '../src/lib/skills.ts');
   const content = fs.readFileSync(skillsPath, 'utf-8');
   
-  const skills: SkillInfo[] = [];
+  const skills: Skill[] = [];
+  const idRegex = /id:\s*'([^']+)'/g;
+  const titleRegex = /title:\s*'([^']+)'/g;
+  const descRegex = /description:\s*`([^`]+)`/g;
+  const iconRegex = /icon:\s*'([^']+)'/g;
   
-  // Match skill objects
-  const skillRegex = /{\s*id:\s*'([^']+)',\s*title:\s*'([^']+)',\s*description:\s*`([^`]+)`[\s\S]*?category:\s*'([^']+)'[\s\S]*?tags:\s*\[([^\]]*)\]/g;
+  const ids = [...content.matchAll(idRegex)].map(m => m[1]);
+  const titles = [...content.matchAll(titleRegex)].map(m => m[1]);
+  const descriptions = [...content.matchAll(descRegex)].map(m => m[1]);
+  const icons = [...content.matchAll(iconRegex)].map(m => m[1]);
   
-  let match;
-  while ((match = skillRegex.exec(content)) !== null) {
-    const tags = match[5]
-      .split(',')
-      .map(t => t.trim().replace(/['"]/g, ''))
-      .filter(t => t.length > 0);
-    
-    skills.push({
-      id: match[1],
-      title: match[2],
-      description: match[3].substring(0, 300), // Truncate for prompt
-      category: match[4],
-      tags,
-    });
+  for (let i = 0; i < ids.length; i++) {
+    if (ids[i] && titles[i] && descriptions[i]) {
+      skills.push({
+        id: ids[i],
+        title: titles[i],
+        description: descriptions[i].substring(0, 150),
+        icon: icons[i] || '📦'
+      });
+    }
   }
   
   return skills;
 }
 
 /**
- * Generate icon prompt - 32x32, transparent, no border
+ * Generate prompt for 32x32 skill icon
+ * Transparent background, pixel art, Win3.1 style
  */
-function generateIconPrompt(skill: SkillInfo): string {
-  // Determine visual concept based on skill
-  let concept = 'abstract geometric shape';
+function generateIconPrompt(skill: Skill): string {
+  // Extract key concept from title
+  const concept = skill.title.toLowerCase().replace(/[^a-z0-9\s]/g, '');
   
-  const conceptMap: Record<string, string> = {
-    'audio': 'speaker with sound waves',
-    'music': 'musical note',
-    'video': 'film camera',
-    'react': 'atom symbol',
-    'typescript': 'TS letters in a box',
-    'python': 'coiled snake',
-    'database': 'cylinder database',
-    'api': 'plug and socket',
-    'design': 'paintbrush and palette',
-    'test': 'checkmark in shield',
-    'security': 'padlock',
-    'cloud': 'cloud with arrow',
-    'mobile': 'smartphone',
-    'ai': 'brain with circuits',
-    'bot': 'robot head',
-    'email': 'envelope',
-    'calendar': 'calendar page',
-    'chart': 'bar chart',
-    'document': 'paper document',
-    'code': 'angle brackets with slash',
-    'drone': 'quadcopter drone',
-    'vr': 'VR headset',
-    'game': 'game controller',
-    'photo': 'camera',
-    'shader': 'glowing cube',
-    'workflow': 'flowchart boxes',
-    'debug': 'magnifying glass over bug',
-  };
-  
-  for (const [keyword, visual] of Object.entries(conceptMap)) {
-    if (skill.id.includes(keyword) || skill.tags.some(t => t.toLowerCase().includes(keyword))) {
-      concept = visual;
-      break;
-    }
-  }
-  
-  return `32x32 pixel art icon of ${concept}, Windows 3.1 desktop icon style, transparent background, NO border around the icon, clean edges, VGA 16-color palette, centered composition, crisp pixels`;
+  return `32x32 pixel art icon for "${concept}" software tool, Windows 3.1 style, VGA 16-color palette, transparent background, crisp pixels, no border, no text, clean simple recognizable symbol, isometric perspective where appropriate, ${skill.icon} style, professional application icon`;
 }
 
 /**
- * Generate hero splash prompt - wide, detailed, vaporwave/Memphis
+ * Generate prompt for hero splash image
+ * USER'S COLORFUL TEMPLATE: 90s tech-utopian, Memphis Group meets Lisa Frank
  */
-function generateHeroPrompt(skill: SkillInfo): string {
-  // Shorten description for prompt
-  const shortDesc = skill.description
-    .replace(/\n/g, ' ')
-    .replace(/\s+/g, ' ')
-    .substring(0, 200);
+function generateHeroPrompt(skill: Skill): string {
+  const shortDesc = skill.description.substring(0, 200);
   
   return `Cover splash art for an artificial intelligence software package for the skill "${skill.title}" which ${shortDesc}.
 
-Theme: Windows 3.1/MS-DOS 16-bit VGA palette pixel art (90s tech-utopian, colorful, vaguely vaporwave cyberspace, a little Memphis Group meets Lisa Frank at the mall and they get lost in the arcade before buying stonewashed jeans). Wide cinematic composition, detailed scene, nostalgic retro-future aesthetic.`;
+Theme: Windows 3.1/MS-DOS 16-bit VGA palette pixel art (90s tech-utopian, colorful, vaguely cyberspace, a little Memphis Group meets Lisa Frank at the mall and they get lost in the arcade before buying stonewashed jeans). Wide cinematic composition, detailed scene, nostalgic retro-future aesthetic. BRIGHT vibrant colors, not dark or dystopian. Pink, cyan, yellow, purple, orange. Optimistic futurism.`;
 }
 
-/**
- * Call Ideogram API
- */
-async function generateImage(
-  prompt: string, 
-  aspectRatio: 'ASPECT_1_1' | 'ASPECT_16_9',
-  outputPath: string
-): Promise<boolean> {
-  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
-    try {
-      const response = await fetch(IDEOGRAM_API_URL, {
-        method: 'POST',
-        headers: {
-          'Api-Key': IDEOGRAM_API_KEY!,
-          'Content-Type': 'application/json',
+async function generateImage(prompt: string, aspectRatio: string = '1:1'): Promise<string | null> {
+  try {
+    const response = await fetch('https://api.ideogram.ai/generate', {
+      method: 'POST',
+      headers: {
+        'Api-Key': IDEOGRAM_API_KEY,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        image_request: {
+          prompt,
+          aspect_ratio: aspectRatio,
+          model: 'V_2',
+          magic_prompt_option: 'AUTO',
+          style_type: aspectRatio === '1:1' ? 'DESIGN' : 'REALISTIC',
         },
-        body: JSON.stringify({
-          image_request: {
-            prompt,
-            model: 'V_2',
-            magic_prompt_option: 'AUTO',
-            aspect_ratio: aspectRatio,
-            style_type: aspectRatio === 'ASPECT_1_1' ? 'DESIGN' : 'GENERAL',
-          },
-        }),
-      });
-      
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error(`    API error (${response.status}): ${errorText}`);
-        if (response.status === 429) {
-          console.log('    Rate limited, waiting 15s...');
-          await sleep(15000);
-          continue;
-        }
-        throw new Error(`API error: ${response.status}`);
-      }
-      
-      const data = await response.json();
-      
-      if (data.data?.[0]?.url) {
-        const imageUrl = data.data[0].url;
-        const imageResponse = await fetch(imageUrl);
-        const imageBuffer = Buffer.from(await imageResponse.arrayBuffer());
-        fs.writeFileSync(outputPath, imageBuffer);
-        return true;
-      }
-      
-      return false;
-    } catch (error) {
-      console.error(`    Attempt ${attempt + 1} failed:`, (error as Error).message);
-      if (attempt < MAX_RETRIES - 1) {
-        await sleep(3000 * (attempt + 1));
-      }
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.text();
+      console.error('API error:', error);
+      return null;
     }
+
+    const data = await response.json();
+    return data.data?.[0]?.url || null;
+  } catch (error) {
+    console.error('Request failed:', error);
+    return null;
   }
-  
-  return false;
 }
 
-function sleep(ms: number): Promise<void> {
+async function downloadImage(url: string, filepath: string): Promise<boolean> {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) return false;
+    
+    const buffer = await response.arrayBuffer();
+    const dir = path.dirname(filepath);
+    
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    
+    fs.writeFileSync(filepath, Buffer.from(buffer));
+    return true;
+  } catch (error) {
+    console.error('Download failed:', error);
+    return false;
+  }
+}
+
+async function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function getExistingFiles(dir: string): Set<string> {
-  const existing = new Set<string>();
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-    return existing;
-  }
-  
-  const files = fs.readdirSync(dir);
-  for (const file of files) {
-    if (file.endsWith('.png') || file.endsWith('.webp')) {
-      const id = file.replace(/\.(png|webp)$/, '');
-      existing.add(id);
-    }
-  }
-  return existing;
-}
-
 async function main() {
-  if (!IDEOGRAM_API_KEY) {
-    console.error('❌ IDEOGRAM_API_KEY environment variable not set');
-    process.exit(1);
-  }
+  const skills = getSkillsFromSource();
+  console.log(`Found ${skills.length} skills`);
   
-  console.log('🎨 Skill Art Generator - Icons + Hero Splashes\n');
+  const iconDir = path.join(__dirname, '../public/img/skill-icons');
+  const heroDir = path.join(__dirname, '../public/img/skill-heroes');
   
-  const skills = loadSkills();
-  console.log(`📦 Loaded ${skills.length} skills\n`);
+  if (!fs.existsSync(iconDir)) fs.mkdirSync(iconDir, { recursive: true });
+  if (!fs.existsSync(heroDir)) fs.mkdirSync(heroDir, { recursive: true });
   
-  const existingIcons = getExistingFiles(ICONS_DIR);
-  const existingHeroes = getExistingFiles(HEROES_DIR);
+  let iconCount = 0;
+  let heroCount = 0;
   
-  console.log(`📂 Existing icons: ${existingIcons.size}`);
-  console.log(`📂 Existing heroes: ${existingHeroes.size}\n`);
-  
-  // Filter to skills needing work
-  const needIcons = skills.filter(s => !existingIcons.has(s.id));
-  const needHeroes = skills.filter(s => !existingHeroes.has(s.id));
-  
-  console.log(`🔄 Need ${needIcons.length} icons, ${needHeroes.length} heroes\n`);
-  
-  let iconSuccess = 0, iconFail = 0;
-  let heroSuccess = 0, heroFail = 0;
-  
-  // Generate icons first (faster, smaller)
-  if (needIcons.length > 0) {
-    console.log('═══════════════════════════════════════');
-    console.log('GENERATING ICONS (32x32)');
-    console.log('═══════════════════════════════════════\n');
+  for (const skill of skills) {
+    // Generate icon
+    const iconPath = path.join(iconDir, `${skill.id}.png`);
+    if (!fs.existsSync(iconPath)) {
+      console.log(`\n[Icon] Generating: ${skill.title}`);
+      const iconPrompt = generateIconPrompt(skill);
+      const iconUrl = await generateImage(iconPrompt, '1:1');
+      
+      if (iconUrl) {
+        await downloadImage(iconUrl, iconPath);
+        iconCount++;
+        console.log(`  ✅ Saved icon: ${skill.id}.png`);
+      } else {
+        console.log(`  ❌ Failed: ${skill.id}`);
+      }
+      
+      await sleep(1500); // Rate limiting
+    }
     
-    for (let i = 0; i < needIcons.length; i += BATCH_SIZE) {
-      const batch = needIcons.slice(i, i + BATCH_SIZE);
-      console.log(`📦 Icon Batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(needIcons.length / BATCH_SIZE)}`);
+    // Generate hero
+    const heroPath = path.join(heroDir, `${skill.id}.png`);
+    if (!fs.existsSync(heroPath)) {
+      console.log(`\n[Hero] Generating: ${skill.title}`);
+      const heroPrompt = generateHeroPrompt(skill);
+      const heroUrl = await generateImage(heroPrompt, '16:9');
       
-      for (const skill of batch) {
-        console.log(`  ${skill.id}...`);
-        const prompt = generateIconPrompt(skill);
-        const outputPath = path.join(ICONS_DIR, `${skill.id}.png`);
-        
-        const success = await generateImage(prompt, 'ASPECT_1_1', outputPath);
-        if (success) {
-          console.log(`    ✅ Icon generated`);
-          iconSuccess++;
-        } else {
-          console.log(`    ❌ Icon failed`);
-          iconFail++;
-        }
+      if (heroUrl) {
+        await downloadImage(heroUrl, heroPath);
+        heroCount++;
+        console.log(`  ✅ Saved hero: ${skill.id}.png`);
+      } else {
+        console.log(`  ❌ Failed: ${skill.id}`);
       }
       
-      if (i + BATCH_SIZE < needIcons.length) {
-        console.log(`  ⏳ Waiting ${BATCH_DELAY_MS / 1000}s...`);
-        await sleep(BATCH_DELAY_MS);
-      }
+      await sleep(1500); // Rate limiting
     }
   }
   
-  // Generate hero splashes
-  if (needHeroes.length > 0) {
-    console.log('\n═══════════════════════════════════════');
-    console.log('GENERATING HERO SPLASHES (16:9)');
-    console.log('═══════════════════════════════════════\n');
-    
-    for (let i = 0; i < needHeroes.length; i += BATCH_SIZE) {
-      const batch = needHeroes.slice(i, i + BATCH_SIZE);
-      console.log(`📦 Hero Batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(needHeroes.length / BATCH_SIZE)}`);
-      
-      for (const skill of batch) {
-        console.log(`  ${skill.id}...`);
-        const prompt = generateHeroPrompt(skill);
-        const outputPath = path.join(HEROES_DIR, `${skill.id}.png`);
-        
-        const success = await generateImage(prompt, 'ASPECT_16_9', outputPath);
-        if (success) {
-          console.log(`    ✅ Hero generated`);
-          heroSuccess++;
-        } else {
-          console.log(`    ❌ Hero failed`);
-          heroFail++;
-        }
-      }
-      
-      if (i + BATCH_SIZE < needHeroes.length) {
-        console.log(`  ⏳ Waiting ${BATCH_DELAY_MS / 1000}s...`);
-        await sleep(BATCH_DELAY_MS);
-      }
-    }
-  }
-  
-  console.log('\n═══════════════════════════════════════');
-  console.log('COMPLETE');
-  console.log('═══════════════════════════════════════');
-  console.log(`Icons:  ✅ ${iconSuccess} generated, ❌ ${iconFail} failed`);
-  console.log(`Heroes: ✅ ${heroSuccess} generated, ❌ ${heroFail} failed`);
-  console.log(`Total icons: ${existingIcons.size + iconSuccess}`);
-  console.log(`Total heroes: ${existingHeroes.size + heroSuccess}`);
+  console.log(`\n════════════════════════════════════════`);
+  console.log(`Generated ${iconCount} new icons`);
+  console.log(`Generated ${heroCount} new heroes`);
+  console.log(`════════════════════════════════════════`);
 }
 
 main().catch(console.error);

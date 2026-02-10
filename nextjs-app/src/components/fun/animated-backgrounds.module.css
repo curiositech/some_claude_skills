@@ -1,0 +1,175 @@
+/* Animated Desktop Backgrounds - Fun Windows 3.1 Style */
+
+.backgroundsContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.backgroundsContainer > div {
+  position: absolute;
+  pointer-events: auto;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.backgroundsContainer > div:hover {
+  opacity: 1;
+  z-index: 100;
+}
+
+.bgTopLeft { top: 50px; left: 20px; }
+.bgTopRight { top: 50px; right: 20px; }
+.bgBottomLeft { bottom: 80px; left: 20px; }
+.bgBottomRight { bottom: 80px; right: 20px; }
+
+/* Common Window Styles */
+.gameWindow,
+.clockWindow,
+.solitaireWindow,
+.lifeWindow,
+.minesweeperWindow {
+  background: #C0C0C0;
+  border: 2px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  font-family: 'MS Sans Serif', 'Segoe UI', sans-serif;
+}
+
+.titleBar {
+  background: linear-gradient(90deg, #000080 0%, #1084D0 100%);
+  color: white;
+  padding: 2px 4px;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 18px;
+}
+
+.windowControls {
+  display: flex;
+  gap: 2px;
+}
+
+.windowControls button {
+  width: 16px;
+  height: 14px;
+  background: #C0C0C0;
+  border: 1px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  font-size: 9px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.windowControls button:active {
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+}
+
+/* Canvases */
+.gameCanvas,
+.clockCanvas {
+  display: block;
+  image-rendering: pixelated;
+  background: #000;
+}
+
+.clockCanvas {
+  background: #C0C0C0;
+}
+
+/* Minesweeper specific */
+.minesweeperCounter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px;
+  background: #C0C0C0;
+  border-bottom: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+}
+
+.lcdDisplay {
+  background: #000;
+  color: #FF0000;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px 4px;
+  border: 1px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+}
+
+.smileyButton {
+  width: 26px;
+  height: 26px;
+  background: #C0C0C0;
+  border: 2px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+}
+
+.smileyButton:active {
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+}
+
+.minesweeperGrid {
+  padding: 4px;
+  background: #C0C0C0;
+  border: 3px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  margin: 4px;
+}
+
+.minesweeperRow {
+  display: flex;
+}
+
+.minesweeperCell {
+  width: 16px;
+  height: 16px;
+  background: #C0C0C0;
+  border: 2px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.minesweeperCell.revealed {
+  border: 1px solid #808080;
+  background: #C0C0C0;
+}
+
+/* Responsive - hide on small screens */
+@media (max-width: 900px) {
+  .backgroundsContainer > div:nth-child(n+3) {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .backgroundsContainer {
+    display: none;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .backgroundsContainer {
+    display: none;
+  }
+}

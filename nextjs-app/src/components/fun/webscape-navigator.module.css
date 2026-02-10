@@ -1,0 +1,373 @@
+/* Webscape Navigator - 90s Browser Style */
+
+.browserWindow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  height: 80vh;
+  max-height: 600px;
+  background: #C0C0C0;
+  border: 2px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  font-family: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* Title Bar */
+.titleBar {
+  background: linear-gradient(90deg, #000080 0%, #1084D0 100%);
+  color: white;
+  padding: 2px 4px;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+}
+
+.windowControls {
+  display: flex;
+  gap: 2px;
+}
+
+.windowControls button {
+  width: 18px;
+  height: 16px;
+  background: #C0C0C0;
+  border: 1px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.windowControls button:hover {
+  background: #D4D4D4;
+}
+
+.windowControls button:active {
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+}
+
+/* Menu Bar */
+.menuBar {
+  display: flex;
+  padding: 2px;
+  background: #C0C0C0;
+  border-bottom: 1px solid #808080;
+}
+
+.menuItem {
+  padding: 2px 8px;
+  background: transparent;
+  border: none;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.menuItem:hover {
+  background: #000080;
+  color: white;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: 2px;
+  padding: 4px;
+  background: #C0C0C0;
+  border-bottom: 1px solid #808080;
+}
+
+.toolButton {
+  width: 32px;
+  height: 28px;
+  background: #C0C0C0;
+  border: 1px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toolButton:hover {
+  background: #D4D4D4;
+}
+
+.toolButton:active {
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+}
+
+/* Address Bar */
+.addressBar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: #C0C0C0;
+  border-bottom: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+}
+
+.addressLabel {
+  font-size: 11px;
+  margin-right: 4px;
+}
+
+.addressInput {
+  flex: 1;
+  height: 20px;
+  border: 1px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  padding: 0 4px;
+  font-size: 11px;
+  font-family: inherit;
+}
+
+.goButton {
+  padding: 2px 12px;
+  background: #C0C0C0;
+  border: 1px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  cursor: pointer;
+  font-size: 11px;
+  font-family: inherit;
+}
+
+/* Content Area */
+.content {
+  flex: 1;
+  background: white;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Search Engine Toggle */
+.searchEngineToggle {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.engineButton {
+  padding: 8px 16px;
+  background: #E8E8E8;
+  border: 2px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.engineButton.active {
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  background: #D0D0D0;
+}
+
+.dagoogleLogo {
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.dageevesLogo {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  color: #8B0000;
+  font-size: 14px;
+}
+
+/* Main Search Logo */
+.searchLogo {
+  margin: 20px 0 30px;
+  text-align: center;
+}
+
+.dagoogleMain {
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  display: flex;
+}
+
+.dageevesMain {
+  text-align: center;
+}
+
+.dageevesButler {
+  font-size: 64px;
+  margin-bottom: 10px;
+}
+
+.dageevesTitle {
+  font-family: 'Times New Roman', serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #8B0000;
+}
+
+.dageevesTagline {
+  font-style: italic;
+  color: #666;
+  font-size: 12px;
+}
+
+/* Search Box */
+.searchBox {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.searchInput {
+  width: 400px;
+  max-width: 100%;
+  height: 24px;
+  border: 1px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  padding: 0 8px;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.searchButton,
+.luckyButton {
+  padding: 4px 16px;
+  background: #C0C0C0;
+  border: 1px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  cursor: pointer;
+  font-size: 11px;
+  font-family: inherit;
+}
+
+.searchButton:hover,
+.luckyButton:hover {
+  background: #D4D4D4;
+}
+
+.searchButton:active,
+.luckyButton:active {
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+}
+
+.searchButton:disabled {
+  color: #808080;
+  cursor: not-allowed;
+}
+
+/* Results */
+.results {
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+}
+
+.resultsHeader {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.resultItem {
+  margin-bottom: 20px;
+}
+
+.resultLink {
+  color: #0000FF;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.resultLink:visited {
+  color: #800080;
+}
+
+.resultUrl {
+  color: #008000;
+  font-size: 11px;
+  margin: 2px 0;
+}
+
+.resultSnippet {
+  color: #333;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* Ad Banner */
+.adBanner {
+  width: 100%;
+  margin-top: 20px;
+  padding: 8px;
+  background: linear-gradient(180deg, #FFD700 0%, #FFA500 100%);
+  border: 2px solid #FF8C00;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000080;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marqueeContent {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Status Bar */
+.statusBar {
+  display: flex;
+  gap: 10px;
+  padding: 2px 8px;
+  background: #C0C0C0;
+  border-top: 1px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  font-size: 10px;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .browserWindow {
+    width: 98%;
+    height: 95vh;
+    max-height: none;
+  }
+  
+  .searchInput {
+    width: 100%;
+  }
+  
+  .searchBox {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dagoogleMain span {
+    font-size: 32px !important;
+  }
+}

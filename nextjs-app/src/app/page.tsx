@@ -2,19 +2,28 @@
 
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * SOME CLAUDE SKILLS - AUTHENTIC WINDOWS 3.1 PROGRAM MANAGER
+ * SOME CLAUDE SKILLS - FUN WINDOWS 3.1 EXPERIENCE
  * 
- * Key differences from previous version:
- * - Program Manager CONTAINS group windows (MDI parent)
- * - Dense icon grid (64px), no truncation
- * - Groups are child windows inside Program Manager
- * - Proper Win31 spacing per the design skill
+ * Features:
+ * - 10 meaningful skill categories (not just "development")
+ * - Webscape Navigator with Dagoogle/Ask Dageeves search
+ * - Animated backgrounds (Gorillas, Clock, Solitaire, Life)
+ * - Winamp music player
+ * - Full MDI Program Manager
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 import * as React from 'react';
-import { useState, useEffect, useMemo, useRef } from 'react';
-import { skills, categoryMeta, type Skill, type SkillCategory } from '@/lib/skills';
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
+import { skills, type Skill } from '@/lib/skills';
+import { 
+  categoryMeta as newCategoryMeta, 
+  type SkillCategory, 
+  getSkillCategory 
+} from '@/lib/skill-taxonomy';
+import { AnimatedDesktopBackgrounds } from '@/components/fun/animated-backgrounds';
+import { WebscapeNavigator } from '@/components/fun/webscape-navigator';
+import { MusicPlayerProvider, useMusicPlayer, WinampModal } from '@/components/winamp';
 import '@/styles/win31-authentic.css';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -31,16 +40,16 @@ function useSound(src: string) {
     }
   }, [src]);
   
-  return () => {
+  return useCallback(() => {
     if (audioRef.current) {
       audioRef.current.currentTime = 0;
       audioRef.current.play().catch(() => {});
     }
-  };
+  }, []);
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// BOOT SCREEN
+// BOOT SCREEN - Windows Style
 // ═══════════════════════════════════════════════════════════════════════════
 
 function BootScreen({ onComplete }: { onComplete: () => void }) {
@@ -53,12 +62,12 @@ function BootScreen({ onComplete }: { onComplete: () => void }) {
       setProgress(p => {
         if (p >= 100) {
           clearInterval(interval);
-          setTimeout(onComplete, 200);
+          setTimeout(onComplete, 300);
           return 100;
         }
-        return p + Math.random() * 20;
+        return p + Math.random() * 15;
       });
-    }, 80);
+    }, 100);
     return () => clearInterval(interval);
   }, [onComplete, playStartup]);
 
@@ -66,62 +75,92 @@ function BootScreen({ onComplete }: { onComplete: () => void }) {
     <div style={{
       position: 'fixed',
       inset: 0,
-      background: '#000080',
+      background: 'linear-gradient(180deg, #000080 0%, #0000AA 100%)',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
       zIndex: 99999,
     }}>
+      {/* Windows Logo */}
+      <div style={{ 
+        fontSize: 48, 
+        marginBottom: 20,
+        animation: 'pulse 1s ease-in-out infinite',
+      }}>
+        🪟
+      </div>
+      
       <div style={{ 
         fontFamily: 'var(--font-display)', 
-        fontSize: 12, 
+        fontSize: 14, 
         color: '#FFFFFF',
-        marginBottom: 24,
-        textAlign: 'center',
+        marginBottom: 8,
+        letterSpacing: 2,
       }}>
         Microsoft® Windows™
       </div>
+      
+      <div style={{ 
+        fontFamily: 'var(--font-system)', 
+        fontSize: 11, 
+        color: '#00FFFF',
+        marginBottom: 40,
+      }}>
+        Version 3.1
+      </div>
+      
+      {/* Splash Art */}
       <div style={{
-        width: 280,
-        height: 180,
-        background: 'linear-gradient(180deg, #000080 0%, #0000AA 100%)',
+        width: 320,
+        height: 200,
+        background: 'linear-gradient(135deg, #FF69B4 0%, #00CED1 50%, #FFD700 100%)',
         border: '4px outset #C0C0C0',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 24,
+        marginBottom: 30,
+        boxShadow: '0 0 60px rgba(255, 105, 180, 0.5)',
       }}>
         <div style={{ 
           fontFamily: 'var(--font-display)', 
-          fontSize: 8,
-          color: '#00FFFF',
+          fontSize: 28,
+          color: '#000080',
+          textShadow: '2px 2px 0 #FFF',
           textAlign: 'center',
-          lineHeight: 1.8,
+          lineHeight: 1.3,
         }}>
           SOME<br/>CLAUDE<br/>SKILLS
         </div>
         <div style={{ 
           fontFamily: 'var(--font-system)', 
-          fontSize: 10,
-          color: '#FFFFFF',
-          marginTop: 12,
+          fontSize: 12,
+          color: '#000080',
+          marginTop: 16,
+          background: '#FFFFFF',
+          padding: '4px 12px',
         }}>
-          173 Skills Available
+          🤖 173 AI Skills Available
         </div>
       </div>
+      
+      {/* Progress Bar */}
+      <div style={{ fontFamily: 'var(--font-system)', fontSize: 10, color: '#FFFFFF', marginBottom: 8 }}>
+        Loading skills...
+      </div>
       <div style={{
-        width: 200,
-        height: 16,
+        width: 280,
+        height: 20,
         background: '#000000',
         border: '2px solid #FFFFFF',
+        padding: 2,
       }}>
         <div style={{
           height: '100%',
           width: `${Math.min(100, progress)}%`,
-          background: '#00AAAA',
-          transition: 'width 80ms linear',
+          background: 'linear-gradient(90deg, #00AAAA 0%, #00FFFF 100%)',
+          transition: 'width 100ms linear',
         }} />
       </div>
     </div>
@@ -129,7 +168,7 @@ function BootScreen({ onComplete }: { onComplete: () => void }) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// SKILL ICON - Dense, Full Name
+// SKILL ICON - Dense grid, full names
 // ═══════════════════════════════════════════════════════════════════════════
 
 function SkillIcon({ 
@@ -156,7 +195,7 @@ function SkillIcon({
         background: selected ? 'var(--win31-navy)' : 'transparent',
         border: 'none',
         cursor: 'pointer',
-        width: 64,
+        width: 72,
       }}
     >
       {skill.skillIcon ? (
@@ -168,7 +207,7 @@ function SkillIcon({
           loading="lazy"
         />
       ) : (
-        <span style={{ fontSize: 24, lineHeight: 1 }}>{skill.icon}</span>
+        <span style={{ fontSize: 28, lineHeight: 1 }}>{skill.icon}</span>
       )}
       <span style={{
         fontFamily: 'var(--font-system)',
@@ -177,7 +216,7 @@ function SkillIcon({
         color: selected ? '#FFFFFF' : '#000000',
         wordBreak: 'break-word',
         lineHeight: 1.1,
-        maxWidth: 60,
+        maxWidth: 68,
       }}>
         {skill.title}
       </span>
@@ -192,6 +231,7 @@ function SkillIcon({
 interface GroupWindowProps {
   title: string;
   icon: string;
+  color: string;
   skills: Skill[];
   position: { x: number; y: number };
   size: { width: number; height: number };
@@ -205,6 +245,7 @@ interface GroupWindowProps {
 function GroupWindow({ 
   title, 
   icon, 
+  color,
   skills: groupSkills,
   position, 
   size,
@@ -216,18 +257,17 @@ function GroupWindow({
 }: GroupWindowProps) {
   const [isDragging, setIsDragging] = useState(false);
   const [pos, setPos] = useState(position);
-  const dragStart = useRef({ x: 0, y: 0, px: 0, py: 0 });
+  const dragStart = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     if (!isDragging) return;
     
     const handleMove = (e: MouseEvent) => {
-      setPos({
-        x: pos.x + e.clientX - dragStart.current.x,
-        y: pos.y + e.clientY - dragStart.current.y,
-      });
-      dragStart.current.x = e.clientX;
-      dragStart.current.y = e.clientY;
+      setPos(p => ({
+        x: p.x + e.clientX - dragStart.current.x,
+        y: p.y + e.clientY - dragStart.current.y,
+      }));
+      dragStart.current = { x: e.clientX, y: e.clientY };
     };
     
     const handleUp = () => setIsDragging(false);
@@ -238,7 +278,7 @@ function GroupWindow({
       document.removeEventListener('mousemove', handleMove);
       document.removeEventListener('mouseup', handleUp);
     };
-  }, [isDragging, pos]);
+  }, [isDragging]);
 
   return (
     <div 
@@ -251,14 +291,14 @@ function GroupWindow({
         background: '#C0C0C0',
         border: '2px solid',
         borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-        boxShadow: 'inset 1px 1px 0 #DFDFDF, inset -1px -1px 0 #808080',
+        boxShadow: 'inset 1px 1px 0 #DFDFDF, inset -1px -1px 0 #808080, 2px 2px 8px rgba(0,0,0,0.3)',
         display: 'flex',
         flexDirection: 'column',
         zIndex: isActive ? 10 : 1,
       }}
       onMouseDown={onActivate}
     >
-      {/* Title bar */}
+      {/* Title bar with category color accent */}
       <div 
         style={{
           background: isActive ? '#000080' : '#808080',
@@ -270,12 +310,13 @@ function GroupWindow({
           cursor: 'move',
           fontFamily: 'var(--font-system)',
           fontSize: 11,
+          borderBottom: `2px solid ${color}`,
         }}
         onMouseDown={(e) => {
           e.preventDefault();
           onActivate();
           setIsDragging(true);
-          dragStart.current = { x: e.clientX, y: e.clientY, px: pos.x, py: pos.y };
+          dragStart.current = { x: e.clientX, y: e.clientY };
         }}
       >
         <span>{icon}</span>
@@ -297,13 +338,13 @@ function GroupWindow({
         >▼</button>
       </div>
       
-      {/* Content - Icon Grid */}
+      {/* Icon Grid */}
       <div style={{
         flex: 1,
         overflow: 'auto',
         padding: 4,
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, 64px)',
+        gridTemplateColumns: 'repeat(auto-fill, 72px)',
         gap: 2,
         alignContent: 'start',
       }}>
@@ -315,6 +356,17 @@ function GroupWindow({
             selected={selectedSkillId === skill.id}
           />
         ))}
+      </div>
+      
+      {/* Status */}
+      <div style={{
+        padding: '2px 4px',
+        borderTop: '1px solid #808080',
+        fontFamily: 'var(--font-system)',
+        fontSize: 9,
+        color: '#555',
+      }}>
+        {groupSkills.length} skills
       </div>
     </div>
   );
@@ -334,6 +386,27 @@ function SkillDetailWindow({
   position: { x: number; y: number };
 }) {
   const [copied, setCopied] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [pos, setPos] = useState(position);
+  const dragStart = useRef({ x: 0, y: 0 });
+
+  useEffect(() => {
+    if (!isDragging) return;
+    const handleMove = (e: MouseEvent) => {
+      setPos(p => ({
+        x: p.x + e.clientX - dragStart.current.x,
+        y: p.y + e.clientY - dragStart.current.y,
+      }));
+      dragStart.current = { x: e.clientX, y: e.clientY };
+    };
+    const handleUp = () => setIsDragging(false);
+    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('mouseup', handleUp);
+    return () => {
+      document.removeEventListener('mousemove', handleMove);
+      document.removeEventListener('mouseup', handleUp);
+    };
+  }, [isDragging]);
   
   const handleCopy = async () => {
     await navigator.clipboard.writeText(skill.installCommand);
@@ -344,10 +417,10 @@ function SkillDetailWindow({
   return (
     <div style={{
       position: 'absolute',
-      left: position.x,
-      top: position.y,
-      width: 500,
-      height: 400,
+      left: pos.x,
+      top: pos.y,
+      width: 520,
+      maxHeight: 450,
       background: '#C0C0C0',
       border: '3px solid',
       borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
@@ -357,16 +430,24 @@ function SkillDetailWindow({
       zIndex: 100,
     }}>
       {/* Title bar */}
-      <div style={{
-        background: '#000080',
-        color: '#FFFFFF',
-        padding: '2px 4px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: 4,
-        fontFamily: 'var(--font-system)',
-        fontSize: 11,
-      }}>
+      <div 
+        style={{
+          background: '#000080',
+          color: '#FFFFFF',
+          padding: '2px 4px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 4,
+          fontFamily: 'var(--font-system)',
+          fontSize: 11,
+          cursor: 'move',
+        }}
+        onMouseDown={(e) => {
+          e.preventDefault();
+          setIsDragging(true);
+          dragStart.current = { x: e.clientX, y: e.clientY };
+        }}
+      >
         <span>{skill.icon}</span>
         <span style={{ flex: 1 }}>{skill.title}.md</span>
         <button 
@@ -385,22 +466,31 @@ function SkillDetailWindow({
       
       {/* Content */}
       <div style={{ flex: 1, overflow: 'auto', padding: 8 }}>
-        {/* Hero */}
+        {/* Hero Image */}
         {skill.skillHero && (
-          <div style={{ marginBottom: 8, border: '2px inset #808080' }}>
+          <div style={{ 
+            marginBottom: 8, 
+            border: '2px inset #808080',
+            background: '#000',
+          }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={skill.skillHero} alt="" style={{ width: '100%', display: 'block' }} />
+            <img src={skill.skillHero} alt="" style={{ width: '100%', display: 'block' }} loading="lazy" />
           </div>
         )}
         
         {/* Meta */}
         <div style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
-          <span style={{ fontSize: 32 }}>{skill.icon}</span>
+          {skill.skillIcon ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={skill.skillIcon} alt="" style={{ width: 48, height: 48, imageRendering: 'pixelated' }} />
+          ) : (
+            <span style={{ fontSize: 40 }}>{skill.icon}</span>
+          )}
           <div>
             <div style={{ fontFamily: 'var(--font-system)', fontSize: 14, fontWeight: 'bold' }}>
               {skill.title}
             </div>
-            <div style={{ fontFamily: 'var(--font-system)', fontSize: 10, color: '#555' }}>
+            <div style={{ fontFamily: 'var(--font-system)', fontSize: 10, color: '#555', lineHeight: 1.3 }}>
               {skill.description}
             </div>
           </div>
@@ -408,57 +498,59 @@ function SkillDetailWindow({
         
         {/* Tags */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 2, marginBottom: 8 }}>
-          {skill.tags.map(tag => (
+          {skill.tags.slice(0, 8).map(tag => (
             <span key={tag} style={{
               fontFamily: 'var(--font-system)',
               fontSize: 9,
               background: '#DFDFDF',
               border: '1px solid #808080',
               padding: '1px 4px',
+              cursor: 'pointer',
             }}>{tag}</span>
           ))}
         </div>
         
-        {/* Install */}
+        {/* Install Command */}
         <div style={{
-          background: '#FFFFFF',
+          background: '#000000',
           border: '2px inset #808080',
-          padding: 6,
+          padding: 8,
           fontFamily: 'var(--font-code)',
-          fontSize: 10,
+          fontSize: 11,
           marginBottom: 8,
           display: 'flex',
           gap: 8,
+          alignItems: 'center',
         }}>
-          <code style={{ flex: 1, overflow: 'auto' }}>{skill.installCommand}</code>
+          <code style={{ flex: 1, color: '#00FF00', overflow: 'auto' }}>{skill.installCommand}</code>
           <button 
             onClick={handleCopy}
             style={{
               background: '#C0C0C0',
               border: '2px solid',
               borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-              padding: '2px 8px',
+              padding: '4px 12px',
               fontFamily: 'var(--font-system)',
               fontSize: 10,
               cursor: 'pointer',
             }}
-          >{copied ? '✓' : 'Copy'}</button>
+          >{copied ? '✓ Copied!' : '📋 Copy'}</button>
         </div>
         
-        {/* Doc content */}
+        {/* Content Preview */}
         <div style={{
-          background: '#FFFFF5',
+          background: '#FFFFF8',
           border: '2px inset #808080',
           padding: 8,
           fontFamily: 'var(--font-code)',
           fontSize: 10,
           lineHeight: 1.4,
           whiteSpace: 'pre-wrap',
-          maxHeight: 200,
+          maxHeight: 180,
           overflow: 'auto',
         }}>
-          {skill.content.substring(0, 2000)}
-          {skill.content.length > 2000 && '...'}
+          {skill.content.substring(0, 1500)}
+          {skill.content.length > 1500 && '...'}
         </div>
       </div>
     </div>
@@ -466,37 +558,43 @@ function SkillDetailWindow({
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// MAIN APPLICATION
+// MAIN APP CONTENT
 // ═══════════════════════════════════════════════════════════════════════════
 
-export default function HomePage() {
-  const [booted, setBooted] = useState(false);
+function MainAppContent() {
   const [theme, setTheme] = useState<'default' | 'hotdog'>('default');
   const [activeGroup, setActiveGroup] = useState<SkillCategory | null>(null);
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
   const [minimizedGroups, setMinimizedGroups] = useState<Set<SkillCategory>>(new Set());
   const [openGroups, setOpenGroups] = useState<Set<SkillCategory>>(new Set());
+  const [showBrowser, setShowBrowser] = useState(true); // Open with browser!
+  const [showBackgrounds, setShowBackgrounds] = useState(true);
   
   const playClick = useSound('/audio/click.mp3');
+  const { setMinimized: setWinampMinimized, isMinimized: winampMinimized } = useMusicPlayer();
 
-  // Group skills by category
+  // Group skills by NEW TAXONOMY
   const skillsByCategory = useMemo(() => {
     const grouped: Record<SkillCategory, Skill[]> = {
-      development: [], architecture: [], devops: [], design: [],
-      data: [], testing: [], documentation: [], security: [],
+      'ai-agents': [], 'design-ux': [], 'web-frontend': [], 'backend-infra': [],
+      'audio-media': [], 'career-personal': [], 'health-wellness': [],
+      'testing-quality': [], 'data-analytics': [], 'writing-docs': [],
     };
     skills.forEach(skill => {
-      if (grouped[skill.category]) grouped[skill.category].push(skill);
+      const cat = getSkillCategory(skill.id);
+      if (grouped[cat]) grouped[cat].push(skill);
     });
     return grouped;
   }, []);
 
-  // Calculate group positions in a cascade
+  // Calculate group positions
   const groupPositions = useMemo(() => {
     const positions: Partial<Record<SkillCategory, { x: number; y: number }>> = {};
-    const categories = Object.keys(categoryMeta) as SkillCategory[];
+    const categories = Object.keys(newCategoryMeta) as SkillCategory[];
     categories.forEach((cat, i) => {
-      positions[cat] = { x: 20 + (i % 4) * 30, y: 30 + Math.floor(i / 4) * 30 };
+      const col = i % 5;
+      const row = Math.floor(i / 5);
+      positions[cat] = { x: 20 + col * 40, y: 30 + row * 40 };
     });
     return positions as Record<SkillCategory, { x: number; y: number }>;
   }, []);
@@ -523,9 +621,17 @@ export default function HomePage() {
     setSelectedSkill(skill);
   };
 
-  if (!booted) {
-    return <BootScreen onComplete={() => setBooted(true)} />;
-  }
+  const handleSearch = (query: string) => {
+    // Search skills
+    const matching = skills.find(s => 
+      s.title.toLowerCase().includes(query.toLowerCase()) ||
+      s.description.toLowerCase().includes(query.toLowerCase())
+    );
+    if (matching) {
+      setSelectedSkill(matching);
+      setShowBrowser(false);
+    }
+  };
 
   return (
     <div className="win31-desktop" data-theme={theme} style={{
@@ -534,6 +640,9 @@ export default function HomePage() {
       background: theme === 'hotdog' ? '#FF0000' : '#008080',
       overflow: 'hidden',
     }}>
+      {/* Animated Backgrounds */}
+      {showBackgrounds && <AnimatedDesktopBackgrounds />}
+
       {/* ═══════════════════════════════════════════════════════════════════
           PROGRAM MANAGER (MDI Parent Window)
           ═══════════════════════════════════════════════════════════════════ */}
@@ -549,10 +658,11 @@ export default function HomePage() {
         boxShadow: 'inset 2px 2px 0 #DFDFDF, inset -2px -2px 0 #808080',
         display: 'flex',
         flexDirection: 'column',
+        zIndex: 10,
       }}>
         {/* Title Bar */}
         <div style={{
-          background: '#000080',
+          background: 'linear-gradient(90deg, #000080 0%, #1084D0 100%)',
           color: '#FFFFFF',
           padding: '2px 4px',
           display: 'flex',
@@ -562,6 +672,22 @@ export default function HomePage() {
         }}>
           <span style={{ marginRight: 8 }}>📁</span>
           <span style={{ flex: 1 }}>Program Manager - Some Claude Skills</span>
+          <button 
+            onClick={() => setShowBackgrounds(!showBackgrounds)}
+            style={{
+              width: 18,
+              height: 14,
+              background: '#C0C0C0',
+              border: '1px solid',
+              borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
+              fontSize: 8,
+              cursor: 'pointer',
+              marginRight: 4,
+            }}
+            title={showBackgrounds ? 'Hide Games' : 'Show Games'}
+          >
+            {showBackgrounds ? '🎮' : '⬜'}
+          </button>
           <button style={{
             width: 18,
             height: 14,
@@ -582,44 +708,52 @@ export default function HomePage() {
           fontFamily: 'var(--font-system)',
           fontSize: 11,
         }}>
-          <span style={{ padding: '2px 8px', cursor: 'pointer' }} className="win31-menu-item">
+          <span style={{ padding: '2px 8px', cursor: 'pointer' }}>
             <u>F</u>ile
           </span>
           <span 
             style={{ padding: '2px 8px', cursor: 'pointer' }} 
-            className="win31-menu-item"
             onClick={() => setTheme(t => t === 'default' ? 'hotdog' : 'default')}
           >
             <u>O</u>ptions {theme === 'hotdog' && '🌭'}
           </span>
-          <span style={{ padding: '2px 8px', cursor: 'pointer' }} className="win31-menu-item">
-            <u>W</u>indow
+          <span 
+            style={{ padding: '2px 8px', cursor: 'pointer' }}
+            onClick={() => setShowBrowser(true)}
+          >
+            <u>S</u>earch 🔍
           </span>
-          <span style={{ padding: '2px 8px', cursor: 'pointer' }} className="win31-menu-item">
+          <span 
+            style={{ padding: '2px 8px', cursor: 'pointer' }}
+            onClick={() => setWinampMinimized(false)}
+          >
+            <u>M</u>usic 🎵
+          </span>
+          <span style={{ padding: '2px 8px', cursor: 'pointer' }}>
             <u>H</u>elp
           </span>
         </div>
 
-        {/* MDI Client Area - Contains Group Windows */}
+        {/* MDI Client Area */}
         <div style={{
           flex: 1,
           position: 'relative',
           background: theme === 'hotdog' ? '#FFFF00' : '#008080',
           overflow: 'hidden',
         }}>
-          {/* Category Group Icons (when groups not open) */}
+          {/* Category Group Icons */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, 80px)',
+            gridTemplateColumns: 'repeat(auto-fill, 90px)',
             gap: 4,
             padding: 8,
           }}>
-            {(Object.keys(categoryMeta) as SkillCategory[]).map(cat => {
-              const meta = categoryMeta[cat];
+            {(Object.keys(newCategoryMeta) as SkillCategory[]).map(cat => {
+              const meta = newCategoryMeta[cat];
               const count = skillsByCategory[cat].length;
               const isOpen = openGroups.has(cat) && !minimizedGroups.has(cat);
               
-              if (isOpen) return null;
+              if (isOpen || count === 0) return null;
               
               return (
                 <button 
@@ -636,7 +770,7 @@ export default function HomePage() {
                     cursor: 'pointer',
                   }}
                 >
-                  <span style={{ fontSize: 28 }}>{meta.icon}</span>
+                  <span style={{ fontSize: 32 }}>{meta.icon}</span>
                   <span style={{
                     fontFamily: 'var(--font-system)',
                     fontSize: 10,
@@ -644,7 +778,8 @@ export default function HomePage() {
                     textShadow: '1px 1px 0 #000',
                     textAlign: 'center',
                   }}>
-                    {meta.label}<br/>({count})
+                    {meta.label}<br/>
+                    <span style={{ fontSize: 9 }}>({count})</span>
                   </span>
                 </button>
               );
@@ -652,20 +787,22 @@ export default function HomePage() {
           </div>
 
           {/* Open Group Windows */}
-          {(Object.keys(categoryMeta) as SkillCategory[]).map(cat => {
+          {(Object.keys(newCategoryMeta) as SkillCategory[]).map(cat => {
             if (!openGroups.has(cat) || minimizedGroups.has(cat)) return null;
             
-            const meta = categoryMeta[cat];
+            const meta = newCategoryMeta[cat];
             const groupSkills = skillsByCategory[cat];
+            if (groupSkills.length === 0) return null;
             
             return (
               <GroupWindow
                 key={cat}
                 title={`${meta.label} (${groupSkills.length})`}
                 icon={meta.icon}
+                color={meta.color}
                 skills={groupSkills}
                 position={groupPositions[cat]}
-                size={{ width: 380, height: 280 }}
+                size={{ width: 400, height: 300 }}
                 isActive={activeGroup === cat}
                 onActivate={() => setActiveGroup(cat)}
                 onMinimize={() => handleGroupMinimize(cat)}
@@ -679,7 +816,7 @@ export default function HomePage() {
           {selectedSkill && (
             <SkillDetailWindow 
               skill={selectedSkill}
-              position={{ x: 100, y: 50 }}
+              position={{ x: 120, y: 60 }}
               onClose={() => setSelectedSkill(null)}
             />
           )}
@@ -701,20 +838,34 @@ export default function HomePage() {
             border: '1px solid',
             borderColor: '#808080 #FFFFFF #FFFFFF #808080',
           }}>
-            {selectedSkill ? `Selected: ${selectedSkill.title}` : 'Double-click a group to open'}
+            {selectedSkill ? `📄 ${selectedSkill.title}` : '👆 Double-click a category to explore skills'}
           </div>
           <div style={{
             padding: '1px 4px',
             border: '1px solid',
             borderColor: '#808080 #FFFFFF #FFFFFF #808080',
           }}>
-            {skills.length} skills
+            🤖 {skills.length} skills
           </div>
         </div>
       </div>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          TASKBAR (Minimized windows)
+          WEBSCAPE NAVIGATOR
+          ═══════════════════════════════════════════════════════════════════ */}
+      <WebscapeNavigator 
+        isVisible={showBrowser}
+        onClose={() => setShowBrowser(false)}
+        onSearch={handleSearch}
+      />
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          WINAMP
+          ═══════════════════════════════════════════════════════════════════ */}
+      <WinampModal />
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          TASKBAR
           ═══════════════════════════════════════════════════════════════════ */}
       <div style={{
         position: 'fixed',
@@ -728,10 +879,51 @@ export default function HomePage() {
         alignItems: 'center',
         padding: '2px 4px',
         gap: 4,
+        zIndex: 50,
       }}>
+        {/* Start-like button */}
+        <button
+          onClick={() => setShowBrowser(true)}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 4,
+            padding: '2px 12px',
+            background: '#C0C0C0',
+            border: '2px solid',
+            borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
+            fontFamily: 'var(--font-system)',
+            fontSize: 11,
+            fontWeight: 'bold',
+            cursor: 'pointer',
+          }}
+        >
+          🪟 Search
+        </button>
+
+        {/* Winamp button */}
+        <button
+          onClick={() => setWinampMinimized(!winampMinimized)}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 4,
+            padding: '2px 8px',
+            background: winampMinimized ? '#C0C0C0' : '#000080',
+            border: '2px solid',
+            borderColor: winampMinimized ? '#FFFFFF #000000 #000000 #FFFFFF' : '#000000 #FFFFFF #FFFFFF #000000',
+            fontFamily: 'var(--font-system)',
+            fontSize: 10,
+            cursor: 'pointer',
+            color: winampMinimized ? '#000' : '#FFF',
+          }}
+        >
+          🎵 Winamp
+        </button>
+
         {/* Minimized groups */}
         {Array.from(minimizedGroups).map(cat => {
-          const meta = categoryMeta[cat];
+          const meta = newCategoryMeta[cat];
           return (
             <button
               key={cat}
@@ -769,5 +961,23 @@ export default function HomePage() {
         </div>
       </div>
     </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MAIN PAGE
+// ═══════════════════════════════════════════════════════════════════════════
+
+export default function HomePage() {
+  const [booted, setBooted] = useState(false);
+
+  if (!booted) {
+    return <BootScreen onComplete={() => setBooted(true)} />;
+  }
+
+  return (
+    <MusicPlayerProvider>
+      <MainAppContent />
+    </MusicPlayerProvider>
   );
 }
