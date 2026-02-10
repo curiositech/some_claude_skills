@@ -1,540 +1,525 @@
 'use client';
 
-import * as React from 'react';
-import { skills, type Skill, getSkillById, type SkillCategory, categoryMeta } from '@/lib/skills';
-import {
-  ProgramManager,
-  Win31Window,
-  Win31Button,
-  Win31Dialog,
-  Win31Clock,
-  Win31Solitaire,
-  Win31Minesweeper,
-  QBasicGorillas,
-  FileManager,
-  TutorialWizard,
-  TUTORIALS,
-  type ProgramGroup,
-  type TutorialId,
-} from '@/components/memphis';
-import { SkillSearch } from '@/components/win31';
-import { SkillDocument } from '@/components/win31';
-
-/*
+/**
  * ═══════════════════════════════════════════════════════════════════════════
- * SOME CLAUDE SKILLS - Memphis × Windows 3.1
- * 
- * Full experience with:
- * - Windows boot splash screen
- * - Animated background apps (Clock, Solitaire, Gorillas, Minesweeper)
- * - Webscape Navigator with AI search
- * - Program Manager with skill groups
- * - WCAG AAA compliant
+ * SOME CLAUDE SKILLS - AUTHENTIC WINDOWS 3.1 EXPERIENCE
+ * Complete rewrite with real window management
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-type ActiveView =
-  | { type: 'boot' }
-  | { type: 'desktop' }
-  | { type: 'file-manager' }
-  | { type: 'skill'; skill: Skill }
-  | { type: 'tutorial'; id: TutorialId }
-  | { type: 'search' }
-  | { type: 'readme' }
-  | { type: 'about' };
+import * as React from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { skills, categoryMeta, type Skill, type SkillCategory } from '@/lib/skills';
+import { 
+  WindowManagerProvider, 
+  useWindowManager, 
+  WindowRenderer, 
+  Win31Taskbar 
+} from '@/components/win31/window-manager';
+import '@/styles/win31-authentic.css';
 
-export default function HomePage() {
-  const [activeView, setActiveView] = React.useState<ActiveView>({ type: 'boot' });
-  const [showWelcome, setShowWelcome] = React.useState(false);
-  const [bootProgress, setBootProgress] = React.useState(0);
+// ═══════════════════════════════════════════════════════════════════════════
+// BOOT SCREEN
+// ═══════════════════════════════════════════════════════════════════════════
 
-  // Boot sequence
-  React.useEffect(() => {
-    if (activeView.type !== 'boot') return;
-
+function BootScreen({ onComplete }: { onComplete: () => void }) {
+  const [progress, setProgress] = useState(0);
+  
+  useEffect(() => {
     const interval = setInterval(() => {
-      setBootProgress(prev => {
-        if (prev >= 100) {
+      setProgress(p => {
+        if (p >= 100) {
           clearInterval(interval);
-          // Check if first visit
-          const hasVisited = localStorage.getItem('scs-visited');
-          if (!hasVisited) {
-            setShowWelcome(true);
-            localStorage.setItem('scs-visited', 'true');
-          }
-          setActiveView({ type: 'desktop' });
+          setTimeout(onComplete, 300);
           return 100;
         }
-        return prev + Math.random() * 15 + 5;
+        return p + Math.random() * 15;
       });
-    }, 200);
-
+    }, 100);
     return () => clearInterval(interval);
-  }, [activeView.type]);
+  }, [onComplete]);
 
+  return (
+    <div className="win31-boot">
+      <div className="win31-boot-text">Microsoft Windows</div>
+      <div style={{ 
+        width: 200, 
+        height: 150, 
+        background: 'linear-gradient(135deg, #000080 0%, #0000AA 50%, #000080 100%)',
+        border: '4px outset #C0C0C0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: 32,
+      }}>
+        <div style={{ 
+          fontFamily: 'var(--font-display)', 
+          fontSize: 10,
+          color: '#00FFFF',
+          textAlign: 'center',
+        }}>
+          SOME<br/>CLAUDE<br/>SKILLS
+        </div>
+      </div>
+      <div className="win31-boot-progress">
+        <div 
+          className="win31-boot-progress-bar" 
+          style={{ width: `${Math.min(100, progress)}%` }} 
+        />
+      </div>
+      <div style={{ 
+        marginTop: 16, 
+        fontFamily: 'var(--font-system)', 
+        fontSize: 11, 
+        color: '#AAAAAA' 
+      }}>
+        Loading 173 skills...
+      </div>
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SKILL ICON COMPONENT
+// ═══════════════════════════════════════════════════════════════════════════
+
+function SkillIcon({ skill, onClick }: { skill: Skill; onClick: () => void }) {
+  return (
+    <button className="win31-icon" onClick={onClick} title={skill.title}>
+      {skill.skillIcon ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img 
+          src={skill.skillIcon} 
+          alt={skill.title}
+          className="win31-icon-image"
+          loading="lazy"
+        />
+      ) : (
+        <span className="win31-icon-emoji">{skill.icon}</span>
+      )}
+      <span className="win31-icon-label">
+        {skill.title.length > 12 ? skill.title.substring(0, 10) + '...' : skill.title}
+      </span>
+    </button>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SKILL DETAIL VIEW
+// ═══════════════════════════════════════════════════════════════════════════
+
+function SkillDetail({ skill, onTagClick }: { skill: Skill; onTagClick: (tag: string) => void }) {
+  const [copied, setCopied] = useState(false);
+  
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(skill.installCommand);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="win31-doc" style={{ height: '100%', overflow: 'auto' }}>
+      {/* Hero image */}
+      {skill.skillHero && (
+        <div style={{ 
+          marginBottom: 16, 
+          border: '2px inset #808080',
+          maxHeight: 200,
+          overflow: 'hidden',
+        }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src={skill.skillHero} 
+            alt={skill.title}
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+          />
+        </div>
+      )}
+      
+      {/* Title and meta */}
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 16 }}>
+        <span style={{ fontSize: 48 }}>{skill.icon}</span>
+        <div style={{ flex: 1 }}>
+          <h1 style={{ margin: 0, fontSize: 24 }}>{skill.title}</h1>
+          <p style={{ margin: '8px 0 0', color: '#555' }}>{skill.description}</p>
+        </div>
+      </div>
+
+      {/* Tags - CLICKABLE */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginBottom: 16 }}>
+        {skill.tags.map(tag => (
+          <button 
+            key={tag} 
+            className="win31-tag"
+            onClick={() => onTagClick(tag)}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+
+      {/* Install command */}
+      <div className="win31-groupbox" style={{ marginBottom: 16 }}>
+        <span className="win31-groupbox-label">Quick Install</span>
+        <div style={{ display: 'flex', gap: 8 }}>
+          <code style={{ 
+            flex: 1, 
+            padding: 8, 
+            background: '#1A1A2E', 
+            color: '#00FF00',
+            fontFamily: 'var(--font-code)',
+            fontSize: 11,
+            overflow: 'auto',
+          }}>
+            {skill.installCommand}
+          </code>
+          <button className="win31-push-button" onClick={handleCopy}>
+            {copied ? '✓ Copied' : 'Copy'}
+          </button>
+        </div>
+      </div>
+
+      {/* References */}
+      {skill.references && skill.references.length > 0 && (
+        <div className="win31-groupbox" style={{ marginBottom: 16 }}>
+          <span className="win31-groupbox-label">References ({skill.references.length})</span>
+          <div className="win31-listbox" style={{ maxHeight: 150 }}>
+            {skill.references.map((ref, i) => (
+              <div key={i} className="win31-listbox-item">
+                📄 {ref.title}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Content */}
+      <div className="win31-groupbox">
+        <span className="win31-groupbox-label">Documentation</span>
+        <div style={{ 
+          maxHeight: 400, 
+          overflow: 'auto',
+          fontFamily: 'var(--font-code)',
+          fontSize: 12,
+          whiteSpace: 'pre-wrap',
+          lineHeight: 1.5,
+        }}>
+          {skill.content}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// PROGRAM MANAGER CONTENT
+// ═══════════════════════════════════════════════════════════════════════════
+
+function ProgramManagerContent() {
+  const { openWindow } = useWindowManager();
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  
   // Group skills by category
-  const skillsByCategory = React.useMemo(() => {
-    const grouped = new Map<SkillCategory, Skill[]>();
+  const skillsByCategory = useMemo(() => {
+    const grouped: Record<SkillCategory, Skill[]> = {
+      development: [],
+      architecture: [],
+      devops: [],
+      design: [],
+      data: [],
+      testing: [],
+      documentation: [],
+      security: [],
+    };
+    
     skills.forEach(skill => {
-      if (!grouped.has(skill.category)) {
-        grouped.set(skill.category, []);
+      if (grouped[skill.category]) {
+        grouped[skill.category].push(skill);
       }
-      grouped.get(skill.category)!.push(skill);
     });
+    
     return grouped;
   }, []);
 
-  // Build Program Groups
-  const programGroups: ProgramGroup[] = React.useMemo(() => {
-    const groups: ProgramGroup[] = [];
-
-    // Main group
-    groups.push({
-      id: 'main',
-      title: 'Main',
-      position: { x: 8, y: 8 },
-      icons: [
-        { id: 'file-manager', label: 'Skill Browser', icon: '📁' },
-        { id: 'search', label: 'Webscape', icon: '🌐' },
-        { id: 'readme', label: 'Read Me', icon: '📖' },
-        { id: 'about', label: 'About', icon: 'ℹ️' },
-      ],
-    });
-
-    // Tutorials group
-    groups.push({
-      id: 'tutorials',
-      title: 'Tutorials',
-      position: { x: 200, y: 8 },
-      icons: Object.entries(TUTORIALS).map(([id, t]) => ({
-        id,
-        label: t.title.substring(0, 12),
-        icon: t.icon,
-      })),
-    });
-
-    // Skill category groups
-    let col = 0;
-    let row = 1;
+  // Filter skills
+  const filteredSkills = useMemo(() => {
+    let result = skills;
     
-    const categoryOrder: SkillCategory[] = [
-      'development', 'design', 'devops', 'architecture', 
-      'data', 'testing', 'documentation', 'security'
-    ];
+    if (searchTerm) {
+      const term = searchTerm.toLowerCase();
+      result = result.filter(s => 
+        s.title.toLowerCase().includes(term) ||
+        s.description.toLowerCase().includes(term) ||
+        s.tags.some(t => t.toLowerCase().includes(term))
+      );
+    }
+    
+    if (selectedTag) {
+      result = result.filter(s => s.tags.includes(selectedTag));
+    }
+    
+    return result;
+  }, [searchTerm, selectedTag]);
 
-    categoryOrder.forEach((cat) => {
-      const catSkills = skillsByCategory.get(cat);
-      if (!catSkills || catSkills.length === 0) return;
-
-      const meta = categoryMeta[cat];
-      
-      groups.push({
-        id: `skills-${cat}`,
-        title: meta.label,
-        position: { x: 8 + (col % 4) * 185, y: 8 + row * 130 },
-        icons: catSkills.slice(0, 9).map(s => ({
-          id: `skill:${s.id}`,
-          label: s.title.substring(0, 11),
-          icon: s.skillIcon || s.icon || meta.icon,
-        })),
-      });
-
-      col++;
-      if (col >= 4) {
-        col = 0;
-        row++;
-      }
+  // Open skill detail window
+  const openSkill = (skill: Skill) => {
+    openWindow({
+      id: `skill-${skill.id}`,
+      title: `${skill.title}.md`,
+      icon: <span>{skill.icon}</span>,
+      x: 150 + Math.random() * 100,
+      y: 100 + Math.random() * 50,
+      width: 700,
+      height: 500,
+      minWidth: 400,
+      minHeight: 300,
+      content: <SkillDetail skill={skill} onTagClick={tag => {
+        setSelectedTag(tag);
+        setSearchTerm('');
+      }} />,
     });
-
-    // winDAGs group
-    groups.push({
-      id: 'windags',
-      title: 'winDAGs.AI',
-      position: { x: 8 + 3 * 185, y: 8 },
-      minimized: true,
-      icons: [
-        { id: 'dag-builder', label: 'DAG Builder', icon: '🔀' },
-        { id: 'skill-matcher', label: 'Skill Match', icon: '🎯' },
-      ],
-    });
-
-    return groups;
-  }, [skillsByCategory]);
-
-  const handleOpenProgram = (programId: string) => {
-    if (programId in TUTORIALS) {
-      setActiveView({ type: 'tutorial', id: programId as TutorialId });
-      return;
-    }
-
-    if (programId.startsWith('skill:')) {
-      const skillId = programId.replace('skill:', '');
-      const skill = getSkillById(skillId);
-      if (skill) {
-        setActiveView({ type: 'skill', skill });
-      }
-      return;
-    }
-
-    switch (programId) {
-      case 'file-manager':
-        setActiveView({ type: 'file-manager' });
-        break;
-      case 'search':
-        setActiveView({ type: 'search' });
-        break;
-      case 'readme':
-        setActiveView({ type: 'readme' });
-        break;
-      case 'about':
-        setActiveView({ type: 'about' });
-        break;
-    }
   };
 
-  const goToDesktop = () => setActiveView({ type: 'desktop' });
-  const goToFileManager = () => setActiveView({ type: 'file-manager' });
+  // Open category group window
+  const openCategoryGroup = (category: SkillCategory) => {
+    const meta = categoryMeta[category];
+    const categorySkills = skillsByCategory[category];
+    
+    openWindow({
+      id: `group-${category}`,
+      title: meta.label,
+      icon: <span>{meta.icon}</span>,
+      x: 80 + Math.random() * 50,
+      y: 60 + Math.random() * 30,
+      width: 500,
+      height: 400,
+      minWidth: 300,
+      minHeight: 200,
+      content: (
+        <div style={{ padding: 0 }}>
+          <div className="win31-group-title">
+            {meta.icon} {meta.label} ({categorySkills.length} skills)
+          </div>
+          <div className="win31-icon-grid">
+            {categorySkills.map(skill => (
+              <SkillIcon key={skill.id} skill={skill} onClick={() => openSkill(skill)} />
+            ))}
+          </div>
+        </div>
+      ),
+    });
+  };
 
-  // Boot Screen
-  if (activeView.type === 'boot') {
-    return <BootScreen progress={bootProgress} />;
-  }
 
   return (
-    <div className="min-h-screen bg-[var(--memphis-cyan)] relative overflow-hidden">
-      {/* Animated Background Apps - Always visible */}
-      <BackgroundApps />
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+      {/* Menu bar */}
+      <div className="win31-menubar">
+        <span className="win31-menu-item"><span className="accel">F</span>ile</span>
+        <span className="win31-menu-item"><span className="accel">O</span>ptions</span>
+        <span className="win31-menu-item"><span className="accel">W</span>indow</span>
+        <span className="win31-menu-item"><span className="accel">H</span>elp</span>
+      </div>
 
-      {/* Desktop Pattern Overlay */}
-      <div 
-        className="absolute inset-0 pointer-events-none opacity-20"
-        style={{
-          backgroundImage: `
-            radial-gradient(circle at 20% 80%, var(--memphis-pink) 2px, transparent 2px),
-            radial-gradient(circle at 80% 20%, var(--memphis-yellow) 3px, transparent 3px),
-            radial-gradient(circle at 60% 60%, var(--memphis-purple) 2px, transparent 2px)
-          `,
-          backgroundSize: '100px 100px, 150px 150px, 80px 80px',
-        }}
-        aria-hidden="true"
-      />
+      {/* Search and filter bar */}
+      <div style={{ 
+        padding: 8, 
+        background: 'var(--win31-light-gray)',
+        borderBottom: '1px solid var(--bevel-mid-dark)',
+        display: 'flex',
+        gap: 8,
+        alignItems: 'center',
+      }}>
+        <span style={{ fontFamily: 'var(--font-system)', fontSize: 11 }}>Find:</span>
+        <input 
+          type="text"
+          className="win31-input"
+          value={searchTerm}
+          onChange={e => { setSearchTerm(e.target.value); setSelectedTag(null); }}
+          placeholder="Search 173 skills..."
+          style={{ flex: 1, maxWidth: 200 }}
+        />
+        {selectedTag && (
+          <span 
+            className="win31-tag" 
+            onClick={() => setSelectedTag(null)}
+            style={{ cursor: 'pointer' }}
+          >
+            {selectedTag} ✕
+          </span>
+        )}
+        <span style={{ fontFamily: 'var(--font-system)', fontSize: 10, color: '#555' }}>
+          {filteredSkills.length} skills
+        </span>
+      </div>
 
-      {/* Main Content */}
-      <main className="relative z-10 min-h-screen" role="main">
-        {/* Desktop / Program Manager */}
-        {activeView.type === 'desktop' && (
-          <div className="h-screen">
-            <ProgramManager
-              groups={programGroups}
-              onOpenProgram={handleOpenProgram}
-            />
+      {/* Main content area */}
+      <div style={{ flex: 1, overflow: 'auto', padding: 8 }}>
+        {searchTerm || selectedTag ? (
+          // Search results
+          <div className="win31-icon-grid">
+            {filteredSkills.map(skill => (
+              <SkillIcon key={skill.id} skill={skill} onClick={() => openSkill(skill)} />
+            ))}
+          </div>
+        ) : (
+          // Category groups
+          <div className="win31-icon-grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))' }}>
+            {(Object.keys(categoryMeta) as SkillCategory[]).map(cat => {
+              const meta = categoryMeta[cat];
+              const count = skillsByCategory[cat].length;
+              return (
+                <button 
+                  key={cat} 
+                  className="win31-icon"
+                  onClick={() => openCategoryGroup(cat)}
+                  style={{ padding: 8 }}
+                >
+                  <span style={{ fontSize: 32 }}>{meta.icon}</span>
+                  <span className="win31-icon-label" style={{ maxWidth: 100 }}>
+                    {meta.label}
+                  </span>
+                  <span style={{ fontSize: 9, color: '#555' }}>({count})</span>
+                </button>
+              );
+            })}
           </div>
         )}
+      </div>
 
-        {/* Webscape Navigator Search */}
-        {activeView.type === 'search' && (
-          <div className="h-screen p-2">
-            <Win31Window
-              title="Webscape Navigator 3.1 - Ask Dageeves"
-              icon="🌐"
-              onClose={goToDesktop}
-              onMinimize={goToDesktop}
-              onMaximize={() => {}}
-              menuItems={['File', 'Edit', 'View', 'Go', 'Bookmarks', 'Help']}
-              className="h-full"
-              resizable
-            >
-              <SkillSearch
-                onSelectSkill={(skill) => setActiveView({ type: 'skill', skill })}
-              />
-            </Win31Window>
-          </div>
-        )}
-
-        {/* File Manager */}
-        {activeView.type === 'file-manager' && (
-          <div className="h-full p-2 flex items-start justify-center pt-8">
-            <div className="w-full max-w-4xl">
-              <FileManager
-                skills={skills}
-                onSelectSkill={(skill) => setActiveView({ type: 'skill', skill })}
-                onClose={goToDesktop}
-              />
-            </div>
-          </div>
-        )}
-
-        {/* Skill Document */}
-        {activeView.type === 'skill' && (
-          <div className="h-full p-2 overflow-auto">
-            <div className="max-w-5xl mx-auto">
-              <nav className="mb-2 flex gap-2" aria-label="Skill navigation">
-                <Win31Button onClick={goToFileManager}>
-                  ← Skills
-                </Win31Button>
-                <Win31Button onClick={goToDesktop}>
-                  🏠 Desktop
-                </Win31Button>
-              </nav>
-              <SkillDocument
-                skill={activeView.skill}
-                onClose={goToFileManager}
-                onNavigate={(id) => {
-                  const skill = getSkillById(id);
-                  if (skill) setActiveView({ type: 'skill', skill });
-                }}
-              />
-            </div>
-          </div>
-        )}
-
-        {/* Tutorial */}
-        {activeView.type === 'tutorial' && (
-          <TutorialWizard
-            title={TUTORIALS[activeView.id].title}
-            steps={TUTORIALS[activeView.id].steps}
-            onComplete={goToDesktop}
-            onClose={goToDesktop}
-          />
-        )}
-
-        {/* README */}
-        {activeView.type === 'readme' && (
-          <div className="h-full p-4 flex items-start justify-center pt-8">
-            <Win31Window
-              title="README.TXT"
-              icon="📖"
-              onClose={goToDesktop}
-              menuItems={['File', 'Edit']}
-              className="w-full max-w-lg"
-            >
-              <article className="p-3 bg-[var(--win31-white)] overflow-auto max-h-[60vh] text-[11px] leading-relaxed">
-                <h1 className="text-[14px] font-bold mb-2">SOME CLAUDE SKILLS</h1>
-                <p className="mb-2">173 curated expert agents for Claude Code.</p>
-                
-                <hr className="border-[var(--bevel-dark)] my-2" />
-                
-                <h2 className="font-bold mb-1">WHAT ARE SKILLS?</h2>
-                <p className="mb-2">
-                  Skills are markdown files that transform Claude into 
-                  domain experts. Install them to get specialized help.
-                </p>
-                
-                <h2 className="font-bold mb-1">QUICK START</h2>
-                <ol className="list-decimal list-inside mb-2 space-y-1">
-                  <li>Open Webscape Navigator (🌐) to search</li>
-                  <li>Or browse by category in Program Groups</li>
-                  <li>Copy the install command</li>
-                  <li>Paste in Claude Code</li>
-                </ol>
-                
-                <h2 className="font-bold mb-1">KEYBOARD SHORTCUTS</h2>
-                <ul className="list-disc list-inside mb-2 space-y-1">
-                  <li><kbd className="bg-[var(--memphis-surface)] px-1">Alt+F</kbd> = File menu</li>
-                  <li><kbd className="bg-[var(--memphis-surface)] px-1">Double-click</kbd> = Open</li>
-                  <li><kbd className="bg-[var(--memphis-surface)] px-1">Esc</kbd> = Close</li>
-                </ul>
-                
-                <aside className="bg-[var(--memphis-surface)] border border-[var(--bevel-dark)] p-2 mt-2" role="note">
-                  <p className="font-bold">Memphis × Windows 3.1 Edition</p>
-                  <p className="text-[10px]">WCAG AAA Compliant • Built with Next.js 15</p>
-                </aside>
-              </article>
-              <footer className="p-2 flex justify-end gap-2 bg-[var(--memphis-surface)]">
-                <Win31Button onClick={() => setActiveView({ type: 'search' })}>Open Webscape</Win31Button>
-                <Win31Button onClick={goToDesktop} isDefault>OK</Win31Button>
-              </footer>
-            </Win31Window>
-          </div>
-        )}
-
-        {/* About */}
-        {activeView.type === 'about' && (
-          <div className="h-full p-4 flex items-start justify-center pt-8">
-            <Win31Window
-              title="About Some Claude Skills"
-              icon="ℹ️"
-              onClose={goToDesktop}
-              className="w-full max-w-xs"
-            >
-              <div className="p-4 bg-[var(--memphis-surface)] text-center text-[11px]">
-                {/* Carlton decoration */}
-                <div className="memphis-carlton mb-3 mx-auto w-32" aria-hidden="true">
-                  <div className="memphis-carlton-shelf" />
-                  <div className="memphis-carlton-shelf" />
-                  <div className="memphis-carlton-shelf" />
-                  <div className="memphis-carlton-shelf" />
-                  <div className="memphis-carlton-shelf" />
-                </div>
-
-                <h1 className="text-[14px] font-bold">Some Claude Skills</h1>
-                <p className="text-[10px] text-[var(--win31-gray-dark)]">
-                  Memphis × Windows 3.1 Edition
-                </p>
-                <p className="text-[10px] mb-3">Version 1.0.0</p>
-
-                <address className="text-[10px] mb-3 not-italic">
-                  <p>© 2024 Erich Owens</p>
-                  <p className="text-[var(--win31-gray-dark)]">Ex-Meta ML Engineer</p>
-                </address>
-
-                <dl className="bevel-in p-2 text-[10px] text-left">
-                  <div className="flex justify-between"><dt>Skills:</dt><dd>173</dd></div>
-                  <div className="flex justify-between"><dt>Categories:</dt><dd>8</dd></div>
-                  <div className="flex justify-between"><dt>Framework:</dt><dd>Next.js 15</dd></div>
-                  <div className="flex justify-between"><dt>Hosting:</dt><dd>Cloudflare</dd></div>
-                </dl>
-
-                {/* Memphis color bar */}
-                <div className="flex mt-3 h-2" aria-hidden="true">
-                  <div className="flex-1 bg-[var(--memphis-red)]" />
-                  <div className="flex-1 bg-[var(--memphis-yellow)]" />
-                  <div className="flex-1 bg-[var(--memphis-blue)]" />
-                  <div className="flex-1 bg-[var(--memphis-green)]" />
-                  <div className="flex-1 bg-[var(--memphis-pink)]" />
-                  <div className="flex-1 bg-[var(--memphis-purple)]" />
-                </div>
-              </div>
-              <footer className="p-2 flex justify-center bg-[var(--memphis-surface)]">
-                <Win31Button onClick={goToDesktop} isDefault>OK</Win31Button>
-              </footer>
-            </Win31Window>
-          </div>
-        )}
-      </main>
-
-      {/* Welcome Dialog */}
-      {showWelcome && (
-        <Win31Dialog
-          title="Welcome to Some Claude Skills"
-          icon="info"
-          buttons={[
-            {
-              label: 'Tutorial',
-              onClick: () => {
-                setShowWelcome(false);
-                setActiveView({ type: 'tutorial', id: 'what-is-a-skill' });
-              },
-            },
-            {
-              label: 'Search',
-              onClick: () => {
-                setShowWelcome(false);
-                setActiveView({ type: 'search' });
-              },
-              isDefault: true,
-            },
-            {
-              label: 'Explore',
-              onClick: () => setShowWelcome(false),
-            },
-          ]}
-          onClose={() => setShowWelcome(false)}
-        >
-          <p className="mb-2">
-            <strong>173 curated Claude Code skills</strong> ready to transform
-            Claude into a domain expert.
-          </p>
-          <p>
-            Try <strong>Webscape Navigator</strong> to search, or explore 
-            the <strong>Program Manager</strong> desktop.
-          </p>
-        </Win31Dialog>
-      )}
+      {/* Status bar */}
+      <div className="win31-statusbar">
+        <div className="win31-statusbar-panel" style={{ flex: 1 }}>
+          {selectedTag ? `Filtering: ${selectedTag}` : searchTerm ? `Search: "${searchTerm}"` : 'Ready'}
+        </div>
+        <div className="win31-statusbar-panel">
+          {filteredSkills.length} / {skills.length} skills
+        </div>
+      </div>
     </div>
   );
 }
 
-/*
- * ═══════════════════════════════════════════════════════════════════════════
- * BOOT SCREEN - Windows 3.1 startup splash
- * ═══════════════════════════════════════════════════════════════════════════
- */
+// ═══════════════════════════════════════════════════════════════════════════
+// MAIN DESKTOP
+// ═══════════════════════════════════════════════════════════════════════════
 
-function BootScreen({ progress }: { progress: number }) {
+function Desktop() {
+  const { openWindow } = useWindowManager();
+  const [theme, setTheme] = useState<'default' | 'hotdog'>('default');
+
+  // Open Program Manager on mount
+  useEffect(() => {
+    openWindow({
+      id: 'program-manager',
+      title: 'Program Manager',
+      icon: <span>📁</span>,
+      x: 50,
+      y: 30,
+      width: 800,
+      height: 550,
+      minWidth: 400,
+      minHeight: 300,
+      content: <ProgramManagerContent />,
+    });
+  }, [openWindow]);
+
+  // Desktop icons
+  const desktopIcons = [
+    { 
+      id: 'readme', 
+      icon: '📖', 
+      label: 'Read Me',
+      onClick: () => openWindow({
+        id: 'readme',
+        title: 'README.TXT',
+        icon: <span>📖</span>,
+        x: 100,
+        y: 150,
+        width: 500,
+        height: 400,
+        content: (
+          <div className="win31-doc">
+            <h1>Welcome to Some Claude Skills</h1>
+            <p>A curated gallery of <strong>173 Claude Code skills</strong> with an authentic Windows 3.1 aesthetic.</p>
+            <h2>Quick Start</h2>
+            <ol>
+              <li>Double-click <strong>Program Manager</strong> to browse skills</li>
+              <li>Click a category to see all skills in that group</li>
+              <li>Click a skill to see its documentation</li>
+              <li>Use the <strong>Copy</strong> button to install skills</li>
+            </ol>
+            <h2>Keyboard Shortcuts</h2>
+            <ul>
+              <li><kbd>Alt+F4</kbd> - Close window</li>
+              <li><kbd>Shift+F5</kbd> - Cascade windows</li>
+              <li><kbd>Shift+F4</kbd> - Tile windows</li>
+            </ul>
+            <h2>Theme</h2>
+            <p>Try <strong>Hot Dog Stand</strong> from Options menu!</p>
+          </div>
+        ),
+      }),
+    },
+    {
+      id: 'theme',
+      icon: '🎨',
+      label: 'Themes',
+      onClick: () => setTheme(t => t === 'default' ? 'hotdog' : 'default'),
+    },
+  ];
+
   return (
-    <div 
-      className="min-h-screen flex flex-col items-center justify-center"
-      style={{ background: 'linear-gradient(180deg, #000080 0%, #0000aa 100%)' }}
-      role="status"
-      aria-label={`Loading: ${Math.round(progress)}%`}
-    >
-      {/* Windows Logo */}
-      <div className="mb-8 text-center">
-        {/* Simplified Windows flag logo */}
-        <div className="inline-grid grid-cols-2 gap-1 mb-4" aria-hidden="true">
-          <div className="w-12 h-12 bg-[#ff0000] transform -skew-x-12" />
-          <div className="w-12 h-12 bg-[#00ff00] transform -skew-x-12" />
-          <div className="w-12 h-12 bg-[#0000ff] transform -skew-x-12" />
-          <div className="w-12 h-12 bg-[#ffff00] transform -skew-x-12" />
-        </div>
-        
-        <h1 className="text-white text-3xl font-bold tracking-wider mb-1">
-          SOME CLAUDE SKILLS
-        </h1>
-        <p className="text-[#00ffff] text-lg">
-          Memphis × Windows 3.1 Edition
-        </p>
+    <div className="win31-desktop" data-theme={theme}>
+      {/* Desktop icons */}
+      <div style={{ 
+        position: 'absolute', 
+        top: 10, 
+        right: 10,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 16,
+      }}>
+        {desktopIcons.map(item => (
+          <button 
+            key={item.id}
+            className="win31-icon"
+            onClick={item.onClick}
+            style={{ background: 'transparent' }}
+          >
+            <span className="win31-icon-emoji">{item.icon}</span>
+            <span className="win31-icon-label" style={{ 
+              color: 'white', 
+              textShadow: '1px 1px 2px black',
+              background: 'transparent',
+            }}>
+              {item.label}
+            </span>
+          </button>
+        ))}
       </div>
 
-      {/* Progress bar */}
-      <div className="w-80 mb-4">
-        <div 
-          className="h-4 bg-[#000040] border-2 border-[#808080]"
-          style={{
-            boxShadow: 'inset 1px 1px 0 #404040, inset -1px -1px 0 #c0c0c0'
-          }}
-        >
-          <div 
-            className="h-full bg-[#00ffff] transition-all duration-200"
-            style={{ width: `${Math.min(progress, 100)}%` }}
-            role="progressbar"
-            aria-valuenow={Math.round(progress)}
-            aria-valuemin={0}
-            aria-valuemax={100}
-          />
-        </div>
-        <p className="text-[#c0c0c0] text-xs mt-2 text-center">
-          Loading skills... {Math.round(Math.min(progress, 100))}%
-        </p>
-      </div>
-
-      {/* Copyright */}
-      <footer className="text-[#808080] text-xs">
-        <p>© 2024 Erich Owens • someclaudeskills.com</p>
-      </footer>
+      {/* Window renderer */}
+      <WindowRenderer />
+      
+      {/* Taskbar */}
+      <Win31Taskbar />
     </div>
   );
 }
 
-/*
- * ═══════════════════════════════════════════════════════════════════════════
- * BACKGROUND APPS - Animated accessories in corners
- * ═══════════════════════════════════════════════════════════════════════════
- */
+// ═══════════════════════════════════════════════════════════════════════════
+// MAIN APP
+// ═══════════════════════════════════════════════════════════════════════════
 
-function BackgroundApps() {
+export default function HomePage() {
+  const [booted, setBooted] = useState(false);
+
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-      {/* Clock - top right */}
-      <div className="absolute top-4 right-4 opacity-70 scale-75 origin-top-right">
-        <Win31Clock size={100} />
-      </div>
-
-      {/* Solitaire - bottom right */}
-      <div className="absolute bottom-4 right-4 opacity-60 scale-75 origin-bottom-right hidden lg:block">
-        <Win31Solitaire />
-      </div>
-
-      {/* Minesweeper - bottom left */}
-      <div className="absolute bottom-4 left-4 opacity-60 scale-75 origin-bottom-left hidden md:block">
-        <Win31Minesweeper />
-      </div>
-
-      {/* Gorillas - top left (hidden on small screens) */}
-      <div className="absolute top-4 left-4 opacity-50 scale-75 origin-top-left hidden xl:block">
-        <QBasicGorillas />
-      </div>
-    </div>
+    <WindowManagerProvider>
+      {!booted && <BootScreen onComplete={() => setBooted(true)} />}
+      {booted && <Desktop />}
+    </WindowManagerProvider>
   );
 }

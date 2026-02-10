@@ -495,15 +495,27 @@ function generateSkillsFile(skills: ParsedSkill[]): void {
       ? JSON.stringify(skill.frontmatter['pairs-with'], null, 2).split('\n').map((line, i) => i === 0 ? line : '    ' + line).join('\n')
       : 'undefined';
 
-    // Check for generated skill icon
-    const skillIconPath = path.join(__dirname, '../public/img/skill-icons', `${skill.id}.png`);
-    const hasSkillIcon = fs.existsSync(skillIconPath);
-    const skillIcon = hasSkillIcon ? `/img/skill-icons/${skill.id}.png` : undefined;
+    // Check for WebP skill icon (preferred) or PNG fallback
+    const skillIconWebpPath = path.join(__dirname, '../public/img/skill-icons-webp', `${skill.id}.webp`);
+    const skillIconPngPath = path.join(__dirname, '../public/img/skill-icons', `${skill.id}.png`);
+    const hasSkillIconWebp = fs.existsSync(skillIconWebpPath);
+    const hasSkillIconPng = fs.existsSync(skillIconPngPath);
+    const skillIcon = hasSkillIconWebp 
+      ? `/img/skill-icons-webp/${skill.id}.webp` 
+      : hasSkillIconPng 
+        ? `/img/skill-icons/${skill.id}.png` 
+        : undefined;
 
-    // Check for generated skill hero splash
-    const skillHeroPath = path.join(__dirname, '../public/img/skill-heroes', `${skill.id}.png`);
-    const hasSkillHero = fs.existsSync(skillHeroPath);
-    const skillHero = hasSkillHero ? `/img/skill-heroes/${skill.id}.png` : undefined;
+    // Check for WebP skill hero (preferred) or PNG fallback
+    const skillHeroWebpPath = path.join(__dirname, '../public/img/skill-heroes-webp', `${skill.id}.webp`);
+    const skillHeroPngPath = path.join(__dirname, '../public/img/skill-heroes', `${skill.id}.png`);
+    const hasSkillHeroWebp = fs.existsSync(skillHeroWebpPath);
+    const hasSkillHeroPng = fs.existsSync(skillHeroPngPath);
+    const skillHero = hasSkillHeroWebp 
+      ? `/img/skill-heroes-webp/${skill.id}.webp` 
+      : hasSkillHeroPng 
+        ? `/img/skill-heroes/${skill.id}.png` 
+        : undefined;
 
     return `  {
     id: '${skill.id}',

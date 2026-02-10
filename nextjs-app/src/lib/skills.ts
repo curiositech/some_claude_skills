@@ -1,7 +1,7 @@
 /*
  * ═══════════════════════════════════════════════════════════════════════════
  * SKILL DATA - IMPORTED FROM .claude/skills/
- * Generated: 2026-02-10T03:34:53.752Z
+ * Generated: 2026-02-10T06:11:20.572Z
  * Total Skills: 173
  * 
  * DO NOT EDIT - Run 'npm run import:skills' to regenerate
@@ -239,8 +239,8 @@ float glow = smoothstep(0.5 - u_bass * 0.3, 0.0, dist);
       }
     ],
     heroImage: '/img/skills/2000s-visualization-expert-hero.png',
-    skillIcon: '/img/skill-icons/2000s-visualization-expert.png',
-    skillHero: '/img/skill-heroes/2000s-visualization-expert.png',
+    skillIcon: '/img/skill-icons-webp/2000s-visualization-expert.webp',
+    skillHero: '/img/skill-heroes-webp/2000s-visualization-expert.webp',
     pairsWith: [
       {
         "skill": "sound-engineer",
@@ -564,8 +564,8 @@ See \`references/\` folder for:
       }
     ],
     heroImage: '/img/skills/2026-legal-research-agent-hero.png',
-    skillIcon: '/img/skill-icons/2026-legal-research-agent.png',
-    skillHero: '/img/skill-heroes/2026-legal-research-agent.png',
+    skillIcon: '/img/skill-icons-webp/2026-legal-research-agent.webp',
+    skillHero: '/img/skill-heroes-webp/2026-legal-research-agent.webp',
     pairsWith: undefined,
   },
   {
@@ -843,8 +843,8 @@ Progress over perfection. Compassion over criticism. Systems over willpower.`,
       }
     ],
     heroImage: '/img/skills/adhd-daily-planner-hero.png',
-    skillIcon: '/img/skill-icons/adhd-daily-planner.png',
-    skillHero: '/img/skill-heroes/adhd-daily-planner.png',
+    skillIcon: '/img/skill-icons-webp/adhd-daily-planner.webp',
+    skillHero: '/img/skill-heroes-webp/adhd-daily-planner.webp',
     pairsWith: [
       {
         "skill": "project-management-guru-adhd",
@@ -1061,8 +1061,8 @@ We need MORE feedback, MORE visibility, MORE celebration, MORE flexibility.
       }
     ],
     heroImage: '/img/skills/adhd-design-expert-hero.png',
-    skillIcon: '/img/skill-icons/adhd-design-expert.png',
-    skillHero: '/img/skill-heroes/adhd-design-expert.png',
+    skillIcon: '/img/skill-icons-webp/adhd-design-expert.webp',
+    skillHero: '/img/skill-heroes-webp/adhd-design-expert.webp',
     pairsWith: [
       {
         "skill": "native-app-designer",
@@ -1357,8 +1357,8 @@ describe('Admin Metrics Endpoint', () => {
     installCommand: '/plugin install admin-dashboard@some-claude-skills',
     references: [],
     heroImage: '/img/skills/admin-dashboard-hero.png',
-    skillIcon: '/img/skill-icons/admin-dashboard.png',
-    skillHero: '/img/skill-heroes/admin-dashboard.png',
+    skillIcon: '/img/skill-icons-webp/admin-dashboard.webp',
+    skillHero: '/img/skill-heroes-webp/admin-dashboard.webp',
     pairsWith: undefined,
   },
   {
@@ -1530,8 +1530,8 @@ Agent Creator:
       }
     ],
     heroImage: '/img/skills/agent-creator-hero.png',
-    skillIcon: '/img/skill-icons/agent-creator.png',
-    skillHero: '/img/skill-heroes/agent-creator.png',
+    skillIcon: '/img/skill-icons-webp/agent-creator.webp',
+    skillHero: '/img/skill-heroes-webp/agent-creator.webp',
     pairsWith: [
       {
         "skill": "skill-coach",
@@ -1791,8 +1791,8 @@ function routeQuery(query: string, context: any): ModelId {
     installCommand: '/plugin install ai-engineer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/ai-engineer-hero.png',
-    skillIcon: '/img/skill-icons/ai-engineer.png',
-    skillHero: '/img/skill-heroes/ai-engineer.png',
+    skillIcon: '/img/skill-icons-webp/ai-engineer.webp',
+    skillHero: '/img/skill-heroes-webp/ai-engineer.webp',
     pairsWith: [
       {
         "skill": "prompt-engineer",
@@ -1979,8 +1979,8 @@ External tools:
     installCommand: '/plugin install ai-video-production-master@some-claude-skills',
     references: [],
     heroImage: '/img/skills/ai-video-production-master-hero.png',
-    skillIcon: '/img/skill-icons/ai-video-production-master.png',
-    skillHero: '/img/skill-heroes/ai-video-production-master.png',
+    skillIcon: '/img/skill-icons-webp/ai-video-production-master.webp',
+    skillHero: '/img/skill-heroes-webp/ai-video-production-master.webp',
     pairsWith: [
       {
         "skill": "sound-engineer",
@@ -2173,8 +2173,8 @@ Run \`./scripts/validate-api-spec.sh\` to check:
       }
     ],
     heroImage: '/img/skills/api-architect-hero.png',
-    skillIcon: '/img/skill-icons/api-architect.png',
-    skillHero: '/img/skill-heroes/api-architect.png',
+    skillIcon: '/img/skill-icons-webp/api-architect.webp',
+    skillHero: '/img/skill-heroes-webp/api-architect.webp',
     pairsWith: [
       {
         "skill": "data-pipeline-engineer",
@@ -2362,8 +2362,8 @@ Load for detailed implementations:
       }
     ],
     heroImage: '/img/skills/automatic-stateful-prompt-improver-hero.png',
-    skillIcon: '/img/skill-icons/automatic-stateful-prompt-improver.png',
-    skillHero: '/img/skill-heroes/automatic-stateful-prompt-improver.png',
+    skillIcon: '/img/skill-icons-webp/automatic-stateful-prompt-improver.webp',
+    skillHero: '/img/skill-heroes-webp/automatic-stateful-prompt-improver.webp',
     pairsWith: [
       {
         "skill": "skill-coach",
@@ -2877,8 +2877,8 @@ app.use('/admin/queues', serverAdapter.getRouter());
       }
     ],
     heroImage: '/img/skills/background-job-orchestrator-hero.png',
-    skillIcon: '/img/skill-icons/background-job-orchestrator.png',
-    skillHero: '/img/skill-heroes/background-job-orchestrator.png',
+    skillIcon: '/img/skill-icons-webp/background-job-orchestrator.webp',
+    skillHero: '/img/skill-heroes-webp/background-job-orchestrator.webp',
     pairsWith: undefined,
   },
   {
@@ -3064,8 +3064,8 @@ INPUT VALIDATION
       }
     ],
     heroImage: '/img/skills/bot-developer-hero.png',
-    skillIcon: '/img/skill-icons/bot-developer.png',
-    skillHero: '/img/skill-heroes/bot-developer.png',
+    skillIcon: '/img/skill-icons-webp/bot-developer.webp',
+    skillHero: '/img/skill-heroes-webp/bot-developer.webp',
     pairsWith: [
       {
         "skill": "api-architect",
@@ -3338,8 +3338,8 @@ This skill works well with other existing skills:
     installCommand: '/plugin install career-biographer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/career-biographer-hero.png',
-    skillIcon: '/img/skill-icons/career-biographer.png',
-    skillHero: '/img/skill-heroes/career-biographer.png',
+    skillIcon: '/img/skill-icons-webp/career-biographer.webp',
+    skillHero: '/img/skill-heroes-webp/career-biographer.webp',
     pairsWith: [
       {
         "skill": "cv-creator",
@@ -3683,8 +3683,8 @@ describe('Conversation Analytics', () => {
     installCommand: '/plugin install chatbot-analytics@some-claude-skills',
     references: [],
     heroImage: '/img/skills/chatbot-analytics-hero.png',
-    skillIcon: '/img/skill-icons/chatbot-analytics.png',
-    skillHero: '/img/skill-heroes/chatbot-analytics.png',
+    skillIcon: '/img/skill-icons-webp/chatbot-analytics.webp',
+    skillHero: '/img/skill-heroes-webp/chatbot-analytics.webp',
     pairsWith: undefined,
   },
   {
@@ -3986,8 +3986,8 @@ Day 30:  Major update announcement
       }
     ],
     heroImage: '/img/skills/claude-ecosystem-promoter-hero.png',
-    skillIcon: '/img/skill-icons/claude-ecosystem-promoter.png',
-    skillHero: '/img/skill-heroes/claude-ecosystem-promoter.png',
+    skillIcon: '/img/skill-icons-webp/claude-ecosystem-promoter.webp',
+    skillHero: '/img/skill-heroes-webp/claude-ecosystem-promoter.webp',
     pairsWith: [
       {
         "skill": "seo-visibility-expert",
@@ -4329,8 +4329,8 @@ python scripts/diagnose_clip_issue.py --image path/to/image --query "your query"
     installCommand: '/plugin install clip-aware-embeddings@some-claude-skills',
     references: [],
     heroImage: '/img/skills/clip-aware-embeddings-hero.png',
-    skillIcon: '/img/skill-icons/clip-aware-embeddings.png',
-    skillHero: '/img/skill-heroes/clip-aware-embeddings.png',
+    skillIcon: '/img/skill-icons-webp/clip-aware-embeddings.webp',
+    skillHero: '/img/skill-heroes-webp/clip-aware-embeddings.webp',
     pairsWith: [
       {
         "skill": "photo-content-recognition-curation-expert",
@@ -4859,8 +4859,8 @@ See \`/references/\` for detailed guides:
     installCommand: '/plugin install cloudflare-worker-dev@some-claude-skills',
     references: [],
     heroImage: '/img/skills/cloudflare-worker-dev-hero.png',
-    skillIcon: '/img/skill-icons/cloudflare-worker-dev.png',
-    skillHero: '/img/skill-heroes/cloudflare-worker-dev.png',
+    skillIcon: '/img/skill-icons-webp/cloudflare-worker-dev.webp',
+    skillHero: '/img/skill-heroes-webp/cloudflare-worker-dev.webp',
     pairsWith: undefined,
   },
   {
@@ -5057,8 +5057,8 @@ grep -rn 'process\\.env\\|os\\.environ' --include="*.js" --include="*.py"
       }
     ],
     heroImage: '/img/skills/code-necromancer-hero.png',
-    skillIcon: '/img/skill-icons/code-necromancer.png',
-    skillHero: '/img/skill-heroes/code-necromancer.png',
+    skillIcon: '/img/skill-icons-webp/code-necromancer.webp',
+    skillHero: '/img/skill-heroes-webp/code-necromancer.webp',
     pairsWith: [
       {
         "skill": "refactoring-surgeon",
@@ -5132,8 +5132,8 @@ Generate thorough, contextual code review checklists that help reviewers focus o
     installCommand: '/plugin install code-review-checklist@some-claude-skills',
     references: [],
     heroImage: '/img/skills/code-review-checklist-hero.png',
-    skillIcon: '/img/skill-icons/code-review-checklist.png',
-    skillHero: '/img/skill-heroes/code-review-checklist.png',
+    skillIcon: '/img/skill-icons-webp/code-review-checklist.webp',
+    skillHero: '/img/skill-heroes-webp/code-review-checklist.webp',
     pairsWith: undefined,
   },
   {
@@ -5338,8 +5338,8 @@ Expert in **ALL forms of computational collage composition** - from Instagram gr
       }
     ],
     heroImage: '/img/skills/collage-layout-expert-hero.png',
-    skillIcon: '/img/skill-icons/collage-layout-expert.png',
-    skillHero: '/img/skill-heroes/collage-layout-expert.png',
+    skillIcon: '/img/skill-icons-webp/collage-layout-expert.webp',
+    skillHero: '/img/skill-heroes-webp/collage-layout-expert.webp',
     pairsWith: [
       {
         "skill": "color-theory-palette-harmony-expert",
@@ -5773,8 +5773,8 @@ Before shipping:
       }
     ],
     heroImage: '/img/skills/color-contrast-auditor-hero.png',
-    skillIcon: '/img/skill-icons/color-contrast-auditor.png',
-    skillHero: '/img/skill-heroes/color-contrast-auditor.png',
+    skillIcon: '/img/skill-icons-webp/color-contrast-auditor.webp',
+    skillHero: '/img/skill-heroes-webp/color-contrast-auditor.webp',
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -6122,8 +6122,8 @@ When a user asks for help with color-based composition:
       }
     ],
     heroImage: '/img/skills/color-theory-palette-harmony-expert-hero.png',
-    skillIcon: '/img/skill-icons/color-theory-palette-harmony-expert.png',
-    skillHero: '/img/skill-heroes/color-theory-palette-harmony-expert.png',
+    skillIcon: '/img/skill-icons-webp/color-theory-palette-harmony-expert.webp',
+    skillHero: '/img/skill-heroes-webp/color-theory-palette-harmony-expert.webp',
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -6283,8 +6283,8 @@ Cartographer:
       }
     ],
     heroImage: '/img/skills/competitive-cartographer-hero.png',
-    skillIcon: '/img/skill-icons/competitive-cartographer.png',
-    skillHero: '/img/skill-heroes/competitive-cartographer.png',
+    skillIcon: '/img/skill-icons-webp/competitive-cartographer.webp',
+    skillHero: '/img/skill-heroes-webp/competitive-cartographer.webp',
     pairsWith: [
       {
         "skill": "career-biographer",
@@ -6903,8 +6903,8 @@ for track_id, trajectory in tracks.items():
       }
     ],
     heroImage: '/img/skills/computer-vision-pipeline-hero.png',
-    skillIcon: '/img/skill-icons/computer-vision-pipeline.png',
-    skillHero: '/img/skill-heroes/computer-vision-pipeline.png',
+    skillIcon: '/img/skill-icons-webp/computer-vision-pipeline.webp',
+    skillHero: '/img/skill-heroes-webp/computer-vision-pipeline.webp',
     pairsWith: undefined,
   },
   {
@@ -7209,8 +7209,8 @@ See \`/references/claude-api-pricing.md\` for current Claude API pricing.`,
       }
     ],
     heroImage: '/img/skills/cost-accrual-tracker-hero.png',
-    skillIcon: '/img/skill-icons/cost-accrual-tracker.png',
-    skillHero: '/img/skill-heroes/cost-accrual-tracker.png',
+    skillIcon: '/img/skill-icons-webp/cost-accrual-tracker.webp',
+    skillHero: '/img/skill-heroes-webp/cost-accrual-tracker.webp',
     pairsWith: undefined,
   },
   {
@@ -7392,8 +7392,8 @@ See \`/references/calibration-data.md\` for detailed calibration tables and hist
       }
     ],
     heroImage: '/img/skills/cost-verification-auditor-hero.png',
-    skillIcon: '/img/skill-icons/cost-verification-auditor.png',
-    skillHero: '/img/skill-heroes/cost-verification-auditor.png',
+    skillIcon: '/img/skill-icons-webp/cost-verification-auditor.webp',
+    skillHero: '/img/skill-heroes-webp/cost-verification-auditor.webp',
     pairsWith: undefined,
   },
   {
@@ -7972,8 +7972,8 @@ Examples:
       }
     ],
     heroImage: '/img/skills/crisis-detection-intervention-ai-hero.png',
-    skillIcon: '/img/skill-icons/crisis-detection-intervention-ai.png',
-    skillHero: '/img/skill-heroes/crisis-detection-intervention-ai.png',
+    skillIcon: '/img/skill-icons-webp/crisis-detection-intervention-ai.webp',
+    skillHero: '/img/skill-heroes-webp/crisis-detection-intervention-ai.webp',
     pairsWith: undefined,
   },
   {
@@ -8423,8 +8423,8 @@ describe('Crisis Detection', () => {
     installCommand: '/plugin install crisis-response-protocol@some-claude-skills',
     references: [],
     heroImage: '/img/skills/crisis-response-protocol-hero.png',
-    skillIcon: '/img/skill-icons/crisis-response-protocol.png',
-    skillHero: '/img/skill-heroes/crisis-response-protocol.png',
+    skillIcon: '/img/skill-icons-webp/crisis-response-protocol.webp',
+    skillHero: '/img/skill-heroes-webp/crisis-response-protocol.webp',
     pairsWith: undefined,
   },
   {
@@ -8602,8 +8602,8 @@ CV Creator:
       }
     ],
     heroImage: '/img/skills/cv-creator-hero.png',
-    skillIcon: '/img/skill-icons/cv-creator.png',
-    skillHero: '/img/skill-heroes/cv-creator.png',
+    skillIcon: '/img/skill-icons-webp/cv-creator.webp',
+    skillHero: '/img/skill-heroes-webp/cv-creator.webp',
     pairsWith: [
       {
         "skill": "career-biographer",
@@ -8997,8 +8997,8 @@ Multi-factor ranking. Optimal selection. Data-driven decisions.`,
     installCommand: '/plugin install dag-capability-ranker@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-capability-ranker-hero.png',
-    skillIcon: '/img/skill-icons/dag-capability-ranker.png',
-    skillHero: '/img/skill-heroes/dag-capability-ranker.png',
+    skillIcon: '/img/skill-icons-webp/dag-capability-ranker.webp',
+    skillHero: '/img/skill-heroes-webp/dag-capability-ranker.webp',
     pairsWith: [
       {
         "skill": "dag-semantic-matcher",
@@ -9504,8 +9504,8 @@ Calibrated confidence. Multi-factor scoring. Informed decisions.`,
     installCommand: '/plugin install dag-confidence-scorer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-confidence-scorer-hero.png',
-    skillIcon: '/img/skill-icons/dag-confidence-scorer.png',
-    skillHero: '/img/skill-heroes/dag-confidence-scorer.png',
+    skillIcon: '/img/skill-icons-webp/dag-confidence-scorer.webp',
+    skillHero: '/img/skill-heroes-webp/dag-confidence-scorer.webp',
     pairsWith: [
       {
         "skill": "dag-output-validator",
@@ -9858,8 +9858,8 @@ Context flows. Information preserved. Tokens optimized.`,
     installCommand: '/plugin install dag-context-bridger@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-context-bridger-hero.png',
-    skillIcon: '/img/skill-icons/dag-context-bridger.png',
-    skillHero: '/img/skill-heroes/dag-context-bridger.png',
+    skillIcon: '/img/skill-icons-webp/dag-context-bridger.webp',
+    skillHero: '/img/skill-heroes-webp/dag-context-bridger.webp',
     pairsWith: [
       {
         "skill": "dag-parallel-executor",
@@ -10389,8 +10389,8 @@ Track progress. Detect plateaus. Know when to stop.`,
     installCommand: '/plugin install dag-convergence-monitor@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-convergence-monitor-hero.png',
-    skillIcon: '/img/skill-icons/dag-convergence-monitor.png',
-    skillHero: '/img/skill-heroes/dag-convergence-monitor.png',
+    skillIcon: '/img/skill-icons-webp/dag-convergence-monitor.webp',
+    skillHero: '/img/skill-heroes-webp/dag-convergence-monitor.webp',
     pairsWith: [
       {
         "skill": "dag-iteration-detector",
@@ -10693,8 +10693,8 @@ Order from chaos. Dependencies resolved. Ready to execute.`,
     installCommand: '/plugin install dag-dependency-resolver@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-dependency-resolver-hero.png',
-    skillIcon: '/img/skill-icons/dag-dependency-resolver.png',
-    skillHero: '/img/skill-heroes/dag-dependency-resolver.png',
+    skillIcon: '/img/skill-icons-webp/dag-dependency-resolver.webp',
+    skillHero: '/img/skill-heroes-webp/dag-dependency-resolver.webp',
     pairsWith: [
       {
         "skill": "dag-graph-builder",
@@ -11099,8 +11099,8 @@ Adapt and overcome. Dynamic execution. Resilient workflows.`,
     installCommand: '/plugin install dag-dynamic-replanner@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-dynamic-replanner-hero.png',
-    skillIcon: '/img/skill-icons/dag-dynamic-replanner.png',
-    skillHero: '/img/skill-heroes/dag-dynamic-replanner.png',
+    skillIcon: '/img/skill-icons-webp/dag-dynamic-replanner.webp',
+    skillHero: '/img/skill-heroes-webp/dag-dynamic-replanner.webp',
     pairsWith: [
       {
         "skill": "dag-graph-builder",
@@ -11655,8 +11655,8 @@ Full visibility. Complete history. Every execution recorded.`,
     installCommand: '/plugin install dag-execution-tracer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-execution-tracer-hero.png',
-    skillIcon: '/img/skill-icons/dag-execution-tracer.png',
-    skillHero: '/img/skill-heroes/dag-execution-tracer.png',
+    skillIcon: '/img/skill-icons-webp/dag-execution-tracer.webp',
+    skillHero: '/img/skill-heroes-webp/dag-execution-tracer.webp',
     pairsWith: [
       {
         "skill": "dag-performance-profiler",
@@ -11949,8 +11949,8 @@ Invoke this skill when user says:
     installCommand: '/plugin install dag-executor@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-executor-hero.png',
-    skillIcon: '/img/skill-icons/dag-executor.png',
-    skillHero: '/img/skill-heroes/dag-executor.png',
+    skillIcon: '/img/skill-icons-webp/dag-executor.webp',
+    skillHero: '/img/skill-heroes-webp/dag-executor.webp',
     pairsWith: undefined,
   },
   {
@@ -12662,8 +12662,8 @@ Understand failures. Find root causes. Enable recovery.`,
     installCommand: '/plugin install dag-failure-analyzer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-failure-analyzer-hero.png',
-    skillIcon: '/img/skill-icons/dag-failure-analyzer.png',
-    skillHero: '/img/skill-heroes/dag-failure-analyzer.png',
+    skillIcon: '/img/skill-icons-webp/dag-failure-analyzer.webp',
+    skillHero: '/img/skill-heroes-webp/dag-failure-analyzer.webp',
     pairsWith: [
       {
         "skill": "dag-execution-tracer",
@@ -13214,8 +13214,8 @@ Actionable feedback. Prioritized improvements. Clear path forward.`,
     installCommand: '/plugin install dag-feedback-synthesizer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-feedback-synthesizer-hero.png',
-    skillIcon: '/img/skill-icons/dag-feedback-synthesizer.png',
-    skillHero: '/img/skill-heroes/dag-feedback-synthesizer.png',
+    skillIcon: '/img/skill-icons-webp/dag-feedback-synthesizer.webp',
+    skillHero: '/img/skill-heroes-webp/dag-feedback-synthesizer.webp',
     pairsWith: [
       {
         "skill": "dag-iteration-detector",
@@ -13449,8 +13449,8 @@ Transform chaos into structure. Build graphs that flow.`,
     installCommand: '/plugin install dag-graph-builder@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-graph-builder-hero.png',
-    skillIcon: '/img/skill-icons/dag-graph-builder.png',
-    skillHero: '/img/skill-heroes/dag-graph-builder.png',
+    skillIcon: '/img/skill-icons-webp/dag-graph-builder.webp',
+    skillHero: '/img/skill-heroes-webp/dag-graph-builder.webp',
     pairsWith: [
       {
         "skill": "dag-dependency-resolver",
@@ -14050,8 +14050,8 @@ Truth detection. Source verification. No hallucinations pass.`,
     installCommand: '/plugin install dag-hallucination-detector@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-hallucination-detector-hero.png',
-    skillIcon: '/img/skill-icons/dag-hallucination-detector.png',
-    skillHero: '/img/skill-heroes/dag-hallucination-detector.png',
+    skillIcon: '/img/skill-icons-webp/dag-hallucination-detector.webp',
+    skillHero: '/img/skill-heroes-webp/dag-hallucination-detector.webp',
     pairsWith: [
       {
         "skill": "dag-output-validator",
@@ -14497,8 +14497,8 @@ Appropriate boundaries. Right-sized access. Secure by default.`,
     installCommand: '/plugin install dag-isolation-manager@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-isolation-manager-hero.png',
-    skillIcon: '/img/skill-icons/dag-isolation-manager.png',
-    skillHero: '/img/skill-heroes/dag-isolation-manager.png',
+    skillIcon: '/img/skill-icons-webp/dag-isolation-manager.webp',
+    skillHero: '/img/skill-heroes-webp/dag-isolation-manager.webp',
     pairsWith: [
       {
         "skill": "dag-permission-validator",
@@ -14967,8 +14967,8 @@ Smart iteration. Know when to retry. Know when to stop.`,
     installCommand: '/plugin install dag-iteration-detector@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-iteration-detector-hero.png',
-    skillIcon: '/img/skill-icons/dag-iteration-detector.png',
-    skillHero: '/img/skill-heroes/dag-iteration-detector.png',
+    skillIcon: '/img/skill-icons-webp/dag-iteration-detector.webp',
+    skillHero: '/img/skill-heroes-webp/dag-iteration-detector.webp',
     pairsWith: [
       {
         "skill": "dag-feedback-synthesizer",
@@ -15530,8 +15530,8 @@ Structured validation. Quality gates. No bad outputs pass.`,
     installCommand: '/plugin install dag-output-validator@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-output-validator-hero.png',
-    skillIcon: '/img/skill-icons/dag-output-validator.png',
-    skillHero: '/img/skill-heroes/dag-output-validator.png',
+    skillIcon: '/img/skill-icons-webp/dag-output-validator.webp',
+    skillHero: '/img/skill-heroes-webp/dag-output-validator.webp',
     pairsWith: [
       {
         "skill": "dag-confidence-scorer",
@@ -15906,8 +15906,8 @@ Parallel power. Controlled execution. Maximum throughput.`,
     installCommand: '/plugin install dag-parallel-executor@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-parallel-executor-hero.png',
-    skillIcon: '/img/skill-icons/dag-parallel-executor.png',
-    skillHero: '/img/skill-heroes/dag-parallel-executor.png',
+    skillIcon: '/img/skill-icons-webp/dag-parallel-executor.webp',
+    skillHero: '/img/skill-heroes-webp/dag-parallel-executor.webp',
     pairsWith: [
       {
         "skill": "dag-task-scheduler",
@@ -16618,8 +16618,8 @@ Learn from history. Find what works. Continuously improve.`,
     installCommand: '/plugin install dag-pattern-learner@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-pattern-learner-hero.png',
-    skillIcon: '/img/skill-icons/dag-pattern-learner.png',
-    skillHero: '/img/skill-heroes/dag-pattern-learner.png',
+    skillIcon: '/img/skill-icons-webp/dag-pattern-learner.webp',
+    skillHero: '/img/skill-heroes-webp/dag-pattern-learner.webp',
     pairsWith: [
       {
         "skill": "dag-execution-tracer",
@@ -17208,8 +17208,8 @@ Measure everything. Find bottlenecks. Optimize continuously.`,
     installCommand: '/plugin install dag-performance-profiler@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-performance-profiler-hero.png',
-    skillIcon: '/img/skill-icons/dag-performance-profiler.png',
-    skillHero: '/img/skill-heroes/dag-performance-profiler.png',
+    skillIcon: '/img/skill-icons-webp/dag-performance-profiler.webp',
+    skillHero: '/img/skill-heroes-webp/dag-performance-profiler.webp',
     pairsWith: [
       {
         "skill": "dag-execution-tracer",
@@ -17658,8 +17658,8 @@ Strict inheritance. Secure spawning. No escalation.`,
     installCommand: '/plugin install dag-permission-validator@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-permission-validator-hero.png',
-    skillIcon: '/img/skill-icons/dag-permission-validator.png',
-    skillHero: '/img/skill-heroes/dag-permission-validator.png',
+    skillIcon: '/img/skill-icons-webp/dag-permission-validator.webp',
+    skillHero: '/img/skill-heroes-webp/dag-permission-validator.webp',
     pairsWith: [
       {
         "skill": "dag-scope-enforcer",
@@ -18036,8 +18036,8 @@ Many inputs. One output. Unified results.`,
     installCommand: '/plugin install dag-result-aggregator@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-result-aggregator-hero.png',
-    skillIcon: '/img/skill-icons/dag-result-aggregator.png',
-    skillHero: '/img/skill-heroes/dag-result-aggregator.png',
+    skillIcon: '/img/skill-icons-webp/dag-result-aggregator.webp',
+    skillHero: '/img/skill-heroes-webp/dag-result-aggregator.webp',
     pairsWith: [
       {
         "skill": "dag-parallel-executor",
@@ -18458,8 +18458,8 @@ Runtime protection. Every operation checked. No unauthorized access.`,
     installCommand: '/plugin install dag-scope-enforcer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-scope-enforcer-hero.png',
-    skillIcon: '/img/skill-icons/dag-scope-enforcer.png',
-    skillHero: '/img/skill-heroes/dag-scope-enforcer.png',
+    skillIcon: '/img/skill-icons-webp/dag-scope-enforcer.webp',
+    skillHero: '/img/skill-heroes-webp/dag-scope-enforcer.webp',
     pairsWith: [
       {
         "skill": "dag-permission-validator",
@@ -18854,8 +18854,8 @@ Natural language in. Perfect skills out. Semantic understanding.`,
     installCommand: '/plugin install dag-semantic-matcher@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-semantic-matcher-hero.png',
-    skillIcon: '/img/skill-icons/dag-semantic-matcher.png',
-    skillHero: '/img/skill-heroes/dag-semantic-matcher.png',
+    skillIcon: '/img/skill-icons-webp/dag-semantic-matcher.webp',
+    skillHero: '/img/skill-heroes-webp/dag-semantic-matcher.webp',
     pairsWith: [
       {
         "skill": "dag-skill-registry",
@@ -19241,8 +19241,8 @@ Central knowledge. Fast discovery. Informed decisions.`,
     installCommand: '/plugin install dag-skill-registry@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-skill-registry-hero.png',
-    skillIcon: '/img/skill-icons/dag-skill-registry.png',
-    skillHero: '/img/skill-heroes/dag-skill-registry.png',
+    skillIcon: '/img/skill-icons-webp/dag-skill-registry.webp',
+    skillHero: '/img/skill-heroes-webp/dag-skill-registry.webp',
     pairsWith: [
       {
         "skill": "dag-semantic-matcher",
@@ -19563,8 +19563,8 @@ Optimal schedules. Maximum parallelism. Minimal waste.`,
     installCommand: '/plugin install dag-task-scheduler@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-task-scheduler-hero.png',
-    skillIcon: '/img/skill-icons/dag-task-scheduler.png',
-    skillHero: '/img/skill-heroes/dag-task-scheduler.png',
+    skillIcon: '/img/skill-icons-webp/dag-task-scheduler.webp',
+    skillHero: '/img/skill-heroes-webp/dag-task-scheduler.webp',
     pairsWith: [
       {
         "skill": "dag-dependency-resolver",
@@ -19856,8 +19856,8 @@ const SkillNode = ({ data, selected }) => (
     installCommand: '/plugin install dag-visual-editor-design@some-claude-skills',
     references: [],
     heroImage: '/img/skills/dag-visual-editor-design-hero.png',
-    skillIcon: '/img/skill-icons/dag-visual-editor-design.png',
-    skillHero: '/img/skill-heroes/dag-visual-editor-design.png',
+    skillIcon: '/img/skill-icons-webp/dag-visual-editor-design.webp',
+    skillHero: '/img/skill-heroes-webp/dag-visual-editor-design.webp',
     pairsWith: undefined,
   },
   {
@@ -20745,8 +20745,8 @@ function getAtmosphereFromWeather(
       }
     ],
     heroImage: '/img/skills/dark-mode-design-expert-hero.png',
-    skillIcon: '/img/skill-icons/dark-mode-design-expert.png',
-    skillHero: '/img/skill-heroes/dark-mode-design-expert.png',
+    skillIcon: '/img/skill-icons-webp/dark-mode-design-expert.webp',
+    skillHero: '/img/skill-heroes-webp/dark-mode-design-expert.webp',
     pairsWith: undefined,
   },
   {
@@ -20917,8 +20917,8 @@ Run \`./scripts/validate-pipeline.sh\` to check:
       }
     ],
     heroImage: '/img/skills/data-pipeline-engineer-hero.png',
-    skillIcon: '/img/skill-icons/data-pipeline-engineer.png',
-    skillHero: '/img/skill-heroes/data-pipeline-engineer.png',
+    skillIcon: '/img/skill-icons-webp/data-pipeline-engineer.webp',
+    skillHero: '/img/skill-heroes-webp/data-pipeline-engineer.webp',
     pairsWith: [
       {
         "skill": "api-architect",
@@ -21472,8 +21472,8 @@ This skill guides: Chart selection | Library integration | Testing strategies | 
       }
     ],
     heroImage: '/img/skills/data-viz-2025-hero.png',
-    skillIcon: '/img/skill-icons/data-viz-2025.png',
-    skillHero: '/img/skill-heroes/data-viz-2025.png',
+    skillIcon: '/img/skill-icons-webp/data-viz-2025.webp',
+    skillHero: '/img/skill-heroes-webp/data-viz-2025.webp',
     pairsWith: undefined,
   },
   {
@@ -21665,8 +21665,8 @@ Inform users of scope and cost before beginning.
       }
     ],
     heroImage: '/img/skills/design-archivist-hero.png',
-    skillIcon: '/img/skill-icons/design-archivist.png',
-    skillHero: '/img/skill-heroes/design-archivist.png',
+    skillIcon: '/img/skill-icons-webp/design-archivist.webp',
+    skillHero: '/img/skill-heroes-webp/design-archivist.webp',
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -21841,8 +21841,8 @@ See \`references/remix-strategies.md\` for detailed improvement patterns:
       }
     ],
     heroImage: '/img/skills/design-critic-hero.png',
-    skillIcon: '/img/skill-icons/design-critic.png',
-    skillHero: '/img/skill-heroes/design-critic.png',
+    skillIcon: '/img/skill-icons-webp/design-critic.webp',
+    skillHero: '/img/skill-heroes-webp/design-critic.webp',
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -22274,8 +22274,8 @@ LEGAL/EXPUNGEMENT SPECIFIC
       }
     ],
     heroImage: '/img/skills/design-justice-hero.png',
-    skillIcon: '/img/skill-icons/design-justice.png',
-    skillHero: '/img/skill-heroes/design-justice.png',
+    skillIcon: '/img/skill-icons-webp/design-justice.webp',
+    skillHero: '/img/skill-heroes-webp/design-justice.webp',
     pairsWith: undefined,
   },
   {
@@ -22507,8 +22507,8 @@ styles/
       }
     ],
     heroImage: '/img/skills/design-system-creator-hero.png',
-    skillIcon: '/img/skill-icons/design-system-creator.png',
-    skillHero: '/img/skill-heroes/design-system-creator.png',
+    skillIcon: '/img/skill-icons-webp/design-system-creator.webp',
+    skillHero: '/img/skill-heroes-webp/design-system-creator.webp',
     pairsWith: [
       {
         "skill": "typography-expert",
@@ -22581,8 +22581,8 @@ The script will analyze the description and return the best matching design tren
     installCommand: '/plugin install design-system-generator@some-claude-skills',
     references: [],
     heroImage: undefined,
-    skillIcon: '/img/skill-icons/design-system-generator.png',
-    skillHero: '/img/skill-heroes/design-system-generator.png',
+    skillIcon: '/img/skill-icons-webp/design-system-generator.webp',
+    skillHero: '/img/skill-heroes-webp/design-system-generator.webp',
     pairsWith: undefined,
   },
   {
@@ -22784,8 +22784,8 @@ Run \`./scripts/validate-devops-skill.sh\` to check:
       }
     ],
     heroImage: '/img/skills/devops-automator-hero.png',
-    skillIcon: '/img/skill-icons/devops-automator.png',
-    skillHero: '/img/skill-heroes/devops-automator.png',
+    skillIcon: '/img/skill-icons-webp/devops-automator.webp',
+    skillHero: '/img/skill-heroes-webp/devops-automator.webp',
     pairsWith: [
       {
         "skill": "site-reliability-engineer",
@@ -23107,8 +23107,8 @@ graph TD
       }
     ],
     heroImage: '/img/skills/diagramming-expert-hero.png',
-    skillIcon: '/img/skill-icons/diagramming-expert.png',
-    skillHero: '/img/skill-heroes/diagramming-expert.png',
+    skillIcon: '/img/skill-icons-webp/diagramming-expert.webp',
+    skillHero: '/img/skill-heroes-webp/diagramming-expert.webp',
     pairsWith: [
       {
         "skill": "technical-writer",
@@ -23437,8 +23437,8 @@ That's love in practical form.`,
       }
     ],
     heroImage: '/img/skills/digital-estate-planner-hero.png',
-    skillIcon: '/img/skill-icons/digital-estate-planner.png',
-    skillHero: '/img/skill-heroes/digital-estate-planner.png',
+    skillIcon: '/img/skill-icons-webp/digital-estate-planner.webp',
+    skillHero: '/img/skill-heroes-webp/digital-estate-planner.webp',
     pairsWith: [
       {
         "skill": "grief-companion",
@@ -24202,8 +24202,8 @@ Common positions (Letter size):
       }
     ],
     heroImage: '/img/skills/document-generation-pdf-hero.png',
-    skillIcon: '/img/skill-icons/document-generation-pdf.png',
-    skillHero: '/img/skill-heroes/document-generation-pdf.png',
+    skillIcon: '/img/skill-icons-webp/document-generation-pdf.webp',
+    skillHero: '/img/skill-heroes-webp/document-generation-pdf.webp',
     pairsWith: undefined,
   },
   {
@@ -24620,8 +24620,8 @@ await db.transaction(async (tx) => {
     installCommand: '/plugin install drizzle-migrations@some-claude-skills',
     references: [],
     heroImage: '/img/skills/drizzle-migrations-hero.png',
-    skillIcon: '/img/skill-icons/drizzle-migrations.png',
-    skillHero: '/img/skill-heroes/drizzle-migrations.png',
+    skillIcon: '/img/skill-icons-webp/drizzle-migrations.webp',
+    skillHero: '/img/skill-heroes-webp/drizzle-migrations.webp',
     pairsWith: undefined,
   },
   {
@@ -24832,8 +24832,8 @@ Detailed implementations in \`references/\`:
       }
     ],
     heroImage: '/img/skills/drone-cv-expert-hero.png',
-    skillIcon: '/img/skill-icons/drone-cv-expert.png',
-    skillHero: '/img/skill-heroes/drone-cv-expert.png',
+    skillIcon: '/img/skill-icons-webp/drone-cv-expert.webp',
+    skillHero: '/img/skill-heroes-webp/drone-cv-expert.webp',
     pairsWith: [
       {
         "skill": "drone-inspection-specialist",
@@ -25070,8 +25070,8 @@ Detailed implementations in \`references/\`:
       }
     ],
     heroImage: '/img/skills/drone-inspection-specialist-hero.png',
-    skillIcon: '/img/skill-icons/drone-inspection-specialist.png',
-    skillHero: '/img/skill-heroes/drone-inspection-specialist.png',
+    skillIcon: '/img/skill-icons-webp/drone-inspection-specialist.webp',
+    skillHero: '/img/skill-heroes-webp/drone-inspection-specialist.webp',
     pairsWith: [
       {
         "skill": "drone-cv-expert",
@@ -25406,8 +25406,8 @@ Cheers,
     installCommand: '/plugin install email-composer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/email-composer-hero.png',
-    skillIcon: '/img/skill-icons/email-composer.png',
-    skillHero: '/img/skill-heroes/email-composer.png',
+    skillIcon: '/img/skill-icons-webp/email-composer.webp',
+    skillHero: '/img/skill-heroes-webp/email-composer.webp',
     pairsWith: undefined,
   },
   {
@@ -25736,8 +25736,8 @@ numpy scipy scikit-learn hdbscan geopy transformers xgboost pandas opencv-python
       }
     ],
     heroImage: '/img/skills/event-detection-temporal-intelligence-expert-hero.png',
-    skillIcon: '/img/skill-icons/event-detection-temporal-intelligence-expert.png',
-    skillHero: '/img/skill-heroes/event-detection-temporal-intelligence-expert.png',
+    skillIcon: '/img/skill-icons-webp/event-detection-temporal-intelligence-expert.webp',
+    skillHero: '/img/skill-heroes-webp/event-detection-temporal-intelligence-expert.webp',
     pairsWith: [
       {
         "skill": "photo-content-recognition-curation-expert",
@@ -25969,8 +25969,8 @@ See \`/references/process-signals.md\` for Unix signal handling details.`,
       }
     ],
     heroImage: '/img/skills/execution-lifecycle-manager-hero.png',
-    skillIcon: '/img/skill-icons/execution-lifecycle-manager.png',
-    skillHero: '/img/skill-heroes/execution-lifecycle-manager.png',
+    skillIcon: '/img/skill-icons-webp/execution-lifecycle-manager.webp',
+    skillHero: '/img/skill-heroes-webp/execution-lifecycle-manager.webp',
     pairsWith: undefined,
   },
   {
@@ -26378,8 +26378,8 @@ Plant for your future self. That person will thank you.`,
       }
     ],
     heroImage: '/img/skills/fancy-yard-landscaper-hero.png',
-    skillIcon: '/img/skill-icons/fancy-yard-landscaper.png',
-    skillHero: '/img/skill-heroes/fancy-yard-landscaper.png',
+    skillIcon: '/img/skill-icons-webp/fancy-yard-landscaper.webp',
+    skillHero: '/img/skill-heroes-webp/fancy-yard-landscaper.webp',
     pairsWith: [
       {
         "skill": "interior-design-expert",
@@ -26541,8 +26541,8 @@ When running \`npm run feature:health\`:
     installCommand: '/plugin install feature-manifest@some-claude-skills',
     references: [],
     heroImage: '/img/skills/feature-manifest-hero.png',
-    skillIcon: '/img/skill-icons/feature-manifest.png',
-    skillHero: '/img/skill-heroes/feature-manifest.png',
+    skillIcon: '/img/skill-icons-webp/feature-manifest.webp',
+    skillHero: '/img/skill-heroes-webp/feature-manifest.webp',
     pairsWith: undefined,
   },
   {
@@ -27137,8 +27137,8 @@ const onSubmit = async (data) => {
       }
     ],
     heroImage: '/img/skills/form-validation-architect-hero.png',
-    skillIcon: '/img/skill-icons/form-validation-architect.png',
-    skillHero: '/img/skill-heroes/form-validation-architect.png',
+    skillIcon: '/img/skill-icons-webp/form-validation-architect.webp',
+    skillHero: '/img/skill-heroes-webp/form-validation-architect.webp',
     pairsWith: undefined,
   },
   {
@@ -27431,8 +27431,8 @@ When making recommendations:
       }
     ],
     heroImage: '/img/skills/frontend-architect-hero.png',
-    skillIcon: '/img/skill-icons/frontend-architect.png',
-    skillHero: '/img/skill-heroes/frontend-architect.png',
+    skillIcon: '/img/skill-icons-webp/frontend-architect.webp',
+    skillHero: '/img/skill-heroes-webp/frontend-architect.webp',
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -27988,8 +27988,8 @@ When debugging, always provide:
       }
     ],
     heroImage: '/img/skills/fullstack-debugger-hero.png',
-    skillIcon: '/img/skill-icons/fullstack-debugger.png',
-    skillHero: '/img/skill-heroes/fullstack-debugger.png',
+    skillIcon: '/img/skill-icons-webp/fullstack-debugger.webp',
+    skillHero: '/img/skill-heroes-webp/fullstack-debugger.webp',
     pairsWith: [
       {
         "skill": "devops-automator",
@@ -28413,8 +28413,8 @@ SELECT ST_Distance(
       }
     ],
     heroImage: '/img/skills/geospatial-data-pipeline-hero.png',
-    skillIcon: '/img/skill-icons/geospatial-data-pipeline.png',
-    skillHero: '/img/skill-heroes/geospatial-data-pipeline.png',
+    skillIcon: '/img/skill-icons-webp/geospatial-data-pipeline.webp',
+    skillHero: '/img/skill-heroes-webp/geospatial-data-pipeline.webp',
     pairsWith: undefined,
   },
   {
@@ -28883,8 +28883,8 @@ jobs:
       }
     ],
     heroImage: '/img/skills/github-actions-pipeline-builder-hero.png',
-    skillIcon: '/img/skill-icons/github-actions-pipeline-builder.png',
-    skillHero: '/img/skill-heroes/github-actions-pipeline-builder.png',
+    skillIcon: '/img/skill-icons-webp/github-actions-pipeline-builder.webp',
+    skillHero: '/img/skill-heroes-webp/github-actions-pipeline-builder.webp',
     pairsWith: undefined,
   },
   {
@@ -29141,8 +29141,8 @@ The goal is not to "fix" grief but to walk alongside it.`,
       }
     ],
     heroImage: '/img/skills/grief-companion-hero.png',
-    skillIcon: '/img/skill-icons/grief-companion.png',
-    skillHero: '/img/skill-heroes/grief-companion.png',
+    skillIcon: '/img/skill-icons-webp/grief-companion.webp',
+    skillHero: '/img/skill-heroes-webp/grief-companion.webp',
     pairsWith: [
       {
         "skill": "pet-memorial-creator",
@@ -30166,8 +30166,8 @@ Always maintain the **scholarly intimacy** of the anatomist's notebook aesthetic
       }
     ],
     heroImage: '/img/skills/hand-drawn-infographic-creator-hero.png',
-    skillIcon: '/img/skill-icons/hand-drawn-infographic-creator.png',
-    skillHero: '/img/skill-heroes/hand-drawn-infographic-creator.png',
+    skillIcon: '/img/skill-icons-webp/hand-drawn-infographic-creator.webp',
+    skillHero: '/img/skill-heroes-webp/hand-drawn-infographic-creator.webp',
     pairsWith: undefined,
   },
   {
@@ -30389,8 +30389,8 @@ Break glass access:
     installCommand: '/plugin install hipaa-compliance@some-claude-skills',
     references: [],
     heroImage: '/img/skills/hipaa-compliance-hero.png',
-    skillIcon: '/img/skill-icons/hipaa-compliance.png',
-    skillHero: '/img/skill-heroes/hipaa-compliance.png',
+    skillIcon: '/img/skill-icons-webp/hipaa-compliance.webp',
+    skillHero: '/img/skill-heroes-webp/hipaa-compliance.webp',
     pairsWith: undefined,
   },
   {
@@ -30576,8 +30576,8 @@ Process:
       }
     ],
     heroImage: '/img/skills/hr-network-analyst-hero.png',
-    skillIcon: '/img/skill-icons/hr-network-analyst.png',
-    skillHero: '/img/skill-heroes/hr-network-analyst.png',
+    skillIcon: '/img/skill-icons-webp/hr-network-analyst.webp',
+    skillHero: '/img/skill-heroes-webp/hr-network-analyst.webp',
     pairsWith: [
       {
         "skill": "career-biographer",
@@ -30749,8 +30749,8 @@ Elite HRV, HRV4Training, Welltory, HeartMath
       }
     ],
     heroImage: '/img/skills/hrv-alexithymia-expert-hero.png',
-    skillIcon: '/img/skill-icons/hrv-alexithymia-expert.png',
-    skillHero: '/img/skill-heroes/hrv-alexithymia-expert.png',
+    skillIcon: '/img/skill-icons-webp/hrv-alexithymia-expert.webp',
+    skillHero: '/img/skill-heroes-webp/hrv-alexithymia-expert.webp',
     pairsWith: [
       {
         "skill": "jungian-psychologist",
@@ -31010,8 +31010,8 @@ Day 30: Direct pitch with deadline
       }
     ],
     heroImage: '/img/skills/indie-monetization-strategist-hero.png',
-    skillIcon: '/img/skill-icons/indie-monetization-strategist.png',
-    skillHero: '/img/skill-heroes/indie-monetization-strategist.png',
+    skillIcon: '/img/skill-icons-webp/indie-monetization-strategist.webp',
+    skillHero: '/img/skill-heroes-webp/indie-monetization-strategist.webp',
     pairsWith: [
       {
         "skill": "tech-entrepreneur-coach-adhd",
@@ -31241,8 +31241,8 @@ cartoon, illustration, low quality, watermark
       }
     ],
     heroImage: '/img/skills/interior-design-expert-hero.png',
-    skillIcon: '/img/skill-icons/interior-design-expert.png',
-    skillHero: '/img/skill-heroes/interior-design-expert.png',
+    skillIcon: '/img/skill-icons-webp/interior-design-expert.webp',
+    skillHero: '/img/skill-heroes-webp/interior-design-expert.webp',
     pairsWith: [
       {
         "skill": "color-theory-palette-harmony-expert",
@@ -31518,8 +31518,8 @@ When optimizing, produce:
     installCommand: '/plugin install job-application-optimizer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/job-application-optimizer-hero.png',
-    skillIcon: '/img/skill-icons/job-application-optimizer.png',
-    skillHero: '/img/skill-heroes/job-application-optimizer.png',
+    skillIcon: '/img/skill-icons-webp/job-application-optimizer.webp',
+    skillHero: '/img/skill-heroes-webp/job-application-optimizer.webp',
     pairsWith: [
       {
         "skill": "cv-creator",
@@ -31760,8 +31760,8 @@ FIND AN ANALYST:
       }
     ],
     heroImage: '/img/skills/jungian-psychologist-hero.png',
-    skillIcon: '/img/skill-icons/jungian-psychologist.png',
-    skillHero: '/img/skill-heroes/jungian-psychologist.png',
+    skillIcon: '/img/skill-icons-webp/jungian-psychologist.webp',
+    skillHero: '/img/skill-heroes-webp/jungian-psychologist.webp',
     pairsWith: [
       {
         "skill": "wisdom-accountability-coach",
@@ -32086,8 +32086,8 @@ When using the simulation's physics engine for demonstrations:
       }
     ],
     heroImage: '/img/skills/knot-theory-educator-hero.png',
-    skillIcon: '/img/skill-icons/knot-theory-educator.png',
-    skillHero: '/img/skill-heroes/knot-theory-educator.png',
+    skillIcon: '/img/skill-icons-webp/knot-theory-educator.webp',
+    skillHero: '/img/skill-heroes-webp/knot-theory-educator.webp',
     pairsWith: [
       {
         "skill": "diagramming-expert",
@@ -32645,8 +32645,8 @@ When optimizing an existing slow map:
     installCommand: '/plugin install large-scale-map-visualization@some-claude-skills',
     references: [],
     heroImage: '/img/skills/large-scale-map-visualization-hero.png',
-    skillIcon: '/img/skill-icons/large-scale-map-visualization.png',
-    skillHero: '/img/skill-heroes/large-scale-map-visualization.png',
+    skillIcon: '/img/skill-icons-webp/large-scale-map-visualization.webp',
+    skillHero: '/img/skill-heroes-webp/large-scale-map-visualization.webp',
     pairsWith: undefined,
   },
   {
@@ -32859,8 +32859,8 @@ Find all the critical bugs and security issues preventing me from deploying.
     installCommand: '/plugin install launch-readiness-auditor@some-claude-skills',
     references: [],
     heroImage: '/img/skills/launch-readiness-auditor-hero.png',
-    skillIcon: '/img/skill-icons/launch-readiness-auditor.png',
-    skillHero: '/img/skill-heroes/launch-readiness-auditor.png',
+    skillIcon: '/img/skill-icons-webp/launch-readiness-auditor.webp',
+    skillHero: '/img/skill-heroes-webp/launch-readiness-auditor.webp',
     pairsWith: undefined,
   },
   {
@@ -33115,8 +33115,8 @@ I will:
     installCommand: '/plugin install liaison@some-claude-skills',
     references: [],
     heroImage: '/img/skills/liaison-hero.png',
-    skillIcon: '/img/skill-icons/liaison.png',
-    skillHero: '/img/skill-heroes/liaison.png',
+    skillIcon: '/img/skill-icons-webp/liaison.webp',
+    skillHero: '/img/skill-heroes-webp/liaison.webp',
     pairsWith: [
       {
         "skill": "orchestrator",
@@ -33665,8 +33665,8 @@ export async function POST(req: Request) {
       }
     ],
     heroImage: '/img/skills/llm-streaming-response-handler-hero.png',
-    skillIcon: '/img/skill-icons/llm-streaming-response-handler.png',
-    skillHero: '/img/skill-heroes/llm-streaming-response-handler.png',
+    skillIcon: '/img/skill-icons-webp/llm-streaming-response-handler.webp',
+    skillHero: '/img/skill-heroes-webp/llm-streaming-response-handler.webp',
     pairsWith: undefined,
   },
   {
@@ -34151,8 +34151,8 @@ plants and books everywhere, maximalist interior"
       }
     ],
     heroImage: '/img/skills/maximalist-wall-decorator-hero.png',
-    skillIcon: '/img/skill-icons/maximalist-wall-decorator.png',
-    skillHero: '/img/skill-heroes/maximalist-wall-decorator.png',
+    skillIcon: '/img/skill-icons-webp/maximalist-wall-decorator.webp',
+    skillHero: '/img/skill-heroes-webp/maximalist-wall-decorator.webp',
     pairsWith: [
       {
         "skill": "interior-design-expert",
@@ -34658,8 +34658,8 @@ Does this tool need...
       }
     ],
     heroImage: '/img/skills/mcp-creator-hero.png',
-    skillIcon: '/img/skill-icons/mcp-creator.png',
-    skillHero: '/img/skill-heroes/mcp-creator.png',
+    skillIcon: '/img/skill-icons-webp/mcp-creator.webp',
+    skillHero: '/img/skill-heroes-webp/mcp-creator.webp',
     pairsWith: [
       {
         "skill": "agent-creator",
@@ -34807,8 +34807,8 @@ For edge cases, manually escape in source:
     installCommand: '/plugin install mdx-sanitizer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/mdx-sanitizer-hero.png',
-    skillIcon: '/img/skill-icons/mdx-sanitizer.png',
-    skillHero: '/img/skill-heroes/mdx-sanitizer.png',
+    skillIcon: '/img/skill-icons-webp/mdx-sanitizer.webp',
+    skillHero: '/img/skill-heroes-webp/mdx-sanitizer.webp',
     pairsWith: undefined,
   },
   {
@@ -34949,8 +34949,8 @@ For edge cases, manually escape in source:
       }
     ],
     heroImage: '/img/skills/metal-shader-expert-hero.png',
-    skillIcon: '/img/skill-icons/metal-shader-expert.png',
-    skillHero: '/img/skill-heroes/metal-shader-expert.png',
+    skillIcon: '/img/skill-icons-webp/metal-shader-expert.webp',
+    skillHero: '/img/skill-heroes-webp/metal-shader-expert.webp',
     pairsWith: [
       {
         "skill": "native-app-designer",
@@ -35385,8 +35385,8 @@ See \`/references/\` for detailed guides:
       }
     ],
     heroImage: '/img/skills/mobile-ux-optimizer-hero.png',
-    skillIcon: '/img/skill-icons/mobile-ux-optimizer.png',
-    skillHero: '/img/skill-heroes/mobile-ux-optimizer.png',
+    skillIcon: '/img/skill-icons-webp/mobile-ux-optimizer.webp',
+    skillHero: '/img/skill-heroes-webp/mobile-ux-optimizer.webp',
     pairsWith: undefined,
   },
   {
@@ -36314,8 +36314,8 @@ async function sensitiveAction(userId: string) {
     installCommand: '/plugin install modern-auth-2026@some-claude-skills',
     references: [],
     heroImage: '/img/skills/modern-auth-2026-hero.png',
-    skillIcon: '/img/skill-icons/modern-auth-2026.png',
-    skillHero: '/img/skill-heroes/modern-auth-2026.png',
+    skillIcon: '/img/skill-icons-webp/modern-auth-2026.webp',
+    skillHero: '/img/skill-heroes-webp/modern-auth-2026.webp',
     pairsWith: undefined,
   },
   {
@@ -36712,8 +36712,8 @@ Solutions:
       }
     ],
     heroImage: '/img/skills/modern-drug-rehab-computer-hero.png',
-    skillIcon: '/img/skill-icons/modern-drug-rehab-computer.png',
-    skillHero: '/img/skill-heroes/modern-drug-rehab-computer.png',
+    skillIcon: '/img/skill-icons-webp/modern-drug-rehab-computer.webp',
+    skillHero: '/img/skill-heroes-webp/modern-drug-rehab-computer.webp',
     pairsWith: [
       {
         "skill": "sober-addict-protector",
@@ -36798,8 +36798,8 @@ Alabama, Arizona, South Carolina, Wyoming
       }
     ],
     heroImage: '/img/skills/national-expungement-expert-hero.png',
-    skillIcon: '/img/skill-icons/national-expungement-expert.png',
-    skillHero: '/img/skill-heroes/national-expungement-expert.png',
+    skillIcon: '/img/skill-icons-webp/national-expungement-expert.webp',
+    skillHero: '/img/skill-heroes-webp/national-expungement-expert.webp',
     pairsWith: undefined,
   },
   {
@@ -37014,8 +37014,8 @@ Small touches that make users smile:
       }
     ],
     heroImage: '/img/skills/native-app-designer-hero.png',
-    skillIcon: '/img/skill-icons/native-app-designer.png',
-    skillHero: '/img/skill-heroes/native-app-designer.png',
+    skillIcon: '/img/skill-icons-webp/native-app-designer.webp',
+    skillHero: '/img/skill-heroes-webp/native-app-designer.webp',
     pairsWith: [
       {
         "skill": "metal-shader-expert",
@@ -37740,8 +37740,8 @@ Design research based on:
       }
     ],
     heroImage: '/img/skills/neobrutalist-web-designer-hero.png',
-    skillIcon: '/img/skill-icons/neobrutalist-web-designer.png',
-    skillHero: '/img/skill-heroes/neobrutalist-web-designer.png',
+    skillIcon: '/img/skill-icons-webp/neobrutalist-web-designer.webp',
+    skillHero: '/img/skill-heroes-webp/neobrutalist-web-designer.webp',
     pairsWith: undefined,
   },
   {
@@ -38057,8 +38057,8 @@ async function RevenueCard() {
     installCommand: '/plugin install nextjs-app-router-expert@some-claude-skills',
     references: [],
     heroImage: '/img/skills/nextjs-app-router-expert-hero.png',
-    skillIcon: '/img/skill-icons/nextjs-app-router-expert.png',
-    skillHero: '/img/skill-heroes/nextjs-app-router-expert.png',
+    skillIcon: '/img/skill-icons-webp/nextjs-app-router-expert.webp',
+    skillHero: '/img/skill-heroes-webp/nextjs-app-router-expert.webp',
     pairsWith: undefined,
   },
   {
@@ -38435,8 +38435,8 @@ export async function getOIDCConfig(issuer: string): Promise<OIDCConfig> {
     installCommand: '/plugin install oauth-oidc-implementer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/oauth-oidc-implementer-hero.png',
-    skillIcon: '/img/skill-icons/oauth-oidc-implementer.png',
-    skillHero: '/img/skill-heroes/oauth-oidc-implementer.png',
+    skillIcon: '/img/skill-icons-webp/oauth-oidc-implementer.webp',
+    skillHero: '/img/skill-heroes-webp/oauth-oidc-implementer.webp',
     pairsWith: undefined,
   },
   {
@@ -39075,8 +39075,8 @@ rules:
     installCommand: '/plugin install openapi-spec-writer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/openapi-spec-writer-hero.png',
-    skillIcon: '/img/skill-icons/openapi-spec-writer.png',
-    skillHero: '/img/skill-heroes/openapi-spec-writer.png',
+    skillIcon: '/img/skill-icons-webp/openapi-spec-writer.webp',
+    skillHero: '/img/skill-heroes-webp/openapi-spec-writer.webp',
     pairsWith: undefined,
   },
   {
@@ -39431,8 +39431,8 @@ Remember: The whole is greater than the sum of its parts—when orchestrated wit
     installCommand: '/plugin install orchestrator@some-claude-skills',
     references: [],
     heroImage: '/img/skills/orchestrator-hero.png',
-    skillIcon: '/img/skill-icons/orchestrator.png',
-    skillHero: '/img/skill-heroes/orchestrator.png',
+    skillIcon: '/img/skill-icons-webp/orchestrator.webp',
+    skillHero: '/img/skill-heroes-webp/orchestrator.webp',
     pairsWith: [
       {
         "skill": "team-builder",
@@ -39920,8 +39920,8 @@ Every hollow knock is a question. Take your time finding the answers.`,
       }
     ],
     heroImage: '/img/skills/panic-room-finder-hero.png',
-    skillIcon: '/img/skill-icons/panic-room-finder.png',
-    skillHero: '/img/skill-heroes/panic-room-finder.png',
+    skillIcon: '/img/skill-icons-webp/panic-room-finder.webp',
+    skillHero: '/img/skill-heroes-webp/panic-room-finder.webp',
     pairsWith: [
       {
         "skill": "interior-design-expert",
@@ -40343,8 +40343,8 @@ THIS SKILL WILL:
       }
     ],
     heroImage: '/img/skills/partner-text-coach-hero.png',
-    skillIcon: '/img/skill-icons/partner-text-coach.png',
-    skillHero: '/img/skill-heroes/partner-text-coach.png',
+    skillIcon: '/img/skill-icons-webp/partner-text-coach.webp',
+    skillHero: '/img/skill-heroes-webp/partner-text-coach.webp',
     pairsWith: [
       {
         "skill": "jungian-psychologist",
@@ -40520,8 +40520,8 @@ INVESTMENTS:
       }
     ],
     heroImage: '/img/skills/personal-finance-coach-hero.png',
-    skillIcon: '/img/skill-icons/personal-finance-coach.png',
-    skillHero: '/img/skill-heroes/personal-finance-coach.png',
+    skillIcon: '/img/skill-icons-webp/personal-finance-coach.webp',
+    skillHero: '/img/skill-heroes-webp/personal-finance-coach.webp',
     pairsWith: [
       {
         "skill": "indie-monetization-strategist",
@@ -40855,8 +40855,8 @@ The grief you feel is the price of the love you shared. It's worth it. They were
       }
     ],
     heroImage: '/img/skills/pet-memorial-creator-hero.png',
-    skillIcon: '/img/skill-icons/pet-memorial-creator.png',
-    skillHero: '/img/skill-heroes/pet-memorial-creator.png',
+    skillIcon: '/img/skill-icons-webp/pet-memorial-creator.webp',
+    skillHero: '/img/skill-heroes-webp/pet-memorial-creator.webp',
     pairsWith: [
       {
         "skill": "grief-companion",
@@ -41030,8 +41030,8 @@ Load these for detailed implementations:
       }
     ],
     heroImage: '/img/skills/photo-composition-critic-hero.png',
-    skillIcon: '/img/skill-icons/photo-composition-critic.png',
-    skillHero: '/img/skill-heroes/photo-composition-critic.png',
+    skillIcon: '/img/skill-icons-webp/photo-composition-critic.webp',
+    skillHero: '/img/skill-heroes-webp/photo-composition-critic.webp',
     pairsWith: [
       {
         "skill": "color-theory-palette-harmony-expert",
@@ -41381,8 +41381,8 @@ torch transformers facenet-pytorch ultralytics hdbscan opencv-python scipy numpy
       }
     ],
     heroImage: '/img/skills/photo-content-recognition-curation-expert-hero.png',
-    skillIcon: '/img/skill-icons/photo-content-recognition-curation-expert.png',
-    skillHero: '/img/skill-heroes/photo-content-recognition-curation-expert.png',
+    skillIcon: '/img/skill-icons-webp/photo-content-recognition-curation-expert.webp',
+    skillHero: '/img/skill-heroes-webp/photo-content-recognition-curation-expert.webp',
     pairsWith: [
       {
         "skill": "event-detection-temporal-intelligence-expert",
@@ -41554,8 +41554,8 @@ Expert in computational physics for real-time rope/cable dynamics, constraint so
       }
     ],
     heroImage: '/img/skills/physics-rendering-expert-hero.png',
-    skillIcon: '/img/skill-icons/physics-rendering-expert.png',
-    skillHero: '/img/skill-heroes/physics-rendering-expert.png',
+    skillIcon: '/img/skill-icons-webp/physics-rendering-expert.webp',
+    skillHero: '/img/skill-heroes-webp/physics-rendering-expert.webp',
     pairsWith: [
       {
         "skill": "metal-shader-expert",
@@ -41633,8 +41633,8 @@ highlights:
     installCommand: '/plugin install pixel-art-infographic-creator@some-claude-skills',
     references: [],
     heroImage: '/img/skills/pixel-art-infographic-creator-hero.png',
-    skillIcon: '/img/skill-icons/pixel-art-infographic-creator.png',
-    skillHero: '/img/skill-heroes/pixel-art-infographic-creator.png',
+    skillIcon: '/img/skill-icons-webp/pixel-art-infographic-creator.webp',
+    skillHero: '/img/skill-heroes-webp/pixel-art-infographic-creator.webp',
     pairsWith: undefined,
   },
   {
@@ -41872,8 +41872,8 @@ test('displays products from API', async ({ page }) => {
     installCommand: '/plugin install playwright-e2e-tester@some-claude-skills',
     references: [],
     heroImage: '/img/skills/playwright-e2e-tester-hero.png',
-    skillIcon: '/img/skill-icons/playwright-e2e-tester.png',
-    skillHero: '/img/skill-heroes/playwright-e2e-tester.png',
+    skillIcon: '/img/skill-icons-webp/playwright-e2e-tester.webp',
+    skillHero: '/img/skill-heroes-webp/playwright-e2e-tester.webp',
     pairsWith: undefined,
   },
   {
@@ -42301,8 +42301,8 @@ When Claude reads screenshots captured by this pattern:
     installCommand: '/plugin install playwright-screenshot-inspector@some-claude-skills',
     references: [],
     heroImage: '/img/skills/playwright-screenshot-inspector-hero.png',
-    skillIcon: '/img/skill-icons/playwright-screenshot-inspector.png',
-    skillHero: '/img/skill-heroes/playwright-screenshot-inspector.png',
+    skillIcon: '/img/skill-icons-webp/playwright-screenshot-inspector.webp',
+    skillHero: '/img/skill-heroes-webp/playwright-screenshot-inspector.webp',
     pairsWith: undefined,
   },
   {
@@ -42586,8 +42586,8 @@ VACUUM FULL orders;  -- Use during maintenance window
     installCommand: '/plugin install postgresql-optimization@some-claude-skills',
     references: [],
     heroImage: '/img/skills/postgresql-optimization-hero.png',
-    skillIcon: '/img/skill-icons/postgresql-optimization.png',
-    skillHero: '/img/skill-heroes/postgresql-optimization.png',
+    skillIcon: '/img/skill-icons-webp/postgresql-optimization.webp',
+    skillHero: '/img/skill-heroes-webp/postgresql-optimization.webp',
     pairsWith: undefined,
   },
   {
@@ -42880,8 +42880,8 @@ When running this skill, produce:
       }
     ],
     heroImage: '/img/skills/product-appeal-analyzer-hero.png',
-    skillIcon: '/img/skill-icons/product-appeal-analyzer.png',
-    skillHero: '/img/skill-heroes/product-appeal-analyzer.png',
+    skillIcon: '/img/skill-icons-webp/product-appeal-analyzer.webp',
+    skillHero: '/img/skill-heroes-webp/product-appeal-analyzer.webp',
     pairsWith: [
       {
         "skill": "ux-friction-analyzer",
@@ -43093,8 +43093,8 @@ Expert project manager for ADHD engineers managing multiple concurrent projects 
       }
     ],
     heroImage: '/img/skills/project-management-guru-adhd-hero.png',
-    skillIcon: '/img/skill-icons/project-management-guru-adhd.png',
-    skillHero: '/img/skill-heroes/project-management-guru-adhd.png',
+    skillIcon: '/img/skill-icons-webp/project-management-guru-adhd.webp',
+    skillHero: '/img/skill-heroes-webp/project-management-guru-adhd.webp',
     pairsWith: [
       {
         "skill": "adhd-daily-planner",
@@ -43294,8 +43294,8 @@ Fix: Add periodic context summaries + clear role reminders
     installCommand: '/plugin install prompt-engineer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/prompt-engineer-hero.png',
-    skillIcon: '/img/skill-icons/prompt-engineer.png',
-    skillHero: '/img/skill-heroes/prompt-engineer.png',
+    skillIcon: '/img/skill-icons-webp/prompt-engineer.webp',
+    skillHero: '/img/skill-heroes-webp/prompt-engineer.webp',
     pairsWith: [
       {
         "skill": "ai-engineer",
@@ -43661,8 +43661,8 @@ Detailed implementations in \`/references/\`:
       }
     ],
     heroImage: '/img/skills/pwa-expert-hero.png',
-    skillIcon: '/img/skill-icons/pwa-expert.png',
-    skillHero: '/img/skill-heroes/pwa-expert.png',
+    skillIcon: '/img/skill-icons-webp/pwa-expert.webp',
+    skillHero: '/img/skill-heroes-webp/pwa-expert.webp',
     pairsWith: undefined,
   },
   {
@@ -44116,8 +44116,8 @@ function Dashboard() {
       }
     ],
     heroImage: '/img/skills/react-performance-optimizer-hero.png',
-    skillIcon: '/img/skill-icons/react-performance-optimizer.png',
-    skillHero: '/img/skill-heroes/react-performance-optimizer.png',
+    skillIcon: '/img/skill-icons-webp/react-performance-optimizer.webp',
+    skillHero: '/img/skill-heroes-webp/react-performance-optimizer.webp',
     pairsWith: undefined,
   },
   {
@@ -44275,8 +44275,8 @@ When debugging test timeouts, ALWAYS start with \`screen.debug()\` to see what a
     installCommand: '/plugin install reactive-dashboard-performance@some-claude-skills',
     references: [],
     heroImage: '/img/skills/reactive-dashboard-performance-hero.png',
-    skillIcon: '/img/skill-icons/reactive-dashboard-performance.png',
-    skillHero: '/img/skill-heroes/reactive-dashboard-performance.png',
+    skillIcon: '/img/skill-icons-webp/reactive-dashboard-performance.webp',
+    skillHero: '/img/skill-heroes-webp/reactive-dashboard-performance.webp',
     pairsWith: undefined,
   },
   {
@@ -44847,8 +44847,8 @@ class OptimisticEditor {
       }
     ],
     heroImage: '/img/skills/real-time-collaboration-engine-hero.png',
-    skillIcon: '/img/skill-icons/real-time-collaboration-engine.png',
-    skillHero: '/img/skill-heroes/real-time-collaboration-engine.png',
+    skillIcon: '/img/skill-icons-webp/real-time-collaboration-engine.webp',
+    skillHero: '/img/skill-heroes-webp/real-time-collaboration-engine.webp',
     pairsWith: undefined,
   },
   {
@@ -45065,8 +45065,8 @@ Template documents in the \`docs/\` directory:
     installCommand: '/plugin install recovery-app-legal-terms@some-claude-skills',
     references: [],
     heroImage: '/img/skills/recovery-app-legal-terms-hero.png',
-    skillIcon: '/img/skill-icons/recovery-app-legal-terms.png',
-    skillHero: '/img/skill-heroes/recovery-app-legal-terms.png',
+    skillIcon: '/img/skill-icons-webp/recovery-app-legal-terms.webp',
+    skillHero: '/img/skill-heroes-webp/recovery-app-legal-terms.webp',
     pairsWith: undefined,
   },
   {
@@ -45636,8 +45636,8 @@ See \`/references/\` for detailed guides:
       }
     ],
     heroImage: '/img/skills/recovery-app-onboarding-hero.png',
-    skillIcon: '/img/skill-icons/recovery-app-onboarding.png',
-    skillHero: '/img/skill-heroes/recovery-app-onboarding.png',
+    skillIcon: '/img/skill-icons-webp/recovery-app-onboarding.webp',
+    skillHero: '/img/skill-heroes-webp/recovery-app-onboarding.webp',
     pairsWith: undefined,
   },
   {
@@ -46029,8 +46029,8 @@ import { Input } from '@/components/ui/Input';
     installCommand: '/plugin install recovery-coach-patterns@some-claude-skills',
     references: [],
     heroImage: '/img/skills/recovery-coach-patterns-hero.png',
-    skillIcon: '/img/skill-icons/recovery-coach-patterns.png',
-    skillHero: '/img/skill-heroes/recovery-coach-patterns.png',
+    skillIcon: '/img/skill-icons-webp/recovery-coach-patterns.webp',
+    skillHero: '/img/skill-heroes-webp/recovery-coach-patterns.webp',
     pairsWith: undefined,
   },
   {
@@ -46196,8 +46196,8 @@ The skill includes helper scripts in the \`scripts/\` directory:
     installCommand: '/plugin install recovery-community-moderator@some-claude-skills',
     references: [],
     heroImage: '/img/skills/recovery-community-moderator-hero.png',
-    skillIcon: '/img/skill-icons/recovery-community-moderator.png',
-    skillHero: '/img/skill-heroes/recovery-community-moderator.png',
+    skillIcon: '/img/skill-icons-webp/recovery-community-moderator.webp',
+    skillHero: '/img/skill-heroes-webp/recovery-community-moderator.webp',
     pairsWith: undefined,
   },
   {
@@ -46748,8 +46748,8 @@ Before publishing any educational content, verify:
       }
     ],
     heroImage: '/img/skills/recovery-education-writer-hero.png',
-    skillIcon: '/img/skill-icons/recovery-education-writer.png',
-    skillHero: '/img/skill-heroes/recovery-education-writer.png',
+    skillIcon: '/img/skill-icons-webp/recovery-education-writer.webp',
+    skillHero: '/img/skill-heroes-webp/recovery-education-writer.webp',
     pairsWith: undefined,
   },
   {
@@ -47114,8 +47114,8 @@ Detailed implementations in \`/references/\`:
       }
     ],
     heroImage: '/img/skills/recovery-social-features-hero.png',
-    skillIcon: '/img/skill-icons/recovery-social-features.png',
-    skillHero: '/img/skill-heroes/recovery-social-features.png',
+    skillIcon: '/img/skill-icons-webp/recovery-social-features.webp',
+    skillHero: '/img/skill-heroes-webp/recovery-social-features.webp',
     pairsWith: undefined,
   },
   {
@@ -47307,8 +47307,8 @@ Run \`./scripts/validate-refactoring.sh\` to check:
       }
     ],
     heroImage: '/img/skills/refactoring-surgeon-hero.png',
-    skillIcon: '/img/skill-icons/refactoring-surgeon.png',
-    skillHero: '/img/skill-heroes/refactoring-surgeon.png',
+    skillIcon: '/img/skill-icons-webp/refactoring-surgeon.webp',
+    skillHero: '/img/skill-heroes-webp/refactoring-surgeon.webp',
     pairsWith: [
       {
         "skill": "code-necromancer",
@@ -47522,8 +47522,8 @@ Remember: Great research doesn't just answer questions—it helps you ask better
     installCommand: '/plugin install research-analyst@some-claude-skills',
     references: [],
     heroImage: '/img/skills/research-analyst-hero.png',
-    skillIcon: '/img/skill-icons/research-analyst.png',
-    skillHero: '/img/skill-heroes/research-analyst.png',
+    skillIcon: '/img/skill-icons-webp/research-analyst.webp',
+    skillHero: '/img/skill-heroes-webp/research-analyst.webp',
     pairsWith: [
       {
         "skill": "competitive-cartographer",
@@ -48041,8 +48041,8 @@ async function getPaginated(page: number, limit: number) {
     installCommand: '/plugin install rest-api-design@some-claude-skills',
     references: [],
     heroImage: '/img/skills/rest-api-design-hero.png',
-    skillIcon: '/img/skill-icons/rest-api-design.png',
-    skillHero: '/img/skill-heroes/rest-api-design.png',
+    skillIcon: '/img/skill-icons-webp/rest-api-design.webp',
+    skillHero: '/img/skill-heroes-webp/rest-api-design.webp',
     pairsWith: undefined,
   },
   {
@@ -48301,8 +48301,8 @@ security-scan:
       }
     ],
     heroImage: '/img/skills/security-auditor-hero.png',
-    skillIcon: '/img/skill-icons/security-auditor.png',
-    skillHero: '/img/skill-heroes/security-auditor.png',
+    skillIcon: '/img/skill-icons-webp/security-auditor.webp',
+    skillHero: '/img/skill-heroes-webp/security-auditor.webp',
     pairsWith: [
       {
         "skill": "devops-automator",
@@ -48533,8 +48533,8 @@ Sitemap: https://yoursite.com/sitemap.xml
       }
     ],
     heroImage: '/img/skills/seo-visibility-expert-hero.png',
-    skillIcon: '/img/skill-icons/seo-visibility-expert.png',
-    skillHero: '/img/skill-heroes/seo-visibility-expert.png',
+    skillIcon: '/img/skill-icons-webp/seo-visibility-expert.webp',
+    skillHero: '/img/skill-heroes-webp/seo-visibility-expert.webp',
     pairsWith: [
       {
         "skill": "claude-ecosystem-promoter",
@@ -48695,8 +48695,8 @@ After installing hooks:
       }
     ],
     heroImage: '/img/skills/site-reliability-engineer-hero.png',
-    skillIcon: '/img/skill-icons/site-reliability-engineer.png',
-    skillHero: '/img/skill-heroes/site-reliability-engineer.png',
+    skillIcon: '/img/skill-icons-webp/site-reliability-engineer.webp',
+    skillHero: '/img/skill-heroes-webp/site-reliability-engineer.webp',
     pairsWith: [
       {
         "skill": "devops-automator",
@@ -49374,8 +49374,8 @@ For deep dives on specific topics:
       }
     ],
     heroImage: '/img/skills/skill-architect-hero.png',
-    skillIcon: '/img/skill-icons/skill-architect.png',
-    skillHero: '/img/skill-heroes/skill-architect.png',
+    skillIcon: '/img/skill-icons-webp/skill-architect.webp',
+    skillHero: '/img/skill-heroes-webp/skill-architect.webp',
     pairsWith: undefined,
   },
   {
@@ -49725,8 +49725,8 @@ Run \`python scripts/test_activation.py <path>\` to validate
       }
     ],
     heroImage: '/img/skills/skill-coach-hero.png',
-    skillIcon: '/img/skill-icons/skill-coach.png',
-    skillHero: '/img/skill-heroes/skill-coach.png',
+    skillIcon: '/img/skill-icons-webp/skill-coach.webp',
+    skillHero: '/img/skill-heroes-webp/skill-coach.webp',
     pairsWith: [
       {
         "skill": "agent-creator",
@@ -49952,8 +49952,8 @@ After testing the skill, users may request improvements. Often this happens righ
     installCommand: '/plugin install skill-creator@some-claude-skills',
     references: [],
     heroImage: '/img/skills/skill-creator-hero.png',
-    skillIcon: '/img/skill-icons/skill-creator.png',
-    skillHero: '/img/skill-heroes/skill-creator.png',
+    skillIcon: '/img/skill-icons-webp/skill-creator.webp',
+    skillHero: '/img/skill-heroes-webp/skill-creator.webp',
     pairsWith: undefined,
   },
   {
@@ -50386,8 +50386,8 @@ done
       }
     ],
     heroImage: '/img/skills/skill-documentarian-hero.png',
-    skillIcon: '/img/skill-icons/skill-documentarian.png',
-    skillHero: '/img/skill-heroes/skill-documentarian.png',
+    skillIcon: '/img/skill-icons-webp/skill-documentarian.webp',
+    skillHero: '/img/skill-heroes-webp/skill-documentarian.webp',
     pairsWith: [
       {
         "skill": "site-reliability-engineer",
@@ -50893,8 +50893,8 @@ ALERT_CONDITIONS = {
       }
     ],
     heroImage: '/img/skills/skill-logger-hero.png',
-    skillIcon: '/img/skill-icons/skill-logger.png',
-    skillHero: '/img/skill-heroes/skill-logger.png',
+    skillIcon: '/img/skill-icons-webp/skill-logger.webp',
+    skillHero: '/img/skill-heroes-webp/skill-logger.webp',
     pairsWith: [
       {
         "skill": "automatic-stateful-prompt-improver",
@@ -51328,8 +51328,8 @@ Every day sober is a day won. Protect it.`,
       }
     ],
     heroImage: '/img/skills/sober-addict-protector-hero.png',
-    skillIcon: '/img/skill-icons/sober-addict-protector.png',
-    skillHero: '/img/skill-heroes/sober-addict-protector.png',
+    skillIcon: '/img/skill-icons-webp/sober-addict-protector.webp',
+    skillHero: '/img/skill-heroes-webp/sober-addict-protector.webp',
     pairsWith: [
       {
         "skill": "modern-drug-rehab-computer",
@@ -51628,8 +51628,8 @@ const Charts = dynamic(() => import('./Charts'), { loading: () => <ChartSkeleton
       }
     ],
     heroImage: '/img/skills/sobriety-tools-guardian-hero.png',
-    skillIcon: '/img/skill-icons/sobriety-tools-guardian.png',
-    skillHero: '/img/skill-heroes/sobriety-tools-guardian.png',
+    skillIcon: '/img/skill-icons-webp/sobriety-tools-guardian.webp',
+    skillHero: '/img/skill-heroes-webp/sobriety-tools-guardian.webp',
     pairsWith: undefined,
   },
   {
@@ -51919,8 +51919,8 @@ func configureAudioSession() {
       }
     ],
     heroImage: '/img/skills/sound-engineer-hero.png',
-    skillIcon: '/img/skill-icons/sound-engineer.png',
-    skillHero: '/img/skill-heroes/sound-engineer.png',
+    skillIcon: '/img/skill-icons-webp/sound-engineer.webp',
+    skillHero: '/img/skill-heroes-webp/sound-engineer.webp',
     pairsWith: [
       {
         "skill": "voice-audio-engineer",
@@ -52131,8 +52131,8 @@ Diphthongs: /aɪ/, /aʊ/, /ɔɪ/ [eye, ow, oy]
       }
     ],
     heroImage: '/img/skills/speech-pathology-ai-hero.png',
-    skillIcon: '/img/skill-icons/speech-pathology-ai.png',
-    skillHero: '/img/skill-heroes/speech-pathology-ai.png',
+    skillIcon: '/img/skill-icons-webp/speech-pathology-ai.webp',
+    skillHero: '/img/skill-heroes-webp/speech-pathology-ai.webp',
     pairsWith: [
       {
         "skill": "voice-audio-engineer",
@@ -52424,8 +52424,8 @@ See \`/references/\` for detailed guides:
       }
     ],
     heroImage: '/img/skills/supabase-admin-hero.png',
-    skillIcon: '/img/skill-icons/supabase-admin.png',
-    skillHero: '/img/skill-heroes/supabase-admin.png',
+    skillIcon: '/img/skill-icons-webp/supabase-admin.webp',
+    skillHero: '/img/skill-heroes-webp/supabase-admin.webp',
     pairsWith: undefined,
   },
   {
@@ -52716,8 +52716,8 @@ Swift execution fails when:
     installCommand: '/plugin install swift-executor@some-claude-skills',
     references: [],
     heroImage: '/img/skills/swift-executor-hero.png',
-    skillIcon: '/img/skill-icons/swift-executor.png',
-    skillHero: '/img/skill-heroes/swift-executor.png',
+    skillIcon: '/img/skill-icons-webp/swift-executor.webp',
+    skillHero: '/img/skill-heroes-webp/swift-executor.webp',
     pairsWith: [
       {
         "skill": "orchestrator",
@@ -53042,8 +53042,8 @@ Remember: Great teams aren't found—they're deliberately designed and carefully
     installCommand: '/plugin install team-builder@some-claude-skills',
     references: [],
     heroImage: '/img/skills/team-builder-hero.png',
-    skillIcon: '/img/skill-icons/team-builder.png',
-    skillHero: '/img/skill-heroes/team-builder.png',
+    skillIcon: '/img/skill-icons-webp/team-builder.webp',
+    skillHero: '/img/skill-heroes-webp/team-builder.webp',
     pairsWith: [
       {
         "skill": "orchestrator",
@@ -53267,8 +53267,8 @@ Start before you're ready. Ship before it's perfect. Charge before you feel wort
       }
     ],
     heroImage: '/img/skills/tech-entrepreneur-coach-adhd-hero.png',
-    skillIcon: '/img/skill-icons/tech-entrepreneur-coach-adhd.png',
-    skillHero: '/img/skill-heroes/tech-entrepreneur-coach-adhd.png',
+    skillIcon: '/img/skill-icons-webp/tech-entrepreneur-coach-adhd.webp',
+    skillHero: '/img/skill-heroes-webp/tech-entrepreneur-coach-adhd.webp',
     pairsWith: [
       {
         "skill": "indie-monetization-strategist",
@@ -53446,8 +53446,8 @@ Run \`./scripts/validate-docs.sh\` to check:
       }
     ],
     heroImage: '/img/skills/technical-writer-hero.png',
-    skillIcon: '/img/skill-icons/technical-writer.png',
-    skillHero: '/img/skill-heroes/technical-writer.png',
+    skillIcon: '/img/skill-icons-webp/technical-writer.webp',
+    skillHero: '/img/skill-heroes-webp/technical-writer.webp',
     pairsWith: [
       {
         "skill": "diagramming-expert",
@@ -53846,8 +53846,8 @@ output "db_connection_string" {
     installCommand: '/plugin install terraform-iac-expert@some-claude-skills',
     references: [],
     heroImage: '/img/skills/terraform-iac-expert-hero.png',
-    skillIcon: '/img/skill-icons/terraform-iac-expert.png',
-    skillHero: '/img/skill-heroes/terraform-iac-expert.png',
+    skillIcon: '/img/skill-icons-webp/terraform-iac-expert.webp',
+    skillHero: '/img/skill-heroes-webp/terraform-iac-expert.webp',
     pairsWith: undefined,
   },
   {
@@ -54411,8 +54411,8 @@ npm test -- -u
       }
     ],
     heroImage: '/img/skills/test-automation-expert-hero.png',
-    skillIcon: '/img/skill-icons/test-automation-expert.png',
-    skillHero: '/img/skill-heroes/test-automation-expert.png',
+    skillIcon: '/img/skill-icons-webp/test-automation-expert.webp',
+    skillHero: '/img/skill-heroes-webp/test-automation-expert.webp',
     pairsWith: [
       {
         "skill": "refactoring-surgeon",
@@ -54721,8 +54721,8 @@ LLMs may suggest deprecated approaches:
     installCommand: '/plugin install typography-expert@some-claude-skills',
     references: [],
     heroImage: '/img/skills/typography-expert-hero.png',
-    skillIcon: '/img/skill-icons/typography-expert.png',
-    skillHero: '/img/skill-heroes/typography-expert.png',
+    skillIcon: '/img/skill-icons-webp/typography-expert.webp',
+    skillHero: '/img/skill-heroes-webp/typography-expert.webp',
     pairsWith: [
       {
         "skill": "design-system-creator",
@@ -55143,8 +55143,8 @@ When running this skill, produce a document with:
     installCommand: '/plugin install ux-friction-analyzer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/ux-friction-analyzer-hero.png',
-    skillIcon: '/img/skill-icons/ux-friction-analyzer.png',
-    skillHero: '/img/skill-heroes/ux-friction-analyzer.png',
+    skillIcon: '/img/skill-icons-webp/ux-friction-analyzer.webp',
+    skillHero: '/img/skill-heroes-webp/ux-friction-analyzer.webp',
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -55375,8 +55375,8 @@ if reduceTransparency {
       }
     ],
     heroImage: '/img/skills/vaporwave-glassomorphic-ui-designer-hero.png',
-    skillIcon: '/img/skill-icons/vaporwave-glassomorphic-ui-designer.png',
-    skillHero: '/img/skill-heroes/vaporwave-glassomorphic-ui-designer.png',
+    skillIcon: '/img/skill-icons-webp/vaporwave-glassomorphic-ui-designer.webp',
+    skillHero: '/img/skill-heroes-webp/vaporwave-glassomorphic-ui-designer.webp',
     pairsWith: [
       {
         "skill": "native-app-designer",
@@ -55839,8 +55839,8 @@ Implement application-level rate limiting since Vercel doesn't provide built-in 
     installCommand: '/plugin install vercel-deployment@some-claude-skills',
     references: [],
     heroImage: '/img/skills/vercel-deployment-hero.png',
-    skillIcon: '/img/skill-icons/vercel-deployment.png',
-    skillHero: '/img/skill-heroes/vercel-deployment.png',
+    skillIcon: '/img/skill-icons-webp/vercel-deployment.webp',
+    skillHero: '/img/skill-heroes-webp/vercel-deployment.webp',
     pairsWith: undefined,
   },
   {
@@ -56153,8 +56153,8 @@ LLMs trained on older data may suggest dated interpretations of vibes`,
     installCommand: '/plugin install vibe-matcher@some-claude-skills',
     references: [],
     heroImage: '/img/skills/vibe-matcher-hero.png',
-    skillIcon: '/img/skill-icons/vibe-matcher.png',
-    skillHero: '/img/skill-heroes/vibe-matcher.png',
+    skillIcon: '/img/skill-icons-webp/vibe-matcher.webp',
+    skillHero: '/img/skill-heroes-webp/vibe-matcher.webp',
     pairsWith: [
       {
         "skill": "design-system-generator",
@@ -56759,8 +56759,8 @@ ffmpeg -i input.mp4 \\
       }
     ],
     heroImage: '/img/skills/video-processing-editing-hero.png',
-    skillIcon: '/img/skill-icons/video-processing-editing.png',
-    skillHero: '/img/skill-heroes/video-processing-editing.png',
+    skillIcon: '/img/skill-icons-webp/video-processing-editing.webp',
+    skillHero: '/img/skill-heroes-webp/video-processing-editing.webp',
     pairsWith: undefined,
   },
   {
@@ -57153,8 +57153,8 @@ expect(input).toHaveValue('input value');
     installCommand: '/plugin install vitest-testing-patterns@some-claude-skills',
     references: [],
     heroImage: '/img/skills/vitest-testing-patterns-hero.png',
-    skillIcon: '/img/skill-icons/vitest-testing-patterns.png',
-    skillHero: '/img/skill-heroes/vitest-testing-patterns.png',
+    skillIcon: '/img/skill-icons-webp/vitest-testing-patterns.webp',
+    skillHero: '/img/skill-heroes-webp/vitest-testing-patterns.webp',
     pairsWith: undefined,
   },
   {
@@ -57479,8 +57479,8 @@ model = WhisperForConditionalGeneration.from_pretrained("openai/whisper-large-v3
       }
     ],
     heroImage: '/img/skills/voice-audio-engineer-hero.png',
-    skillIcon: '/img/skill-icons/voice-audio-engineer.png',
-    skillHero: '/img/skill-heroes/voice-audio-engineer.png',
+    skillIcon: '/img/skill-icons-webp/voice-audio-engineer.webp',
+    skillHero: '/img/skill-heroes-webp/voice-audio-engineer.webp',
     pairsWith: [
       {
         "skill": "sound-engineer",
@@ -57680,8 +57680,8 @@ float3 SubsurfaceScattering(float3 normal, float3 light, float3 view,
     installCommand: '/plugin install vr-avatar-engineer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/vr-avatar-engineer-hero.png',
-    skillIcon: '/img/skill-icons/vr-avatar-engineer.png',
-    skillHero: '/img/skill-heroes/vr-avatar-engineer.png',
+    skillIcon: '/img/skill-icons-webp/vr-avatar-engineer.webp',
+    skillHero: '/img/skill-heroes-webp/vr-avatar-engineer.webp',
     pairsWith: [
       {
         "skill": "metal-shader-expert",
@@ -58401,8 +58401,8 @@ module.exports = {
       }
     ],
     heroImage: '/img/skills/web-cloud-designer-hero.png',
-    skillIcon: '/img/skill-icons/web-cloud-designer.png',
-    skillHero: '/img/skill-heroes/web-cloud-designer.png',
+    skillIcon: '/img/skill-icons-webp/web-cloud-designer.webp',
+    skillHero: '/img/skill-heroes-webp/web-cloud-designer.webp',
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -58615,8 +58615,8 @@ Never present palettes as \`#3b82f6\` — always convert to OKLCH.
       }
     ],
     heroImage: '/img/skills/web-design-expert-hero.png',
-    skillIcon: '/img/skill-icons/web-design-expert.png',
-    skillHero: '/img/skill-heroes/web-design-expert.png',
+    skillIcon: '/img/skill-icons-webp/web-design-expert.webp',
+    skillHero: '/img/skill-heroes-webp/web-design-expert.webp',
     pairsWith: [
       {
         "skill": "typography-expert",
@@ -59723,8 +59723,8 @@ For complete atmospheric scenes, combine water and cloud effects:
       }
     ],
     heroImage: '/img/skills/web-wave-designer-hero.png',
-    skillIcon: '/img/skill-icons/web-wave-designer.png',
-    skillHero: '/img/skill-heroes/web-wave-designer.png',
+    skillIcon: '/img/skill-icons-webp/web-wave-designer.webp',
+    skillHero: '/img/skill-heroes-webp/web-wave-designer.webp',
     pairsWith: [
       {
         "skill": "web-cloud-designer",
@@ -61641,8 +61641,8 @@ module.exports = {
       }
     ],
     heroImage: '/img/skills/web-weather-creator-hero.png',
-    skillIcon: '/img/skill-icons/web-weather-creator.png',
-    skillHero: '/img/skill-heroes/web-weather-creator.png',
+    skillIcon: '/img/skill-icons-webp/web-weather-creator.webp',
+    skillHero: '/img/skill-heroes-webp/web-weather-creator.webp',
     pairsWith: undefined,
   },
   {
@@ -61935,8 +61935,8 @@ python -m pytest --tracing=on tests/test_login.py
     installCommand: '/plugin install webapp-testing@some-claude-skills',
     references: [],
     heroImage: '/img/skills/webapp-testing-hero.png',
-    skillIcon: '/img/skill-icons/webapp-testing.png',
-    skillHero: '/img/skill-heroes/webapp-testing.png',
+    skillIcon: '/img/skill-icons-webp/webapp-testing.webp',
+    skillHero: '/img/skill-heroes-webp/webapp-testing.webp',
     pairsWith: [
       {
         "skill": "test-automation-expert",
@@ -62382,8 +62382,8 @@ wedding-immortalist-output/
       }
     ],
     heroImage: '/img/skills/wedding-immortalist-hero.png',
-    skillIcon: '/img/skill-icons/wedding-immortalist.png',
-    skillHero: '/img/skill-heroes/wedding-immortalist.png',
+    skillIcon: '/img/skill-icons-webp/wedding-immortalist.webp',
+    skillHero: '/img/skill-heroes-webp/wedding-immortalist.webp',
     pairsWith: [
       {
         "skill": "photo-content-recognition-curation-expert",
@@ -62703,8 +62703,8 @@ await playWithHaptic('error', Haptics.ImpactFeedbackStyle.Heavy);
     installCommand: '/plugin install win31-audio-design@some-claude-skills',
     references: [],
     heroImage: '/img/skills/win31-audio-design-hero.png',
-    skillIcon: '/img/skill-icons/win31-audio-design.png',
-    skillHero: '/img/skill-heroes/win31-audio-design.png',
+    skillIcon: '/img/skill-icons-webp/win31-audio-design.webp',
+    skillHero: '/img/skill-heroes-webp/win31-audio-design.webp',
     pairsWith: [
       {
         "skill": "windows-3-1-web-designer",
@@ -63072,8 +63072,8 @@ convert input.png -bordercolor black -border 1 output.png
     installCommand: '/plugin install win31-pixel-art-designer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/win31-pixel-art-designer-hero.png',
-    skillIcon: '/img/skill-icons/win31-pixel-art-designer.png',
-    skillHero: '/img/skill-heroes/win31-pixel-art-designer.png',
+    skillIcon: '/img/skill-icons-webp/win31-pixel-art-designer.webp',
+    skillHero: '/img/skill-heroes-webp/win31-pixel-art-designer.webp',
     pairsWith: [
       {
         "skill": "windows-3-1-web-designer",
@@ -63653,8 +63653,8 @@ For authentic Win31 feel:
       }
     ],
     heroImage: '/img/skills/windows-3-1-web-designer-hero.png',
-    skillIcon: '/img/skill-icons/windows-3-1-web-designer.png',
-    skillHero: '/img/skill-heroes/windows-3-1-web-designer.png',
+    skillIcon: '/img/skill-icons-webp/windows-3-1-web-designer.webp',
+    skillHero: '/img/skill-heroes-webp/windows-3-1-web-designer.webp',
     pairsWith: undefined,
   },
   {
@@ -64152,8 +64152,8 @@ Is it a notification?
       }
     ],
     heroImage: '/img/skills/windows-95-web-designer-hero.png',
-    skillIcon: '/img/skill-icons/windows-95-web-designer.png',
-    skillHero: '/img/skill-heroes/windows-95-web-designer.png',
+    skillIcon: '/img/skill-icons-webp/windows-95-web-designer.webp',
+    skillHero: '/img/skill-heroes-webp/windows-95-web-designer.webp',
     pairsWith: undefined,
   },
   {
@@ -64322,8 +64322,8 @@ Works with: project-management-guru-adhd, hrv-alexithymia-expert, tech-entrepren
       }
     ],
     heroImage: '/img/skills/wisdom-accountability-coach-hero.png',
-    skillIcon: '/img/skill-icons/wisdom-accountability-coach.png',
-    skillHero: '/img/skill-heroes/wisdom-accountability-coach.png',
+    skillIcon: '/img/skill-icons-webp/wisdom-accountability-coach.webp',
+    skillHero: '/img/skill-heroes-webp/wisdom-accountability-coach.webp',
     pairsWith: [
       {
         "skill": "jungian-psychologist",

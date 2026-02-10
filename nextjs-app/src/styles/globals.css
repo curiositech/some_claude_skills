@@ -1,12 +1,12 @@
 /*
  * ═══════════════════════════════════════════════════════════════════════════
- * GOOGLE FONTS - Must be first
+ * GOOGLE FONTS - Must be first (before any @layer or @import rules)
  * ═══════════════════════════════════════════════════════════════════════════
  */
-@import url('https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Press+Start+2P&display=swap');
 
 @import "tailwindcss";
-@import "./memphis-win31.css";
+@import "./win31-authentic.css";
 
 /*
  * ═══════════════════════════════════════════════════════════════════════════
