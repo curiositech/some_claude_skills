@@ -463,6 +463,57 @@ function Desktop() {
       }),
     },
     {
+      id: 'winamp',
+      icon: '🎵',
+      label: 'Winamp',
+      onClick: () => openWindow({
+        id: 'winamp',
+        title: 'Winamp 2.0',
+        icon: <span>🎵</span>,
+        x: 200,
+        y: 200,
+        width: 275,
+        height: 350,
+        minWidth: 275,
+        minHeight: 300,
+        content: (
+          <div style={{ 
+            height: '100%', 
+            background: '#1A1A2E',
+            color: '#00FF00',
+            fontFamily: 'var(--font-system)',
+            fontSize: 10,
+            padding: 8,
+            display: 'flex',
+            flexDirection: 'column',
+          }}>
+            <div style={{ textAlign: 'center', marginBottom: 8 }}>
+              ████ WINAMP 2.0 ████
+            </div>
+            <div style={{ 
+              background: '#000', 
+              padding: 8, 
+              marginBottom: 8,
+              textAlign: 'center',
+              color: '#0F0',
+            }}>
+              🎵 Ready to play...
+            </div>
+            <div style={{ display: 'flex', gap: 4, justifyContent: 'center', marginBottom: 8 }}>
+              <button className="win31-push-button" style={{ background: '#333', color: '#0F0', border: '1px solid #0F0' }}>⏮</button>
+              <button className="win31-push-button" style={{ background: '#333', color: '#0F0', border: '1px solid #0F0' }}>▶</button>
+              <button className="win31-push-button" style={{ background: '#333', color: '#0F0', border: '1px solid #0F0' }}>⏹</button>
+              <button className="win31-push-button" style={{ background: '#333', color: '#0F0', border: '1px solid #0F0' }}>⏭</button>
+            </div>
+            <div style={{ textAlign: 'center', color: '#888', fontSize: 9 }}>
+              Full music player coming soon!
+              <br/>Port from Docusaurus in progress.
+            </div>
+          </div>
+        ),
+      }),
+    },
+    {
       id: 'theme',
       icon: '🎨',
       label: 'Themes',
