@@ -92,27 +92,47 @@ export function SkillDocument({ skill, onClose, onNavigate }: SkillDocumentProps
               <div className="lg:col-span-2">
                 <BentoCard className="h-full" size="large" glow>
                   <div className="flex h-full flex-col">
-                    {/* Hero image area */}
+                    {/* Hero image area - Uses skillHero (16:9 generated) or heroImage (legacy) */}
                     <div className="relative mb-4 aspect-video w-full overflow-hidden rounded bg-gradient-to-br from-win31-navy via-win31-blue to-indigo-600">
-                      {/* Actual hero image if available */}
-                      {skill.heroImage ? (
+                      {/* Generated hero splash (16:9 vaporwave/Memphis style) */}
+                      {skill.skillHero ? (
                         <>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={skill.skillHero}
+                            alt={`${skill.title} - Cover Art`}
+                            className="absolute inset-0 h-full w-full object-cover"
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none';
+                            }}
+                          />
+                          {/* Subtle CRT scan effect overlay */}
+                          <div 
+                            className="absolute inset-0 pointer-events-none opacity-20"
+                            style={{
+                              backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px)`,
+                            }}
+                          />
+                          {/* Bottom gradient for text readability */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                        </>
+                      ) : skill.heroImage ? (
+                        <>
+                          {/* Legacy hero image */}
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={skill.heroImage}
                             alt={skill.title}
                             className="absolute inset-0 h-full w-full object-cover"
                             onError={(e) => {
-                              // Hide image on error, show fallback
                               e.currentTarget.style.display = 'none';
                             }}
                           />
-                          {/* Subtle overlay for text readability */}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                         </>
                       ) : (
                         <>
-                          {/* Fallback: gradient + icon */}
+                          {/* Fallback: Memphis gradient + icon */}
                           <div className="absolute inset-0 flex items-center justify-center">
                             <span className="text-8xl opacity-30">{skill.icon}</span>
                           </div>

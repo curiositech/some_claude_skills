@@ -500,6 +500,11 @@ function generateSkillsFile(skills: ParsedSkill[]): void {
     const hasSkillIcon = fs.existsSync(skillIconPath);
     const skillIcon = hasSkillIcon ? `/img/skill-icons/${skill.id}.png` : undefined;
 
+    // Check for generated skill hero splash
+    const skillHeroPath = path.join(__dirname, '../public/img/skill-heroes', `${skill.id}.png`);
+    const hasSkillHero = fs.existsSync(skillHeroPath);
+    const skillHero = hasSkillHero ? `/img/skill-heroes/${skill.id}.png` : undefined;
+
     return `  {
     id: '${skill.id}',
     title: '${title.replace(/'/g, "\\'")}',
@@ -513,6 +518,7 @@ function generateSkillsFile(skills: ParsedSkill[]): void {
     references: ${refsJson},
     heroImage: ${skill.hasHeroImage ? `'/img/skills/${skill.id}-hero.png'` : 'undefined'},
     skillIcon: ${skillIcon ? `'${skillIcon}'` : 'undefined'},
+    skillHero: ${skillHero ? `'${skillHero}'` : 'undefined'},
     pairsWith: ${pairsWithJson},
   }`;
   });
@@ -552,6 +558,7 @@ export interface Skill {
   references?: SkillReference[];
   heroImage?: string;
   skillIcon?: string;
+  skillHero?: string;
   pairsWith?: SkillPairing[];
 }
 

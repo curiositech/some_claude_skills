@@ -1,7 +1,7 @@
 /*
  * ═══════════════════════════════════════════════════════════════════════════
  * SKILL DATA - IMPORTED FROM .claude/skills/
- * Generated: 2026-02-08T10:21:21.420Z
+ * Generated: 2026-02-10T02:33:57.859Z
  * Total Skills: 173
  * 
  * DO NOT EDIT - Run 'npm run import:skills' to regenerate
@@ -33,6 +33,7 @@ export interface Skill {
   references?: SkillReference[];
   heroImage?: string;
   skillIcon?: string;
+  skillHero?: string;
   pairsWith?: SkillPairing[];
 }
 
@@ -239,6 +240,7 @@ float glow = smoothstep(0.5 - u_bass * 0.3, 0.0, dist);
     ],
     heroImage: '/img/skills/2000s-visualization-expert-hero.png',
     skillIcon: '/img/skill-icons/2000s-visualization-expert.png',
+    skillHero: '/img/skill-heroes/2000s-visualization-expert.png',
     pairsWith: [
       {
         "skill": "sound-engineer",
@@ -563,6 +565,7 @@ See \`references/\` folder for:
     ],
     heroImage: '/img/skills/2026-legal-research-agent-hero.png',
     skillIcon: '/img/skill-icons/2026-legal-research-agent.png',
+    skillHero: '/img/skill-heroes/2026-legal-research-agent.png',
     pairsWith: undefined,
   },
   {
@@ -841,6 +844,7 @@ Progress over perfection. Compassion over criticism. Systems over willpower.`,
     ],
     heroImage: '/img/skills/adhd-daily-planner-hero.png',
     skillIcon: '/img/skill-icons/adhd-daily-planner.png',
+    skillHero: '/img/skill-heroes/adhd-daily-planner.png',
     pairsWith: [
       {
         "skill": "project-management-guru-adhd",
@@ -1058,6 +1062,7 @@ We need MORE feedback, MORE visibility, MORE celebration, MORE flexibility.
     ],
     heroImage: '/img/skills/adhd-design-expert-hero.png',
     skillIcon: '/img/skill-icons/adhd-design-expert.png',
+    skillHero: '/img/skill-heroes/adhd-design-expert.png',
     pairsWith: [
       {
         "skill": "native-app-designer",
@@ -1353,6 +1358,7 @@ describe('Admin Metrics Endpoint', () => {
     references: [],
     heroImage: '/img/skills/admin-dashboard-hero.png',
     skillIcon: '/img/skill-icons/admin-dashboard.png',
+    skillHero: '/img/skill-heroes/admin-dashboard.png',
     pairsWith: undefined,
   },
   {
@@ -1525,6 +1531,7 @@ Agent Creator:
     ],
     heroImage: '/img/skills/agent-creator-hero.png',
     skillIcon: '/img/skill-icons/agent-creator.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "skill-coach",
@@ -1785,6 +1792,7 @@ function routeQuery(query: string, context: any): ModelId {
     references: [],
     heroImage: '/img/skills/ai-engineer-hero.png',
     skillIcon: '/img/skill-icons/ai-engineer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "prompt-engineer",
@@ -1972,6 +1980,7 @@ External tools:
     references: [],
     heroImage: '/img/skills/ai-video-production-master-hero.png',
     skillIcon: '/img/skill-icons/ai-video-production-master.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "sound-engineer",
@@ -2165,6 +2174,7 @@ Run \`./scripts/validate-api-spec.sh\` to check:
     ],
     heroImage: '/img/skills/api-architect-hero.png',
     skillIcon: '/img/skill-icons/api-architect.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "data-pipeline-engineer",
@@ -2353,6 +2363,7 @@ Load for detailed implementations:
     ],
     heroImage: '/img/skills/automatic-stateful-prompt-improver-hero.png',
     skillIcon: '/img/skill-icons/automatic-stateful-prompt-improver.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "skill-coach",
@@ -2867,6 +2878,7 @@ app.use('/admin/queues', serverAdapter.getRouter());
     ],
     heroImage: '/img/skills/background-job-orchestrator-hero.png',
     skillIcon: '/img/skill-icons/background-job-orchestrator.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -3053,6 +3065,7 @@ INPUT VALIDATION
     ],
     heroImage: '/img/skills/bot-developer-hero.png',
     skillIcon: '/img/skill-icons/bot-developer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "api-architect",
@@ -3326,6 +3339,7 @@ This skill works well with other existing skills:
     references: [],
     heroImage: '/img/skills/career-biographer-hero.png',
     skillIcon: '/img/skill-icons/career-biographer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "cv-creator",
@@ -3670,6 +3684,7 @@ describe('Conversation Analytics', () => {
     references: [],
     heroImage: '/img/skills/chatbot-analytics-hero.png',
     skillIcon: '/img/skill-icons/chatbot-analytics.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -3972,6 +3987,7 @@ Day 30:  Major update announcement
     ],
     heroImage: '/img/skills/claude-ecosystem-promoter-hero.png',
     skillIcon: '/img/skill-icons/claude-ecosystem-promoter.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "seo-visibility-expert",
@@ -4314,6 +4330,7 @@ python scripts/diagnose_clip_issue.py --image path/to/image --query "your query"
     references: [],
     heroImage: '/img/skills/clip-aware-embeddings-hero.png',
     skillIcon: '/img/skill-icons/clip-aware-embeddings.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "photo-content-recognition-curation-expert",
@@ -4843,6 +4860,7 @@ See \`/references/\` for detailed guides:
     references: [],
     heroImage: '/img/skills/cloudflare-worker-dev-hero.png',
     skillIcon: '/img/skill-icons/cloudflare-worker-dev.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -5040,6 +5058,7 @@ grep -rn 'process\\.env\\|os\\.environ' --include="*.js" --include="*.py"
     ],
     heroImage: '/img/skills/code-necromancer-hero.png',
     skillIcon: '/img/skill-icons/code-necromancer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "refactoring-surgeon",
@@ -5114,6 +5133,7 @@ Generate thorough, contextual code review checklists that help reviewers focus o
     references: [],
     heroImage: '/img/skills/code-review-checklist-hero.png',
     skillIcon: '/img/skill-icons/code-review-checklist.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -5319,6 +5339,7 @@ Expert in **ALL forms of computational collage composition** - from Instagram gr
     ],
     heroImage: '/img/skills/collage-layout-expert-hero.png',
     skillIcon: '/img/skill-icons/collage-layout-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "color-theory-palette-harmony-expert",
@@ -5753,6 +5774,7 @@ Before shipping:
     ],
     heroImage: '/img/skills/color-contrast-auditor-hero.png',
     skillIcon: '/img/skill-icons/color-contrast-auditor.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -6101,6 +6123,7 @@ When a user asks for help with color-based composition:
     ],
     heroImage: '/img/skills/color-theory-palette-harmony-expert-hero.png',
     skillIcon: '/img/skill-icons/color-theory-palette-harmony-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -6261,6 +6284,7 @@ Cartographer:
     ],
     heroImage: '/img/skills/competitive-cartographer-hero.png',
     skillIcon: '/img/skill-icons/competitive-cartographer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "career-biographer",
@@ -6880,6 +6904,7 @@ for track_id, trajectory in tracks.items():
     ],
     heroImage: '/img/skills/computer-vision-pipeline-hero.png',
     skillIcon: '/img/skill-icons/computer-vision-pipeline.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -7185,6 +7210,7 @@ See \`/references/claude-api-pricing.md\` for current Claude API pricing.`,
     ],
     heroImage: '/img/skills/cost-accrual-tracker-hero.png',
     skillIcon: '/img/skill-icons/cost-accrual-tracker.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -7367,6 +7393,7 @@ See \`/references/calibration-data.md\` for detailed calibration tables and hist
     ],
     heroImage: '/img/skills/cost-verification-auditor-hero.png',
     skillIcon: '/img/skill-icons/cost-verification-auditor.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -7946,6 +7973,7 @@ Examples:
     ],
     heroImage: '/img/skills/crisis-detection-intervention-ai-hero.png',
     skillIcon: '/img/skill-icons/crisis-detection-intervention-ai.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -8396,6 +8424,7 @@ describe('Crisis Detection', () => {
     references: [],
     heroImage: '/img/skills/crisis-response-protocol-hero.png',
     skillIcon: '/img/skill-icons/crisis-response-protocol.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -8574,6 +8603,7 @@ CV Creator:
     ],
     heroImage: '/img/skills/cv-creator-hero.png',
     skillIcon: '/img/skill-icons/cv-creator.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "career-biographer",
@@ -8968,6 +8998,7 @@ Multi-factor ranking. Optimal selection. Data-driven decisions.`,
     references: [],
     heroImage: '/img/skills/dag-capability-ranker-hero.png',
     skillIcon: '/img/skill-icons/dag-capability-ranker.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-semantic-matcher",
@@ -9474,6 +9505,7 @@ Calibrated confidence. Multi-factor scoring. Informed decisions.`,
     references: [],
     heroImage: '/img/skills/dag-confidence-scorer-hero.png',
     skillIcon: '/img/skill-icons/dag-confidence-scorer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-output-validator",
@@ -9827,6 +9859,7 @@ Context flows. Information preserved. Tokens optimized.`,
     references: [],
     heroImage: '/img/skills/dag-context-bridger-hero.png',
     skillIcon: '/img/skill-icons/dag-context-bridger.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-parallel-executor",
@@ -10357,6 +10390,7 @@ Track progress. Detect plateaus. Know when to stop.`,
     references: [],
     heroImage: '/img/skills/dag-convergence-monitor-hero.png',
     skillIcon: '/img/skill-icons/dag-convergence-monitor.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-iteration-detector",
@@ -10660,6 +10694,7 @@ Order from chaos. Dependencies resolved. Ready to execute.`,
     references: [],
     heroImage: '/img/skills/dag-dependency-resolver-hero.png',
     skillIcon: '/img/skill-icons/dag-dependency-resolver.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-graph-builder",
@@ -11065,6 +11100,7 @@ Adapt and overcome. Dynamic execution. Resilient workflows.`,
     references: [],
     heroImage: '/img/skills/dag-dynamic-replanner-hero.png',
     skillIcon: '/img/skill-icons/dag-dynamic-replanner.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-graph-builder",
@@ -11620,6 +11656,7 @@ Full visibility. Complete history. Every execution recorded.`,
     references: [],
     heroImage: '/img/skills/dag-execution-tracer-hero.png',
     skillIcon: '/img/skill-icons/dag-execution-tracer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-performance-profiler",
@@ -11913,6 +11950,7 @@ Invoke this skill when user says:
     references: [],
     heroImage: '/img/skills/dag-executor-hero.png',
     skillIcon: '/img/skill-icons/dag-executor.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -12625,6 +12663,7 @@ Understand failures. Find root causes. Enable recovery.`,
     references: [],
     heroImage: '/img/skills/dag-failure-analyzer-hero.png',
     skillIcon: '/img/skill-icons/dag-failure-analyzer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-execution-tracer",
@@ -13176,6 +13215,7 @@ Actionable feedback. Prioritized improvements. Clear path forward.`,
     references: [],
     heroImage: '/img/skills/dag-feedback-synthesizer-hero.png',
     skillIcon: '/img/skill-icons/dag-feedback-synthesizer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-iteration-detector",
@@ -13410,6 +13450,7 @@ Transform chaos into structure. Build graphs that flow.`,
     references: [],
     heroImage: '/img/skills/dag-graph-builder-hero.png',
     skillIcon: '/img/skill-icons/dag-graph-builder.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-dependency-resolver",
@@ -14010,6 +14051,7 @@ Truth detection. Source verification. No hallucinations pass.`,
     references: [],
     heroImage: '/img/skills/dag-hallucination-detector-hero.png',
     skillIcon: '/img/skill-icons/dag-hallucination-detector.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-output-validator",
@@ -14456,6 +14498,7 @@ Appropriate boundaries. Right-sized access. Secure by default.`,
     references: [],
     heroImage: '/img/skills/dag-isolation-manager-hero.png',
     skillIcon: '/img/skill-icons/dag-isolation-manager.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-permission-validator",
@@ -14925,6 +14968,7 @@ Smart iteration. Know when to retry. Know when to stop.`,
     references: [],
     heroImage: '/img/skills/dag-iteration-detector-hero.png',
     skillIcon: '/img/skill-icons/dag-iteration-detector.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-feedback-synthesizer",
@@ -15487,6 +15531,7 @@ Structured validation. Quality gates. No bad outputs pass.`,
     references: [],
     heroImage: '/img/skills/dag-output-validator-hero.png',
     skillIcon: '/img/skill-icons/dag-output-validator.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-confidence-scorer",
@@ -15862,6 +15907,7 @@ Parallel power. Controlled execution. Maximum throughput.`,
     references: [],
     heroImage: '/img/skills/dag-parallel-executor-hero.png',
     skillIcon: '/img/skill-icons/dag-parallel-executor.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-task-scheduler",
@@ -16573,6 +16619,7 @@ Learn from history. Find what works. Continuously improve.`,
     references: [],
     heroImage: '/img/skills/dag-pattern-learner-hero.png',
     skillIcon: '/img/skill-icons/dag-pattern-learner.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-execution-tracer",
@@ -17162,6 +17209,7 @@ Measure everything. Find bottlenecks. Optimize continuously.`,
     references: [],
     heroImage: '/img/skills/dag-performance-profiler-hero.png',
     skillIcon: '/img/skill-icons/dag-performance-profiler.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-execution-tracer",
@@ -17611,6 +17659,7 @@ Strict inheritance. Secure spawning. No escalation.`,
     references: [],
     heroImage: '/img/skills/dag-permission-validator-hero.png',
     skillIcon: '/img/skill-icons/dag-permission-validator.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-scope-enforcer",
@@ -17988,6 +18037,7 @@ Many inputs. One output. Unified results.`,
     references: [],
     heroImage: '/img/skills/dag-result-aggregator-hero.png',
     skillIcon: '/img/skill-icons/dag-result-aggregator.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-parallel-executor",
@@ -18409,6 +18459,7 @@ Runtime protection. Every operation checked. No unauthorized access.`,
     references: [],
     heroImage: '/img/skills/dag-scope-enforcer-hero.png',
     skillIcon: '/img/skill-icons/dag-scope-enforcer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-permission-validator",
@@ -18804,6 +18855,7 @@ Natural language in. Perfect skills out. Semantic understanding.`,
     references: [],
     heroImage: '/img/skills/dag-semantic-matcher-hero.png',
     skillIcon: '/img/skill-icons/dag-semantic-matcher.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-skill-registry",
@@ -19190,6 +19242,7 @@ Central knowledge. Fast discovery. Informed decisions.`,
     references: [],
     heroImage: '/img/skills/dag-skill-registry-hero.png',
     skillIcon: '/img/skill-icons/dag-skill-registry.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-semantic-matcher",
@@ -19511,6 +19564,7 @@ Optimal schedules. Maximum parallelism. Minimal waste.`,
     references: [],
     heroImage: '/img/skills/dag-task-scheduler-hero.png',
     skillIcon: '/img/skill-icons/dag-task-scheduler.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "dag-dependency-resolver",
@@ -19803,6 +19857,7 @@ const SkillNode = ({ data, selected }) => (
     references: [],
     heroImage: '/img/skills/dag-visual-editor-design-hero.png',
     skillIcon: '/img/skill-icons/dag-visual-editor-design.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -20691,6 +20746,7 @@ function getAtmosphereFromWeather(
     ],
     heroImage: '/img/skills/dark-mode-design-expert-hero.png',
     skillIcon: '/img/skill-icons/dark-mode-design-expert.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -20862,6 +20918,7 @@ Run \`./scripts/validate-pipeline.sh\` to check:
     ],
     heroImage: '/img/skills/data-pipeline-engineer-hero.png',
     skillIcon: '/img/skill-icons/data-pipeline-engineer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "api-architect",
@@ -21416,6 +21473,7 @@ This skill guides: Chart selection | Library integration | Testing strategies | 
     ],
     heroImage: '/img/skills/data-viz-2025-hero.png',
     skillIcon: '/img/skill-icons/data-viz-2025.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -21608,6 +21666,7 @@ Inform users of scope and cost before beginning.
     ],
     heroImage: '/img/skills/design-archivist-hero.png',
     skillIcon: '/img/skill-icons/design-archivist.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -21783,6 +21842,7 @@ See \`references/remix-strategies.md\` for detailed improvement patterns:
     ],
     heroImage: '/img/skills/design-critic-hero.png',
     skillIcon: '/img/skill-icons/design-critic.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -22215,6 +22275,7 @@ LEGAL/EXPUNGEMENT SPECIFIC
     ],
     heroImage: '/img/skills/design-justice-hero.png',
     skillIcon: '/img/skill-icons/design-justice.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -22447,6 +22508,7 @@ styles/
     ],
     heroImage: '/img/skills/design-system-creator-hero.png',
     skillIcon: '/img/skill-icons/design-system-creator.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "typography-expert",
@@ -22520,6 +22582,7 @@ The script will analyze the description and return the best matching design tren
     references: [],
     heroImage: undefined,
     skillIcon: '/img/skill-icons/design-system-generator.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -22722,6 +22785,7 @@ Run \`./scripts/validate-devops-skill.sh\` to check:
     ],
     heroImage: '/img/skills/devops-automator-hero.png',
     skillIcon: '/img/skill-icons/devops-automator.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "site-reliability-engineer",
@@ -23044,6 +23108,7 @@ graph TD
     ],
     heroImage: '/img/skills/diagramming-expert-hero.png',
     skillIcon: '/img/skill-icons/diagramming-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "technical-writer",
@@ -23373,6 +23438,7 @@ That's love in practical form.`,
     ],
     heroImage: '/img/skills/digital-estate-planner-hero.png',
     skillIcon: '/img/skill-icons/digital-estate-planner.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "grief-companion",
@@ -24137,6 +24203,7 @@ Common positions (Letter size):
     ],
     heroImage: '/img/skills/document-generation-pdf-hero.png',
     skillIcon: '/img/skill-icons/document-generation-pdf.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -24554,6 +24621,7 @@ await db.transaction(async (tx) => {
     references: [],
     heroImage: '/img/skills/drizzle-migrations-hero.png',
     skillIcon: '/img/skill-icons/drizzle-migrations.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -24765,6 +24833,7 @@ Detailed implementations in \`references/\`:
     ],
     heroImage: '/img/skills/drone-cv-expert-hero.png',
     skillIcon: '/img/skill-icons/drone-cv-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "drone-inspection-specialist",
@@ -25002,6 +25071,7 @@ Detailed implementations in \`references/\`:
     ],
     heroImage: '/img/skills/drone-inspection-specialist-hero.png',
     skillIcon: '/img/skill-icons/drone-inspection-specialist.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "drone-cv-expert",
@@ -25337,6 +25407,7 @@ Cheers,
     references: [],
     heroImage: '/img/skills/email-composer-hero.png',
     skillIcon: '/img/skill-icons/email-composer.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -25666,6 +25737,7 @@ numpy scipy scikit-learn hdbscan geopy transformers xgboost pandas opencv-python
     ],
     heroImage: '/img/skills/event-detection-temporal-intelligence-expert-hero.png',
     skillIcon: '/img/skill-icons/event-detection-temporal-intelligence-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "photo-content-recognition-curation-expert",
@@ -25898,6 +25970,7 @@ See \`/references/process-signals.md\` for Unix signal handling details.`,
     ],
     heroImage: '/img/skills/execution-lifecycle-manager-hero.png',
     skillIcon: '/img/skill-icons/execution-lifecycle-manager.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -26306,6 +26379,7 @@ Plant for your future self. That person will thank you.`,
     ],
     heroImage: '/img/skills/fancy-yard-landscaper-hero.png',
     skillIcon: '/img/skill-icons/fancy-yard-landscaper.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "interior-design-expert",
@@ -26468,6 +26542,7 @@ When running \`npm run feature:health\`:
     references: [],
     heroImage: '/img/skills/feature-manifest-hero.png',
     skillIcon: '/img/skill-icons/feature-manifest.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -27063,6 +27138,7 @@ const onSubmit = async (data) => {
     ],
     heroImage: '/img/skills/form-validation-architect-hero.png',
     skillIcon: '/img/skill-icons/form-validation-architect.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -27356,6 +27432,7 @@ When making recommendations:
     ],
     heroImage: '/img/skills/frontend-architect-hero.png',
     skillIcon: '/img/skill-icons/frontend-architect.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -27912,6 +27989,7 @@ When debugging, always provide:
     ],
     heroImage: '/img/skills/fullstack-debugger-hero.png',
     skillIcon: '/img/skill-icons/fullstack-debugger.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "devops-automator",
@@ -28336,6 +28414,7 @@ SELECT ST_Distance(
     ],
     heroImage: '/img/skills/geospatial-data-pipeline-hero.png',
     skillIcon: '/img/skill-icons/geospatial-data-pipeline.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -28805,6 +28884,7 @@ jobs:
     ],
     heroImage: '/img/skills/github-actions-pipeline-builder-hero.png',
     skillIcon: '/img/skill-icons/github-actions-pipeline-builder.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -29062,6 +29142,7 @@ The goal is not to "fix" grief but to walk alongside it.`,
     ],
     heroImage: '/img/skills/grief-companion-hero.png',
     skillIcon: '/img/skill-icons/grief-companion.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "pet-memorial-creator",
@@ -30086,6 +30167,7 @@ Always maintain the **scholarly intimacy** of the anatomist's notebook aesthetic
     ],
     heroImage: '/img/skills/hand-drawn-infographic-creator-hero.png',
     skillIcon: '/img/skill-icons/hand-drawn-infographic-creator.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -30308,6 +30390,7 @@ Break glass access:
     references: [],
     heroImage: '/img/skills/hipaa-compliance-hero.png',
     skillIcon: '/img/skill-icons/hipaa-compliance.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -30494,6 +30577,7 @@ Process:
     ],
     heroImage: '/img/skills/hr-network-analyst-hero.png',
     skillIcon: '/img/skill-icons/hr-network-analyst.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "career-biographer",
@@ -30666,6 +30750,7 @@ Elite HRV, HRV4Training, Welltory, HeartMath
     ],
     heroImage: '/img/skills/hrv-alexithymia-expert-hero.png',
     skillIcon: '/img/skill-icons/hrv-alexithymia-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "jungian-psychologist",
@@ -30926,6 +31011,7 @@ Day 30: Direct pitch with deadline
     ],
     heroImage: '/img/skills/indie-monetization-strategist-hero.png',
     skillIcon: '/img/skill-icons/indie-monetization-strategist.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "tech-entrepreneur-coach-adhd",
@@ -31156,6 +31242,7 @@ cartoon, illustration, low quality, watermark
     ],
     heroImage: '/img/skills/interior-design-expert-hero.png',
     skillIcon: '/img/skill-icons/interior-design-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "color-theory-palette-harmony-expert",
@@ -31432,6 +31519,7 @@ When optimizing, produce:
     references: [],
     heroImage: '/img/skills/job-application-optimizer-hero.png',
     skillIcon: '/img/skill-icons/job-application-optimizer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "cv-creator",
@@ -31673,6 +31761,7 @@ FIND AN ANALYST:
     ],
     heroImage: '/img/skills/jungian-psychologist-hero.png',
     skillIcon: '/img/skill-icons/jungian-psychologist.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "wisdom-accountability-coach",
@@ -31998,6 +32087,7 @@ When using the simulation's physics engine for demonstrations:
     ],
     heroImage: '/img/skills/knot-theory-educator-hero.png',
     skillIcon: '/img/skill-icons/knot-theory-educator.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "diagramming-expert",
@@ -32556,6 +32646,7 @@ When optimizing an existing slow map:
     references: [],
     heroImage: '/img/skills/large-scale-map-visualization-hero.png',
     skillIcon: '/img/skill-icons/large-scale-map-visualization.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -32769,6 +32860,7 @@ Find all the critical bugs and security issues preventing me from deploying.
     references: [],
     heroImage: '/img/skills/launch-readiness-auditor-hero.png',
     skillIcon: '/img/skill-icons/launch-readiness-auditor.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -33024,6 +33116,7 @@ I will:
     references: [],
     heroImage: '/img/skills/liaison-hero.png',
     skillIcon: '/img/skill-icons/liaison.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "orchestrator",
@@ -33573,6 +33666,7 @@ export async function POST(req: Request) {
     ],
     heroImage: '/img/skills/llm-streaming-response-handler-hero.png',
     skillIcon: '/img/skill-icons/llm-streaming-response-handler.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -34058,6 +34152,7 @@ plants and books everywhere, maximalist interior"
     ],
     heroImage: '/img/skills/maximalist-wall-decorator-hero.png',
     skillIcon: '/img/skill-icons/maximalist-wall-decorator.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "interior-design-expert",
@@ -34564,6 +34659,7 @@ Does this tool need...
     ],
     heroImage: '/img/skills/mcp-creator-hero.png',
     skillIcon: '/img/skill-icons/mcp-creator.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "agent-creator",
@@ -34712,6 +34808,7 @@ For edge cases, manually escape in source:
     references: [],
     heroImage: '/img/skills/mdx-sanitizer-hero.png',
     skillIcon: '/img/skill-icons/mdx-sanitizer.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -34853,6 +34950,7 @@ For edge cases, manually escape in source:
     ],
     heroImage: '/img/skills/metal-shader-expert-hero.png',
     skillIcon: '/img/skill-icons/metal-shader-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "native-app-designer",
@@ -35288,6 +35386,7 @@ See \`/references/\` for detailed guides:
     ],
     heroImage: '/img/skills/mobile-ux-optimizer-hero.png',
     skillIcon: '/img/skill-icons/mobile-ux-optimizer.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -36216,6 +36315,7 @@ async function sensitiveAction(userId: string) {
     references: [],
     heroImage: '/img/skills/modern-auth-2026-hero.png',
     skillIcon: '/img/skill-icons/modern-auth-2026.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -36613,6 +36713,7 @@ Solutions:
     ],
     heroImage: '/img/skills/modern-drug-rehab-computer-hero.png',
     skillIcon: '/img/skill-icons/modern-drug-rehab-computer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "sober-addict-protector",
@@ -36698,6 +36799,7 @@ Alabama, Arizona, South Carolina, Wyoming
     ],
     heroImage: '/img/skills/national-expungement-expert-hero.png',
     skillIcon: '/img/skill-icons/national-expungement-expert.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -36913,6 +37015,7 @@ Small touches that make users smile:
     ],
     heroImage: '/img/skills/native-app-designer-hero.png',
     skillIcon: '/img/skill-icons/native-app-designer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "metal-shader-expert",
@@ -37638,6 +37741,7 @@ Design research based on:
     ],
     heroImage: '/img/skills/neobrutalist-web-designer-hero.png',
     skillIcon: '/img/skill-icons/neobrutalist-web-designer.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -37954,6 +38058,7 @@ async function RevenueCard() {
     references: [],
     heroImage: '/img/skills/nextjs-app-router-expert-hero.png',
     skillIcon: '/img/skill-icons/nextjs-app-router-expert.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -38331,6 +38436,7 @@ export async function getOIDCConfig(issuer: string): Promise<OIDCConfig> {
     references: [],
     heroImage: '/img/skills/oauth-oidc-implementer-hero.png',
     skillIcon: '/img/skill-icons/oauth-oidc-implementer.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -38970,6 +39076,7 @@ rules:
     references: [],
     heroImage: '/img/skills/openapi-spec-writer-hero.png',
     skillIcon: '/img/skill-icons/openapi-spec-writer.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -39325,6 +39432,7 @@ Remember: The whole is greater than the sum of its parts—when orchestrated wit
     references: [],
     heroImage: '/img/skills/orchestrator-hero.png',
     skillIcon: '/img/skill-icons/orchestrator.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "team-builder",
@@ -39813,6 +39921,7 @@ Every hollow knock is a question. Take your time finding the answers.`,
     ],
     heroImage: '/img/skills/panic-room-finder-hero.png',
     skillIcon: '/img/skill-icons/panic-room-finder.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "interior-design-expert",
@@ -40235,6 +40344,7 @@ THIS SKILL WILL:
     ],
     heroImage: '/img/skills/partner-text-coach-hero.png',
     skillIcon: '/img/skill-icons/partner-text-coach.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "jungian-psychologist",
@@ -40411,6 +40521,7 @@ INVESTMENTS:
     ],
     heroImage: '/img/skills/personal-finance-coach-hero.png',
     skillIcon: '/img/skill-icons/personal-finance-coach.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "indie-monetization-strategist",
@@ -40745,6 +40856,7 @@ The grief you feel is the price of the love you shared. It's worth it. They were
     ],
     heroImage: '/img/skills/pet-memorial-creator-hero.png',
     skillIcon: '/img/skill-icons/pet-memorial-creator.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "grief-companion",
@@ -40919,6 +41031,7 @@ Load these for detailed implementations:
     ],
     heroImage: '/img/skills/photo-composition-critic-hero.png',
     skillIcon: '/img/skill-icons/photo-composition-critic.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "color-theory-palette-harmony-expert",
@@ -41269,6 +41382,7 @@ torch transformers facenet-pytorch ultralytics hdbscan opencv-python scipy numpy
     ],
     heroImage: '/img/skills/photo-content-recognition-curation-expert-hero.png',
     skillIcon: '/img/skill-icons/photo-content-recognition-curation-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "event-detection-temporal-intelligence-expert",
@@ -41441,6 +41555,7 @@ Expert in computational physics for real-time rope/cable dynamics, constraint so
     ],
     heroImage: '/img/skills/physics-rendering-expert-hero.png',
     skillIcon: '/img/skill-icons/physics-rendering-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "metal-shader-expert",
@@ -41519,6 +41634,7 @@ highlights:
     references: [],
     heroImage: '/img/skills/pixel-art-infographic-creator-hero.png',
     skillIcon: '/img/skill-icons/pixel-art-infographic-creator.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -41757,6 +41873,7 @@ test('displays products from API', async ({ page }) => {
     references: [],
     heroImage: '/img/skills/playwright-e2e-tester-hero.png',
     skillIcon: '/img/skill-icons/playwright-e2e-tester.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -42185,6 +42302,7 @@ When Claude reads screenshots captured by this pattern:
     references: [],
     heroImage: '/img/skills/playwright-screenshot-inspector-hero.png',
     skillIcon: '/img/skill-icons/playwright-screenshot-inspector.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -42469,6 +42587,7 @@ VACUUM FULL orders;  -- Use during maintenance window
     references: [],
     heroImage: '/img/skills/postgresql-optimization-hero.png',
     skillIcon: '/img/skill-icons/postgresql-optimization.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -42762,6 +42881,7 @@ When running this skill, produce:
     ],
     heroImage: '/img/skills/product-appeal-analyzer-hero.png',
     skillIcon: '/img/skill-icons/product-appeal-analyzer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "ux-friction-analyzer",
@@ -42974,6 +43094,7 @@ Expert project manager for ADHD engineers managing multiple concurrent projects 
     ],
     heroImage: '/img/skills/project-management-guru-adhd-hero.png',
     skillIcon: '/img/skill-icons/project-management-guru-adhd.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "adhd-daily-planner",
@@ -43174,6 +43295,7 @@ Fix: Add periodic context summaries + clear role reminders
     references: [],
     heroImage: '/img/skills/prompt-engineer-hero.png',
     skillIcon: '/img/skill-icons/prompt-engineer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "ai-engineer",
@@ -43540,6 +43662,7 @@ Detailed implementations in \`/references/\`:
     ],
     heroImage: '/img/skills/pwa-expert-hero.png',
     skillIcon: '/img/skill-icons/pwa-expert.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -43994,6 +44117,7 @@ function Dashboard() {
     ],
     heroImage: '/img/skills/react-performance-optimizer-hero.png',
     skillIcon: '/img/skill-icons/react-performance-optimizer.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -44152,6 +44276,7 @@ When debugging test timeouts, ALWAYS start with \`screen.debug()\` to see what a
     references: [],
     heroImage: '/img/skills/reactive-dashboard-performance-hero.png',
     skillIcon: '/img/skill-icons/reactive-dashboard-performance.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -44723,6 +44848,7 @@ class OptimisticEditor {
     ],
     heroImage: '/img/skills/real-time-collaboration-engine-hero.png',
     skillIcon: '/img/skill-icons/real-time-collaboration-engine.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -44940,6 +45066,7 @@ Template documents in the \`docs/\` directory:
     references: [],
     heroImage: '/img/skills/recovery-app-legal-terms-hero.png',
     skillIcon: '/img/skill-icons/recovery-app-legal-terms.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -45510,6 +45637,7 @@ See \`/references/\` for detailed guides:
     ],
     heroImage: '/img/skills/recovery-app-onboarding-hero.png',
     skillIcon: '/img/skill-icons/recovery-app-onboarding.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -45902,6 +46030,7 @@ import { Input } from '@/components/ui/Input';
     references: [],
     heroImage: '/img/skills/recovery-coach-patterns-hero.png',
     skillIcon: '/img/skill-icons/recovery-coach-patterns.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -46068,6 +46197,7 @@ The skill includes helper scripts in the \`scripts/\` directory:
     references: [],
     heroImage: '/img/skills/recovery-community-moderator-hero.png',
     skillIcon: '/img/skill-icons/recovery-community-moderator.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -46619,6 +46749,7 @@ Before publishing any educational content, verify:
     ],
     heroImage: '/img/skills/recovery-education-writer-hero.png',
     skillIcon: '/img/skill-icons/recovery-education-writer.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -46984,6 +47115,7 @@ Detailed implementations in \`/references/\`:
     ],
     heroImage: '/img/skills/recovery-social-features-hero.png',
     skillIcon: '/img/skill-icons/recovery-social-features.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -47176,6 +47308,7 @@ Run \`./scripts/validate-refactoring.sh\` to check:
     ],
     heroImage: '/img/skills/refactoring-surgeon-hero.png',
     skillIcon: '/img/skill-icons/refactoring-surgeon.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "code-necromancer",
@@ -47390,6 +47523,7 @@ Remember: Great research doesn't just answer questions—it helps you ask better
     references: [],
     heroImage: '/img/skills/research-analyst-hero.png',
     skillIcon: '/img/skill-icons/research-analyst.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "competitive-cartographer",
@@ -47908,6 +48042,7 @@ async function getPaginated(page: number, limit: number) {
     references: [],
     heroImage: '/img/skills/rest-api-design-hero.png',
     skillIcon: '/img/skill-icons/rest-api-design.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -48167,6 +48302,7 @@ security-scan:
     ],
     heroImage: '/img/skills/security-auditor-hero.png',
     skillIcon: '/img/skill-icons/security-auditor.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "devops-automator",
@@ -48398,6 +48534,7 @@ Sitemap: https://yoursite.com/sitemap.xml
     ],
     heroImage: '/img/skills/seo-visibility-expert-hero.png',
     skillIcon: '/img/skill-icons/seo-visibility-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "claude-ecosystem-promoter",
@@ -48559,6 +48696,7 @@ After installing hooks:
     ],
     heroImage: '/img/skills/site-reliability-engineer-hero.png',
     skillIcon: '/img/skill-icons/site-reliability-engineer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "devops-automator",
@@ -49237,6 +49375,7 @@ For deep dives on specific topics:
     ],
     heroImage: '/img/skills/skill-architect-hero.png',
     skillIcon: '/img/skill-icons/skill-architect.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -49587,6 +49726,7 @@ Run \`python scripts/test_activation.py <path>\` to validate
     ],
     heroImage: '/img/skills/skill-coach-hero.png',
     skillIcon: '/img/skill-icons/skill-coach.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "agent-creator",
@@ -49813,6 +49953,7 @@ After testing the skill, users may request improvements. Often this happens righ
     references: [],
     heroImage: '/img/skills/skill-creator-hero.png',
     skillIcon: '/img/skill-icons/skill-creator.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -50245,7 +50386,8 @@ done
       }
     ],
     heroImage: '/img/skills/skill-documentarian-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/skill-documentarian.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "site-reliability-engineer",
@@ -50751,7 +50893,8 @@ ALERT_CONDITIONS = {
       }
     ],
     heroImage: '/img/skills/skill-logger-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/skill-logger.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "automatic-stateful-prompt-improver",
@@ -51185,7 +51328,8 @@ Every day sober is a day won. Protect it.`,
       }
     ],
     heroImage: '/img/skills/sober-addict-protector-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/sober-addict-protector.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "modern-drug-rehab-computer",
@@ -51484,7 +51628,8 @@ const Charts = dynamic(() => import('./Charts'), { loading: () => <ChartSkeleton
       }
     ],
     heroImage: '/img/skills/sobriety-tools-guardian-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/sobriety-tools-guardian.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -51774,7 +51919,8 @@ func configureAudioSession() {
       }
     ],
     heroImage: '/img/skills/sound-engineer-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/sound-engineer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "voice-audio-engineer",
@@ -51985,7 +52131,8 @@ Diphthongs: /aɪ/, /aʊ/, /ɔɪ/ [eye, ow, oy]
       }
     ],
     heroImage: '/img/skills/speech-pathology-ai-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/speech-pathology-ai.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "voice-audio-engineer",
@@ -52277,7 +52424,8 @@ See \`/references/\` for detailed guides:
       }
     ],
     heroImage: '/img/skills/supabase-admin-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/supabase-admin.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -52568,7 +52716,8 @@ Swift execution fails when:
     installCommand: '/plugin install swift-executor@some-claude-skills',
     references: [],
     heroImage: '/img/skills/swift-executor-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/swift-executor.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "orchestrator",
@@ -52893,7 +53042,8 @@ Remember: Great teams aren't found—they're deliberately designed and carefully
     installCommand: '/plugin install team-builder@some-claude-skills',
     references: [],
     heroImage: '/img/skills/team-builder-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/team-builder.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "orchestrator",
@@ -53117,7 +53267,8 @@ Start before you're ready. Ship before it's perfect. Charge before you feel wort
       }
     ],
     heroImage: '/img/skills/tech-entrepreneur-coach-adhd-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/tech-entrepreneur-coach-adhd.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "indie-monetization-strategist",
@@ -53295,7 +53446,8 @@ Run \`./scripts/validate-docs.sh\` to check:
       }
     ],
     heroImage: '/img/skills/technical-writer-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/technical-writer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "diagramming-expert",
@@ -53694,7 +53846,8 @@ output "db_connection_string" {
     installCommand: '/plugin install terraform-iac-expert@some-claude-skills',
     references: [],
     heroImage: '/img/skills/terraform-iac-expert-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/terraform-iac-expert.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -54258,7 +54411,8 @@ npm test -- -u
       }
     ],
     heroImage: '/img/skills/test-automation-expert-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/test-automation-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "refactoring-surgeon",
@@ -54567,7 +54721,8 @@ LLMs may suggest deprecated approaches:
     installCommand: '/plugin install typography-expert@some-claude-skills',
     references: [],
     heroImage: '/img/skills/typography-expert-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/typography-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "design-system-creator",
@@ -54988,7 +55143,8 @@ When running this skill, produce a document with:
     installCommand: '/plugin install ux-friction-analyzer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/ux-friction-analyzer-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/ux-friction-analyzer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -55219,7 +55375,8 @@ if reduceTransparency {
       }
     ],
     heroImage: '/img/skills/vaporwave-glassomorphic-ui-designer-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/vaporwave-glassomorphic-ui-designer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "native-app-designer",
@@ -55682,7 +55839,8 @@ Implement application-level rate limiting since Vercel doesn't provide built-in 
     installCommand: '/plugin install vercel-deployment@some-claude-skills',
     references: [],
     heroImage: '/img/skills/vercel-deployment-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/vercel-deployment.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -55995,7 +56153,8 @@ LLMs trained on older data may suggest dated interpretations of vibes`,
     installCommand: '/plugin install vibe-matcher@some-claude-skills',
     references: [],
     heroImage: '/img/skills/vibe-matcher-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/vibe-matcher.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "design-system-generator",
@@ -56600,7 +56759,8 @@ ffmpeg -i input.mp4 \\
       }
     ],
     heroImage: '/img/skills/video-processing-editing-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/video-processing-editing.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -56993,7 +57153,8 @@ expect(input).toHaveValue('input value');
     installCommand: '/plugin install vitest-testing-patterns@some-claude-skills',
     references: [],
     heroImage: '/img/skills/vitest-testing-patterns-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/vitest-testing-patterns.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -57318,7 +57479,8 @@ model = WhisperForConditionalGeneration.from_pretrained("openai/whisper-large-v3
       }
     ],
     heroImage: '/img/skills/voice-audio-engineer-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/voice-audio-engineer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "sound-engineer",
@@ -57518,7 +57680,8 @@ float3 SubsurfaceScattering(float3 normal, float3 light, float3 view,
     installCommand: '/plugin install vr-avatar-engineer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/vr-avatar-engineer-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/vr-avatar-engineer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "metal-shader-expert",
@@ -58238,7 +58401,8 @@ module.exports = {
       }
     ],
     heroImage: '/img/skills/web-cloud-designer-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/web-cloud-designer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "web-design-expert",
@@ -58451,7 +58615,8 @@ Never present palettes as \`#3b82f6\` — always convert to OKLCH.
       }
     ],
     heroImage: '/img/skills/web-design-expert-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/web-design-expert.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "typography-expert",
@@ -59558,7 +59723,8 @@ For complete atmospheric scenes, combine water and cloud effects:
       }
     ],
     heroImage: '/img/skills/web-wave-designer-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/web-wave-designer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "web-cloud-designer",
@@ -61475,7 +61641,8 @@ module.exports = {
       }
     ],
     heroImage: '/img/skills/web-weather-creator-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/web-weather-creator.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -61768,7 +61935,8 @@ python -m pytest --tracing=on tests/test_login.py
     installCommand: '/plugin install webapp-testing@some-claude-skills',
     references: [],
     heroImage: '/img/skills/webapp-testing-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/webapp-testing.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "test-automation-expert",
@@ -62214,7 +62382,8 @@ wedding-immortalist-output/
       }
     ],
     heroImage: '/img/skills/wedding-immortalist-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/wedding-immortalist.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "photo-content-recognition-curation-expert",
@@ -62534,7 +62703,8 @@ await playWithHaptic('error', Haptics.ImpactFeedbackStyle.Heavy);
     installCommand: '/plugin install win31-audio-design@some-claude-skills',
     references: [],
     heroImage: '/img/skills/win31-audio-design-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/win31-audio-design.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "windows-3-1-web-designer",
@@ -62902,7 +63072,8 @@ convert input.png -bordercolor black -border 1 output.png
     installCommand: '/plugin install win31-pixel-art-designer@some-claude-skills',
     references: [],
     heroImage: '/img/skills/win31-pixel-art-designer-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/win31-pixel-art-designer.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "windows-3-1-web-designer",
@@ -63482,7 +63653,8 @@ For authentic Win31 feel:
       }
     ],
     heroImage: '/img/skills/windows-3-1-web-designer-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/windows-3-1-web-designer.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -63980,7 +64152,8 @@ Is it a notification?
       }
     ],
     heroImage: '/img/skills/windows-95-web-designer-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/windows-95-web-designer.png',
+    skillHero: undefined,
     pairsWith: undefined,
   },
   {
@@ -64149,7 +64322,8 @@ Works with: project-management-guru-adhd, hrv-alexithymia-expert, tech-entrepren
       }
     ],
     heroImage: '/img/skills/wisdom-accountability-coach-hero.png',
-    skillIcon: undefined,
+    skillIcon: '/img/skill-icons/wisdom-accountability-coach.png',
+    skillHero: undefined,
     pairsWith: [
       {
         "skill": "jungian-psychologist",
