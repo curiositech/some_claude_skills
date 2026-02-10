@@ -2,21 +2,42 @@
 
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * SOME CLAUDE SKILLS - AUTHENTIC WINDOWS 3.1 EXPERIENCE
- * Complete rewrite with real window management
+ * SOME CLAUDE SKILLS - AUTHENTIC WINDOWS 3.1 PROGRAM MANAGER
+ * 
+ * Key differences from previous version:
+ * - Program Manager CONTAINS group windows (MDI parent)
+ * - Dense icon grid (64px), no truncation
+ * - Groups are child windows inside Program Manager
+ * - Proper Win31 spacing per the design skill
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 import * as React from 'react';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { skills, categoryMeta, type Skill, type SkillCategory } from '@/lib/skills';
-import { 
-  WindowManagerProvider, 
-  useWindowManager, 
-  WindowRenderer, 
-  Win31Taskbar 
-} from '@/components/win31/window-manager';
 import '@/styles/win31-authentic.css';
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SOUND EFFECTS
+// ═══════════════════════════════════════════════════════════════════════════
+
+function useSound(src: string) {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      audioRef.current = new Audio(src);
+      audioRef.current.volume = 0.3;
+    }
+  }, [src]);
+  
+  return () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch(() => {});
+    }
+  };
+}
 
 // ═══════════════════════════════════════════════════════════════════════════
 // BOOT SCREEN
@@ -24,553 +45,729 @@ import '@/styles/win31-authentic.css';
 
 function BootScreen({ onComplete }: { onComplete: () => void }) {
   const [progress, setProgress] = useState(0);
+  const playStartup = useSound('/audio/startup.mp3');
   
   useEffect(() => {
+    playStartup();
     const interval = setInterval(() => {
       setProgress(p => {
         if (p >= 100) {
           clearInterval(interval);
-          setTimeout(onComplete, 300);
+          setTimeout(onComplete, 200);
           return 100;
         }
-        return p + Math.random() * 15;
+        return p + Math.random() * 20;
       });
-    }, 100);
+    }, 80);
     return () => clearInterval(interval);
-  }, [onComplete]);
+  }, [onComplete, playStartup]);
 
   return (
-    <div className="win31-boot">
-      <div className="win31-boot-text">Microsoft Windows</div>
+    <div style={{
+      position: 'fixed',
+      inset: 0,
+      background: '#000080',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 99999,
+    }}>
       <div style={{ 
-        width: 200, 
-        height: 150, 
-        background: 'linear-gradient(135deg, #000080 0%, #0000AA 50%, #000080 100%)',
+        fontFamily: 'var(--font-display)', 
+        fontSize: 12, 
+        color: '#FFFFFF',
+        marginBottom: 24,
+        textAlign: 'center',
+      }}>
+        Microsoft® Windows™
+      </div>
+      <div style={{
+        width: 280,
+        height: 180,
+        background: 'linear-gradient(180deg, #000080 0%, #0000AA 100%)',
         border: '4px outset #C0C0C0',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 32,
+        marginBottom: 24,
       }}>
         <div style={{ 
           fontFamily: 'var(--font-display)', 
-          fontSize: 10,
+          fontSize: 8,
           color: '#00FFFF',
           textAlign: 'center',
+          lineHeight: 1.8,
         }}>
           SOME<br/>CLAUDE<br/>SKILLS
         </div>
+        <div style={{ 
+          fontFamily: 'var(--font-system)', 
+          fontSize: 10,
+          color: '#FFFFFF',
+          marginTop: 12,
+        }}>
+          173 Skills Available
+        </div>
       </div>
-      <div className="win31-boot-progress">
-        <div 
-          className="win31-boot-progress-bar" 
-          style={{ width: `${Math.min(100, progress)}%` }} 
-        />
-      </div>
-      <div style={{ 
-        marginTop: 16, 
-        fontFamily: 'var(--font-system)', 
-        fontSize: 11, 
-        color: '#AAAAAA' 
+      <div style={{
+        width: 200,
+        height: 16,
+        background: '#000000',
+        border: '2px solid #FFFFFF',
       }}>
-        Loading 173 skills...
+        <div style={{
+          height: '100%',
+          width: `${Math.min(100, progress)}%`,
+          background: '#00AAAA',
+          transition: 'width 80ms linear',
+        }} />
       </div>
     </div>
   );
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// SKILL ICON COMPONENT
+// SKILL ICON - Dense, Full Name
 // ═══════════════════════════════════════════════════════════════════════════
 
-function SkillIcon({ skill, onClick }: { skill: Skill; onClick: () => void }) {
+function SkillIcon({ 
+  skill, 
+  onClick, 
+  selected 
+}: { 
+  skill: Skill; 
+  onClick: () => void; 
+  selected: boolean;
+}) {
   return (
-    <button className="win31-icon" onClick={onClick} title={skill.title}>
+    <button 
+      className={`win31-icon ${selected ? 'win31-icon-selected' : ''}`}
+      onClick={onClick}
+      onDoubleClick={onClick}
+      title={skill.description}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: '4px 2px',
+        gap: 2,
+        background: selected ? 'var(--win31-navy)' : 'transparent',
+        border: 'none',
+        cursor: 'pointer',
+        width: 64,
+      }}
+    >
       {skill.skillIcon ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img 
           src={skill.skillIcon} 
-          alt={skill.title}
-          className="win31-icon-image"
+          alt=""
+          style={{ width: 32, height: 32, imageRendering: 'pixelated' }}
           loading="lazy"
         />
       ) : (
-        <span className="win31-icon-emoji">{skill.icon}</span>
+        <span style={{ fontSize: 24, lineHeight: 1 }}>{skill.icon}</span>
       )}
-      <span className="win31-icon-label">
-        {skill.title.length > 12 ? skill.title.substring(0, 10) + '...' : skill.title}
+      <span style={{
+        fontFamily: 'var(--font-system)',
+        fontSize: 9,
+        textAlign: 'center',
+        color: selected ? '#FFFFFF' : '#000000',
+        wordBreak: 'break-word',
+        lineHeight: 1.1,
+        maxWidth: 60,
+      }}>
+        {skill.title}
       </span>
     </button>
   );
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// SKILL DETAIL VIEW
+// GROUP WINDOW (Child window inside Program Manager)
 // ═══════════════════════════════════════════════════════════════════════════
 
-function SkillDetail({ skill, onTagClick }: { skill: Skill; onTagClick: (tag: string) => void }) {
+interface GroupWindowProps {
+  title: string;
+  icon: string;
+  skills: Skill[];
+  position: { x: number; y: number };
+  size: { width: number; height: number };
+  isActive: boolean;
+  onActivate: () => void;
+  onMinimize: () => void;
+  onSkillSelect: (skill: Skill) => void;
+  selectedSkillId: string | null;
+}
+
+function GroupWindow({ 
+  title, 
+  icon, 
+  skills: groupSkills,
+  position, 
+  size,
+  isActive,
+  onActivate,
+  onMinimize,
+  onSkillSelect,
+  selectedSkillId,
+}: GroupWindowProps) {
+  const [isDragging, setIsDragging] = useState(false);
+  const [pos, setPos] = useState(position);
+  const dragStart = useRef({ x: 0, y: 0, px: 0, py: 0 });
+
+  useEffect(() => {
+    if (!isDragging) return;
+    
+    const handleMove = (e: MouseEvent) => {
+      setPos({
+        x: pos.x + e.clientX - dragStart.current.x,
+        y: pos.y + e.clientY - dragStart.current.y,
+      });
+      dragStart.current.x = e.clientX;
+      dragStart.current.y = e.clientY;
+    };
+    
+    const handleUp = () => setIsDragging(false);
+    
+    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('mouseup', handleUp);
+    return () => {
+      document.removeEventListener('mousemove', handleMove);
+      document.removeEventListener('mouseup', handleUp);
+    };
+  }, [isDragging, pos]);
+
+  return (
+    <div 
+      style={{
+        position: 'absolute',
+        left: pos.x,
+        top: pos.y,
+        width: size.width,
+        height: size.height,
+        background: '#C0C0C0',
+        border: '2px solid',
+        borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
+        boxShadow: 'inset 1px 1px 0 #DFDFDF, inset -1px -1px 0 #808080',
+        display: 'flex',
+        flexDirection: 'column',
+        zIndex: isActive ? 10 : 1,
+      }}
+      onMouseDown={onActivate}
+    >
+      {/* Title bar */}
+      <div 
+        style={{
+          background: isActive ? '#000080' : '#808080',
+          color: '#FFFFFF',
+          padding: '2px 4px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 4,
+          cursor: 'move',
+          fontFamily: 'var(--font-system)',
+          fontSize: 11,
+        }}
+        onMouseDown={(e) => {
+          e.preventDefault();
+          onActivate();
+          setIsDragging(true);
+          dragStart.current = { x: e.clientX, y: e.clientY, px: pos.x, py: pos.y };
+        }}
+      >
+        <span>{icon}</span>
+        <span style={{ flex: 1 }}>{title}</span>
+        <button 
+          onClick={(e) => { e.stopPropagation(); onMinimize(); }}
+          style={{
+            width: 16,
+            height: 12,
+            background: '#C0C0C0',
+            border: '1px solid',
+            borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
+            fontSize: 8,
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >▼</button>
+      </div>
+      
+      {/* Content - Icon Grid */}
+      <div style={{
+        flex: 1,
+        overflow: 'auto',
+        padding: 4,
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, 64px)',
+        gap: 2,
+        alignContent: 'start',
+      }}>
+        {groupSkills.map(skill => (
+          <SkillIcon 
+            key={skill.id} 
+            skill={skill} 
+            onClick={() => onSkillSelect(skill)}
+            selected={selectedSkillId === skill.id}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SKILL DETAIL WINDOW
+// ═══════════════════════════════════════════════════════════════════════════
+
+function SkillDetailWindow({ 
+  skill, 
+  onClose,
+  position,
+}: { 
+  skill: Skill; 
+  onClose: () => void;
+  position: { x: number; y: number };
+}) {
   const [copied, setCopied] = useState(false);
   
   const handleCopy = async () => {
     await navigator.clipboard.writeText(skill.installCommand);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setCopied(false), 1500);
   };
 
   return (
-    <div className="win31-doc" style={{ height: '100%', overflow: 'auto' }}>
-      {/* Hero image */}
-      {skill.skillHero && (
-        <div style={{ 
-          marginBottom: 16, 
-          border: '2px inset #808080',
-          maxHeight: 200,
-          overflow: 'hidden',
-        }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src={skill.skillHero} 
-            alt={skill.title}
-            style={{ width: '100%', height: 'auto', display: 'block' }}
-          />
-        </div>
-      )}
-      
-      {/* Title and meta */}
-      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 16 }}>
-        <span style={{ fontSize: 48 }}>{skill.icon}</span>
-        <div style={{ flex: 1 }}>
-          <h1 style={{ margin: 0, fontSize: 24 }}>{skill.title}</h1>
-          <p style={{ margin: '8px 0 0', color: '#555' }}>{skill.description}</p>
-        </div>
-      </div>
-
-      {/* Tags - CLICKABLE */}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginBottom: 16 }}>
-        {skill.tags.map(tag => (
-          <button 
-            key={tag} 
-            className="win31-tag"
-            onClick={() => onTagClick(tag)}
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
-
-      {/* Install command */}
-      <div className="win31-groupbox" style={{ marginBottom: 16 }}>
-        <span className="win31-groupbox-label">Quick Install</span>
-        <div style={{ display: 'flex', gap: 8 }}>
-          <code style={{ 
-            flex: 1, 
-            padding: 8, 
-            background: '#1A1A2E', 
-            color: '#00FF00',
-            fontFamily: 'var(--font-code)',
-            fontSize: 11,
-            overflow: 'auto',
-          }}>
-            {skill.installCommand}
-          </code>
-          <button className="win31-push-button" onClick={handleCopy}>
-            {copied ? '✓ Copied' : 'Copy'}
-          </button>
-        </div>
-      </div>
-
-      {/* References */}
-      {skill.references && skill.references.length > 0 && (
-        <div className="win31-groupbox" style={{ marginBottom: 16 }}>
-          <span className="win31-groupbox-label">References ({skill.references.length})</span>
-          <div className="win31-listbox" style={{ maxHeight: 150 }}>
-            {skill.references.map((ref, i) => (
-              <div key={i} className="win31-listbox-item">
-                📄 {ref.title}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Content */}
-      <div className="win31-groupbox">
-        <span className="win31-groupbox-label">Documentation</span>
-        <div style={{ 
-          maxHeight: 400, 
-          overflow: 'auto',
-          fontFamily: 'var(--font-code)',
-          fontSize: 12,
-          whiteSpace: 'pre-wrap',
-          lineHeight: 1.5,
-        }}>
-          {skill.content}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ═══════════════════════════════════════════════════════════════════════════
-// PROGRAM MANAGER CONTENT
-// ═══════════════════════════════════════════════════════════════════════════
-
-function ProgramManagerContent() {
-  const { openWindow } = useWindowManager();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  
-  // Group skills by category
-  const skillsByCategory = useMemo(() => {
-    const grouped: Record<SkillCategory, Skill[]> = {
-      development: [],
-      architecture: [],
-      devops: [],
-      design: [],
-      data: [],
-      testing: [],
-      documentation: [],
-      security: [],
-    };
-    
-    skills.forEach(skill => {
-      if (grouped[skill.category]) {
-        grouped[skill.category].push(skill);
-      }
-    });
-    
-    return grouped;
-  }, []);
-
-  // Filter skills
-  const filteredSkills = useMemo(() => {
-    let result = skills;
-    
-    if (searchTerm) {
-      const term = searchTerm.toLowerCase();
-      result = result.filter(s => 
-        s.title.toLowerCase().includes(term) ||
-        s.description.toLowerCase().includes(term) ||
-        s.tags.some(t => t.toLowerCase().includes(term))
-      );
-    }
-    
-    if (selectedTag) {
-      result = result.filter(s => s.tags.includes(selectedTag));
-    }
-    
-    return result;
-  }, [searchTerm, selectedTag]);
-
-  // Open skill detail window
-  const openSkill = (skill: Skill) => {
-    openWindow({
-      id: `skill-${skill.id}`,
-      title: `${skill.title}.md`,
-      icon: <span>{skill.icon}</span>,
-      x: 150 + Math.random() * 100,
-      y: 100 + Math.random() * 50,
-      width: 700,
-      height: 500,
-      minWidth: 400,
-      minHeight: 300,
-      content: <SkillDetail skill={skill} onTagClick={tag => {
-        setSelectedTag(tag);
-        setSearchTerm('');
-      }} />,
-    });
-  };
-
-  // Open category group window
-  const openCategoryGroup = (category: SkillCategory) => {
-    const meta = categoryMeta[category];
-    const categorySkills = skillsByCategory[category];
-    
-    openWindow({
-      id: `group-${category}`,
-      title: meta.label,
-      icon: <span>{meta.icon}</span>,
-      x: 80 + Math.random() * 50,
-      y: 60 + Math.random() * 30,
+    <div style={{
+      position: 'absolute',
+      left: position.x,
+      top: position.y,
       width: 500,
       height: 400,
-      minWidth: 300,
-      minHeight: 200,
-      content: (
-        <div style={{ padding: 0 }}>
-          <div className="win31-group-title">
-            {meta.icon} {meta.label} ({categorySkills.length} skills)
-          </div>
-          <div className="win31-icon-grid">
-            {categorySkills.map(skill => (
-              <SkillIcon key={skill.id} skill={skill} onClick={() => openSkill(skill)} />
-            ))}
-          </div>
-        </div>
-      ),
-    });
-  };
-
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      {/* Menu bar */}
-      <div className="win31-menubar">
-        <span className="win31-menu-item"><span className="accel">F</span>ile</span>
-        <span className="win31-menu-item"><span className="accel">O</span>ptions</span>
-        <span className="win31-menu-item"><span className="accel">W</span>indow</span>
-        <span className="win31-menu-item"><span className="accel">H</span>elp</span>
-      </div>
-
-      {/* Search and filter bar */}
-      <div style={{ 
-        padding: 8, 
-        background: 'var(--win31-light-gray)',
-        borderBottom: '1px solid var(--bevel-mid-dark)',
+      background: '#C0C0C0',
+      border: '3px solid',
+      borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
+      boxShadow: '4px 4px 0 rgba(0,0,0,0.3)',
+      display: 'flex',
+      flexDirection: 'column',
+      zIndex: 100,
+    }}>
+      {/* Title bar */}
+      <div style={{
+        background: '#000080',
+        color: '#FFFFFF',
+        padding: '2px 4px',
         display: 'flex',
-        gap: 8,
         alignItems: 'center',
+        gap: 4,
+        fontFamily: 'var(--font-system)',
+        fontSize: 11,
       }}>
-        <span style={{ fontFamily: 'var(--font-system)', fontSize: 11 }}>Find:</span>
-        <input 
-          type="text"
-          className="win31-input"
-          value={searchTerm}
-          onChange={e => { setSearchTerm(e.target.value); setSelectedTag(null); }}
-          placeholder="Search 173 skills..."
-          style={{ flex: 1, maxWidth: 200 }}
-        />
-        {selectedTag && (
-          <span 
-            className="win31-tag" 
-            onClick={() => setSelectedTag(null)}
-            style={{ cursor: 'pointer' }}
-          >
-            {selectedTag} ✕
-          </span>
-        )}
-        <span style={{ fontFamily: 'var(--font-system)', fontSize: 10, color: '#555' }}>
-          {filteredSkills.length} skills
-        </span>
+        <span>{skill.icon}</span>
+        <span style={{ flex: 1 }}>{skill.title}.md</span>
+        <button 
+          onClick={onClose}
+          style={{
+            width: 16,
+            height: 12,
+            background: '#C0C0C0',
+            border: '1px solid',
+            borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
+            fontSize: 8,
+            cursor: 'pointer',
+          }}
+        >✕</button>
       </div>
-
-      {/* Main content area */}
-      <div style={{ flex: 1, overflow: 'auto', padding: 8 }}>
-        {searchTerm || selectedTag ? (
-          // Search results
-          <div className="win31-icon-grid">
-            {filteredSkills.map(skill => (
-              <SkillIcon key={skill.id} skill={skill} onClick={() => openSkill(skill)} />
-            ))}
-          </div>
-        ) : (
-          // Category groups
-          <div className="win31-icon-grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))' }}>
-            {(Object.keys(categoryMeta) as SkillCategory[]).map(cat => {
-              const meta = categoryMeta[cat];
-              const count = skillsByCategory[cat].length;
-              return (
-                <button 
-                  key={cat} 
-                  className="win31-icon"
-                  onClick={() => openCategoryGroup(cat)}
-                  style={{ padding: 8 }}
-                >
-                  <span style={{ fontSize: 32 }}>{meta.icon}</span>
-                  <span className="win31-icon-label" style={{ maxWidth: 100 }}>
-                    {meta.label}
-                  </span>
-                  <span style={{ fontSize: 9, color: '#555' }}>({count})</span>
-                </button>
-              );
-            })}
-          </div>
-        )}
-      </div>
-
-      {/* Status bar */}
-      <div className="win31-statusbar">
-        <div className="win31-statusbar-panel" style={{ flex: 1 }}>
-          {selectedTag ? `Filtering: ${selectedTag}` : searchTerm ? `Search: "${searchTerm}"` : 'Ready'}
-        </div>
-        <div className="win31-statusbar-panel">
-          {filteredSkills.length} / {skills.length} skills
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MAIN DESKTOP
-// ═══════════════════════════════════════════════════════════════════════════
-
-function Desktop() {
-  const { openWindow } = useWindowManager();
-  const [theme, setTheme] = useState<'default' | 'hotdog'>('default');
-
-  // Open Program Manager on mount
-  useEffect(() => {
-    openWindow({
-      id: 'program-manager',
-      title: 'Program Manager',
-      icon: <span>📁</span>,
-      x: 50,
-      y: 30,
-      width: 800,
-      height: 550,
-      minWidth: 400,
-      minHeight: 300,
-      content: <ProgramManagerContent />,
-    });
-  }, [openWindow]);
-
-  // Desktop icons
-  const desktopIcons = [
-    { 
-      id: 'readme', 
-      icon: '📖', 
-      label: 'Read Me',
-      onClick: () => openWindow({
-        id: 'readme',
-        title: 'README.TXT',
-        icon: <span>📖</span>,
-        x: 100,
-        y: 150,
-        width: 500,
-        height: 400,
-        content: (
-          <div className="win31-doc">
-            <h1>Welcome to Some Claude Skills</h1>
-            <p>A curated gallery of <strong>173 Claude Code skills</strong> with an authentic Windows 3.1 aesthetic.</p>
-            <h2>Quick Start</h2>
-            <ol>
-              <li>Double-click <strong>Program Manager</strong> to browse skills</li>
-              <li>Click a category to see all skills in that group</li>
-              <li>Click a skill to see its documentation</li>
-              <li>Use the <strong>Copy</strong> button to install skills</li>
-            </ol>
-            <h2>Keyboard Shortcuts</h2>
-            <ul>
-              <li><kbd>Alt+F4</kbd> - Close window</li>
-              <li><kbd>Shift+F5</kbd> - Cascade windows</li>
-              <li><kbd>Shift+F4</kbd> - Tile windows</li>
-            </ul>
-            <h2>Theme</h2>
-            <p>Try <strong>Hot Dog Stand</strong> from Options menu!</p>
-          </div>
-        ),
-      }),
-    },
-    {
-      id: 'winamp',
-      icon: '🎵',
-      label: 'Winamp',
-      onClick: () => openWindow({
-        id: 'winamp',
-        title: 'Winamp 2.0',
-        icon: <span>🎵</span>,
-        x: 200,
-        y: 200,
-        width: 275,
-        height: 350,
-        minWidth: 275,
-        minHeight: 300,
-        content: (
-          <div style={{ 
-            height: '100%', 
-            background: '#1A1A2E',
-            color: '#00FF00',
-            fontFamily: 'var(--font-system)',
-            fontSize: 10,
-            padding: 8,
-            display: 'flex',
-            flexDirection: 'column',
-          }}>
-            <div style={{ textAlign: 'center', marginBottom: 8 }}>
-              ████ WINAMP 2.0 ████
-            </div>
-            <div style={{ 
-              background: '#000', 
-              padding: 8, 
-              marginBottom: 8,
-              textAlign: 'center',
-              color: '#0F0',
-            }}>
-              🎵 Ready to play...
-            </div>
-            <div style={{ display: 'flex', gap: 4, justifyContent: 'center', marginBottom: 8 }}>
-              <button className="win31-push-button" style={{ background: '#333', color: '#0F0', border: '1px solid #0F0' }}>⏮</button>
-              <button className="win31-push-button" style={{ background: '#333', color: '#0F0', border: '1px solid #0F0' }}>▶</button>
-              <button className="win31-push-button" style={{ background: '#333', color: '#0F0', border: '1px solid #0F0' }}>⏹</button>
-              <button className="win31-push-button" style={{ background: '#333', color: '#0F0', border: '1px solid #0F0' }}>⏭</button>
-            </div>
-            <div style={{ textAlign: 'center', color: '#888', fontSize: 9 }}>
-              Full music player coming soon!
-              <br/>Port from Docusaurus in progress.
-            </div>
-          </div>
-        ),
-      }),
-    },
-    {
-      id: 'theme',
-      icon: '🎨',
-      label: 'Themes',
-      onClick: () => setTheme(t => t === 'default' ? 'hotdog' : 'default'),
-    },
-  ];
-
-  return (
-    <div className="win31-desktop" data-theme={theme}>
-      {/* Desktop icons */}
-      <div style={{ 
-        position: 'absolute', 
-        top: 10, 
-        right: 10,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 16,
-      }}>
-        {desktopIcons.map(item => (
-          <button 
-            key={item.id}
-            className="win31-icon"
-            onClick={item.onClick}
-            style={{ background: 'transparent' }}
-          >
-            <span className="win31-icon-emoji">{item.icon}</span>
-            <span className="win31-icon-label" style={{ 
-              color: 'white', 
-              textShadow: '1px 1px 2px black',
-              background: 'transparent',
-            }}>
-              {item.label}
-            </span>
-          </button>
-        ))}
-      </div>
-
-      {/* Window renderer */}
-      <WindowRenderer />
       
-      {/* Taskbar */}
-      <Win31Taskbar />
+      {/* Content */}
+      <div style={{ flex: 1, overflow: 'auto', padding: 8 }}>
+        {/* Hero */}
+        {skill.skillHero && (
+          <div style={{ marginBottom: 8, border: '2px inset #808080' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={skill.skillHero} alt="" style={{ width: '100%', display: 'block' }} />
+          </div>
+        )}
+        
+        {/* Meta */}
+        <div style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
+          <span style={{ fontSize: 32 }}>{skill.icon}</span>
+          <div>
+            <div style={{ fontFamily: 'var(--font-system)', fontSize: 14, fontWeight: 'bold' }}>
+              {skill.title}
+            </div>
+            <div style={{ fontFamily: 'var(--font-system)', fontSize: 10, color: '#555' }}>
+              {skill.description}
+            </div>
+          </div>
+        </div>
+        
+        {/* Tags */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 2, marginBottom: 8 }}>
+          {skill.tags.map(tag => (
+            <span key={tag} style={{
+              fontFamily: 'var(--font-system)',
+              fontSize: 9,
+              background: '#DFDFDF',
+              border: '1px solid #808080',
+              padding: '1px 4px',
+            }}>{tag}</span>
+          ))}
+        </div>
+        
+        {/* Install */}
+        <div style={{
+          background: '#FFFFFF',
+          border: '2px inset #808080',
+          padding: 6,
+          fontFamily: 'var(--font-code)',
+          fontSize: 10,
+          marginBottom: 8,
+          display: 'flex',
+          gap: 8,
+        }}>
+          <code style={{ flex: 1, overflow: 'auto' }}>{skill.installCommand}</code>
+          <button 
+            onClick={handleCopy}
+            style={{
+              background: '#C0C0C0',
+              border: '2px solid',
+              borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
+              padding: '2px 8px',
+              fontFamily: 'var(--font-system)',
+              fontSize: 10,
+              cursor: 'pointer',
+            }}
+          >{copied ? '✓' : 'Copy'}</button>
+        </div>
+        
+        {/* Doc content */}
+        <div style={{
+          background: '#FFFFF5',
+          border: '2px inset #808080',
+          padding: 8,
+          fontFamily: 'var(--font-code)',
+          fontSize: 10,
+          lineHeight: 1.4,
+          whiteSpace: 'pre-wrap',
+          maxHeight: 200,
+          overflow: 'auto',
+        }}>
+          {skill.content.substring(0, 2000)}
+          {skill.content.length > 2000 && '...'}
+        </div>
+      </div>
     </div>
   );
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// MAIN APP
+// MAIN APPLICATION
 // ═══════════════════════════════════════════════════════════════════════════
 
 export default function HomePage() {
   const [booted, setBooted] = useState(false);
+  const [theme, setTheme] = useState<'default' | 'hotdog'>('default');
+  const [activeGroup, setActiveGroup] = useState<SkillCategory | null>(null);
+  const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
+  const [minimizedGroups, setMinimizedGroups] = useState<Set<SkillCategory>>(new Set());
+  const [openGroups, setOpenGroups] = useState<Set<SkillCategory>>(new Set());
+  
+  const playClick = useSound('/audio/click.mp3');
+
+  // Group skills by category
+  const skillsByCategory = useMemo(() => {
+    const grouped: Record<SkillCategory, Skill[]> = {
+      development: [], architecture: [], devops: [], design: [],
+      data: [], testing: [], documentation: [], security: [],
+    };
+    skills.forEach(skill => {
+      if (grouped[skill.category]) grouped[skill.category].push(skill);
+    });
+    return grouped;
+  }, []);
+
+  // Calculate group positions in a cascade
+  const groupPositions = useMemo(() => {
+    const positions: Partial<Record<SkillCategory, { x: number; y: number }>> = {};
+    const categories = Object.keys(categoryMeta) as SkillCategory[];
+    categories.forEach((cat, i) => {
+      positions[cat] = { x: 20 + (i % 4) * 30, y: 30 + Math.floor(i / 4) * 30 };
+    });
+    return positions as Record<SkillCategory, { x: number; y: number }>;
+  }, []);
+
+  const handleGroupOpen = (category: SkillCategory) => {
+    playClick();
+    setOpenGroups(prev => new Set([...prev, category]));
+    setActiveGroup(category);
+    setMinimizedGroups(prev => {
+      const next = new Set(prev);
+      next.delete(category);
+      return next;
+    });
+  };
+
+  const handleGroupMinimize = (category: SkillCategory) => {
+    playClick();
+    setMinimizedGroups(prev => new Set([...prev, category]));
+    setActiveGroup(null);
+  };
+
+  const handleSkillSelect = (skill: Skill) => {
+    playClick();
+    setSelectedSkill(skill);
+  };
+
+  if (!booted) {
+    return <BootScreen onComplete={() => setBooted(true)} />;
+  }
 
   return (
-    <WindowManagerProvider>
-      {!booted && <BootScreen onComplete={() => setBooted(true)} />}
-      {booted && <Desktop />}
-    </WindowManagerProvider>
+    <div className="win31-desktop" data-theme={theme} style={{
+      position: 'fixed',
+      inset: 0,
+      background: theme === 'hotdog' ? '#FF0000' : '#008080',
+      overflow: 'hidden',
+    }}>
+      {/* ═══════════════════════════════════════════════════════════════════
+          PROGRAM MANAGER (MDI Parent Window)
+          ═══════════════════════════════════════════════════════════════════ */}
+      <div style={{
+        position: 'absolute',
+        top: 4,
+        left: 4,
+        right: 4,
+        bottom: 40,
+        background: '#C0C0C0',
+        border: '3px solid',
+        borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
+        boxShadow: 'inset 2px 2px 0 #DFDFDF, inset -2px -2px 0 #808080',
+        display: 'flex',
+        flexDirection: 'column',
+      }}>
+        {/* Title Bar */}
+        <div style={{
+          background: '#000080',
+          color: '#FFFFFF',
+          padding: '2px 4px',
+          display: 'flex',
+          alignItems: 'center',
+          fontFamily: 'var(--font-system)',
+          fontSize: 12,
+        }}>
+          <span style={{ marginRight: 8 }}>📁</span>
+          <span style={{ flex: 1 }}>Program Manager - Some Claude Skills</span>
+          <button style={{
+            width: 18,
+            height: 14,
+            background: '#C0C0C0',
+            border: '1px solid',
+            borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
+            fontSize: 8,
+            cursor: 'pointer',
+          }}>─</button>
+        </div>
+
+        {/* Menu Bar */}
+        <div style={{
+          background: '#C0C0C0',
+          borderBottom: '1px solid #808080',
+          padding: '1px 2px',
+          display: 'flex',
+          fontFamily: 'var(--font-system)',
+          fontSize: 11,
+        }}>
+          <span style={{ padding: '2px 8px', cursor: 'pointer' }} className="win31-menu-item">
+            <u>F</u>ile
+          </span>
+          <span 
+            style={{ padding: '2px 8px', cursor: 'pointer' }} 
+            className="win31-menu-item"
+            onClick={() => setTheme(t => t === 'default' ? 'hotdog' : 'default')}
+          >
+            <u>O</u>ptions {theme === 'hotdog' && '🌭'}
+          </span>
+          <span style={{ padding: '2px 8px', cursor: 'pointer' }} className="win31-menu-item">
+            <u>W</u>indow
+          </span>
+          <span style={{ padding: '2px 8px', cursor: 'pointer' }} className="win31-menu-item">
+            <u>H</u>elp
+          </span>
+        </div>
+
+        {/* MDI Client Area - Contains Group Windows */}
+        <div style={{
+          flex: 1,
+          position: 'relative',
+          background: theme === 'hotdog' ? '#FFFF00' : '#008080',
+          overflow: 'hidden',
+        }}>
+          {/* Category Group Icons (when groups not open) */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, 80px)',
+            gap: 4,
+            padding: 8,
+          }}>
+            {(Object.keys(categoryMeta) as SkillCategory[]).map(cat => {
+              const meta = categoryMeta[cat];
+              const count = skillsByCategory[cat].length;
+              const isOpen = openGroups.has(cat) && !minimizedGroups.has(cat);
+              
+              if (isOpen) return null;
+              
+              return (
+                <button 
+                  key={cat}
+                  onClick={() => handleGroupOpen(cat)}
+                  onDoubleClick={() => handleGroupOpen(cat)}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    padding: 4,
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <span style={{ fontSize: 28 }}>{meta.icon}</span>
+                  <span style={{
+                    fontFamily: 'var(--font-system)',
+                    fontSize: 10,
+                    color: '#FFFFFF',
+                    textShadow: '1px 1px 0 #000',
+                    textAlign: 'center',
+                  }}>
+                    {meta.label}<br/>({count})
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Open Group Windows */}
+          {(Object.keys(categoryMeta) as SkillCategory[]).map(cat => {
+            if (!openGroups.has(cat) || minimizedGroups.has(cat)) return null;
+            
+            const meta = categoryMeta[cat];
+            const groupSkills = skillsByCategory[cat];
+            
+            return (
+              <GroupWindow
+                key={cat}
+                title={`${meta.label} (${groupSkills.length})`}
+                icon={meta.icon}
+                skills={groupSkills}
+                position={groupPositions[cat]}
+                size={{ width: 380, height: 280 }}
+                isActive={activeGroup === cat}
+                onActivate={() => setActiveGroup(cat)}
+                onMinimize={() => handleGroupMinimize(cat)}
+                onSkillSelect={handleSkillSelect}
+                selectedSkillId={selectedSkill?.id || null}
+              />
+            );
+          })}
+
+          {/* Skill Detail Window */}
+          {selectedSkill && (
+            <SkillDetailWindow 
+              skill={selectedSkill}
+              position={{ x: 100, y: 50 }}
+              onClose={() => setSelectedSkill(null)}
+            />
+          )}
+        </div>
+
+        {/* Status Bar */}
+        <div style={{
+          background: '#C0C0C0',
+          borderTop: '1px solid #FFFFFF',
+          padding: '2px 4px',
+          display: 'flex',
+          gap: 4,
+          fontFamily: 'var(--font-system)',
+          fontSize: 10,
+        }}>
+          <div style={{
+            flex: 1,
+            padding: '1px 4px',
+            border: '1px solid',
+            borderColor: '#808080 #FFFFFF #FFFFFF #808080',
+          }}>
+            {selectedSkill ? `Selected: ${selectedSkill.title}` : 'Double-click a group to open'}
+          </div>
+          <div style={{
+            padding: '1px 4px',
+            border: '1px solid',
+            borderColor: '#808080 #FFFFFF #FFFFFF #808080',
+          }}>
+            {skills.length} skills
+          </div>
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          TASKBAR (Minimized windows)
+          ═══════════════════════════════════════════════════════════════════ */}
+      <div style={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: 36,
+        background: '#C0C0C0',
+        borderTop: '2px solid #FFFFFF',
+        display: 'flex',
+        alignItems: 'center',
+        padding: '2px 4px',
+        gap: 4,
+      }}>
+        {/* Minimized groups */}
+        {Array.from(minimizedGroups).map(cat => {
+          const meta = categoryMeta[cat];
+          return (
+            <button
+              key={cat}
+              onClick={() => handleGroupOpen(cat)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 4,
+                padding: '2px 8px',
+                background: '#C0C0C0',
+                border: '2px solid',
+                borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
+                fontFamily: 'var(--font-system)',
+                fontSize: 10,
+                cursor: 'pointer',
+              }}
+            >
+              <span>{meta.icon}</span>
+              <span>{meta.label}</span>
+            </button>
+          );
+        })}
+        
+        <div style={{ flex: 1 }} />
+        
+        {/* Clock */}
+        <div style={{
+          padding: '2px 8px',
+          border: '1px solid',
+          borderColor: '#808080 #FFFFFF #FFFFFF #808080',
+          fontFamily: 'var(--font-system)',
+          fontSize: 10,
+        }}>
+          {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+        </div>
+      </div>
+    </div>
   );
 }

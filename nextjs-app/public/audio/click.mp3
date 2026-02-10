@@ -1,0 +1,1 @@
+{"detail":{"status":"invalid_generation_settings","message":"Invalid setting for duration_seconds received, expected to be greater or equal to 0.5 and less or equal to 30, received 0.3."}}
