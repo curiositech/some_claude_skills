@@ -5,11 +5,10 @@
    NOTE: Google Fonts import is in globals.css to ensure proper ordering
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* W95FA font for pixel-perfect Windows look */
+/* IBM VGA pixel font for authentic DOS/Windows look */
 @font-face {
-  font-family: 'W95FA';
-  src: url('https://unpkg.com/@phobon/w95fa/W95FA.woff2') format('woff2'),
-       url('https://unpkg.com/@phobon/w95fa/W95FA.woff') format('woff');
+  font-family: 'IBM VGA';
+  src: url('/fonts/PxPlus_IBM_VGA8.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -58,8 +57,8 @@
   --bevel-dark: #000000;
 
   /* Typography */
-  --font-system: 'W95FA', 'IBM Plex Mono', 'MS Sans Serif', Arial, sans-serif;
-  --font-window: 'VT323', 'W95FA', monospace;
+  --font-system: 'IBM VGA', 'VT323', 'Courier New', monospace;
+  --font-window: 'VT323', 'IBM VGA', monospace;
   --font-display: 'Press Start 2P', cursive;
   --font-code: 'IBM Plex Mono', 'Courier New', monospace;
 
