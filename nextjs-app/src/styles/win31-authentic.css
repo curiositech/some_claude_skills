@@ -1203,6 +1203,34 @@
   opacity: 0.8;
 }
 
+/* Featured desktop icon (SKILL_EXPLORER) */
+.win31-desktop-icon--featured {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.win31-desktop-icon--featured:hover {
+  animation: none;
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.win31-desktop-icon__pixel-art {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  image-rendering: pixelated;
+}
+
+.win31-desktop-icon__pixel-art svg {
+  image-rendering: pixelated;
+}
+
 /* ═══════════════════════════════════════════════════════════════
    PROGRAM GROUP (Icon grid inside window)
    ═══════════════════════════════════════════════════════════════ */

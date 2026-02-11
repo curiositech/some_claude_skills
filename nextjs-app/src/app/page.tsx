@@ -7,29 +7,17 @@
  * A "Counterfactual OS" where Windows 3.1 evolved to handle LLM flows
  * instead of spreadsheets.
  * 
- * Features:
- * - Zustand-based WindowManager with real Win31 behavior
- * - Single control button (not three like Win95)
- * - Draggable, resizable windows
- * - MDI Program Manager
- * - Parked icons for minimized windows
- * - Mobile: Program Manager as full-screen home
+ * SKILL_EXPLORER.EXE is the main skill browsing application.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 import * as React from 'react';
-import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
-import { skills, type Skill } from '@/lib/skills';
-import { 
-  categoryMeta as newCategoryMeta, 
-  type SkillCategory, 
-  getSkillCategory 
-} from '@/lib/skill-taxonomy';
-import { useWindowManager, appRegistry, type WindowInstance } from '@/stores/window-manager';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { skills } from '@/lib/skills';
+import { useWindowManager, type WindowInstance } from '@/stores/window-manager';
 import { Win31Window, ParkedIcons } from '@/components/win31';
-import { Dageeves, Terminal } from '@/components/apps';
+import { Dageeves, Terminal, SkillExplorer } from '@/components/apps';
 import { AnimatedDesktopBackgrounds } from '@/components/fun/animated-backgrounds';
-import { WebscapeNavigator } from '@/components/fun/webscape-navigator';
 import { MusicPlayerProvider, useMusicPlayer, WinampModal } from '@/components/winamp';
 import '@/styles/win31-authentic.css';
 
@@ -88,7 +76,7 @@ function BootScreen({ onComplete }: { onComplete: () => void }) {
           SOME<br/>CLAUDE<br/>SKILLS
         </div>
         <div className="win31-boot-splash-count">
-          🤖 {skills.length} AI Skills Available
+          {skills.length} AI Skills Available
         </div>
       </div>
       <div className="win31-boot-loading">Loading skills...</div>
@@ -100,169 +88,13 @@ function BootScreen({ onComplete }: { onComplete: () => void }) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// SKILL ICON (Used in Program Groups)
-// ═══════════════════════════════════════════════════════════════════════════
-
-function SkillIcon({ 
-  skill, 
-  onClick, 
-  selected 
-}: { 
-  skill: Skill; 
-  onClick: () => void; 
-  selected: boolean;
-}) {
-  return (
-    <button 
-      className={`win31-program-icon ${selected ? 'win31-program-icon--selected' : ''}`}
-      onClick={onClick}
-      onDoubleClick={onClick}
-      title={skill.description}
-    >
-      {skill.skillIcon ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img 
-          src={skill.skillIcon} 
-          alt=""
-          className="win31-program-icon__image"
-          loading="lazy"
-        />
-      ) : (
-        <span className="win31-program-icon__emoji">{skill.icon}</span>
-      )}
-      <span className="win31-program-icon__label">{skill.title}</span>
-    </button>
-  );
-}
-
-// ═══════════════════════════════════════════════════════════════════════════
-// CATEGORY ICON (On the Program Manager desktop)
-// ═══════════════════════════════════════════════════════════════════════════
-
-function CategoryIcon({ 
-  category: _category,
-  meta,
-  count,
-  onClick,
-}: { 
-  category: SkillCategory;
-  meta: typeof newCategoryMeta[SkillCategory];
-  count: number;
-  onClick: () => void;
-}) {
-  return (
-    <button 
-      className="win31-desktop-icon"
-      onClick={onClick}
-      onDoubleClick={onClick}
-      title={meta.description}
-    >
-      <span className="win31-desktop-icon__emoji">{meta.icon}</span>
-      <span className="win31-desktop-icon__label">
-        {meta.label}<br/>
-        <span className="win31-desktop-icon__count">({count})</span>
-      </span>
-    </button>
-  );
-}
-
-// ═══════════════════════════════════════════════════════════════════════════
-// SKILL DETAIL VIEWER (Content for skill window)
-// ═══════════════════════════════════════════════════════════════════════════
-
-function SkillDetailContent({ skill, onCopy }: { skill: Skill; onCopy?: () => void }) {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = async () => {
-    await navigator.clipboard.writeText(skill.installCommand);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
-    onCopy?.();
-  };
-
-  return (
-    <div className="win31-skill-detail">
-      {/* Hero Image */}
-      {skill.skillHero && (
-        <div className="win31-skill-detail__hero">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={skill.skillHero} alt="" loading="lazy" />
-        </div>
-      )}
-      
-      {/* Meta Row */}
-      <div className="win31-skill-detail__meta">
-        {skill.skillIcon ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={skill.skillIcon} alt="" className="win31-skill-detail__icon" />
-        ) : (
-          <span className="win31-skill-detail__icon-emoji">{skill.icon}</span>
-        )}
-        <div className="win31-skill-detail__info">
-          <h1 className="win31-skill-detail__title">{skill.title}</h1>
-          <p className="win31-skill-detail__description">{skill.description}</p>
-        </div>
-      </div>
-      
-      {/* Tags */}
-      <div className="win31-skill-detail__tags">
-        {skill.tags.slice(0, 8).map(tag => (
-          <span key={tag} className="win31-skill-detail__tag">{tag}</span>
-        ))}
-      </div>
-      
-      {/* Install Command */}
-      <div className="win31-skill-detail__install">
-        <code>{skill.installCommand}</code>
-        <button onClick={handleCopy} className="win31-button">
-          {copied ? '✓ Copied!' : '📋 Copy'}
-        </button>
-      </div>
-      
-      {/* Content Preview */}
-      <div className="win31-skill-detail__content">
-        <pre>{skill.content.substring(0, 2000)}{skill.content.length > 2000 && '...'}</pre>
-      </div>
-    </div>
-  );
-}
-
-// ═══════════════════════════════════════════════════════════════════════════
-// PROGRAM GROUP CONTENT
-// ═══════════════════════════════════════════════════════════════════════════
-
-function ProgramGroupContent({ 
-  skills: groupSkills, 
-  onSkillSelect,
-  selectedSkillId,
-}: { 
-  skills: Skill[];
-  onSkillSelect: (skill: Skill) => void;
-  selectedSkillId: string | null;
-}) {
-  return (
-    <div className="win31-program-group">
-      {groupSkills.map(skill => (
-        <SkillIcon 
-          key={skill.id} 
-          skill={skill} 
-          onClick={() => onSkillSelect(skill)}
-          selected={selectedSkillId === skill.id}
-        />
-      ))}
-    </div>
-  );
-}
-
-// ═══════════════════════════════════════════════════════════════════════════
 // MAIN APP CONTENT
 // ═══════════════════════════════════════════════════════════════════════════
 
 function MainAppContent() {
   const [theme, setTheme] = useState<'default' | 'hotdog'>('default');
   const [showBackgrounds, setShowBackgrounds] = useState(true);
-  const [showBrowser, setShowBrowser] = useState(false);
-  const [selectedSkillId, setSelectedSkillId] = useState<string | null>(null);
+  const [showSkillExplorer, setShowSkillExplorer] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [time, setTime] = useState(new Date());
   
@@ -298,108 +130,6 @@ function MainAppContent() {
     return () => clearInterval(interval);
   }, []);
 
-  // Group skills by category
-  const skillsByCategory = useMemo(() => {
-    const grouped: Record<SkillCategory, Skill[]> = {
-      'ai-agents': [], 'design-ux': [], 'web-frontend': [], 'backend-infra': [],
-      'audio-media': [], 'career-personal': [], 'health-wellness': [],
-      'testing-quality': [], 'data-analytics': [], 'writing-docs': [],
-    };
-    skills.forEach(skill => {
-      const cat = getSkillCategory(skill.id);
-      if (grouped[cat]) grouped[cat].push(skill);
-    });
-    return grouped;
-  }, []);
-
-  // Get non-empty categories
-  const nonEmptyCategories = useMemo(() => {
-    return (Object.keys(newCategoryMeta) as SkillCategory[])
-      .filter(cat => skillsByCategory[cat].length > 0);
-  }, [skillsByCategory]);
-
-  // Open a category group window
-  const openCategoryGroup = useCallback((category: SkillCategory) => {
-    playClick();
-    const meta = newCategoryMeta[category];
-    const existingWindow = windows.find(w => w.appId === `group-${category}`);
-    
-    if (existingWindow) {
-      focusWindow(existingWindow.instanceId);
-      return;
-    }
-
-    // Pseudo-register for this category
-    appRegistry[`group-${category}`] = {
-      id: `group-${category}`,
-      title: meta.label,
-      icon: meta.icon,
-      exeName: `${category.toUpperCase()}.GRP`,
-      defaultSize: { width: 420, height: 320 },
-      minSize: { width: 280, height: 200 },
-      isResizable: true,
-      hasMenuBar: true,
-      menuItems: [
-        {
-          label: 'File',
-          accelerator: 'F',
-          items: [
-            { label: 'Open', shortcut: 'Enter', action: 'open' },
-            { separator: true },
-            { label: 'Close', action: 'close' },
-          ],
-        },
-        {
-          label: 'Window',
-          accelerator: 'W',
-          items: [
-            { label: 'Tile', shortcut: 'Shift+F4', action: 'tile' },
-            { label: 'Cascade', shortcut: 'Shift+F5', action: 'cascade' },
-          ],
-        },
-      ],
-    };
-
-    launchApp(`group-${category}`);
-  }, [playClick, windows, focusWindow, launchApp]);
-
-  // Open skill detail window
-  const openSkillDetail = useCallback((skill: Skill) => {
-    playClick();
-    setSelectedSkillId(skill.id);
-    
-    const existingWindow = windows.find(w => w.appId === `skill-${skill.id}`);
-    if (existingWindow) {
-      focusWindow(existingWindow.instanceId);
-      return;
-    }
-
-    // Pseudo-register for this skill
-    appRegistry[`skill-${skill.id}`] = {
-      id: `skill-${skill.id}`,
-      title: `${skill.title}.md`,
-      icon: skill.icon,
-      exeName: 'SKILLVW.EXE',
-      defaultSize: { width: 520, height: 480 },
-      minSize: { width: 400, height: 300 },
-      isResizable: true,
-      hasMenuBar: true,
-      menuItems: [
-        {
-          label: 'File',
-          accelerator: 'F',
-          items: [
-            { label: 'Copy Install Command', shortcut: 'Ctrl+C', action: 'copy' },
-            { separator: true },
-            { label: 'Close', action: 'close' },
-          ],
-        },
-      ],
-    };
-
-    launchApp(`skill-${skill.id}`);
-  }, [playClick, windows, focusWindow, launchApp]);
-
   // Open utility apps
   const openDageeves = useCallback(() => {
     playClick();
@@ -421,17 +151,10 @@ function MainAppContent() {
     }
   }, [playClick, windows, focusWindow, launchApp]);
 
-  // Search handler
-  const handleSearch = useCallback((query: string) => {
-    const matching = skills.find(s => 
-      s.title.toLowerCase().includes(query.toLowerCase()) ||
-      s.description.toLowerCase().includes(query.toLowerCase())
-    );
-    if (matching) {
-      openSkillDetail(matching);
-      setShowBrowser(false);
-    }
-  }, [openSkillDetail]);
+  const openSkillExplorer = useCallback(() => {
+    playClick();
+    setShowSkillExplorer(true);
+  }, [playClick]);
 
   // Menu action handler
   const handleMenuAction = useCallback((action: string, instanceId: string) => {
@@ -451,25 +174,6 @@ function MainAppContent() {
   // Render window content based on appId
   const renderWindowContent = (win: WindowInstance) => {
     const { appId } = win;
-    
-    if (appId.startsWith('group-')) {
-      const category = appId.replace('group-', '') as SkillCategory;
-      return (
-        <ProgramGroupContent
-          skills={skillsByCategory[category]}
-          onSkillSelect={openSkillDetail}
-          selectedSkillId={selectedSkillId}
-        />
-      );
-    }
-    
-    if (appId.startsWith('skill-')) {
-      const skillId = appId.replace('skill-', '');
-      const skill = skills.find(s => s.id === skillId);
-      if (skill) {
-        return <SkillDetailContent skill={skill} />;
-      }
-    }
 
     if (appId === 'dageeves') {
       return <Dageeves />;
@@ -507,11 +211,11 @@ function MainAppContent() {
                 onClick={() => setShowBackgrounds(!showBackgrounds)}
                 title={showBackgrounds ? 'Hide Games' : 'Show Games'}
               >
-                {showBackgrounds ? '🎮' : '⬜'}
+                {showBackgrounds ? 'G' : '-'}
               </button>
             )}
-            <button className="win31-titlebar-button" title="Minimize">▼</button>
-            <button className="win31-titlebar-button" title="Maximize">▲</button>
+            <button className="win31-titlebar-button" title="Minimize">_</button>
+            <button className="win31-titlebar-button" title="Maximize">^</button>
           </div>
         </div>
 
@@ -524,19 +228,13 @@ function MainAppContent() {
             className="win31-menubar__item"
             onClick={() => setTheme(t => t === 'default' ? 'hotdog' : 'default')}
           >
-            <span className="win31-underline">O</span>ptions {theme === 'hotdog' && '🌭'}
-          </button>
-          <button 
-            className="win31-menubar__item"
-            onClick={() => setShowBrowser(true)}
-          >
-            <span className="win31-underline">S</span>earch 🔍
+            <span className="win31-underline">O</span>ptions {theme === 'hotdog' && '[HotDog]'}
           </button>
           <button 
             className="win31-menubar__item"
             onClick={() => setWinampMinimized(false)}
           >
-            <span className="win31-underline">M</span>usic 🎵
+            <span className="win31-underline">M</span>usic
           </button>
           <button className="win31-menubar__item">
             <span className="win31-underline">H</span>elp
@@ -545,51 +243,64 @@ function MainAppContent() {
 
         {/* MDI Client Area */}
         <div className={`win31-mdi-client ${theme === 'hotdog' ? 'win31-mdi-client--hotdog' : ''}`}>
-          {/* Welcome Banner */}
-          <div className="win31-welcome-banner">
-            <div className="win31-welcome-banner__text">
-              <h2>🎯 Welcome to Some Claude Skills!</h2>
-              <p>{skills.length} skills to supercharge your Claude AI. Double-click a category to explore.</p>
-            </div>
-            <button className="win31-button win31-button--primary" onClick={() => setShowBrowser(true)}>
-              🔍 Search Skills
-            </button>
-            <button className="win31-button" onClick={openDageeves}>
-              🗄️ DAG Builder
-            </button>
-            <button className="win31-button" onClick={openTerminal}>
-              💻 Terminal
-            </button>
-          </div>
-
-          {/* Desktop Icons (Category Groups) */}
+          {/* Desktop Icons */}
           <div className="win31-desktop-icons">
-            {nonEmptyCategories.map(cat => {
-              const meta = newCategoryMeta[cat];
-              const count = skillsByCategory[cat].length;
-              const isOpen = windows.some(w => w.appId === `group-${cat}` && w.state !== 'minimized');
-              
-              if (isOpen) return null;
-              
-              return (
-                <CategoryIcon
-                  key={cat}
-                  category={cat}
-                  meta={meta}
-                  count={count}
-                  onClick={() => openCategoryGroup(cat)}
-                />
-              );
-            })}
-            
-            {/* Utility App Icons */}
-            <button className="win31-desktop-icon" onClick={openDageeves}>
-              <span className="win31-desktop-icon__emoji">🗄️</span>
-              <span className="win31-desktop-icon__label">File<br/>Manager</span>
+            {/* SKILL_EXPLORER.EXE - Main App */}
+            <button className="win31-desktop-icon win31-desktop-icon--featured" onClick={openSkillExplorer}>
+              <div className="win31-desktop-icon__pixel-art">
+                <svg viewBox="0 0 32 32" width="48" height="48">
+                  <rect x="2" y="2" width="28" height="28" fill="#1a0a2e" stroke="#ff69b4" strokeWidth="2" />
+                  <rect x="6" y="6" width="8" height="6" fill="#00ced1" />
+                  <rect x="18" y="6" width="8" height="6" fill="#ffd700" />
+                  <rect x="6" y="16" width="8" height="6" fill="#90ee90" />
+                  <rect x="18" y="16" width="8" height="6" fill="#ff6b9d" />
+                  <circle cx="16" cy="16" r="4" fill="#fff" />
+                </svg>
+              </div>
+              <span className="win31-desktop-icon__label">SKILL_EXPLORER</span>
             </button>
+
+            {/* File Manager (DaGeeves) */}
+            <button className="win31-desktop-icon" onClick={openDageeves}>
+              <div className="win31-desktop-icon__pixel-art">
+                <svg viewBox="0 0 32 32" width="32" height="32">
+                  <rect x="4" y="4" width="24" height="24" fill="#ffff00" stroke="#aa5500" strokeWidth="2" />
+                  <rect x="4" y="4" width="12" height="8" fill="#aa5500" />
+                  <rect x="8" y="12" width="16" height="2" fill="#aa5500" />
+                  <rect x="8" y="16" width="12" height="2" fill="#aa5500" />
+                  <rect x="8" y="20" width="14" height="2" fill="#aa5500" />
+                </svg>
+              </div>
+              <span className="win31-desktop-icon__label">File Manager</span>
+            </button>
+
+            {/* MS-DOS Prompt */}
             <button className="win31-desktop-icon" onClick={openTerminal}>
-              <span className="win31-desktop-icon__emoji">💻</span>
-              <span className="win31-desktop-icon__label">MS-DOS<br/>Prompt</span>
+              <div className="win31-desktop-icon__pixel-art">
+                <svg viewBox="0 0 32 32" width="32" height="32">
+                  <rect x="2" y="4" width="28" height="24" fill="#000" stroke="#c0c0c0" strokeWidth="2" />
+                  <text x="6" y="16" fill="#00ff00" fontSize="8" fontFamily="monospace">C:\&gt;_</text>
+                </svg>
+              </div>
+              <span className="win31-desktop-icon__label">MS-DOS Prompt</span>
+            </button>
+
+            {/* Winamp */}
+            <button className="win31-desktop-icon" onClick={() => setWinampMinimized(false)}>
+              <div className="win31-desktop-icon__pixel-art">
+                <svg viewBox="0 0 32 32" width="32" height="32">
+                  <rect x="4" y="8" width="24" height="16" fill="#3a3a3a" stroke="#000" strokeWidth="1" />
+                  <rect x="6" y="10" width="8" height="6" fill="#000" />
+                  <rect x="7" y="11" width="2" height="4" fill="#00ff00" />
+                  <rect x="10" y="12" width="2" height="3" fill="#00ff00" />
+                  <rect x="18" y="10" width="8" height="4" fill="#000" />
+                  <text x="19" y="13" fill="#00ff00" fontSize="4">128</text>
+                  <circle cx="10" cy="19" r="2" fill="#666" />
+                  <circle cx="16" cy="19" r="2" fill="#00ff00" />
+                  <circle cx="22" cy="19" r="2" fill="#666" />
+                </svg>
+              </div>
+              <span className="win31-desktop-icon__label">Winamp</span>
             </button>
           </div>
 
@@ -608,13 +319,7 @@ function MainAppContent() {
         {/* Status Bar */}
         <div className="win31-statusbar">
           <div className="win31-statusbar__panel win31-statusbar__panel--main">
-            {selectedSkillId 
-              ? `📄 ${skills.find(s => s.id === selectedSkillId)?.title}`
-              : '👆 Double-click a category to explore skills'
-            }
-          </div>
-          <div className="win31-statusbar__panel">
-            🤖 {skills.length} skills
+            Double-click SKILL_EXPLORER to browse {skills.length} AI skills
           </div>
           <div className="win31-statusbar__panel">
             {windows.length} window{windows.length !== 1 ? 's' : ''}
@@ -625,41 +330,40 @@ function MainAppContent() {
       {/* Parked Icons (Minimized Windows) */}
       <ParkedIcons />
 
-      {/* Webscape Navigator */}
-      <WebscapeNavigator 
-        isVisible={showBrowser}
-        onClose={() => setShowBrowser(false)}
-        onSearch={handleSearch}
+      {/* SKILL_EXPLORER.EXE - Full screen app */}
+      <SkillExplorer 
+        isVisible={showSkillExplorer}
+        onClose={() => setShowSkillExplorer(false)}
       />
 
-      {/* Winamp */}
+      {/* Winamp - Compact 275x116 */}
       <WinampModal />
 
       {/* Taskbar (Bottom) */}
       <div className="win31-taskbar">
-        <button className="win31-taskbar__button win31-taskbar__button--start" onClick={() => setShowBrowser(true)}>
-          🪟 Search
+        <button 
+          className="win31-taskbar__button win31-taskbar__button--start" 
+          onClick={openSkillExplorer}
+        >
+          Skills
         </button>
         <button 
           className={`win31-taskbar__button ${!winampMinimized ? 'win31-taskbar__button--active' : ''}`}
           onClick={() => setWinampMinimized(!winampMinimized)}
         >
-          🎵 Winamp
+          Winamp
         </button>
         
-        {/* Minimized group indicators */}
-        {windows.filter(w => w.state === 'minimized').map(win => {
-          const app = appRegistry[win.appId];
-          return (
-            <button 
-              key={win.instanceId}
-              className="win31-taskbar__button"
-              onClick={() => focusWindow(win.instanceId)}
-            >
-              {app?.icon || '📄'} {win.title}
-            </button>
-          );
-        })}
+        {/* Minimized window indicators */}
+        {windows.filter(w => w.state === 'minimized').map(win => (
+          <button 
+            key={win.instanceId}
+            className="win31-taskbar__button"
+            onClick={() => focusWindow(win.instanceId)}
+          >
+            {win.title}
+          </button>
+        ))}
         
         <div className="win31-taskbar__spacer" />
         
