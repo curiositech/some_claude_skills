@@ -136,22 +136,19 @@ no photorealism, no modern flat UI
 --ar 16:9`;
 }
 
-async function generateImage(prompt: string, aspectRatio: string = '1:1'): Promise<string | null> {
+async function generateImage(prompt: string, aspectRatio: string = '1x1'): Promise<string | null> {
   try {
-    const response = await fetch('https://api.ideogram.ai/generate', {
+    // Use Ideogram V3 API endpoint
+    const response = await fetch('https://api.ideogram.ai/v1/ideogram-v3/generate', {
       method: 'POST',
       headers: {
         'Api-Key': IDEOGRAM_API_KEY,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        image_request: {
-          prompt,
-          aspect_ratio: aspectRatio,
-          model: 'V_3', // Use Ideogram V3 as requested
-          magic_prompt_option: 'AUTO',
-          style_type: 'DESIGN', // Best for pixel art style
-        },
+        prompt,
+        aspect_ratio: aspectRatio, // V3 format: '16x9', '1x1', etc.
+        rendering_speed: 'DEFAULT',
       }),
     });
 
@@ -212,7 +209,7 @@ async function main() {
     if (!fs.existsSync(iconPath)) {
       console.log(`\n[Icon] Generating: ${skill.title}`);
       const iconPrompt = generateIconPrompt(skill);
-      const iconUrl = await generateImage(iconPrompt, '1:1');
+      const iconUrl = await generateImage(iconPrompt, '1x1');
       
       if (iconUrl) {
         await downloadImage(iconUrl, iconPath);
@@ -230,7 +227,7 @@ async function main() {
     if (!fs.existsSync(heroPath)) {
       console.log(`\n[Hero] Generating: ${skill.title}`);
       const heroPrompt = generateHeroPrompt(skill);
-      const heroUrl = await generateImage(heroPrompt, '16:9');
+      const heroUrl = await generateImage(heroPrompt, '16x9');
       
       if (heroUrl) {
         await downloadImage(heroUrl, heroPath);
