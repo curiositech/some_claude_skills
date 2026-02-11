@@ -20,6 +20,8 @@ import { Dageeves, Terminal, SkillExplorer, Solitaire, ControlPanel, Calculator 
 import { AnimatedDesktopBackgrounds } from '@/components/fun/animated-backgrounds';
 import { MusicPlayerProvider, useMusicPlayer, WinampModal } from '@/components/winamp';
 import { useWin31Theme } from '@/hooks/useWin31Theme';
+import { TutorialWizard, TUTORIALS, type TutorialId } from '@/components/memphis';
+import { WebscapeNavigator } from '@/components/fun/webscape-navigator';
 import '@/styles/win31-authentic.css';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -99,6 +101,8 @@ function MainAppContent() {
   const [time, setTime] = useState(new Date());
   const [showThemeMenu, setShowThemeMenu] = useState(false);
   const [activeGroup, setActiveGroup] = useState<string | null>(null);
+  const [activeTutorial, setActiveTutorial] = useState<TutorialId | null>(null);
+  const [showWebscapeNavigator, setShowWebscapeNavigator] = useState(false);
   
   // Theme hook
   const { colorScheme, setTheme, themes } = useWin31Theme();
@@ -436,6 +440,57 @@ function MainAppContent() {
               )}
             </div>
 
+            {/* Tutorials Group */}
+            <div className={`win31-program-group ${activeGroup === 'tutorials' ? 'win31-program-group--active' : ''}`}>
+              <div 
+                className="win31-program-group__header"
+                onClick={() => setActiveGroup(activeGroup === 'tutorials' ? null : 'tutorials')}
+              >
+                <span className="win31-program-group__icon">📚</span>
+                <span className="win31-program-group__title">Tutorials</span>
+                <span className="win31-program-group__toggle">{activeGroup === 'tutorials' ? '−' : '+'}</span>
+              </div>
+              {activeGroup === 'tutorials' && (
+                <div className="win31-program-group__content">
+                  {/* What is a Skill? */}
+                  <button className="win31-desktop-icon" onClick={() => { playClick(); setActiveTutorial('what-is-a-skill'); }}>
+                    <div className="win31-desktop-icon__pixel-art">
+                      <svg viewBox="0 0 32 32" width="32" height="32">
+                        <circle cx="16" cy="16" r="12" fill="#ff69b4" stroke="#000" strokeWidth="2" />
+                        <text x="12" y="22" fill="#fff" fontSize="18" fontWeight="bold">?</text>
+                      </svg>
+                    </div>
+                    <span className="win31-desktop-icon__label">What is a Skill?</span>
+                  </button>
+
+                  {/* Installing Skills */}
+                  <button className="win31-desktop-icon" onClick={() => { playClick(); setActiveTutorial('installing-skills'); }}>
+                    <div className="win31-desktop-icon__pixel-art">
+                      <svg viewBox="0 0 32 32" width="32" height="32">
+                        <rect x="6" y="8" width="20" height="16" fill="#90ee90" stroke="#000" strokeWidth="2" />
+                        <rect x="10" y="4" width="12" height="6" fill="#228b22" />
+                        <polygon points="16,18 12,14 20,14" fill="#fff" />
+                        <rect x="14" y="14" width="4" height="6" fill="#fff" />
+                      </svg>
+                    </div>
+                    <span className="win31-desktop-icon__label">Installing Skills</span>
+                  </button>
+
+                  {/* Webscape Navigator */}
+                  <button className="win31-desktop-icon" onClick={() => { playClick(); setShowWebscapeNavigator(true); }}>
+                    <div className="win31-desktop-icon__pixel-art">
+                      <svg viewBox="0 0 32 32" width="32" height="32">
+                        <circle cx="16" cy="16" r="12" fill="#0078d4" stroke="#000" strokeWidth="2" />
+                        <path d="M10,16 Q16,8 22,16 Q16,24 10,16" fill="#00bfff" />
+                        <circle cx="16" cy="16" r="3" fill="#fff" />
+                      </svg>
+                    </div>
+                    <span className="win31-desktop-icon__label">Webscape</span>
+                  </button>
+                </div>
+              )}
+            </div>
+
             {/* Games Group */}
             <div className={`win31-program-group ${activeGroup === 'games' ? 'win31-program-group--active' : ''}`}>
               <div 
@@ -499,6 +554,26 @@ function MainAppContent() {
       {/* Winamp - Compact 275x116 */}
       <WinampModal />
 
+      {/* Webscape Navigator - Retro Browser */}
+      <WebscapeNavigator
+        isVisible={showWebscapeNavigator}
+        onClose={() => setShowWebscapeNavigator(false)}
+        onSearch={() => { 
+          setShowWebscapeNavigator(false);
+          setShowSkillExplorer(true);
+        }}
+      />
+
+      {/* Tutorial Wizard */}
+      {activeTutorial && (
+        <TutorialWizard
+          title={TUTORIALS[activeTutorial].title}
+          steps={TUTORIALS[activeTutorial].steps}
+          onComplete={() => setActiveTutorial(null)}
+          onClose={() => setActiveTutorial(null)}
+        />
+      )}
+
       {/* Taskbar (Bottom) */}
       <div className="win31-taskbar">
         <button 
@@ -512,6 +587,12 @@ function MainAppContent() {
           onClick={() => setWinampMinimized(!winampMinimized)}
         >
           Winamp
+        </button>
+        <button 
+          className={`win31-taskbar__button ${showWebscapeNavigator ? 'win31-taskbar__button--active' : ''}`}
+          onClick={() => setShowWebscapeNavigator(!showWebscapeNavigator)}
+        >
+          Browser
         </button>
         
         {/* Minimized window indicators */}

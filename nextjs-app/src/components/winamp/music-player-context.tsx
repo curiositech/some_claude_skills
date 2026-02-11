@@ -28,6 +28,7 @@ interface MusicPlayerContextType {
   gainNode: GainNode | null;
   eqSettings: EQSettings;
   totalTracks: number;
+  initError: string | null;
 
   play: () => void;
   pause: () => void;
@@ -68,11 +69,12 @@ export function MusicPlayerProvider({ children }: MusicPlayerProviderProps) {
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [volume, setVolumeState] = useState(0.7);
   const [progress, setProgress] = useState(0);
-  const [isMinimized, setIsMinimized] = useState(true);
+  const [isMinimized, setIsMinimized] = useState(false); // Start visible!
   const [isVisualizerFullScreen, setVisualizerFullScreen] = useState(false);
   const [eqSettings, setEqSettings] = useState<EQSettings>(DEFAULT_EQ);
   const [isShuffle, setIsShuffle] = useState(false);
   const [repeatMode, setRepeatMode] = useState<'off' | 'all' | 'one'>('off');
+  const [initError, setInitError] = useState<string | null>(null);
   const shuffleHistoryRef = useRef<number[]>([]);
 
   const isShuffleRef = useRef(isShuffle);
@@ -337,6 +339,7 @@ export function MusicPlayerProvider({ children }: MusicPlayerProviderProps) {
         setIsLoading(false);
       } catch (error) {
         console.error('Failed to initialize music player:', error);
+        setInitError(error instanceof Error ? error.message : 'Unknown error');
         setIsLoading(false);
       }
     };
@@ -561,6 +564,7 @@ export function MusicPlayerProvider({ children }: MusicPlayerProviderProps) {
     gainNode: gainNodeState,
     eqSettings,
     totalTracks: MUSIC_LIBRARY.length,
+    initError,
     play,
     pause,
     togglePlayPause,

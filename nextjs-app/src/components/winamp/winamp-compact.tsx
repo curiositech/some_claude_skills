@@ -28,6 +28,7 @@ export function WinampCompact() {
     isShuffle,
     repeatMode,
     eqSettings,
+    initError,
     togglePlayPause,
     setVolume,
     setEQ,
@@ -181,8 +182,8 @@ export function WinampCompact() {
             </div>
             <div className={styles.scrollText}>
               <span className={styles.scrollTextInner}>
-                {isLoading ? 'Loading...' : currentTrack?.title || 'No track loaded'}
-                {currentTrack?.artist && ` - ${currentTrack.artist}`}
+                {initError ? `Error: ${initError}` : isLoading ? 'Loading...' : currentTrack?.title || 'No track loaded'}
+                {!initError && currentTrack?.artist && ` - ${currentTrack.artist}`}
               </span>
             </div>
           </div>
