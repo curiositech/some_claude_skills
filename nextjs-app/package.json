@@ -39,7 +39,8 @@
     "react-dom": "^19.1.0",
     "soundfont-player": "^0.12.0",
     "tailwind-merge": "^3.4.0",
-    "tailwindcss": "^4.1.8"
+    "tailwindcss": "^4.1.8",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.16",

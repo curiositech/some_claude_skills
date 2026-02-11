@@ -2,14 +2,18 @@
 
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * SOME CLAUDE SKILLS - FUN WINDOWS 3.1 EXPERIENCE
+ * SOME CLAUDE SKILLS - AUTHENTIC WINDOWS 3.1 EXPERIENCE
+ * 
+ * A "Counterfactual OS" where Windows 3.1 evolved to handle LLM flows
+ * instead of spreadsheets.
  * 
  * Features:
- * - 10 meaningful skill categories (not just "development")
- * - Webscape Navigator with Dagoogle/Ask Dageeves search
- * - Animated backgrounds (Gorillas, Clock, Solitaire, Life)
- * - Winamp music player
- * - Full MDI Program Manager
+ * - Zustand-based WindowManager with real Win31 behavior
+ * - Single control button (not three like Win95)
+ * - Draggable, resizable windows
+ * - MDI Program Manager
+ * - Parked icons for minimized windows
+ * - Mobile: Program Manager as full-screen home
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -21,6 +25,9 @@ import {
   type SkillCategory, 
   getSkillCategory 
 } from '@/lib/skill-taxonomy';
+import { useWindowManager, appRegistry, type WindowInstance } from '@/stores/window-manager';
+import { Win31Window, ParkedIcons } from '@/components/win31';
+import { Dageeves, Terminal } from '@/components/apps';
 import { AnimatedDesktopBackgrounds } from '@/components/fun/animated-backgrounds';
 import { WebscapeNavigator } from '@/components/fun/webscape-navigator';
 import { MusicPlayerProvider, useMusicPlayer, WinampModal } from '@/components/winamp';
@@ -49,7 +56,7 @@ function useSound(src: string) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// BOOT SCREEN - Windows Style
+// BOOT SCREEN
 // ═══════════════════════════════════════════════════════════════════════════
 
 function BootScreen({ onComplete }: { onComplete: () => void }) {
@@ -72,103 +79,28 @@ function BootScreen({ onComplete }: { onComplete: () => void }) {
   }, [onComplete, playStartup]);
 
   return (
-    <div style={{
-      position: 'fixed',
-      inset: 0,
-      background: 'linear-gradient(180deg, #000080 0%, #0000AA 100%)',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      zIndex: 99999,
-    }}>
-      {/* Windows Logo */}
-      <div style={{ 
-        fontSize: 48, 
-        marginBottom: 20,
-        animation: 'pulse 1s ease-in-out infinite',
-      }}>
-        🪟
-      </div>
-      
-      <div style={{ 
-        fontFamily: 'var(--font-display)', 
-        fontSize: 14, 
-        color: '#FFFFFF',
-        marginBottom: 8,
-        letterSpacing: 2,
-      }}>
-        Microsoft® Windows™
-      </div>
-      
-      <div style={{ 
-        fontFamily: 'var(--font-system)', 
-        fontSize: 11, 
-        color: '#00FFFF',
-        marginBottom: 40,
-      }}>
-        Version 3.1
-      </div>
-      
-      {/* Splash Art */}
-      <div style={{
-        width: 320,
-        height: 200,
-        background: 'linear-gradient(135deg, #FF69B4 0%, #00CED1 50%, #FFD700 100%)',
-        border: '4px outset #C0C0C0',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: 30,
-        boxShadow: '0 0 60px rgba(255, 105, 180, 0.5)',
-      }}>
-        <div style={{ 
-          fontFamily: 'var(--font-display)', 
-          fontSize: 28,
-          color: '#000080',
-          textShadow: '2px 2px 0 #FFF',
-          textAlign: 'center',
-          lineHeight: 1.3,
-        }}>
+    <div className="win31-boot-screen">
+      <div className="win31-boot-logo">🪟</div>
+      <div className="win31-boot-title">Microsoft® Windows™</div>
+      <div className="win31-boot-version">Version 3.1</div>
+      <div className="win31-boot-splash">
+        <div className="win31-boot-splash-title">
           SOME<br/>CLAUDE<br/>SKILLS
         </div>
-        <div style={{ 
-          fontFamily: 'var(--font-system)', 
-          fontSize: 12,
-          color: '#000080',
-          marginTop: 16,
-          background: '#FFFFFF',
-          padding: '4px 12px',
-        }}>
-          🤖 173 AI Skills Available
+        <div className="win31-boot-splash-count">
+          🤖 {skills.length} AI Skills Available
         </div>
       </div>
-      
-      {/* Progress Bar */}
-      <div style={{ fontFamily: 'var(--font-system)', fontSize: 10, color: '#FFFFFF', marginBottom: 8 }}>
-        Loading skills...
-      </div>
-      <div style={{
-        width: 280,
-        height: 20,
-        background: '#000000',
-        border: '2px solid #FFFFFF',
-        padding: 2,
-      }}>
-        <div style={{
-          height: '100%',
-          width: `${Math.min(100, progress)}%`,
-          background: 'linear-gradient(90deg, #00AAAA 0%, #00FFFF 100%)',
-          transition: 'width 100ms linear',
-        }} />
+      <div className="win31-boot-loading">Loading skills...</div>
+      <div className="win31-boot-progress">
+        <div className="win31-boot-progress-bar" style={{ width: `${Math.min(100, progress)}%` }} />
       </div>
     </div>
   );
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// SKILL ICON - Dense grid, full names
+// SKILL ICON (Used in Program Groups)
 // ═══════════════════════════════════════════════════════════════════════════
 
 function SkillIcon({ 
@@ -182,377 +114,142 @@ function SkillIcon({
 }) {
   return (
     <button 
-      className={`win31-icon ${selected ? 'win31-icon-selected' : ''}`}
+      className={`win31-program-icon ${selected ? 'win31-program-icon--selected' : ''}`}
       onClick={onClick}
       onDoubleClick={onClick}
       title={skill.description}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        padding: '4px 2px',
-        gap: 2,
-        background: selected ? 'var(--win31-navy)' : 'transparent',
-        border: 'none',
-        cursor: 'pointer',
-        width: 72,
-      }}
     >
       {skill.skillIcon ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img 
           src={skill.skillIcon} 
           alt=""
-          style={{ width: 32, height: 32, imageRendering: 'pixelated' }}
+          className="win31-program-icon__image"
           loading="lazy"
         />
       ) : (
-        <span style={{ fontSize: 28, lineHeight: 1 }}>{skill.icon}</span>
+        <span className="win31-program-icon__emoji">{skill.icon}</span>
       )}
-      <span style={{
-        fontFamily: 'var(--font-system)',
-        fontSize: 9,
-        textAlign: 'center',
-        color: selected ? '#FFFFFF' : '#000000',
-        wordBreak: 'break-word',
-        lineHeight: 1.1,
-        maxWidth: 68,
-      }}>
-        {skill.title}
+      <span className="win31-program-icon__label">{skill.title}</span>
+    </button>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// CATEGORY ICON (On the Program Manager desktop)
+// ═══════════════════════════════════════════════════════════════════════════
+
+function CategoryIcon({ 
+  category: _category,
+  meta,
+  count,
+  onClick,
+}: { 
+  category: SkillCategory;
+  meta: typeof newCategoryMeta[SkillCategory];
+  count: number;
+  onClick: () => void;
+}) {
+  return (
+    <button 
+      className="win31-desktop-icon"
+      onClick={onClick}
+      onDoubleClick={onClick}
+      title={meta.description}
+    >
+      <span className="win31-desktop-icon__emoji">{meta.icon}</span>
+      <span className="win31-desktop-icon__label">
+        {meta.label}<br/>
+        <span className="win31-desktop-icon__count">({count})</span>
       </span>
     </button>
   );
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// GROUP WINDOW (Child window inside Program Manager)
+// SKILL DETAIL VIEWER (Content for skill window)
 // ═══════════════════════════════════════════════════════════════════════════
 
-interface GroupWindowProps {
-  title: string;
-  icon: string;
-  color: string;
-  skills: Skill[];
-  position: { x: number; y: number };
-  size: { width: number; height: number };
-  isActive: boolean;
-  onActivate: () => void;
-  onMinimize: () => void;
-  onSkillSelect: (skill: Skill) => void;
-  selectedSkillId: string | null;
-}
+function SkillDetailContent({ skill, onCopy }: { skill: Skill; onCopy?: () => void }) {
+  const [copied, setCopied] = useState(false);
 
-function GroupWindow({ 
-  title, 
-  icon, 
-  color,
-  skills: groupSkills,
-  position, 
-  size,
-  isActive,
-  onActivate,
-  onMinimize,
-  onSkillSelect,
-  selectedSkillId,
-}: GroupWindowProps) {
-  const [isDragging, setIsDragging] = useState(false);
-  const [pos, setPos] = useState(position);
-  const dragStart = useRef({ x: 0, y: 0 });
-
-  useEffect(() => {
-    if (!isDragging) return;
-    
-    const handleMove = (e: MouseEvent) => {
-      setPos(p => ({
-        x: p.x + e.clientX - dragStart.current.x,
-        y: p.y + e.clientY - dragStart.current.y,
-      }));
-      dragStart.current = { x: e.clientX, y: e.clientY };
-    };
-    
-    const handleUp = () => setIsDragging(false);
-    
-    document.addEventListener('mousemove', handleMove);
-    document.addEventListener('mouseup', handleUp);
-    return () => {
-      document.removeEventListener('mousemove', handleMove);
-      document.removeEventListener('mouseup', handleUp);
-    };
-  }, [isDragging]);
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(skill.installCommand);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+    onCopy?.();
+  };
 
   return (
-    <div 
-      style={{
-        position: 'absolute',
-        left: pos.x,
-        top: pos.y,
-        width: size.width,
-        height: size.height,
-        background: '#C0C0C0',
-        border: '2px solid',
-        borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-        boxShadow: 'inset 1px 1px 0 #DFDFDF, inset -1px -1px 0 #808080, 2px 2px 8px rgba(0,0,0,0.3)',
-        display: 'flex',
-        flexDirection: 'column',
-        zIndex: isActive ? 10 : 1,
-      }}
-      onMouseDown={onActivate}
-    >
-      {/* Title bar with category color accent */}
-      <div 
-        style={{
-          background: isActive ? '#000080' : '#808080',
-          color: '#FFFFFF',
-          padding: '2px 4px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 4,
-          cursor: 'move',
-          fontFamily: 'var(--font-system)',
-          fontSize: 11,
-          borderBottom: `2px solid ${color}`,
-        }}
-        onMouseDown={(e) => {
-          e.preventDefault();
-          onActivate();
-          setIsDragging(true);
-          dragStart.current = { x: e.clientX, y: e.clientY };
-        }}
-      >
-        <span>{icon}</span>
-        <span style={{ flex: 1 }}>{title}</span>
-        <button 
-          onClick={(e) => { e.stopPropagation(); onMinimize(); }}
-          style={{
-            width: 16,
-            height: 12,
-            background: '#C0C0C0',
-            border: '1px solid',
-            borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-            fontSize: 8,
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >▼</button>
+    <div className="win31-skill-detail">
+      {/* Hero Image */}
+      {skill.skillHero && (
+        <div className="win31-skill-detail__hero">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={skill.skillHero} alt="" loading="lazy" />
+        </div>
+      )}
+      
+      {/* Meta Row */}
+      <div className="win31-skill-detail__meta">
+        {skill.skillIcon ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={skill.skillIcon} alt="" className="win31-skill-detail__icon" />
+        ) : (
+          <span className="win31-skill-detail__icon-emoji">{skill.icon}</span>
+        )}
+        <div className="win31-skill-detail__info">
+          <h1 className="win31-skill-detail__title">{skill.title}</h1>
+          <p className="win31-skill-detail__description">{skill.description}</p>
+        </div>
       </div>
       
-      {/* Icon Grid */}
-      <div style={{
-        flex: 1,
-        overflow: 'auto',
-        padding: 4,
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, 72px)',
-        gap: 2,
-        alignContent: 'start',
-      }}>
-        {groupSkills.map(skill => (
-          <SkillIcon 
-            key={skill.id} 
-            skill={skill} 
-            onClick={() => onSkillSelect(skill)}
-            selected={selectedSkillId === skill.id}
-          />
+      {/* Tags */}
+      <div className="win31-skill-detail__tags">
+        {skill.tags.slice(0, 8).map(tag => (
+          <span key={tag} className="win31-skill-detail__tag">{tag}</span>
         ))}
       </div>
       
-      {/* Status */}
-      <div style={{
-        padding: '2px 4px',
-        borderTop: '1px solid #808080',
-        fontFamily: 'var(--font-system)',
-        fontSize: 9,
-        color: '#555',
-      }}>
-        {groupSkills.length} skills
+      {/* Install Command */}
+      <div className="win31-skill-detail__install">
+        <code>{skill.installCommand}</code>
+        <button onClick={handleCopy} className="win31-button">
+          {copied ? '✓ Copied!' : '📋 Copy'}
+        </button>
+      </div>
+      
+      {/* Content Preview */}
+      <div className="win31-skill-detail__content">
+        <pre>{skill.content.substring(0, 2000)}{skill.content.length > 2000 && '...'}</pre>
       </div>
     </div>
   );
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// SKILL DETAIL WINDOW
+// PROGRAM GROUP CONTENT
 // ═══════════════════════════════════════════════════════════════════════════
 
-function SkillDetailWindow({ 
-  skill, 
-  onClose,
-  position,
+function ProgramGroupContent({ 
+  skills: groupSkills, 
+  onSkillSelect,
+  selectedSkillId,
 }: { 
-  skill: Skill; 
-  onClose: () => void;
-  position: { x: number; y: number };
+  skills: Skill[];
+  onSkillSelect: (skill: Skill) => void;
+  selectedSkillId: string | null;
 }) {
-  const [copied, setCopied] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const [pos, setPos] = useState(position);
-  const dragStart = useRef({ x: 0, y: 0 });
-
-  useEffect(() => {
-    if (!isDragging) return;
-    const handleMove = (e: MouseEvent) => {
-      setPos(p => ({
-        x: p.x + e.clientX - dragStart.current.x,
-        y: p.y + e.clientY - dragStart.current.y,
-      }));
-      dragStart.current = { x: e.clientX, y: e.clientY };
-    };
-    const handleUp = () => setIsDragging(false);
-    document.addEventListener('mousemove', handleMove);
-    document.addEventListener('mouseup', handleUp);
-    return () => {
-      document.removeEventListener('mousemove', handleMove);
-      document.removeEventListener('mouseup', handleUp);
-    };
-  }, [isDragging]);
-  
-  const handleCopy = async () => {
-    await navigator.clipboard.writeText(skill.installCommand);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
-  };
-
   return (
-    <div style={{
-      position: 'absolute',
-      left: pos.x,
-      top: pos.y,
-      width: 520,
-      maxHeight: 450,
-      background: '#C0C0C0',
-      border: '3px solid',
-      borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-      boxShadow: '4px 4px 0 rgba(0,0,0,0.3)',
-      display: 'flex',
-      flexDirection: 'column',
-      zIndex: 100,
-    }}>
-      {/* Title bar */}
-      <div 
-        style={{
-          background: '#000080',
-          color: '#FFFFFF',
-          padding: '2px 4px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 4,
-          fontFamily: 'var(--font-system)',
-          fontSize: 11,
-          cursor: 'move',
-        }}
-        onMouseDown={(e) => {
-          e.preventDefault();
-          setIsDragging(true);
-          dragStart.current = { x: e.clientX, y: e.clientY };
-        }}
-      >
-        <span>{skill.icon}</span>
-        <span style={{ flex: 1 }}>{skill.title}.md</span>
-        <button 
-          onClick={onClose}
-          style={{
-            width: 16,
-            height: 12,
-            background: '#C0C0C0',
-            border: '1px solid',
-            borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-            fontSize: 8,
-            cursor: 'pointer',
-          }}
-        >✕</button>
-      </div>
-      
-      {/* Content */}
-      <div style={{ flex: 1, overflow: 'auto', padding: 8 }}>
-        {/* Hero Image */}
-        {skill.skillHero && (
-          <div style={{ 
-            marginBottom: 8, 
-            border: '2px inset #808080',
-            background: '#000',
-          }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={skill.skillHero} alt="" style={{ width: '100%', display: 'block' }} loading="lazy" />
-          </div>
-        )}
-        
-        {/* Meta */}
-        <div style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
-          {skill.skillIcon ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={skill.skillIcon} alt="" style={{ width: 48, height: 48, imageRendering: 'pixelated' }} />
-          ) : (
-            <span style={{ fontSize: 40 }}>{skill.icon}</span>
-          )}
-          <div>
-            <div style={{ fontFamily: 'var(--font-system)', fontSize: 14, fontWeight: 'bold' }}>
-              {skill.title}
-            </div>
-            <div style={{ fontFamily: 'var(--font-system)', fontSize: 10, color: '#555', lineHeight: 1.3 }}>
-              {skill.description}
-            </div>
-          </div>
-        </div>
-        
-        {/* Tags */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 2, marginBottom: 8 }}>
-          {skill.tags.slice(0, 8).map(tag => (
-            <span key={tag} style={{
-              fontFamily: 'var(--font-system)',
-              fontSize: 9,
-              background: '#DFDFDF',
-              border: '1px solid #808080',
-              padding: '1px 4px',
-              cursor: 'pointer',
-            }}>{tag}</span>
-          ))}
-        </div>
-        
-        {/* Install Command */}
-        <div style={{
-          background: '#000000',
-          border: '2px inset #808080',
-          padding: 8,
-          fontFamily: 'var(--font-code)',
-          fontSize: 11,
-          marginBottom: 8,
-          display: 'flex',
-          gap: 8,
-          alignItems: 'center',
-        }}>
-          <code style={{ flex: 1, color: '#00FF00', overflow: 'auto' }}>{skill.installCommand}</code>
-          <button 
-            onClick={handleCopy}
-            style={{
-              background: '#C0C0C0',
-              border: '2px solid',
-              borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-              padding: '4px 12px',
-              fontFamily: 'var(--font-system)',
-              fontSize: 10,
-              cursor: 'pointer',
-            }}
-          >{copied ? '✓ Copied!' : '📋 Copy'}</button>
-        </div>
-        
-        {/* Content Preview */}
-        <div style={{
-          background: '#FFFFF8',
-          border: '2px inset #808080',
-          padding: 8,
-          fontFamily: 'var(--font-code)',
-          fontSize: 10,
-          lineHeight: 1.4,
-          whiteSpace: 'pre-wrap',
-          maxHeight: 180,
-          overflow: 'auto',
-        }}>
-          {skill.content.substring(0, 1500)}
-          {skill.content.length > 1500 && '...'}
-        </div>
-      </div>
+    <div className="win31-program-group">
+      {groupSkills.map(skill => (
+        <SkillIcon 
+          key={skill.id} 
+          skill={skill} 
+          onClick={() => onSkillSelect(skill)}
+          selected={selectedSkillId === skill.id}
+        />
+      ))}
     </div>
   );
 }
@@ -563,17 +260,45 @@ function SkillDetailWindow({
 
 function MainAppContent() {
   const [theme, setTheme] = useState<'default' | 'hotdog'>('default');
-  const [activeGroup, setActiveGroup] = useState<SkillCategory | null>(null);
-  const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
-  const [minimizedGroups, setMinimizedGroups] = useState<Set<SkillCategory>>(new Set());
-  const [openGroups, setOpenGroups] = useState<Set<SkillCategory>>(new Set());
-  const [showBrowser, setShowBrowser] = useState(false); // Don't block view on first load
   const [showBackgrounds, setShowBackgrounds] = useState(true);
+  const [showBrowser, setShowBrowser] = useState(false);
+  const [selectedSkillId, setSelectedSkillId] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [time, setTime] = useState(new Date());
   
+  // Window Manager
+  const { 
+    windows, 
+    launchApp, 
+    closeWindow, 
+    focusWindow,
+    cascadeWindows,
+    tileWindows,
+    setMobile,
+  } = useWindowManager();
+
   const playClick = useSound('/audio/click.mp3');
   const { setMinimized: setWinampMinimized, isMinimized: winampMinimized } = useMusicPlayer();
 
-  // Group skills by NEW TAXONOMY
+  // Check mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      setMobile(mobile);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, [setMobile]);
+
+  // Update clock
+  useEffect(() => {
+    const interval = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Group skills by category
   const skillsByCategory = useMemo(() => {
     const grouped: Record<SkillCategory, Skill[]> = {
       'ai-agents': [], 'design-ux': [], 'web-frontend': [], 'backend-infra': [],
@@ -587,444 +312,359 @@ function MainAppContent() {
     return grouped;
   }, []);
 
-  // Calculate group positions
-  const groupPositions = useMemo(() => {
-    const positions: Partial<Record<SkillCategory, { x: number; y: number }>> = {};
-    const categories = Object.keys(newCategoryMeta) as SkillCategory[];
-    categories.forEach((cat, i) => {
-      const col = i % 5;
-      const row = Math.floor(i / 5);
-      positions[cat] = { x: 20 + col * 40, y: 30 + row * 40 };
-    });
-    return positions as Record<SkillCategory, { x: number; y: number }>;
-  }, []);
+  // Get non-empty categories
+  const nonEmptyCategories = useMemo(() => {
+    return (Object.keys(newCategoryMeta) as SkillCategory[])
+      .filter(cat => skillsByCategory[cat].length > 0);
+  }, [skillsByCategory]);
 
-  const handleGroupOpen = (category: SkillCategory) => {
+  // Open a category group window
+  const openCategoryGroup = useCallback((category: SkillCategory) => {
     playClick();
-    setOpenGroups(prev => new Set([...prev, category]));
-    setActiveGroup(category);
-    setMinimizedGroups(prev => {
-      const next = new Set(prev);
-      next.delete(category);
-      return next;
-    });
-  };
+    const meta = newCategoryMeta[category];
+    const existingWindow = windows.find(w => w.appId === `group-${category}`);
+    
+    if (existingWindow) {
+      focusWindow(existingWindow.instanceId);
+      return;
+    }
 
-  const handleGroupMinimize = (category: SkillCategory) => {
+    // Pseudo-register for this category
+    appRegistry[`group-${category}`] = {
+      id: `group-${category}`,
+      title: meta.label,
+      icon: meta.icon,
+      exeName: `${category.toUpperCase()}.GRP`,
+      defaultSize: { width: 420, height: 320 },
+      minSize: { width: 280, height: 200 },
+      isResizable: true,
+      hasMenuBar: true,
+      menuItems: [
+        {
+          label: 'File',
+          accelerator: 'F',
+          items: [
+            { label: 'Open', shortcut: 'Enter', action: 'open' },
+            { separator: true },
+            { label: 'Close', action: 'close' },
+          ],
+        },
+        {
+          label: 'Window',
+          accelerator: 'W',
+          items: [
+            { label: 'Tile', shortcut: 'Shift+F4', action: 'tile' },
+            { label: 'Cascade', shortcut: 'Shift+F5', action: 'cascade' },
+          ],
+        },
+      ],
+    };
+
+    launchApp(`group-${category}`);
+  }, [playClick, windows, focusWindow, launchApp]);
+
+  // Open skill detail window
+  const openSkillDetail = useCallback((skill: Skill) => {
     playClick();
-    setMinimizedGroups(prev => new Set([...prev, category]));
-    setActiveGroup(null);
-  };
+    setSelectedSkillId(skill.id);
+    
+    const existingWindow = windows.find(w => w.appId === `skill-${skill.id}`);
+    if (existingWindow) {
+      focusWindow(existingWindow.instanceId);
+      return;
+    }
 
-  const handleSkillSelect = (skill: Skill) => {
+    // Pseudo-register for this skill
+    appRegistry[`skill-${skill.id}`] = {
+      id: `skill-${skill.id}`,
+      title: `${skill.title}.md`,
+      icon: skill.icon,
+      exeName: 'SKILLVW.EXE',
+      defaultSize: { width: 520, height: 480 },
+      minSize: { width: 400, height: 300 },
+      isResizable: true,
+      hasMenuBar: true,
+      menuItems: [
+        {
+          label: 'File',
+          accelerator: 'F',
+          items: [
+            { label: 'Copy Install Command', shortcut: 'Ctrl+C', action: 'copy' },
+            { separator: true },
+            { label: 'Close', action: 'close' },
+          ],
+        },
+      ],
+    };
+
+    launchApp(`skill-${skill.id}`);
+  }, [playClick, windows, focusWindow, launchApp]);
+
+  // Open utility apps
+  const openDageeves = useCallback(() => {
     playClick();
-    setSelectedSkill(skill);
-  };
+    const existing = windows.find(w => w.appId === 'dageeves');
+    if (existing) {
+      focusWindow(existing.instanceId);
+    } else {
+      launchApp('dageeves');
+    }
+  }, [playClick, windows, focusWindow, launchApp]);
 
-  const handleSearch = (query: string) => {
-    // Search skills
+  const openTerminal = useCallback(() => {
+    playClick();
+    const existing = windows.find(w => w.appId === 'terminal');
+    if (existing) {
+      focusWindow(existing.instanceId);
+    } else {
+      launchApp('terminal');
+    }
+  }, [playClick, windows, focusWindow, launchApp]);
+
+  // Search handler
+  const handleSearch = useCallback((query: string) => {
     const matching = skills.find(s => 
       s.title.toLowerCase().includes(query.toLowerCase()) ||
       s.description.toLowerCase().includes(query.toLowerCase())
     );
     if (matching) {
-      setSelectedSkill(matching);
+      openSkillDetail(matching);
       setShowBrowser(false);
     }
+  }, [openSkillDetail]);
+
+  // Menu action handler
+  const handleMenuAction = useCallback((action: string, instanceId: string) => {
+    switch (action) {
+      case 'close':
+        closeWindow(instanceId);
+        break;
+      case 'tile':
+        tileWindows();
+        break;
+      case 'cascade':
+        cascadeWindows();
+        break;
+    }
+  }, [closeWindow, tileWindows, cascadeWindows]);
+
+  // Render window content based on appId
+  const renderWindowContent = (win: WindowInstance) => {
+    const { appId } = win;
+    
+    if (appId.startsWith('group-')) {
+      const category = appId.replace('group-', '') as SkillCategory;
+      return (
+        <ProgramGroupContent
+          skills={skillsByCategory[category]}
+          onSkillSelect={openSkillDetail}
+          selectedSkillId={selectedSkillId}
+        />
+      );
+    }
+    
+    if (appId.startsWith('skill-')) {
+      const skillId = appId.replace('skill-', '');
+      const skill = skills.find(s => s.id === skillId);
+      if (skill) {
+        return <SkillDetailContent skill={skill} />;
+      }
+    }
+
+    if (appId === 'dageeves') {
+      return <Dageeves />;
+    }
+
+    if (appId === 'terminal') {
+      return <Terminal />;
+    }
+
+    return <div>Unknown app: {appId}</div>;
   };
 
   return (
-    <div className="win31-desktop" data-theme={theme} style={{
-      position: 'fixed',
-      inset: 0,
-      background: theme === 'hotdog' ? '#FF0000' : '#008080',
-      overflow: 'hidden',
-    }}>
+    <div className="win31-desktop" data-theme={theme}>
+      {/* Teal Desktop Background */}
+      <div className={`win31-desktop-bg ${theme === 'hotdog' ? 'win31-desktop-bg--hotdog' : ''}`} />
+
       {/* Animated Backgrounds */}
-      {showBackgrounds && <AnimatedDesktopBackgrounds />}
+      {showBackgrounds && !isMobile && <AnimatedDesktopBackgrounds />}
 
       {/* ═══════════════════════════════════════════════════════════════════
           PROGRAM MANAGER (MDI Parent Window)
           ═══════════════════════════════════════════════════════════════════ */}
-      <div style={{
-        position: 'absolute',
-        top: 4,
-        left: 4,
-        right: 4,
-        bottom: 40,
-        background: '#C0C0C0',
-        border: '3px solid',
-        borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-        boxShadow: 'inset 2px 2px 0 #DFDFDF, inset -2px -2px 0 #808080',
-        display: 'flex',
-        flexDirection: 'column',
-        zIndex: 10,
-      }}>
-        {/* Title Bar */}
-        <div style={{
-          background: 'linear-gradient(90deg, #000080 0%, #1084D0 100%)',
-          color: '#FFFFFF',
-          padding: '2px 4px',
-          display: 'flex',
-          alignItems: 'center',
-          fontFamily: 'var(--font-system)',
-          fontSize: 12,
-        }}>
-          <span style={{ marginRight: 8 }}>📁</span>
-          <span style={{ flex: 1 }}>Program Manager - Some Claude Skills</span>
-          <button 
-            onClick={() => setShowBackgrounds(!showBackgrounds)}
-            style={{
-              width: 18,
-              height: 14,
-              background: '#C0C0C0',
-              border: '1px solid',
-              borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-              fontSize: 8,
-              cursor: 'pointer',
-              marginRight: 4,
-            }}
-            title={showBackgrounds ? 'Hide Games' : 'Show Games'}
-          >
-            {showBackgrounds ? '🎮' : '⬜'}
+      <div className={`win31-program-manager ${isMobile ? 'win31-program-manager--mobile' : ''}`}>
+        {/* Title Bar - SOLID NAVY (Not Win95 gradient) */}
+        <div className="win31-program-manager__titlebar">
+          <button className="win31-control-button" title="Control Menu">
+            <span>▬</span>
           </button>
-          <button style={{
-            width: 18,
-            height: 14,
-            background: '#C0C0C0',
-            border: '1px solid',
-            borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-            fontSize: 8,
-            cursor: 'pointer',
-          }}>─</button>
+          <span className="win31-program-manager__title">Program Manager - Some Claude Skills</span>
+          <div className="win31-program-manager__buttons">
+            {!isMobile && (
+              <button 
+                className="win31-titlebar-button"
+                onClick={() => setShowBackgrounds(!showBackgrounds)}
+                title={showBackgrounds ? 'Hide Games' : 'Show Games'}
+              >
+                {showBackgrounds ? '🎮' : '⬜'}
+              </button>
+            )}
+            <button className="win31-titlebar-button" title="Minimize">▼</button>
+            <button className="win31-titlebar-button" title="Maximize">▲</button>
+          </div>
         </div>
 
         {/* Menu Bar */}
-        <div style={{
-          background: '#C0C0C0',
-          borderBottom: '1px solid #808080',
-          padding: '1px 2px',
-          display: 'flex',
-          fontFamily: 'var(--font-system)',
-          fontSize: 11,
-        }}>
-          <span style={{ padding: '2px 8px', cursor: 'pointer' }}>
-            <u>F</u>ile
-          </span>
-          <span 
-            style={{ padding: '2px 8px', cursor: 'pointer' }} 
+        <div className="win31-menubar">
+          <button className="win31-menubar__item">
+            <span className="win31-underline">F</span>ile
+          </button>
+          <button 
+            className="win31-menubar__item"
             onClick={() => setTheme(t => t === 'default' ? 'hotdog' : 'default')}
           >
-            <u>O</u>ptions {theme === 'hotdog' && '🌭'}
-          </span>
-          <span 
-            style={{ padding: '2px 8px', cursor: 'pointer' }}
+            <span className="win31-underline">O</span>ptions {theme === 'hotdog' && '🌭'}
+          </button>
+          <button 
+            className="win31-menubar__item"
             onClick={() => setShowBrowser(true)}
           >
-            <u>S</u>earch 🔍
-          </span>
-          <span 
-            style={{ padding: '2px 8px', cursor: 'pointer' }}
+            <span className="win31-underline">S</span>earch 🔍
+          </button>
+          <button 
+            className="win31-menubar__item"
             onClick={() => setWinampMinimized(false)}
           >
-            <u>M</u>usic 🎵
-          </span>
-          <span style={{ padding: '2px 8px', cursor: 'pointer' }}>
-            <u>H</u>elp
-          </span>
+            <span className="win31-underline">M</span>usic 🎵
+          </button>
+          <button className="win31-menubar__item">
+            <span className="win31-underline">H</span>elp
+          </button>
         </div>
 
         {/* MDI Client Area */}
-        <div style={{
-          flex: 1,
-          position: 'relative',
-          background: theme === 'hotdog' ? '#FFFF00' : '#008080',
-          overflow: 'hidden',
-        }}>
-          {/* Welcome Banner - Featured Skills */}
-          <div style={{
-            background: 'linear-gradient(135deg, rgba(255,105,180,0.9) 0%, rgba(0,206,209,0.9) 50%, rgba(255,215,0,0.9) 100%)',
-            margin: 8,
-            padding: 12,
-            border: '2px solid #000',
-            boxShadow: '4px 4px 0 rgba(0,0,0,0.3)',
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: 12,
-            alignItems: 'center',
-          }}>
-            <div style={{ flex: 1, minWidth: 200 }}>
-              <div style={{ 
-                fontFamily: 'var(--font-display)', 
-                fontSize: 16, 
-                color: '#000080',
-                textShadow: '1px 1px 0 #FFF',
-                marginBottom: 4,
-              }}>
-                🎯 Welcome to Some Claude Skills!
-              </div>
-              <div style={{ 
-                fontFamily: 'var(--font-system)', 
-                fontSize: 11, 
-                color: '#333',
-              }}>
-                173 skills to supercharge your Claude AI. Double-click a category to explore.
-              </div>
+        <div className={`win31-mdi-client ${theme === 'hotdog' ? 'win31-mdi-client--hotdog' : ''}`}>
+          {/* Welcome Banner */}
+          <div className="win31-welcome-banner">
+            <div className="win31-welcome-banner__text">
+              <h2>🎯 Welcome to Some Claude Skills!</h2>
+              <p>{skills.length} skills to supercharge your Claude AI. Double-click a category to explore.</p>
             </div>
-            <button
-              onClick={() => setShowBrowser(true)}
-              style={{
-                background: '#000080',
-                color: '#FFF',
-                border: '2px solid',
-                borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-                padding: '8px 16px',
-                fontFamily: 'var(--font-system)',
-                fontSize: 11,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 6,
-              }}
-            >
+            <button className="win31-button win31-button--primary" onClick={() => setShowBrowser(true)}>
               🔍 Search Skills
             </button>
-            <button
-              onClick={() => {
-                const skill = skills.find(s => s.id === 'prompt-engineer');
-                if (skill) setSelectedSkill(skill);
-              }}
-              style={{
-                background: '#C0C0C0',
-                border: '2px solid',
-                borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-                padding: '8px 16px',
-                fontFamily: 'var(--font-system)',
-                fontSize: 11,
-                cursor: 'pointer',
-              }}
-            >
-              ⭐ Start with Prompt Engineer
+            <button className="win31-button" onClick={openDageeves}>
+              🗄️ DAG Builder
+            </button>
+            <button className="win31-button" onClick={openTerminal}>
+              💻 Terminal
             </button>
           </div>
 
-          {/* Category Group Icons */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, 90px)',
-            gap: 4,
-            padding: 8,
-          }}>
-            {(Object.keys(newCategoryMeta) as SkillCategory[]).map(cat => {
+          {/* Desktop Icons (Category Groups) */}
+          <div className="win31-desktop-icons">
+            {nonEmptyCategories.map(cat => {
               const meta = newCategoryMeta[cat];
               const count = skillsByCategory[cat].length;
-              const isOpen = openGroups.has(cat) && !minimizedGroups.has(cat);
+              const isOpen = windows.some(w => w.appId === `group-${cat}` && w.state !== 'minimized');
               
-              if (isOpen || count === 0) return null;
+              if (isOpen) return null;
               
               return (
-                <button 
+                <CategoryIcon
                   key={cat}
-                  onClick={() => handleGroupOpen(cat)}
-                  onDoubleClick={() => handleGroupOpen(cat)}
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    padding: 4,
-                    background: 'transparent',
-                    border: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <span style={{ fontSize: 32 }}>{meta.icon}</span>
-                  <span style={{
-                    fontFamily: 'var(--font-system)',
-                    fontSize: 10,
-                    color: '#FFFFFF',
-                    textShadow: '1px 1px 0 #000',
-                    textAlign: 'center',
-                  }}>
-                    {meta.label}<br/>
-                    <span style={{ fontSize: 9 }}>({count})</span>
-                  </span>
-                </button>
+                  category={cat}
+                  meta={meta}
+                  count={count}
+                  onClick={() => openCategoryGroup(cat)}
+                />
               );
             })}
+            
+            {/* Utility App Icons */}
+            <button className="win31-desktop-icon" onClick={openDageeves}>
+              <span className="win31-desktop-icon__emoji">🗄️</span>
+              <span className="win31-desktop-icon__label">File<br/>Manager</span>
+            </button>
+            <button className="win31-desktop-icon" onClick={openTerminal}>
+              <span className="win31-desktop-icon__emoji">💻</span>
+              <span className="win31-desktop-icon__label">MS-DOS<br/>Prompt</span>
+            </button>
           </div>
 
-          {/* Open Group Windows */}
-          {(Object.keys(newCategoryMeta) as SkillCategory[]).map(cat => {
-            if (!openGroups.has(cat) || minimizedGroups.has(cat)) return null;
-            
-            const meta = newCategoryMeta[cat];
-            const groupSkills = skillsByCategory[cat];
-            if (groupSkills.length === 0) return null;
-            
-            return (
-              <GroupWindow
-                key={cat}
-                title={`${meta.label} (${groupSkills.length})`}
-                icon={meta.icon}
-                color={meta.color}
-                skills={groupSkills}
-                position={groupPositions[cat]}
-                size={{ width: 400, height: 300 }}
-                isActive={activeGroup === cat}
-                onActivate={() => setActiveGroup(cat)}
-                onMinimize={() => handleGroupMinimize(cat)}
-                onSkillSelect={handleSkillSelect}
-                selectedSkillId={selectedSkill?.id || null}
-              />
-            );
-          })}
-
-          {/* Skill Detail Window */}
-          {selectedSkill && (
-            <SkillDetailWindow 
-              skill={selectedSkill}
-              position={{ x: 120, y: 60 }}
-              onClose={() => setSelectedSkill(null)}
-            />
-          )}
+          {/* MDI Child Windows */}
+          {windows.filter(w => w.state !== 'minimized').map(win => (
+            <Win31Window
+              key={win.instanceId}
+              instanceId={win.instanceId}
+              onMenuAction={(action) => handleMenuAction(action, win.instanceId)}
+            >
+              {renderWindowContent(win)}
+            </Win31Window>
+          ))}
         </div>
 
         {/* Status Bar */}
-        <div style={{
-          background: '#C0C0C0',
-          borderTop: '1px solid #FFFFFF',
-          padding: '2px 4px',
-          display: 'flex',
-          gap: 4,
-          fontFamily: 'var(--font-system)',
-          fontSize: 10,
-        }}>
-          <div style={{
-            flex: 1,
-            padding: '1px 4px',
-            border: '1px solid',
-            borderColor: '#808080 #FFFFFF #FFFFFF #808080',
-          }}>
-            {selectedSkill ? `📄 ${selectedSkill.title}` : '👆 Double-click a category to explore skills'}
+        <div className="win31-statusbar">
+          <div className="win31-statusbar__panel win31-statusbar__panel--main">
+            {selectedSkillId 
+              ? `📄 ${skills.find(s => s.id === selectedSkillId)?.title}`
+              : '👆 Double-click a category to explore skills'
+            }
           </div>
-          <div style={{
-            padding: '1px 4px',
-            border: '1px solid',
-            borderColor: '#808080 #FFFFFF #FFFFFF #808080',
-          }}>
+          <div className="win31-statusbar__panel">
             🤖 {skills.length} skills
+          </div>
+          <div className="win31-statusbar__panel">
+            {windows.length} window{windows.length !== 1 ? 's' : ''}
           </div>
         </div>
       </div>
 
-      {/* ═══════════════════════════════════════════════════════════════════
-          WEBSCAPE NAVIGATOR
-          ═══════════════════════════════════════════════════════════════════ */}
+      {/* Parked Icons (Minimized Windows) */}
+      <ParkedIcons />
+
+      {/* Webscape Navigator */}
       <WebscapeNavigator 
         isVisible={showBrowser}
         onClose={() => setShowBrowser(false)}
         onSearch={handleSearch}
       />
 
-      {/* ═══════════════════════════════════════════════════════════════════
-          WINAMP
-          ═══════════════════════════════════════════════════════════════════ */}
+      {/* Winamp */}
       <WinampModal />
 
-      {/* ═══════════════════════════════════════════════════════════════════
-          TASKBAR
-          ═══════════════════════════════════════════════════════════════════ */}
-      <div style={{
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        height: 36,
-        background: '#C0C0C0',
-        borderTop: '2px solid #FFFFFF',
-        display: 'flex',
-        alignItems: 'center',
-        padding: '2px 4px',
-        gap: 4,
-        zIndex: 50,
-      }}>
-        {/* Start-like button */}
-        <button
-          onClick={() => setShowBrowser(true)}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 4,
-            padding: '2px 12px',
-            background: '#C0C0C0',
-            border: '2px solid',
-            borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-            fontFamily: 'var(--font-system)',
-            fontSize: 11,
-            fontWeight: 'bold',
-            cursor: 'pointer',
-          }}
-        >
+      {/* Taskbar (Bottom) */}
+      <div className="win31-taskbar">
+        <button className="win31-taskbar__button win31-taskbar__button--start" onClick={() => setShowBrowser(true)}>
           🪟 Search
         </button>
-
-        {/* Winamp button */}
-        <button
+        <button 
+          className={`win31-taskbar__button ${!winampMinimized ? 'win31-taskbar__button--active' : ''}`}
           onClick={() => setWinampMinimized(!winampMinimized)}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 4,
-            padding: '2px 8px',
-            background: winampMinimized ? '#C0C0C0' : '#000080',
-            border: '2px solid',
-            borderColor: winampMinimized ? '#FFFFFF #000000 #000000 #FFFFFF' : '#000000 #FFFFFF #FFFFFF #000000',
-            fontFamily: 'var(--font-system)',
-            fontSize: 10,
-            cursor: 'pointer',
-            color: winampMinimized ? '#000' : '#FFF',
-          }}
         >
           🎵 Winamp
         </button>
-
-        {/* Minimized groups */}
-        {Array.from(minimizedGroups).map(cat => {
-          const meta = newCategoryMeta[cat];
+        
+        {/* Minimized group indicators */}
+        {windows.filter(w => w.state === 'minimized').map(win => {
+          const app = appRegistry[win.appId];
           return (
-            <button
-              key={cat}
-              onClick={() => handleGroupOpen(cat)}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 4,
-                padding: '2px 8px',
-                background: '#C0C0C0',
-                border: '2px solid',
-                borderColor: '#FFFFFF #000000 #000000 #FFFFFF',
-                fontFamily: 'var(--font-system)',
-                fontSize: 10,
-                cursor: 'pointer',
-              }}
+            <button 
+              key={win.instanceId}
+              className="win31-taskbar__button"
+              onClick={() => focusWindow(win.instanceId)}
             >
-              <span>{meta.icon}</span>
-              <span>{meta.label}</span>
+              {app?.icon || '📄'} {win.title}
             </button>
           );
         })}
         
-        <div style={{ flex: 1 }} />
+        <div className="win31-taskbar__spacer" />
         
-        {/* Clock */}
-        <div style={{
-          padding: '2px 8px',
-          border: '1px solid',
-          borderColor: '#808080 #FFFFFF #FFFFFF #808080',
-          fontFamily: 'var(--font-system)',
-          fontSize: 10,
-        }}>
-          {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+        <div className="win31-taskbar__clock">
+          {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
         </div>
       </div>
     </div>

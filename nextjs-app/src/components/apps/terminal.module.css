@@ -1,0 +1,144 @@
+/**
+ * TERMINAL.EXE - MS-DOS Prompt Styles
+ */
+
+.container {
+  height: 100%;
+  background: #000000;
+  font-family: 'IBM Plex Mono', 'Courier Prime', 'Courier New', monospace;
+  color: #c0c0c0;
+  cursor: text;
+  overflow: hidden;
+}
+
+.content {
+  height: 100%;
+  padding: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+  /* Always show scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #808080 #000000;
+}
+
+.content::-webkit-scrollbar {
+  width: 12px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #808080;
+  border: 1px solid #c0c0c0;
+}
+
+.line {
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+}
+
+.line pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.input {
+  color: #ffffff;
+}
+
+.output {
+  color: #c0c0c0;
+}
+
+.processing {
+  color: #00ff00;
+}
+
+.blinking {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.inputLine {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.prompt {
+  color: #c0c0c0;
+  font-size: 13px;
+  white-space: pre;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+  caret-color: transparent;
+}
+
+.cursor {
+  color: #c0c0c0;
+  animation: blink 0.5s step-end infinite;
+  font-weight: bold;
+}
+
+/* VGA-style colors */
+.container {
+  --dos-black: #000000;
+  --dos-blue: #0000aa;
+  --dos-green: #00aa00;
+  --dos-cyan: #00aaaa;
+  --dos-red: #aa0000;
+  --dos-magenta: #aa00aa;
+  --dos-brown: #aa5500;
+  --dos-lightgray: #aaaaaa;
+  --dos-darkgray: #555555;
+  --dos-lightblue: #5555ff;
+  --dos-lightgreen: #55ff55;
+  --dos-lightcyan: #55ffff;
+  --dos-lightred: #ff5555;
+  --dos-lightmagenta: #ff55ff;
+  --dos-yellow: #ffff55;
+  --dos-white: #ffffff;
+}
+
+/* Selection color */
+.content ::selection {
+  background: #0000aa;
+  color: #ffffff;
+}
+
+/* Scanline effect (optional) */
+.container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: 1;
+}

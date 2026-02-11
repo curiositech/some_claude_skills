@@ -1,0 +1,421 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * WIN31 WINDOW STYLES
+ * 
+ * Authentic Windows 3.1 with:
+ * - Solid navy title bar (no gradients!)
+ * - Single control button
+ * - Beveled borders
+ * - Always-visible scrollbars
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   WINDOW FRAME
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.window {
+  display: flex;
+  flex-direction: column;
+  background: #c0c0c0;
+  
+  /* Win31 outer bevel - 3px black border with inner bevel */
+  border: 3px solid #000000;
+  box-shadow:
+    inset 2px 2px 0 #ffffff,
+    inset -2px -2px 0 #808080,
+    4px 4px 0 rgba(0, 0, 0, 0.3);
+    
+  font-family: 'VT323', 'Courier New', monospace;
+  user-select: none;
+}
+
+.window.inactive {
+  box-shadow:
+    inset 2px 2px 0 #dfdfdf,
+    inset -2px -2px 0 #808080,
+    2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TITLE BAR - SOLID NAVY (Not gradient like Win95!)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.titleBar {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 2px;
+  cursor: move;
+}
+
+.titleBarActive {
+  background: #000080; /* SOLID navy - the Win31 signature */
+  color: #ffffff;
+}
+
+.titleBarInactive {
+  background: #808080; /* Solid gray when inactive */
+  color: #c0c0c0;
+}
+
+.title {
+  flex: 1;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 8px;
+}
+
+.titleRight {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.stateIndicator {
+  font-size: 8px;
+  padding: 0 4px;
+  opacity: 0.7;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONTROL BUTTON - Single button (Win31 style, not Win95's three)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.controlButtonWrapper {
+  position: relative;
+}
+
+.controlButton {
+  width: 18px;
+  height: 14px;
+  background: #c0c0c0;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2px;
+  
+  /* 3D bevel */
+  box-shadow:
+    inset -1px -1px 0 #000000,
+    inset 1px 1px 0 #ffffff,
+    inset -2px -2px 0 #808080,
+    inset 2px 2px 0 #dfdfdf;
+}
+
+.controlButton:active {
+  box-shadow:
+    inset 1px 1px 0 #000000,
+    inset -1px -1px 0 #ffffff;
+}
+
+.controlIcon {
+  font-size: 8px;
+  color: #000000;
+  font-weight: bold;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONTROL MENU DROPDOWN
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.controlMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  z-index: 1000;
+  padding: 2px 0;
+}
+
+.controlMenu button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 4px 16px;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.controlMenu button:hover:not(:disabled) {
+  background: #000080;
+  color: #ffffff;
+}
+
+.controlMenu button:disabled {
+  color: #808080;
+  cursor: default;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MENU BAR
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.menuBar {
+  display: flex;
+  background: #c0c0c0;
+  border-bottom: 1px solid #808080;
+  padding: 0 2px;
+  height: 22px;
+}
+
+.menuWrapper {
+  position: relative;
+}
+
+.menuButton {
+  padding: 3px 8px;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.menuButton:hover,
+.menuButtonActive {
+  background: #000080;
+  color: #ffffff;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.menuDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  z-index: 1000;
+  padding: 2px 0;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 4px 16px;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  gap: 24px;
+}
+
+.menuItem:hover:not(:disabled) {
+  background: #000080;
+  color: #ffffff;
+}
+
+.menuItem:disabled {
+  color: #808080;
+  cursor: default;
+}
+
+.shortcut {
+  color: #606060;
+  font-size: 10px;
+}
+
+.menuItem:hover .shortcut {
+  color: #c0c0c0;
+}
+
+.menuSeparator {
+  height: 1px;
+  background: #808080;
+  margin: 4px 2px;
+  box-shadow: 0 1px 0 #ffffff;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONTENT AREA with Always-Visible Scrollbars
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.content {
+  flex: 1;
+  overflow: auto;
+  background: #ffffff;
+  
+  /* Inset bevel for content area */
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  box-shadow: inset 1px 1px 0 #000000;
+  margin: 2px;
+  
+  /* Always show scrollbars */
+  overflow: scroll;
+  scrollbar-gutter: stable both-edges;
+}
+
+/* Win31-style scrollbars */
+.content::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #c0c0c0;
+  border: 1px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  box-shadow:
+    inset -1px -1px 0 #808080,
+    inset 1px 1px 0 #dfdfdf;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background: #d0d0d0;
+}
+
+.content::-webkit-scrollbar-thumb:active {
+  border-color: #000000 #ffffff #ffffff #000000;
+  box-shadow: inset 1px 1px 0 #808080;
+}
+
+.content::-webkit-scrollbar-button {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  height: 16px;
+  width: 16px;
+}
+
+.content::-webkit-scrollbar-button:hover {
+  background: #d0d0d0;
+}
+
+.content::-webkit-scrollbar-button:active {
+  border-color: #000000 #ffffff #ffffff #000000;
+}
+
+.content::-webkit-scrollbar-corner {
+  background: #c0c0c0;
+}
+
+/* Firefox scrollbar styling */
+.content {
+  scrollbar-width: auto;
+  scrollbar-color: #c0c0c0 #c0c0c0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESIZE HANDLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.resizeHandle {
+  position: absolute;
+  background: transparent;
+}
+
+/* Edge handles */
+.resizeN { top: 0; left: 8px; right: 8px; height: 4px; cursor: n-resize; }
+.resizeS { bottom: 0; left: 8px; right: 8px; height: 4px; cursor: s-resize; }
+.resizeE { right: 0; top: 8px; bottom: 8px; width: 4px; cursor: e-resize; }
+.resizeW { left: 0; top: 8px; bottom: 8px; width: 4px; cursor: w-resize; }
+
+/* Corner handles */
+.resizeNE { top: 0; right: 0; width: 8px; height: 8px; cursor: ne-resize; }
+.resizeNW { top: 0; left: 0; width: 8px; height: 8px; cursor: nw-resize; }
+.resizeSE { bottom: 0; right: 0; width: 8px; height: 8px; cursor: se-resize; }
+.resizeSW { bottom: 0; left: 0; width: 8px; height: 8px; cursor: sw-resize; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PARKED ICONS (Minimized windows at bottom - Win31 style)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.parkedIconsContainer {
+  position: fixed;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 44px;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.parkedIcon {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 8px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  box-shadow:
+    inset -1px -1px 0 #808080,
+    inset 1px 1px 0 #dfdfdf;
+  cursor: pointer;
+  pointer-events: auto;
+  min-width: 100px;
+}
+
+.parkedIcon:hover {
+  background: #d0d0d0;
+}
+
+.parkedIcon:active {
+  border-color: #000000 #ffffff #ffffff #000000;
+  box-shadow: inset 1px 1px 0 #808080;
+}
+
+.parkedIconEmoji {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.parkedIconTitle {
+  font-size: 9px;
+  max-width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STATUS BAR (Optional)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.statusBar {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  background: #c0c0c0;
+  border-top: 1px solid #ffffff;
+}
+
+.statusPanel {
+  flex: 1;
+  padding: 2px 8px;
+  font-size: 10px;
+  border: 1px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
