@@ -1485,6 +1485,123 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   PROGRAM GROUPS (Win31 Style)
+   ═══════════════════════════════════════════════════════════════ */
+.win31-program-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.win31-program-group {
+  background: var(--win31-gray);
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+}
+
+.win31-program-group--active {
+  /* Expanded state */
+}
+
+.win31-program-group__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background: var(--win31-navy);
+  color: var(--win31-white);
+  cursor: pointer;
+  font-size: 12px;
+  font-family: var(--font-system);
+}
+
+.win31-program-group__header:hover {
+  background: #0000A0;
+}
+
+.win31-program-group__icon {
+  font-size: 14px;
+}
+
+.win31-program-group__title {
+  flex: 1;
+  font-weight: bold;
+}
+
+.win31-program-group__toggle {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.win31-program-group__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 8px;
+  padding: 16px;
+  background: var(--win31-white);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MENU BAR DROPDOWNS
+   ═══════════════════════════════════════════════════════════════ */
+.win31-menubar__dropdown-wrapper {
+  position: relative;
+}
+
+.win31-menubar__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: transparent;
+}
+
+.win31-menubar__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+  min-width: 200px;
+  background: var(--win31-gray);
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.win31-menubar__dropdown-title {
+  padding: 4px 8px;
+  background: var(--win31-navy);
+  color: var(--win31-white);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.win31-menubar__dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 4px 16px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: 11px;
+  font-family: var(--font-system);
+  cursor: pointer;
+  color: var(--win31-black);
+}
+
+.win31-menubar__dropdown-item:hover {
+  background: var(--win31-navy);
+  color: var(--win31-white);
+}
+
+.win31-menubar__dropdown-item--active {
+  font-weight: bold;
+}
+
+/* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {

@@ -1,0 +1,168 @@
+/* Windows 3.1 Solitaire Styles */
+
+.solitaire {
+  width: 100%;
+  height: 100%;
+  background: #008000;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  overflow: hidden;
+  font-family: var(--font-system, 'VT323', monospace);
+}
+
+.topArea {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.stockWaste {
+  display: flex;
+  gap: 8px;
+}
+
+.foundation {
+  display: flex;
+  gap: 8px;
+}
+
+.cardPile,
+.foundationPile {
+  width: 60px;
+  height: 80px;
+  border: 2px solid #006400;
+  border-radius: 4px;
+  background: #004d00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.foundationPile {
+  font-size: 28px;
+  opacity: 0.5;
+}
+
+.tableau {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.column {
+  width: 60px;
+  position: relative;
+  min-height: 200px;
+}
+
+.tableauCard {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.tableauCard:hover {
+  transform: translateY(-4px);
+}
+
+.cardBack {
+  width: 100%;
+  height: 100%;
+  background: #00008B;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardBackPattern {
+  width: 80%;
+  height: 80%;
+  background: 
+    linear-gradient(45deg, #1e3a5f 25%, transparent 25%),
+    linear-gradient(-45deg, #1e3a5f 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #1e3a5f 75%),
+    linear-gradient(-45deg, transparent 75%, #1e3a5f 75%);
+  background-size: 8px 8px;
+  background-color: #00008B;
+  border: 2px solid #000080;
+  border-radius: 2px;
+}
+
+.cardFace {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.faceUp .cardFace {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cardRed {
+  color: #ff0000;
+}
+
+.cardBlack {
+  color: #000000;
+}
+
+.cardValue {
+  font-size: 14px;
+}
+
+.statusBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 4px 8px;
+  background: var(--win31-gray, #c0c0c0);
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  margin-top: 8px;
+}
+
+.score {
+  font-size: 12px;
+  color: #000;
+}
+
+.message {
+  flex: 1;
+  font-size: 12px;
+  color: #000;
+}
+
+.dealButton {
+  padding: 4px 16px;
+  background: var(--win31-gray, #c0c0c0);
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.dealButton:active {
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+}

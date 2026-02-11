@@ -16,9 +16,10 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { skills } from '@/lib/skills';
 import { useWindowManager, type WindowInstance } from '@/stores/window-manager';
 import { Win31Window, ParkedIcons } from '@/components/win31';
-import { Dageeves, Terminal, SkillExplorer } from '@/components/apps';
+import { Dageeves, Terminal, SkillExplorer, Solitaire, ControlPanel, Calculator } from '@/components/apps';
 import { AnimatedDesktopBackgrounds } from '@/components/fun/animated-backgrounds';
 import { MusicPlayerProvider, useMusicPlayer, WinampModal } from '@/components/winamp';
+import { useWin31Theme } from '@/hooks/useWin31Theme';
 import '@/styles/win31-authentic.css';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -92,11 +93,15 @@ function BootScreen({ onComplete }: { onComplete: () => void }) {
 // ═══════════════════════════════════════════════════════════════════════════
 
 function MainAppContent() {
-  const [theme, setTheme] = useState<'default' | 'hotdog'>('default');
   const [showBackgrounds, setShowBackgrounds] = useState(true);
   const [showSkillExplorer, setShowSkillExplorer] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [time, setTime] = useState(new Date());
+  const [showThemeMenu, setShowThemeMenu] = useState(false);
+  const [activeGroup, setActiveGroup] = useState<string | null>(null);
+  
+  // Theme hook
+  const { colorScheme, setTheme, themes } = useWin31Theme();
   
   // Window Manager
   const { 
@@ -156,6 +161,36 @@ function MainAppContent() {
     setShowSkillExplorer(true);
   }, [playClick]);
 
+  const openSolitaire = useCallback(() => {
+    playClick();
+    const existing = windows.find(w => w.appId === 'solitaire');
+    if (existing) {
+      focusWindow(existing.instanceId);
+    } else {
+      launchApp('solitaire');
+    }
+  }, [playClick, windows, focusWindow, launchApp]);
+
+  const openControlPanel = useCallback(() => {
+    playClick();
+    const existing = windows.find(w => w.appId === 'control-panel');
+    if (existing) {
+      focusWindow(existing.instanceId);
+    } else {
+      launchApp('control-panel');
+    }
+  }, [playClick, windows, focusWindow, launchApp]);
+
+  const openCalculator = useCallback(() => {
+    playClick();
+    const existing = windows.find(w => w.appId === 'calculator');
+    if (existing) {
+      focusWindow(existing.instanceId);
+    } else {
+      launchApp('calculator');
+    }
+  }, [playClick, windows, focusWindow, launchApp]);
+
   // Menu action handler
   const handleMenuAction = useCallback((action: string, instanceId: string) => {
     switch (action) {
@@ -183,13 +218,25 @@ function MainAppContent() {
       return <Terminal />;
     }
 
+    if (appId === 'solitaire') {
+      return <Solitaire />;
+    }
+
+    if (appId === 'control-panel') {
+      return <ControlPanel />;
+    }
+
+    if (appId === 'calculator') {
+      return <Calculator />;
+    }
+
     return <div>Unknown app: {appId}</div>;
   };
 
   return (
-    <div className="win31-desktop" data-theme={theme}>
-      {/* Teal Desktop Background */}
-      <div className={`win31-desktop-bg ${theme === 'hotdog' ? 'win31-desktop-bg--hotdog' : ''}`} />
+    <div className="win31-desktop">
+      {/* Desktop Background - uses CSS variable */}
+      <div className="win31-desktop-bg" />
 
       {/* Animated Backgrounds */}
       {showBackgrounds && !isMobile && <AnimatedDesktopBackgrounds />}
@@ -224,17 +271,42 @@ function MainAppContent() {
           <button className="win31-menubar__item">
             <span className="win31-underline">F</span>ile
           </button>
-          <button 
-            className="win31-menubar__item"
-            onClick={() => setTheme(t => t === 'default' ? 'hotdog' : 'default')}
-          >
-            <span className="win31-underline">O</span>ptions {theme === 'hotdog' && '[HotDog]'}
-          </button>
+          <div className="win31-menubar__dropdown-wrapper">
+            <button 
+              className="win31-menubar__item"
+              onClick={() => setShowThemeMenu(!showThemeMenu)}
+            >
+              <span className="win31-underline">O</span>ptions [{colorScheme}]
+            </button>
+            {showThemeMenu && (
+              <>
+                <div className="win31-menubar__backdrop" onClick={() => setShowThemeMenu(false)} />
+                <div className="win31-menubar__dropdown">
+                  <div className="win31-menubar__dropdown-title">Color Scheme</div>
+                  {themes.map((theme) => (
+                    <button
+                      key={theme}
+                      className={`win31-menubar__dropdown-item ${colorScheme === theme ? 'win31-menubar__dropdown-item--active' : ''}`}
+                      onClick={() => { setTheme(theme); setShowThemeMenu(false); }}
+                    >
+                      {colorScheme === theme ? '● ' : '○ '}{theme}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
           <button 
             className="win31-menubar__item"
             onClick={() => setWinampMinimized(false)}
           >
             <span className="win31-underline">M</span>usic
+          </button>
+          <button 
+            className="win31-menubar__item"
+            onClick={() => { tileWindows(); }}
+          >
+            <span className="win31-underline">W</span>indow
           </button>
           <button className="win31-menubar__item">
             <span className="win31-underline">H</span>elp
@@ -242,66 +314,154 @@ function MainAppContent() {
         </div>
 
         {/* MDI Client Area */}
-        <div className={`win31-mdi-client ${theme === 'hotdog' ? 'win31-mdi-client--hotdog' : ''}`}>
-          {/* Desktop Icons */}
-          <div className="win31-desktop-icons">
-            {/* SKILL_EXPLORER.EXE - Main App */}
-            <button className="win31-desktop-icon win31-desktop-icon--featured" onClick={openSkillExplorer}>
-              <div className="win31-desktop-icon__pixel-art">
-                <svg viewBox="0 0 32 32" width="48" height="48">
-                  <rect x="2" y="2" width="28" height="28" fill="#1a0a2e" stroke="#ff69b4" strokeWidth="2" />
-                  <rect x="6" y="6" width="8" height="6" fill="#00ced1" />
-                  <rect x="18" y="6" width="8" height="6" fill="#ffd700" />
-                  <rect x="6" y="16" width="8" height="6" fill="#90ee90" />
-                  <rect x="18" y="16" width="8" height="6" fill="#ff6b9d" />
-                  <circle cx="16" cy="16" r="4" fill="#fff" />
-                </svg>
+        <div className="win31-mdi-client">
+          {/* Program Groups */}
+          <div className="win31-program-groups">
+            {/* Main Group */}
+            <div className={`win31-program-group ${activeGroup === 'main' ? 'win31-program-group--active' : ''}`}>
+              <div 
+                className="win31-program-group__header"
+                onClick={() => setActiveGroup(activeGroup === 'main' ? null : 'main')}
+              >
+                <span className="win31-program-group__icon">📁</span>
+                <span className="win31-program-group__title">Main</span>
+                <span className="win31-program-group__toggle">{activeGroup === 'main' ? '−' : '+'}</span>
               </div>
-              <span className="win31-desktop-icon__label">SKILL_EXPLORER</span>
-            </button>
+              {activeGroup === 'main' && (
+                <div className="win31-program-group__content">
+                  {/* SKILL_EXPLORER.EXE - Main App */}
+                  <button className="win31-desktop-icon win31-desktop-icon--featured" onClick={openSkillExplorer}>
+                    <div className="win31-desktop-icon__pixel-art">
+                      <svg viewBox="0 0 32 32" width="48" height="48">
+                        <rect x="2" y="2" width="28" height="28" fill="#1a0a2e" stroke="#ff69b4" strokeWidth="2" />
+                        <rect x="6" y="6" width="8" height="6" fill="#00ced1" />
+                        <rect x="18" y="6" width="8" height="6" fill="#ffd700" />
+                        <rect x="6" y="16" width="8" height="6" fill="#90ee90" />
+                        <rect x="18" y="16" width="8" height="6" fill="#ff6b9d" />
+                        <circle cx="16" cy="16" r="4" fill="#fff" />
+                      </svg>
+                    </div>
+                    <span className="win31-desktop-icon__label">Skill Explorer</span>
+                  </button>
 
-            {/* File Manager (DaGeeves) */}
-            <button className="win31-desktop-icon" onClick={openDageeves}>
-              <div className="win31-desktop-icon__pixel-art">
-                <svg viewBox="0 0 32 32" width="32" height="32">
-                  <rect x="4" y="4" width="24" height="24" fill="#ffff00" stroke="#aa5500" strokeWidth="2" />
-                  <rect x="4" y="4" width="12" height="8" fill="#aa5500" />
-                  <rect x="8" y="12" width="16" height="2" fill="#aa5500" />
-                  <rect x="8" y="16" width="12" height="2" fill="#aa5500" />
-                  <rect x="8" y="20" width="14" height="2" fill="#aa5500" />
-                </svg>
-              </div>
-              <span className="win31-desktop-icon__label">File Manager</span>
-            </button>
+                  {/* File Manager (DaGeeves) */}
+                  <button className="win31-desktop-icon" onClick={openDageeves}>
+                    <div className="win31-desktop-icon__pixel-art">
+                      <svg viewBox="0 0 32 32" width="32" height="32">
+                        <rect x="4" y="4" width="24" height="24" fill="#ffff00" stroke="#aa5500" strokeWidth="2" />
+                        <rect x="4" y="4" width="12" height="8" fill="#aa5500" />
+                        <rect x="8" y="12" width="16" height="2" fill="#aa5500" />
+                        <rect x="8" y="16" width="12" height="2" fill="#aa5500" />
+                        <rect x="8" y="20" width="14" height="2" fill="#aa5500" />
+                      </svg>
+                    </div>
+                    <span className="win31-desktop-icon__label">File Manager</span>
+                  </button>
 
-            {/* MS-DOS Prompt */}
-            <button className="win31-desktop-icon" onClick={openTerminal}>
-              <div className="win31-desktop-icon__pixel-art">
-                <svg viewBox="0 0 32 32" width="32" height="32">
-                  <rect x="2" y="4" width="28" height="24" fill="#000" stroke="#c0c0c0" strokeWidth="2" />
-                  <text x="6" y="16" fill="#00ff00" fontSize="8" fontFamily="monospace">C:\&gt;_</text>
-                </svg>
-              </div>
-              <span className="win31-desktop-icon__label">MS-DOS Prompt</span>
-            </button>
+                  {/* MS-DOS Prompt */}
+                  <button className="win31-desktop-icon" onClick={openTerminal}>
+                    <div className="win31-desktop-icon__pixel-art">
+                      <svg viewBox="0 0 32 32" width="32" height="32">
+                        <rect x="2" y="4" width="28" height="24" fill="#000" stroke="#c0c0c0" strokeWidth="2" />
+                        <text x="6" y="16" fill="#00ff00" fontSize="8" fontFamily="monospace">C:\&gt;_</text>
+                      </svg>
+                    </div>
+                    <span className="win31-desktop-icon__label">MS-DOS Prompt</span>
+                  </button>
 
-            {/* Winamp */}
-            <button className="win31-desktop-icon" onClick={() => setWinampMinimized(false)}>
-              <div className="win31-desktop-icon__pixel-art">
-                <svg viewBox="0 0 32 32" width="32" height="32">
-                  <rect x="4" y="8" width="24" height="16" fill="#3a3a3a" stroke="#000" strokeWidth="1" />
-                  <rect x="6" y="10" width="8" height="6" fill="#000" />
-                  <rect x="7" y="11" width="2" height="4" fill="#00ff00" />
-                  <rect x="10" y="12" width="2" height="3" fill="#00ff00" />
-                  <rect x="18" y="10" width="8" height="4" fill="#000" />
-                  <text x="19" y="13" fill="#00ff00" fontSize="4">128</text>
-                  <circle cx="10" cy="19" r="2" fill="#666" />
-                  <circle cx="16" cy="19" r="2" fill="#00ff00" />
-                  <circle cx="22" cy="19" r="2" fill="#666" />
-                </svg>
+                  {/* Control Panel */}
+                  <button className="win31-desktop-icon" onClick={openControlPanel}>
+                    <div className="win31-desktop-icon__pixel-art">
+                      <svg viewBox="0 0 32 32" width="32" height="32">
+                        <rect x="4" y="4" width="24" height="24" fill="#c0c0c0" stroke="#808080" strokeWidth="2" />
+                        <circle cx="12" cy="12" r="4" fill="#808080" />
+                        <rect x="18" y="8" width="6" height="8" fill="#00ff00" />
+                        <rect x="8" y="20" width="16" height="4" fill="#ff0000" />
+                      </svg>
+                    </div>
+                    <span className="win31-desktop-icon__label">Control Panel</span>
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Accessories Group */}
+            <div className={`win31-program-group ${activeGroup === 'accessories' ? 'win31-program-group--active' : ''}`}>
+              <div 
+                className="win31-program-group__header"
+                onClick={() => setActiveGroup(activeGroup === 'accessories' ? null : 'accessories')}
+              >
+                <span className="win31-program-group__icon">🔧</span>
+                <span className="win31-program-group__title">Accessories</span>
+                <span className="win31-program-group__toggle">{activeGroup === 'accessories' ? '−' : '+'}</span>
               </div>
-              <span className="win31-desktop-icon__label">Winamp</span>
-            </button>
+              {activeGroup === 'accessories' && (
+                <div className="win31-program-group__content">
+                  {/* Calculator */}
+                  <button className="win31-desktop-icon" onClick={openCalculator}>
+                    <div className="win31-desktop-icon__pixel-art">
+                      <svg viewBox="0 0 32 32" width="32" height="32">
+                        <rect x="6" y="2" width="20" height="28" fill="#c0c0c0" stroke="#808080" strokeWidth="2" />
+                        <rect x="8" y="4" width="16" height="6" fill="#9cf" />
+                        <rect x="8" y="12" width="4" height="4" fill="#fff" />
+                        <rect x="14" y="12" width="4" height="4" fill="#fff" />
+                        <rect x="20" y="12" width="4" height="4" fill="#fff" />
+                        <rect x="8" y="18" width="4" height="4" fill="#fff" />
+                        <rect x="14" y="18" width="4" height="4" fill="#fff" />
+                        <rect x="20" y="18" width="4" height="4" fill="#f90" />
+                        <rect x="8" y="24" width="10" height="4" fill="#fff" />
+                        <rect x="20" y="24" width="4" height="4" fill="#f90" />
+                      </svg>
+                    </div>
+                    <span className="win31-desktop-icon__label">Calculator</span>
+                  </button>
+
+                  {/* Winamp */}
+                  <button className="win31-desktop-icon" onClick={() => setWinampMinimized(false)}>
+                    <div className="win31-desktop-icon__pixel-art">
+                      <svg viewBox="0 0 32 32" width="32" height="32">
+                        <rect x="4" y="8" width="24" height="16" fill="#3a3a3a" stroke="#000" strokeWidth="1" />
+                        <rect x="6" y="10" width="8" height="6" fill="#000" />
+                        <rect x="7" y="11" width="2" height="4" fill="#00ff00" />
+                        <rect x="10" y="12" width="2" height="3" fill="#00ff00" />
+                        <rect x="18" y="10" width="8" height="4" fill="#000" />
+                        <circle cx="10" cy="19" r="2" fill="#666" />
+                        <circle cx="16" cy="19" r="2" fill="#00ff00" />
+                        <circle cx="22" cy="19" r="2" fill="#666" />
+                      </svg>
+                    </div>
+                    <span className="win31-desktop-icon__label">Winamp</span>
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Games Group */}
+            <div className={`win31-program-group ${activeGroup === 'games' ? 'win31-program-group--active' : ''}`}>
+              <div 
+                className="win31-program-group__header"
+                onClick={() => setActiveGroup(activeGroup === 'games' ? null : 'games')}
+              >
+                <span className="win31-program-group__icon">🎮</span>
+                <span className="win31-program-group__title">Games</span>
+                <span className="win31-program-group__toggle">{activeGroup === 'games' ? '−' : '+'}</span>
+              </div>
+              {activeGroup === 'games' && (
+                <div className="win31-program-group__content">
+                  {/* Solitaire */}
+                  <button className="win31-desktop-icon" onClick={openSolitaire}>
+                    <div className="win31-desktop-icon__pixel-art">
+                      <svg viewBox="0 0 32 32" width="32" height="32">
+                        <rect x="6" y="4" width="20" height="24" fill="#fff" stroke="#000" strokeWidth="2" rx="2" />
+                        <text x="10" y="18" fill="#ff0000" fontSize="14" fontWeight="bold">♥</text>
+                        <text x="8" y="12" fill="#000" fontSize="10" fontWeight="bold">A</text>
+                      </svg>
+                    </div>
+                    <span className="win31-desktop-icon__label">Solitaire</span>
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* MDI Child Windows */}

@@ -1,0 +1,252 @@
+/* Windows 3.1 Control Panel Styles */
+
+.controlPanel {
+  width: 100%;
+  height: 100%;
+  background: var(--win31-gray, #c0c0c0);
+  display: flex;
+  flex-direction: column;
+}
+
+.iconGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 16px;
+  flex: 1;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  background: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-family: var(--font-system, 'VT323', monospace);
+}
+
+.icon:hover {
+  background: var(--win31-navy, #000080);
+}
+
+.icon:hover .iconLabel {
+  color: #fff;
+}
+
+.icon:focus {
+  border: 2px dotted #000;
+  outline: none;
+}
+
+.icon:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon:disabled:hover {
+  background: transparent;
+}
+
+.icon:disabled:hover .iconLabel {
+  color: #000;
+}
+
+.iconImage {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.iconLabel {
+  font-size: 11px;
+  color: #000;
+  text-align: center;
+}
+
+.statusBar {
+  padding: 4px 8px;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  font-size: 11px;
+  color: #000;
+}
+
+/* Color Panel */
+.colorPanel {
+  width: 100%;
+  height: 100%;
+  background: var(--win31-gray, #c0c0c0);
+  display: flex;
+  flex-direction: column;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px;
+  border-bottom: 2px solid #808080;
+}
+
+.backButton {
+  padding: 4px 12px;
+  background: var(--win31-gray, #c0c0c0);
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  cursor: pointer;
+  font-family: var(--font-system, 'VT323', monospace);
+  font-size: 12px;
+}
+
+.backButton:active {
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.panelTitle {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+
+.colorContent {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.schemeSection {
+  flex: 1;
+}
+
+.schemeList {
+  background: #fff;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  height: 120px;
+  overflow-y: auto;
+}
+
+.schemeItem {
+  display: block;
+  width: 100%;
+  padding: 2px 8px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-family: var(--font-system, 'VT323', monospace);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.schemeItem:hover {
+  background: var(--win31-navy, #000080);
+  color: #fff;
+}
+
+.schemeItemActive {
+  background: var(--win31-navy, #000080);
+  color: #fff;
+}
+
+.previewSection {
+  flex-shrink: 0;
+}
+
+.preview {
+  width: 100%;
+  height: 100px;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.previewWindow {
+  width: 140px;
+  height: 70px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+}
+
+.previewTitlebar {
+  height: 18px;
+  padding: 2px 4px;
+  font-size: 10px;
+}
+
+.previewContent {
+  padding: 8px;
+}
+
+.previewInactiveWindow {
+  width: 60px;
+  height: 30px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+}
+
+.previewInactiveTitlebar {
+  height: 12px;
+  padding: 1px 2px;
+  background: #fff;
+  font-size: 8px;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.button {
+  padding: 4px 24px;
+  background: var(--win31-gray, #c0c0c0);
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  cursor: pointer;
+  font-family: var(--font-system, 'VT323', monospace);
+  font-size: 12px;
+}
+
+.button:active {
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.placeholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #808080;
+}

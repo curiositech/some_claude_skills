@@ -323,6 +323,111 @@ export const appRegistry: Record<string, Win31App> = {
       },
     ],
   },
+  'solitaire': {
+    id: 'solitaire',
+    title: 'Solitaire',
+    icon: '🃏',
+    exeName: 'SOL.EXE',
+    defaultSize: { width: 640, height: 480 },
+    minSize: { width: 500, height: 400 },
+    isResizable: true,
+    hasMenuBar: true,
+    menuItems: [
+      {
+        label: 'Game',
+        accelerator: 'G',
+        items: [
+          { label: 'Deal', shortcut: 'F2', action: 'deal' },
+          { separator: true },
+          { label: 'Undo', shortcut: 'Ctrl+Z', action: 'undo' },
+          { separator: true },
+          { label: 'Exit', action: 'close' },
+        ],
+      },
+      {
+        label: 'Options',
+        accelerator: 'O',
+        items: [
+          { label: 'Deck...', action: 'deck' },
+          { label: 'Scoring...', action: 'scoring' },
+        ],
+      },
+      {
+        label: 'Help',
+        accelerator: 'H',
+        items: [
+          { label: 'Contents', shortcut: 'F1', action: 'help' },
+          { label: 'About Solitaire...', action: 'about' },
+        ],
+      },
+    ],
+  },
+  'control-panel': {
+    id: 'control-panel',
+    title: 'Control Panel',
+    icon: '⚙️',
+    exeName: 'CONTROL.EXE',
+    defaultSize: { width: 400, height: 350 },
+    minSize: { width: 300, height: 250 },
+    isResizable: true,
+    hasMenuBar: true,
+    menuItems: [
+      {
+        label: 'Settings',
+        accelerator: 'S',
+        items: [
+          { label: 'Colors...', action: 'colors' },
+          { label: 'Desktop...', action: 'desktop' },
+          { separator: true },
+          { label: 'Exit', action: 'close' },
+        ],
+      },
+      {
+        label: 'Help',
+        accelerator: 'H',
+        items: [
+          { label: 'Contents', shortcut: 'F1', action: 'help' },
+          { label: 'About Control Panel...', action: 'about' },
+        ],
+      },
+    ],
+  },
+  'calculator': {
+    id: 'calculator',
+    title: 'Calculator',
+    icon: '🔢',
+    exeName: 'CALC.EXE',
+    defaultSize: { width: 260, height: 320 },
+    minSize: { width: 200, height: 260 },
+    isResizable: false,
+    hasMenuBar: true,
+    menuItems: [
+      {
+        label: 'Edit',
+        accelerator: 'E',
+        items: [
+          { label: 'Copy', shortcut: 'Ctrl+C', action: 'copy' },
+          { label: 'Paste', shortcut: 'Ctrl+V', action: 'paste' },
+        ],
+      },
+      {
+        label: 'View',
+        accelerator: 'V',
+        items: [
+          { label: 'Standard', action: 'standard' },
+          { label: 'Scientific', action: 'scientific' },
+        ],
+      },
+      {
+        label: 'Help',
+        accelerator: 'H',
+        items: [
+          { label: 'Contents', shortcut: 'F1', action: 'help' },
+          { label: 'About Calculator...', action: 'about' },
+        ],
+      },
+    ],
+  },
 };
 
 // ═══════════════════════════════════════════════════════════════════════════

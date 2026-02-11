@@ -61,15 +61,79 @@ function generateIconPrompt(skill: Skill): string {
 }
 
 /**
- * Generate prompt for hero splash image
- * USER'S COLORFUL TEMPLATE: 90s tech-utopian, Memphis Group meets Lisa Frank
+ * Color palette families from style guide
+ */
+const COLOR_PALETTES = {
+  'mint-teal': 'mint and teal professional color scheme (#5B9A8B, #8EC5B5)',
+  'synthwave': 'synthwave sunset color scheme (#FF6B9D, #C44569, neon pink and purple)',
+  'terracotta': 'warm terracotta color scheme (#C67B5C, #E8A87C, warm oranges and browns)',
+  'lavender': 'lavender workspace color scheme (#9B8AA5, #C4B6CF, soft purples and pinks)',
+  'terminal': 'terminal green color scheme (#00FF00, #003300, CRT green on black)',
+  'rainbow': 'rainbow spectrum color scheme (varied bright colors)',
+};
+
+/**
+ * Determine the best color palette and composition for a skill
+ */
+function getStyleForSkill(skill: Skill): { palette: string; composition: string } {
+  const title = skill.title.toLowerCase();
+  const desc = skill.description.toLowerCase();
+  
+  // Terminal/technical skills
+  if (title.includes('terminal') || title.includes('code') || title.includes('cli') || 
+      title.includes('devops') || title.includes('engineer') || desc.includes('command line')) {
+    return { palette: 'terminal', composition: 'terminal flowchart' };
+  }
+  
+  // VR/AR/Creative tech
+  if (title.includes('vr') || title.includes('avatar') || title.includes('3d') ||
+      title.includes('vaporwave') || title.includes('glitch') || title.includes('visualization')) {
+    return { palette: 'synthwave', composition: 'synthwave landscape with floating UI element and perspective grid floor' };
+  }
+  
+  // Wellness/Health/Psychology
+  if (title.includes('wellness') || title.includes('health') || title.includes('therapy') ||
+      title.includes('coach') || title.includes('meditation') || title.includes('psych') ||
+      desc.includes('mental health') || desc.includes('emotional')) {
+    return { palette: 'lavender', composition: 'calming isometric workspace with soft lighting' };
+  }
+  
+  // Career/Interview/HR
+  if (title.includes('career') || title.includes('interview') || title.includes('hr') ||
+      title.includes('resume') || title.includes('job')) {
+    return { palette: 'terracotta', composition: 'interview scene with two figures at a desk and screen showing data' };
+  }
+  
+  // Design/Creative
+  if (title.includes('design') || title.includes('ux') || title.includes('ui') ||
+      title.includes('creative') || title.includes('art') || title.includes('color')) {
+    return { palette: 'rainbow', composition: 'desktop workstation with monitor showing design interface' };
+  }
+  
+  // Default: professional mint/teal
+  return { palette: 'mint-teal', composition: 'desktop workstation with monitor showing relevant interface, keyboard in foreground, desk plant and coffee mug' };
+}
+
+/**
+ * Generate prompt for hero splash image following style guide
+ * Retro-Professional Pixel Art style per /docs/guides/hero-image-style-guide.md
  */
 function generateHeroPrompt(skill: Skill): string {
-  const shortDesc = skill.description.substring(0, 200);
+  const { palette, composition } = getStyleForSkill(skill);
+  const paletteDesc = COLOR_PALETTES[palette as keyof typeof COLOR_PALETTES];
   
-  return `Cover splash art for an artificial intelligence software package for the skill "${skill.title}" which ${shortDesc}.
-
-Theme: Windows 3.1/MS-DOS 16-bit VGA palette pixel art (90s tech-utopian, colorful, vaguely cyberspace, a little Memphis Group meets Lisa Frank at the mall and they get lost in the arcade before buying stonewashed jeans). Wide cinematic composition, detailed scene, nostalgic retro-future aesthetic. BRIGHT vibrant colors, not dark or dystopian. Pink, cyan, yellow, purple, orange. Optimistic futurism.`;
+  // Short description for context
+  const shortDesc = skill.description.substring(0, 150).replace(/\n/g, ' ');
+  
+  return `Pixel art ${composition} showing ${skill.title} AI tool (${shortDesc}),
+${paletteDesc},
+retro Windows 3.1 interface elements with title bar, beveled 3D borders, and scrollbars,
+16-bit video game aesthetic with visible pixels and no anti-aliasing,
+clean pixel art style, dithered shading,
+stylized "gibberish" pixel text on screen,
+professional atmosphere with subtle environmental details,
+no photorealism, no modern flat UI
+--ar 16:9`;
 }
 
 async function generateImage(prompt: string, aspectRatio: string = '1:1'): Promise<string | null> {
@@ -84,9 +148,9 @@ async function generateImage(prompt: string, aspectRatio: string = '1:1'): Promi
         image_request: {
           prompt,
           aspect_ratio: aspectRatio,
-          model: 'V_2',
+          model: 'V_3', // Use Ideogram V3 as requested
           magic_prompt_option: 'AUTO',
-          style_type: aspectRatio === '1:1' ? 'DESIGN' : 'REALISTIC',
+          style_type: 'DESIGN', // Best for pixel art style
         },
       }),
     });
