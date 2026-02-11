@@ -12,12 +12,13 @@
  */
 
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
-import { skills, type Skill, type SkillReference } from '@/lib/skills';
+import { skills, type Skill } from '@/lib/skills';
 import { 
   categoryMeta, 
   type SkillCategory, 
   getSkillCategory 
 } from '@/lib/skill-taxonomy';
+import { SkillDocument } from '@/components/win31';
 import styles from './skill-explorer.module.css';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -454,137 +455,6 @@ function SkillListView({
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// SKILL DETAIL VIEW
-// ═══════════════════════════════════════════════════════════════════════════
-
-function SkillDetailView({ 
-  skill, 
-  onBack,
-  cart,
-  playSound,
-}: { 
-  skill: Skill;
-  onBack: () => void;
-  cart: ReturnType<typeof useCart>;
-  playSound: (sound: 'click' | 'thung' | 'cart' | 'favorite' | 'copy') => void;
-}) {
-  const [activeSection, setActiveSection] = useState<string>('overview');
-  
-  // Parse content into sections
-  const sections = useMemo(() => {
-    const lines = skill.content.split('\n');
-    const parsed: { id: string; title: string; content: string }[] = [];
-    let currentSection = { id: 'overview', title: 'Overview', content: '' };
-
-    for (const line of lines) {
-      if (line.startsWith('## ')) {
-        if (currentSection.content.trim()) {
-          parsed.push(currentSection);
-        }
-        const title = line.replace('## ', '');
-        currentSection = { 
-          id: title.toLowerCase().replace(/\s+/g, '-'), 
-          title, 
-          content: '' 
-        };
-      } else if (line.startsWith('# ')) {
-        // Skip main title
-        continue;
-      } else {
-        currentSection.content += line + '\n';
-      }
-    }
-    if (currentSection.content.trim()) {
-      parsed.push(currentSection);
-    }
-    return parsed;
-  }, [skill.content]);
-
-  return (
-    <div className={styles.detailView}>
-      {/* Hero */}
-      <div className={styles.detailHero}>
-        {skill.skillHero && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={skill.skillHero} alt="" className={styles.detailHeroImg} />
-        )}
-        <div className={styles.detailHeroOverlay} />
-        <button className={styles.backButtonFloating} onClick={() => { playSound('click'); onBack(); }}>
-          <BackIcon />
-        </button>
-        <div className={styles.detailHeroContent}>
-          <h1 className={styles.detailTitle}>{skill.title}</h1>
-          <p className={styles.detailDesc}>{skill.description}</p>
-          <div className={styles.detailActions}>
-            <button 
-              className={`${styles.actionButton} ${styles.actionButtonPrimary}`}
-              onClick={() => { playSound('cart'); cart.addToCart(skill.id); }}
-            >
-              <CartIcon />
-              <span>{cart.isInCart(skill.id) ? 'In Cart' : 'Add to Cart'}</span>
-            </button>
-            <button 
-              className={`${styles.actionButton} ${cart.isFavorite(skill.id) ? styles.actionButtonActive : ''}`}
-              onClick={() => { playSound('favorite'); cart.toggleFavorite(skill.id); }}
-            >
-              <StarIcon filled={cart.isFavorite(skill.id)} />
-              <span>{cart.isFavorite(skill.id) ? 'Favorited' : 'Favorite'}</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className={styles.detailContent}>
-        {/* Section Index */}
-        <div className={styles.detailIndex}>
-          <div className={styles.detailIndexTitle}>Sections</div>
-          {sections.map(section => (
-            <button
-              key={section.id}
-              className={`${styles.detailIndexItem} ${activeSection === section.id ? styles.active : ''}`}
-              onClick={() => { playSound('click'); setActiveSection(section.id); }}
-            >
-              {section.title}
-            </button>
-          ))}
-
-          {/* References */}
-          {skill.references && skill.references.length > 0 && (
-            <>
-              <div className={styles.detailIndexTitle}>References</div>
-              {skill.references.map((ref, i) => (
-                <a
-                  key={i}
-                  href={ref.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.detailIndexRef}
-                  onClick={() => playSound('click')}
-                >
-                  <RefIcon type={ref.type} />
-                  <span>{ref.title}</span>
-                </a>
-              ))}
-            </>
-          )}
-        </div>
-
-        {/* Main content */}
-        <div className={styles.detailMain}>
-          {sections.filter(s => s.id === activeSection).map(section => (
-            <div key={section.id} className={styles.detailSection}>
-              <h2>{section.title}</h2>
-              <pre className={styles.detailSectionContent}>{section.content}</pre>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ═══════════════════════════════════════════════════════════════════════════
 // CART PANEL
 // ═══════════════════════════════════════════════════════════════════════════
 
@@ -723,23 +593,6 @@ function SkillPlaceholderIcon() {
   );
 }
 
-function RefIcon({ type }: { type: SkillReference['type'] }) {
-  const colors: Record<SkillReference['type'], string> = {
-    guide: '#00CED1',
-    example: '#FFD700',
-    'related-skill': '#FF69B4',
-    external: '#90EE90',
-  };
-  return (
-    <svg viewBox="0 0 16 16" className={styles.iconSmall}>
-      <rect x="2" y="2" width="12" height="12" rx="2" fill={colors[type]} />
-      <rect x="4" y="5" width="8" height="1" fill="#000" />
-      <rect x="4" y="8" width="6" height="1" fill="#000" />
-      <rect x="4" y="11" width="4" height="1" fill="#000" />
-    </svg>
-  );
-}
-
 // ═══════════════════════════════════════════════════════════════════════════
 // MAIN COMPONENT
 // ═══════════════════════════════════════════════════════════════════════════
@@ -835,12 +688,18 @@ export function SkillExplorer({ isVisible, onClose }: SkillExplorerProps) {
         )}
 
         {view === 'detail' && selectedSkill && (
-          <SkillDetailView
-            skill={selectedSkill}
-            onBack={() => setView('skills')}
-            cart={cart}
-            playSound={playSound}
-          />
+          <div className={styles.detailContainer}>
+            <SkillDocument
+              skill={selectedSkill}
+              onClose={() => setView('skills')}
+              onNavigate={(skillId) => {
+                const skill = skills.find(s => s.id === skillId);
+                if (skill) {
+                  setSelectedSkill(skill);
+                }
+              }}
+            />
+          </div>
         )}
       </div>
 

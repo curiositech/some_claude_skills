@@ -644,6 +644,20 @@
    DETAIL VIEW
    ═══════════════════════════════════════════════════════════════════════════ */
 
+/* Container for SkillDocument integration */
+.detailContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--win31-gray, #c0c0c0);
+}
+
+.detailContainer > div {
+  height: 100%;
+  overflow: auto;
+}
+
 .detailView {
   height: 100%;
   display: flex;
