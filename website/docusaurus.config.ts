@@ -41,6 +41,19 @@ const config: Config = {
   },
 
   plugins: [
+    // Tailwind CSS integration
+    function tailwindPlugin() {
+      return {
+        name: 'tailwind-plugin',
+        configurePostCss(postcssOptions) {
+          postcssOptions.plugins.push(
+            require('tailwindcss'),
+            require('autoprefixer')
+          );
+          return postcssOptions;
+        },
+      };
+    },
     function webpackPolyfillPlugin() {
       return {
         name: 'webpack-polyfill-plugin',
@@ -76,7 +89,10 @@ const config: Config = {
         },
         blog: false,
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: [
+            './src/css/custom.css',
+            './src/css/globals.css',
+          ],
         },
       } satisfies Preset.Options,
     ],

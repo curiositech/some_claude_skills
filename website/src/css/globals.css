@@ -1,0 +1,250 @@
+/**
+ * GLOBAL CSS VARIABLES & TAILWIND INTEGRATION
+ * ============================================
+ * 
+ * This file defines all CSS variables used by Tailwind CSS theme.
+ * It combines the shadcn/ui token system with our Windows 3.1 design system.
+ *
+ * IMPORTANT: Import this file AFTER custom.css to layer properly.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CSS CUSTOM PROPERTIES (Design Tokens)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer base {
+  :root {
+    /* ─────────────────────────────────────────────────────────────────────
+       SEMANTIC COLOR TOKENS (HSL format for Tailwind)
+       ───────────────────────────────────────────────────────────────────── */
+    
+    /* Background and foreground */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    /* Card surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    /* Popover/dropdown surfaces */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary brand color (Indigo) */
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary/muted */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted backgrounds */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent highlights */
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    /* Destructive/error */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 239 84% 67%;
+
+    /* Border radius base */
+    --radius: 0.5rem;
+
+    /* ─────────────────────────────────────────────────────────────────────
+       WINDOWS 3.1 DESIGN SYSTEM TOKENS
+       ───────────────────────────────────────────────────────────────────── */
+    
+    /* Classic Windows 3.1 Grays */
+    --win31-gray: #c0c0c0;
+    --win31-dark-gray: #808080;
+    --win31-light-gray: #dfdfdf;
+    --win31-white: #ffffff;
+    --win31-black: #000000;
+
+    /* Classic Win31 Colors */
+    --win31-navy: #000080;
+    --win31-blue: #0000ff;
+    --win31-teal: #008080;
+    --win31-desktop: #008080;
+
+    /* Vibrant Accent Colors */
+    --win31-yellow: #FFFF00;
+    --win31-bright-yellow: #FFD700;
+    --win31-red: #FF0000;
+    --win31-bright-red: #DC143C;
+    --win31-magenta: #FF00FF;
+    --win31-lime: #00FF00;
+
+    /* Title Bar Colors */
+    --win31-active-title: #000080;
+    --win31-inactive-title: #808080;
+    --win31-title-text: #ffffff;
+
+    /* Border Styles */
+    --win31-border-outer-light: #dfdfdf;
+    --win31-border-outer-dark: #000000;
+    --win31-border-inner-light: #ffffff;
+    --win31-border-inner-dark: #808080;
+
+    /* Spacing */
+    --win31-border-width: 2px;
+    --win31-title-height: 18px;
+    --win31-button-size: 16px;
+
+    /* ─────────────────────────────────────────────────────────────────────
+       TYPOGRAPHY TOKENS
+       ───────────────────────────────────────────────────────────────────── */
+    
+    /* Display font - pixel art hero titles, stickers, badges */
+    --font-display: 'Press Start 2P', cursive;
+
+    /* Window title bars - retro VT terminal aesthetic */
+    --font-window: 'VT323', monospace;
+
+    /* UI system font - navbar, buttons, menus, labels */
+    --font-system: 'IBM Plex Mono', monospace;
+
+    /* Body text - readable typewriter style for docs */
+    --font-body: 'Courier Prime', 'Courier New', monospace;
+
+    /* Code - same as system for consistency */
+    --font-code: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────
+     DARK MODE TOKENS
+     ───────────────────────────────────────────────────────────────────── */
+  
+  [data-theme='dark'] {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 224 76% 48%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE LAYER RESETS & DEFAULTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer utilities {
+  /* Win31 beveled effects */
+  .bevel-outset {
+    border-style: solid;
+    border-width: 2px;
+    border-top-color: var(--win31-white);
+    border-left-color: var(--win31-white);
+    border-bottom-color: var(--win31-black);
+    border-right-color: var(--win31-black);
+    box-shadow:
+      inset -1px -1px 0 var(--win31-dark-gray),
+      inset 1px 1px 0 var(--win31-light-gray);
+  }
+
+  .bevel-inset {
+    border-style: solid;
+    border-width: 2px;
+    border-top-color: var(--win31-black);
+    border-left-color: var(--win31-black);
+    border-bottom-color: var(--win31-white);
+    border-right-color: var(--win31-white);
+    box-shadow: inset 1px 1px 0 var(--win31-dark-gray);
+  }
+
+  /* Window chrome */
+  .win31-window-chrome {
+    background: var(--win31-gray);
+    border: 3px solid var(--win31-black);
+    box-shadow:
+      inset 2px 2px 0 var(--win31-white),
+      inset -2px -2px 0 var(--win31-dark-gray),
+      6px 6px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  /* Title bar gradient */
+  .win31-titlebar-gradient {
+    background: linear-gradient(90deg, var(--win31-navy), var(--win31-blue));
+  }
+
+  /* Hide scrollbar but allow scrolling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENT LAYER (for custom component classes)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer components {
+  /* Container with max-width */
+  .container-prose {
+    @apply mx-auto max-w-prose px-4;
+  }
+
+  /* Responsive container */
+  .container-responsive {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+}

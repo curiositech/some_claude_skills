@@ -1,0 +1,1680 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   AUTHENTIC WINDOWS 3.1 STYLES
+   Based on original Win31 UI with pixel-perfect accuracy
+   
+   NOTE: Google Fonts import is in globals.css to ensure proper ordering
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* IBM VGA pixel font for authentic DOS/Windows look */
+@font-face {
+  font-family: 'IBM VGA';
+  src: url('/fonts/PxPlus_IBM_VGA8.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ═══════════════════════════════════════════════════════════════
+     VGA 16-COLOR PALETTE (authentic)
+     ═══════════════════════════════════════════════════════════════ */
+  --vga-black: #000000;
+  --vga-blue: #0000AA;
+  --vga-green: #00AA00;
+  --vga-cyan: #00AAAA;
+  --vga-red: #AA0000;
+  --vga-magenta: #AA00AA;
+  --vga-brown: #AA5500;
+  --vga-light-gray: #AAAAAA;
+  --vga-dark-gray: #555555;
+  --vga-bright-blue: #5555FF;
+  --vga-bright-green: #55FF55;
+  --vga-bright-cyan: #55FFFF;
+  --vga-bright-red: #FF5555;
+  --vga-bright-magenta: #FF55FF;
+  --vga-yellow: #FFFF55;
+  --vga-white: #FFFFFF;
+
+  /* ═══════════════════════════════════════════════════════════════
+     WINDOWS 3.1 SYSTEM COLORS
+     ═══════════════════════════════════════════════════════════════ */
+  --win31-gray: #C0C0C0;
+  --win31-dark-gray: #808080;
+  --win31-light-gray: #DFDFDF;
+  --win31-white: #FFFFFF;
+  --win31-black: #000000;
+  --win31-navy: #000080;
+  --win31-teal: #008080;
+  --win31-desktop: #008080;
+  --win31-active-title: #000080;
+  --win31-inactive-title: #808080;
+  --win31-title-text: #FFFFFF;
+
+  /* Bevel colors */
+  --bevel-light: #FFFFFF;
+  --bevel-mid-light: #DFDFDF;
+  --bevel-mid-dark: #808080;
+  --bevel-dark: #000000;
+
+  /* Typography */
+  --font-system: 'IBM VGA', 'VT323', 'Courier New', monospace;
+  --font-window: 'VT323', 'IBM VGA', monospace;
+  --font-display: 'Press Start 2P', cursive;
+  --font-code: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Sizes */
+  --titlebar-height: 20px;
+  --button-size: 16px;
+  --border-width: 2px;
+  --icon-size: 32px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HOT DOG STAND THEME
+   ═══════════════════════════════════════════════════════════════ */
+[data-theme="hotdog"] {
+  --win31-gray: #FFFF00;
+  --win31-dark-gray: #AA5500;
+  --win31-light-gray: #FFFF55;
+  --win31-white: #FFFFFF;
+  --win31-black: #000000;
+  --win31-navy: #FF0000;
+  --win31-active-title: #FF0000;
+  --win31-inactive-title: #AA0000;
+  --win31-title-text: #FFFF00;
+  --win31-desktop: #FF0000;
+  --bevel-light: #FFFFFF;
+  --bevel-mid-light: #FFFF55;
+  --bevel-mid-dark: #AA5500;
+  --bevel-dark: #000000;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DESKTOP
+   ═══════════════════════════════════════════════════════════════ */
+.win31-desktop {
+  position: fixed;
+  inset: 0;
+  background: var(--win31-desktop);
+  overflow: hidden;
+  font-family: var(--font-system);
+  font-size: 11px;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   WINDOW FRAME - Authentic 3D bevels
+   ═══════════════════════════════════════════════════════════════ */
+.win31-window {
+  background: var(--win31-gray);
+  display: flex;
+  flex-direction: column;
+  /* Outer bevel - raised */
+  border: var(--border-width) solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  /* Inner bevel */
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-mid-light),
+    inset -1px -1px 0 var(--bevel-mid-dark),
+    4px 4px 0 rgba(0,0,0,0.3);
+  user-select: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TITLE BAR
+   ═══════════════════════════════════════════════════════════════ */
+.win31-titlebar {
+  height: var(--titlebar-height);
+  background: var(--win31-active-title);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 3px;
+  flex-shrink: 0;
+}
+
+.win31-titlebar-inactive {
+  background: var(--win31-inactive-title);
+}
+
+.win31-titlebar-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.win31-title-text {
+  flex: 1;
+  color: var(--win31-title-text);
+  font-family: var(--font-window);
+  font-size: 13px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* Authentic Win31 title text shadow */
+  text-shadow: none;
+}
+
+.win31-titlebar-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUTTONS - 3D beveled
+   ═══════════════════════════════════════════════════════════════ */
+.win31-button {
+  width: var(--button-size);
+  height: 14px;
+  background: var(--win31-gray);
+  border: 1px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  box-shadow: inset 1px 1px 0 var(--bevel-mid-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-system);
+  font-size: 10px;
+}
+
+.win31-button:active {
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  box-shadow: inset 1px 1px 0 var(--bevel-mid-dark);
+}
+
+.win31-button:focus {
+  outline: 1px dotted var(--win31-black);
+  outline-offset: -3px;
+}
+
+/* Button icons */
+.win31-minimize-icon::before { content: '▼'; font-size: 6px; }
+.win31-maximize-icon::before { content: '▲'; font-size: 6px; }
+.win31-close-icon::before { content: '✕'; font-size: 8px; font-weight: bold; }
+
+/* ═══════════════════════════════════════════════════════════════
+   WINDOW CONTENT
+   ═══════════════════════════════════════════════════════════════ */
+.win31-window-content {
+  flex: 1;
+  background: var(--win31-gray);
+  overflow: auto;
+  /* Inset border for content area */
+  border: 2px solid;
+  border-color: var(--bevel-mid-dark) var(--bevel-light) var(--bevel-light) var(--bevel-mid-dark);
+  margin: 2px;
+}
+
+/* Scrollbar styling */
+.win31-window-content::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+.win31-window-content::-webkit-scrollbar-track {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--win31-gray),
+    var(--win31-gray) 2px,
+    var(--win31-white) 2px,
+    var(--win31-white) 4px
+  );
+}
+
+.win31-window-content::-webkit-scrollbar-thumb {
+  background: var(--win31-gray);
+  border: 1px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+}
+
+.win31-window-content::-webkit-scrollbar-button {
+  background: var(--win31-gray);
+  border: 1px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  width: 16px;
+  height: 16px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESIZE HANDLES
+   ═══════════════════════════════════════════════════════════════ */
+.win31-resize-handle {
+  position: absolute;
+  z-index: 10;
+}
+
+.win31-resize-n { top: 0; left: 4px; right: 4px; height: 4px; cursor: n-resize; }
+.win31-resize-s { bottom: 0; left: 4px; right: 4px; height: 4px; cursor: s-resize; }
+.win31-resize-e { top: 4px; right: 0; bottom: 4px; width: 4px; cursor: e-resize; }
+.win31-resize-w { top: 4px; left: 0; bottom: 4px; width: 4px; cursor: w-resize; }
+.win31-resize-ne { top: 0; right: 0; width: 8px; height: 8px; cursor: ne-resize; }
+.win31-resize-nw { top: 0; left: 0; width: 8px; height: 8px; cursor: nw-resize; }
+.win31-resize-se { bottom: 0; right: 0; width: 8px; height: 8px; cursor: se-resize; }
+.win31-resize-sw { bottom: 0; left: 0; width: 8px; height: 8px; cursor: sw-resize; }
+
+/* ═══════════════════════════════════════════════════════════════
+   TASKBAR
+   ═══════════════════════════════════════════════════════════════ */
+.win31-taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: var(--win31-gray);
+  border-top: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-light) var(--bevel-dark) var(--bevel-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 4px;
+  z-index: 9999;
+}
+
+.win31-taskbar-left {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  overflow-x: auto;
+}
+
+.win31-taskbar-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  min-width: 100px;
+  max-width: 160px;
+  height: 28px;
+  background: var(--win31-gray);
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  cursor: pointer;
+  font-family: var(--font-system);
+  font-size: 11px;
+}
+
+.win31-taskbar-button:active {
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+}
+
+.win31-taskbar-icon {
+  font-size: 14px;
+}
+
+.win31-taskbar-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.win31-taskbar-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.win31-taskbar-action {
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+}
+
+.win31-taskbar-clock {
+  padding: 2px 8px;
+  background: var(--win31-light-gray);
+  border: 1px solid;
+  border-color: var(--bevel-mid-dark) var(--bevel-light) var(--bevel-light) var(--bevel-mid-dark);
+  font-family: var(--font-system);
+  font-size: 11px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PROGRAM MANAGER ICONS
+   ═══════════════════════════════════════════════════════════════ */
+.win31-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 8px;
+  padding: 8px;
+}
+
+.win31-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.win31-icon:hover {
+  background: var(--win31-navy);
+}
+
+.win31-icon:hover .win31-icon-label {
+  background: var(--win31-navy);
+  color: var(--win31-white);
+}
+
+.win31-icon:focus {
+  outline: 1px dotted var(--win31-black);
+}
+
+.win31-icon-image {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  object-fit: contain;
+  image-rendering: pixelated;
+  /* Remove any white background from icons */
+  mix-blend-mode: multiply;
+  background: transparent;
+}
+
+/* For emoji icons */
+.win31-icon-emoji {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.win31-icon-label {
+  font-family: var(--font-system);
+  font-size: 10px;
+  text-align: center;
+  max-width: 64px;
+  word-wrap: break-word;
+  color: var(--win31-black);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PROGRAM GROUP WINDOW
+   ═══════════════════════════════════════════════════════════════ */
+.win31-group-window {
+  background: var(--win31-gray);
+}
+
+.win31-group-title {
+  font-family: var(--font-system);
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 8px;
+  background: var(--win31-light-gray);
+  border-bottom: 1px solid var(--bevel-mid-dark);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MENU BAR
+   ═══════════════════════════════════════════════════════════════ */
+.win31-menubar {
+  display: flex;
+  background: var(--win31-gray);
+  border-bottom: 1px solid var(--bevel-mid-dark);
+  padding: 1px;
+}
+
+.win31-menu-item {
+  padding: 2px 8px;
+  font-family: var(--font-system);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.win31-menu-item:hover {
+  background: var(--win31-navy);
+  color: var(--win31-white);
+}
+
+/* Keyboard accelerator underline */
+.win31-menu-item .accel {
+  text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   STATUS BAR
+   ═══════════════════════════════════════════════════════════════ */
+.win31-statusbar {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  padding: 2px 4px;
+  background: var(--win31-gray);
+  border-top: 1px solid var(--bevel-light);
+  font-family: var(--font-system);
+  font-size: 10px;
+}
+
+.win31-statusbar-panel {
+  padding: 1px 6px;
+  border: 1px solid;
+  border-color: var(--bevel-mid-dark) var(--bevel-light) var(--bevel-light) var(--bevel-mid-dark);
+  margin-right: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PUSH BUTTONS (Large)
+   ═══════════════════════════════════════════════════════════════ */
+.win31-push-button {
+  background: var(--win31-gray);
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  box-shadow: inset 1px 1px 0 var(--bevel-mid-light);
+  padding: 4px 16px;
+  min-width: 72px;
+  font-family: var(--font-system);
+  font-size: 11px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.win31-push-button:active {
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  box-shadow: inset 1px 1px 0 var(--bevel-mid-dark);
+}
+
+.win31-push-button-default {
+  border: 3px solid var(--win31-black);
+}
+
+.win31-push-button:focus {
+  outline: 1px dotted var(--win31-black);
+  outline-offset: -4px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PANELS - Inset and Outset
+   ═══════════════════════════════════════════════════════════════ */
+.win31-panel-inset {
+  background: var(--win31-white);
+  border: 2px solid;
+  border-color: var(--bevel-mid-dark) var(--bevel-light) var(--bevel-light) var(--bevel-mid-dark);
+  box-shadow: inset 1px 1px 0 var(--bevel-dark);
+}
+
+.win31-panel-outset {
+  background: var(--win31-gray);
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TEXT INPUT
+   ═══════════════════════════════════════════════════════════════ */
+.win31-input {
+  background: var(--win31-white);
+  border: 2px solid;
+  border-color: var(--bevel-mid-dark) var(--bevel-light) var(--bevel-light) var(--bevel-mid-dark);
+  box-shadow: inset 1px 1px 0 var(--bevel-dark);
+  padding: 2px 4px;
+  font-family: var(--font-system);
+  font-size: 11px;
+}
+
+.win31-input:focus {
+  outline: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LIST BOX
+   ═══════════════════════════════════════════════════════════════ */
+.win31-listbox {
+  background: var(--win31-white);
+  border: 2px solid;
+  border-color: var(--bevel-mid-dark) var(--bevel-light) var(--bevel-light) var(--bevel-mid-dark);
+  box-shadow: inset 1px 1px 0 var(--bevel-dark);
+  overflow-y: auto;
+  font-family: var(--font-system);
+  font-size: 11px;
+}
+
+.win31-listbox-item {
+  padding: 1px 4px;
+  cursor: pointer;
+}
+
+.win31-listbox-item:hover {
+  background: var(--win31-navy);
+  color: var(--win31-white);
+}
+
+.win31-listbox-item.selected {
+  background: var(--win31-navy);
+  color: var(--win31-white);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DIALOG BOX
+   ═══════════════════════════════════════════════════════════════ */
+.win31-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.win31-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+.win31-dialog-content {
+  padding: 16px;
+}
+
+.win31-dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GROUP BOX
+   ═══════════════════════════════════════════════════════════════ */
+.win31-groupbox {
+  border: 1px solid var(--bevel-mid-dark);
+  box-shadow: 1px 1px 0 var(--bevel-light);
+  padding: 12px 8px 8px;
+  margin: 8px 0;
+  position: relative;
+}
+
+.win31-groupbox-label {
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  background: var(--win31-gray);
+  padding: 0 4px;
+  font-family: var(--font-system);
+  font-size: 11px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CHECKBOX & RADIO
+   ═══════════════════════════════════════════════════════════════ */
+.win31-checkbox,
+.win31-radio {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-system);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.win31-checkbox-box {
+  width: 13px;
+  height: 13px;
+  background: var(--win31-white);
+  border: 1px solid;
+  border-color: var(--bevel-mid-dark) var(--bevel-light) var(--bevel-light) var(--bevel-mid-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.win31-checkbox-box.checked::after {
+  content: '✓';
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.win31-radio-circle {
+  width: 12px;
+  height: 12px;
+  background: var(--win31-white);
+  border: 1px solid;
+  border-color: var(--bevel-mid-dark) var(--bevel-light) var(--bevel-light) var(--bevel-mid-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.win31-radio-circle.checked::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--win31-black);
+  border-radius: 50%;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOOLTIP
+   ═══════════════════════════════════════════════════════════════ */
+.win31-tooltip {
+  position: absolute;
+  background: #FFFFCC;
+  border: 1px solid var(--win31-black);
+  padding: 2px 4px;
+  font-family: var(--font-system);
+  font-size: 10px;
+  white-space: nowrap;
+  z-index: 10001;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DOCUMENT CONTENT STYLES
+   ═══════════════════════════════════════════════════════════════ */
+.win31-doc {
+  background: #FFFFF5;
+  padding: 16px;
+  font-family: var(--font-code);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--win31-black);
+  min-height: 100%;
+}
+
+.win31-doc h1 {
+  font-family: var(--font-window);
+  font-size: 32px;
+  font-weight: normal;
+  color: var(--win31-navy);
+  border-bottom: 2px solid var(--win31-navy);
+  padding-bottom: 4px;
+  margin: 0 0 16px;
+}
+
+.win31-doc h2 {
+  font-family: var(--font-window);
+  font-size: 24px;
+  font-weight: normal;
+  color: var(--win31-teal);
+  margin: 24px 0 12px;
+}
+
+.win31-doc h3 {
+  font-family: var(--font-system);
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 16px 0 8px;
+}
+
+.win31-doc code {
+  background: var(--win31-light-gray);
+  border: 1px solid var(--bevel-mid-dark);
+  padding: 1px 4px;
+  font-family: var(--font-code);
+  font-size: 12px;
+}
+
+.win31-doc pre {
+  background: #1A1A2E;
+  color: #00FF00;
+  border: 2px solid var(--win31-black);
+  padding: 12px;
+  overflow-x: auto;
+  font-family: var(--font-code);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.win31-doc pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
+.win31-doc a {
+  color: var(--win31-navy);
+  text-decoration: underline;
+}
+
+.win31-doc a:hover {
+  color: var(--win31-teal);
+}
+
+.win31-doc ul,
+.win31-doc ol {
+  margin-left: 20px;
+}
+
+.win31-doc blockquote {
+  border-left: 4px solid var(--win31-navy);
+  margin: 12px 0;
+  padding: 8px 12px;
+  background: var(--win31-light-gray);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TAG LINKS
+   ═══════════════════════════════════════════════════════════════ */
+.win31-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 1px 6px;
+  background: var(--win31-light-gray);
+  border: 1px solid var(--bevel-mid-dark);
+  font-family: var(--font-system);
+  font-size: 10px;
+  color: var(--win31-black);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.win31-tag:hover {
+  background: var(--win31-navy);
+  color: var(--win31-white);
+  border-color: var(--win31-navy);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BOOT SPLASH
+   ═══════════════════════════════════════════════════════════════ */
+.win31-boot {
+  position: fixed;
+  inset: 0;
+  background: var(--vga-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.win31-boot-logo {
+  width: 300px;
+  margin-bottom: 32px;
+  animation: win31-boot-pulse 1s ease-in-out infinite;
+}
+
+@keyframes win31-boot-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.win31-boot-text {
+  font-family: var(--font-window);
+  font-size: 24px;
+  color: var(--vga-white);
+  margin-bottom: 16px;
+}
+
+.win31-boot-progress {
+  width: 200px;
+  height: 20px;
+  background: var(--vga-black);
+  border: 2px solid var(--vga-white);
+}
+
+.win31-boot-progress-bar {
+  height: 100%;
+  background: var(--vga-bright-cyan);
+  transition: width 100ms linear;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE - Keep retro feel but adapt to small screens
+   ═══════════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════════
+   BOOT SCREEN (New)
+   ═══════════════════════════════════════════════════════════════ */
+.win31-boot-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #000080 0%, #0000AA 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.win31-boot-logo {
+  font-size: 64px;
+  margin-bottom: 20px;
+  animation: win31-boot-pulse 1s ease-in-out infinite;
+}
+
+.win31-boot-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.win31-boot-version {
+  font-family: var(--font-system);
+  font-size: 11px;
+  color: #00FFFF;
+  margin-bottom: 40px;
+}
+
+.win31-boot-splash {
+  width: 320px;
+  height: 200px;
+  background: linear-gradient(135deg, #FF69B4 0%, #00CED1 50%, #FFD700 100%);
+  border: 4px outset #C0C0C0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  box-shadow: 0 0 60px rgba(255, 105, 180, 0.5);
+}
+
+.win31-boot-splash-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: #000080;
+  text-shadow: 2px 2px 0 #FFF;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.win31-boot-splash-count {
+  font-family: var(--font-system);
+  font-size: 12px;
+  color: #000080;
+  margin-top: 16px;
+  background: #FFFFFF;
+  padding: 4px 12px;
+}
+
+.win31-boot-loading {
+  font-family: var(--font-system);
+  font-size: 10px;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.win31-boot-progress {
+  width: 280px;
+  height: 20px;
+  background: #000000;
+  border: 2px solid #FFFFFF;
+  padding: 2px;
+}
+
+.win31-boot-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00AAAA 0%, #00FFFF 100%);
+  transition: width 100ms linear;
+}
+
+@keyframes win31-boot-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DESKTOP BACKGROUND
+   ═══════════════════════════════════════════════════════════════ */
+.win31-desktop-bg {
+  position: fixed;
+  inset: 0;
+  background: var(--win31-teal);
+  z-index: -1;
+}
+
+.win31-desktop-bg--hotdog {
+  background: #FF0000;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PROGRAM MANAGER
+   ═══════════════════════════════════════════════════════════════ */
+.win31-program-manager {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 44px;
+  background: var(--win31-gray);
+  border: 3px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  box-shadow: 
+    inset 2px 2px 0 var(--bevel-mid-light),
+    inset -2px -2px 0 var(--bevel-mid-dark);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.win31-program-manager--mobile {
+  inset: 0;
+  bottom: 0;
+}
+
+.win31-program-manager__titlebar {
+  height: 22px;
+  background: var(--win31-navy); /* SOLID navy - not Win95 gradient! */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 3px;
+  flex-shrink: 0;
+}
+
+.win31-program-manager__title {
+  flex: 1;
+  color: #FFFFFF;
+  font-family: var(--font-system);
+  font-size: 12px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.win31-program-manager__buttons {
+  display: flex;
+  gap: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONTROL BUTTON (Single - Win31 style)
+   ═══════════════════════════════════════════════════════════════ */
+.win31-control-button {
+  width: 18px;
+  height: 14px;
+  background: var(--win31-gray);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset -1px -1px 0 var(--bevel-dark),
+    inset 1px 1px 0 var(--bevel-light),
+    inset -2px -2px 0 var(--bevel-mid-dark),
+    inset 2px 2px 0 var(--bevel-mid-light);
+  font-size: 8px;
+  color: var(--win31-black);
+}
+
+.win31-control-button:active {
+  box-shadow:
+    inset 1px 1px 0 var(--bevel-dark),
+    inset -1px -1px 0 var(--bevel-light);
+}
+
+.win31-titlebar-button {
+  width: 18px;
+  height: 14px;
+  background: var(--win31-gray);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset -1px -1px 0 var(--bevel-dark),
+    inset 1px 1px 0 var(--bevel-light);
+  font-size: 8px;
+}
+
+.win31-titlebar-button:active {
+  box-shadow:
+    inset 1px 1px 0 var(--bevel-dark),
+    inset -1px -1px 0 var(--bevel-light);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MENU BAR
+   ═══════════════════════════════════════════════════════════════ */
+.win31-menubar {
+  display: flex;
+  background: var(--win31-gray);
+  border-bottom: 1px solid var(--bevel-mid-dark);
+  padding: 1px 2px;
+  flex-shrink: 0;
+}
+
+.win31-menubar__item {
+  padding: 3px 8px;
+  background: transparent;
+  border: none;
+  font-family: var(--font-system);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.win31-menubar__item:hover {
+  background: var(--win31-navy);
+  color: #FFFFFF;
+}
+
+.win31-underline {
+  text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MDI CLIENT AREA
+   ═══════════════════════════════════════════════════════════════ */
+.win31-mdi-client {
+  flex: 1;
+  position: relative;
+  background: var(--win31-teal);
+  overflow: hidden;
+}
+
+.win31-mdi-client--hotdog {
+  background: #FFFF00;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   WELCOME BANNER
+   ═══════════════════════════════════════════════════════════════ */
+.win31-welcome-banner {
+  background: linear-gradient(135deg, rgba(255,105,180,0.9) 0%, rgba(0,206,209,0.9) 50%, rgba(255,215,0,0.9) 100%);
+  margin: 8px;
+  padding: 12px;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.win31-welcome-banner__text {
+  flex: 1;
+  min-width: 200px;
+}
+
+.win31-welcome-banner__text h2 {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: #000080;
+  text-shadow: 1px 1px 0 #FFF;
+  margin: 0 0 4px;
+}
+
+.win31-welcome-banner__text p {
+  font-family: var(--font-system);
+  font-size: 11px;
+  color: #333;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GENERIC BUTTON
+   ═══════════════════════════════════════════════════════════════ */
+.win31-button {
+  padding: 6px 16px;
+  background: var(--win31-gray);
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  box-shadow:
+    inset -1px -1px 0 var(--bevel-mid-dark),
+    inset 1px 1px 0 var(--bevel-mid-light);
+  font-family: var(--font-system);
+  font-size: 11px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: auto;
+  height: auto;
+}
+
+.win31-button:hover {
+  background: #D0D0D0;
+}
+
+.win31-button:active {
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  box-shadow: inset 1px 1px 0 var(--bevel-mid-dark);
+}
+
+.win31-button--primary {
+  background: var(--win31-navy);
+  color: #FFFFFF;
+}
+
+.win31-button--primary:hover {
+  background: #0000AA;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DESKTOP ICONS
+   ═══════════════════════════════════════════════════════════════ */
+.win31-desktop-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 90px);
+  gap: 4px;
+  padding: 8px;
+}
+
+.win31-desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.win31-desktop-icon:hover {
+  background: rgba(0,0,128,0.2);
+}
+
+.win31-desktop-icon:focus {
+  outline: 1px dotted #FFF;
+  outline-offset: 2px;
+}
+
+.win31-desktop-icon__emoji {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.win31-desktop-icon__label {
+  font-family: var(--font-system);
+  font-size: 10px;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 0 #000;
+  line-height: 1.2;
+}
+
+.win31-desktop-icon__count {
+  font-size: 9px;
+  opacity: 0.8;
+}
+
+/* Featured desktop icon (SKILL_EXPLORER) */
+.win31-desktop-icon--featured {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.win31-desktop-icon--featured:hover {
+  animation: none;
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.win31-desktop-icon__pixel-art {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  image-rendering: pixelated;
+}
+
+.win31-desktop-icon__pixel-art svg {
+  image-rendering: pixelated;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PROGRAM GROUP (Icon grid inside window)
+   ═══════════════════════════════════════════════════════════════ */
+.win31-program-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 72px);
+  gap: 4px;
+  padding: 8px;
+  align-content: start;
+  min-height: 100%;
+}
+
+.win31-program-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 2px;
+  gap: 2px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 72px;
+}
+
+.win31-program-icon:hover {
+  background: rgba(0,0,128,0.2);
+}
+
+.win31-program-icon--selected {
+  background: var(--win31-navy) !important;
+}
+
+.win31-program-icon--selected .win31-program-icon__label {
+  color: #FFFFFF;
+}
+
+.win31-program-icon__image {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+.win31-program-icon__emoji {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.win31-program-icon__label {
+  font-family: var(--font-system);
+  font-size: 9px;
+  text-align: center;
+  color: #000000;
+  word-break: break-word;
+  line-height: 1.1;
+  max-width: 68px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SKILL DETAIL
+   ═══════════════════════════════════════════════════════════════ */
+.win31-skill-detail {
+  padding: 8px;
+  background: #FFFFFF;
+}
+
+.win31-skill-detail__hero {
+  margin-bottom: 8px;
+  border: 2px inset var(--bevel-mid-dark);
+  background: #000;
+}
+
+.win31-skill-detail__hero img {
+  width: 100%;
+  display: block;
+}
+
+.win31-skill-detail__meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.win31-skill-detail__icon {
+  width: 48px;
+  height: 48px;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+.win31-skill-detail__icon-emoji {
+  font-size: 40px;
+}
+
+.win31-skill-detail__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.win31-skill-detail__title {
+  font-family: var(--font-system);
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 4px;
+}
+
+.win31-skill-detail__description {
+  font-family: var(--font-system);
+  font-size: 10px;
+  color: #555;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.win31-skill-detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.win31-skill-detail__tag {
+  font-family: var(--font-system);
+  font-size: 9px;
+  background: var(--win31-light-gray);
+  border: 1px solid var(--bevel-mid-dark);
+  padding: 1px 4px;
+  cursor: pointer;
+}
+
+.win31-skill-detail__tag:hover {
+  background: var(--win31-navy);
+  color: #FFF;
+}
+
+.win31-skill-detail__install {
+  background: #000000;
+  border: 2px inset var(--bevel-mid-dark);
+  padding: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.win31-skill-detail__install code {
+  flex: 1;
+  color: #00FF00;
+  font-family: var(--font-code);
+  font-size: 11px;
+  overflow: auto;
+}
+
+.win31-skill-detail__content {
+  background: #FFFFF8;
+  border: 2px inset var(--bevel-mid-dark);
+  padding: 8px;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.win31-skill-detail__content pre {
+  font-family: var(--font-code);
+  font-size: 10px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   STATUS BAR
+   ═══════════════════════════════════════════════════════════════ */
+.win31-statusbar {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  background: var(--win31-gray);
+  border-top: 1px solid var(--bevel-light);
+  flex-shrink: 0;
+}
+
+.win31-statusbar__panel {
+  padding: 2px 8px;
+  font-family: var(--font-system);
+  font-size: 10px;
+  border: 1px solid;
+  border-color: var(--bevel-mid-dark) var(--bevel-light) var(--bevel-light) var(--bevel-mid-dark);
+}
+
+.win31-statusbar__panel--main {
+  flex: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TASKBAR (Bottom)
+   ═══════════════════════════════════════════════════════════════ */
+.win31-taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: var(--win31-gray);
+  border-top: 2px solid var(--bevel-light);
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  gap: 4px;
+  z-index: 50;
+}
+
+.win31-taskbar__button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  height: 28px;
+  background: var(--win31-gray);
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  font-family: var(--font-system);
+  font-size: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.win31-taskbar__button:hover {
+  background: #D0D0D0;
+}
+
+.win31-taskbar__button:active,
+.win31-taskbar__button--active {
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  background: #D0D0D0;
+}
+
+.win31-taskbar__button--start {
+  font-weight: bold;
+}
+
+.win31-taskbar__spacer {
+  flex: 1;
+}
+
+.win31-taskbar__clock {
+  padding: 2px 8px;
+  border: 1px solid;
+  border-color: var(--bevel-mid-dark) var(--bevel-light) var(--bevel-light) var(--bevel-mid-dark);
+  font-family: var(--font-system);
+  font-size: 10px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PROGRAM GROUPS (Win31 Style)
+   ═══════════════════════════════════════════════════════════════ */
+.win31-program-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.win31-program-group {
+  background: var(--win31-gray);
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+}
+
+.win31-program-group--active {
+  /* Expanded state */
+}
+
+.win31-program-group__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background: var(--win31-navy);
+  color: var(--win31-white);
+  cursor: pointer;
+  font-size: 12px;
+  font-family: var(--font-system);
+}
+
+.win31-program-group__header:hover {
+  background: #0000A0;
+}
+
+.win31-program-group__icon {
+  font-size: 14px;
+}
+
+.win31-program-group__title {
+  flex: 1;
+  font-weight: bold;
+}
+
+.win31-program-group__toggle {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.win31-program-group__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 8px;
+  padding: 16px;
+  background: var(--win31-white);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MENU BAR DROPDOWNS
+   ═══════════════════════════════════════════════════════════════ */
+.win31-menubar__dropdown-wrapper {
+  position: relative;
+}
+
+.win31-menubar__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: transparent;
+}
+
+.win31-menubar__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+  min-width: 200px;
+  background: var(--win31-gray);
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.win31-menubar__dropdown-title {
+  padding: 4px 8px;
+  background: var(--win31-navy);
+  color: var(--win31-white);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.win31-menubar__dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 4px 16px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: 11px;
+  font-family: var(--font-system);
+  cursor: pointer;
+  color: var(--win31-black);
+}
+
+.win31-menubar__dropdown-item:hover {
+  background: var(--win31-navy);
+  color: var(--win31-white);
+}
+
+.win31-menubar__dropdown-item--active {
+  font-weight: bold;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  :root {
+    --icon-size: 24px;
+    --titlebar-height: 18px;
+  }
+
+  .win31-desktop-icons {
+    grid-template-columns: repeat(auto-fill, 70px);
+    gap: 2px;
+    padding: 4px;
+  }
+
+  .win31-desktop-icon__emoji {
+    font-size: 24px;
+  }
+
+  .win31-desktop-icon__label {
+    font-size: 9px;
+  }
+
+  .win31-program-group {
+    grid-template-columns: repeat(auto-fill, 64px);
+    gap: 2px;
+    padding: 4px;
+  }
+
+  .win31-program-icon {
+    width: 64px;
+  }
+
+  .win31-program-icon__image {
+    width: 24px;
+    height: 24px;
+  }
+
+  .win31-program-icon__emoji {
+    font-size: 22px;
+  }
+
+  .win31-program-icon__label {
+    font-size: 8px;
+    max-width: 60px;
+  }
+
+  .win31-welcome-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 8px;
+    margin: 4px;
+  }
+
+  .win31-welcome-banner__text h2 {
+    font-size: 12px;
+  }
+
+  .win31-taskbar__button {
+    min-width: unset;
+    max-width: 100px;
+    padding: 2px 4px;
+    font-size: 9px;
+  }
+
+  .win31-title-text {
+    font-size: 11px;
+  }
+
+  .win31-statusbar {
+    display: none; /* Hide on mobile for more space */
+  }
+
+  .win31-program-manager {
+    bottom: 40px;
+  }
+}

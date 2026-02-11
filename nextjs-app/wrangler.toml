@@ -1,0 +1,11 @@
+# Cloudflare Pages configuration
+# Note: Most settings are configured in the Cloudflare dashboard
+# This file is for local development with `wrangler pages dev`
+
+name = "some-claude-skills"
+compatibility_date = "2024-01-01"
+
+# Pages-specific settings (when using wrangler pages)
+[vars]
+ENVIRONMENT = "production"
+

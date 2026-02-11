@@ -1,0 +1,94 @@
+/* Windows 3.1 Calculator Styles */
+
+.calculator {
+  width: 100%;
+  height: 100%;
+  background: var(--win31-gray, #c0c0c0);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-system, 'VT323', monospace);
+}
+
+.display {
+  background: #fff;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  padding: 4px 8px;
+  text-align: right;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.displayText {
+  font-size: 16px;
+  font-family: 'Courier New', monospace;
+  color: #000;
+}
+
+.buttonGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  flex: 1;
+}
+
+.button {
+  background: var(--win31-gray, #c0c0c0);
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  padding: 4px;
+  font-size: 14px;
+  font-family: var(--font-system, 'VT323', monospace);
+  cursor: pointer;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+}
+
+.button:active {
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.button:focus {
+  outline: 1px dotted #000;
+  outline-offset: -4px;
+}
+
+.buttonDouble {
+  grid-column: span 2;
+}
+
+.memory {
+  background: #d4d0c8;
+  font-size: 12px;
+}
+
+.function {
+  background: #d4d0c8;
+}
+
+.operator {
+  background: #f0f0f0;
+}
+
+.equals {
+  background: #e0e0e0;
+  font-weight: bold;
+}
+
+.equalsDouble {
+  grid-row: span 2;
+}

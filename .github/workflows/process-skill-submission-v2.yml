@@ -1,0 +1,337 @@
+name: Process Skill Submission (v2)
+
+# This enhanced workflow processes skill submissions end-to-end:
+# 1. Validates the submission
+# 2. Creates the skill directory and SKILL.md
+# 3. Generates hero image via cloud AI (Replicate/OpenAI)
+# 4. Generates MDX documentation page
+# 5. Creates a PR with all assets
+# 6. Triggers site rebuild on merge
+
+on:
+  issues:
+    types: [opened, labeled]
+  # Also run when PRs with skill changes are merged
+  push:
+    branches: [main]
+    paths:
+      - '.claude/skills/**/SKILL.md'
+
+# Secrets needed:
+# - GITHUB_TOKEN (automatic)
+# - IDEOGRAM_API_KEY (for hero image generation)
+# - CLOUDFLARE_DEPLOY_HOOK (for triggering builds)
+
+jobs:
+  # ═══════════════════════════════════════════════════════════════════════════
+  # JOB 1: Process New Skill Submission (from Issue)
+  # ═══════════════════════════════════════════════════════════════════════════
+  process-submission:
+    if: github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'skill-submission')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+      pull-requests: write
+
+    outputs:
+      valid: ${{ steps.parse.outputs.valid }}
+      skill_id: ${{ steps.parse.outputs.skill_id }}
+      skill_title: ${{ steps.parse.outputs.skill_title }}
+      category: ${{ steps.parse.outputs.category }}
+      pr_number: ${{ steps.create-pr.outputs.pull-request-number }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: website/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: website
+
+      # ─────────────────────────────────────────────────────────────────────────
+      # STEP 1: Parse and validate submission
+      # ─────────────────────────────────────────────────────────────────────────
+      - name: Parse and validate submission
+        id: parse
+        run: |
+          npx tsx scripts/process-skill-submission.ts '${{ github.event.issue.number }}'
+        working-directory: website
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+
+      # ─────────────────────────────────────────────────────────────────────────
+      # STEP 2: Create skill directory and SKILL.md
+      # ─────────────────────────────────────────────────────────────────────────
+      - name: Create skill files
+        if: steps.parse.outputs.valid == 'true'
+        run: |
+          SKILL_ID="${{ steps.parse.outputs.skill_id }}"
+          SKILL_DIR=".claude/skills/${SKILL_ID}"
+
+          mkdir -p "${SKILL_DIR}"
+          echo '${{ steps.parse.outputs.skill_content }}' | base64 -d > "${SKILL_DIR}/SKILL.md"
+
+          echo "✅ Created skill at ${SKILL_DIR}/SKILL.md"
+
+      # ─────────────────────────────────────────────────────────────────────────
+      # STEP 3: Generate hero image via Ideogram
+      # ─────────────────────────────────────────────────────────────────────────
+      - name: Generate hero image
+        if: steps.parse.outputs.valid == 'true' && env.IDEOGRAM_API_KEY != ''
+        id: hero-image
+        env:
+          IDEOGRAM_API_KEY: ${{ secrets.IDEOGRAM_API_KEY }}
+        run: |
+          SKILL_ID="${{ steps.parse.outputs.skill_id }}"
+          SKILL_TITLE="${{ steps.parse.outputs.skill_title }}"
+          CATEGORY="${{ steps.parse.outputs.category }}"
+          
+          # Determine color palette based on category
+          case "${CATEGORY}" in
+            "AI & Machine Learning"|"Data & Analytics")
+              PALETTE="mint and teal professional"
+              ;;
+            "Design & Creative")
+              PALETTE="synthwave sunset magenta and cyan"
+              ;;
+            "Lifestyle & Personal"|"Content & Writing")
+              PALETTE="warm terracotta and cream"
+              ;;
+            "Code Quality & Testing"|"DevOps & Site Reliability")
+              PALETTE="terminal green on black"
+              ;;
+            *)
+              PALETTE="lavender and soft purple workspace"
+              ;;
+          esac
+
+          # Build prompt following hero image style guide
+          PROMPT="Pixel art desktop workstation scene showing ${SKILL_TITLE} themed interface on retro monitor, ${PALETTE} color scheme, retro Windows 95 interface with title bar and scrollbars, 16-bit video game aesthetic, keyboard and desk plant in foreground, clean pixel art style, no anti-aliasing"
+
+          NEGATIVE_PROMPT="photorealistic, modern flat UI, Material Design, iOS style, text, words, letters, watermark, signature, blurry, gradient"
+
+          echo "🎨 Generating hero image with Ideogram"
+          echo "   Prompt: ${PROMPT}"
+
+          # Call Ideogram API
+          RESPONSE=$(curl -s -X POST \
+            -H "Api-Key: ${IDEOGRAM_API_KEY}" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"image_request\": {
+                \"prompt\": \"${PROMPT}\",
+                \"negative_prompt\": \"${NEGATIVE_PROMPT}\",
+                \"aspect_ratio\": \"ASPECT_16_9\",
+                \"model\": \"V_2\",
+                \"magic_prompt_option\": \"AUTO\",
+                \"style_type\": \"DESIGN\"
+              }
+            }" \
+            "https://api.ideogram.ai/generate")
+
+          # Check for errors
+          ERROR=$(echo "$RESPONSE" | jq -r '.error // empty')
+          if [ -n "$ERROR" ]; then
+            echo "⚠️ Ideogram API error: $ERROR"
+            echo "hero_generated=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Extract image URL from response
+          IMAGE_URL=$(echo "$RESPONSE" | jq -r '.data[0].url // empty')
+          
+          if [ -z "$IMAGE_URL" ]; then
+            echo "⚠️ No image URL in response"
+            echo "Response: $RESPONSE"
+            echo "hero_generated=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Download the image
+          mkdir -p website/static/img/skills
+          curl -s -o "website/static/img/skills/${SKILL_ID}-hero.png" "$IMAGE_URL"
+          
+          if [ -f "website/static/img/skills/${SKILL_ID}-hero.png" ]; then
+            echo "✅ Hero image saved to website/static/img/skills/${SKILL_ID}-hero.png"
+            echo "hero_generated=true" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️ Failed to download image"
+            echo "hero_generated=false" >> $GITHUB_OUTPUT
+          fi
+
+      # ─────────────────────────────────────────────────────────────────────────
+      # STEP 4: Generate MDX documentation page
+      # ─────────────────────────────────────────────────────────────────────────
+      - name: Generate MDX documentation
+        if: steps.parse.outputs.valid == 'true'
+        run: |
+          SKILL_ID="${{ steps.parse.outputs.skill_id }}"
+          SKILL_TITLE="${{ steps.parse.outputs.skill_title }}"
+          CATEGORY="${{ steps.parse.outputs.category }}"
+          
+          # Convert skill_id to doc path (replace - with _)
+          DOC_PATH="website/docs/skills/${SKILL_ID//-/_}"
+          mkdir -p "$DOC_PATH"
+          
+          # Read the SKILL.md content
+          SKILL_CONTENT=$(cat ".claude/skills/${SKILL_ID}/SKILL.md")
+          
+          # Extract description from frontmatter
+          DESCRIPTION=$(echo "$SKILL_CONTENT" | sed -n 's/^description: //p' | head -1)
+          
+          # Generate index.md with frontmatter
+          cat > "${DOC_PATH}/index.md" << EOF
+---
+sidebar_label: "${SKILL_TITLE}"
+sidebar_position: 99
+description: "${DESCRIPTION}"
+---
+
+import SkillHeader from '@site/src/components/SkillHeader';
+
+# ${SKILL_TITLE}
+
+<SkillHeader skillId="${SKILL_ID}" />
+
+${SKILL_CONTENT}
+EOF
+
+          echo "✅ Generated MDX at ${DOC_PATH}/index.md"
+
+      # ─────────────────────────────────────────────────────────────────────────
+      # STEP 5: Update skills registry
+      # ─────────────────────────────────────────────────────────────────────────
+      - name: Regenerate skills registry
+        if: steps.parse.outputs.valid == 'true'
+        run: |
+          npm run generate:skills || echo "⚠️ Skills generation failed, will need manual regeneration"
+        working-directory: website
+
+      # ─────────────────────────────────────────────────────────────────────────
+      # STEP 6: Create Pull Request
+      # ─────────────────────────────────────────────────────────────────────────
+      - name: Create Pull Request
+        if: steps.parse.outputs.valid == 'true'
+        id: create-pr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "feat(skills): Add ${{ steps.parse.outputs.skill_title }} skill"
+          title: "[Skill] Add ${{ steps.parse.outputs.skill_title }}"
+          body: |
+            ## New Skill Submission
+
+            This PR was automatically generated from issue #${{ github.event.issue.number }}.
+
+            **Skill:** ${{ steps.parse.outputs.skill_title }}
+            **Skill ID:** ${{ steps.parse.outputs.skill_id }}
+            **Category:** ${{ steps.parse.outputs.category }}
+            **Submitted by:** @${{ github.event.issue.user.login }}
+
+            ### Generated Assets
+            - [x] `.claude/skills/${{ steps.parse.outputs.skill_id }}/SKILL.md`
+            - [${{ steps.hero-image.outputs.hero_generated == 'true' && 'x' || ' ' }}] Hero image
+            - [x] MDX documentation page
+
+            ---
+
+            ### Checklist
+            - [ ] Skill content reviewed
+            - [ ] Category is appropriate
+            - [ ] Tags are relevant
+            - [ ] No duplicate skill exists
+            - [ ] Hero image looks good (or placeholder is acceptable)
+
+            Closes #${{ github.event.issue.number }}
+          branch: skill/${{ steps.parse.outputs.skill_id }}
+          labels: |
+            skill-submission
+            automated-pr
+
+      # ─────────────────────────────────────────────────────────────────────────
+      # STEP 7: Comment on issue
+      # ─────────────────────────────────────────────────────────────────────────
+      - name: Comment on issue (success)
+        if: steps.parse.outputs.valid == 'true'
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            ## ✅ Skill Submission Processed
+
+            Your skill submission has been automatically processed!
+
+            **Pull Request:** #${{ steps.create-pr.outputs.pull-request-number }}
+
+            ### What was generated:
+            - 📁 Skill directory: `.claude/skills/${{ steps.parse.outputs.skill_id }}/`
+            - 📝 Documentation page
+            ${{ steps.hero-image.outputs.hero_generated == 'true' && '- 🎨 Hero image (AI-generated pixel art)' || '- ⏳ Hero image pending (will be added manually)' }}
+
+            **Next Steps:**
+            1. A maintainer will review the PR
+            2. They may request changes or clarifications
+            3. Once approved and merged, your skill will be live on the site!
+
+            Thank you for contributing! 🎉
+
+      - name: Comment on issue (validation failed)
+        if: steps.parse.outputs.valid == 'false'
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            ## ⚠️ Validation Issues
+
+            We found some issues with your skill submission:
+
+            ```
+            ${{ steps.parse.outputs.errors }}
+            ```
+
+            Please edit this issue to fix these issues. The workflow will re-run automatically.
+
+      - name: Add needs-revision label
+        if: steps.parse.outputs.valid == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ github.event.issue.number }},
+              labels: ['needs-revision']
+            });
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # JOB 2: Trigger Site Rebuild on Skill Changes (after merge to main)
+  # ═══════════════════════════════════════════════════════════════════════════
+  trigger-rebuild:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Trigger Cloudflare Pages deploy
+        if: env.CLOUDFLARE_DEPLOY_HOOK != ''
+        env:
+          CLOUDFLARE_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+        run: |
+          echo "🚀 Triggering Cloudflare Pages rebuild..."
+          curl -X POST "$CLOUDFLARE_DEPLOY_HOOK"
+          echo "✅ Deploy webhook triggered"
+
+      - name: Log skill changes
+        run: |
+          echo "📦 New/updated skills detected:"
+          echo "${{ github.event.commits[0].message }}"

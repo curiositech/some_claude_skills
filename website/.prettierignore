@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+build/
+.docusaurus/
+coverage/
+
+# Static assets
+static/
+*.min.js
+*.min.css
+
+# Generated files
+src/data/skills.ts
+src/data/bundles.ts
+
+# Markdown (handled differently)
+*.md
+*.mdx
+
+# Package files
+package-lock.json

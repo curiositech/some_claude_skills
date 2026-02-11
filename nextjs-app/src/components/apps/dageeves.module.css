@@ -1,0 +1,270 @@
+/**
+ * DAGEEVES.EXE - File Manager Styles
+ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #c0c0c0;
+  font-family: 'VT323', 'Courier New', monospace;
+  font-size: 12px;
+}
+
+/* Drive Bar */
+.driveBar {
+  display: flex;
+  gap: 2px;
+  padding: 4px;
+  background: #c0c0c0;
+  border-bottom: 1px solid #808080;
+}
+
+.driveButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.driveButton:active,
+.driveButtonActive {
+  border-color: #000000 #ffffff #ffffff #000000;
+  background: #d0d0d0;
+}
+
+.driveIcon {
+  font-size: 14px;
+}
+
+/* Path Bar */
+.pathBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background: #c0c0c0;
+  border-bottom: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.pathLabel {
+  font-weight: bold;
+}
+
+.pathValue {
+  flex: 1;
+  padding: 2px 8px;
+  background: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  box-shadow: inset 1px 1px 0 #000000;
+  font-family: inherit;
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Main Content */
+.mainContent {
+  flex: 1;
+  display: flex;
+  gap: 2px;
+  padding: 4px;
+  overflow: hidden;
+}
+
+/* Tree Pane */
+.treePane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  background: #ffffff;
+}
+
+.treePaneHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background: #c0c0c0;
+  border-bottom: 1px solid #808080;
+  font-weight: bold;
+}
+
+.treeBackButton {
+  padding: 2px 8px;
+  background: #c0c0c0;
+  border: 1px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.treeContent {
+  flex: 1;
+  overflow: auto;
+  padding: 4px;
+}
+
+.treeItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.treeItem:hover {
+  background: #d0d0d0;
+}
+
+.treeItemSelected {
+  background: #000080;
+  color: #ffffff;
+}
+
+.treeIcon {
+  font-size: 14px;
+  width: 20px;
+  text-align: center;
+}
+
+.treeName {
+  font-size: 11px;
+}
+
+/* Detail Pane */
+.detailPane {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  background: #c0c0c0;
+}
+
+.detailHeader {
+  padding: 4px 8px;
+  background: #c0c0c0;
+  border-bottom: 1px solid #808080;
+  font-weight: bold;
+}
+
+.statusValue {
+  color: #000080;
+}
+
+.detailContent {
+  flex: 1;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detailRow {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detailLabel {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.detailInput {
+  padding: 4px 8px;
+  background: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  box-shadow: inset 1px 1px 0 #000000;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.detailButtons {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.detailPlaceholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #808080;
+  font-style: italic;
+}
+
+/* Win31 Button */
+.win31Button {
+  padding: 4px 16px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  box-shadow:
+    inset -1px -1px 0 #808080,
+    inset 1px 1px 0 #dfdfdf;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.win31Button:hover {
+  background: #d0d0d0;
+}
+
+.win31Button:active {
+  border-color: #000000 #ffffff #ffffff #000000;
+  box-shadow: inset 1px 1px 0 #808080;
+}
+
+/* Status Bar */
+.statusBar {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  background: #c0c0c0;
+  border-top: 1px solid #ffffff;
+}
+
+.statusPanel {
+  flex: 1;
+  padding: 2px 8px;
+  font-size: 10px;
+  border: 1px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+/* New Query Button */
+.newQueryButton {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 4px 12px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.newQueryButton:hover {
+  background: #d0d0d0;
+}

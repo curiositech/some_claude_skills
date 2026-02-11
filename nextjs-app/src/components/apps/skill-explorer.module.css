@@ -1,0 +1,1069 @@
+/**
+ * SKILL_EXPLORER.EXE Styles
+ * Epic skill browsing with synthwave/vaporwave pixel art aesthetic
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONTAINER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.container {
+  position: fixed;
+  inset: 0;
+  background: #1a1a2e;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  font-family: 'VT323', 'Courier New', monospace;
+  image-rendering: pixelated;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TITLE BAR
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.titleBar {
+  height: 24px;
+  background: #000080;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  flex-shrink: 0;
+  border-bottom: 2px solid #000;
+}
+
+.controlButton {
+  width: 18px;
+  height: 14px;
+  background: #c0c0c0;
+  border: none;
+  box-shadow:
+    inset -1px -1px 0 #000,
+    inset 1px 1px 0 #fff;
+  font-size: 10px;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+.titleText {
+  flex: 1;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.titleBarButtons {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.cartButton {
+  width: 24px;
+  height: 18px;
+  background: #c0c0c0;
+  border: none;
+  box-shadow:
+    inset -1px -1px 0 #000,
+    inset 1px 1px 0 #fff;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartButton.hasItems {
+  background: #ffff00;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ff0000;
+  color: #fff;
+  font-size: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn {
+  width: 18px;
+  height: 14px;
+  background: #c0c0c0;
+  border: none;
+  box-shadow:
+    inset -1px -1px 0 #000,
+    inset 1px 1px 0 #fff;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  background: #ff0000;
+  color: #fff;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONTENT AREA
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SPLASH SCREEN
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.splashScreen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #1a0a2e 0%, #2d1b4e 40%, #4a2c6e 70%, #ff6b9d 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.splashBackground {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.splashGrid {
+  position: absolute;
+  bottom: 0;
+  left: -50%;
+  right: -50%;
+  height: 60%;
+  background: 
+    linear-gradient(transparent 0%, rgba(0, 255, 255, 0.1) 100%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 0, 255, 0.3) 0px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 255, 255, 0.3) 0px,
+      transparent 1px,
+      transparent 40px
+    );
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: center top;
+  animation: gridScroll 20s linear infinite;
+}
+
+@keyframes gridScroll {
+  from { background-position: 0 0; }
+  to { background-position: 0 800px; }
+}
+
+.splashGlow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.4) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.splashMountains {
+  position: absolute;
+  bottom: 30%;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: 
+    linear-gradient(135deg, transparent 40%, #2d1b4e 40%, #2d1b4e 45%, transparent 45%),
+    linear-gradient(225deg, transparent 40%, #3d2b5e 40%, #3d2b5e 45%, transparent 45%),
+    linear-gradient(135deg, transparent 30%, #1a0a2e 30%, #1a0a2e 35%, transparent 35%) 100px 0,
+    linear-gradient(225deg, transparent 30%, #2a1a3e 30%, #2a1a3e 35%, transparent 35%) 100px 0;
+  background-size: 200px 200px;
+  background-repeat: repeat-x;
+}
+
+.splashSun {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(180deg, #ff6b9d 0%, #ff9a3c 50%, #ffff00 100%);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 100px rgba(255, 154, 60, 0.8);
+  /* Scanlines on sun */
+  mask-image: repeating-linear-gradient(
+    0deg,
+    #000 0px,
+    #000 3px,
+    transparent 3px,
+    transparent 6px
+  );
+}
+
+.splashFigure {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 40px;
+}
+
+.robotBody {
+  position: relative;
+  width: 200px;
+  height: 280px;
+}
+
+.robotHead {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 60px;
+  height: 50px;
+  background: linear-gradient(180deg, #00ced1 0%, #008b8b 100%);
+  transform: translateX(-50%);
+  border: 3px solid #006666;
+}
+
+.robotHead::before,
+.robotHead::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  width: 12px;
+  height: 12px;
+  background: #ff00ff;
+  box-shadow: 0 0 10px #ff00ff;
+}
+
+.robotHead::before { left: 10px; }
+.robotHead::after { right: 10px; }
+
+.robotTorso {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  width: 80px;
+  height: 100px;
+  background: linear-gradient(180deg, #00ced1 0%, #008b8b 100%);
+  transform: translateX(-50%);
+  border: 3px solid #006666;
+}
+
+.robotArms {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  width: 160px;
+  height: 80px;
+  transform: translateX(-50%);
+}
+
+.robotArms::before,
+.robotArms::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 80px;
+  background: linear-gradient(180deg, #00ced1 0%, #008b8b 100%);
+  border: 2px solid #006666;
+  animation: armWave 2s ease-in-out infinite;
+}
+
+.robotArms::before { 
+  left: 0; 
+  transform-origin: top center;
+  animation-delay: 0s;
+}
+.robotArms::after { 
+  right: 0; 
+  transform-origin: top center;
+  animation-delay: 0.5s;
+}
+
+@keyframes armWave {
+  0%, 100% { transform: rotate(-30deg); }
+  50% { transform: rotate(30deg); }
+}
+
+.robotLegs {
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  width: 60px;
+  height: 100px;
+  transform: translateX(-50%);
+}
+
+.robotLegs::before,
+.robotLegs::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 100px;
+  background: linear-gradient(180deg, #00ced1 0%, #008b8b 100%);
+  border: 2px solid #006666;
+}
+
+.robotLegs::before { left: 5px; }
+.robotLegs::after { right: 5px; }
+
+/* Floating skill orbs */
+.skillOrb {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.skillOrb1 { 
+  top: 30px; left: -40px; 
+  background: #ff69b4; 
+  animation-delay: 0s;
+}
+.skillOrb2 { 
+  top: 30px; right: -40px; 
+  background: #00ced1; 
+  animation-delay: 0.5s;
+}
+.skillOrb3 { 
+  top: 80px; left: -60px; 
+  background: #ffd700; 
+  animation-delay: 1s;
+}
+.skillOrb4 { 
+  top: 80px; right: -60px; 
+  background: #90ee90; 
+  animation-delay: 1.5s;
+}
+.skillOrb5 { 
+  top: 130px; left: -50px; 
+  background: #ff6347; 
+  animation-delay: 2s;
+}
+.skillOrb6 { 
+  top: 130px; right: -50px; 
+  background: #9370db; 
+  animation-delay: 2.5s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(10deg); }
+}
+
+.splashTitle {
+  position: relative;
+  z-index: 10;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-shadow: 
+    4px 4px 0 #ff00ff,
+    -2px -2px 0 #00ffff;
+}
+
+.splashTitleMain {
+  color: #fff;
+}
+
+.splashTitleExt {
+  color: #00ffff;
+}
+
+.splashTagline {
+  position: relative;
+  z-index: 10;
+  font-size: 14px;
+  color: #ff69b4;
+  letter-spacing: 4px;
+  margin-bottom: 60px;
+}
+
+.splashLoading {
+  position: relative;
+  z-index: 10;
+  width: 300px;
+}
+
+.splashLoadingText {
+  font-size: 12px;
+  color: #00ffff;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.splashLoadingBar {
+  height: 16px;
+  background: #000;
+  border: 2px solid #00ffff;
+  padding: 2px;
+}
+
+.splashLoadingProgress {
+  height: 100%;
+  background: linear-gradient(90deg, #ff00ff 0%, #00ffff 100%);
+  transition: width 200ms linear;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CATEGORY VIEW
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.categoryView {
+  height: 100%;
+  padding: 24px;
+  overflow-y: auto;
+  background: linear-gradient(180deg, #1a0a2e 0%, #2d1b4e 100%);
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.categoryCard {
+  background: linear-gradient(180deg, #3d2b5e 0%, #2d1b4e 100%);
+  border: 3px solid #ff69b4;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.categoryCard:hover {
+  transform: translateY(-4px);
+  border-color: #00ffff;
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.3);
+}
+
+.categoryCard:active {
+  transform: translateY(0);
+}
+
+.categoryIcon {
+  width: 64px;
+  height: 64px;
+}
+
+.categoryIconSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.categoryLabel {
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.categoryCount {
+  font-size: 12px;
+  color: #00ffff;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SKILL LIST VIEW
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.skillListView {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #1a0a2e;
+}
+
+.skillListHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #2d1b4e;
+  border-bottom: 2px solid #ff69b4;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.skillListTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.categoryIconSmall {
+  width: 32px;
+  height: 32px;
+}
+
+.skillGrid {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skillCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: linear-gradient(180deg, #3d2b5e 0%, #2d1b4e 100%);
+  border: 2px solid #4a3a6e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.skillCard:hover {
+  border-color: #ff69b4;
+  transform: translateX(8px);
+}
+
+.skillCardIcon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.skillIconImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.skillIconPlaceholder {
+  width: 100%;
+  height: 100%;
+}
+
+.skillPlaceholderSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.skillCardInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.skillCardTitle {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.skillCardDesc {
+  font-size: 12px;
+  color: #aaa;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.skillCardActions {
+  display: flex;
+  gap: 8px;
+}
+
+.iconButton {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1px solid #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  transition: all 0.2s ease;
+}
+
+.iconButton:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.iconButton.active {
+  border-color: #ffd700;
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.2);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DETAIL VIEW
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Container for SkillDocument integration */
+.detailContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--win31-gray, #c0c0c0);
+}
+
+.detailContainer > div {
+  height: 100%;
+  overflow: auto;
+}
+
+.detailView {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #1a0a2e;
+  overflow: hidden;
+}
+
+.detailHero {
+  position: relative;
+  height: 300px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.detailHeroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detailHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26, 10, 46, 0.5) 0%, rgba(26, 10, 46, 0.9) 100%);
+}
+
+.backButtonFloating {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backButtonFloating:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.detailHeroContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  z-index: 10;
+}
+
+.detailTitle {
+  font-size: 32px;
+  color: #fff;
+  margin: 0 0 8px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.detailDesc {
+  font-size: 14px;
+  color: #ddd;
+  margin: 0 0 16px;
+  max-width: 600px;
+}
+
+.detailActions {
+  display: flex;
+  gap: 12px;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.actionButtonPrimary {
+  background: #ff69b4;
+  border-color: #ff69b4;
+}
+
+.actionButtonPrimary:hover {
+  background: #ff8cc4;
+}
+
+.actionButtonActive {
+  background: rgba(255, 215, 0, 0.3);
+  border-color: #ffd700;
+  color: #ffd700;
+}
+
+.detailContent {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.detailIndex {
+  width: 250px;
+  flex-shrink: 0;
+  background: #2d1b4e;
+  border-right: 2px solid #4a3a6e;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.detailIndexTitle {
+  font-size: 12px;
+  color: #00ffff;
+  margin: 16px 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.detailIndexTitle:first-child {
+  margin-top: 0;
+}
+
+.detailIndexItem {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-family: inherit;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.detailIndexItem:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.detailIndexItem.active {
+  color: #ff69b4;
+  background: rgba(255, 105, 180, 0.2);
+}
+
+.detailIndexRef {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.detailIndexRef:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.detailMain {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  background: #1a0a2e;
+}
+
+.detailSection h2 {
+  font-size: 20px;
+  color: #ff69b4;
+  margin: 0 0 16px;
+}
+
+.detailSectionContent {
+  font-size: 14px;
+  color: #ddd;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  margin: 0;
+  font-family: inherit;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CART PANEL
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.cartPanel {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  width: 350px;
+  background: #2d1b4e;
+  border: 3px solid #ff69b4;
+  box-shadow: -8px 8px 32px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100% - 48px);
+}
+
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 2px solid #4a3a6e;
+}
+
+.cartHeader h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #fff;
+}
+
+.cartClose {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.cartClose:hover {
+  color: #fff;
+}
+
+.cartEmpty {
+  padding: 40px 24px;
+  text-align: center;
+  color: #666;
+}
+
+.cartEmpty svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.cartEmptyHint {
+  font-size: 12px;
+  color: #555;
+  margin-top: 8px;
+}
+
+.cartItems {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 16px;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.3);
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.cartItemRemove {
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  color: #666;
+  cursor: pointer;
+}
+
+.cartItemRemove:hover {
+  color: #ff6b6b;
+}
+
+.cartCommand {
+  padding: 16px;
+  border-top: 2px solid #4a3a6e;
+}
+
+.cartCommandLabel {
+  font-size: 12px;
+  color: #00ffff;
+  margin-bottom: 8px;
+}
+
+.cartCommandCode {
+  display: block;
+  padding: 12px;
+  background: #000;
+  color: #00ff00;
+  font-size: 11px;
+  word-break: break-all;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+.cartActions {
+  padding: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.cartCopyButton {
+  flex: 1;
+  padding: 12px;
+  background: #ff69b4;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cartCopyButton:hover {
+  background: #ff8cc4;
+}
+
+.cartCopyButton.copied {
+  background: #00ff00;
+  color: #000;
+}
+
+.cartClearButton {
+  padding: 12px;
+  background: transparent;
+  border: 2px solid #666;
+  color: #666;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cartClearButton:hover {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ICONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+.iconSmall {
+  width: 14px;
+  height: 14px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .splashTitle {
+    font-size: 28px;
+  }
+
+  .categoryGrid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .categoryCard {
+    padding: 16px;
+  }
+
+  .categoryIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .detailIndex {
+    display: none;
+  }
+
+  .detailHero {
+    height: 200px;
+  }
+
+  .detailTitle {
+    font-size: 24px;
+  }
+
+  .cartPanel {
+    width: 100%;
+    top: 24px;
+    right: 0;
+    left: 0;
+  }
+}

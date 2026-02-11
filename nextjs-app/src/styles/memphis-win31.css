@@ -1,0 +1,974 @@
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
+ * MEMPHIS GROUP × WINDOWS 3.1 - AUTHENTIC EDITION
+ * Pixel-perfect bevels, bitmap typography, dense layouts
+ * 
+ * Memphis References:
+ * - Ettore Sottsass "Carlton" bookshelf (1981) - asymmetric colored shelves
+ * - Michele De Lucchi "Oceanic" lamp - geometric colored shades
+ * - Nathalie Du Pasquier patterns - bold geometric textiles
+ * - Peter Shire "Bel Air" chair - angular primary colors
+ * - George Sowden "Oberoi" clock - playful geometric forms
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BITMAP FONTS - Authentic Win3.1 Typography
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'W95FA';
+  src: url('/fonts/W95FA.woff2') format('woff2'),
+       url('/fonts/W95FA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* System fonts - bitmap-style fallbacks */
+  --font-win31: 'W95FA', 'VT323', 'Perfect DOS VGA 437', 'Fixedsys', 'Terminal', monospace;
+  --font-win31-title: 'W95FA', 'VT323', 'Chicago', 'Geneva', sans-serif;
+  
+  /* ─────────────────────────────────────────────────────────────────────────
+     MEMPHIS PALETTE - Inspired by Sottsass, Du Pasquier, De Lucchi
+     ───────────────────────────────────────────────────────────────────────── */
+  
+  /* Carlton Bookshelf colors */
+  --memphis-red: #E63946;      /* Carlton red shelf */
+  --memphis-yellow: #F4D35E;   /* Carlton yellow */
+  --memphis-blue: #457B9D;     /* Carlton blue */
+  --memphis-green: #2A9D8F;    /* Carlton teal */
+  
+  /* Tahiti Lamp / Oceanic colors */
+  --memphis-pink: #FF6B9D;     /* Hot pink accent */
+  --memphis-cyan: #00B4D8;     /* Electric cyan */
+  --memphis-coral: #F4845F;    /* Coral orange */
+  --memphis-purple: #7B2CBF;   /* Deep purple */
+  
+  /* Du Pasquier pattern colors */
+  --memphis-mint: #90BE6D;     /* Soft mint */
+  --memphis-peach: #FFB5A7;    /* Peach */
+  --memphis-lavender: #CDB4DB; /* Lavender */
+  
+  /* Win31 System Colors (kept for structure) */
+  --win31-gray: #C0C0C0;
+  --win31-gray-light: #DFDFDF;
+  --win31-gray-dark: #808080;
+  --win31-white: #FFFFFF;
+  --win31-black: #000000;
+  --win31-navy: #000080;
+  
+  /* Memphis-ified surfaces */
+  --memphis-surface: #F5F0E6;      /* Warm cream like 80s plastic */
+  --memphis-surface-light: #FAF8F3;
+  --memphis-surface-dark: #E8E0D0;
+  
+  /* Bevel colors - crisp 2px */
+  --bevel-light: var(--win31-white);
+  --bevel-dark: var(--win31-gray-dark);
+  --bevel-darker: var(--win31-black);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PIXEL-PERFECT BEVELS - The Soul of Win3.1
+   
+   Interactive (outset): light top/left, dark bottom/right
+   Non-interactive (inset): dark top/left, light bottom/right
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Outset bevel - for buttons, raised panels, window frames */
+.bevel-out {
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  background: var(--memphis-surface);
+}
+
+/* Inset bevel - for text fields, wells, non-interactive areas */
+.bevel-in {
+  border: 2px solid;
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  background: var(--win31-white);
+}
+
+/* Sharper bevel with black outer edge (for windows) */
+.bevel-window {
+  border: 1px solid var(--win31-black);
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-light),
+    inset 2px 2px 0 var(--memphis-surface-light),
+    inset -1px -1px 0 var(--bevel-dark),
+    inset -2px -2px 0 var(--memphis-surface-dark);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   WINDOW CHROME - Authentic Win3.1 Structure
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.win31-window {
+  background: var(--memphis-surface);
+  border: 1px solid var(--win31-black);
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-light),
+    inset -1px -1px 0 var(--bevel-dark),
+    2px 2px 0 rgba(0,0,0,0.25);
+  font-family: var(--font-win31);
+  font-size: 11px;
+  position: relative;
+}
+
+/* Resize borders - 4px grab zones */
+.win31-window-resizable::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  cursor: move;
+  pointer-events: none;
+}
+
+.win31-window-resizable::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  cursor: se-resize;
+  /* Diagonal resize grip pattern */
+  background: 
+    linear-gradient(135deg, 
+      transparent 30%, 
+      var(--bevel-dark) 30%, var(--bevel-dark) 40%,
+      transparent 40%, transparent 50%,
+      var(--bevel-dark) 50%, var(--bevel-dark) 60%,
+      transparent 60%, transparent 70%,
+      var(--bevel-dark) 70%, var(--bevel-dark) 80%,
+      transparent 80%
+    );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   TITLE BAR - Icon Left, Centered Text, Controls Right
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.win31-titlebar {
+  /* Memphis gradient - Carlton-inspired */
+  background: linear-gradient(90deg, 
+    var(--memphis-purple) 0%, 
+    var(--memphis-blue) 50%,
+    var(--memphis-cyan) 100%
+  );
+  height: 18px;
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  gap: 2px;
+}
+
+.win31-titlebar-inactive {
+  background: linear-gradient(90deg, 
+    var(--win31-gray-dark) 0%, 
+    var(--win31-gray) 100%
+  );
+}
+
+/* System menu button (spacebar icon) */
+.win31-sysmenu {
+  width: 16px;
+  height: 14px;
+  background: var(--memphis-surface);
+  border: 1px solid var(--win31-black);
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-light),
+    inset -1px -1px 0 var(--bevel-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.win31-sysmenu::after {
+  content: '';
+  width: 8px;
+  height: 2px;
+  background: var(--win31-black);
+}
+
+/* Title text - CENTERED */
+.win31-titlebar-text {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-win31-title);
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--win31-white);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0;
+}
+
+/* Control buttons container - RIGHT side */
+.win31-titlebar-controls {
+  display: flex;
+  gap: 1px;
+  flex-shrink: 0;
+}
+
+/* Min/Max buttons */
+.win31-titlebar-btn {
+  width: 16px;
+  height: 14px;
+  background: var(--memphis-surface);
+  border: 1px solid var(--win31-black);
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-light),
+    inset -1px -1px 0 var(--bevel-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.win31-titlebar-btn:active {
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-dark),
+    inset -1px -1px 0 var(--bevel-light);
+}
+
+/* Minimize button - down arrow */
+.win31-btn-minimize::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid var(--win31-black);
+}
+
+/* Maximize button - up arrow */
+.win31-btn-maximize::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid var(--win31-black);
+}
+
+/* Restore button - double box */
+.win31-btn-restore::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--win31-black);
+  border-top-width: 2px;
+  position: relative;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   MENU BAR - With Keyboard Accelerators (&File = F̲ile)
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.win31-menubar {
+  background: var(--memphis-surface);
+  border-bottom: 1px solid var(--bevel-dark);
+  box-shadow: inset 0 -1px 0 var(--bevel-light);
+  padding: 1px 0;
+  display: flex;
+  font-family: var(--font-win31);
+  font-size: 11px;
+}
+
+.win31-menubar-item {
+  padding: 1px 6px;
+  cursor: pointer;
+  color: var(--win31-black);
+}
+
+.win31-menubar-item:hover,
+.win31-menubar-item:focus {
+  background: var(--memphis-purple);
+  color: var(--win31-white);
+}
+
+/* Underlined accelerator key */
+.win31-menubar-item .accel {
+  text-decoration: underline;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BUTTONS - Crisp 2px Bevels, Dense Padding
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.win31-button {
+  background: var(--memphis-surface);
+  border: 1px solid var(--win31-black);
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-light),
+    inset -1px -1px 0 var(--bevel-dark);
+  padding: 2px 8px;
+  font-family: var(--font-win31);
+  font-size: 11px;
+  min-width: 60px;
+  min-height: 18px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.win31-button:active {
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-dark),
+    inset -1px -1px 0 var(--bevel-light);
+  padding: 3px 7px 1px 9px;
+}
+
+/* Focus rectangle */
+.win31-button:focus {
+  outline: none;
+}
+
+.win31-button:focus::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px dotted var(--win31-black);
+  pointer-events: none;
+}
+
+/* Default button - thick black border */
+.win31-button-default {
+  border-width: 2px;
+}
+
+/* Primary button - Memphis colored */
+.win31-button-primary {
+  background: linear-gradient(180deg, 
+    var(--memphis-coral) 0%, 
+    var(--memphis-red) 100%
+  );
+  color: var(--win31-white);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PROGRAM GROUP WINDOW - Rectangular with 3×N Icon Grid
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.win31-group {
+  background: var(--memphis-surface);
+  border: 1px solid var(--win31-black);
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-light),
+    inset -1px -1px 0 var(--bevel-dark);
+  min-width: 180px;
+}
+
+.win31-group-titlebar {
+  /* Memphis accent - Du Pasquier inspired */
+  background: linear-gradient(90deg,
+    var(--memphis-cyan) 0%,
+    var(--memphis-mint) 100%
+  );
+  height: 14px;
+  padding: 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-win31);
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--win31-black);
+}
+
+.win31-group-content {
+  padding: 4px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Scrollbar in groups */
+.win31-group-content::-webkit-scrollbar {
+  width: 16px;
+}
+
+.win31-group-content::-webkit-scrollbar-track {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--memphis-surface) 0px,
+    var(--memphis-surface) 2px,
+    var(--memphis-surface-dark) 2px,
+    var(--memphis-surface-dark) 4px
+  );
+  border-left: 1px solid var(--bevel-dark);
+}
+
+.win31-group-content::-webkit-scrollbar-thumb {
+  background: var(--memphis-surface);
+  border: 1px solid var(--win31-black);
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-light),
+    inset -1px -1px 0 var(--bevel-dark);
+}
+
+.win31-group-content::-webkit-scrollbar-button {
+  background: var(--memphis-surface);
+  border: 1px solid var(--win31-black);
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-light),
+    inset -1px -1px 0 var(--bevel-dark);
+  height: 16px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PROGRAM ICONS - 32×32 with Tight Labels
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.win31-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2px;
+  cursor: pointer;
+  width: 54px;
+}
+
+.win31-icon:hover .win31-icon-label,
+.win31-icon:focus .win31-icon-label {
+  background: var(--memphis-purple);
+  color: var(--win31-white);
+}
+
+.win31-icon-selected .win31-icon-label {
+  background: var(--memphis-purple);
+  color: var(--win31-white);
+}
+
+/* Focus rectangle on icon */
+.win31-icon:focus {
+  outline: 1px dotted var(--win31-black);
+  outline-offset: 1px;
+}
+
+.win31-icon-image {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.win31-icon-emoji {
+  width: 32px;
+  height: 32px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.win31-icon-label {
+  font-family: var(--font-win31);
+  font-size: 10px;
+  text-align: center;
+  padding: 0 2px;
+  margin-top: 1px;
+  max-width: 52px;
+  word-wrap: break-word;
+  line-height: 1.1;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   MINIMIZED WINDOWS - Icons at Bottom of Screen
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.win31-minimized-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  min-height: 40px;
+  background: var(--memphis-surface);
+  border-top: 1px solid var(--win31-black);
+  box-shadow: inset 0 1px 0 var(--bevel-light);
+  padding: 2px 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: flex-start;
+  z-index: 100;
+}
+
+.win31-minimized-icon {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--memphis-surface);
+  border: 1px solid var(--win31-black);
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-light),
+    inset -1px -1px 0 var(--bevel-dark);
+  padding: 2px 4px;
+  cursor: pointer;
+  font-family: var(--font-win31);
+  font-size: 10px;
+  max-width: 120px;
+}
+
+.win31-minimized-icon:hover {
+  background: var(--memphis-surface-light);
+}
+
+.win31-minimized-icon-img {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   INPUT FIELDS - Inset Bevels
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.win31-input {
+  background: var(--win31-white);
+  border: 1px solid var(--win31-black);
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-dark),
+    inset -1px -1px 0 var(--bevel-light);
+  padding: 1px 2px;
+  font-family: var(--font-win31);
+  font-size: 11px;
+  min-height: 16px;
+}
+
+.win31-input:focus {
+  outline: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   LIST BOX - Inset with Selection
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.win31-listbox {
+  background: var(--win31-white);
+  border: 1px solid var(--win31-black);
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-dark),
+    inset -1px -1px 0 var(--bevel-light);
+  font-family: var(--font-win31);
+  font-size: 11px;
+  overflow-y: auto;
+}
+
+.win31-listbox-item {
+  padding: 0 2px;
+  cursor: pointer;
+  line-height: 14px;
+}
+
+.win31-listbox-item:hover {
+  background: var(--memphis-cyan);
+  color: var(--win31-black);
+}
+
+.win31-listbox-item-selected {
+  background: var(--memphis-purple);
+  color: var(--win31-white);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   STATUS BAR - Inset Sections
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.win31-statusbar {
+  background: var(--memphis-surface);
+  border-top: 1px solid var(--bevel-dark);
+  box-shadow: inset 0 1px 0 var(--bevel-light);
+  padding: 1px 2px;
+  display: flex;
+  gap: 2px;
+  font-family: var(--font-win31);
+  font-size: 10px;
+  min-height: 16px;
+}
+
+.win31-statusbar-section {
+  background: var(--memphis-surface);
+  border: 1px solid;
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+}
+
+.win31-statusbar-section:first-child {
+  flex: 1;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   DIALOG BOX
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.win31-dialog {
+  background: var(--memphis-surface);
+  border: 2px solid var(--win31-black);
+  box-shadow: 
+    inset 1px 1px 0 var(--bevel-light),
+    inset -1px -1px 0 var(--bevel-dark),
+    4px 4px 0 rgba(0,0,0,0.3);
+}
+
+.win31-dialog-content {
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  font-family: var(--font-win31);
+  font-size: 11px;
+}
+
+.win31-dialog-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.win31-dialog-text {
+  flex: 1;
+  line-height: 1.3;
+}
+
+.win31-dialog-buttons {
+  padding: 4px 8px 8px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   DESKTOP - Memphis Pattern Background
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.win31-desktop {
+  /* Du Pasquier-inspired geometric pattern */
+  background-color: var(--memphis-cyan);
+  background-image: 
+    /* Triangles */
+    linear-gradient(135deg, var(--memphis-yellow) 25%, transparent 25%),
+    linear-gradient(225deg, var(--memphis-pink) 25%, transparent 25%),
+    /* Dots */
+    radial-gradient(circle at 20% 80%, var(--memphis-red) 3px, transparent 3px),
+    radial-gradient(circle at 80% 20%, var(--memphis-purple) 4px, transparent 4px),
+    radial-gradient(circle at 60% 60%, var(--memphis-coral) 2px, transparent 2px);
+  background-size: 80px 80px, 80px 80px, 100px 100px, 120px 120px, 60px 60px;
+  background-position: 0 0, 40px 40px, 0 0, 0 0, 0 0;
+  min-height: 100dvh;
+}
+
+/* Simpler teal for less distraction */
+.win31-desktop-simple {
+  background: #008080;
+  min-height: 100dvh;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   MEMPHIS DECORATIVE ELEMENTS - Specific Art References
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Carlton Bookshelf - Asymmetric colored bars */
+.memphis-carlton {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px;
+}
+
+.memphis-carlton-shelf {
+  height: 8px;
+  border-radius: 0;
+}
+
+.memphis-carlton-shelf:nth-child(1) { background: var(--memphis-red); width: 60%; margin-left: 20%; }
+.memphis-carlton-shelf:nth-child(2) { background: var(--memphis-yellow); width: 80%; margin-left: 0; }
+.memphis-carlton-shelf:nth-child(3) { background: var(--memphis-blue); width: 70%; margin-left: 30%; }
+.memphis-carlton-shelf:nth-child(4) { background: var(--memphis-green); width: 50%; margin-left: 10%; }
+.memphis-carlton-shelf:nth-child(5) { background: var(--memphis-purple); width: 90%; margin-left: 5%; }
+
+/* Tahiti Lamp - Geometric stacked shapes */
+.memphis-tahiti {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.memphis-tahiti-cone {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 30px solid var(--memphis-pink);
+}
+
+.memphis-tahiti-disk {
+  width: 50px;
+  height: 8px;
+  background: var(--memphis-yellow);
+  border-radius: 50%;
+  margin-top: -4px;
+}
+
+.memphis-tahiti-base {
+  width: 4px;
+  height: 40px;
+  background: var(--memphis-purple);
+}
+
+/* Sowden Clock - Playful geometric face */
+.memphis-sowden-clock {
+  width: 60px;
+  height: 60px;
+  background: var(--memphis-yellow);
+  border: 3px solid var(--memphis-purple);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.memphis-sowden-clock::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: var(--memphis-cyan);
+  border-radius: 50%;
+}
+
+.memphis-sowden-clock::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--memphis-pink);
+  border-radius: 50%;
+}
+
+/* Du Pasquier Pattern Block */
+.memphis-pattern {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      var(--memphis-red) 0px,
+      var(--memphis-red) 4px,
+      transparent 4px,
+      transparent 8px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--memphis-yellow) 0px,
+      var(--memphis-yellow) 4px,
+      transparent 4px,
+      transparent 8px
+    );
+  background-size: 8px 8px;
+}
+
+/* Zig-zag border (common Memphis motif) */
+.memphis-zigzag {
+  background: linear-gradient(135deg, var(--memphis-pink) 25%, transparent 25%) -10px 0,
+              linear-gradient(225deg, var(--memphis-pink) 25%, transparent 25%) -10px 0,
+              linear-gradient(315deg, var(--memphis-pink) 25%, transparent 25%),
+              linear-gradient(45deg, var(--memphis-pink) 25%, transparent 25%);
+  background-size: 20px 10px;
+  background-color: var(--memphis-yellow);
+  height: 10px;
+}
+
+/* Terrazzo - Classic Memphis flooring pattern */
+.memphis-terrazzo {
+  background-color: var(--memphis-surface);
+  background-image:
+    radial-gradient(ellipse 8px 4px at 20% 30%, var(--memphis-pink) 100%, transparent),
+    radial-gradient(ellipse 6px 10px at 70% 60%, var(--memphis-cyan) 100%, transparent),
+    radial-gradient(ellipse 4px 8px at 40% 80%, var(--memphis-yellow) 100%, transparent),
+    radial-gradient(ellipse 10px 5px at 80% 20%, var(--memphis-purple) 100%, transparent),
+    radial-gradient(ellipse 5px 9px at 10% 70%, var(--memphis-coral) 100%, transparent),
+    radial-gradient(ellipse 7px 4px at 60% 40%, var(--memphis-mint) 100%, transparent);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ANIMATIONS - Subtle, era-appropriate
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@keyframes win31-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: win31-blink 1s step-end infinite;
+}
+
+/* No smooth animations - Win3.1 was instant */
+.win31-window,
+.win31-button,
+.win31-group {
+  transition: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   WCAG AAA COMPLIANCE
+   - 7:1 contrast ratio for normal text
+   - 4.5:1 for large text
+   - Visible focus indicators
+   - Reduced motion support
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* High contrast focus indicators */
+:focus {
+  outline: 3px solid var(--memphis-purple);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--memphis-purple);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px rgba(107, 92, 231, 0.3);
+}
+
+/* Win31 specific focus styles */
+.win31-button:focus-visible,
+.win31-icon:focus-visible,
+.win31-menubar-item:focus-visible {
+  outline: 2px dotted var(--win31-black);
+  outline-offset: -3px;
+  background: var(--memphis-yellow);
+}
+
+.win31-listbox-item:focus-visible {
+  outline: 2px solid var(--memphis-purple);
+  outline-offset: -1px;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--memphis-purple);
+  color: white;
+  padding: 8px 16px;
+  z-index: 9999;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 8px;
+}
+
+/* Ensure sufficient contrast for text */
+.win31-titlebar-text {
+  color: var(--win31-white);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.8);
+}
+
+.win31-icon-label {
+  color: var(--win31-black);
+  background: var(--memphis-surface);
+}
+
+.win31-icon-selected .win31-icon-label,
+.win31-icon:focus .win31-icon-label {
+  background: var(--memphis-purple);
+  color: var(--win31-white);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-blink,
+  .animate-marquee {
+    animation: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  :root {
+    --memphis-surface: #ffffff;
+    --memphis-surface-dark: #e0e0e0;
+    --bevel-dark: #000000;
+    --bevel-light: #ffffff;
+  }
+  
+  .win31-window,
+  .win31-button,
+  .win31-group {
+    border-width: 2px;
+  }
+  
+  .win31-titlebar {
+    background: var(--win31-black);
+  }
+}
+
+/* Ensure minimum touch target size (44x44px) */
+.win31-button,
+.win31-icon,
+.win31-menubar-item {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (pointer: fine) {
+  /* Smaller targets OK for mouse users */
+  .win31-button {
+    min-height: 24px;
+    min-width: 60px;
+  }
+  
+  .win31-icon {
+    min-height: auto;
+    min-width: auto;
+  }
+  
+  .win31-menubar-item {
+    min-height: auto;
+    min-width: auto;
+  }
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

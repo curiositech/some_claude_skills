@@ -1,0 +1,490 @@
+/**
+ * WINAMP CLASSIC - 275x116 pixels per window
+ * Authentic Winamp 2.x appearance
+ */
+
+.container {
+  position: fixed;
+  z-index: 9000;
+  font-family: 'VT323', 'Courier New', monospace;
+  image-rendering: pixelated;
+  user-select: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MAIN WINDOW - 275 x 116 pixels
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.mainWindow {
+  width: 275px;
+  height: 116px;
+  background: linear-gradient(180deg, #3a3a3a 0%, #232323 100%);
+  border: 1px solid #000;
+  box-shadow: 
+    inset 1px 1px 0 #4a4a4a,
+    inset -1px -1px 0 #1a1a1a;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title Bar */
+.titleBar {
+  height: 14px;
+  background: linear-gradient(90deg, #1a3a5c 0%, #0a2a4c 100%);
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  cursor: move;
+}
+
+.titleBarLeft {
+  display: flex;
+  gap: 2px;
+}
+
+.menuBtn {
+  width: 10px;
+  height: 10px;
+  background: #4a4a4a;
+  border: 1px outset #666;
+  font-size: 6px;
+  color: #00ff00;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.titleText {
+  flex: 1;
+  text-align: center;
+  font-size: 9px;
+  color: #00e100;
+  text-shadow: 0 0 4px rgba(0, 225, 0, 0.5);
+  letter-spacing: 1px;
+}
+
+.titleBarRight {
+  display: flex;
+  gap: 1px;
+}
+
+.titleBtn {
+  width: 9px;
+  height: 9px;
+  background: #4a4a4a;
+  border: 1px outset #666;
+  font-size: 6px;
+  color: #00e100;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.titleBtn:hover {
+  background: #5a5a5a;
+}
+
+.titleBtn:active {
+  border-style: inset;
+}
+
+/* Display Area */
+.display {
+  height: 38px;
+  background: #000;
+  margin: 2px;
+  display: flex;
+  border: 1px inset #333;
+}
+
+.displayLeft {
+  width: 75px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #222;
+}
+
+.visualizer {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+  padding: 2px;
+  background: #000;
+}
+
+.vizBar {
+  flex: 1;
+  min-height: 1px;
+  background: #00ff00;
+  transition: height 50ms linear;
+}
+
+.timer {
+  height: 12px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #222;
+}
+
+.timerDigit {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #00ff00;
+  letter-spacing: 1px;
+}
+
+.displayRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2px 4px;
+}
+
+.trackInfo {
+  display: flex;
+  gap: 8px;
+  font-size: 8px;
+  color: #00aa00;
+  margin-bottom: 2px;
+}
+
+.kbps::after { content: 'kbps'; margin-left: 1px; }
+.khz::after { content: 'kHz'; margin-left: 1px; }
+
+.scrollText {
+  flex: 1;
+  overflow: hidden;
+  background: #001100;
+  border: 1px inset #002200;
+  padding: 2px 4px;
+}
+
+.scrollTextInner {
+  display: block;
+  font-size: 9px;
+  color: #00ff00;
+  white-space: nowrap;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Seek Bar */
+.seekBar {
+  height: 10px;
+  margin: 0 2px;
+  display: flex;
+  align-items: center;
+}
+
+.seekInput {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #333;
+  border: 1px inset #222;
+  cursor: pointer;
+}
+
+.seekInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 8px;
+  background: linear-gradient(180deg, #888 0%, #444 100%);
+  border: 1px outset #666;
+  cursor: grab;
+}
+
+.seekInput::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  border-style: inset;
+}
+
+/* Controls */
+.controls {
+  height: 22px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 4px;
+}
+
+.controlsLeft {
+  display: flex;
+  gap: 2px;
+}
+
+.ctrlBtn {
+  width: 22px;
+  height: 18px;
+  background: linear-gradient(180deg, #555 0%, #333 100%);
+  border: 1px outset #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00ff00;
+}
+
+.ctrlBtn:hover {
+  background: linear-gradient(180deg, #666 0%, #444 100%);
+}
+
+.ctrlBtn:active {
+  border-style: inset;
+  background: linear-gradient(180deg, #333 0%, #555 100%);
+}
+
+.ctrlIcon {
+  width: 10px;
+  height: 10px;
+}
+
+.controlsRight {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.volumeControl {
+  width: 60px;
+}
+
+.volumeSlider {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #333;
+  border: 1px inset #222;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(180deg, #888 0%, #444 100%);
+  border: 1px outset #666;
+  cursor: pointer;
+}
+
+.balanceControl {
+  width: 30px;
+  height: 6px;
+  background: #333;
+  border: 1px inset #222;
+}
+
+.balanceBar {
+  width: 4px;
+  height: 100%;
+  background: #666;
+  margin: 0 auto;
+}
+
+/* Bottom Bar */
+.bottomBar {
+  height: 14px;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  gap: 2px;
+}
+
+.bottomBtn {
+  padding: 1px 6px;
+  background: linear-gradient(180deg, #444 0%, #333 100%);
+  border: 1px outset #555;
+  font-size: 8px;
+  color: #00aa00;
+  cursor: pointer;
+}
+
+.bottomBtn:hover {
+  color: #00ff00;
+}
+
+.bottomBtn.active {
+  border-style: inset;
+  background: linear-gradient(180deg, #333 0%, #444 100%);
+  color: #00ff00;
+}
+
+.bottomSpacer {
+  flex: 1;
+}
+
+.toggleBtn {
+  width: 16px;
+  height: 10px;
+  background: #333;
+  border: 1px inset #222;
+  font-size: 7px;
+  color: #666;
+  cursor: pointer;
+}
+
+.toggleBtn.active {
+  color: #00ff00;
+  background: #001a00;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EQUALIZER WINDOW - 275 x 116 pixels
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.eqWindow {
+  width: 275px;
+  height: 116px;
+  background: linear-gradient(180deg, #3a3a3a 0%, #232323 100%);
+  border: 1px solid #000;
+  box-shadow: 
+    inset 1px 1px 0 #4a4a4a,
+    inset -1px -1px 0 #1a1a1a;
+  margin-top: 0;
+}
+
+.eqContent {
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.eqToggle {
+  display: flex;
+  gap: 8px;
+  font-size: 8px;
+  color: #00aa00;
+}
+
+.eqSliders {
+  display: flex;
+  gap: 2px;
+  height: 70px;
+  padding: 4px;
+  background: #1a1a1a;
+  border: 1px inset #333;
+}
+
+.eqSliderCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.eqSlider {
+  writing-mode: vertical-lr;
+  direction: rtl;
+  width: 8px;
+  height: 50px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(180deg, #ff0000 0%, #ffff00 50%, #00ff00 100%);
+}
+
+.eqSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 4px;
+  background: #888;
+  border: 1px outset #aaa;
+  cursor: ns-resize;
+}
+
+.eqLabel {
+  font-size: 6px;
+  color: #00aa00;
+  margin-top: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PLAYLIST WINDOW - 275 x variable
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.playlistWindow {
+  width: 275px;
+  min-height: 116px;
+  max-height: 300px;
+  background: linear-gradient(180deg, #3a3a3a 0%, #232323 100%);
+  border: 1px solid #000;
+  box-shadow: 
+    inset 1px 1px 0 #4a4a4a,
+    inset -1px -1px 0 #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.playlistContent {
+  flex: 1;
+  overflow-y: auto;
+  background: #000;
+  margin: 2px;
+  border: 1px inset #333;
+}
+
+.playlistItem {
+  display: flex;
+  padding: 2px 4px;
+  font-size: 9px;
+  color: #00aa00;
+  cursor: pointer;
+}
+
+.playlistItem:hover {
+  background: #0a0a0a;
+}
+
+.playlistItem.active {
+  background: #001a00;
+  color: #00ff00;
+}
+
+.playlistNum {
+  width: 20px;
+  color: #006600;
+}
+
+.playlistTitle {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.playlistDuration {
+  width: 32px;
+  text-align: right;
+  color: #006600;
+}
+
+.playlistFooter {
+  height: 12px;
+  padding: 0 4px;
+  font-size: 8px;
+  color: #006600;
+  display: flex;
+  align-items: center;
+}
+
+/* Scrollbar */
+.playlistContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.playlistContent::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.playlistContent::-webkit-scrollbar-thumb {
+  background: #444;
+  border: 1px outset #555;
+}
