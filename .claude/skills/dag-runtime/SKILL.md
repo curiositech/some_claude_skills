@@ -78,7 +78,7 @@ Every node execution produces a trace entry:
   "node_id": "analyze-codebase",
   "wave": 2,
   "status": "completed",
-  "model": "claude-sonnet-4.5",
+  "model": "claude-sonnet-4-5",
   "skills_used": ["code-review-skill"],
   "input_tokens": 3421,
   "output_tokens": 1205,

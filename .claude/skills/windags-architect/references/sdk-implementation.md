@@ -63,7 +63,7 @@ async def execute_node_claude(node: dict, inputs: dict) -> dict:
     
     # Call Claude
     response = await client.messages.create(
-        model=node['agent'].get('model', 'claude-sonnet-4.5-20250514'),
+        model=node['agent'].get('model', 'claude-sonnet-4-5-20250514'),
         max_tokens=node['resources'].get('max_tokens', 8192),
         system=system_prompt,
         messages=[{"role": "user", "content": user_message}],
@@ -155,7 +155,7 @@ For nodes that need deep reasoning (the "Opus nodes" in the meta-DAG):
 
 ```python
 response = await client.messages.create(
-    model="claude-opus-4.6-20250514",
+    model="claude-opus-4-5-20250514",
     max_tokens=16384,
     thinking={
         "type": "enabled",
@@ -250,13 +250,13 @@ class ClaudeProvider(LLMProvider):
         )
     
     PRICING = {  # per million tokens, as of early 2026
-        "claude-haiku-4.5": {"input": 0.80, "output": 4.00},
-        "claude-sonnet-4.5": {"input": 3.00, "output": 15.00},
-        "claude-opus-4.6": {"input": 15.00, "output": 75.00},
+        "claude-haiku-4-5": {"input": 0.80, "output": 4.00},
+        "claude-sonnet-4-5": {"input": 3.00, "output": 15.00},
+        "claude-opus-4-5": {"input": 15.00, "output": 75.00},
     }
     
     def calculate_cost(self, model, input_tokens, output_tokens):
-        p = self.PRICING.get(model, self.PRICING["claude-sonnet-4.5"])
+        p = self.PRICING.get(model, self.PRICING["claude-sonnet-4-5"])
         return (input_tokens * p["input"] + output_tokens * p["output"]) / 1_000_000
 ```
 

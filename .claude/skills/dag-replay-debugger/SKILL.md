@@ -37,7 +37,7 @@ At any node in a completed execution, view:
 │  Node: analyze-codebase (Wave 2)                     │
 │  Status: completed ✓  Duration: 4.2s  Cost: $0.028  │
 │                                                      │
-│  Model: claude-sonnet-4.5                            │
+│  Model: claude-sonnet-4-5                            │
 │  Skills loaded: code-review-skill, react-server-...  │
 │                                                      │
 │  ▸ System Prompt (3,421 tokens)         [Expand]     │

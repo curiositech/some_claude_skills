@@ -1,4 +1,407 @@
 {
-  "raw_synthesis": "```json\n{\n  \"document_summary\": \"Poor Charlie's Almanack compiles Charles T. Munger's wisdom on investing, decision-making, and life, presenting his multidisciplinary approach to worldly wisdom. Munger advocates building a latticework of mental models from diverse academic disciplines\u2014particularly psychology, mathematics, physics, and economics\u2014to achieve superior judgment. His investment philosophy emphasizes patience, discipline, and concentration: waiting for obvious opportunities ('one-foot fences'), making large bets on exceptional businesses with pricing power and ethical management, and holding long-term with minimal turnover. Central to his approach is understanding human psychology and misjudgment tendencies, using inversion (thinking problems backward), staying within circles of competence, and recognizing that ideology, incentive-caused bias, and narrow specialization impair cognition. The book demonstrates that Berkshire Hathaway's extraordinary success came not from constant activity but from approximately ten major insights across two lifetimes, combined with extreme selectivity, intellectual humility about knowledge limits, and systematic avoidance of mistakes through checklists and multidisciplinary analysis.\",\n\n  \"core_concepts\": [\n    {\n      \"concept\": \"Latticework of Mental Models\",\n      \"definition\": \"A framework of fundamental concepts from multiple disciplines (physics, biology, psychology, economics, mathematics) arranged to work together, onto which experience and knowledge are hung to enhance cognition and problem-solving\",\n      \"relationships\": [\n        \"Connects to multidisciplinary thinking by requiring mastery of big ideas from diverse fields\",\n        \"Relates to worldly wisdom as the organizing structure that transforms isolated facts into usable knowledge\",\n        \"Links to decision-making by providing multiple analytical lenses for evaluating complex problems\",\n        \"Opposes narrow specialization and 'man-with-a-hammer' tendency where single-tool thinking distorts reality\"\n      ]\n    },\n    {\n      \"concept\": \"Circle of Competence\",\n      \"definition\": \"The boundaries of one's genuine expertise and understanding; knowing what you know and what you don't know, and operating only within areas of demonstrable competitive advantage\",\n      \"relationships\": [\n        \"Connects to intellectual humility by requiring honest self-assessment of knowledge limits\",\n        \"Relates to investment strategy by dictating which opportunities to pursue versus decline\",\n        \"Links to avoiding mistakes by preventing overconfidence in unfamiliar domains\",\n        \"Opposes the tendency to offer confident opinions outside areas of real expertise\"\n      ]\n    },\n    {\n      \"concept\": \"Lollapalooza Effects\",\n      \"definition\": \"Extraordinarily powerful outcomes produced when multiple psychological or systemic factors operate together in the same direction, creating cascading or multiplicative effects far beyond simple addition\",\n      \"relationships\": [\n        \"Connects to psychology of misjudgment by showing how combined biases amplify errors\",\n        \"Relates to Coca-Cola case study where operant conditioning, Pavlovian association, social proof, and other factors combined\",\n        \"Links to investment opportunities where multiple advantages compound (great business + great management + pricing power + moat)\",\n        \"Demonstrates why single-factor analysis often fails to predict real-world outcomes\"\n      ]\n    },\n    {\n      \"concept\": \"Inversion (Backward Thinking)\",\n      \"definition\": \"Approaching problems by identifying what to avoid rather than what to pursue; thinking forward and backward; solving for non-X to understand X (Jacobi's method)\",\n      \"relationships\": [\n        \"Connects to avoiding mistakes by systematically identifying failure modes first\",\n        \"Relates to Munger's maxim 'All I want to know is where I'm going to die, so I'll never go there'\",\n        \"Links to decision-making checklists by eliminating unpromising options before affirmative analysis\",\n        \"Demonstrates how many hard problems are best solved backward rather than forward\"\n      ]\n    },\n    {\n      \"concept\": \"Incentive-Caused Bias\",\n      \"definition\": \"Systematic distortion of cognition and behavior driven by financial or psychological incentives, often operating subconsciously; leads people to believe what serves their interests\",\n      \"relationships\": [\n        \"Connects to psychology of misjudgment as one of the most powerful psychological tendencies\",\n        \"Relates to professional advice skepticism\u2014advisers unconsciously favor recommendations aligned with their compensation\",\n        \"Links to systems design\u2014creating incentives that align with desired outcomes (Federal Express shift example)\",\n        \"Demonstrates why understanding motivations is essential when evaluating recommendations or explanations\"\n      ]\n    },\n    {\n      \"concept\": \"Margin of Safety\",\n      \"definition\": \"Building cushions into investments and decisions by requiring significant undervaluation or competitive advantages, protecting against errors in judgment, bad luck, or changing circumstances\",\n      \"relationships\": [\n        \"Connects to Ben Graham's value investing by requiring purchase prices well below intrinsic value\",\n        \"Relates to Munger's evolution toward emphasizing business quality as an additional margin of safety beyond price\",\n        \"Links to risk management by acknowledging uncertainty and building in protective buffers\",\n        \"Demonstrates conservative approach that prioritizes avoiding permanent loss over maximizing upside\"\n      ]\n    },\n    {\n      \"concept\": \"Moat (Competitive Advantage)\",\n      \"definition\": \"Durable structural advantages that protect a business from competition\u2014brands, network effects, cost advantages, switching costs, regulatory licenses\u2014functioning as a virtual physical barrier\",\n      \"relationships\": [\n        \"Connects to investment selection by identifying businesses that can sustain profitability long-term\",\n        \"Relates to pricing power\u2014moats enable raising prices without losing customers\",\n        \"Links to 'great business at fair price beats fair business at great price' philosophy\",\n        \"Demonstrates importance of qualitative business assessment beyond financial metrics\"\n      ]\n    },\n    {\n      \"concept\": \"Worldly Wisdom\",\n      \"definition\": \"Practical, multidisciplinary understanding combining fundamental academic concepts with actual and vicarious experience; elementary ideas from big disciplines that carry most intellectual freight\",\n      \"relationships\": [\n        \"Connects to latticework of mental models as the goal of building such frameworks\",\n        \"Relates to lifelong learning and continuous improvement through reading and reflection\",\n        \"Links to decision-making effectiveness across diverse contexts beyond narrow specialization\",\n        \"Requires approximately 80-90 key models from multiple disciplines to achieve competence\"\n      ]\n    },\n    {\n      \"concept\": \"Psychological Denial and Consistency Tendency\",\n      \"definition\": \"Human tendency to believe what one wishes to believe and, once committed to a belief or course of action, to rationalize and defend it regardless of contradictory evidence\",\n      \"relationships\": [\n        \"Connects to investment failures through inability to recognize mistakes and cut losses\",\n        \"Relates to first-conclusion bias where initial judgments become entrenched\",\n        \"Links to sunk cost fallacy and doubling down on losing positions\",\n        \"Demonstrates why Darwin's practice of immediately noting disconfirming evidence is essential\"\n      ]\n    },\n    {\n      \"concept\": \"Social Proof (Monkey-See, Monkey-Do)\",\n      \"definition\": \"Tendency to adopt beliefs and behaviors observed in others, especially under uncertainty or when observing authority figures; operates both consciously and subconsciously\",\n      \"relationships\": [\n        \"Connects to Coca-Cola strategy where increasing sales drive further sales through imitation\",\n        \"Relates to market bubbles and crowd behavior in investing\",\n        \"Links to Captain Cook's sauerkraut strategy\u2014officers eating first normalized the behavior\",\n        \"Demonstrates why contrarian thinking and independence from the herd are valuable but difficult\"\n      ]\n    }\n  ],\n\n  \"processes\": [\n    {\n      \"name\": \"Munger's Investment Evaluation Process\",\n      \"steps\": [\n        \"Use three-basket screening: 'yes,' 'no,' and 'too tough to understand' to eliminate unpromising investments\",\n        \"Focus first on what to avoid (risk assessment, especially reputational risk) rather than affirmative analysis\",\n        \"Apply multiple mental models from diverse disciplines to understand business ecosystem\",\n        \"Assess management quality: ability, trustworthiness, owner-orientation beyond conventional metrics\",\n        \"Evaluate competitive advantage (moat) durability across all dimensions\",\n        \"Recast financial statements to fit personal view of reality rather than accepting as presented\",\n        \"Calculate intrinsic value of whole business and approximate value per share\",\n        \"Apply comprehensive checklist before final decision covering psychology, incentives, second-order effects\",\n        \"Make large, decisive bets only when all circumstances align and understanding is clear\",\n        \"Hold positions long-term with minimal turnover (often <0.1% annually)\"\n      ],\n      \"decision_points\": [\n        \"Does this fall within my circle of competence or am I speculating?\",\n        \"Can I understand this business in 60 seconds or is it too complex?\",\n        \"Is management trustworthy and aligned with shareholders?\",\n        \"Does the business have durable competitive advantages (moat)?\",\n        \"Does it have untapped pricing power?\",\n        \"Am I being influenced by incentive-caused bias from advisers?\",\n        \"Have I identified second-order and higher-level effects?\",\n        \"Is this a 'one-foot fence' (obvious opportunity) or am I trying to jump seven-foot fences?\",\n        \"Would I be comfortable holding 90% of my wealth in this single position?\",\n        \"Am I making this decision based on rational analysis or falling in love with the investment?\"\n      ],\n      \"common_mistakes\": [\n        \"Overconfidence in ability to understand complex or unfamiliar businesses\",\n        \"Excessive diversification that dilutes focus and increases costs\",\n        \"Following the herd and mimicking consensus for safety in numbers\",\n        \"Falling in love with investments rather than remaining opportunity-driven\",\n        \"Activity for its own sake rather than patient waiting for obvious opportunities\",\n        \"Ignoring psychological factors and focusing only on financial metrics\",\n        \"Trusting professional advisers without recognizing their incentive-caused bias\",\n        \"Attempting to predict short-term market movements rather than focusing on business value\",\n        \"Drowning in minutiae while overlooking obvious fundamental factors\",\n        \"Inability to recognize mistakes quickly and adjust positions\"\n      ]\n    },\n    {\n      \"name\": \"Building Worldly Wisdom Through Multidisciplinary Learning\",\n      \"steps\": [\n        \"Master approximately 80-90 key mental models from major disciplines (mathematics, physics, chemistry, biology, psychology, microeconomics, accounting)\",\n        \"Learn big ideas in essence rather than attempting comprehensive mastery of each field\",\n        \"Arrange models on a latticework of theory showing how concepts interconnect\",\n        \"Hang actual personal experience and vicarious learning from others onto this framework\",\n        \"Practice applying models across disciplinary boundaries despite academic discouragement\",\n        \"Prioritize learning foundational principles before specialized knowledge (Grandma's rule: carrots before dessert)\",\n        \"Use inversion\u2014think problems both forward and backward\",\n        \"Regularly maintain fluency through practice, similar to pilot simulator training\",\n        \"Read biographies and case studies to understand how ideas developed through people's lives\",\n        \"Cultivate ability to recognize when previous conclusions were incorrect and adjust\"\n      ],\n      \"decision_points\": [\n        \"Which 80-90 models are truly fundamental and carry most of the intellectual freight?\",\n        \"Am I learning models deeply enough for practical fluency or just for test-passing?\",\n        \"How does this new concept connect to models I already understand?\",\n        \"Am I being prevented from boundary-crossing by institutional pressure?\",\n        \"Is my learning prioritizing fundamental wisdom or fashionable specialization?\",\n        \"Do I understand this well enough to teach it or am I just memorizing?\",\n        \"Am I maintaining fluency through regular practice or letting skills atrophy?\"\n      ],\n      \"common_mistakes\": [\n        \"Memorizing facts without hanging them on theoretical frameworks\",\n        \"Using single models or narrow disciplinary lenses (man-with-a-hammer tendency)\",\n        \"Accepting academic balkanization that prevents integrating knowledge\",\n        \"Learning advanced material before mastering elementary fundamentals\",\n        \"Pursuing fashionable complexity rather than fundamental simplicity\",\n        \"Failing to practice regularly, allowing fluency to degrade over time\",\n        \"Letting ideology lock thinking into fixed patterns\",\n        \"Believing formal education alone is sufficient without self-directed learning\",\n        \"Avoiding subjects that feel unnatural (like probability) rather than deliberately mastering them\"\n      ]\n    },\n    {\n      \"name\": \"Creating Systems Resistant to Cheating and Moral Failure\",\n      \"steps\": [\n        \"Design incentives that align individual interests with desired system outcomes\",\n        \"Make cheating difficult rather than relying on moral exhortation alone\",\n        \"Monitor for 'slop' (small moral failures) and address immediately before they compound\",\n        \"Recognize consistency principle and operant conditioning\u2014small cheating becomes habitual\",\n        \"Appeal to self-interest (reputation, consequences) rather than morality when correcting behavior\",\n        \"Avoid creating 'deep pocket' situations that invite false claims\",\n        \"Build culture through behavioral modeling by leadership, not just explicit rules\",\n        \"Stop problems early before they normalize and become impossible to reverse\"\n      ],\n      \"decision_points\": [\n        \"Does this system make it easy or difficult to cheat?\",\n        \"What are the incentives actually rewarding versus what they're intended to reward?\",\n        \"Is small-scale cheating being tolerated that will compound over time?\",\n        \"Am I appealing effectively to self-interest or uselessly invoking moral principles?\",\n        \"Have moral failures already run too long to stop without drastic action?\",\n        \"Are consequences immediate and certain enough to prevent bad behavior?\"\n      ],\n      \"common_mistakes\": [\n        \"Creating systems where cheating is easy and consequences are distant/unlikely\",\n        \"Letting slop (small moral failures) run too long before intervention\",\n        \"Appealing to morality instead of self-interest when trying to change behavior\",\n        \"Underestimating how quickly consistency principle entrenches bad habits\",\n        \"Failing to recognize how operant conditioning rewards and perpetuates cheating\",\n        \"Allowing social proof to normalize unethical behavior once it starts spreading\",\n        \"Focusing on detecting fraud after the fact rather than preventing it through system design\"\n      ]\n    },\n    {\n      \"name\": \"Pilot Training Model for Elite Education\",\n      \"steps\": [\n        \"Element 1: Provide broad formal education covering all useful knowledge relevant to the field\",\n        \"Element 2: Require practice-based fluency, not just test-passing knowledge\u2014make it second nature\",\n        \"Element 3: Teach both forward and backward thinking techniques (including inversion)\",\n        \"Element 4: Allocate training time according to importance\u2014prioritize most critical skills for highest fluency\",\n        \"Element 5: Mandate checklist routines to minimize errors and omissions\",\n        \"Element 6: Require regular maintenance through practice (simulator equivalent) to prevent skill degradation\"\n      ],\n      \"decision_points\": [\n        \"Which skills are most critical and deserve highest fluency levels?\",\n        \"Is knowledge being practiced to fluency or just tested once?\",\n        \"Are both forward and reverse thinking being developed?\",\n        \"Is time allocation matching importance of different skills?\",\n        \"Are checklists mandatory or merely suggested?\",\n        \"Is ongoing practice required or is initial training considered sufficient?\"\n      ],\n      \"common_mistakes\": [\n        \"Testing knowledge once without developing automatic fluency\",\n        \"Allocating time equally across topics rather than by importance\",\n        \"Failing to teach reverse thinking and inversion alongside forward approaches\",\n        \"Making checklists optional rather than mandatory\",\n        \"Allowing skills to degrade through disuse without maintenance practice\",\n        \"Focusing on theoretical understanding without practical application\"\n      ]\n    }\n  ],\n\n  \"expertise_patterns\": [\n    {\n      \"pattern\": \"Experts practice extreme patience combined with extreme decisiveness\",\n      \"novice_mistake\": \"Novices feel pressure to constantly make decisions and take action; they confuse activity with progress\",\n      \"aha_moment\": \"Recognition that successful investment careers boil down to only a handful of decisions; most of the time should be spent learning, thinking, and waiting for obvious opportunities rather than trading. Apparent inactivity is actually intensive preparation.\"\n    },\n    {\n      \"pattern\": \"Experts think multidisciplinarily and apply multiple models simultaneously to each problem\",\n      \"novice_mistake\": \"Novices rely on single disciplines or narrow frameworks; they suffer from 'man-with-a-hammer' tendency where every problem looks like a nail requiring their specialty tool\",\n      \"aha_moment\": \"Understanding that complex real-world problems require multiple lenses from different disciplines; using psychology alone, or economics alone, or any single framework produces incomplete and often incorrect analysis. The latticework approach dramatically improves judgment.\"\n    },\n    {\n      \"pattern\": \"Experts prioritize avoiding mistakes and focus first on what can go wrong (inversion)\",\n      \"novice_mistake\": \"Novices focus primarily on potential gains and affirmative analysis; they neglect risk assessment and fail to systematically identify failure modes\",\n      \"aha_moment\": \"Realization that eliminating unpromising regions first is more efficient than trying to find needles in haystacks; 'All I want to know is where I'm going to die, so I'll never go there.' Success comes more from avoiding stupidity than seeking brilliance.\"\n    },\n    {\n      \"pattern\": \"Experts maintain extreme objectivity and actively seek disconfirming evidence\",\n      \"novice_mistake\": \"Novices suffer from confirmation bias, process information to support existing beliefs, and become defensive when challenged; they fall in love with investments and ideas\",\n      \"aha_moment\": \"Understanding that Darwin's practice of immediately noting evidence against cherished theories separates exceptional achievers from average ones; objectivity is a learnable skill that requires constant vigilance against psychological tendencies toward denial and consistency.\"\n    },\n    {\n      \"pattern\": \"Experts know their circles of competence precisely and admit ignorance outside them\",\n      \"novice_mistake\": \"Novices confidently answer questions outside their expertise like 'bees dancing incoherent dances that gum up the hive'; they cannot distinguish what they know from what they don't know\",\n      \"aha_moment\": \"Recognition that knowing what you don't know is possibly the most useful thing in life; admitting 'I don't know and I don't have special competence' demonstrates wisdom, not weakness. Operating outside competence zones leads to disaster.\"\n    },\n    {\n      \"pattern\": \"Experts concentrate holdings in few positions they understand deeply\",\n      \"novice_mistake\": \"Novices over-diversify based on orthodox portfolio theory, spreading capital across many positions without deep understanding of any\",\n      \"aha_moment\": \"Understanding that a portfolio of three companies provides sufficient diversification when based on genuine insight; extreme concentration in quality is superior to broad diversification in mediocrity. 'We just look for no-brainer decisions... we don't leap seven-foot fences.'\"\n    },\n    {\n      \"pattern\": \"Experts recognize and account for their own psychological biases systematically\",\n      \"novice_mistake\": \"Novices believe they make purely rational decisions and are unaware of how incentives, consistency tendency, denial, and other psychological factors shape their thinking\",\n      \"aha_moment\": \"Realization that terribly smart people make bonkers mistakes by ignoring psychology of misjudgment; using two-track analysis (rational factors + psychological influences) and checklists prevents systematic errors that even high intelligence doesn't eliminate.\"\n    },\n    {\n      \"pattern\": \"Experts hold long-term with minimal turnover to capture tax and cost advantages\",\n      \"novice_mistake\": \"Novices trade frequently, generate unnecessary transaction costs and taxes, and fail to let compound interest work its magic\",\n      \"aha_moment\": \"Recognition that infrequent trading combined with long holding periods adds 1-3 percentage points annually through tax deferral alone; plus reduced broker costs and noise exposure. 'Sit-on-your-ass investing' in great companies beats active trading.\"\n    }\n  ],\n\n  \"temporal_evolution\": [\n    {\n      \"period\": \"1930s-1960s: Ben Graham Era\",\n      \"paradigm\": \"Deep value investing based on buying assets below liquidation value; market inefficiency was extreme due to shell-shock from Depression; focus on quantitative metrics and margin of safety through price alone\",\n      \"change_trigger\": \"Markets became more efficient as information spread; obvious bargains disappeared as 'the world wised up'; Graham-style opportunities became increasingly rare\"\n    },\n    {\n      \"period\": \"1960s-1980s: Munger-Buffett Partnership Evolution\",\n      \"paradigm\": \"Shift from 'cigar butt' investing to focus on quality businesses with durable competitive advantages; 'a great business at a fair price is superior to a fair business at a great price'; incorporation of psychological factors and qualitative assessment beyond financial metrics\",\n      \"change_trigger\": \"Munger convinced Buffett that business quality and management competence matter more than just cheap prices; recognition that compounding in great businesses beats serial bargain hunting; increasing capital made small deep-value opportunities insufficient\"\n    },\n    {\n      \"period\": \"1970s-1990s: Rise of Modern Portfolio Theory and Efficient Market Hypothesis\",\n      \"paradigm\": \"Academic finance promoted mathematical models (CAPM, beta), portfolio diversification, and belief in market efficiency; professional management and complex quantitative approaches became dominant\",\n      \"change_trigger\": \"Berkshire Hathaway's success and behavioral economics research began undermining efficient market theory; recognition that psychological factors and incentive-caused bias create persistent market inefficiencies\"\n    },\n    {\n      \"period\": \"1980s-2000: Financial Complexity Explosion\",\n      \"paradigm\": \"Derivatives, leverage, LBO funds, fund-of-funds structures, multiple layers of consultants became normal; increasing frictional costs from professional fees; drift toward 'Bernie Cornfeld' model of wealth extraction rather than 'Ben Franklin' model of public service\",\n      \"change_trigger\": \"Long-Term Capital Management collapse (1998) and dot-com bubble burst (2000-2002) demonstrated dangers of overconfidence, excessive leverage, and complex financial engineering; revealed limits of models based solely on rational-man assumptions\"\n    },\n    {\n      \"period\": \"1990s-Present: Behavioral Economics Integration\",\n      \"paradigm\": \"Growing recognition that psychology matters; Chicago economics department hiring Richard Thaler signals mainstream acceptance; understanding that people behave according to predictable psychological patterns, not just rational optimization\",\n      \"change_trigger\": \"Accumulated evidence that rational-man models fail to predict real behavior; success of investors like Munger and Buffett who explicitly incorporate psychological understanding; academic research on cognitive biases gains credibility\"\n    }\n  ],\n\n  \"key_metaphors\": [\n    {\n      \"metaphor\": \"Latticework of mental models\u2014knowledge as interconnected framework rather than isolated facts\",\n      \"maps_to\": \"The structure of working memory and long-term memory; meaningful connections between concepts enhance retention, retrieval, and application; isolated facts are unusable until integrated into theoretical structure\"\n    },\n    {\n      \"metaphor\": \"Man with only a hammer sees every problem as a nail\",\n      \"maps_to\": \"Cognitive bias from narrow specialization; when possessing limited tools/frameworks, all problems get forced into those familiar patterns regardless of appropriateness; demonstrates need for multidisciplinary thinking\"\n    },\n    {\n      \"metaphor\": \"One-legged man in an ass-kicking contest (lacking numerical fluency or key skills)\",\n      \"maps_to\": \"Severe competitive disadvantage from missing fundamental capabilities; certain skills are not merely helpful but essential for basic functioning in complex environments\"\n    },\n    {\n      \"metaphor\": \"Sitting on your ass (holding great companies long-term rather than trading)\",\n      \"maps_to\": \"Compounding returns over time requires inaction; patience as active strategy; avoiding unnecessary transaction costs, taxes, and noise; recognizing that doing nothing is often the optimal action\"\n    },\n    {\n      \"metaphor\": \"Mr. Market as manic-depressive offering daily buying/selling options\",\n      \"maps_to\": \"Market price fluctuations represent emotions and crowd behavior, not rational valuation; provides optionality without obligation; intelligent investors exploit irrational prices rather than being influenced by them\"\n    },\n    {\n      \"metaphor\": \"Moat around a business (competitive advantage as physical barrier)\",\n      \"maps_to\": \"Structural defenses that prevent competitor incursions; durability of advantage over time; some moats widen (network effects), others erode (patents expire); essential for sustainable profitability\"\n    },\n    {\n      \"metaphor\": \"Surfing\u2014staying on the wave of technological or market advantage\",\n      \"maps_to\": \"Early-mover advantages that persist if maintained; difficulty of getting back on wave once you fall off; some businesses 'surf' successfully for decades (Microsoft, Intel); timing and adaptation crucial\"\n    },\n    {\n      \"metaphor\": \"Circle of competence\u2014knowing the edges of genuine expertise\",\n      \"maps_to\": \"Bounded rationality and knowledge limits; honest self-assessment prevents overconfidence disasters; playing games only where you have structural advantages; staying within boundaries is humility, not limitation\"\n    },\n    {\n      \"metaphor\": \"Inversion like Jacobi\u2014thinking problems backward to find solutions\",\n      \"maps_to\": \"Mathematical and logical technique where solving the opposite problem reveals the solution; 'All I want to know is where I'm going to die, so I'll never go there'; eliminating bad options before pursuing good ones\"\n    },\n    {\n      \"metaphor\": \"Lollapalooza effects\u2014multiple factors combining for extreme outcomes\",\n      \"maps_to\": \"Non-linear causation where combined factors produce multiplicative rather than additive results; explains why single-factor analysis fails; demonstrates power of systematic approaches that align multiple advantages\"\n    },\n    {\n      \"metaphor\": \"Bezzle and febezzle\u2014undisclosed embezzlement and its functional equivalent\",\n      \"maps_to\": \"Hidden wealth destruction that temporarily stimulates economy through spending; investment management fees waste assets while clients feel richer from rising prices; economic stimulus that eventually reverses painfully\"\n    },\n    {\n      \"metaphor\": \"Pari-mutuel betting system as model for stock market\",\n      \"maps_to\": \"Constantly changing odds based on what others are betting; efficiency coexists with identifiable mispricing; success requires finding situations where you have informational/analytical advantage; average result is predetermined by house take (costs)\"\n    }\n  ],\n\n  \"anti_patterns\": [\n    {\n      \"name\": \"Activity for Activity's Sake\",\n      \"description\": \"Constant trading, frequent strategy changes, portfolio churning, responding to every market movement; confusing motion with progress; feeling pressure to 'do something' rather than waiting for clear opportunities\",\n      \"why_wrong\": \"Generates unnecessary transaction costs, taxes, and exposure to noise; prevents compound interest from working; indicates lack of genuine insight if constant action is needed; successful careers boil down to handful of good decisions, not thousands of mediocre ones\",\n      \"fix\": \"Practice extreme patience combined with extreme decisiveness; wait for 'one-foot fences' (obvious opportunities); hold long-term positions in great businesses; accept that apparent inactivity is often optimal; judge success by quality of decisions, not quantity\"\n    },\n    {\n      \"name\": \"Excessive Diversification (Diworsification)\",\n      \"description\": \"Spreading capital across dozens or hundreds of positions without deep understanding of any; following orthodox portfolio theory mechanically; pursuing diversification for its own sake rather than for insight-based reasons\",\n      \"why_wrong\": \"Dilutes focus and reduces returns to mediocrity; increases costs from management fees and complexity; indicates lack of genuine conviction or understanding; a portfolio of three companies understood deeply is superior to 100 positions known superficially\",\n      \"fix\": \"Concentrate in few positions within circle of competence; require deep understanding before committing capital; recognize that diversification is protection against ignorance, not a requirement when insight is present; Berkshire model of concentrated holdings\"\n    },\n    {\n      \"name\": \"Man-with-a-Hammer Tendency (Single-Model Thinking)\",\n      \"description\": \"Applying narrow disciplinary lens to all problems; relying exclusively on specialized expertise; seeing all problems through single framework (legal, financial, psychological, etc.); ignoring models from other disciplines\",\n      \"why_wrong\": \"Complex reality requires multiple models from multiple disciplines; single-lens analysis misses critical factors and leads to systematic errors; unidisciplinary approach to multidisciplinary problems guarantees failure; like playing bridge by counting trumps while ignoring all else\",\n      \"fix\": \"Build latticework of approximately 80-90 models from major disciplines; apply multiple frameworks simultaneously; think multidisciplinarily despite academic discouragement; recognize that truly big ideas from each discipline carry most intellectual freight\"\n    },\n    {\n      \"name\": \"Ignoring Incentive-Caused Bias\",\n      \"description\": \"Trusting professional advisers without recognizing their conflicts of interest; believing recommendations are objective when they align with adviser's financial interests; failing to ask 'whose bread I eat, his song I sing'\",\n      \"why_wrong\": \"Subconscious bias (not conscious malfeasance) systematically distorts advice; advisers unconsciously favor solutions that benefit themselves; most investment disasters come from following conflicted advice; 'every profession is a conspiracy against the laity'\",\n      \"fix\": \"Always identify adviser's incentives and discount recommendations accordingly; do your own multidisciplinary thinking rather than delegating to specialists; recognize that adviser's bias is usually subconscious, not malicious; appeal to self-interest when trying to influence behavior\"\n    },\n    {\n      \"name\": \"Falling in Love with Investments\",\n      \"description\": \"Becoming emotionally attached to positions; inability to recognize mistakes and cut losses; defending losing investments through rationalization; letting consistency tendency override objective reassessment\",\n      \"why_wrong\": \"Psychological commitment and denial prevent rational adjustment to new information; sunk cost fallacy causes doubling down on losers; consistency principle makes people defend initial choices regardless of evidence; many go broke through inability to abandon losing commitments\",\n      \"fix\": \"Remain situation-dependent and opportunity-driven rather than position-loyal; practice Darwin's method of immediately noting disconfirming evidence; use checklists to overcome denial; accept that there's no way to live adequately without making mistakes\u2014learn to recognize and fix them fast\"\n    },\n    {\n      \"name\": \"Confusing Complexity with Sophistication\",\n      \"description\": \"Adding layers of consultants, managers, and complex strategies; believing that elaborate approaches are superior to simple ones; using sophisticated mathematical models without understanding limitations; drifting toward 'fund-of-funds' structures\",\n      \"why_wrong\": \"Complexity adds costs (often 3%+ annually) without improving returns; creates febezzlement where middlemen extract wealth; simple approaches often outperform after accounting for fees; overconfidence from excessive professionalism causes major errors; 'physics envy' drives inappropriate quantification\",\n      \"fix\": \"Keep systems as simple as possible but no simpler; recognize that 80-90 fundamental models carry most freight; use indexing or concentrated positions in understood businesses; avoid structures with multiple fee layers; question whether complexity serves clients or providers\"\n    },\n    {\n      \"name\": \"Operating Outside Circle of Competence\",\n      \"description\": \"Confidently making decisions in unfamiliar domains; inability to distinguish genuine expertise from superficial knowledge; answering questions outside true understanding like 'bees dancing incoherent dances'\",\n      \"why_wrong\": \"Overconfidence outside competence leads to catastrophic mistakes; no competitive advantage in unfamiliar territory; playing games where others have aptitudes you lack guarantees losing; most disasters come from venturing beyond genuine expertise\",\n      \"fix\": \"Know precisely where circle of competence boundaries lie; admit 'I don't know' without shame when outside expertise; expand circle slowly through learning, but recognize it will always have limits; decline opportunities outside competence regardless of apparent attractiveness\"\n    },\n    {\n      \"name\": \"Ideology Locking the Brain\",\n      \"description\": \"Adopting heavy ideology young and expressing it rigidly; letting political, religious, or theoretical beliefs override evidence; inability to recognize disconfirming information due to ideological commitment\",\n      \"why_wrong\": \"Ideology impairs cognition even in genius-level minds (Chomsky example); creates permanent pattern that distorts general thinking; prevents objective recognition of reality; makes even brilliant people massively wrong on topics touching ideology\",\n      \"fix\": \"Avoid heavy ideology; maintain objectivity like Buffett; practice extreme willingness to disconfirm cherished theories; use Darwin's hair-shirt approach of immediately noting contrary evidence; recognize that ideology serves psychological needs but impairs judgment\"\n    }\n  ],\n\n  \"notable_quotes\": [\n    \"Acquire worldly wisdom and adjust your behavior accordingly. If your new behavior gives you a little temporary unpopularity with your peer group\u2026 then to hell with them.\",\n    \"Without numerical fluency\u2026 you are like a one-legged man in an ass-kicking contest.\",\n    \"There is no better teacher than history in determining the future. There are answers worth billions of dollars in a $30 history book.\",\n    \"All I want to know is where I'm going to die, so I'll never go there.\",\n    \"It's kind of fun to sit there and outthink people who are way smarter than you are because you've trained yourself to be more objective and more multidisciplinary. Furthermore, there is a lot of money in it.\",\n    \"When you borrow a man's car, you always return it with a full tank of gas.\",\n    \"There's no way that you can live an adequate life without making many mistakes. Part of what you must learn is how to handle mistakes and new facts that change the odds.\",\n    \"If the facts don't hang together on a latticework of theory, you don't have them in a usable form.\",\n    \"You don't need to take the last dollar.\",\n    \"We're partial",
-  "parse_error": true
+  "document_summary": "Poor Charlie's Almanack compiles Charles T. Munger's wisdom on investing, decision-making, and life, presenting his multidisciplinary approach to worldly wisdom. Munger advocates building a latticework of mental models from diverse academic disciplines\u2014particularly psychology, mathematics, physics, and economics\u2014to achieve superior judgment. His investment philosophy emphasizes patience, discipline, and concentration: waiting for obvious opportunities ('one-foot fences'), making large bets on exceptional businesses with pricing power and ethical management, and holding long-term with minimal turnover. Central to his approach is understanding human psychology and misjudgment tendencies, using inversion (thinking problems backward), staying within circles of competence, and recognizing that ideology, incentive-caused bias, and narrow specialization impair cognition. The book demonstrates that Berkshire Hathaway's extraordinary success came not from constant activity but from approximately ten major insights across two lifetimes, combined with extreme selectivity, intellectual humility about knowledge limits, and systematic avoidance of mistakes through checklists and multidisciplinary analysis.",
+  "core_concepts": [
+    {
+      "concept": "Latticework of Mental Models",
+      "definition": "A framework of fundamental concepts from multiple disciplines (physics, biology, psychology, economics, mathematics) arranged to work together, onto which experience and knowledge are hung to enhance cognition and problem-solving",
+      "relationships": [
+        "Connects to multidisciplinary thinking by requiring mastery of big ideas from diverse fields",
+        "Relates to worldly wisdom as the organizing structure that transforms isolated facts into usable knowledge",
+        "Links to decision-making by providing multiple analytical lenses for evaluating complex problems",
+        "Opposes narrow specialization and 'man-with-a-hammer' tendency where single-tool thinking distorts reality"
+      ]
+    },
+    {
+      "concept": "Circle of Competence",
+      "definition": "The boundaries of one's genuine expertise and understanding; knowing what you know and what you don't know, and operating only within areas of demonstrable competitive advantage",
+      "relationships": [
+        "Connects to intellectual humility by requiring honest self-assessment of knowledge limits",
+        "Relates to investment strategy by dictating which opportunities to pursue versus decline",
+        "Links to avoiding mistakes by preventing overconfidence in unfamiliar domains",
+        "Opposes the tendency to offer confident opinions outside areas of real expertise"
+      ]
+    },
+    {
+      "concept": "Lollapalooza Effects",
+      "definition": "Extraordinarily powerful outcomes produced when multiple psychological or systemic factors operate together in the same direction, creating cascading or multiplicative effects far beyond simple addition",
+      "relationships": [
+        "Connects to psychology of misjudgment by showing how combined biases amplify errors",
+        "Relates to Coca-Cola case study where operant conditioning, Pavlovian association, social proof, and other factors combined",
+        "Links to investment opportunities where multiple advantages compound (great business + great management + pricing power + moat)",
+        "Demonstrates why single-factor analysis often fails to predict real-world outcomes"
+      ]
+    },
+    {
+      "concept": "Inversion (Backward Thinking)",
+      "definition": "Approaching problems by identifying what to avoid rather than what to pursue; thinking forward and backward; solving for non-X to understand X (Jacobi's method)",
+      "relationships": [
+        "Connects to avoiding mistakes by systematically identifying failure modes first",
+        "Relates to Munger's maxim 'All I want to know is where I'm going to die, so I'll never go there'",
+        "Links to decision-making checklists by eliminating unpromising options before affirmative analysis",
+        "Demonstrates how many hard problems are best solved backward rather than forward"
+      ]
+    },
+    {
+      "concept": "Incentive-Caused Bias",
+      "definition": "Systematic distortion of cognition and behavior driven by financial or psychological incentives, often operating subconsciously; leads people to believe what serves their interests",
+      "relationships": [
+        "Connects to psychology of misjudgment as one of the most powerful psychological tendencies",
+        "Relates to professional advice skepticism\u2014advisers unconsciously favor recommendations aligned with their compensation",
+        "Links to systems design\u2014creating incentives that align with desired outcomes (Federal Express shift example)",
+        "Demonstrates why understanding motivations is essential when evaluating recommendations or explanations"
+      ]
+    },
+    {
+      "concept": "Margin of Safety",
+      "definition": "Building cushions into investments and decisions by requiring significant undervaluation or competitive advantages, protecting against errors in judgment, bad luck, or changing circumstances",
+      "relationships": [
+        "Connects to Ben Graham's value investing by requiring purchase prices well below intrinsic value",
+        "Relates to Munger's evolution toward emphasizing business quality as an additional margin of safety beyond price",
+        "Links to risk management by acknowledging uncertainty and building in protective buffers",
+        "Demonstrates conservative approach that prioritizes avoiding permanent loss over maximizing upside"
+      ]
+    },
+    {
+      "concept": "Moat (Competitive Advantage)",
+      "definition": "Durable structural advantages that protect a business from competition\u2014brands, network effects, cost advantages, switching costs, regulatory licenses\u2014functioning as a virtual physical barrier",
+      "relationships": [
+        "Connects to investment selection by identifying businesses that can sustain profitability long-term",
+        "Relates to pricing power\u2014moats enable raising prices without losing customers",
+        "Links to 'great business at fair price beats fair business at great price' philosophy",
+        "Demonstrates importance of qualitative business assessment beyond financial metrics"
+      ]
+    },
+    {
+      "concept": "Worldly Wisdom",
+      "definition": "Practical, multidisciplinary understanding combining fundamental academic concepts with actual and vicarious experience; elementary ideas from big disciplines that carry most intellectual freight",
+      "relationships": [
+        "Connects to latticework of mental models as the goal of building such frameworks",
+        "Relates to lifelong learning and continuous improvement through reading and reflection",
+        "Links to decision-making effectiveness across diverse contexts beyond narrow specialization",
+        "Requires approximately 80-90 key models from multiple disciplines to achieve competence"
+      ]
+    },
+    {
+      "concept": "Psychological Denial and Consistency Tendency",
+      "definition": "Human tendency to believe what one wishes to believe and, once committed to a belief or course of action, to rationalize and defend it regardless of contradictory evidence",
+      "relationships": [
+        "Connects to investment failures through inability to recognize mistakes and cut losses",
+        "Relates to first-conclusion bias where initial judgments become entrenched",
+        "Links to sunk cost fallacy and doubling down on losing positions",
+        "Demonstrates why Darwin's practice of immediately noting disconfirming evidence is essential"
+      ]
+    },
+    {
+      "concept": "Social Proof (Monkey-See, Monkey-Do)",
+      "definition": "Tendency to adopt beliefs and behaviors observed in others, especially under uncertainty or when observing authority figures; operates both consciously and subconsciously",
+      "relationships": [
+        "Connects to Coca-Cola strategy where increasing sales drive further sales through imitation",
+        "Relates to market bubbles and crowd behavior in investing",
+        "Links to Captain Cook's sauerkraut strategy\u2014officers eating first normalized the behavior",
+        "Demonstrates why contrarian thinking and independence from the herd are valuable but difficult"
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "name": "Munger's Investment Evaluation Process",
+      "steps": [
+        "Use three-basket screening: 'yes,' 'no,' and 'too tough to understand' to eliminate unpromising investments",
+        "Focus first on what to avoid (risk assessment, especially reputational risk) rather than affirmative analysis",
+        "Apply multiple mental models from diverse disciplines to understand business ecosystem",
+        "Assess management quality: ability, trustworthiness, owner-orientation beyond conventional metrics",
+        "Evaluate competitive advantage (moat) durability across all dimensions",
+        "Recast financial statements to fit personal view of reality rather than accepting as presented",
+        "Calculate intrinsic value of whole business and approximate value per share",
+        "Apply comprehensive checklist before final decision covering psychology, incentives, second-order effects",
+        "Make large, decisive bets only when all circumstances align and understanding is clear",
+        "Hold positions long-term with minimal turnover (often <0.1% annually)"
+      ],
+      "decision_points": [
+        "Does this fall within my circle of competence or am I speculating?",
+        "Can I understand this business in 60 seconds or is it too complex?",
+        "Is management trustworthy and aligned with shareholders?",
+        "Does the business have durable competitive advantages (moat)?",
+        "Does it have untapped pricing power?",
+        "Am I being influenced by incentive-caused bias from advisers?",
+        "Have I identified second-order and higher-level effects?",
+        "Is this a 'one-foot fence' (obvious opportunity) or am I trying to jump seven-foot fences?",
+        "Would I be comfortable holding 90% of my wealth in this single position?",
+        "Am I making this decision based on rational analysis or falling in love with the investment?"
+      ],
+      "common_mistakes": [
+        "Overconfidence in ability to understand complex or unfamiliar businesses",
+        "Excessive diversification that dilutes focus and increases costs",
+        "Following the herd and mimicking consensus for safety in numbers",
+        "Falling in love with investments rather than remaining opportunity-driven",
+        "Activity for its own sake rather than patient waiting for obvious opportunities",
+        "Ignoring psychological factors and focusing only on financial metrics",
+        "Trusting professional advisers without recognizing their incentive-caused bias",
+        "Attempting to predict short-term market movements rather than focusing on business value",
+        "Drowning in minutiae while overlooking obvious fundamental factors",
+        "Inability to recognize mistakes quickly and adjust positions"
+      ]
+    },
+    {
+      "name": "Building Worldly Wisdom Through Multidisciplinary Learning",
+      "steps": [
+        "Master approximately 80-90 key mental models from major disciplines (mathematics, physics, chemistry, biology, psychology, microeconomics, accounting)",
+        "Learn big ideas in essence rather than attempting comprehensive mastery of each field",
+        "Arrange models on a latticework of theory showing how concepts interconnect",
+        "Hang actual personal experience and vicarious learning from others onto this framework",
+        "Practice applying models across disciplinary boundaries despite academic discouragement",
+        "Prioritize learning foundational principles before specialized knowledge (Grandma's rule: carrots before dessert)",
+        "Use inversion\u2014think problems both forward and backward",
+        "Regularly maintain fluency through practice, similar to pilot simulator training",
+        "Read biographies and case studies to understand how ideas developed through people's lives",
+        "Cultivate ability to recognize when previous conclusions were incorrect and adjust"
+      ],
+      "decision_points": [
+        "Which 80-90 models are truly fundamental and carry most of the intellectual freight?",
+        "Am I learning models deeply enough for practical fluency or just for test-passing?",
+        "How does this new concept connect to models I already understand?",
+        "Am I being prevented from boundary-crossing by institutional pressure?",
+        "Is my learning prioritizing fundamental wisdom or fashionable specialization?",
+        "Do I understand this well enough to teach it or am I just memorizing?",
+        "Am I maintaining fluency through regular practice or letting skills atrophy?"
+      ],
+      "common_mistakes": [
+        "Memorizing facts without hanging them on theoretical frameworks",
+        "Using single models or narrow disciplinary lenses (man-with-a-hammer tendency)",
+        "Accepting academic balkanization that prevents integrating knowledge",
+        "Learning advanced material before mastering elementary fundamentals",
+        "Pursuing fashionable complexity rather than fundamental simplicity",
+        "Failing to practice regularly, allowing fluency to degrade over time",
+        "Letting ideology lock thinking into fixed patterns",
+        "Believing formal education alone is sufficient without self-directed learning",
+        "Avoiding subjects that feel unnatural (like probability) rather than deliberately mastering them"
+      ]
+    },
+    {
+      "name": "Creating Systems Resistant to Cheating and Moral Failure",
+      "steps": [
+        "Design incentives that align individual interests with desired system outcomes",
+        "Make cheating difficult rather than relying on moral exhortation alone",
+        "Monitor for 'slop' (small moral failures) and address immediately before they compound",
+        "Recognize consistency principle and operant conditioning\u2014small cheating becomes habitual",
+        "Appeal to self-interest (reputation, consequences) rather than morality when correcting behavior",
+        "Avoid creating 'deep pocket' situations that invite false claims",
+        "Build culture through behavioral modeling by leadership, not just explicit rules",
+        "Stop problems early before they normalize and become impossible to reverse"
+      ],
+      "decision_points": [
+        "Does this system make it easy or difficult to cheat?",
+        "What are the incentives actually rewarding versus what they're intended to reward?",
+        "Is small-scale cheating being tolerated that will compound over time?",
+        "Am I appealing effectively to self-interest or uselessly invoking moral principles?",
+        "Have moral failures already run too long to stop without drastic action?",
+        "Are consequences immediate and certain enough to prevent bad behavior?"
+      ],
+      "common_mistakes": [
+        "Creating systems where cheating is easy and consequences are distant/unlikely",
+        "Letting slop (small moral failures) run too long before intervention",
+        "Appealing to morality instead of self-interest when trying to change behavior",
+        "Underestimating how quickly consistency principle entrenches bad habits",
+        "Failing to recognize how operant conditioning rewards and perpetuates cheating",
+        "Allowing social proof to normalize unethical behavior once it starts spreading",
+        "Focusing on detecting fraud after the fact rather than preventing it through system design"
+      ]
+    },
+    {
+      "name": "Pilot Training Model for Elite Education",
+      "steps": [
+        "Element 1: Provide broad formal education covering all useful knowledge relevant to the field",
+        "Element 2: Require practice-based fluency, not just test-passing knowledge\u2014make it second nature",
+        "Element 3: Teach both forward and backward thinking techniques (including inversion)",
+        "Element 4: Allocate training time according to importance\u2014prioritize most critical skills for highest fluency",
+        "Element 5: Mandate checklist routines to minimize errors and omissions",
+        "Element 6: Require regular maintenance through practice (simulator equivalent) to prevent skill degradation"
+      ],
+      "decision_points": [
+        "Which skills are most critical and deserve highest fluency levels?",
+        "Is knowledge being practiced to fluency or just tested once?",
+        "Are both forward and reverse thinking being developed?",
+        "Is time allocation matching importance of different skills?",
+        "Are checklists mandatory or merely suggested?",
+        "Is ongoing practice required or is initial training considered sufficient?"
+      ],
+      "common_mistakes": [
+        "Testing knowledge once without developing automatic fluency",
+        "Allocating time equally across topics rather than by importance",
+        "Failing to teach reverse thinking and inversion alongside forward approaches",
+        "Making checklists optional rather than mandatory",
+        "Allowing skills to degrade through disuse without maintenance practice",
+        "Focusing on theoretical understanding without practical application"
+      ]
+    }
+  ],
+  "expertise_patterns": [
+    {
+      "pattern": "Experts practice extreme patience combined with extreme decisiveness",
+      "novice_mistake": "Novices feel pressure to constantly make decisions and take action; they confuse activity with progress",
+      "aha_moment": "Recognition that successful investment careers boil down to only a handful of decisions; most of the time should be spent learning, thinking, and waiting for obvious opportunities rather than trading. Apparent inactivity is actually intensive preparation."
+    },
+    {
+      "pattern": "Experts think multidisciplinarily and apply multiple models simultaneously to each problem",
+      "novice_mistake": "Novices rely on single disciplines or narrow frameworks; they suffer from 'man-with-a-hammer' tendency where every problem looks like a nail requiring their specialty tool",
+      "aha_moment": "Understanding that complex real-world problems require multiple lenses from different disciplines; using psychology alone, or economics alone, or any single framework produces incomplete and often incorrect analysis. The latticework approach dramatically improves judgment."
+    },
+    {
+      "pattern": "Experts prioritize avoiding mistakes and focus first on what can go wrong (inversion)",
+      "novice_mistake": "Novices focus primarily on potential gains and affirmative analysis; they neglect risk assessment and fail to systematically identify failure modes",
+      "aha_moment": "Realization that eliminating unpromising regions first is more efficient than trying to find needles in haystacks; 'All I want to know is where I'm going to die, so I'll never go there.' Success comes more from avoiding stupidity than seeking brilliance."
+    },
+    {
+      "pattern": "Experts maintain extreme objectivity and actively seek disconfirming evidence",
+      "novice_mistake": "Novices suffer from confirmation bias, process information to support existing beliefs, and become defensive when challenged; they fall in love with investments and ideas",
+      "aha_moment": "Understanding that Darwin's practice of immediately noting evidence against cherished theories separates exceptional achievers from average ones; objectivity is a learnable skill that requires constant vigilance against psychological tendencies toward denial and consistency."
+    },
+    {
+      "pattern": "Experts know their circles of competence precisely and admit ignorance outside them",
+      "novice_mistake": "Novices confidently answer questions outside their expertise like 'bees dancing incoherent dances that gum up the hive'; they cannot distinguish what they know from what they don't know",
+      "aha_moment": "Recognition that knowing what you don't know is possibly the most useful thing in life; admitting 'I don't know and I don't have special competence' demonstrates wisdom, not weakness. Operating outside competence zones leads to disaster."
+    },
+    {
+      "pattern": "Experts concentrate holdings in few positions they understand deeply",
+      "novice_mistake": "Novices over-diversify based on orthodox portfolio theory, spreading capital across many positions without deep understanding of any",
+      "aha_moment": "Understanding that a portfolio of three companies provides sufficient diversification when based on genuine insight; extreme concentration in quality is superior to broad diversification in mediocrity. 'We just look for no-brainer decisions... we don't leap seven-foot fences.'"
+    },
+    {
+      "pattern": "Experts recognize and account for their own psychological biases systematically",
+      "novice_mistake": "Novices believe they make purely rational decisions and are unaware of how incentives, consistency tendency, denial, and other psychological factors shape their thinking",
+      "aha_moment": "Realization that terribly smart people make bonkers mistakes by ignoring psychology of misjudgment; using two-track analysis (rational factors + psychological influences) and checklists prevents systematic errors that even high intelligence doesn't eliminate."
+    },
+    {
+      "pattern": "Experts hold long-term with minimal turnover to capture tax and cost advantages",
+      "novice_mistake": "Novices trade frequently, generate unnecessary transaction costs and taxes, and fail to let compound interest work its magic",
+      "aha_moment": "Recognition that infrequent trading combined with long holding periods adds 1-3 percentage points annually through tax deferral alone; plus reduced broker costs and noise exposure. 'Sit-on-your-ass investing' in great companies beats active trading."
+    }
+  ],
+  "temporal_evolution": [
+    {
+      "period": "1930s-1960s: Ben Graham Era",
+      "paradigm": "Deep value investing based on buying assets below liquidation value; market inefficiency was extreme due to shell-shock from Depression; focus on quantitative metrics and margin of safety through price alone",
+      "change_trigger": "Markets became more efficient as information spread; obvious bargains disappeared as 'the world wised up'; Graham-style opportunities became increasingly rare"
+    },
+    {
+      "period": "1960s-1980s: Munger-Buffett Partnership Evolution",
+      "paradigm": "Shift from 'cigar butt' investing to focus on quality businesses with durable competitive advantages; 'a great business at a fair price is superior to a fair business at a great price'; incorporation of psychological factors and qualitative assessment beyond financial metrics",
+      "change_trigger": "Munger convinced Buffett that business quality and management competence matter more than just cheap prices; recognition that compounding in great businesses beats serial bargain hunting; increasing capital made small deep-value opportunities insufficient"
+    },
+    {
+      "period": "1970s-1990s: Rise of Modern Portfolio Theory and Efficient Market Hypothesis",
+      "paradigm": "Academic finance promoted mathematical models (CAPM, beta), portfolio diversification, and belief in market efficiency; professional management and complex quantitative approaches became dominant",
+      "change_trigger": "Berkshire Hathaway's success and behavioral economics research began undermining efficient market theory; recognition that psychological factors and incentive-caused bias create persistent market inefficiencies"
+    },
+    {
+      "period": "1980s-2000: Financial Complexity Explosion",
+      "paradigm": "Derivatives, leverage, LBO funds, fund-of-funds structures, multiple layers of consultants became normal; increasing frictional costs from professional fees; drift toward 'Bernie Cornfeld' model of wealth extraction rather than 'Ben Franklin' model of public service",
+      "change_trigger": "Long-Term Capital Management collapse (1998) and dot-com bubble burst (2000-2002) demonstrated dangers of overconfidence, excessive leverage, and complex financial engineering; revealed limits of models based solely on rational-man assumptions"
+    },
+    {
+      "period": "1990s-Present: Behavioral Economics Integration",
+      "paradigm": "Growing recognition that psychology matters; Chicago economics department hiring Richard Thaler signals mainstream acceptance; understanding that people behave according to predictable psychological patterns, not just rational optimization",
+      "change_trigger": "Accumulated evidence that rational-man models fail to predict real behavior; success of investors like Munger and Buffett who explicitly incorporate psychological understanding; academic research on cognitive biases gains credibility"
+    }
+  ],
+  "key_metaphors": [
+    {
+      "metaphor": "Latticework of mental models\u2014knowledge as interconnected framework rather than isolated facts",
+      "maps_to": "The structure of working memory and long-term memory; meaningful connections between concepts enhance retention, retrieval, and application; isolated facts are unusable until integrated into theoretical structure"
+    },
+    {
+      "metaphor": "Man with only a hammer sees every problem as a nail",
+      "maps_to": "Cognitive bias from narrow specialization; when possessing limited tools/frameworks, all problems get forced into those familiar patterns regardless of appropriateness; demonstrates need for multidisciplinary thinking"
+    },
+    {
+      "metaphor": "One-legged man in an ass-kicking contest (lacking numerical fluency or key skills)",
+      "maps_to": "Severe competitive disadvantage from missing fundamental capabilities; certain skills are not merely helpful but essential for basic functioning in complex environments"
+    },
+    {
+      "metaphor": "Sitting on your ass (holding great companies long-term rather than trading)",
+      "maps_to": "Compounding returns over time requires inaction; patience as active strategy; avoiding unnecessary transaction costs, taxes, and noise; recognizing that doing nothing is often the optimal action"
+    },
+    {
+      "metaphor": "Mr. Market as manic-depressive offering daily buying/selling options",
+      "maps_to": "Market price fluctuations represent emotions and crowd behavior, not rational valuation; provides optionality without obligation; intelligent investors exploit irrational prices rather than being influenced by them"
+    },
+    {
+      "metaphor": "Moat around a business (competitive advantage as physical barrier)",
+      "maps_to": "Structural defenses that prevent competitor incursions; durability of advantage over time; some moats widen (network effects), others erode (patents expire); essential for sustainable profitability"
+    },
+    {
+      "metaphor": "Surfing\u2014staying on the wave of technological or market advantage",
+      "maps_to": "Early-mover advantages that persist if maintained; difficulty of getting back on wave once you fall off; some businesses 'surf' successfully for decades (Microsoft, Intel); timing and adaptation crucial"
+    },
+    {
+      "metaphor": "Circle of competence\u2014knowing the edges of genuine expertise",
+      "maps_to": "Bounded rationality and knowledge limits; honest self-assessment prevents overconfidence disasters; playing games only where you have structural advantages; staying within boundaries is humility, not limitation"
+    },
+    {
+      "metaphor": "Inversion like Jacobi\u2014thinking problems backward to find solutions",
+      "maps_to": "Mathematical and logical technique where solving the opposite problem reveals the solution; 'All I want to know is where I'm going to die, so I'll never go there'; eliminating bad options before pursuing good ones"
+    },
+    {
+      "metaphor": "Lollapalooza effects\u2014multiple factors combining for extreme outcomes",
+      "maps_to": "Non-linear causation where combined factors produce multiplicative rather than additive results; explains why single-factor analysis fails; demonstrates power of systematic approaches that align multiple advantages"
+    },
+    {
+      "metaphor": "Bezzle and febezzle\u2014undisclosed embezzlement and its functional equivalent",
+      "maps_to": "Hidden wealth destruction that temporarily stimulates economy through spending; investment management fees waste assets while clients feel richer from rising prices; economic stimulus that eventually reverses painfully"
+    },
+    {
+      "metaphor": "Pari-mutuel betting system as model for stock market",
+      "maps_to": "Constantly changing odds based on what others are betting; efficiency coexists with identifiable mispricing; success requires finding situations where you have informational/analytical advantage; average result is predetermined by house take (costs)"
+    }
+  ],
+  "anti_patterns": [
+    {
+      "name": "Activity for Activity's Sake",
+      "description": "Constant trading, frequent strategy changes, portfolio churning, responding to every market movement; confusing motion with progress; feeling pressure to 'do something' rather than waiting for clear opportunities",
+      "why_wrong": "Generates unnecessary transaction costs, taxes, and exposure to noise; prevents compound interest from working; indicates lack of genuine insight if constant action is needed; successful careers boil down to handful of good decisions, not thousands of mediocre ones",
+      "fix": "Practice extreme patience combined with extreme decisiveness; wait for 'one-foot fences' (obvious opportunities); hold long-term positions in great businesses; accept that apparent inactivity is often optimal; judge success by quality of decisions, not quantity"
+    },
+    {
+      "name": "Excessive Diversification (Diworsification)",
+      "description": "Spreading capital across dozens or hundreds of positions without deep understanding of any; following orthodox portfolio theory mechanically; pursuing diversification for its own sake rather than for insight-based reasons",
+      "why_wrong": "Dilutes focus and reduces returns to mediocrity; increases costs from management fees and complexity; indicates lack of genuine conviction or understanding; a portfolio of three companies understood deeply is superior to 100 positions known superficially",
+      "fix": "Concentrate in few positions within circle of competence; require deep understanding before committing capital; recognize that diversification is protection against ignorance, not a requirement when insight is present; Berkshire model of concentrated holdings"
+    },
+    {
+      "name": "Man-with-a-Hammer Tendency (Single-Model Thinking)",
+      "description": "Applying narrow disciplinary lens to all problems; relying exclusively on specialized expertise; seeing all problems through single framework (legal, financial, psychological, etc.); ignoring models from other disciplines",
+      "why_wrong": "Complex reality requires multiple models from multiple disciplines; single-lens analysis misses critical factors and leads to systematic errors; unidisciplinary approach to multidisciplinary problems guarantees failure; like playing bridge by counting trumps while ignoring all else",
+      "fix": "Build latticework of approximately 80-90 models from major disciplines; apply multiple frameworks simultaneously; think multidisciplinarily despite academic discouragement; recognize that truly big ideas from each discipline carry most intellectual freight"
+    },
+    {
+      "name": "Ignoring Incentive-Caused Bias",
+      "description": "Trusting professional advisers without recognizing their conflicts of interest; believing recommendations are objective when they align with adviser's financial interests; failing to ask 'whose bread I eat, his song I sing'",
+      "why_wrong": "Subconscious bias (not conscious malfeasance) systematically distorts advice; advisers unconsciously favor solutions that benefit themselves; most investment disasters come from following conflicted advice; 'every profession is a conspiracy against the laity'",
+      "fix": "Always identify adviser's incentives and discount recommendations accordingly; do your own multidisciplinary thinking rather than delegating to specialists; recognize that adviser's bias is usually subconscious, not malicious; appeal to self-interest when trying to influence behavior"
+    },
+    {
+      "name": "Falling in Love with Investments",
+      "description": "Becoming emotionally attached to positions; inability to recognize mistakes and cut losses; defending losing investments through rationalization; letting consistency tendency override objective reassessment",
+      "why_wrong": "Psychological commitment and denial prevent rational adjustment to new information; sunk cost fallacy causes doubling down on losers; consistency principle makes people defend initial choices regardless of evidence; many go broke through inability to abandon losing commitments",
+      "fix": "Remain situation-dependent and opportunity-driven rather than position-loyal; practice Darwin's method of immediately noting disconfirming evidence; use checklists to overcome denial; accept that there's no way to live adequately without making mistakes\u2014learn to recognize and fix them fast"
+    },
+    {
+      "name": "Confusing Complexity with Sophistication",
+      "description": "Adding layers of consultants, managers, and complex strategies; believing that elaborate approaches are superior to simple ones; using sophisticated mathematical models without understanding limitations; drifting toward 'fund-of-funds' structures",
+      "why_wrong": "Complexity adds costs (often 3%+ annually) without improving returns; creates febezzlement where middlemen extract wealth; simple approaches often outperform after accounting for fees; overconfidence from excessive professionalism causes major errors; 'physics envy' drives inappropriate quantification",
+      "fix": "Keep systems as simple as possible but no simpler; recognize that 80-90 fundamental models carry most freight; use indexing or concentrated positions in understood businesses; avoid structures with multiple fee layers; question whether complexity serves clients or providers"
+    },
+    {
+      "name": "Operating Outside Circle of Competence",
+      "description": "Confidently making decisions in unfamiliar domains; inability to distinguish genuine expertise from superficial knowledge; answering questions outside true understanding like 'bees dancing incoherent dances'",
+      "why_wrong": "Overconfidence outside competence leads to catastrophic mistakes; no competitive advantage in unfamiliar territory; playing games where others have aptitudes you lack guarantees losing; most disasters come from venturing beyond genuine expertise",
+      "fix": "Know precisely where circle of competence boundaries lie; admit 'I don't know' without shame when outside expertise; expand circle slowly through learning, but recognize it will always have limits; decline opportunities outside competence regardless of apparent attractiveness"
+    },
+    {
+      "name": "Ideology Locking the Brain",
+      "description": "Adopting heavy ideology young and expressing it rigidly; letting political, religious, or theoretical beliefs override evidence; inability to recognize disconfirming information due to ideological commitment",
+      "why_wrong": "Ideology impairs cognition even in genius-level minds (Chomsky example); creates permanent pattern that distorts general thinking; prevents objective recognition of reality; makes even brilliant people massively wrong on topics touching ideology",
+      "fix": "Avoid heavy ideology; maintain objectivity like Buffett; practice extreme willingness to disconfirm cherished theories; use Darwin's hair-shirt approach of immediately noting contrary evidence; recognize that ideology serves psychological needs but impairs judgment"
+    }
+  ]
 }

@@ -57,7 +57,7 @@ KNOWLEDGE MAP:
 async def generate_skill_draft(client, knowledge_map: dict) -> str:
     """Generate a SKILL.md from a knowledge map using Sonnet 4.5."""
     response = await client.messages.create(
-        model="claude-sonnet-4-5-20250929",
+        model="claude-sonnet-4-5",
         max_tokens=8000,
         messages=[{
             "role": "user",

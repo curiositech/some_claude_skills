@@ -310,7 +310,7 @@ async def extract_chunk(client, chunk: dict, semaphore: asyncio.Semaphore) -> di
     async with semaphore:
         try:
             response = await client.messages.create(
-                model="claude-haiku-4-5",  # Haiku 4.5 released Oct 2025: $1/$5 per MTok
+                model="claude-haiku-4-5",
                 max_tokens=2000,
                 messages=[{
                     "role": "user",
@@ -413,7 +413,7 @@ async def pass2_synthesize(client, extractions: list[dict]) -> dict:
         extraction_text = extraction_text[:150000] + "\n... (truncated)"
     
     response = await client.messages.create(
-        model="claude-sonnet-4-5-20250929",  # Fixed: Sonnet 4.5 is the latest
+        model="claude-sonnet-4-5",  # Fixed: Sonnet 4.5 is the latest
         max_tokens=8000,
         messages=[{
             "role": "user",
@@ -478,7 +478,7 @@ KNOWLEDGE MAP:
 async def pass3_skill_draft(client, knowledge_map: dict) -> str:
     """Pass 3: Opus creates a SKILL.md from the knowledge map."""
     response = await client.messages.create(
-        model="claude-sonnet-4-5-20250929",  # Using Sonnet 4.5 for cost; upgrade to Opus 4.5 for quality
+        model="claude-sonnet-4-5",  # Using Sonnet 4.5 for cost; upgrade to Opus 4.5 for quality
         max_tokens=8000,
         messages=[{
             "role": "user",

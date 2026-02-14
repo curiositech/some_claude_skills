@@ -61,7 +61,7 @@ Return JSON: {{"completeness": 0.X, "contract": 0.X, "confidence": 0.X, "adheren
 async def peer_evaluate(output: dict, task: str, skill_used: str) -> dict:
     """Dedicated judge agent evaluates output quality."""
     return await execute_with_model(
-        model='claude-haiku-4.5',  # Cheap judge
+        model='claude-haiku-4-5',  # Cheap judge
         system=load_skill('skill-grader'),
         prompt=f"""
         Task: {task}
@@ -476,7 +476,7 @@ When a DAG node succeeds without a pre-built skill, and that pattern repeats 3+ 
 async def crystallize_skill(node_id: str, traces: list[dict]) -> str:
     """Extract a new skill from repeated successful improvisation."""
     return await execute_with_model(
-        model='claude-opus-4.6',
+        model='claude-opus-4-5',
         system=load_skill('skill-architect'),
         prompt=f"""
         These {len(traces)} DAG executions succeeded on similar tasks without
