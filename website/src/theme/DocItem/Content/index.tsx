@@ -32,16 +32,15 @@ export default function ContentWrapper(props: Props): JSX.Element {
     return <Content {...props} />;
   }
 
-  // Convert underscore folder name to hyphen skill ID for lookup
-  const skillId = skillFolderName.replace(/_/g, '-');
-
-  // Look up skill data from the registry
-  const skill = ALL_SKILLS.find((s) => s.id === skillId);
+  // Look up skill data by matching the URL path
+  const skillPath = `/docs/skills/${skillFolderName}`;
+  const skill = ALL_SKILLS.find((s) => s.path === skillPath);
 
   if (!skill) {
     return <Content {...props} />;
   }
 
+  const skillId = skill.id;
   const heroImageUrl = skill.heroImage || `/img/skills/${skillId}-hero.png`;
   const absoluteHeroUrl = `https://someclaudeskills.com${heroImageUrl}`;
 
