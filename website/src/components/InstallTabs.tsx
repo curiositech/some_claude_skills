@@ -6,7 +6,7 @@ interface InstallTabsProps {
   compact?: boolean;
 }
 
-type TabId = 'claude-code' | 'claude-web' | 'claude-desktop';
+type TabId = 'agent-skills' | 'claude-code' | 'claude-web' | 'claude-desktop';
 
 interface TabConfig {
   id: TabId;
@@ -18,6 +18,14 @@ interface TabConfig {
 }
 
 const tabs: TabConfig[] = [
+  {
+    id: 'agent-skills',
+    label: 'Agent Skills',
+    icon: 'skills',
+    color: '#a78bfa',
+    borderColor: '#a78bfa',
+    requirement: 'Any agent',
+  },
   {
     id: 'claude-code',
     label: 'Claude Code',
@@ -45,7 +53,7 @@ const tabs: TabConfig[] = [
 ];
 
 export default function InstallTabs({ skillId, skillName, compact = false }: InstallTabsProps): JSX.Element {
-  const [activeTab, setActiveTab] = useState<TabId>('claude-code');
+  const [activeTab, setActiveTab] = useState<TabId>('agent-skills');
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
 
   const copyToClipboard = async (text: string, label: string) => {
@@ -106,6 +114,7 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
             }}
           >
             <span style={{ fontSize: compact ? '14px' : '16px' }}>
+              {tab.icon === 'skills' && '⚡'}
               {tab.icon === 'terminal' && '>_'}
               {tab.icon === 'web' && 'www'}
               {tab.icon === 'desktop' && 'app'}
@@ -124,6 +133,163 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
 
       {/* Tab Content */}
       <div style={{ padding: compact ? '12px' : '16px' }}>
+        {/* Agent Skills Tab */}
+        {activeTab === 'agent-skills' && (
+          <div>
+            <div style={{
+              background: '#1a0a2e',
+              border: '1px solid #a78bfa',
+              padding: '8px 10px',
+              marginBottom: '12px',
+              fontSize: '10px',
+              color: '#a78bfa',
+            }}>
+              Works with Claude Code, Codex, Cursor, OpenCode, and any{' '}
+              <a
+                href="https://agentskills.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#c4b5fd', textDecoration: 'underline' }}
+              >
+                Agent Skills
+              </a>
+              {' '}compatible agent
+            </div>
+
+            {/* One-liner install */}
+            <div style={{ marginBottom: '16px' }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                marginBottom: '8px',
+              }}>
+                <span style={{
+                  background: '#a78bfa',
+                  color: '#000',
+                  padding: '2px 8px',
+                  fontSize: '10px',
+                  fontWeight: 'bold',
+                }}>
+                  INSTALL
+                </span>
+                <span style={{ color: '#a78bfa', fontSize: '12px' }}>
+                  Run this command in your terminal
+                </span>
+              </div>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <code style={{
+                  flex: 1,
+                  background: '#111',
+                  padding: '10px 12px',
+                  border: '2px solid #a78bfa',
+                  color: '#a78bfa',
+                  fontSize: '11px',
+                  display: 'block',
+                }}>
+                  npx skills add curiositech/some_claude_skills -s {skillId}
+                </code>
+                <button
+                  onClick={() => copyToClipboard(`npx skills add curiositech/some_claude_skills -s ${skillId}`, 'agent-skills')}
+                  style={{
+                    background: copiedItem === 'agent-skills' ? '#a78bfa' : '#222',
+                    border: '2px solid #a78bfa',
+                    color: copiedItem === 'agent-skills' ? '#000' : '#a78bfa',
+                    padding: '8px 12px',
+                    cursor: 'pointer',
+                    fontFamily: 'var(--font-code)',
+                    fontSize: '11px',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  {copiedItem === 'agent-skills' ? 'OK!' : 'COPY'}
+                </button>
+              </div>
+            </div>
+
+            {/* Install all */}
+            <div style={{ marginBottom: '16px' }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                marginBottom: '8px',
+              }}>
+                <span style={{
+                  background: '#7c3aed',
+                  color: '#fff',
+                  padding: '2px 8px',
+                  fontSize: '10px',
+                  fontWeight: 'bold',
+                }}>
+                  OR
+                </span>
+                <span style={{ color: '#c4b5fd', fontSize: '12px' }}>
+                  Install all 170+ skills at once
+                </span>
+              </div>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <code style={{
+                  flex: 1,
+                  background: '#111',
+                  padding: '10px 12px',
+                  border: '2px solid #7c3aed',
+                  color: '#c4b5fd',
+                  fontSize: '11px',
+                  display: 'block',
+                }}>
+                  npx skills add curiositech/some_claude_skills --all
+                </code>
+                <button
+                  onClick={() => copyToClipboard('npx skills add curiositech/some_claude_skills --all', 'agent-skills-all')}
+                  style={{
+                    background: copiedItem === 'agent-skills-all' ? '#7c3aed' : '#222',
+                    border: '2px solid #7c3aed',
+                    color: copiedItem === 'agent-skills-all' ? '#fff' : '#c4b5fd',
+                    padding: '8px 12px',
+                    cursor: 'pointer',
+                    fontFamily: 'var(--font-code)',
+                    fontSize: '11px',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  {copiedItem === 'agent-skills-all' ? 'OK!' : 'COPY'}
+                </button>
+              </div>
+            </div>
+
+            {/* Usage */}
+            <div style={{
+              background: '#111',
+              border: '1px solid #333',
+              padding: '10px',
+              fontSize: '10px',
+              color: '#888',
+            }}>
+              <span style={{ color: '#a78bfa' }}>Done!</span> The skill is installed to your agent&apos;s skills directory.
+              Any compatible agent will auto-discover and load it when relevant.
+            </div>
+
+            {/* Attribution */}
+            <div style={{
+              marginTop: '12px',
+              fontSize: '9px',
+              color: '#555',
+              textAlign: 'right',
+            }}>
+              Format:{' '}
+              <a
+                href="https://agentskills.io/specification"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'var(--win31-teal)', textDecoration: 'underline' }}
+              >
+                Agent Skills Specification
+              </a>
+            </div>
+          </div>
+        )}
+
         {/* Claude Code Tab */}
         {activeTab === 'claude-code' && (
           <div>
