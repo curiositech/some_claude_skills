@@ -1,0 +1,464 @@
+{
+  "document_summary": "Reuben Hersh's 'What Is Mathematics, Really?' proposes a humanist philosophy of mathematics that views it as a social-historical-cultural activity rather than abstract Platonic objects or formal symbol systems. Challenging the traditional dominance of Platonism, formalism, and foundationism, Hersh argues that mathematical objects are social entities existing in shared consciousness, mathematical knowledge is fallible like other knowledge, and proof serves different purposes (convincing in research, explaining in teaching) rather than providing absolute certainty. The book traces how mathematics philosophy has been entangled with theology from Pythagoras through Kant, examines how actual mathematical practice contradicts inherited philosophical dogmas, and demonstrates that the 'front' (formal presentation) and 'back' (creative process) of mathematics reveal mathematics as human activity that grows through problem-solving rather than deduction from eternal axioms.",
+  "core_concepts": [
+    {
+      "concept": "Humanist philosophy of mathematics",
+      "definition": "Mathematics understood as a human activity, social phenomenon, part of human culture, historically evolved, and intelligible only in social context\u2014not as Platonic abstract objects or meaningless formal systems",
+      "relationships": [
+        "Contrasts with Platonism (mathematics as timeless abstract realm)",
+        "Contrasts with formalism (mathematics as meaningless symbol manipulation)",
+        "Aligns with philosophy of science post-Kuhn/Popper (examining what practitioners actually do)",
+        "Connected to fallibilism (mathematical knowledge is corrigible like other knowledge)",
+        "Relates to social conceptualism (mathematical objects as social-cultural-historic entities)"
+      ]
+    },
+    {
+      "concept": "Mathematical objects as social entities",
+      "definition": "Mathematical concepts exist at the social-cultural-historic level in shared consciousness\u2014neither purely mental (subjective) nor physical (objective) but a third category of reality analogous to social institutions, literature, or music",
+      "relationships": [
+        "Resolves the Platonist problem of interaction between abstract and material realms",
+        "Explains objectivity without requiring transcendent existence",
+        "Connected to Durkheim's concept of social reality",
+        "Arises from shared activities, common training, and mutual adjustment of mental representations",
+        "Allows mathematical objects to be both human creations AND have objective properties"
+      ]
+    },
+    {
+      "concept": "Front vs. back of mathematics",
+      "definition": "Front: formal, polished, public presentation (definitions, theorems, proofs). Back: informal, fragmentary, intuitive creative process (guessing, trying approaches, using 'maybe' language)",
+      "relationships": [
+        "Analogous to restaurant dining room vs. kitchen, or theater stage vs. backstage",
+        "Traditional philosophy recognizes only the front, missing essential understanding",
+        "Professional development moves from naive front-only to sophisticated back-aware understanding",
+        "The gap between front and back reveals contradictions in inherited philosophical dogmas",
+        "Understanding mathematics requires attention to both aspects"
+      ]
+    },
+    {
+      "concept": "Proof (dual meaning)",
+      "definition": "Two distinct meanings: (1) Practical\u2014informal argument convincing qualified skeptical experts; (2) Theoretical\u2014formal logical transformation according to explicit rules",
+      "relationships": [
+        "The discrepancy between meanings is rarely acknowledged but philosophically significant",
+        "In teaching, proof serves to explain and provide understanding",
+        "In research, proof serves to convince",
+        "Formal proof is an idealization; actual proofs are incomplete by formal standards",
+        "Proof is defined socially through what the mathematical community sanctions"
+      ]
+    },
+    {
+      "concept": "Mathematical intuition",
+      "definition": "The effect in mind/brain from manipulating concrete objects, leaving mental traces or representations that enable mathematical insight without formal proof",
+      "relationships": [
+        "Indispensable to all mathematical practice despite philosophical discomfort",
+        "Built through repeated experience: physical objects \u2192 paper marks \u2192 mental images",
+        "All major schools (Platonism, formalism, constructivism) rely on intuition while struggling to explain it",
+        "Enables mathematicians to judge validity without complete proofs",
+        "Not direct perception of external objects but learned pattern recognition"
+      ]
+    },
+    {
+      "concept": "Fallibilism in mathematics",
+      "definition": "Mathematical knowledge is corrigible and uncertain like other knowledge; mistakes are inevitable rather than merely possible; no absolute certainty exists",
+      "relationships": [
+        "Contradicts foundationist goal of indubitable mathematical truths",
+        "Supported by historical examples of great mathematicians' errors",
+        "Connected to rejection of Euclidean geometry as uniquely true",
+        "Allows for virtual certainty rather than absolute certainty",
+        "Requires abandoning mathematics as source of infallible truth"
+      ]
+    },
+    {
+      "concept": "Mathematical existence",
+      "definition": "In mathematics, 'exist' is a technical term: nonexistence usually means impossibility; two types\u2014constructive (obtainable by finite steps) and indirect (proved by showing non-existence is impossible)",
+      "relationships": [
+        "Different from existence in other domains (physical, mental)",
+        "Classical mathematicians accept indirect proofs; intuitionists/constructivists reject them",
+        "Potential vs. actual existence distinction explains mathematical growth",
+        "Questions about existence are central to philosophy of mathematics",
+        "Mathematical entities can be created yet have objective properties difficult to discover"
+      ]
+    },
+    {
+      "concept": "Object-process continuum",
+      "definition": "Objects and processes are ends of a continuum determined by scale of time, distance, and human purposes\u2014not absolute categories. An object is a slow process; a process is a speedy object",
+      "relationships": [
+        "Applies across domains: physics, biology, social institutions, mathematics",
+        "Mathematical objects change over time despite appearing timeless",
+        "The number 2 has evolved from Pythagorean times through modern mathematics",
+        "Mathematical growth embeds old structures into new ones rather than replacing them",
+        "Challenges Platonic view of timeless unchanging mathematical entities"
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "name": "Mathematical proof discovery and validation",
+      "steps": [
+        "Guess a theorem before proving it (intuition precedes proof)",
+        "Have the idea of the proof before carrying through details",
+        "Develop informal argument convincing to oneself",
+        "Present to qualified skeptical experts",
+        "Undergo peer review and criticism",
+        "Revise based on feedback until community accepts",
+        "Publish in journals (social validation)",
+        "Become part of teaching and citation network"
+      ],
+      "decision_points": [
+        "Whether to accept intuitive conviction without complete formal proof",
+        "How much detail to include (what's routine vs. non-routine for target audience)",
+        "Whether to use computational methods or purely analytical arguments",
+        "Which axiom system to base proofs on (non-unique solutions)"
+      ],
+      "common_mistakes": [
+        "Confusing practical proof (convincing argument) with theoretical proof (formal logical transformation)",
+        "Believing proof provides absolute certainty rather than high confidence",
+        "Ignoring the social dimension of proof validation",
+        "Assuming all proofs can be fully formalized in practice"
+      ]
+    },
+    {
+      "name": "Mathematical system enlargement",
+      "steps": [
+        "Encounter problems unsolvable in current system (e.g., 15+15 when counting stops at 20)",
+        "Recognize limitations create difficulties",
+        "Embed old structure into larger new structure",
+        "New system makes old problems solvable",
+        "New complications and problems emerge in new system",
+        "Cycle repeats: natural numbers \u2192 integers \u2192 rationals \u2192 reals \u2192 complex numbers"
+      ],
+      "decision_points": [
+        "Whether to extend the system or accept limitations",
+        "Which embedding preserves desired properties",
+        "How to define operations in the extended system",
+        "Whether new system is worth increased complexity"
+      ],
+      "common_mistakes": [
+        "Assuming mathematical growth discards old knowledge (it enriches and complexifies)",
+        "Treating enlarged systems as completely new rather than embedded extensions",
+        "Ignoring how meanings change when embedded in larger contexts"
+      ]
+    },
+    {
+      "name": "Building mathematical intuition",
+      "steps": [
+        "Elementary level: manipulate physical objects (coins, beans, pebbles)",
+        "Develop mental pictures from concrete manipulations",
+        "Progress to paper-and-pencil calculations",
+        "Reify concrete bases into abstract concepts",
+        "Build higher-level concepts from lower-level ones",
+        "Mutual adjustment through comparison with teachers and peers",
+        "Develop shared mental representations with reproducible properties"
+      ],
+      "decision_points": [
+        "When to move from concrete to abstract representations",
+        "How much practice needed before reification",
+        "Whether individual understanding matches community standards"
+      ],
+      "common_mistakes": [
+        "Moving to abstraction before concrete foundation is solid",
+        "Treating intuition as direct perception rather than learned pattern recognition",
+        "Assuming intuition is universal rather than culturally developed"
+      ]
+    },
+    {
+      "name": "Polya's problem-solving heuristic",
+      "steps": [
+        "Encounter unsolvable problem",
+        "Create related simpler problem",
+        "Solve simpler problem",
+        "Build table or identify pattern",
+        "Apply pattern to original problem",
+        "Verify solution"
+      ],
+      "decision_points": [
+        "Which dimension of simplification to choose",
+        "How simple the related problem should be",
+        "Whether pattern generalizes reliably"
+      ],
+      "common_mistakes": [
+        "Jumping to the hard problem without building understanding through simpler cases",
+        "Failing to verify the pattern holds for the target case"
+      ]
+    }
+  ],
+  "expertise_patterns": [
+    {
+      "pattern": "Professional mathematicians understand both front and back of mathematics",
+      "novice_mistake": "Naive students believe only the front (formal presentation) exists and represents how mathematics is actually done",
+      "aha_moment": "Graduate training reveals the back\u2014fragmentary intuitive creative process with tentative language\u2014is where mathematics actually happens; the front is polished retrospective presentation"
+    },
+    {
+      "pattern": "Experts oscillate between Platonism (weekdays) and formalism (weekends) without resolving the contradiction",
+      "novice_mistake": "Outsiders take the myths (unity, universality, certainty, objectivity) literally rather than as useful fictions",
+      "aha_moment": "Recognizing that professional mathematicians privately acknowledge philosophical complications while publicly supporting simplified narratives for practical purposes"
+    },
+    {
+      "pattern": "Great mathematicians value intuition and beautiful ideas over formal completeness",
+      "novice_mistake": "Believing mathematics proceeds purely by rigorous formal deduction from axioms",
+      "aha_moment": "Understanding that theorems were known before their axioms were formalized; axioms are solutions to meta-problems, not starting points"
+    },
+    {
+      "pattern": "Expert mathematicians judge correctness through non-rigorous methods (intuition, examples, analogy, elegance, symmetry)",
+      "novice_mistake": "Assuming every mathematical claim requires complete formal proof before acceptance",
+      "aha_moment": "Hardy could judge Ramanujan's formulas as sound without proofs\u2014genuine mathematical judgment relies on cultivated intuition"
+    },
+    {
+      "pattern": "Experts understand proof serves different purposes in different contexts (research: convince; teaching: explain)",
+      "novice_mistake": "Treating proof as always the same kind of activity with the same purpose",
+      "aha_moment": "In teaching, proof is a tool for understanding, not a shackle; prioritize what increases comprehension over absolute rigor"
+    }
+  ],
+  "temporal_evolution": [
+    {
+      "period": "540-510 B.C. (Pythagoras)",
+      "paradigm": "Numbers are divine; mathematics reveals God's creative wisdom; the tetractys (10) represents the universe",
+      "change_trigger": "Pythagorean discovery that musical harmonies depend on simple numerical ratios\u2014treated as religious revelation"
+    },
+    {
+      "period": "Plato through medieval times",
+      "paradigm": "Mathematical Ideas are eternal, immaterial, numinous entities existing independently in divine mind; physical world is illusion",
+      "change_trigger": "Plato's response to planetary irregularities contradicting divine order; needed mathematics to represent perfect regularity underlying apparent chaos"
+    },
+    {
+      "period": "Descartes (1596-1650)",
+      "paradigm": "Mathematics provides indubitable certainty equal to arithmetic and geometry; Method promises to embrace whole of human thought",
+      "change_trigger": "Descartes's dream-vision and desire to reject all authorities while maintaining religious orthodoxy; development of analytic geometry"
+    },
+    {
+      "period": "Kant (1724-1804)",
+      "paradigm": "Mathematics is synthetic a priori knowledge based on universal intuitions of space (Euclidean geometry) and time (arithmetic)",
+      "change_trigger": "Kant awakened from dogmatic slumber by Hume; sought to rehabilitate Leibniz's rationalism against empiricist skepticism"
+    },
+    {
+      "period": "19th century (Gauss, Bolyai, Lobachevsky)",
+      "paradigm": "Non-Euclidean geometry is logically consistent; geometry is not uniquely determined by human intuition but is a choice",
+      "change_trigger": "Discovery that negating the parallel postulate yields consistent geometry rather than contradiction; undermines Kant's spatial intuition theory"
+    },
+    {
+      "period": "1915 (Einstein's general relativity)",
+      "paradigm": "Physical space-time is non-Euclidean (curved); which geometry describes reality is an empirical question, not metaphysical necessity",
+      "change_trigger": "General relativity requires Riemannian geometry; empirical evidence supports non-Euclidean space-time"
+    },
+    {
+      "period": "1890-1930 (foundationist crisis)",
+      "paradigm": "Mathematics must have firm foundations; three schools compete: logicism (Frege, Russell), formalism (Hilbert), intuitionism (Brouwer)",
+      "change_trigger": "Discovery of paradoxes in set theory; desire to secure mathematics against contradiction; professionalization of mathematics"
+    },
+    {
+      "period": "Mid-20th century (formalism dominant)",
+      "paradigm": "Mathematics is meaningless symbol manipulation following formal rules; influenced exposition style toward extreme abstraction",
+      "change_trigger": "Formalism became publicly advocated philosophy; Bourbaki movement; set-theoretic reduction; separation from applications"
+    },
+    {
+      "period": "1950s-1960s (philosophy of science revolution)",
+      "paradigm": "In philosophy of science: examine what scientists actually do (Kuhn, Popper) rather than impose external methodologies",
+      "change_trigger": "Philosophy of science shifted from logical positivism to examining actual practice; BUT this revolution did not affect philosophy of mathematics, which remained dominated by neo-Fregeanism"
+    },
+    {
+      "period": "1970s-present (computerization)",
+      "paradigm": "Computers increasingly used in proof generation, validation, and exploration; expanding what counts as valid mathematics",
+      "change_trigger": "Haken-Appel computer-assisted proof of four-color theorem; universal adoption of computers by mathematicians; emergence of experimental mathematics"
+    }
+  ],
+  "key_metaphors": [
+    {
+      "metaphor": "Front and back of mathematics (like restaurant dining room vs. kitchen; theater stage vs. backstage)",
+      "maps_to": "The distinction between formal public presentation and informal creative process; understanding mathematics requires seeing both"
+    },
+    {
+      "metaphor": "Mathematics as rails projecting into the future",
+      "maps_to": "Mathematical growth appears predetermined by existing knowledge; discoveries force themselves on mathematicians through repeated/simultaneous discovery"
+    },
+    {
+      "metaphor": "Object as slow process; process as speedy object",
+      "maps_to": "The object-process distinction depends on temporal and spatial scale of observation, not absolute categories"
+    },
+    {
+      "metaphor": "Mathematical ideas matching the world like lungs match Earth's atmosphere",
+      "maps_to": "Mathematics evolved from our biological nature and physical surroundings; utility arises from co-evolution, not pre-existing Platonic forms"
+    },
+    {
+      "metaphor": "Mountains and peaks (mathematician as observer)",
+      "maps_to": "Following ridges of summits (proofs) to reach new peaks (mathematical objects); eventually able to recognize peaks directly without following every ridge"
+    },
+    {
+      "metaphor": "Platonism without God as Cheshire cat's grin",
+      "maps_to": "Modern Platonism retains the concept of abstract realm after the theological foundation (God's mind) has disappeared\u2014a grin without the cat"
+    },
+    {
+      "metaphor": "Mathematics as a vast network of interconnected problems and solutions",
+      "maps_to": "Questions drive mathematics; solving problems and making new ones is the essence of mathematical life rather than deducing from axioms"
+    }
+  ],
+  "anti_patterns": [
+    {
+      "name": "Foundationism",
+      "description": "Seeking indubitable foundations for all mathematics; attempting to reduce mathematics to a single axiomatic system (set theory) that guarantees certainty",
+      "why_wrong": "The goal is unattainable and misdirects philosophical attention; mathematics grows through problem-solving, not deduction from foundations; axioms come late, not first; G \u00f6del showed consistency cannot be proven",
+      "fix": "Accept fallibilism; study actual mathematical practice; recognize axiomatization as organizing existing mathematics, not creating it"
+    },
+    {
+      "name": "Exclusive Platonism (treating mathematical objects as transcendent abstract entities)",
+      "description": "Claiming mathematical objects exist timelessly in an immaterial realm independent of human minds, discovered rather than created",
+      "why_wrong": "Cannot explain interaction between abstract realm and flesh-and-blood mathematicians (same fatal flaw as Cartesian dualism); mathematical objects actually change historically; implausible that vast set-theoretic universe existed before Big Bang unnoticed until Cantor",
+      "fix": "Recognize mathematical objects as social-cultural-historic entities in shared consciousness; they are human creations that gain objective properties through shared practice"
+    },
+    {
+      "name": "Pure formalism (mathematics as meaningless symbol manipulation)",
+      "description": "Treating mathematics as a game played by arbitrary rules without meaning or reference to reality",
+      "why_wrong": "Cannot explain how mathematicians found correct theorems through incorrect reasoning; cannot account for mathematical discovery and intuition; rules are not arbitrary but determined by social, biological, environmental factors",
+      "fix": "Recognize mathematics has meaning derived from problems, applications, and conceptual understanding; formalization is a tool, not the essence of mathematics"
+    },
+    {
+      "name": "Confusing front and back of mathematics",
+      "description": "Philosophy examining only formal presentations while ignoring creative process; or mixing front and back inappropriately",
+      "why_wrong": "Cannot understand mathematics by studying only polished presentations, like understanding restaurants by seeing only dining room; the creative process is essential to mathematical understanding",
+      "fix": "Examine both formal presentations and actual working practice; recognize their codependence; study history, teaching, research process"
+    },
+    {
+      "name": "Demanding absolute certainty from mathematics",
+      "description": "Insisting mathematical knowledge must be infallible and indubitable unlike other knowledge",
+      "why_wrong": "Historical examples show great mathematicians make mistakes; no mechanical proof procedure exists even in principle; understanding required to verify formal computations; only virtual certainty achievable",
+      "fix": "Accept fallibilism; recognize mistakes as inevitable; understand certainty and objectivity are myths claimed in principle but not achievable in practice"
+    },
+    {
+      "name": "Ignoring social-historical dimension",
+      "description": "Treating mathematics as timeless, ahistorical, context-free, asocial activity",
+      "why_wrong": "Mathematical concepts evolve historically; meanings change; acceptability is socially determined; mathematical objects exist at social-cultural-historic level; practice varies by time, place, context",
+      "fix": "Study mathematics as human activity in social context; examine historical evolution; recognize cultural and institutional determination of standards"
+    },
+    {
+      "name": "Set-theoretic reductionism",
+      "description": "Claiming all mathematics is 'really' set theory; using set-theoretic reduction to reinterpret historical mathematics",
+      "why_wrong": "Historically inaccurate (mathematicians didn't think in set-theoretic terms); philosophically limiting (ignores what makes mathematics interesting); creates illusion of unity that doesn't match practice",
+      "fix": "Recognize diverse mathematical structures and approaches; respect historical mathematical thinking; understand formalization is one tool among many, not the essence"
+    }
+  ],
+  "notable_quotes": [
+    "After devouring the book with wonder and delight, I was still left asking, 'But what is mathematics, really?'",
+    "Of course it's obvious common knowledge that mathematics is a human activity carried out in society and developing historically. These simple observations are usually considered irrelevant to the philosophical question, what is mathematics?",
+    "The proof of the pudding is in the eating. The proof of the theorem is in the refereeing.",
+    "You have to guess a mathematical theorem before you prove it; you have to have the idea of the proof before you carry through the details.",
+    "The working mathematician is a Platonist on weekdays, a formalist on weekends.",
+    "If we give up the obligation of mathematics to be a source of indubitable truths, we can accept it as a human activity.",
+    "The unexamined life isn't worth living.",
+    "Mathematics is a vast network of interconnected problems and solutions.",
+    "It's the questions that drive mathematics. Solving problems and making up new ones is the essence of mathematical life.",
+    "When you meet a contradiction, make a distinction. \u2014The Philosophers' Rule",
+    "Tradition is the forgetting of the origins. \u2014Edmund Husserl",
+    "The mistakes of a great mathematician are worth more than the correctness of a mediocrity.",
+    "An object is a slow process. A process is a speedy object.",
+    "Platonism without God is like the grin on Lewis Carroll's Cheshire cat. The cat had a grin. Gradually the cat disappeared, until all was gone\u2014except the grin.",
+    "What mathematicians at large sanction and accept is correct mathematics. Their work is the touchstone of mathematical proof, not vice versa."
+  ],
+  "domain_vocabulary": [
+    {
+      "term": "Platonism",
+      "definition": "Philosophy holding that mathematical objects exist as abstract, eternal, immaterial entities independent of human minds\u2014either in a transcendent realm or as thoughts in God's mind"
+    },
+    {
+      "term": "Formalism",
+      "definition": "Philosophy treating mathematics as meaningless symbol manipulation following formal rules; mathematics as a game with no inherent meaning or reference to reality"
+    },
+    {
+      "term": "Intuitionism/Constructivism",
+      "definition": "Philosophy requiring mathematical objects be constructible by finite mental operations; rejects indirect existence proofs and law of excluded middle for infinite sets"
+    },
+    {
+      "term": "Humanism (philosophy of mathematics)",
+      "definition": "View that mathematics is human activity, social phenomenon, part of culture, historically evolved, intelligible only in social context"
+    },
+    {
+      "term": "Foundationism",
+      "definition": "Philosophical program seeking to establish mathematics on indubitable foundations, typically through logical reduction to a single axiomatic base (set theory)"
+    },
+    {
+      "term": "Neo-Fregeanism",
+      "definition": "Contemporary descendant of Frege's logicism; dominant in academic philosophy of mathematics but disconnected from mathematical practice"
+    },
+    {
+      "term": "Social conceptualism",
+      "definition": "Theory that mathematical objects are social-cultural-historic entities existing in shared consciousness rather than transcendent realm or individual minds"
+    },
+    {
+      "term": "Synthetic a priori",
+      "definition": "Kant's category: knowledge that is both informative (synthetic) and independent of experience (a priori); claimed mathematics exemplifies this through spatial and temporal intuition"
+    },
+    {
+      "term": "Front vs. back (of mathematics)",
+      "definition": "Front: formal, polished public presentation. Back: informal, fragmentary creative process where mathematics actually happens"
+    },
+    {
+      "term": "Proof (practical meaning)",
+      "definition": "Argument that convinces qualified skeptical experts; social validation through peer review and community acceptance"
+    },
+    {
+      "term": "Proof (theoretical meaning)",
+      "definition": "Formal logical transformation of statements according to explicit inference rules in a formal system"
+    },
+    {
+      "term": "Mathematical intuition",
+      "definition": "Effect in mind/brain from manipulating objects, leaving mental traces enabling insight without formal proof; learned pattern recognition, not direct perception"
+    },
+    {
+      "term": "Fallibilism",
+      "definition": "View that mathematical knowledge is corrigible like other knowledge; mistakes inevitable; no absolute certainty attainable"
+    },
+    {
+      "term": "Constructive existence",
+      "definition": "Proving something exists by constructing it from known objects by finite steps or within arbitrarily small error"
+    },
+    {
+      "term": "Indirect/non-constructive existence",
+      "definition": "Proving something exists by showing its non-existence is impossible; accepted by classical mathematicians, rejected by constructivists"
+    },
+    {
+      "term": "Axiomatization",
+      "definition": "Organizing existing mathematics into axiom sets; a solution to meta-problems, not the starting point of mathematics"
+    },
+    {
+      "term": "Set-theoretic reduction",
+      "definition": "Program to reinterpret all mathematical concepts as sets and all theorems as statements in set theory"
+    },
+    {
+      "term": "Non-Euclidean geometry",
+      "definition": "Geometries where parallel postulate fails: hyperbolic (multiple parallels, angle sum <180\u00b0) or elliptic (no parallels, angle sum >180\u00b0)"
+    },
+    {
+      "term": "Parallel postulate",
+      "definition": "Euclid's Fifth: through any point, exactly one line parallel to any given line can be drawn (Playfair's formulation)"
+    },
+    {
+      "term": "Four-dimensional cube (hypercube)",
+      "definition": "Generalization of cube to four dimensions; has 16 vertices, 32 edges, 24 faces, 8 cells, and 1 interior (81 parts total)"
+    },
+    {
+      "term": "Gematria",
+      "definition": "Method of associating numbers with words by summing letter values; used in medieval numerology"
+    },
+    {
+      "term": "Perfect number",
+      "definition": "Number equal to sum of its proper divisors (e.g., 6 = 1+2+3); held mystical significance in Pythagorean and Christian thought"
+    },
+    {
+      "term": "Monadology",
+      "definition": "Leibniz's metaphysics: monads are the only real things, cannot interact, coordinated by preestablished harmony"
+    },
+    {
+      "term": "Infinitesimals",
+      "definition": "Quantities smaller than any finite quantity but not zero; used by Leibniz in calculus, later rigorized or replaced"
+    },
+    {
+      "term": "Analytic geometry",
+      "definition": "Method representing geometric objects algebraically through coordinates; attributed to Descartes but developed over time"
+    },
+    {
+      "term": "Method (Descartes)",
+      "definition": "Four rules: accept only clear truths, divide difficulties, order from simple to complex, make complete enumerations"
+    },
+    {
+      "term": "Coincidence of opposites",
+      "definition": "Nicholas of Cusa's concept: in God and at infinity, maxima and minima coincide (e.g., infinite circle = straight line)"
+    }
+  ]
+}

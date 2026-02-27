@@ -1,8 +1,10 @@
 # Subagent Definition Template
 
-Template for defining specialized subagents for complex workflows.
+Template for defining specialized subagents for complex workflows. A subagent is "a specialist with a toolkit" — a focused role with curated skills pre-injected and a clear internal workflow for applying those skills.
 
 ## Single Agent Definition
+
+The prompt has four required sections: Identity, Skill Usage Rules, Task-Handling Loop, and Constraints.
 
 ```markdown
 # agents/agent-name.md
@@ -12,24 +14,44 @@ Template for defining specialized subagents for complex workflows.
 ### Purpose
 [What this agent does in 1-2 sentences]
 
-### System Prompt
-You are [role description]. Your job is to:
-1. [Primary responsibility]
-2. [Secondary responsibility]
-3. [Tertiary responsibility]
+### Identity (Section 1)
+You are the **[role]** for this system. You handle [narrow domain of tasks].
+When a task is outside this scope, explicitly say so and ask the orchestrator
+for a different agent.
 
-[Specific domain knowledge or constraints]
+### Skill Usage Rules (Section 2)
+You have access to the following skills, which define your methods:
+- Skill A: for doing X
+- Skill B: for doing Y
+- Skill C: for doing Z
+
+When tackling a task, you must:
+- Decide which skill(s) apply
+- Follow their step-by-step workflow
+- Use their output formats and checklists
+
+### Task-Handling Loop (Section 3)
+For each task you receive:
+1. Restate the task in your own words
+2. Select one or more skills that fit. If none fit well, say so.
+3. If needed, ask 2-5 clarifying questions
+4. Produce an internal plan (short, not user-visible unless asked)
+5. Execute the skill workflow step by step
+6. Run any validation / QA steps from the skill
+7. Return:
+   (a) final answer/artifacts
+   (b) what skills you used
+   (c) assumptions and remaining risks
+
+### Constraints and Priorities (Section 4)
+- Quality bar: [e.g., "never knowingly leave tests failing"]
+- Safety: [e.g., "no destructive operations without confirmation"]
+- Tie-breaking: [e.g., "if speed vs robustness conflict, pick robustness"]
 
 ### Tools Required
 - [Tool 1]
 - [Tool 2]
 - [Tool 3]
-
-### Workflow
-1. [Step 1 description]
-2. [Step 2 description]
-3. [Step 3 description]
-4. [Final step description]
 
 ### Success Criteria
 - [Criterion 1]
@@ -37,13 +59,37 @@ You are [role description]. Your job is to:
 - [Criterion 3]
 
 ### Output Format
-[Expected output structure]
+[Expected output structure — define a JSON schema or markdown template
+so downstream agents/orchestrator can consume it]
 
 ### Example
 **Input**: [Example input]
-**Process**: [How it's processed]
-**Output**: [Expected output]
+**Skills Selected**: [Which skills and why]
+**Process**: [How it's processed, referencing skill steps by number]
+**Output**: [Expected output matching the Output Format]
 ```
+
+## Subagent YAML Config (Skill-Aware)
+
+```yaml
+name: refactorer
+description: "Use for non-trivial refactors or large cleanups."
+model: inherit  # or specific model name
+tools:
+  - Read
+  - Write
+  - Edit
+  - Bash(npm:test, git:*)
+skills:
+  - refactor-plan-skill    # How to analyze code and design a refactor plan
+  - code-review-skill       # How to review diffs for correctness and risk
+  - safe-refactor-skill     # How to apply changes incrementally and validate
+memory: project
+```
+
+The `skills` field lists the skills preloaded into the subagent's context. Keep to 2-5 core skills; use dynamic selection for larger catalogs.
+
+---
 
 ## Multi-Agent Orchestration Pattern
 

@@ -1,102 +1,121 @@
 ---
 name: skill-architect
-description: Authoritative meta-skill for creating, auditing, and improving Agent Skills. Combines skill-coach expertise with skill-creator workflows. Use for skill creation, validation, improvement, activation debugging, and progressive disclosure design. NOT for general Claude Code features, runtime debugging, or non-skill coding.
-allowed-tools: Read,Write,Edit,Bash
+description: Design, create, audit, and improve Claude Agent Skills with expert-level progressive disclosure. Use when building new skills, reviewing existing skills, debugging activation failures, encoding domain expertise, or designing skills for subagent consumption. Activate on "create skill", "improve skill", "skill audit", "skill review", "activation debugging", "shibboleth", "progressive disclosure", "skill description". NOT for general Claude Code features, runtime debugging, non-skill coding, or MCP server implementation.
+argument-hint: "[skill-path-or-name] [action: create|audit|improve|debug]"
+allowed-tools: Read,Write,Edit,Bash,Grep,Glob
 ---
 
 # Skill Architect: The Authoritative Meta-Skill
 
-The unified authority for creating expert-level Agent Skills. Combines systematic workflow from skill-creator with domain expertise encoding from skill-coach.
+The unified authority for creating expert-level Agent Skills. Encodes the knowledge that separates a skill that *merely exists* from one that *activates precisely, teaches efficiently, and makes users productive immediately*.
 
 ## Philosophy
 
-**Great skills are progressive disclosure machines** that encode real domain expertise (shibboleths), not just surface instructions. They activate precisely, teach efficiently, and make users productive immediately.
+**Great skills are progressive disclosure machines.** They encode real domain expertise (shibboleths), not surface instructions. They follow a three-layer architecture: lightweight metadata for discovery, lean SKILL.md for core process, and reference files for deep dives loaded only on demand.
 
 ---
 
 ## When to Use This Skill
 
 ✅ **Use for**:
-- Creating new skills from scratch
-- Auditing/reviewing existing skills
-- Improving activation rates
-- Adding domain expertise
-- Debugging why skills don't activate
-- Encoding anti-patterns and shibboleths
+- Creating new skills from scratch or from existing expertise
+- Auditing/reviewing skills for quality, activation, and progressive disclosure
+- Improving activation rates and reducing false positives
+- Encoding domain expertise (shibboleths, anti-patterns, temporal knowledge)
+- Designing skills that subagents consume effectively
 - Building self-contained tools (scripts, MCPs, subagents)
+- Debugging why skills don't activate or activate incorrectly
 
 ❌ **NOT for**:
-- General Claude Code features (slash commands, MCPs)
-- Non-skill coding advice
+- General Claude Code features (slash commands, MCP server implementation)
+- Non-skill coding advice or code review
 - Debugging runtime errors (use domain-specific skills)
-- Template generation without domain expertise
+- Template generation without real domain expertise to encode
 
 ---
 
 ## Quick Wins (Immediate Improvements)
 
-For existing skills, apply these in order:
+For existing skills, apply in priority order:
 
-1. **Add NOT clause** → Prevent false activation
-2. **Check line count** → SKILL.md should be &lt;500 lines
-3. **Add 1-2 anti-patterns** → Prevent common mistakes
-4. **Remove dead files** → Delete unreferenced scripts/references
-5. **Test activation** → Write queries that should/shouldn't trigger
+1. **Tighten description** → Follow `[What] [When] [Keywords]. NOT for [Exclusions]` formula
+2. **Check line count** → SKILL.md must be <500 lines; move depth to `/references`
+3. **Add NOT clause** → Prevent false activation with explicit exclusions
+4. **Add 1-2 anti-patterns** → Use shibboleth template (Novice/Expert/Timeline)
+5. **Remove dead files** → Delete unreferenced scripts/references (no phantoms)
+6. **Test activation** → Write 5 queries that should trigger and 5 that shouldn't
 
-Run validation:
-```bash
-python scripts/validate_skill.py <path>
-python scripts/check_self_contained.py <path>
+---
+
+## Progressive Disclosure Architecture
+
+Skills use three-layer loading. The runtime scans metadata at startup, loads SKILL.md on activation, and pulls reference files *only when the agent decides it needs them*.
+
+| Layer | Content | Size | Loading |
+|-------|---------|------|---------|
+| 1. Metadata | `name` + `description` in frontmatter | ~100 tokens | Always in context (catalog scan) |
+| 2. SKILL.md | Core process, decision trees, brief anti-patterns | <5k tokens | On skill activation |
+| 3. References | Deep dives, examples, templates, specs | Unlimited | On-demand, per-file, only when relevant |
+
+**Critical rules**:
+- Keep SKILL.md under 500 lines. Move depth to `/references`.
+- Reference files are NOT auto-loaded. Only SKILL.md enters context on activation.
+- In SKILL.md, list each reference file with a 1-line description of when to consult it. This teaches the agent what's available without loading it.
+- Never instruct "read all reference files before starting." Instead: "Read only the files relevant to the current step."
+- If a reference file is large, the agent should skim headings first, then drill into the relevant section.
+
+---
+
+## Frontmatter Rules
+
+### Required Fields
+
+| Key | Purpose | Example |
+|-----|---------|---------|
+| `name` | Lowercase-hyphenated identifier | `react-server-components` |
+| `description` | Activation trigger: `[What] [When] [Keywords]. NOT for [Exclusions]` | See Description Formula |
+
+### Optional Fields
+
+| Key | Purpose | Example |
+|-----|---------|---------|
+| `allowed-tools` | Comma-separated tool names (least privilege) | `Read,Write,Grep` |
+| `argument-hint` | Hint shown in autocomplete for expected arguments | `"[path] [format]"` |
+| `license` | License identifier | `MIT` |
+| `disable-model-invocation` | If `true`, only user-triggered via `/skill-name` | `true` |
+| `user-invocable` | Controls whether skill appears in UI menus | `true` |
+| `context` | Execution context; `fork` runs skill in isolated subagent | `fork` |
+| `metadata` | Arbitrary key-value map for tooling/dashboards | `author: your-org` |
+
+### Invalid Keys (Will Fail Upload)
+
+```yaml
+# ❌ These are NOT valid frontmatter — move info to SKILL.md body
+integrates_with: [...]
+triggers: [...]
+tools: Read,Write        # Use 'allowed-tools' instead
+outputs: [...]
+coordinates_with: [...]
+python_dependencies: [...]
 ```
 
 ---
 
-## What Makes a Great Skill
+## Description Formula
 
-Great skills have these 7 qualities:
+**Pattern**: `[What it does] [When to use] [Trigger keywords]. NOT for [Exclusions].`
 
-1. **Activate precisely** - Specific keywords + NOT clause
-2. **Encode shibboleths** - Expert knowledge that separates novice from expert
-3. **Surface anti-patterns** - "If you see X, that's wrong because Y, use Z"
-4. **Capture temporal knowledge** - "Pre-2024: X. 2024+: Y"
-5. **Know their limits** - "Use for A, B, C. NOT for D, E, F"
-6. **Provide decision trees** - Not templates, but "If X then A, if Y then B"
-7. **Stay under 500 lines** - Core in SKILL.md, deep dives in `/references`
+The description is the most important line for activation. Claude's runtime scans descriptions to decide which skill to load. A weak description means zero activations or constant false positives.
 
----
+| Problem | Bad | Good |
+|---------|-----|------|
+| Too vague | "Helps with images" | "CLIP semantic search for image-text matching and zero-shot classification. NOT for counting, spatial reasoning, or generation." |
+| No exclusions | "Reviews code changes" | "Reviews TypeScript/React diffs and PRs for correctness. NOT for writing new features." |
+| Mini-manual | "Researches, then outlines, then drafts..." | "Structured research producing 1-3 page synthesis reports. NOT for quick factual questions." |
+| Catch-all | "Helps with product management" | "Writes and refines product requirement documents (PRDs). NOT for strategy decks." |
+| Name mismatch | name: `db-migration` / desc: "writes marketing emails" | name: `db-migration` / desc: "Plans database schema migrations with rollback strategies." |
 
-## Progressive Disclosure Principle
-
-Skills use a three-level loading system:
-
-| Level | Content | Size | When Loaded |
-|-------|---------|------|-------------|
-| 1. Metadata | `name` + `description` | ~100 tokens | Always in context |
-| 2. SKILL.md | Core instructions | &lt;5k tokens | When skill triggers |
-| 3. Resources | Scripts, references, assets | Unlimited | As Claude needs them |
-
-**Critical**: Keep SKILL.md under 500 lines. Move details to `/references`.
-
----
-
-## Skill Structure
-
-### Mandatory
-```
-your-skill/
-└── SKILL.md           # Core instructions (max 500 lines)
-```
-
-### Strongly Recommended (Self-Contained Skills)
-```
-├── scripts/           # Working code - NOT templates
-├── mcp-server/        # Custom MCP if external APIs needed
-├── agents/            # Subagent definitions for orchestration
-├── references/        # Deep dives on domain knowledge
-└── CHANGELOG.md       # Version history
-```
-
-**Philosophy**: Skills with working tools are immediately useful.
+**Full guide with more examples**: See `references/description-guide.md`
 
 ---
 
@@ -105,444 +124,261 @@ your-skill/
 ```markdown
 ---
 name: your-skill-name
-description: [What] [When] [Triggers]. NOT for [Exclusions].
-allowed-tools: Read,Write  # Minimal only
+description: [What] [When] [Keywords]. NOT for [Exclusions].
+allowed-tools: Read,Write
 ---
 
 # Skill Name
 [One sentence purpose]
 
 ## When to Use
-✅ Use for: [A, B, C with specific keywords]
-❌ NOT for: [D, E, F - be explicit]
+✅ Use for: [A, B, C with specific trigger keywords]
+❌ NOT for: [D, E, F — explicit boundaries]
 
-## Core Instructions
-[Step-by-step decision trees, not templates]
+## Core Process
+[Decision trees as Mermaid flowcharts, not prose. See visual-artifacts.md]
 
-## Common Anti-Patterns
+## Anti-Patterns
 ### [Pattern Name]
-**Novice thinking**: [Wrong assumption]
-**Reality**: [Why it's wrong]
-**Correct approach**: [Better way]
-**Timeline**: [When this changed]
+**Novice**: [Wrong assumption]
+**Expert**: [Why it's wrong + correct approach]
+**Timeline**: [When this changed, if temporal]
 
 ## References
-- `/references/deep-dive.md` - [When to consult]
+- `references/guide.md` — Consult when [specific situation]
+- `references/examples.md` — Consult for [worked examples of X]
 ```
-
----
-
-## Description Formula
-
-**[What] [When] [Keywords] NOT for [Exclusions]**
-
-**Examples**:
-
-❌ **Bad**: "Helps with images"
-⚠️ **Better**: "Image processing with CLIP"
-✅ **Good**: "CLIP semantic search. Use for image-text matching, zero-shot classification. Activate on 'CLIP', 'embeddings', 'similarity'. NOT for counting objects, spatial reasoning, or fine-grained classification."
-
----
-
-## Frontmatter Rules (CRITICAL)
-
-**Only these keys are allowed by Claude's skill marketplace:**
-
-| Key | Required | Purpose |
-|-----|----------|---------|
-| `name` | ✅ | Lowercase-hyphenated identifier |
-| `description` | ✅ | Activation keywords + NOT clause |
-| `allowed-tools` | ⚠️ | Comma-separated tool names |
-| `license` | ❌ | e.g., "MIT" |
-| `metadata` | ❌ | Custom key-value pairs |
-
-**Invalid keys that WILL FAIL upload**:
-```yaml
-# ❌ WRONG - These break skill upload
-integrates_with: [...]
-triggers: [...]
-tools: Read,Write  # Use 'allowed-tools' instead
-outputs: [...]
-coordinates_with: [...]
-python_dependencies: [...]
-```
-
-**Move custom info to body** under appropriate headings.
 
 ---
 
 ## The 6-Step Skill Creation Process
 
-### Step 1: Understand with Concrete Examples
+```mermaid
+flowchart LR
+  S1[1. Gather Examples] --> S2[2. Plan Contents]
+  S2 --> S3[3. Initialize]
+  S3 --> S4[4. Write Skill]
+  S4 --> S5[5. Validate]
+  S5 --> S6{Errors?}
+  S6 -->|Yes| S4
+  S6 -->|No| S7[6. Ship & Iterate]
+```
 
-Skip only if usage patterns are already clear.
+### Step 1: Gather Concrete Examples
 
-**Ask**:
-- "What functionality should this skill support?"
-- "Can you give examples of how it would be used?"
-- "What would trigger this skill?"
-
-**Example queries** (for an image-editor skill):
-- "Remove red-eye from this image"
-- "Rotate this photo 90 degrees"
-- "Adjust brightness and contrast"
-
-Conclude when you have 3-5 concrete examples.
-
----
+Collect 3-5 real queries that should trigger this skill, and 3-5 that should NOT.
 
 ### Step 2: Plan Reusable Contents
 
-For each example, analyze:
-1. How to execute from scratch
-2. What scripts/references/assets would help with repeated execution
+For each example, identify what scripts, references, or assets would prevent re-work. Also identify shibboleths: domain algorithms, temporal knowledge, framework evolution, common pitfalls.
 
-**Example analyses**:
+### Step 3: Initialize
 
-| Skill | Example | Needs |
-|-------|---------|-------|
-| pdf-editor | "Rotate this PDF" | `scripts/rotate_pdf.py` |
-| frontend-builder | "Build a todo app" | `assets/hello-world/` template |
-| big-query | "How many users logged in?" | `references/schema.md` |
-| photo-expert | "Improve composition" | `scripts/analyze_composition.py` |
-
-**Shibboleths to encode**:
-- Domain-specific algorithms
-- Common pitfalls and anti-patterns
-- Temporal knowledge (what changed when)
-- Framework evolution patterns
-
----
-
-### Step 3: Initialize the Skill
-
-**For new skills**, run the init script:
 ```bash
 scripts/init_skill.py <skill-name> --path <output-directory>
 ```
 
-This creates:
-- SKILL.md template with proper frontmatter
-- Example `scripts/`, `references/`, `assets/` directories
-- TODO placeholders to customize
+For existing skills, skip to Step 4.
 
-**For existing skills**, skip to Step 4.
+### Step 4: Write the Skill
 
----
+Order of implementation:
+1. **Scripts first** (`scripts/`) — Working code, not templates
+2. **References next** (`references/`) — Domain knowledge, schemas, guides
+3. **SKILL.md last** — Core process, anti-patterns, reference index
 
-### Step 4: Edit the Skill
+Write in imperative form: "To accomplish X, do Y" not "You should do X."
 
-#### Write in Imperative/Infinitive Form
-Use objective, instructional language:
-- ✅ "To accomplish X, do Y"
-- ✅ "When Z occurs, execute A"
-- ❌ "You should do X"
-- ❌ "If you need to do Z"
-
-#### Start with Reusable Contents
-
-Implement in this order:
-1. **Scripts** (`scripts/`) - Working code for repeatable operations
-2. **References** (`references/`) - Domain knowledge, schemas, detailed guides
-3. **Assets** (`assets/`) - Templates, boilerplate, files used in output
-
-**Delete example files** that aren't needed.
-
-#### Update SKILL.md
-
-Answer these questions:
+Answer these questions in SKILL.md:
 1. **Purpose**: What is this skill for? (1-2 sentences)
-2. **When to use**: Specific triggers and exclusions
-3. **How to use**: Reference all bundled resources so Claude knows they exist
-4. **Anti-patterns**: What mistakes do novices make?
-5. **Temporal context**: What changed and when?
+2. **Activation**: What triggers it? What shouldn't?
+3. **Process**: Step-by-step decision trees — use Mermaid flowcharts, not prose
+4. **Anti-patterns**: What do novices get wrong?
+5. **Visual artifacts**: Render workflows, architectures, timelines as Mermaid diagrams (see `references/visual-artifacts.md`)
+6. **References**: What files exist and when to consult them?
 
----
-
-### Step 5: Validate and Package
+### Step 5: Validate
 
 ```bash
-# Validate structure and content
 python scripts/validate_skill.py <path>
-
-# Check self-contained tool completeness
 python scripts/check_self_contained.py <path>
-
-# Package for distribution (validates first)
-python scripts/package_skill.py <path/to/skill-folder>
 ```
 
-Fix all ERRORS, then WARNINGS, then SUGGESTIONS.
-
----
+Fix ERRORS → WARNINGS → SUGGESTIONS.
 
 ### Step 6: Iterate
 
-After real-world use:
-1. Notice struggles or inefficiencies
-2. Identify how SKILL.md or bundled resources should improve
-3. Implement changes and test again
-4. Update CHANGELOG.md
-
-**Recursive self-improvement**: Use this skill to improve skills.
+After real-world use: notice struggles, improve SKILL.md and resources, update CHANGELOG.md.
 
 ---
 
-## Encoding Shibboleths (Expert Knowledge)
+## Designing Skills for Subagent Consumption
 
-### What Are Shibboleths?
+When skills will be loaded by subagents (not just direct user invocation), apply these patterns:
 
-Knowledge that separates novices from experts - things LLMs get wrong because training data includes:
-- Outdated patterns
-- Oversimplified tutorials
-- Cargo-culted code
+### Three Skill-Loading Layers
+
+1. **Preloaded** (2-5 core skills): Injected into the subagent's system context. These are its standard operating procedures — always present.
+2. **Dynamically selected**: Subagent receives a catalog (name + 1-line description) and picks 1-3 matching skills before starting. The orchestrator can also pre-filter.
+3. **Execution-time**: Subagent reads each skill's "When to use" section, follows numbered steps in order, respects output contracts, and runs QA checks.
+
+### How Subagents Should Use Skills
+
+Teach the subagent to treat each skill like a mini-protocol:
+- Check the "When to use / When not to use" section for applicability
+- Follow numbered steps in order (adapt only if task constraints force it)
+- Respect the skill's output contract (templates, JSON shapes, required sections)
+- Apply QA/validation steps last
+- Reference skill steps by number: "Completed step 3 of refactor-plan-skill"
+
+### Subagent Prompt Structure
+
+The subagent's prompt should have four sections:
+1. **Identity**: "You are the [role]. You handle [narrow domain]. If outside scope, say so."
+2. **Skill usage rules**: "Your skills define your methods. Decide which apply, follow their workflows."
+3. **Task loop**: Restate → Select skills → Clarify → Plan → Execute step-by-step → Validate → Return (artifacts + skills used + remaining risks).
+4. **Constraints**: Quality bar, safety rules, tie-breaking priorities.
+
+**Full templates and orchestration patterns**: See `references/subagent-design.md`
+
+---
+
+## Visual Artifacts: Mermaid Diagrams & Code
+
+Skills that include Mermaid diagrams serve two audiences at once. **For humans**, diagrams render as visual flowcharts, state machines, and timelines — instantly parseable. **For agents**, Mermaid is a text-based graph DSL — `A -->|Yes| B` is an explicit, unambiguous edge that's actually easier to reason about than equivalent prose. The agent reads the text; the human sees the picture. Both win.
+
+**Rule**: If a skill describes a process, decision tree, architecture, state machine, timeline, or data relationship, include a Mermaid diagram. Use raw ` ```mermaid ` blocks directly in SKILL.md — not wrapped in outer markdown fences.
+
+### Which Diagram for Which Content
+
+| Skill Content | Diagram Type |
+|---------------|-------------|
+| Decision trees / troubleshooting | `flowchart` |
+| Agent/API communication | `sequenceDiagram` |
+| Lifecycle / status transitions | `stateDiagram-v2` |
+| Data models / schemas | `erDiagram` |
+| Temporal knowledge / evolution | `timeline` |
+| Domain taxonomy / concept maps | `mindmap` |
+| Priority matrices (effort vs. impact) | `quadrantChart` |
+| System architecture | `block-beta` or `architecture-beta` |
+| Project timelines | `gantt` |
+
+### YAML Frontmatter in Mermaid (Optional)
+
+Mermaid supports an optional `---` frontmatter block for rendering customization (themes, colors, spacing). **It is not required.** Agents ignore it. Renderers apply sensible defaults without it. Only add it when you need specific visual styling for published documentation.
+
+```yaml
+# Optional — only for render customization
+---
+title: My Diagram
+config:
+  theme: neutral
+  flowchart:
+    curve: basis
+---
+```
+
+Themes: `default`, `dark`, `forest`, `neutral`, `base`. Full config reference: https://mermaid.ai/open-source/config/configuration.html
+
+**Full diagram catalog with examples of all 16+ types**: See `references/visual-artifacts.md`
+
+---
+
+## Encoding Shibboleths
+
+Expert knowledge that separates novices from experts. Things LLMs get wrong due to outdated training data or cargo-culted patterns.
 
 ### Shibboleth Template
 
 ```markdown
 ### Anti-Pattern: [Name]
-
-**Novice thinking**: "[Wrong assumption]"
-
-**Reality**: [Fundamental reason it's wrong, with research/data]
-
-**Timeline**:
-- [Date range]: [Old approach] was common
-- [Date]: [Change event]
-- [Current]: [New approach]
-
-**What to use instead**:
-| Task | Tool | Why |
-|------|------|-----|
-| [Use case] | [Correct tool] | [Reason] |
-
-**LLM mistake**: [Why LLMs suggest old pattern]
-**How to detect**: [Validation rule]
+**Novice**: "[Wrong assumption]"
+**Expert**: [Why it's wrong, with evidence]
+**Timeline**: [Date]: [Old way] → [Date]: [New way]
+**LLM mistake**: [Why LLMs suggest the old pattern]
+**Detection**: [How to spot this in code/config]
 ```
 
-### Example Shibboleths to Encode
+### What to Encode
 
-1. **Framework Evolution**
-   - React: Class components → Hooks → Server Components
-   - Next.js: Pages Router → App Router
-   - State management: Redux → Zustand/Jotai/React Query
+- Framework evolution (React Classes → Hooks → Server Components)
+- Model limitations (CLIP can't count; embedding models are task-specific)
+- Tool architecture (Script → MCP graduation path)
+- API versioning (ada-002 → text-embedding-3-large)
+- Temporal traps (advice that was correct in 2023 but harmful in 2025)
 
-2. **Model Selection**
-   - CLIP limitations (can't count, can't do spatial reasoning)
-   - Embedding model specialization (text vs code vs multi-lingual)
-   - Model versioning (ada-002 vs text-embedding-3-large)
-
-3. **Tool Architecture**
-   - When to use MCP vs Scripts vs Subagents
-   - Premature abstraction anti-pattern
-   - Self-contained tool benefits
+**Full catalog with case studies**: See `references/antipatterns.md`
 
 ---
 
-## Self-Contained Tools
+## Self-Contained Tools and the Extension Taxonomy
 
-### Decision Matrix
+Skills are one of six Claude extension types: **Skills** (domain knowledge), **MCP Servers** (external APIs + auth), **Scripts** (local operations), **Slash Commands** (user-triggered skills), **Hooks** (lifecycle automation), and **SDK Tools** (API integration). Most skills should include scripts. MCPs are only for auth/state boundaries.
 
-| Need | Use |
-|------|-----|
-| External API + auth | MCP Server |
-| Multi-step workflow | Subagents |
-| Repeatable operation | Scripts |
-| Domain validation | Scripts |
-| Templates/boilerplate | Assets |
-| Deep reference docs | References |
+| Need | Extension Type | Key Requirement |
+|------|---------------|-----------------|
+| Domain expertise / process | **Skill** (SKILL.md) | Decision trees, anti-patterns, output contracts |
+| External API + auth | **MCP Server** | Working server + setup README |
+| Repeatable local operation | **Script** | Actually runs (not a template), minimal deps |
+| Multi-step orchestration | **Subagent** | 4-section prompt, skills, workflow |
+| User-triggered action | **Slash Command** | Skill with `user-invocable: true` |
+| Deep reference docs | **References** | Separate files, loaded on demand |
 
-### Scripts
+**Evolution path**: Skill → Skill + Scripts → Skill + MCP Server → Skill + Subagent. Only promote when complexity justifies it.
 
-**Requirements**:
-1. Actually work (not templates or pseudocode)
-2. Minimal dependencies (prefer stdlib)
-3. Clear interface (CLI args or stdin/stdout)
-4. Error handling (graceful failures)
-5. README (how to install and run)
-
-**Example**:
-```python
-#!/usr/bin/env python3
-"""
-Domain Analyzer
-Usage: python analyze.py <input>
-Dependencies: pip install numpy
-"""
-import sys
-
-def analyze(input_path):
-    # Import here for helpful error
-    try:
-        import numpy as np
-    except ImportError:
-        print("Install: pip install numpy")
-        sys.exit(1)
-
-    # Actual implementation
-    result = {"score": 0.85}
-    return result
-
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print(f"Usage: {sys.argv[0]} <input>")
-        sys.exit(1)
-
-    result = analyze(sys.argv[1])
-    for k, v in result.items():
-        print(f"{k}: {v}")
-```
-
-### MCP Servers
-
-**When to build**:
-- External API with authentication
-- Stateful connections (WebSocket, database)
-- Real-time data streams
-- Security boundaries (credentials, OAuth)
-
-**Structure**:
-```
-mcp-server/
-├── src/index.ts       # Server implementation
-├── package.json       # Dependencies
-├── tsconfig.json      # Config
-└── README.md          # Setup instructions
-```
-
-**Minimal MCP template**: See `/references/mcp-template.md`
-
-### Subagents
-
-**When to define**:
-- Multi-step workflows
-- Different phases need different tool access
-- Orchestration logic is complex
-
-**Definition format**: See `/references/subagent-template.md`
-
----
-
-## Common Workflows
-
-### Create Skill from Expertise
-
-1. Define scope: What expertise? Keywords? Exclusions?
-2. Write description with keywords and NOT clause
-3. Encode anti-patterns and shibboleths
-4. Add decision trees (not just instructions)
-5. Build working tools (scripts/MCP/subagents)
-6. Test activation thoroughly
-
-### Debug Activation Issues
-
-**Flowchart**:
-```
-Skill not activating?
-├── Check description has specific keywords
-│   ├── NO → Add "Activate on: keyword1, keyword2"
-│   └── YES → Query contains those keywords?
-│       ├── NO → Add missing variations
-│       └── YES → Conflicting NOT clause?
-│           ├── YES → Narrow exclusions
-│           └── NO → Check file structure
-│               └── Wrong location → Move to .claude/skills/
-
-Skill activating when it shouldn't?
-├── Missing NOT clause?
-│   ├── YES → Add "NOT for: exclusion1, exclusion2"
-│   └── NO → NOT clause too narrow
-│       └── Expand based on false positives
-```
-
-Run: `python scripts/test_activation.py <path>`
-
-### Improve Existing Skill
-
-1. Run `python scripts/validate_skill.py <path>`
-2. Run `python scripts/check_self_contained.py <path>`
-3. Address ERRORS → WARNINGS → SUGGESTIONS
-4. Add missing shibboleths and anti-patterns
-5. Ensure &lt;500 lines in SKILL.md
-6. Re-validate until clean
-7. Update CHANGELOG.md
+**Full taxonomy with examples and common mistakes**: See `references/claude-extension-taxonomy.md`
+**Detailed tool patterns**: See `references/self-contained-tools.md`
 
 ---
 
 ## Tool Permissions
 
-**Guidelines**:
-- Read-only: `Read,Grep,Glob`
-- File modifier: `Read,Write,Edit`
-- Build integration: `Read,Write,Bash(npm:*,git:*)`
-- ⚠️ **Never**: Unrestricted `Bash` for untrusted skills
+**Principle**: Least privilege — only grant what's needed.
 
-**Principle**: Least privilege - only grant what's needed.
-
----
-
-## Decision Trees
-
-### When to Create a NEW Skill?
-
-✅ **Create when**:
-- Domain expertise not in existing skills
-- Pattern repeats across 3+ projects
-- Anti-patterns you want to prevent
-- Shibboleths to encode
-
-❌ **Don't create when**:
-- One-time task → Just do it directly
-- Existing skill could be extended → Improve that one
-- No real expertise to encode → Not worth it
-
-### Skill vs Subagent vs MCP vs Script?
-
-| Type | Purpose | State | Auth | Example |
-|------|---------|-------|------|---------|
-| **Skill** | Domain expertise, decision trees | None | None | react-server-components |
-| **Script** | Repeatable operations | None | None | validate_skill.py |
-| **Subagent** | Multi-step workflows | Session | Inherited | research-coordinator |
-| **MCP** | External APIs, auth | Persistent | Required | github-mcp-server |
+| Access Level | `allowed-tools` |
+|-------------|-----------------|
+| Read-only | `Read,Grep,Glob` |
+| File modifier | `Read,Write,Edit` |
+| Build integration | `Read,Write,Bash(npm:*,git:*)` |
+| ⚠️ Never for untrusted | Unrestricted `Bash` |
 
 ---
 
-## Anti-Patterns to Avoid
+## Anti-Pattern Summary
 
-### 1. Skill as Documentation Dump
+| # | Anti-Pattern | Fix |
+|---|-------------|-----|
+| 1 | Documentation Dump | Decision trees in SKILL.md, depth in `/references` |
+| 2 | Missing NOT clause | Always include "NOT for X, Y, Z" in description |
+| 3 | Phantom Tools | Only reference files that exist and work |
+| 4 | Template Soup | Ship working code or nothing |
+| 5 | Overly Permissive Tools | Least privilege: specific tool list, scoped Bash |
+| 6 | Stale Temporal Knowledge | Date all advice, update quarterly |
+| 7 | Catch-All Skill | Split by expertise type, not domain |
+| 8 | Vague Description | Use `[What] [When] [Keywords]. NOT for [Exclusions]` |
+| 9 | Eager Loading | Never "read all files first"; lazy-load references |
+| 10 | Prose-Only Processes | Use Mermaid diagrams for decision trees, workflows, architectures |
 
-❌ **Wrong**: 50-page tutorial in SKILL.md
-✅ **Right**: Decision trees + anti-patterns in SKILL.md, details in `/references`
+**Full case studies**: See `references/antipatterns.md`
 
-### 2. Missing "When NOT to Use"
+---
 
-❌ **Wrong**: `description: "Processes images using computer vision"`
-✅ **Right**: `description: "CLIP semantic search. NOT for generation, editing, OCR, counting."`
+## Validation Checklist
 
-### 3. Phantom Tools
-
-❌ **Wrong**: SKILL.md references `scripts/analyze.py` that doesn't exist
-✅ **Right**: Only reference tools that exist and work
-
-### 4. Template Soup
-
-❌ **Wrong**: Scripts with `# TODO: implement` comments
-✅ **Right**: Ship working code or don't ship at all
-
-### 5. No Validation Script
-
-❌ **Wrong**: Instructions with no way to check correctness
-✅ **Right**: Include `scripts/validate.py` for pre-flight checks
-
-### 6. Overly Permissive Tools
-
-❌ **Wrong**: `allowed-tools: Bash`
-✅ **Right**: `allowed-tools: Bash(git:*,npm:run),Read,Write`
-
-### 7. Ignoring Temporal Knowledge
-
-❌ **Wrong**: "Use useEffect for componentDidMount"
-✅ **Right**: "Pre-React 18: useEffect=didMount. React 18+: runs TWICE in dev. Use refs for run-once."
+```
+□ SKILL.md exists and is <500 lines
+□ Frontmatter has name + description (minimum required)
+□ Description follows [What][When][Keywords] NOT [Exclusions] formula
+□ Description uses keywords users would actually type
+□ Name and description are aligned (not contradictory)
+□ At least 1 anti-pattern with shibboleth template
+□ All referenced files actually exist (no phantoms)
+□ Scripts work (not templates), have clear CLI, handle errors
+□ Reference files each have a 1-line purpose in SKILL.md
+□ Decision trees/workflows use Mermaid diagrams, not prose
+□ CHANGELOG.md tracks version history
+□ If subagent-consumed: output contracts are defined
+```
 
 ---
 
@@ -550,87 +386,26 @@ Run: `python scripts/test_activation.py <path>`
 
 | Metric | Target | How to Measure |
 |--------|--------|----------------|
-| Correct activation | &gt;90% | Test queries that should trigger |
-| False positive rate | &lt;5% | Test queries that shouldn't trigger |
-| Token usage | &lt;5k | SKILL.md size + typical reference loads |
-| Time to productive | &lt;5 min | User can start working immediately |
-| Anti-pattern prevention | &gt;80% | Users avoid documented mistakes |
-
----
-
-## Validation Checklist
-
-Before packaging a skill:
-
-```
-□ SKILL.md exists and is &lt;500 lines
-□ Frontmatter has name, description, allowed-tools
-□ Description includes specific keywords
-□ Description includes NOT clause for exclusions
-□ At least 1 anti-pattern documented
-□ All referenced scripts/tools actually exist
-□ Scripts have clear installation instructions
-□ Scripts handle errors gracefully
-□ If MCP needed, server is complete and tested
-□ If subagents needed, prompts are defined
-□ CHANGELOG.md exists with version history
-□ Validation scripts pass without errors
-```
+| Correct activation | >90% | Test queries that should trigger |
+| False positive rate | <5% | Test queries that shouldn't trigger |
+| Token usage | <5k | SKILL.md size + typical reference loads |
+| Time to productive | <5 min | User starts working immediately |
+| Anti-pattern prevention | >80% | Users avoid documented mistakes |
 
 ---
 
 ## Reference Files
 
-For deep dives on specific topics:
+Consult these for deep dives — they are NOT loaded by default:
 
-| File | Contents |
-|------|----------|
-| `references/antipatterns.md` | Shibboleths and case studies |
-| `references/self-contained-tools.md` | Scripts, MCP, subagent patterns |
-| `references/validation-checklist.md` | Complete review guide |
-| `references/scoring-rubric.md` | Quantitative evaluation (0-10) |
-| `references/mcp-template.md` | Minimal MCP server starter |
-| `references/subagent-template.md` | Agent definition format |
-
----
-
-## Real-World Case Studies
-
-### Case Study 1: Photo Expert Explosion
-
-**Problem**: Single skill for ALL photo operations (800+ lines)
-**Symptoms**: Activated on "photo" anywhere, wrong advice given
-**Root cause**: "Everything Skill" anti-pattern
-**Resolution**: Split into 5 focused skills (CLIP, composition, color theory, collage, event detection)
-**Lesson**: One domain ≠ one skill. Split by expertise type.
-
-### Case Study 2: The Phantom MCP
-
-**Problem**: SKILL.md referenced non-existent MCP server
-**Symptoms**: Users ran commands that didn't exist
-**Root cause**: Reference Illusion anti-pattern
-**Resolution**: Added `check_self_contained.py` to CI
-**Lesson**: Don't promise tools you don't deliver.
-
-### Case Study 3: The Time Bomb
-
-**Problem**: Temporal knowledge became stale (React hooks advice from 2023)
-**Symptoms**: Skill became actively harmful in 2024
-**Root cause**: Missing temporal markers
-**Resolution**: Added "Pre-React 18 vs React 18+" sections
-**Lesson**: Date your knowledge. Update quarterly.
-
----
-
-## This Skill Guides
-
-- ✅ Skill creation from expertise
-- ✅ Skill auditing and improvement
-- ✅ Anti-pattern detection and prevention
-- ✅ Progressive disclosure design
-- ✅ Domain expertise encoding (shibboleths)
-- ✅ Self-contained tool implementation
-- ✅ Activation debugging and optimization
-- ✅ Validation and packaging workflows
-
-**Use this skill to create skills that make users immediately productive.**
+| File | Consult When |
+|------|-------------|
+| `references/knowledge-engineering.md` | KE methods for extracting expert knowledge into skills; protocol analysis, repertory grids, aha! moments |
+| `references/description-guide.md` | Writing or rewriting a skill description |
+| `references/antipatterns.md` | Looking for shibboleths, case studies, or temporal patterns |
+| `references/self-contained-tools.md` | Adding scripts, MCP servers, or subagents to a skill |
+| `references/subagent-design.md` | Designing skills for subagent consumption or orchestration |
+| `references/claude-extension-taxonomy.md` | Skills vs MCPs vs scripts vs slash commands vs hooks vs SDK tools |
+| `references/visual-artifacts.md` | Adding Mermaid diagrams: type catalog, YAML config, best practices |
+| `references/mcp-template.md` | Building an MCP server for a skill |
+| `references/subagent-template.md` | Defining subagent prompts and multi-agent pipelines |

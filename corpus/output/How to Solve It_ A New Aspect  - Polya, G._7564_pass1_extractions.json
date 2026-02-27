@@ -1,0 +1,605 @@
+[
+  {
+    "chunk_id": 0,
+    "extraction": {
+      "summary": "This is the preface and table of contents from Polya's 'How to Solve It,' which presents a systematic approach to problem-solving grounded in heuristic methods. The work argues that teaching students to understand problem-solving processes, not just solutions, develops their intellectual abilities and creates lasting engagement with mathematics and logical thinking.",
+      "key_claims": [
+        "There is a grain of discovery in the solution of any problem",
+        "Mathematics has two faces: the rigorous Euclidean deductive science and mathematics in the making as an experimental, inductive science",
+        "Teaching routine operations kills student interest and misuses the teacher's opportunity",
+        "Problem-solving ability can be developed and taught through systematic methods",
+        "Mathematics is perceived as the least popular subject in school curricula due to how it is taught",
+        "Understanding the motives and procedures of solution is as important as knowing the solution itself"
+      ],
+      "processes": [
+        "Understanding the problem: identify the unknown, data, and condition; check if condition is satisfiable, sufficient, redundant, or contradictory; draw figures; introduce notation",
+        "Devising a plan: find connection between data and unknown; consider auxiliary problems; review related problems and theorems; restate the problem from different angles",
+        "Carrying out the plan: execute the solution while checking each step for correctness",
+        "Looking back: verify the result and argument; derive the result differently; apply the method to other problems"
+      ],
+      "decisions": [
+        "Is the condition sufficient to determine the unknown, or is it insufficient, redundant, or contradictory?",
+        "Should auxiliary problems be introduced when immediate connection cannot be found?",
+        "Should the problem be restated or approached from a different angle?",
+        "Should a more general, more special, or analogous problem be solved first?",
+        "Have all the data and conditions been used?"
+      ],
+      "failures": [
+        "Teachers who fill time with drilling routine operations kill student interest and hamper intellectual development",
+        "Students who regard mathematics only as a subject for earning credit lose the opportunity to develop problem-solving ability",
+        "Mathematics presented only in Euclidean form misses the experimental, inductive aspect of how mathematics is actually created"
+      ],
+      "aha_moments": [
+        "The author's realization as a student that understanding how solutions are invented is as important as understanding the solutions themselves",
+        "Recognition that mathematics has never before been presented to students in the process of being invented ('in statu nascendi')",
+        "Understanding that problem-solving experiences at a susceptible age create lasting tastes for mental work and shape character",
+        "The insight that mathematics can be as enjoyable as a crossword puzzle or physical game"
+      ],
+      "metaphors": [
+        "Mathematics has two faces: Euclidean rigorous science versus experimental, inductive science in the making",
+        "Solving problems is like tasting raspberry pie - you cannot know you like it until you experience it",
+        "Mental work can be 'an exercise as desirable as a fast game of tennis'"
+      ],
+      "temporal": [
+        "Before the book: heuristic study was not in fashion; mathematics presented only in rigorous Euclidean manner",
+        "After understanding problem-solving methods: mathematics becomes something that can be a hobby, tool of profession, or great ambition",
+        "High school teaching: students are taught to detest mathematics; they return as teachers and teach a new generation to detest it"
+      ],
+      "quotes": [
+        "Yes, the solution seems to work, it appears to be correct; but how is it possible to invent such a solution?",
+        "Mathematics has two faces; it is the rigorous science of Euclid but it is also something else.",
+        "Behind the desire to solve this or that problem that confers no material advantage, there may be a deeper curiosity, a desire to understand the ways and means, the motives and procedures, of solution."
+      ],
+      "domain_terms": [
+        "heuristic",
+        "heuristic reasoning",
+        "auxiliary problem",
+        "auxiliary elements",
+        "Euclidean",
+        "deductive science",
+        "inductive science",
+        "in statu nascendi",
+        "reductio ad absurdum",
+        "lemma",
+        "corollary",
+        "condition (sufficient, insufficient, redundant, contradictory)",
+        "the unknown",
+        "the data",
+        "routine problem"
+      ]
+    },
+    "input_tokens": 3085,
+    "output_tokens": 1050
+  },
+  {
+    "chunk_id": 1,
+    "extraction": {
+      "summary": "This section outlines Polya's four-step problem-solving framework: understanding the problem, devising a plan by connecting data to unknowns, carrying out the plan with careful verification, and examining the solution obtained. The foreword emphasizes that the book teaches active problem-solving rather than passive observation, and provides biographical context on George Polya's mathematical career and contributions.",
+      "key_claims": [
+        "Problem-solving requires finding connections between data and unknowns",
+        "Examining related or analogous problems is essential to devising a solution plan",
+        "Each step of a solution must be checked for correctness",
+        "Learning mathematics requires active engagement, not passive observation",
+        "Understanding the problem statement precisely is often the hardest part of problem-solving",
+        "The book marks a demarcation between problem-solving before and after Polya",
+        "Teaching mathematics well requires understanding how students can misunderstand it"
+      ],
+      "processes": [
+        "Devising a plan: Find connection between data and unknown; consider auxiliary problems if needed",
+        "Look at the unknown and think of familiar problems with similar unknowns",
+        "Try to restate the problem in different forms; go back to definitions",
+        "Carrying out the plan: Check each step for correctness during execution",
+        "Looking back: Check the result and argument; try deriving it differently",
+        "Solving related problems if the main problem seems inaccessible",
+        "Demonstrating understanding of problem statement before solving"
+      ],
+      "decisions": [
+        "Should auxiliary elements be introduced to use related problems?",
+        "Could the problem be restated differently?",
+        "Should a more general, special, or analogous problem be tackled instead?",
+        "Which part of the condition should be kept and which dropped for partial solutions?",
+        "Should the unknown or data be changed to bring them nearer to each other?"
+      ],
+      "failures": [
+        "Failing to see an immediate connection between data and unknown",
+        "Not recognizing related problems that could provide useful methods",
+        "Forgetting to use all the data or the whole condition",
+        "Students misunderstanding ambiguously phrased problem statements",
+        "Overlooking essential notions involved in the problem"
+      ],
+      "aha_moments": [
+        "The value of the book increases upon multiple readings as different remarks become valuable depending on whether reading as student or teacher",
+        "Understanding problem statements precisely is often more difficult than solving them",
+        "Learning must be active rather than passive; mathematics is not a spectator sport",
+        "Related or auxiliary problems can provide methods even if the main problem seems unsolvable",
+        "An easier unsolved problem may be the key to understanding the original problem"
+      ],
+      "metaphors": [
+        "Mathematics as a spectator sport (vs. active participation)",
+        "Imaginary teacher leaning over one's shoulder as guide",
+        "Problem-solving as demarcation line between two eras"
+      ],
+      "temporal": [
+        "Before Polya's work versus after - marked a line of demarcation in problem-solving education",
+        "Early in Polya's career at University of Budapest (1905) he was uninterested in mathematics; eventually came to it through philosophy advisor",
+        "First World War occurred during Polya's early career; initially little effect, then forced refusal to serve",
+        "Polya couldn't visit Hungary for 54 years after leaving (1914-1967) due to pacifist refusal to fight"
+      ],
+      "quotes": [
+        "Mathematics, you see, is not a spectator sport. To understand mathematics means to be able to do mathematics.",
+        "If you can't solve a problem, then there is an easier problem you can't solve: find it.",
+        "To teach mathematics well, one must also know how to misunderstand it at least to the extent one's students do."
+      ],
+      "domain_terms": [
+        "auxiliary problems",
+        "unknown",
+        "data",
+        "theorem",
+        "condition",
+        "Fourier transform",
+        "characteristic function",
+        "random walk",
+        "crystallographic groups",
+        "Polya's Enumeration Theorem",
+        "Central Limit Theorem",
+        "combinatorial analysis"
+      ]
+    },
+    "input_tokens": 3123,
+    "output_tokens": 1012
+  },
+  {
+    "chunk_id": 2,
+    "extraction": {
+      "summary": "This introduction explains the structure and purpose of 'How to Solve It,' a influential mathematical problem-solving guide originally written by Polya in German during the 1930s and published in English in 1945. The book is organized into four parts: classroom applications, a teacher-student dialogue, a dictionary of heuristic techniques, and practice problems with solutions.",
+      "key_claims": [
+        "Polya held a professorship at Stanford from 1943 until retirement in 1953",
+        "How to Solve It was written in German in Z\u00fcrich and ended in 1940",
+        "Four publishers rejected the English version before Princeton University Press published it in 1945",
+        "How to Solve It became one of the most successful mathematical books of all time",
+        "Polya proved the Central Limit Theorem terminology and random walk properties",
+        "Polya independently re-enumerated the seventeen plane crystallographic groups",
+        "Polya's Enumeration Theorem is a standard method for counting configurations by symmetry"
+      ],
+      "processes": [
+        "Addressing heuristic questions and suggestions to yourself to solve your own problem",
+        "Using the same questions and suggestions with students to help them solve problems",
+        "Consulting the Dictionary for specific points arising from personal problem-solving experience"
+      ],
+      "decisions": [
+        "The list can be applied from either the student perspective or the teacher perspective",
+        "Readers can consult the Dictionary selectively based on particular points from their experience",
+        "The Dictionary should not be read quickly due to condensed and subtle text"
+      ],
+      "failures": [
+        "Four publishers rejected the English version of How to Solve It before Princeton University Press accepted it"
+      ],
+      "aha_moments": [
+        "Recognition that heuristic techniques can be systematically taught and applied to problem-solving",
+        "The realization that the same questioning approach works whether addressing oneself or a student"
+      ],
+      "metaphors": [
+        "The Dictionary as a reference tool requiring careful, experience-informed reading"
+      ],
+      "temporal": [
+        "Polya's time in Z\u00fcrich ended in 1940 when the European situation forced him to leave for the United States",
+        "How to Solve It was written during Polya's time in Z\u00fcrich before 1940",
+        "Despite eventual success, the book faced rejection before 1945 publication",
+        "Polya taught his last course in 1978, well after his 1953 retirement"
+      ],
+      "quotes": [
+        "If, using them properly, you address these questions and suggestions to yourself, they may help you to solve your problem. If, using them properly, you address the same questions and suggestions to one of your students, you may help him to solve his problem.",
+        "How to Solve It rapidly became\u2014and continues to be\u2014one of the most successful mathematical books of all time.",
+        "The Dictionary should not be read too quickly; its text is often condensed, and now and then somewhat subtle."
+      ],
+      "domain_terms": [
+        "Central Limit Theorem",
+        "Fourier transform",
+        "probability measure",
+        "characteristic function",
+        "random walk",
+        "integer lattice",
+        "plane crystallographic groups",
+        "Polya's Enumeration Theorem",
+        "combinatorial analysis",
+        "heuristic",
+        "MODERN HEURISTIC"
+      ]
+    },
+    "input_tokens": 1601,
+    "output_tokens": 813
+  },
+  {
+    "chunk_id": 3,
+    "extraction": {
+      "summary": "This section from 'How to Solve It' explains the structure of the dictionary and introduces a four-phase problem-solving approach for teachers helping students. It emphasizes that effective teaching requires asking guiding questions that help students develop problem-solving abilities through imitation and practice, while allowing students to do the intellectual work themselves.",
+      "key_claims": [
+        "The teacher should help the student, but not too much and not too little, so that the student shall have a reasonable share of the work",
+        "The best help is natural help, where the teacher puts themselves in the student's place and asks questions that could have occurred to the student themselves",
+        "Questions and suggestions are equally useful to the problem-solver who works by himself",
+        "Mental operations for solving problems are listed in the order they are most likely to occur",
+        "Questions like 'What is the unknown? What are the data? What is the condition?' are generally applicable across all subject matters",
+        "Solving problems is a practical skill acquired by imitation and practice, like swimming",
+        "There are four distinct phases in problem-solving: understanding, planning, carrying out, and looking back",
+        "The student should understand the problem and desire its solution",
+        "The main achievement in solving a problem is conceiving the idea of a plan"
+      ],
+      "processes": [
+        "Four phases of problem-solving: (1) Understand the problem, (2) See connections and make a plan, (3) Carry out the plan, (4) Look back at the completed solution",
+        "Understanding the problem: repeat the statement, point out principal parts (unknown, data, condition), draw a figure if applicable, introduce suitable notation, ask if the condition can be satisfied",
+        "Devising a plan: know which calculations, computations, or constructions must be performed to obtain the unknown",
+        "Carrying out the plan: check each step",
+        "Looking back: reexamine and reconsider the completed solution"
+      ],
+      "decisions": [
+        "Teacher must decide how much help to give: not too much, not too little",
+        "Teacher should choose whether to use questions or suggestions based on what will have a natural effect",
+        "Teacher must distinguish between 'problems to find' and 'problems to prove' as they require different questions",
+        "Teacher should decide when to dramatize their own problem-solving to provide guidance through modeling"
+      ],
+      "failures": [
+        "It is foolish to answer a question you do not understand",
+        "It is sad to work for an end you do not desire",
+        "Students may hit upon bright ideas but then leave out phases of problem-solving without good reason",
+        "The worst mistake occurs when students embark on computations or constructions without having understood the problem",
+        "It is generally useless to carry out details without having seen the main connection or made a plan",
+        "Many mistakes can be avoided if students check each step while carrying out their plan",
+        "Some of the best effects may be lost if the student fails to reexamine and reconsider the completed solution"
+      ],
+      "aha_moments": [
+        "The idea of a plan may emerge gradually or suddenly as a 'bright idea'",
+        "By repeatedly asking the same questions, students will eventually discover the right use of these questions and acquire something more important than knowledge of particular mathematical facts",
+        "Teachers should dramatize their problem-solving and put questions to themselves so students can see the mental operations in action",
+        "Plain common sense can be stated in general terms that apply across contexts"
+      ],
+      "metaphors": [
+        "Solving problems is a practical skill like swimming - acquired by imitation and practice",
+        "The teacher should put themselves in the student's place",
+        "The point of view shifts as you progress through problem-solving, like changing position repeatedly"
+      ],
+      "temporal": [
+        "Before understanding the problem, the student's conception is incomplete; after making progress, the outlook is different; when almost obtaining the solution, it is again different",
+        "A student may need to ask a question repeatedly before discovering its right use through success",
+        "After a period of hesitation and unsuccessful trials, a bright idea may occur suddenly"
+      ],
+      "quotes": [
+        "The teacher should help, but not too much and not too little, so that the student shall have a reasonable share of the work.",
+        "All the questions and suggestions of our list are natural, simple, obvious, just plain common sense; but they state plain common sense in general terms.",
+        "Solving problems is a practical skill like, let us say, swimming. We acquire any practical skill by imitation and practice."
+      ],
+      "domain_terms": [
+        "Unknown",
+        "Data",
+        "Condition",
+        "Problems to find",
+        "Problems to prove",
+        "Plan",
+        "Notation",
+        "Rectangular parallelepiped",
+        "Diagonal",
+        "Bright idea",
+        "Mental operations"
+      ]
+    },
+    "input_tokens": 3728,
+    "output_tokens": 1149
+  },
+  {
+    "chunk_id": 4,
+    "extraction": {
+      "summary": "This section presents a Socratic dialogue on solving a related rates problem involving water flowing into a conical vessel, followed by a comprehensive four-phase framework for mathematical problem-solving: Getting Acquainted, Working for Better Understanding, Hunting for the Helpful Idea, Carrying Out the Plan, and Looking Back.",
+      "key_claims": [
+        "A rate of change can be expressed as dV/dt",
+        "Similar triangles establish the relationship x:y = a:b",
+        "The volume of a cone relates to its altitude and base radius",
+        "The connection between variables serves as a stepping stone to the solution",
+        "Differentiation is the key operation when relating rates of change to variables",
+        "Problem-solving should begin with visualizing the problem as a whole",
+        "Principal parts of a problem are: unknown, data, and conditions (for problems to find)",
+        "Helpful ideas may be incomplete but should still be considered and developed",
+        "Solutions should be verified through formal reasoning or intuitive insight",
+        "Re-examining solutions can reveal new methods applicable to other problems"
+      ],
+      "processes": [
+        "Start from the problem statement and visualize it clearly",
+        "Isolate and identify principal parts of the problem",
+        "Examine details one by one, in combinations, and in various orders",
+        "Consider the problem from multiple perspectives and seek familiar patterns",
+        "Recognize connections between variables (like similar triangles)",
+        "Develop intermediate relationships that serve as stepping stones",
+        "Apply differentiation to relate rates of change",
+        "Carry through algebraic operations with verification at each step",
+        "Distinguish between great steps and small steps in complex problems",
+        "Survey and scrutinize the completed solution from various angles"
+      ],
+      "decisions": [
+        "Decide which quantities are independent and which are related",
+        "Choose to solve related problems first if the main problem seems too difficult",
+        "Determine what notation to use for unknown quantities",
+        "Evaluate whether a helpful idea is advantageous enough to pursue further",
+        "Judge when a helpful idea is reliable and how far it leads",
+        "Decide between formal reasoning and intuitive insight for verification",
+        "Choose to examine great steps before small steps in complex problems"
+      ],
+      "failures": [
+        "Being led astray by some ideas while problem-solving",
+        "Having incomplete or hazy ideas that require refinement",
+        "Not recognizing connections between variables initially",
+        "Losing sight of the problem's purpose during detailed work"
+      ],
+      "aha_moments": [
+        "Recognizing that y and V are not independent but connected through the cone volume formula",
+        "Discovering that x and y are related through similar triangles",
+        "Realizing that differentiation is the operation needed to connect rates of change to variables",
+        "Understanding that a 'rate' is fundamentally a rate of change expressible as a derivative",
+        "Perceiving that intermediate stepping stone relationships lead to the final solution"
+      ],
+      "metaphors": [
+        "Stepping stone - simpler related problems that lead toward the main solution",
+        "Getting Acquainted - initial visualization and familiarization with the problem",
+        "Hunting for the Helpful Idea - active search for key insights",
+        "The problem being impressed on the mind - deep internalization of the problem structure"
+      ],
+      "temporal": [
+        "Before understanding connections, after identifying them - situation changes and new perspectives emerge",
+        "During the dialogue, the student progresses from stating the unknown to recognizing the need for differentiation",
+        "As depth y increases, the radius x increases correspondingly"
+      ],
+      "quotes": [
+        "If you cannot solve the proposed problem try to solve first some related problem. If you do not see yet the connection between [the unknown] and the data, try to bring in some simpler connection that could serve as a stepping stone.",
+        "Differentiate! Of course! Here it is.",
+        "Even if you do not have any appreciable new ideas for a while you should be grateful if your conception of the problem becomes more complete or more coherent, more homogeneous or better balanced."
+      ],
+      "domain_terms": [
+        "Rate of change",
+        "Derivative (dV/dt, dy/dt)",
+        "Similar triangles",
+        "Related rates problem",
+        "Principal parts (hypothesis, conclusion, unknown, data, conditions)",
+        "Stepping stone",
+        "Helpful idea",
+        "Formal reasoning",
+        "Intuitive insight",
+        "Conical vessel"
+      ]
+    },
+    "input_tokens": 2080,
+    "output_tokens": 1074
+  },
+  {
+    "chunk_id": 5,
+    "extraction": {
+      "summary": "This section from a problem-solving guide explains the stages of carrying out and reviewing mathematical solutions, then introduces analogy as a powerful heuristic tool. It demonstrates how solving simpler analogous problems (like finding a triangle's center of gravity) can model solutions to more complex ones (like a tetrahedron's center of gravity), and discusses how analogical reasoning supports mathematical discovery and conjecture.",
+      "key_claims": [
+        "Starting a solution should begin from the 'lucky idea' that led to it, when confident in the main connection",
+        "Solutions should be verified step-by-step through formal reasoning or intuitive insight",
+        "Looking back at completed solutions allows discovery of simpler approaches and new facts",
+        "Analogy is based on similarity of relations between parts, not just similarity of objects themselves",
+        "Analogous objects agree in certain relations of their respective parts",
+        "A simpler analogous problem can provide both a method and a result applicable to a harder problem",
+        "The center of gravity of a homogeneous triangle coincides with the center of gravity of its three vertices",
+        "The center of gravity of a homogeneous tetrahedron coincides with the center of gravity of its four vertices",
+        "The bounding elements of a segment, triangle, and tetrahedron follow Pascal's triangle pattern",
+        "Quality of analogies matters more than quantity; clear-cut analogies weigh more than vague similarities",
+        "Simplicity and harmony in mathematical relationships suggest truth"
+      ],
+      "processes": [
+        "Carrying out a plan: secure your grasp, carry through all operations, convince yourself of correctness through formal reasoning or intuitive insight, distinguish great steps from small steps, check great steps first",
+        "Looking back: consider the solution from various sides, simplify details, survey larger parts to make them shorter, view the whole solution at a glance, try to improve and make intuitive, scrutinize the method used",
+        "Solving by analogy: identify a simpler analogous problem, solve the simpler problem, use its method and/or result as a model for the original problem, verify results independently",
+        "Finding center of gravity of a triangle: conceive triangle as fibers parallel to one side, note that midpoints of fibers lie on a median, show all three medians intersect at one point",
+        "Finding center of gravity of a tetrahedron: conceive tetrahedron as fibers parallel to one edge, note that midpoints lie in a median plane, show all six median planes intersect at one point"
+      ],
+      "decisions": [
+        "When to start carrying out a plan: when you feel sure of your grasp of the main connection",
+        "Whether to distinguish great steps and small steps: recommended for very complex problems",
+        "How to improve a solution: modify smaller or larger parts, try to make it more intuitive, fit it into formerly acquired knowledge",
+        "When looking for simpler analogous problems: when the original problem is difficult and requires extensive preliminary knowledge",
+        "Whether to use method, result, or both from analogous problems: sometimes both can be used, sometimes only method or only result, depending on the problem"
+      ],
+      "failures": [
+        "Using vague, ambiguous, incomplete, or incompletely clarified analogies in early thinking",
+        "Disregarding plausible conjectures based on analogy",
+        "Neglecting any sort of analogy in problem discovery",
+        "Assuming the solution of an analogous problem can be immediately used without modification"
+      ],
+      "aha_moments": [
+        "Recognizing that analogous objects share relations rather than mere similarity of form",
+        "Discovering that a simpler two-dimensional problem (triangle) can model a complex three-dimensional problem (tetrahedron)",
+        "Realizing that the numbers of bounding elements in segment, triangle, and tetrahedron form Pascal's triangle",
+        "Recognizing that the center of gravity problem has a beautiful regularity across dimensions suggesting the pattern continues to higher dimensions",
+        "Understanding that analogical reasoning is the most common and possibly most essential kind of conclusion"
+      ],
+      "metaphors": [
+        "Bounding elements: treating sides of polygons and faces of polyhedra with unified language",
+        "Fibers: conceiving a 2D triangle as parallel strips to understand center of gravity",
+        "Model to follow: using a solved analogous problem as a template for solving the original problem",
+        "Simplicity is the seal of truth (simplex sigillum veri): the idea that beautiful regularity in mathematics suggests truth"
+      ],
+      "temporal": [
+        "Before looking back: you have completed a solution",
+        "After finding a simpler analogous problem: the original problem becomes easier to solve",
+        "In the days of Archimedes or Galileo: finding center of gravity of a tetrahedron was a serious unsolved problem",
+        "When we had solved the problem of the triangle: it became desirable to verify the geometric property independently"
+      ],
+      "quotes": [
+        "Start from the lucky idea that led you to the solution.",
+        "simplex sigillum veri (simplicity is the seal of truth)",
+        "The feeling that harmonious simple order cannot be deceitful guides the discoverer both in the mathematical and in the other sciences"
+      ],
+      "domain_terms": [
+        "analogous objects",
+        "bounding elements",
+        "center of gravity",
+        "homogeneous",
+        "median (of a triangle)",
+        "median plane (of a tetrahedron)",
+        "rectangular parallelogram",
+        "rectangular parallelepiped",
+        "tetrahedron",
+        "inference by analogy",
+        "inference by induction",
+        "formal reasoning",
+        "intuitive insight",
+        "plausible forecast",
+        "Pascal's triangle"
+      ]
+    },
+    "input_tokens": 4001,
+    "output_tokens": 1361
+  },
+  {
+    "chunk_id": 6,
+    "extraction": {
+      "summary": "This section distinguishes between two types of problems\u2014'problems to find' (seeking an unknown object) and 'problems to prove' (validating assertions)\u2014and describes the cognitive processes involved in solving problems, including mobilization of knowledge, organization of materials, and the role of heuristic reasoning and bright ideas.",
+      "key_claims": [
+        "Modern engineers cannot rely on common sense alone for new and daring designs; they must calculate and apply mathematical theory",
+        "In practical engineering, approximations are reasonable when they gain simplicity without losing much accuracy",
+        "Geographic maps treat the earth as a sphere despite it being flattened at the poles, which is an acceptable approximation",
+        "Problems to find seek an unknown object; problems to prove validate or refute assertions",
+        "The principal parts of a problem to find are the unknown, the data, and the condition",
+        "The principal parts of a problem to prove are the hypothesis and conclusion",
+        "Mobilization and organization are inseparable aspects of the same problem-solving process",
+        "Heuristic reasoning relies on plausibility rather than certainty before reaching the final solution",
+        "A bright idea is an abrupt reorganization of outlook that provides confident prevision of solution steps",
+        "The questions and suggestions for problem-solving are independent of subject-matter and applicable to all kinds of problems"
+      ],
+      "processes": [
+        "Applying theory of elasticity to calculate resistance and stress in engineering projects",
+        "Drawing geographic maps by approximating the earth as a sphere",
+        "Problem-solving process: mobilize relevant knowledge from memory, organize it, vary problem conception, foresee solution steps",
+        "Solving anagram puzzles: identifying unknown, data, and condition; restating problem; trying related simpler problems; testing hypotheses about word structure",
+        "Decomposing problems into parts and recombining them with different endpoints or conditions"
+      ],
+      "decisions": [
+        "Decide when to accept approximations in mathematical problems based on simplicity gained versus accuracy lost",
+        "Choose which facts to recall and combine based on connection to the problem at hand",
+        "Vary the problem formulation when stuck\u2014restate it, use analogy, generalize, specialize, or decompose it",
+        "Determine when enough data has been collected versus when more mobilization is needed",
+        "Decide whether to try related or simpler problems first as stepping stones"
+      ],
+      "failures": [
+        "Relying on common sense alone for new engineering designs",
+        "Neglecting to use all available data or the complete condition in a problem",
+        "Failing to mobilize and organize relevant knowledge from memory",
+        "Getting discouraged and abandoning problems without variation of approach"
+      ],
+      "aha_moments": [
+        "Recognition that the earth as a sphere is a useful approximation despite being flattened at poles",
+        "Realization that mobilization (recalling facts) and organization (combining them) are inseparable aspects of problem-solving",
+        "Understanding that mode of conception changes as understanding deepens through examining problems from different angles",
+        "Insight that restating a problem can reveal new aspects\u2014such as separating vowels from consonants in an anagram",
+        "Appreciation that heuristic reasoning (plausible but uncertain thinking) is necessary to eventually reach certainty"
+      ],
+      "metaphors": [
+        "Problem-solving as a journey of enriching one's conception of the problem",
+        "Mobilization and organization as aspects of the same complex process",
+        "Advancing toward a goal where 'we see more and more of it' as we progress",
+        "Bright idea as an 'abrupt and momentous change of outlook'",
+        "Questions and suggestions as ways to 'keep the ball rolling' when discouraged"
+      ],
+      "temporal": [
+        "Before solving: initial dormant knowledge; after solving: relevant items extracted and organized",
+        "Before solution: conception is narrow and incomplete; at end: conception is much fuller and better adapted",
+        "Progress advances 'by small imperceptible steps' but 'now and then we advance abruptly, by leaps and bounds'",
+        "Before certainty is obtained: must be satisfied with plausible guesses; after: complete certainty when solution is obtained"
+      ],
+      "quotes": [
+        "The modern engineer cannot rely on common sense alone, especially if his project is of a new and daring design; he has to calculate the resistance of the projected dam",
+        "In setting up and in solving mathematical problems derived from practical problems, we usually content ourselves with an approximation. We are bound to neglect some minor data and conditions of the practical problem.",
+        "A sudden advance toward the solution is called a BRIGHT IDEA, a good idea, a happy thought, a brain-wave...An abrupt and momentous change of our outlook, a sudden reorganization of our mode of conceiving the problem"
+      ],
+      "domain_terms": [
+        "quaesitum",
+        "unknown",
+        "data",
+        "condition",
+        "hypothesis",
+        "conclusion",
+        "mobilization",
+        "organization",
+        "variation of the problem",
+        "heuristic reasoning",
+        "bright idea",
+        "Einfall",
+        "auxiliary problem",
+        "anagram",
+        "reductio ad absurdum",
+        "indirect proof",
+        "theory of elasticity"
+      ]
+    },
+    "input_tokens": 3862,
+    "output_tokens": 1262
+  },
+  {
+    "chunk_id": 7,
+    "extraction": {
+      "summary": "This section presents a collection of mathematical problems of varying difficulty designed for practice, along with hints and solutions. The problems range from geometric puzzles to algebraic equations, requiring originality and ingenuity beyond routine calculation.",
+      "key_claims": [
+        "Problems require no more than high-school level preliminary knowledge",
+        "The hints are designed to guide attentive readers without revealing complete solutions",
+        "Solutions should include both the answer and the procedure leading to it",
+        "For the bear problem, if it returns to starting point P after walking south, east, then north, P must be the North Pole",
+        "The globe is idealized as exactly spherical for geometric problem analysis",
+        "When moving due south or north, a point describes an arc of a meridian",
+        "When moving due east or west, a point describes an arc of a parallel circle"
+      ],
+      "processes": [
+        "Problem-solving methodology: reader attempts solution, uses hints if stuck, then compares with provided solution",
+        "For bear problem: distinguish cases based on whether bear returns along same or different meridian",
+        "For hexagon division problem: use equidistant parallels to divide into unit equilateral triangles",
+        "For pyramid problem: identify a more accessible related tetrahedron as an aliquot part",
+        "For coin change problem: create a theory for general case rather than compute directly"
+      ],
+      "decisions": [
+        "Reader should earnestly attempt problems before consulting hints",
+        "If serious effort fails, hints may supply missing idea before looking at solution",
+        "Isolate key idea from solution, put book aside, and attempt to work solution independently",
+        "For systems of linear equations, look for advantageous combinations of equations"
+      ],
+      "failures": [
+        "Clumsy turning away from goal and not following direct path (analogy to problem-solving difficulties)",
+        "Apparent self-contradiction in bear problem setup suggests need for careful analysis"
+      ],
+      "aha_moments": [
+        "Recognition that the bear problem's seeming impossibility is resolved by considering the North Pole",
+        "Understanding that geometric problems benefit from identifying more accessible related problems",
+        "Realizing that equations with only even powers have symmetric roots about zero",
+        "Discovery that complex counting problems require developing theoretical frameworks rather than brute force"
+      ],
+      "metaphors": [
+        "Hen's difficulty turning round and proceeding without looking at aim as analogy to human problem-solving difficulties",
+        "Hierarchical problem generation: very simple analogous problems leading to more general cases"
+      ],
+      "temporal": [
+        "Ideas about definitions have changed since the time of Euclid and Greek followers",
+        "Shift from viewing 'definitions' as formal to viewing them as intuitive illustrations"
+      ],
+      "quotes": [
+        "There is an obvious analogy between her difficulties and our difficulties.",
+        "The reader who has earnestly tried to solve the problem has the best chance to profit by the hint and the solution.",
+        "Guessing is good, proving is better."
+      ],
+      "domain_terms": [
+        "meridian",
+        "parallel circle",
+        "equator",
+        "apex",
+        "isosceles pyramid",
+        "inscribed",
+        "circumscribed",
+        "arithmetic progression",
+        "geometric progression",
+        "locus",
+        "hypotenuse",
+        "altitude",
+        "elevation",
+        "equilateral triangles",
+        "material point"
+      ]
+    },
+    "input_tokens": 4601,
+    "output_tokens": 826
+  }
+]

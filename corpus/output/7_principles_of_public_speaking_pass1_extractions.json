@@ -1,0 +1,99 @@
+[
+  {
+    "chunk_id": 0,
+    "extraction": {
+      "summary": "Richard Zeoli outlines seven principles for effective public speaking: Perception (authenticity and preparation), Perfection (handling mistakes gracefully), Visualization (mental rehearsal), Discipline (consistent practice), Description (storytelling over data), Inspiration (serving the audience), and Anticipation (brevity and impact). A bonus principle on staying on message emphasizes credibility and showing rather than telling through personal narratives.",
+      "key_claims": [
+        "The best public speakers seem to genuinely enjoy giving a speech",
+        "Great speakers speak to the audience, not at them",
+        "When you make a mistake, no one cares but you",
+        "People's attention spans constantly wander during speeches",
+        "We are born with natural potential but it takes training to develop talent",
+        "People care more about feelings than facts",
+        "The most important person in the room is the audience",
+        "Less is usually more in speech length",
+        "Credibility must be established before the audience will believe your message",
+        "Stories are more effective than simply stating experience"
+      ],
+      "processes": [
+        "Prepare thoroughly and practice the material inside and out",
+        "Know your audience through research",
+        "Handle questions by taking a few seconds to organize thoughts before answering",
+        "Write remarks with phrases designed for vocal inflection",
+        "Insert lines that cause voice to naturally vary in tone at least once or twice per paragraph",
+        "Use dramatic pauses to signal the listener that something important is coming",
+        "Stand in front of a mirror to watch for mannerisms while practicing",
+        "Use index cards to structure stories: write facts about memorable moments, then fill in surrounding feelings",
+        "Structure stories with a beginning, middle, and end that take the audience on a journey",
+        "Establish credibility by discussing experience, education, awards, published articles, and accomplishments",
+        "Prove your point through examples and stories that stay on message",
+        "End by summarizing the point, promoting your offering, thanking the audience, and exiting"
+      ],
+      "decisions": [
+        "Approach humor with caution",
+        "Decide to speak conversationally rather than deliver a formal speech",
+        "Choose to use eye contact, tone variation, and dramatic pauses as attention tools",
+        "Decide what data and details are necessary versus what should be replaced with supporting stories",
+        "Judge when you have proven your thesis sufficiently to conclude the speech",
+        "Determine which personal experiences and stories to share based on relevance to message"
+      ],
+      "failures": [
+        "Trying too hard to be a great public speaker",
+        "Speaking at the audience instead of to them",
+        "Being unprepared or not practicing enough",
+        "Allowing attention to mistakes derail your performance",
+        "Inundating people with data instead of telling engaging stories",
+        "Speaking too long or including information that doesn't support your message",
+        "Stating experience as fact rather than showing it through storytelling",
+        "Failing to establish credibility before attempting to prove your point"
+      ],
+      "aha_moments": [
+        "Time feels different at the podium than it does for the audience - dramatic pauses and moments feel longer to the speaker",
+        "When you tell yourself you are a champion, you will act like a champion",
+        "If you picture with intensity the scenarios you want, your mind has a funny way of making them happen",
+        "People don't care about facts as much as they care about feelings",
+        "The most important person in the room is the audience, not the speaker",
+        "Simply stating experience isn't as powerful as telling a story that shows experience"
+      ],
+      "metaphors": [
+        "Approach public speaking as a conversation with the audience rather than as a speech",
+        "Consider your message like a laser beam - everything you say should support it with precision",
+        "Take your listeners on a journey with you through your story",
+        "A visual along with a story is more powerful than a picture alone"
+      ],
+      "temporal": [
+        "Before you can prove your point, you must first establish your credibility",
+        "The five minutes before you are speaking are the most crucial for mental preparation",
+        "People's attention is strongest during the intro and conclusion, requiring special attention to maintain focus in the middle"
+      ],
+      "quotes": [
+        "Stop trying to be a great public speaker",
+        "When you make a mistake, no one cares but you",
+        "If you can see it, you can speak it",
+        "Make it personal, become a storyteller",
+        "Speak to serve",
+        "Always leave your audience wanting more"
+      ],
+      "domain_terms": [
+        "Eye contact",
+        "Tone and pitch",
+        "Vocal inflection",
+        "Dramatic pause",
+        "Visualization",
+        "Mental rehearsal",
+        "Mannerisms",
+        "Positive affirmations",
+        "Index cards",
+        "Thesis",
+        "Credibility",
+        "On message",
+        "Call to action (implied as 'plug your shit')",
+        "Show, don't tell",
+        "Storytelling",
+        "Attention span"
+      ]
+    },
+    "input_tokens": 1866,
+    "output_tokens": 1216
+  }
+]

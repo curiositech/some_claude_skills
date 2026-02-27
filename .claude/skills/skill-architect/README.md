@@ -4,123 +4,128 @@ The authoritative meta-skill for creating, auditing, and improving Agent Skills.
 
 ## What It Does
 
-Skill Architect combines:
-- **Systematic workflow** from skill-creator (6-step process)
-- **Domain expertise encoding** from skill-coach (shibboleths, anti-patterns)
-
-Into one unified authority for skill development.
+Skill Architect is a meta-skill that teaches Claude how to build other skills well. It combines:
+- **Systematic workflow** (6-step creation process)
+- **Domain expertise encoding** (shibboleths, anti-patterns, temporal knowledge)
+- **Progressive disclosure architecture** (three-layer loading with lazy references)
+- **Subagent-aware design** (skills that work well when consumed by subagents)
 
 ## Quick Start
 
 **Creating a new skill**:
-1. Gather 3-5 concrete examples
+1. Gather 3-5 concrete example queries (what should/shouldn't trigger)
 2. Plan reusable contents (scripts, references, assets)
 3. Initialize: `scripts/init_skill.py <skill-name>`
-4. Edit SKILL.md (keep &lt;500 lines)
+4. Write scripts first, references next, SKILL.md last
 5. Validate: `scripts/validate_skill.py <path>`
-6. Package: `scripts/package_skill.py <path>`
+6. Iterate based on real-world use
 
 **Improving an existing skill**:
-1. Add NOT clause to description
-2. Check line count (&lt;500 lines)
-3. Add 1-2 anti-patterns
-4. Remove dead files
-5. Test activation
-
-## What Makes a Great Skill
-
-1. **Activates precisely** - Keywords + NOT clause
-2. **Encodes shibboleths** - Expert knowledge
-3. **Surfaces anti-patterns** - Common mistakes
-4. **Captures temporal knowledge** - "Pre-2024 vs 2024+"
-5. **Knows its limits** - "Use for X, NOT for Y"
-6. **Provides decision trees** - Not templates
-7. **Stays under 500 lines** - Progressive disclosure
+1. Tighten description: `[What] [When] [Keywords]. NOT for [Exclusions]`
+2. Check line count (<500 lines in SKILL.md)
+3. Add anti-patterns with shibboleth template
+4. Remove phantom references (files that don't exist)
+5. Test activation with 5 should-trigger + 5 shouldn't-trigger queries
 
 ## Key Concepts
 
-### Progressive Disclosure
-- **Level 1**: Metadata (~100 tokens) - Always in context
-- **Level 2**: SKILL.md (&lt;5k tokens) - When skill triggers
-- **Level 3**: Resources (unlimited) - As needed
+### Progressive Disclosure (Three Layers)
+
+| Layer | Content | When Loaded |
+|-------|---------|-------------|
+| 1. Metadata | `name` + `description` | Always (catalog scan) |
+| 2. SKILL.md | Core process, decision trees | On skill activation |
+| 3. References | Deep dives, examples, specs | On-demand, per-file, lazy |
+
+Reference files are NOT auto-loaded. The agent reads them only when relevant to the current step.
+
+### Description Formula
+
+`[What it does] [When to use] [Trigger keywords]. NOT for [Exclusions].`
+
+The description is the single most important line for activation. See `references/description-guide.md` for 7 bad→good examples.
+
+### Frontmatter Fields
+
+Required: `name`, `description`
+
+Optional: `allowed-tools`, `argument-hint`, `license`, `disable-model-invocation`, `user-invocable`, `context`, `metadata`
+
+### Visual Artifacts
+
+Skills should render processes, decision trees, architectures, and temporal knowledge as **Mermaid diagrams** instead of prose. Mermaid is text-based, version-controllable, and renders natively in GitHub, Docusaurus, and Claude's output.
+
+16+ diagram types are available: flowchart, sequence, state, ER, timeline, mindmap, quadrant, gantt, gitgraph, class, user journey, sankey, XY chart, block, architecture, kanban, pie.
+
+See `references/visual-artifacts.md` for the full catalog with examples and YAML configuration.
+
+### Subagent-Aware Design
+
+Skills consumed by subagents should have:
+- Explicit "When to Use / NOT" sections
+- Numbered steps (not prose)
+- Output contracts (JSON schema or markdown template)
+- QA/validation checklists
+
+See `references/subagent-design.md` for full patterns.
 
 ### Shibboleths
+
 Expert knowledge that separates novices from experts:
 - Framework evolution (React: Classes → Hooks → Server Components)
 - Model limitations (CLIP can't count objects)
-- Tool architecture (when to use MCP vs Scripts)
-- Temporal knowledge (what changed and when)
-
-### Self-Contained Tools
-Skills with working tools are immediately useful:
-- **Scripts**: Repeatable operations
-- **MCP Servers**: External APIs with auth
-- **Subagents**: Multi-step workflows
-- **Assets**: Templates and boilerplate
+- Tool architecture (Script → MCP graduation path)
+- Temporal traps (advice correct in 2023, harmful in 2025)
 
 ## Structure
 
 ```
 skill-architect/
-├── SKILL.md                       # Core instructions (&lt;500 lines)
-├── CHANGELOG.md                   # Version history
-├── README.md                      # This file
+├── SKILL.md                          # Core instructions (<500 lines)
+├── CHANGELOG.md                      # Version history
+├── README.md                         # This file
 └── references/
-    ├── antipatterns.md            # Shibboleths and case studies
-    ├── self-contained-tools.md    # Scripts, MCP, subagent patterns
-    ├── mcp-template.md            # Minimal MCP starter
-    └── subagent-template.md       # Agent definition format
+    ├── description-guide.md          # How to write effective descriptions
+    ├── visual-artifacts.md           # Mermaid diagram catalog & configuration
+    ├── antipatterns.md               # Shibboleths and case studies
+    ├── self-contained-tools.md       # Scripts, MCP, subagent patterns
+    ├── subagent-design.md            # Designing skills for subagent consumption
+    ├── mcp-template.md               # Minimal MCP server starter
+    └── subagent-template.md          # Agent definition format
 ```
 
-## Philosophy
+## Anti-Patterns (Summary)
 
-**The best skill is one where the user can start working immediately.**
-
-| Approach | Result |
-|----------|--------|
-| "Here's how to build X" | User spends 2 hours implementing |
-| "Here's a working X, run it" | User is productive in 2 minutes |
-
-## Examples
-
-### Good Description
-```yaml
-description: CLIP semantic search. Use for image-text matching, zero-shot classification.
-  Activate on 'CLIP', 'embeddings', 'similarity'.
-  NOT for counting objects, spatial reasoning, or fine-grained classification.
-```
-
-### Good Anti-Pattern
-```markdown
-### Anti-Pattern: CLIP for Everything
-
-**Novice thinking**: "CLIP does zero-shot classification, use it for all image tasks!"
-
-**Reality**: CLIP has fundamental geometric limitations. Cannot handle:
-- Counting objects
-- Spatial relationships ("cat left of dog")
-- Fine-grained classification (celebrity faces)
-
-**Timeline**: 2021: CLIP released. 2024: Limitations well-documented.
-
-**LLM mistake**: Training data predates limitation discoveries.
-```
+| # | Anti-Pattern | Fix |
+|---|-------------|-----|
+| 1 | Documentation Dump | Decision trees in SKILL.md, depth in references |
+| 2 | Missing NOT clause | Always include exclusions in description |
+| 3 | Phantom Tools | Only reference files that exist and work |
+| 4 | Template Soup | Ship working code or nothing |
+| 5 | Overly Permissive Tools | Least privilege, scoped Bash |
+| 6 | Stale Temporal Knowledge | Date all advice, update quarterly |
+| 7 | Catch-All Skill | Split by expertise type |
+| 8 | Vague Description | Use the description formula |
+| 9 | Eager Loading | Lazy-load references, never "read all first" |
+| 10 | Prose-Only Processes | Use Mermaid for decision trees, workflows, architectures |
 
 ## Success Metrics
 
 | Metric | Target |
 |--------|--------|
-| Correct activation | &gt;90% |
-| False positive rate | &lt;5% |
-| Token usage | &lt;5k |
-| Time to productive | &lt;5 min |
+| Correct activation | >90% |
+| False positive rate | <5% |
+| Token usage | <5k |
+| Time to productive | <5 min |
+
+## Version History
+
+- **v2.1.0** (2026-02-05) — Visual artifacts: Mermaid diagram guide, 16+ diagram types, YAML config, anti-pattern #10
+- **v2.0.0** (2026-02-05) — Major rewrite: description guide, subagent design, frontmatter fields, lazy loading, trimmed to 350 lines
+- **v1.0.0** (2026-01-14) — Initial unified meta-skill combining skill-coach + skill-creator
 
 ## Replaces
 
 This skill unifies and replaces:
-- **skill-coach** - Expertise encoding
-- **skill-creator** - Systematic workflow
-
-## License
-
-See LICENSE.txt for complete terms.
+- **skill-coach** — Expertise encoding
+- **skill-creator** — Systematic workflow

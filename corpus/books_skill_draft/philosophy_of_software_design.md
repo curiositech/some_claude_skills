@@ -1,0 +1,1 @@
+/Users/erichowens/coding/some_claude_skills/corpus/books/philosophy_of_software_design.md
