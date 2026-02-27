@@ -1,7 +1,194 @@
 {
-  "generated": "2025-12-27T03:27:04.557Z",
-  "totalEntries": 71,
+  "generated": "2026-02-27T23:00:00.000Z",
+  "totalEntries": 85,
   "entries": [
+    {
+      "date": "2026-02-27",
+      "items": [
+        {
+          "date": "2026-02-27",
+          "hash": "e0e552b",
+          "type": "fix",
+          "scope": "security",
+          "description": "Use siteConfig.url for OG images instead of hardcoded domain",
+          "category": "fixes",
+          "skillCount": null
+        },
+        {
+          "date": "2026-02-27",
+          "hash": "e0e552b",
+          "type": "fix",
+          "scope": "docs",
+          "description": "OAuth documentation: use in-memory token storage to prevent XSS risk",
+          "category": "fixes",
+          "skillCount": null
+        },
+        {
+          "date": "2026-02-27",
+          "hash": "e0e552b",
+          "type": "fix",
+          "scope": "docs",
+          "description": "PostgreSQL documentation: use scram-sha-256 authentication (replaces md5)",
+          "category": "fixes",
+          "skillCount": null
+        },
+        {
+          "date": "2026-02-27",
+          "hash": "e0e552b",
+          "type": "feat",
+          "scope": "readme",
+          "description": "Add Agent Skills as Option 1 (recommended), update skill count to 175+",
+          "category": "features",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2026-01-27",
+      "items": [
+        {
+          "date": "2026-01-27",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Add 25-skill DAG orchestration suite for intelligent multi-agent execution",
+          "category": "skills",
+          "skillCount": 25
+        },
+        {
+          "date": "2026-01-27",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "dag",
+          "description": "Launch DAG execution framework: visual builder, execution monitor, skill orchestration",
+          "category": "features",
+          "skillCount": null
+        },
+        {
+          "date": "2026-01-27",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "dag",
+          "description": "Add semantic skill matching, hallucination detection, and confidence scoring to DAG",
+          "category": "features",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2026-01-17",
+      "items": [
+        {
+          "date": "2026-01-17",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "bundles",
+          "description": "Launch Skill Bundles: 5 curated bundles with one-click install (Startup MVP, AI Dev Stack, Code Review, Docs, Personal Growth)",
+          "category": "features",
+          "skillCount": null
+        },
+        {
+          "date": "2026-01-17",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "pages",
+          "description": "Add /artifacts, /agents, /mcps, /changelog, /metrics, /submit-skill pages",
+          "category": "features",
+          "skillCount": null
+        },
+        {
+          "date": "2026-01-17",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "ecosystem",
+          "description": "Launch Ecosystem Dashboard with knowledge graph, stats panel, and agent gallery",
+          "category": "features",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2026-01-10",
+      "items": [
+        {
+          "date": "2026-01-10",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Add 60+ new skills: developer tools, design systems, AI/ML, media production, health & wellbeing",
+          "category": "skills",
+          "skillCount": 60
+        },
+        {
+          "date": "2026-01-10",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Add recovery suite: 6 skills for sobriety and recovery app development",
+          "category": "skills",
+          "skillCount": 6
+        },
+        {
+          "date": "2026-01-10",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Add crisis-detection-intervention-ai and crisis-response-protocol for safe crisis support",
+          "category": "skills",
+          "skillCount": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-01-03",
+      "items": [
+        {
+          "date": "2026-01-03",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "ui",
+          "description": "Integrate pixel art backsplash images across 9 pages with gradient mask fadeout",
+          "category": "ui",
+          "skillCount": null
+        },
+        {
+          "date": "2026-01-03",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "ui",
+          "description": "Add Win31 design system components: Win31Modal, Win31Button, Win31Window, Win31Wizard",
+          "category": "ui",
+          "skillCount": null
+        },
+        {
+          "date": "2026-01-03",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "ux",
+          "description": "Add tutorial progress tracking hook with localStorage persistence",
+          "category": "features",
+          "skillCount": null
+        },
+        {
+          "date": "2026-01-03",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "ux",
+          "description": "Add skill ZIP downloads from gallery cards",
+          "category": "features",
+          "skillCount": null
+        },
+        {
+          "date": "2026-01-03",
+          "hash": "internal",
+          "type": "feat",
+          "scope": "easter-egg",
+          "description": "Add Konami Code Easter Egg",
+          "category": "features",
+          "skillCount": null
+        }
+      ]
+    },
     {
       "date": "2025-12-26",
       "items": [
