@@ -247,15 +247,15 @@ export async function authMiddleware(req: Request) {
 ### Token Refresh Pattern
 ```typescript
 // Client-side token refresh with race condition handling
+// Uses in-memory storage for access tokens (not localStorage — avoids XSS exfiltration)
 let refreshPromise: Promise<string> | null = null;
+let cachedAccessToken: string | null = null;
+let tokenExpiresAt: number = 0;
 
 async function getAccessToken(): Promise<string> {
-  const accessToken = localStorage.getItem('access_token');
-  const expiresAt = localStorage.getItem('token_expires_at');
-
   // Check if token is still valid (with 60s buffer)
-  if (accessToken && expiresAt && Date.now() < parseInt(expiresAt) - 60000) {
-    return accessToken;
+  if (cachedAccessToken && Date.now() < tokenExpiresAt - 60000) {
+    return cachedAccessToken;
   }
 
   // Deduplicate concurrent refresh requests
@@ -286,8 +286,9 @@ async function refreshAccessToken(): Promise<string> {
 
   const { access_token, expires_in } = await response.json();
 
-  localStorage.setItem('access_token', access_token);
-  localStorage.setItem('token_expires_at', String(Date.now() + expires_in * 1000));
+  // Store in memory only — cleared on page close, safe from XSS
+  cachedAccessToken = access_token;
+  tokenExpiresAt = Date.now() + expires_in * 1000;
 
   return access_token;
 }

@@ -1,6 +1,6 @@
 # Claude Skills Collection
 
-**135+ production-ready skills** and **2 MCP servers** for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
+**175+ production-ready skills** and **2 MCP servers** for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and any [Agent Skills](https://agentskills.io) compatible agent.
 
 Built by [Erich Owens](https://www.erichowens.com) — Ex-Meta ML Engineer (12 years), 12 patents, MS Applied Math.
 
@@ -8,7 +8,22 @@ Built by [Erich Owens](https://www.erichowens.com) — Ex-Meta ML Engineer (12 y
 
 ## Quick Start
 
-### Option 1: Plugin Marketplace (Recommended)
+### Option 1: Agent Skills (Recommended)
+
+Works with Claude Code, Codex, Cursor, OpenCode, and any [Agent Skills](https://agentskills.io) compatible agent.
+
+```bash
+# Install a single skill
+npx skills add curiositech/some_claude_skills -s adhd-design-expert
+
+# Install all skills
+npx skills add curiositech/some_claude_skills --all
+
+# List available skills
+npx skills add curiositech/some_claude_skills --list
+```
+
+### Option 2: Plugin Marketplace (Claude Code)
 
 ```bash
 # Add the marketplace
@@ -21,14 +36,14 @@ Built by [Erich Owens](https://www.erichowens.com) — Ex-Meta ML Engineer (12 y
 /plugin install some-claude-skills@some-claude-skills
 ```
 
-### Option 2: Manual Installation
+### Option 3: Manual Installation
 
 ```bash
 git clone https://github.com/erichowens/some_claude_skills.git
 cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/
 ```
 
-### Option 3: Download Individual Skills
+### Option 4: Download Individual Skills
 
 **[someclaudeskills.com/skills](https://someclaudeskills.com/skills)** — Browse, search, and download ZIP files.
 
