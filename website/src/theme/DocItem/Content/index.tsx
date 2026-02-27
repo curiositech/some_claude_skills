@@ -3,6 +3,7 @@ import Content from '@theme-original/DocItem/Content';
 import type ContentType from '@theme/DocItem/Content';
 import type { WrapperProps } from '@docusaurus/types';
 import { useLocation } from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Head from '@docusaurus/Head';
 import SkillHeader from '../../../components/SkillHeader';
 import { ALL_SKILLS } from '../../../data/skills';
@@ -26,6 +27,7 @@ function getSkillFolderName(pathname: string): string | null {
  */
 export default function ContentWrapper(props: Props): JSX.Element {
   const location = useLocation();
+  const { siteConfig } = useDocusaurusContext();
   const skillFolderName = getSkillFolderName(location.pathname);
 
   if (!skillFolderName) {
@@ -42,7 +44,7 @@ export default function ContentWrapper(props: Props): JSX.Element {
 
   const skillId = skill.id;
   const heroImageUrl = skill.heroImage || `/img/skills/${skillId}-hero.png`;
-  const absoluteHeroUrl = `https://someclaudeskills.com${heroImageUrl}`;
+  const absoluteHeroUrl = `${siteConfig.url}${heroImageUrl}`;
 
   return (
     <>

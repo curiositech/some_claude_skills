@@ -168,7 +168,7 @@ myapp = host=localhost dbname=myapp
 [pgbouncer]
 listen_addr = 0.0.0.0
 listen_port = 6432
-auth_type = md5
+auth_type = scram-sha-256
 auth_file = /etc/pgbouncer/userlist.txt
 
 ; Pool settings
