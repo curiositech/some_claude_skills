@@ -225,7 +225,7 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                   OR
                 </span>
                 <span style={{ color: '#c4b5fd', fontSize: '12px' }}>
-                  Install all 170+ skills at once
+                  Install all skills at once
                 </span>
               </div>
               <div style={{ display: 'flex', gap: '8px' }}>
