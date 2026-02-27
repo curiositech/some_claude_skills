@@ -73,6 +73,12 @@ const sidebars: SidebarsConfig = {
         skillDoc('vibe_matcher'),
         skillFolder('interior_design_expert'),
         skillFolder('design_archivist'),
+        skillFolder('dark_mode_design_expert'),
+        skillFolder('design_accessibility_auditor'),
+        skillFolder('design_system_generator'),
+        skillFolder('design_trend_analyzer'),
+        skillFolder('pixel_art_infographic_creator'),
+        skillFolder('web_weather_creator'),
       ],
     },
     {
@@ -136,6 +142,7 @@ const sidebars: SidebarsConfig = {
         skillFolder('hr_network_analyst'),
         skillFolder('indie_monetization_strategist'),
         skillFolder('seo_visibility_expert'),
+        skillFolder('legal_research_agent_2026'),
       ],
     },
     {
@@ -154,6 +161,7 @@ const sidebars: SidebarsConfig = {
         skillFolder('hrv_alexithymia_expert'),
         skillFolder('speech_pathology_ai'),
         skillFolder('adhd_design_expert'),
+        skillFolder('national_expungement_expert'),
       ],
     },
     {
@@ -163,6 +171,8 @@ const sidebars: SidebarsConfig = {
       items: [
         skillFolder('site_reliability_engineer'),
         skillFolder('code_necromancer'),
+        skillFolder('launch_readiness_auditor'),
+        skillFolder('playwright_screenshot_inspector'),
       ],
     },
   ],
