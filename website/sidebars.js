@@ -32,6 +32,17 @@ var sidebars = {
         },
         {
             type: 'category',
+            label: 'DAG Framework',
+            collapsed: false,
+            items: [
+                'dag/orchestration',
+                'dag/registry',
+                'dag/quality',
+                'dag/observability',
+            ],
+        },
+        {
+            type: 'category',
             label: 'Council Archives',
             collapsed: false,
             items: [

@@ -76,4 +76,4 @@ npm run deploy
 
 - [Docusaurus Documentation](https://docusaurus.io/)
 - [React Documentation](https://react.dev/)
-- [Claude Skills Repository](https://github.com/erichowens/some_claude_skills)
+- [Claude Skills Repository](https://github.com/curiositech/some_claude_skills)

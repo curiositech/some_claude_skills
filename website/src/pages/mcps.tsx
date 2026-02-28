@@ -131,7 +131,7 @@ export default function McpsGallery(): JSX.Element {
               we'd love to showcase it here.
             </p>
             <a
-              href="https://github.com/erichowens/some_claude_skills/issues/new"
+              href="https://github.com/curiositech/some_claude_skills/issues/new"
               target="_blank"
               rel="noopener noreferrer"
               className="win31-push-button"

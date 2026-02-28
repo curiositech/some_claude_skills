@@ -193,7 +193,7 @@ ${yaml}
 _Add any additional context, examples, or references here._
 `);
 
-    return `https://github.com/erichowens/some_claude_skills/issues/new?title=${title}&body=${body}&labels=skill-submission`;
+    return `https://github.com/curiositech/some_claude_skills/issues/new?title=${title}&body=${body}&labels=skill-submission`;
   }, [formData, generateSkillYaml]);
 
   const handlePreview = useCallback(() => {
@@ -298,7 +298,7 @@ _Add any additional context, examples, or references here._
                     Browse Skills
                   </Link>
                   <a
-                    href="https://github.com/erichowens/some_claude_skills/issues?q=is%3Aissue+label%3Askill-submission"
+                    href="https://github.com/curiositech/some_claude_skills/issues?q=is%3Aissue+label%3Askill-submission"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="win31-btn-3d"

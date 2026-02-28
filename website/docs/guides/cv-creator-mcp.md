@@ -34,7 +34,7 @@ CV Creator MCP brings **enterprise-grade resume optimization** directly to Claud
 
 ```bash
 # Clone and build
-git clone https://github.com/erichowens/cv-creator-mcp
+git clone https://github.com/curiositech/cv-creator-mcp
 cd cv-creator-mcp
 npm install
 npm run build
@@ -321,4 +321,4 @@ We built this after analyzing the market:
 ## Source Code
 
 Full implementation available at:
-[github.com/erichowens/cv-creator-mcp](https://github.com/erichowens/cv-creator-mcp)
+[github.com/curiositech/cv-creator-mcp](https://github.com/curiositech/cv-creator-mcp)

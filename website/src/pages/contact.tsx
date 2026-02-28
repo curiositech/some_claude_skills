@@ -64,7 +64,7 @@ export default function HireAuthor(): JSX.Element {
                   erichowens.com
                 </a>
                 <a
-                  href="https://github.com/erichowens"
+                  href="https://github.com/curiositech"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="win31-btn-3d"
@@ -498,7 +498,7 @@ export default function HireAuthor(): JSX.Element {
                   LinkedIn (Fastest)
                 </a>
                 <a
-                  href="https://github.com/erichowens"
+                  href="https://github.com/curiositech"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="win31-btn-3d"
@@ -516,7 +516,7 @@ export default function HireAuthor(): JSX.Element {
                   GitHub
                 </a>
                 <a
-                  href="https://github.com/erichowens/some_claude_skills/issues"
+                  href="https://github.com/curiositech/some_claude_skills/issues"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="win31-btn-3d"

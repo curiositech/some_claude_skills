@@ -275,7 +275,7 @@ export default function Changelog(): JSX.Element {
                         </div>
                       </div>
                       <a
-                        href={`https://github.com/erichowens/some_claude_skills/commit/${item.hash}`}
+                        href={`https://github.com/curiositech/some_claude_skills/commit/${item.hash}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{

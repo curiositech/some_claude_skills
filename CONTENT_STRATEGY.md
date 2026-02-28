@@ -193,7 +193,7 @@ Resources:
 - Install the skill: [link to someclaudeskills.com/skills/skill-name]
 - All skills: someclaudeskills.com/skills
 - Join Discord: [link]
-- Get the collection: github.com/erichowens/some_claude_skills
+- Get the collection: github.com/curiositech/some_claude_skills
 
 About Some Claude Skills:
 48+ production-ready Claude Code skills curated by Erich Owens (ex-Meta ML engineer, 12 patents, MS Applied Math).

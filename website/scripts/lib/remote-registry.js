@@ -59,7 +59,7 @@ var skill_parser_1 = require("./skill-parser");
 // =============================================================================
 // CONSTANTS
 // =============================================================================
-var REGISTRY_URL = 'https://raw.githubusercontent.com/erichowens/some_claude_skills/main/registry.json';
+var REGISTRY_URL = 'https://raw.githubusercontent.com/curiositech/some_claude_skills/main/registry.json';
 var LOCAL_SKILLS_DIR = path.join(process.cwd(), '..', '.claude', 'skills');
 // =============================================================================
 // GITHUB FETCHING
@@ -303,7 +303,7 @@ function generateRegistryManifest(skills, repo) {
     };
 }
 function writeRegistryManifest(skills, outputPath, repo) {
-    if (repo === void 0) { repo = 'erichowens/some_claude_skills'; }
+    if (repo === void 0) { repo = 'curiositech/some_claude_skills'; }
     var manifest = generateRegistryManifest(skills, repo);
     fs.writeFileSync(outputPath, JSON.stringify(manifest, null, 2), 'utf-8');
 }

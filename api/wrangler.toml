@@ -1,0 +1,16 @@
+name = "dag-execution-api"
+main = "worker.ts"
+compatibility_date = "2024-01-01"
+
+# KV namespace for rate limiting and job storage
+# Create with: npx wrangler kv:namespace create "RATE_LIMIT_KV"
+# Then replace the placeholder id below with the real one.
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+
+[vars]
+ALLOWED_ORIGIN = "https://someclaudeskills.com"
+
+# Add your Anthropic API key as a secret (never put it in wrangler.toml):
+#   npx wrangler secret put ANTHROPIC_API_KEY

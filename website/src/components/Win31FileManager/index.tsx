@@ -225,7 +225,7 @@ function FileViewer({ file }: FileViewerProps): JSX.Element {
             Content not available in preview.
             <br />
             <a
-              href={`https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/${file.path}`}
+              href={`https://github.com/curiositech/some_claude_skills/blob/main/.claude/skills/${file.path}`}
               target="_blank"
               rel="noopener noreferrer"
               className="win31-file-viewer-link"

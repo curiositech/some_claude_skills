@@ -79,7 +79,7 @@ Your SKILL.md must include:
 
 ```bash
 # Clone the repository
-git clone https://github.com/erichowens/some_claude_skills.git
+git clone https://github.com/curiositech/some_claude_skills.git
 cd some_claude_skills/website
 
 # Install dependencies

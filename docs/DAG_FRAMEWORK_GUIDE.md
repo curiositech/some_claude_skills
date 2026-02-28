@@ -144,7 +144,7 @@ npm install @anthropic-ai/sdk  # For decomposition
 ### Option B: Use as a Submodule
 
 ```bash
-git submodule add https://github.com/erichowens/some_claude_skills.git lib/skills
+git submodule add https://github.com/curiositech/some_claude_skills.git lib/skills
 ```
 
 ### Option C: Just Use the Skills

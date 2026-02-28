@@ -17,11 +17,11 @@ Transform vague prompts like "Write code" into structured, specific prompts scor
     category: 'Prompt Engineering',
     status: 'stable',
     badge: 'FEATURED',
-    githubUrl: 'https://github.com/erichowens/prompt-learning-mcp',
+    githubUrl: 'https://github.com/curiositech/prompt-learning-mcp',
     docsUrl: '/docs/guides/prompt-learning-mcp',
     installConfig: {
       command: 'npx',
-      args: ['-y', 'github:erichowens/prompt-learning-mcp'],
+      args: ['-y', 'github:curiositech/prompt-learning-mcp'],
       env: {
         OPENAI_API_KEY: 'your-openai-api-key',
       },
@@ -90,11 +90,11 @@ Works with career-biographer profiles and competitive-cartographer positioning s
     category: 'Career & Resume',
     status: 'beta',
     badge: 'NEW',
-    githubUrl: 'https://github.com/erichowens/cv-creator-mcp',
+    githubUrl: 'https://github.com/curiositech/cv-creator-mcp',
     docsUrl: '/docs/guides/cv-creator-mcp',
     installConfig: {
       command: 'npx',
-      args: ['-y', 'github:erichowens/cv-creator-mcp'],
+      args: ['-y', 'github:curiositech/cv-creator-mcp'],
     },
     installNotes: 'Optional: Install Puppeteer for PDF export. Works standalone for analysis and recommendations.',
     tools: [

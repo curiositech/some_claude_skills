@@ -55,6 +55,7 @@
     "@mdx-js/react": "^3.0.0",
     "@types/diff": "^7.0.2",
     "@types/react-syntax-highlighter": "^15.5.13",
+    "@xyflow/react": "^12.10.1",
     "buffer": "^6.0.3",
     "butterchurn": "^2.6.7",
     "butterchurn-presets": "^2.4.7",

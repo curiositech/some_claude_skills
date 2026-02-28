@@ -252,6 +252,39 @@
   border-color: #000080;
 }
 
+.textInput {
+  width: 100%;
+  padding: 4px 8px;
+  font-family: var(--font-code);
+  font-size: 12px;
+  background: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  box-sizing: border-box;
+}
+
+.textInput:focus {
+  outline: none;
+  border-color: #000080;
+}
+
+.textArea {
+  width: 100%;
+  padding: 4px 8px;
+  font-family: var(--font-code);
+  font-size: 12px;
+  background: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.textArea:focus {
+  outline: none;
+  border-color: #000080;
+}
+
 /* Dependencies list */
 .depsList {
   max-height: 150px;

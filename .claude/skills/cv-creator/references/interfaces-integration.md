@@ -119,7 +119,7 @@ Output:
 
 ## Production Implementation
 
-**GitHub**: [github.com/erichowens/cv-creator](https://github.com/erichowens/cv-creator)
+**GitHub**: [github.com/curiositech/cv-creator](https://github.com/curiositech/cv-creator)
 - Status: Production-ready (~2,000 LOC)
 - ATS Score: 95/100 achieved
 - Deploy: `npm install && npm run example`

@@ -75,9 +75,9 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
 
   const activeTabConfig = tabs.find(t => t.id === activeTab)!;
   const skillFileName = skillId.replace(/-/g, '_');
-  const githubSkillUrl = `https://github.com/erichowens/some_claude_skills/blob/main/.claude/skills/${skillId}/SKILL.md`;
-  const rawSkillUrl = `https://raw.githubusercontent.com/erichowens/some_claude_skills/main/.claude/skills/${skillId}/SKILL.md`;
-  const githubFolderUrl = `https://github.com/erichowens/some_claude_skills/tree/main/.claude/skills/${skillId}`;
+  const githubSkillUrl = `https://github.com/curiositech/some_claude_skills/blob/main/.claude/skills/${skillId}/SKILL.md`;
+  const rawSkillUrl = `https://raw.githubusercontent.com/curiositech/some_claude_skills/main/.claude/skills/${skillId}/SKILL.md`;
+  const githubFolderUrl = `https://github.com/curiositech/some_claude_skills/tree/main/.claude/skills/${skillId}`;
 
   return (
     <div style={{
@@ -324,10 +324,10 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                   fontSize: '11px',
                   display: 'block',
                 }}>
-                  /plugin marketplace add erichowens/some_claude_skills
+                  /plugin marketplace add curiositech/some_claude_skills
                 </code>
                 <button
-                  onClick={() => copyToClipboard('/plugin marketplace add erichowens/some_claude_skills', 'marketplace')}
+                  onClick={() => copyToClipboard('/plugin marketplace add curiositech/some_claude_skills', 'marketplace')}
                   style={{
                     background: copiedItem === 'marketplace' ? 'var(--win31-lime)' : '#222',
                     border: '2px solid var(--win31-lime)',

@@ -27,7 +27,7 @@ npx skills add curiositech/some_claude_skills --list
 
 ```bash
 # Add the marketplace
-/plugin marketplace add erichowens/some_claude_skills
+/plugin marketplace add curiositech/some_claude_skills
 
 # Install any skill
 /plugin install adhd-design-expert@some-claude-skills
@@ -39,7 +39,7 @@ npx skills add curiositech/some_claude_skills --list
 ### Option 3: Manual Installation
 
 ```bash
-git clone https://github.com/erichowens/some_claude_skills.git
+git clone https://github.com/curiositech/some_claude_skills.git
 cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/
 ```
 
@@ -62,7 +62,7 @@ Your prompts get smarter every time you use Claude. Automatic optimization using
   "mcpServers": {
     "prompt-learning": {
       "command": "npx",
-      "args": ["-y", "github:erichowens/prompt-learning-mcp"],
+      "args": ["-y", "github:curiositech/prompt-learning-mcp"],
       "env": {
         "OPENAI_API_KEY": "your-openai-api-key"
       }
@@ -84,7 +84,7 @@ Resume SEO powered by AI. ATS scoring, keyword optimization, job matching.
   "mcpServers": {
     "cv-creator": {
       "command": "npx",
-      "args": ["-y", "github:erichowens/cv-creator-mcp"]
+      "args": ["-y", "github:curiositech/cv-creator-mcp"]
     }
   }
 }

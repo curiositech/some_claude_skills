@@ -55,7 +55,7 @@ interface ValidationResult {
 // CONSTANTS
 // =============================================================================
 
-const REPO_OWNER = 'erichowens';
+const REPO_OWNER = 'curiositech';
 const REPO_NAME = 'some_claude_skills';
 const SKILLS_DIR = path.join(process.cwd(), '..', '.claude', 'skills');
 

@@ -44,7 +44,7 @@ It does this through:
 
 ```bash
 # Clone the repo
-git clone https://github.com/erichowens/prompt-learning-mcp.git
+git clone https://github.com/curiositech/prompt-learning-mcp.git
 cd prompt-learning-mcp
 
 # Install dependencies
@@ -230,7 +230,7 @@ This MCP server powers the **automatic-stateful-prompt-improver** skill. When th
 
 ## Links
 
-- **GitHub:** [github.com/erichowens/prompt-learning-mcp](https://github.com/erichowens/prompt-learning-mcp)
+- **GitHub:** [github.com/curiositech/prompt-learning-mcp](https://github.com/curiositech/prompt-learning-mcp)
 - **Related Skill:** The `automatic-stateful-prompt-improver` skill uses this MCP server
 
 ## What's Next

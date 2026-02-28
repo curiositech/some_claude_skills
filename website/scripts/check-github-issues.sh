@@ -12,7 +12,7 @@
 
 set -e
 
-REPO="erichowens/some_claude_skills"
+REPO="curiositech/some_claude_skills"
 
 echo "========================================"
 echo "GitHub Issues & PRs Check"

@@ -851,7 +851,7 @@ On return visit (detected via localStorage timestamp):
 ```jsx
 // Primary: Single command visible
 <div className="install-simple">
-  <code>/plugin marketplace add erichowens/some_claude_skills</code>
+  <code>/plugin marketplace add curiositech/some_claude_skills</code>
   <button>Copy</button>
   <details>
     <summary>Installation options</summary>

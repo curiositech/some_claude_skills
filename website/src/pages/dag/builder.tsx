@@ -11,16 +11,25 @@ import { DAGBuilder } from '@site/src/components/DAG';
 import type { DAG } from '@site/src/dag/types';
 import styles from './dag.module.css';
 
-// Sample skills for demonstration
+/**
+ * Set this to your deployed Cloudflare Worker URL to enable live execution.
+ * See api/README.md for deployment instructions.
+ * Leave as null to keep the builder in demo-only mode.
+ */
+const API_BASE_URL: string | null = null;
+
+// Sample skills for demonstration — a curated subset of the catalog
 const SAMPLE_SKILLS = [
-  { id: 'code-review', name: 'Code Review', category: 'Development' },
-  { id: 'unit-testing', name: 'Unit Testing', category: 'Testing' },
-  { id: 'security-audit', name: 'Security Audit', category: 'Security' },
+  { id: 'ai-engineer', name: 'AI Engineer', category: 'AI/ML' },
+  { id: 'code-review-checklist', name: 'Code Review', category: 'Development' },
+  { id: 'security-auditor', name: 'Security Audit', category: 'Security' },
   { id: 'documentation', name: 'Documentation', category: 'Writing' },
-  { id: 'api-design', name: 'API Design', category: 'Architecture' },
-  { id: 'performance-optimization', name: 'Performance Optimization', category: 'Development' },
-  { id: 'data-validation', name: 'Data Validation', category: 'Data' },
-  { id: 'error-handling', name: 'Error Handling', category: 'Development' },
+  { id: 'api-architect', name: 'API Architect', category: 'Architecture' },
+  { id: 'backend-architect', name: 'Backend Architect', category: 'Architecture' },
+  { id: 'data-pipeline-engineer', name: 'Data Pipeline Engineer', category: 'Data' },
+  { id: 'deployment-engineer', name: 'Deployment Engineer', category: 'DevOps' },
+  { id: 'computer-vision-pipeline', name: 'Computer Vision', category: 'AI/ML' },
+  { id: 'adhd-design-expert', name: 'ADHD Design Expert', category: 'Design' },
 ];
 
 function dagToJson(dag: DAG): string {
@@ -45,8 +54,7 @@ function dagToYaml(dag: DAG): string {
   yaml += `name: ${dag.name}\n`;
   yaml += `config:\n`;
   yaml += `  maxParallelism: ${dag.config.maxParallelism}\n`;
-  yaml += `  defaultTimeout: ${dag.config.defaultTimeout}\n`;
-  yaml += `  errorHandling: ${dag.config.errorHandling}\n`;
+  yaml += `  maxExecutionTimeMs: ${dag.config.maxExecutionTimeMs}\n`;
   yaml += `nodes:\n`;
   for (const node of nodes) {
     yaml += `  - id: ${node.id}\n`;
@@ -68,12 +76,54 @@ export default function DAGBuilderPage(): React.ReactElement {
   const [savedDag, setSavedDag] = useState<DAG | null>(null);
   const [exportedContent, setExportedContent] = useState<string | null>(null);
   const [exportFormat, setExportFormat] = useState<'json' | 'yaml'>('json');
+  const [isExecuting, setIsExecuting] = useState(false);
+  const [executeResult, setExecuteResult] = useState<string | null>(null);
 
   const handleSave = useCallback((dag: DAG) => {
     setSavedDag(dag);
-    // In a real app, this would save to backend/localStorage
     console.log('Saved DAG:', dag);
     alert(`Workflow "${dag.name}" saved with ${dag.nodes.size} nodes!`);
+  }, []);
+
+  const handleExecute = useCallback(async (dag: DAG) => {
+    if (!API_BASE_URL) {
+      alert(
+        'Live execution is not configured.\n\n' +
+        'Deploy the Cloudflare Worker from the api/ directory, then set API_BASE_URL in builder.tsx.\n\n' +
+        'See api/README.md for instructions.'
+      );
+      return;
+    }
+
+    setIsExecuting(true);
+    setExecuteResult(null);
+
+    const body = {
+      id: dag.id,
+      name: dag.name,
+      nodes: Array.from(dag.nodes.values()).map(n => ({
+        id: n.id as string,
+        name: n.name,
+        description: n.description,
+        skillId: n.skillId,
+        dependencies: n.dependencies.map(d => d as string),
+        model: n.config.model,
+      })),
+    };
+
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/dag/execute`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      const data = await res.json() as Record<string, unknown>;
+      setExecuteResult(JSON.stringify(data, null, 2));
+    } catch (err) {
+      setExecuteResult(`Error: ${err instanceof Error ? err.message : String(err)}`);
+    } finally {
+      setIsExecuting(false);
+    }
   }, []);
 
   const handleExport = useCallback((dag: DAG, format: 'json' | 'yaml') => {
@@ -134,8 +184,29 @@ export default function DAGBuilderPage(): React.ReactElement {
             availableSkills={SAMPLE_SKILLS}
             onSave={handleSave}
             onExport={handleExport}
+            onExecute={handleExecute}
           />
         </div>
+
+        {/* Execution status indicator */}
+        {isExecuting && (
+          <div style={{ marginTop: 16, padding: '12px 16px', background: '#c0c0c0', border: '2px solid #808080', fontFamily: 'var(--font-system)', fontSize: 13 }}>
+            ⏳ Executing workflow via Haiku API…
+          </div>
+        )}
+
+        {/* Execution result */}
+        {executeResult && !isExecuting && (
+          <div style={{ marginTop: 16, background: '#c0c0c0', border: '4px solid #000000' }}>
+            <div style={{ padding: '4px 8px', background: 'linear-gradient(90deg,#000080,#1084d0)', color: '#fff', fontFamily: 'var(--font-system)', fontSize: 13, display: 'flex', justifyContent: 'space-between' }}>
+              <span>✅ Execution Result</span>
+              <button onClick={() => setExecuteResult(null)} style={{ background: '#c0c0c0', border: '2px solid', borderColor: '#ffffff #808080 #808080 #ffffff', width: 20, height: 20, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12 }}>×</button>
+            </div>
+            <pre style={{ margin: 0, padding: 16, background: '#ffffff', border: '2px solid', borderColor: '#808080 #ffffff #ffffff #808080', maxHeight: 400, overflow: 'auto', fontFamily: 'var(--font-code)', fontSize: 11, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+              {executeResult}
+            </pre>
+          </div>
+        )}
 
         {/* Export Modal */}
         {exportedContent && (
