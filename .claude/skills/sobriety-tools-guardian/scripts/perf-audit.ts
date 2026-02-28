@@ -288,7 +288,7 @@ ${result.suggestedFix ? `### Suggested Fix\n${result.suggestedFix}` : ''}
 `;
 
   try {
-    await fetch('https://api.github.com/repos/erichowens/sobriety-tools/issues', {
+    await fetch('https://api.github.com/repos/curiositech/sobriety-tools/issues', {
       method: 'POST',
       headers: {
         Authorization: `token ${token}`,

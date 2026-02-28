@@ -61,7 +61,7 @@ Create a JSON file following the `skill-catalog.schema.json` schema:
 
 Submit your skill to the Some Claude Skills community registry:
 
-1. Fork the [some_claude_skills](https://github.com/erichowens/some_claude_skills) repository
+1. Fork the [some_claude_skills](https://github.com/curiositech/some_claude_skills) repository
 2. Add your catalog entry to `mcp-servers/skill-matcher/community-catalog/`
 3. Submit a pull request
 
@@ -175,6 +175,6 @@ npx skill-matcher match "something it should NOT match"
 
 ## Support
 
-- Issues: [GitHub Issues](https://github.com/erichowens/some_claude_skills/issues)
-- Discussions: [GitHub Discussions](https://github.com/erichowens/some_claude_skills/discussions)
+- Issues: [GitHub Issues](https://github.com/curiositech/some_claude_skills/issues)
+- Discussions: [GitHub Discussions](https://github.com/curiositech/some_claude_skills/discussions)
 - Website: [someclaudeskills.com](https://someclaudeskills.com)

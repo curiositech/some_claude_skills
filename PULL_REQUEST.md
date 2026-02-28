@@ -503,7 +503,7 @@ All dependencies are:
 
 - **Live Preview**: http://localhost:3000/some_claude_skills/
 - **Commit**: 5cbe2f1fd1cea9a58f3932995ab27a864bdb3efc
-- **Repository**: https://github.com/erichowens/some_claude_skills
+- **Repository**: https://github.com/curiositech/some_claude_skills
 - **Claude Skills Blog**: https://www.claude.com/blog/skills
 
 ---
@@ -587,7 +587,7 @@ Since the initial website launch, significant enhancements have been added:
 - ✅ `src/contexts/UISoundsContext.tsx` - UI sound paths
 - ✅ `docusaurus.config.ts` - Verified correct (`baseUrl: '/'`)
 
-**GitHub URLs Preserved**: All `github.com/erichowens/some_claude_skills/` URLs correctly retained
+**GitHub URLs Preserved**: All `github.com/curiositech/some_claude_skills/` URLs correctly retained
 
 ### 🎵 Feature: Vaporwave MIDI Music Player
 

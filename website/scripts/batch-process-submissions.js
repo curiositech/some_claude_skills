@@ -58,7 +58,7 @@ var child_process_1 = require("child_process");
 // =============================================================================
 // CONSTANTS
 // =============================================================================
-var REPO_OWNER = 'erichowens';
+var REPO_OWNER = 'curiositech';
 var REPO_NAME = 'some_claude_skills';
 var SKILLS_DIR = path.join(process.cwd(), '..', '.claude', 'skills');
 var VALID_CATEGORIES = [

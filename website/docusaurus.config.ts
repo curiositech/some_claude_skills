@@ -27,7 +27,7 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'erichowens', // Usually your GitHub org/user name.
+  organizationName: 'curiositech', // Usually your GitHub org/user name.
   projectName: 'some_claude_skills', // Usually your repo name.
 
   onBrokenLinks: 'warn',
@@ -168,7 +168,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/erichowens/some_claude_skills',
+          href: 'https://github.com/curiositech/some_claude_skills',
           label: 'GitHub',
           position: 'right',
         },
@@ -215,7 +215,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/erichowens/some_claude_skills',
+              href: 'https://github.com/curiositech/some_claude_skills',
             },
             {
               label: 'Anthropic Claude',
@@ -232,7 +232,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/erichowens',
+              href: 'https://github.com/curiositech',
             },
           ],
         },

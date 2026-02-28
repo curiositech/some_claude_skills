@@ -13,13 +13,13 @@ curl -fsSL https://someclaudeskills.com/install/prompt-learning.sh | bash
 Or clone and install manually:
 
 ```bash
-git clone https://github.com/erichowens/prompt-learning-mcp.git ~/mcp-servers/prompt-learning
+git clone https://github.com/curiositech/prompt-learning-mcp.git ~/mcp-servers/prompt-learning
 cd ~/mcp-servers/prompt-learning
 npm install && npm run build
 npm run setup
 ```
 
-**Repository:** [github.com/erichowens/prompt-learning-mcp](https://github.com/erichowens/prompt-learning-mcp)
+**Repository:** [github.com/curiositech/prompt-learning-mcp](https://github.com/curiositech/prompt-learning-mcp)
 
 ## Quick Start (Cold Start Mode)
 

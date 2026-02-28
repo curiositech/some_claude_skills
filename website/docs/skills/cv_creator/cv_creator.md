@@ -40,7 +40,7 @@ Works with: career-biographer, competitive-cartographer, web-design-expert, typo
 
 ## Production Implementation Available!
 
-**GitHub**: [github.com/erichowens/cv-creator](https://github.com/erichowens/cv-creator)
+**GitHub**: [github.com/curiositech/cv-creator](https://github.com/curiositech/cv-creator)
 - Status: Production-ready (~2,000 LOC)
 - ATS Score: 95/100 achieved
 - Deploy: `npm install && npm run example`

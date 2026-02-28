@@ -5,7 +5,7 @@
 A curated gallery of 90+ Claude Code skills with a distinctive Windows 3.1 retro aesthetic. Built on Docusaurus, deployed to GitHub Pages.
 
 **Live Site**: https://someclaudeskills.com
-**Repository**: https://github.com/erichowens/some_claude_skills
+**Repository**: https://github.com/curiositech/some_claude_skills
 
 ---
 

@@ -404,7 +404,7 @@ export class DAGSerializer {
 
 ```json
 {
-  "name": "@erichowens/claude-dag-framework",
+  "name": "@curiositech/claude-dag-framework",
   "version": "1.0.0",
   "description": "DAG-based orchestration framework for Claude AI agents",
   "main": "dist/cjs/index.js",
@@ -720,7 +720,7 @@ interface useTutorialProgressReturn {
   required={true}
 >
   <CodeBlock language="bash" copyable>
-    /plugin marketplace add erichowens/some_claude_skills
+    /plugin marketplace add curiositech/some_claude_skills
   </CodeBlock>
   <Checkpoint
     question="Did you see 'Marketplace added successfully'?"

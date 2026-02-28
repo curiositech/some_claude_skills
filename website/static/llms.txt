@@ -28,7 +28,7 @@ Claude Skills are markdown files (SKILL.md) that encode domain expertise for Cla
 
 ```bash
 # Clone a skill to your project
-git clone https://github.com/erichowens/some_claude_skills
+git clone https://github.com/curiositech/some_claude_skills
 cp -r some_claude_skills/.claude/skills/skill-name .claude/skills/
 ```
 
@@ -44,7 +44,7 @@ Or download individual skills as ZIP files from the Skills Gallery.
 ## Links
 
 - Website: https://someclaudeskills.com
-- GitHub: https://github.com/erichowens/some_claude_skills
+- GitHub: https://github.com/curiositech/some_claude_skills
 - Author: https://linkedin.com/in/erich-owens-01a38446/
 
 ## Categories

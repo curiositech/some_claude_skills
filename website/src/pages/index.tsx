@@ -88,7 +88,7 @@ export default function Home(): JSX.Element {
     track('Share to Desktop', { method: 'copy' });
   }, [copyToClipboard, track]);
 
-  const installCommand = `git clone https://github.com/erichowens/some_claude_skills.git
+  const installCommand = `git clone https://github.com/curiositech/some_claude_skills.git
 cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
 
   // JSON-LD structured data for SEO
@@ -116,7 +116,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
       priceCurrency: 'USD',
     },
     license: 'https://opensource.org/licenses/MIT',
-    codeRepository: 'https://github.com/erichowens/some_claude_skills',
+    codeRepository: 'https://github.com/curiositech/some_claude_skills',
     programmingLanguage: ['TypeScript', 'Markdown'],
     keywords: [
       'Claude Code',
@@ -137,7 +137,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
     url: 'https://someclaudeskills.com',
     logo: 'https://someclaudeskills.com/img/logo.svg',
     sameAs: [
-      'https://github.com/erichowens/some_claude_skills',
+      'https://github.com/curiositech/some_claude_skills',
       'https://linkedin.com/in/erich-owens-01a38446/',
     ],
   };
@@ -280,7 +280,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                             textOverflow: 'ellipsis',
                             whiteSpace: 'nowrap',
                           }}>
-                            /plugin marketplace add erichowens/some_claude_skills
+                            /plugin marketplace add curiositech/some_claude_skills
                           </code>
                           <button
                             className="win31-btn-3d"
@@ -291,7 +291,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                               fontSize: '11px',
                               padding: '6px 10px',
                             }}
-                            onClick={() => copyToClipboard('/plugin marketplace add erichowens/some_claude_skills', 'marketplace')}
+                            onClick={() => copyToClipboard('/plugin marketplace add curiositech/some_claude_skills', 'marketplace')}
                           >
                             {copied === 'marketplace' ? '✓' : 'COPY'}
                           </button>
@@ -547,7 +547,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
               </p>
               <p style={{ marginBottom: 0 }}>
                 <strong>Who is this for?</strong> Developers who use Claude Code. Founders building AI features. Anyone who's ever thought "I wish Claude just <em>knew</em> this stuff already."
-                MIT licensed. <a href="https://github.com/erichowens/some_claude_skills">Fork it, extend it, make it yours.</a>
+                MIT licensed. <a href="https://github.com/curiositech/some_claude_skills">Fork it, extend it, make it yours.</a>
               </p>
             </div>
           </div>
@@ -572,7 +572,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
             </button>
             <div className="win31-statusbar-panel" style={{ position: 'relative' }}>
               <a
-                href="https://github.com/erichowens/some_claude_skills"
+                href="https://github.com/curiositech/some_claude_skills"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => track('GitHub Link Clicked')}

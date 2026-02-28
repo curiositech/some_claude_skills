@@ -2,7 +2,7 @@
 Developer: Erich Owens
 Role: Creator, Ex-Meta ML Engineer
 Site: https://someclaudeskills.com
-GitHub: https://github.com/erichowens
+GitHub: https://github.com/curiositech
 LinkedIn: https://linkedin.com/in/erich-owens-01a38446/
 Location: San Francisco Bay Area
 

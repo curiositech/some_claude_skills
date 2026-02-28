@@ -267,11 +267,11 @@ Embedded CSS/JS in portfolio.html:
 
 ## Try It Yourself
 
-**GitHub**: https://github.com/erichowens/cv-creator
+**GitHub**: https://github.com/curiositech/cv-creator
 
 ```bash
 # Clone and run
-git clone https://github.com/erichowens/cv-creator.git
+git clone https://github.com/curiositech/cv-creator.git
 cd cv-creator
 npm install
 npm run example
@@ -300,4 +300,4 @@ The future of software development isn't replacing developers with AI—it's aug
 **Phases**: 9 (research → architecture → implementation → templates → PDF → portfolio → validation → docs → production)
 **Outcome**: Production-ready TypeScript application (~2,000 LOC) generating ATS-optimized resumes (95/100) and deploy-ready portfolios in &lt;10 seconds
 
-**Status**: ✅ Live at https://github.com/erichowens/cv-creator
+**Status**: ✅ Live at https://github.com/curiositech/cv-creator

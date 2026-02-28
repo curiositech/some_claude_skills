@@ -66,7 +66,7 @@ Each skill includes:
 
 ```bash
 # Clone all skills
-git clone https://github.com/erichowens/some_claude_skills.git
+git clone https://github.com/curiositech/some_claude_skills.git
 
 # Copy to your personal skills folder
 cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/
@@ -96,7 +96,7 @@ Example: The `typography-expert` skill doesn't just know "use readable fonts." I
 
 - **[Browse Skills Gallery](/skills)** - See all 49+ skills with previews
 - **[Read the Full Guide](/docs/guides/claude-skills-guide)** - Learn to create your own
-- **[View on GitHub](https://github.com/erichowens/some_claude_skills)** - Source code and contributions
+- **[View on GitHub](https://github.com/curiositech/some_claude_skills)** - Source code and contributions
 
 ---
 

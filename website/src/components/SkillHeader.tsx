@@ -19,7 +19,7 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
   const [isDownloading, setIsDownloading] = useState(false);
   // Convert fileName (underscore format) to skillId (hyphen format)
   const skillId = fileName.replace(/_/g, '-');
-  const githubFolderUrl = `https://github.com/erichowens/some_claude_skills/tree/main/.claude/skills/${skillId}`;
+  const githubFolderUrl = `https://github.com/curiositech/some_claude_skills/tree/main/.claude/skills/${skillId}`;
 
   // Load skill folder data
   const { folderData, loading, hasContent, fileCount, folderCount } = useSkillFolderData(skillId);

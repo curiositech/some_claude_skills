@@ -49,7 +49,7 @@ export interface ImportResult {
 // CONSTANTS
 // =============================================================================
 
-const REGISTRY_URL = 'https://raw.githubusercontent.com/erichowens/some_claude_skills/main/registry.json';
+const REGISTRY_URL = 'https://raw.githubusercontent.com/curiositech/some_claude_skills/main/registry.json';
 const LOCAL_SKILLS_DIR = path.join(process.cwd(), '..', '.claude', 'skills');
 
 // =============================================================================
@@ -268,7 +268,7 @@ export function generateRegistryManifest(
 export function writeRegistryManifest(
   skills: ParsedSkill[],
   outputPath: string,
-  repo: string = 'erichowens/some_claude_skills'
+  repo: string = 'curiositech/some_claude_skills'
 ): void {
   const manifest = generateRegistryManifest(skills, repo);
   fs.writeFileSync(outputPath, JSON.stringify(manifest, null, 2), 'utf-8');

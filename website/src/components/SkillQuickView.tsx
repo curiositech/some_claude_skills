@@ -314,7 +314,7 @@ export default function SkillQuickView({ skill, onClose, isStarred = false, onTo
               </button>
             </a>
             <a
-              href="https://github.com/erichowens/some_claude_skills"
+              href="https://github.com/curiositech/some_claude_skills"
               target="_blank"
               rel="noopener noreferrer"
               style={{ textDecoration: 'none' }}

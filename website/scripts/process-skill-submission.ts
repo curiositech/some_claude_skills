@@ -260,7 +260,7 @@ interface GitHubIssue {
 
 async function fetchIssue(issueNumber: string): Promise<GitHubIssue> {
   const token = process.env.GITHUB_TOKEN;
-  const repo = process.env.GITHUB_REPOSITORY || 'erichowens/some_claude_skills';
+  const repo = process.env.GITHUB_REPOSITORY || 'curiositech/some_claude_skills';
 
   if (!token) {
     throw new Error('GITHUB_TOKEN environment variable is required');

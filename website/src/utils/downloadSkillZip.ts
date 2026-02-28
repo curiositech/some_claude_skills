@@ -31,7 +31,7 @@ export async function downloadSkillZip(skillId: string, skillName: string): Prom
     console.error('Error downloading skill zip:', error);
 
     // Show error and direct user to GitHub folder
-    const owner = 'erichowens';
+    const owner = 'curiositech';
     const repo = 'some_claude_skills';
     const branch = 'main';
     const githubFolderUrl = `https://github.com/${owner}/${repo}/tree/${branch}/.claude/skills/${skillId}`;

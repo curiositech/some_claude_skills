@@ -154,7 +154,7 @@ The hero area has a music player widget which is charming but doesn't show the p
 ### ❌ Trust Ladder Violation (Critical)
 The primary CTA is:
 ```
-/plugin marketplace add erichowens/some_claude_skills
+/plugin marketplace add curiositech/some_claude_skills
 ```
 
 This violates the trust ladder:
