@@ -4,6 +4,9 @@
  * work well for content-centric websites.
  */
 
+/* React Flow base styles (used by the DAG builder) */
+@import '@xyflow/react/dist/style.css';
+
 /* Import Windows 3.1 Design System */
 @import './win31.css';
 

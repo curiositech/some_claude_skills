@@ -1,270 +1,170 @@
 ---
-title: Design Assessment Rubric
-sidebar_label: Design Assessment Rubric
+title: Assessment Rubric
+sidebar_label: Assessment Rubric
 sidebar_position: 1
 ---
-# Design Assessment Rubric
+# Assessment Rubric
 
-Detailed scoring criteria with examples for each dimension.
+Detailed scoring criteria for each of the 6 design dimensions.
 
-## Accessibility Scoring
+## Accessibility (20% weight)
 
-### 95-100: Exceptional
+| Score | Criteria |
+|-------|----------|
+| 90-100 | AAA contrast (7:1+), full keyboard nav, ARIA complete, skip links, focus visible |
+| 75-89 | AA contrast (4.5:1+), keyboard accessible, basic ARIA, focus states |
+| 60-74 | AA contrast partial, some keyboard issues, minimal ARIA |
+| 40-59 | Contrast failures, poor keyboard support, no ARIA |
+| 0-39 | Major contrast violations, keyboard traps, no accessibility consideration |
 
-**Characteristics**:
-- WCAG AAA compliance throughout
-- Skip links and landmark regions
-- Comprehensive ARIA labels
-- Reduced motion alternatives
-- High contrast mode support
-- Screen reader tested
+### What to Check
 
-**Example**: Apple's accessibility page, gov.uk
-
-### 85-94: Excellent
-
-**Characteristics**:
-- WCAG AA compliance
-- Good focus management
-- Semantic HTML structure
-- Appropriate alt text
-- Keyboard navigable
-
-**Example**: Stripe Dashboard, Linear
-
-### 75-84: Good
-
-**Characteristics**:
-- WCAG AA minimum met
-- Basic focus states
-- Some semantic issues
-- Missing skip links
-- Adequate contrast
-
-### 65-74: Fair
-
-**Characteristics**:
-- Some contrast failures
-- Inconsistent focus states
-- Limited semantic markup
-- Keyboard traps possible
-
-### Below 65: Needs Work
-
-**Characteristics**:
-- Failing WCAG AA
-- Missing focus states
-- No semantic structure
-- Color-only information
-
----
-
-## Color Harmony Scoring
-
-### 95-100: Exceptional
-
-**Characteristics**:
-- Intentional color relationships (60-30-10 rule)
-- Emotional resonance matches content
-- Sophisticated accent usage
-- Perfect saturation balance
-- Considered color temperature
-
-**Color relationship types**:
-```
-Complementary: High contrast, energetic
-Analogous: Harmonious, calm
-Triadic: Vibrant, balanced
-Split-complementary: Nuanced contrast
-Monochromatic: Sophisticated, unified
+```typescript
+const accessibilityChecklist = {
+  contrast: {
+    normal: "4.5:1 minimum (AA)",
+    large: "3:1 minimum for 18px+ or 14px+ bold",
+    enhanced: "7:1 for AAA compliance"
+  },
+  touchTargets: {
+    minimum: "44x44px for mobile",
+    recommended: "48x48px with 8px spacing"
+  },
+  focus: {
+    visible: "2px offset ring, high contrast color",
+    order: "Matches visual reading order"
+  },
+  semantics: {
+    headings: "h1-h6 in logical order, no skips",
+    landmarks: "main, nav, aside, footer present",
+    labels: "All form inputs labeled"
+  }
+};
 ```
 
-### 85-94: Excellent
+## Color Harmony (15% weight)
 
-**Characteristics**:
-- Cohesive palette
-- Clear primary/secondary/accent
-- Consistent saturation levels
-- Good dark/light mode adaptation
+| Score | Criteria |
+|-------|----------|
+| 90-100 | Deliberate palette, cohesive temperature, accent used sparingly and effectively |
+| 75-89 | Clear palette, minor temperature inconsistency, accent mostly appropriate |
+| 60-74 | Palette present but muddy, occasional jarring combinations |
+| 40-59 | No clear palette, clashing colors, inconsistent application |
+| 0-39 | Random colors, no relationship, visually painful |
 
-### 75-84: Good
+### Color Theory Checks
 
-**Characteristics**:
-- Functional palette
-- Some accent discord
-- Adequate but safe choices
-- Minor saturation inconsistencies
+- **Temperature consistency**: All colors should lean warm OR cool (not mixed without intent)
+- **Saturation balance**: Background desaturated, accents saturated
+- **60-30-10 rule**: Primary (60%), secondary (30%), accent (10%)
+- **State colors**: Error red, success green, warning amber should be semantically clear
 
-### 65-74: Fair
+## Typography (15% weight)
 
-**Characteristics**:
-- Palette feels random
-- Competing accent colors
-- No clear color system
-- Saturation chaos
+| Score | Criteria |
+|-------|----------|
+| 90-100 | Clear scale, excellent pairing, optimal measure (45-75 chars), perfect line-height |
+| 75-89 | Good scale, appropriate fonts, readable but minor spacing issues |
+| 60-74 | Scale present but inconsistent, font choices questionable, readability fair |
+| 40-59 | No clear scale, poor font choices, readability issues |
+| 0-39 | Chaotic typography, illegible, unprofessional |
 
-### Below 65: Needs Work
+### Typography Metrics
 
-**Characteristics**:
-- Clashing colors
-- No color logic
-- Jarring combinations
-- Unintentional discord
-
----
-
-## Typography Scoring
-
-### Hierarchy Checklist
-
-| Level | Relative Size | Weight | Use |
-|-------|---------------|--------|-----|
-| Display | 3-4x body | 700-900 | Page titles |
-| H1 | 2.5x body | 600-800 | Section headers |
-| H2 | 2x body | 600-700 | Subsections |
-| H3 | 1.5x body | 500-600 | Card titles |
-| Body | 1x (16px base) | 400-500 | Content |
-| Caption | 0.875x body | 400 | Secondary info |
-
-### Line Length Guidelines
-
-| Content Type | Optimal | Acceptable |
-|--------------|---------|------------|
-| Long-form | 65-75 chars | 55-85 chars |
-| UI labels | 20-40 chars | 15-50 chars |
-| Headlines | 40-60 chars | 30-70 chars |
-
-### Font Pairing Rules
-
-**Safe Pairings**:
-- Sans-serif heading + serif body (contrast)
-- Same family, different weights (unity)
-- Geometric + humanist (balanced contrast)
-
-**Avoid**:
-- Two similar sans-serifs (confusion)
-- Three+ font families (chaos)
-- Display fonts for body (unreadable)
-
----
-
-## Layout Scoring
-
-### Grid Systems
-
-**8px Base Grid**:
-```
-4px   - Micro spacing (icon padding)
-8px   - Element spacing
-16px  - Component spacing
-24px  - Section spacing
-32px  - Major section breaks
-48px+ - Page-level spacing
+```typescript
+const typographyStandards = {
+  scale: "Major second (1.125), Major third (1.25), Perfect fourth (1.333)",
+  lineHeight: {
+    body: "1.5-1.75",
+    headings: "1.1-1.3",
+    compact: "1.25-1.4"
+  },
+  measure: {
+    optimal: "45-75 characters",
+    minimum: "30 characters",
+    maximum: "90 characters"
+  },
+  weight: {
+    body: "400 (regular)",
+    emphasis: "600 (semi-bold)",
+    headings: "500-700"
+  }
+};
 ```
 
-### Visual Weight Balance
+## Layout (20% weight)
 
-Check:
-1. Draw vertical line through center
-2. Is visual weight roughly equal?
-3. Intentional asymmetry vs. accidental?
+| Score | Criteria |
+|-------|----------|
+| 90-100 | Perfect grid adherence, balanced whitespace, clear visual hierarchy, responsive |
+| 75-89 | Grid mostly followed, good whitespace, hierarchy clear, minor responsive issues |
+| 60-74 | Grid inconsistent, whitespace uneven, hierarchy muddy |
+| 40-59 | No clear grid, cluttered or too sparse, confusing hierarchy |
+| 0-39 | Chaotic layout, no structure, completely unresponsive |
 
-### Whitespace Guidelines
+### Layout Checks
 
-| Space Type | Purpose | Common Issues |
-|------------|---------|---------------|
-| Micro | Breathability | Too tight = cramped |
-| Meso | Grouping | Too loose = disconnected |
-| Macro | Emphasis | None = overwhelming |
+- **Grid adherence**: Is there an underlying 4px, 8px, or 12px grid?
+- **Whitespace**: Breathing room around elements, consistent margins
+- **Visual hierarchy**: Primary → secondary → tertiary content clear
+- **Alignment**: Elements aligned to grid or each other
+- **Proximity**: Related items grouped, unrelated items separated
 
----
+## Modernity (15% weight)
 
-## Modernity Timeline
+| Score | Criteria |
+|-------|----------|
+| 90-100 | On-trend for 2026, innovative but appropriate, could win awards |
+| 75-89 | Current feel, follows established trends well |
+| 60-74 | Slightly dated (2023-2024 patterns), functional but not fresh |
+| 40-59 | Noticeably dated (2020-2022), feels old |
+| 0-39 | Severely dated (pre-2020), embarrassingly outdated |
 
-### Current (2024-2026)
+### Trend Detection
 
-**In Fashion**:
-- Bento grids
-- Variable fonts
-- Micro-interactions
-- Dark mode default
-- AI-generated imagery
-- Asymmetric layouts
-- Subtle glassmorphism
-- Neobrutalist accents
+Reference `trends2026` from the design catalog:
 
-**Emerging**:
-- Spatial design (AR/VR ready)
-- Animated gradients
-- 3D elements (tasteful)
-- Kinetic typography
-
-### Dated (Avoid)
-
-| Pattern | Era | Why It's Dated |
-|---------|-----|----------------|
-| Hamburger on desktop | 2015-2018 | Hides critical nav |
-| Carousels | 2010-2015 | Low engagement, accessibility |
-| Parallax overload | 2013-2016 | Performance, motion sickness |
-| Flat design extremes | 2014-2017 | Poor affordances |
-| Stock photo heroes | 2012-2018 | Inauthentic, cliché |
-| Heavy skeuomorphism | 2008-2013 | Visual noise |
-
----
-
-## Usability Checklist
-
-### Primary CTA Test
-
-- [ ] Visible within 3 seconds
-- [ ] Clearly differentiated from secondary actions
-- [ ] Appropriate size (min 44x44px touch)
-- [ ] Clear action-oriented label
-- [ ] Sufficient contrast with background
-
-### Cognitive Load Assessment
-
-| Level | Description | Elements |
-|-------|-------------|----------|
-| Low | Focused, minimal choice | 1-3 actions |
-| Medium | Balanced, clear hierarchy | 4-7 actions |
-| High | Complex, requires effort | 8+ actions |
-
-**Target**: Keep most pages at Low-Medium.
-
-### Feedback Signals
-
-Every interaction should have:
-1. **Immediate** - Visual acknowledgment (hover, press)
-2. **During** - Loading/progress state
-3. **After** - Success/error confirmation
-
----
-
-## Example Assessments
-
-### Example 1: SaaS Dashboard
-
-```
-Overall Score: 82/100 (Excellent)
-
-Accessibility: 85 - Good contrast, keyboard nav works, missing skip links
-Color Harmony: 78 - Cohesive blue palette, accent orange feels forced
-Typography: 88 - Clear hierarchy, excellent readability
-Layout: 84 - Strong grid, sidebar slightly cramped
-Modernity: 76 - Solid but safe, could use micro-interactions
-Usability: 82 - Clear primary actions, some buried settings
+```typescript
+const modernIndicators = {
+  positive: [
+    "Bento grid layouts",
+    "Glassmorphism (subtle)",
+    "Neobrutalism (bold shadows)",
+    "Claymorphism (3D soft)",
+    "Scroll-driven animations",
+    "Variable fonts",
+    "Dark mode support"
+  ],
+  dated: [
+    "Parallax scrolling (overused)",
+    "Card-based everything",
+    "Hamburger menus on desktop",
+    "Stock photo headers",
+    "Hero sliders",
+    "Skeuomorphic elements"
+  ]
+};
 ```
 
-### Example 2: Marketing Landing Page
+## Usability (15% weight)
 
-```
-Overall Score: 67/100 (Fair)
+| Score | Criteria |
+|-------|----------|
+| 90-100 | Intuitive flow, clear CTAs, minimal cognitive load, delightful micro-interactions |
+| 75-89 | Good flow, CTAs visible, low cognitive load |
+| 60-74 | Flow requires thought, CTAs present but not prominent, some confusion |
+| 40-59 | Confusing flow, CTAs buried, high cognitive load |
+| 0-39 | Unusable, CTAs invisible, user will abandon |
 
-Accessibility: 58 - Contrast failures on hero text, no focus visible
-Color Harmony: 72 - Nice gradient but clashes with CTA
-Typography: 71 - Hierarchy unclear, body too small
-Layout: 68 - Too much above fold, cramped
-Modernity: 70 - Current enough, stock photo problem
-Usability: 63 - CTA buried, competing actions
-```
+### Usability Heuristics (Nielsen)
+
+1. Visibility of system status
+2. Match between system and real world
+3. User control and freedom
+4. Consistency and standards
+5. Error prevention
+6. Recognition rather than recall
+7. Flexibility and efficiency of use
+8. Aesthetic and minimalist design
+9. Help users recognize, diagnose, and recover from errors
+10. Help and documentation

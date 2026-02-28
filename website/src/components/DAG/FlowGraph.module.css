@@ -1,0 +1,115 @@
+/**
+ * FlowGraph — Win31 React Flow styles
+ */
+
+.flowContainer {
+  width: 100%;
+  height: 520px;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  background: #c0c0c0;
+  position: relative;
+}
+
+.flowPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: var(--font-system, 'MS Sans Serif', 'Arial', sans-serif);
+  font-size: 13px;
+  color: #444444;
+}
+
+/* ── Win31 custom node ─────────────────────────────────────────────── */
+
+.win31Node {
+  background: #c0c0c0;
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 0 #000000;
+  font-family: var(--font-system, 'MS Sans Serif', 'Arial', sans-serif);
+  font-size: 11px;
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.win31Node:focus-within {
+  outline: 2px dotted #000080;
+}
+
+.win31NodeTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 6px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.win31NodeStatus {
+  font-size: 9px;
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.win31NodeBody {
+  padding: 6px 8px 6px 8px;
+}
+
+.win31NodeLabel {
+  font-weight: bold;
+  color: #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+  font-size: 12px;
+}
+
+.win31NodeDesc {
+  color: #333333;
+  font-size: 10px;
+  margin-top: 3px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.win31NodeMeta {
+  margin-top: 4px;
+  font-size: 9px;
+  color: #000080;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* React Flow overrides */
+:global(.react-flow__attribution) {
+  display: none;
+}
+
+:global(.react-flow__controls-button) {
+  background: #c0c0c0 !important;
+  border: 2px solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+:global(.react-flow__edge-path) {
+  stroke: #000000;
+  stroke-width: 2px;
+}
+
+:global(.react-flow__handle) {
+  border: 2px solid #000000 !important;
+  background: #c0c0c0 !important;
+  width: 10px !important;
+  height: 10px !important;
+}

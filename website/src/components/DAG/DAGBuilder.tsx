@@ -13,7 +13,7 @@ import type {
   DAGId,
   TaskConfig,
 } from '@site/src/dag/types';
-import { DAGGraph } from './DAGGraph';
+import { FlowGraph } from './FlowGraph';
 import styles from './DAGBuilder.module.css';
 
 export interface DAGBuilderProps {
@@ -25,6 +25,8 @@ export interface DAGBuilderProps {
   onSave?: (dag: DAG) => void;
   /** Callback when export is requested */
   onExport?: (dag: DAG, format: 'json' | 'yaml') => void;
+  /** Callback when execution is requested (wires to real API when configured) */
+  onExecute?: (dag: DAG) => void;
 }
 
 type NodeType = DAGNodeType['type'];
@@ -48,12 +50,26 @@ function createEmptyDAG(name: string): DAG {
   return {
     id: `dag-${Date.now()}` as DAGId,
     name,
+    version: '1.0.0',
+    createdAt: new Date(),
+    updatedAt: new Date(),
     nodes: new Map(),
     edges: new Map(),
     config: {
       maxParallelism: 5,
-      defaultTimeout: 30000,
-      errorHandling: 'stop-on-failure',
+      maxExecutionTimeMs: 600_000,
+      defaultRetryPolicy: {
+        maxAttempts: 2,
+        baseDelayMs: 1000,
+        maxDelayMs: 30_000,
+        backoffMultiplier: 2,
+        retryableErrors: ['TIMEOUT', 'RATE_LIMITED'],
+        nonRetryableErrors: ['PERMISSION_DENIED'],
+      },
+      failFast: false,
+      enableCheckpoints: false,
+      enableCaching: false,
+      executionMode: 'wave' as const,
     },
     inputs: [],
     outputs: [],
@@ -69,6 +85,7 @@ export function DAGBuilder({
   availableSkills = [],
   onSave,
   onExport,
+  onExecute,
 }: DAGBuilderProps): React.ReactElement {
   const [dag, setDag] = useState<DAG>(
     initialDag ?? createEmptyDAG('New Workflow')
@@ -77,6 +94,9 @@ export function DAGBuilder({
   const [isAddingNode, setIsAddingNode] = useState(false);
   const [newNodeType, setNewNodeType] = useState<NodeType>('skill');
   const [newNodeSkill, setNewNodeSkill] = useState('');
+  const [newNodeName, setNewNodeName] = useState('');
+  const [newNodeDesc, setNewNodeDesc] = useState('');
+  const [newNodeModel, setNewNodeModel] = useState<'haiku' | 'sonnet' | 'opus' | ''>('haiku');
   const [newNodeDeps, setNewNodeDeps] = useState<string[]>([]);
   const [dagName, setDagName] = useState(dag.name);
   const [showExportModal, setShowExportModal] = useState(false);
@@ -92,12 +112,16 @@ export function DAGBuilder({
     const nodeId = generateNodeId();
     const newNode: DAGNodeType = {
       id: nodeId,
+      name: newNodeName || (newNodeType === 'skill' ? newNodeSkill : newNodeType),
+      description: newNodeDesc || undefined,
       type: newNodeType,
       skillId: newNodeType === 'skill' ? newNodeSkill : undefined,
       dependencies: newNodeDeps as NodeId[],
-      inputMappings: [],
       state: { status: 'pending' },
-      config: { ...DEFAULT_CONFIG },
+      config: {
+        ...DEFAULT_CONFIG,
+        model: newNodeModel || undefined,
+      },
     };
 
     setDag(prev => {
@@ -116,9 +140,12 @@ export function DAGBuilder({
 
     // Reset form
     setIsAddingNode(false);
+    setNewNodeName('');
+    setNewNodeDesc('');
     setNewNodeSkill('');
+    setNewNodeModel('haiku');
     setNewNodeDeps([]);
-  }, [newNodeType, newNodeSkill, newNodeDeps]);
+  }, [newNodeType, newNodeSkill, newNodeName, newNodeDesc, newNodeModel, newNodeDeps]);
 
   // Delete selected node
   const handleDeleteNode = useCallback(() => {
@@ -246,6 +273,16 @@ export function DAGBuilder({
           >
             📤 Export
           </button>
+          {onExecute && (
+            <button
+              className={styles.primaryButton}
+              onClick={() => onExecute(dag)}
+              disabled={dag.nodes.size === 0}
+              title="Execute workflow via Haiku API"
+            >
+              ▶ Run
+            </button>
+          )}
         </div>
       </div>
 
@@ -254,12 +291,9 @@ export function DAGBuilder({
         {/* Graph visualization */}
         <div className={styles.graphArea}>
           {dag.nodes.size > 0 ? (
-            <DAGGraph
+            <FlowGraph
               dag={dag}
-              width={800}
-              height={500}
               onNodeSelect={setSelectedNodeId}
-              showDetails={true}
             />
           ) : (
             <div className={styles.emptyState}>
@@ -323,6 +357,44 @@ export function DAGBuilder({
                   </select>
                 </div>
               )}
+
+              {/* Display Name */}
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>Display Name:</label>
+                <input
+                  type="text"
+                  className={styles.textInput}
+                  value={newNodeName}
+                  onChange={e => setNewNodeName(e.target.value)}
+                  placeholder={newNodeSkill || newNodeType || 'Node name'}
+                />
+              </div>
+
+              {/* Task / Prompt */}
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>Task / Prompt:</label>
+                <textarea
+                  className={styles.textArea}
+                  value={newNodeDesc}
+                  onChange={e => setNewNodeDesc(e.target.value)}
+                  placeholder="What should this node do? e.g. 'Review the code for security issues'"
+                  rows={3}
+                />
+              </div>
+
+              {/* Model */}
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>Model:</label>
+                <select
+                  className={styles.select}
+                  value={newNodeModel}
+                  onChange={e => setNewNodeModel(e.target.value as 'haiku' | 'sonnet' | 'opus' | '')}
+                >
+                  <option value="haiku">claude-haiku (fast, free tier)</option>
+                  <option value="sonnet">claude-sonnet (balanced)</option>
+                  <option value="opus">claude-opus (most capable)</option>
+                </select>
+              </div>
 
               {/* Dependencies */}
               {existingNodeIds.length > 0 && (
@@ -406,8 +478,16 @@ export function DAGBuilder({
         <span>Nodes: {dag.nodes.size}</span>
         <span>•</span>
         <span>
-          Selected: {selectedNodeId ? dag.nodes.get(selectedNodeId as NodeId)?.skillId || selectedNodeId : 'None'}
+          Selected: {selectedNodeId
+            ? (dag.nodes.get(selectedNodeId as NodeId)?.name || dag.nodes.get(selectedNodeId as NodeId)?.skillId || selectedNodeId)
+            : 'None'}
         </span>
+        {selectedNodeId && dag.nodes.get(selectedNodeId as NodeId)?.config.model && (
+          <>
+            <span>•</span>
+            <span>{dag.nodes.get(selectedNodeId as NodeId)?.config.model}</span>
+          </>
+        )}
       </div>
     </div>
   );
