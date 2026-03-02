@@ -19,6 +19,13 @@ Read, Write, Edit, Bash, Grep, Glob, mcp__supabase__*
 
 `supabase` `rls` `database` `postgres` `migration` `schema` `security`
 
+## 🤝 Pairs Great With
+
+- **[Postgresql Optimization](/docs/skills/postgresql_optimization)**: Supabase runs PostgreSQL; performance tuning applies directly to Supabase databases
+- **[Modern Auth 2026](/docs/skills/modern_auth_2026)**: Supabase Auth provides the backend for passkey, OAuth, and magic link implementation
+- **[Database Design Patterns](/docs/skills/database_design_patterns)**: Supabase schema and RLS policy design follows relational database design patterns
+- **[Drizzle Migrations](/docs/skills/drizzle_migrations)**: Drizzle ORM manages schema migrations against Supabase PostgreSQL databases
+
 ## References
 
 - [Advanced RLS Policy Patterns](./references/rls-patterns)

@@ -1,7 +1,7 @@
 ---
 title: Parakeet Reminder System
 sidebar_label: Parakeet Reminder System
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Parakeet Reminder System
 

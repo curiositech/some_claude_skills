@@ -1,7 +1,7 @@
 ---
 title: Debug Tools & Visualization
 sidebar_label: Debug Tools & Visualization
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Debug Tools & Visualization
 

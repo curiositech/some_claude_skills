@@ -15,6 +15,17 @@ Process, analyze, and visualize geospatial data at scale. Handles drone imagery,
 Read, Write, Edit, Bash(npm:*, gdal*, postgres*)
 ```
 
+## Tags
+
+`geospatial` `data` `pipeline` `gis` `postgis`
+
+## 🤝 Pairs Great With
+
+- **[Large Scale Map Visualization](/docs/skills/large_scale_map_visualization)**: Geospatial pipelines produce the optimized data that map visualizations render
+- **[Computer Vision Pipeline](/docs/skills/computer_vision_pipeline)**: Drone imagery processing combines CV object detection with geospatial coordinates
+- **[Drone Inspection Specialist](/docs/skills/drone_inspection_specialist)**: Infrastructure inspection data flows through geospatial pipelines for analysis
+- **[Data Pipeline Engineer](/docs/skills/data_pipeline_engineer)**: Geospatial ETL shares batching, streaming, and transformation patterns with general data pipelines
+
 ## References
 
 - [Coordinate Systems & Transformations](./references/coordinate-systems)

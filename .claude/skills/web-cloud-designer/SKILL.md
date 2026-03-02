@@ -1,22 +1,25 @@
 ---
 name: web-cloud-designer
-description: Creates realistic cloud effects for web using SVG filters (feTurbulence, feDisplacementMap), CSS animations, and layering techniques. Use for atmospheric backgrounds, weather effects, skyboxes, parallax scenes, and decorative cloud elements. Activate on "cloud effect", "SVG clouds", "realistic clouds", "atmospheric background", "sky animation", "feTurbulence", "weather effects", "parallax clouds". NOT for 3D rendering (use WebGL/Three.js skills), photo manipulation (use image editing tools), weather data APIs (use data integration skills), or simple CSS gradients without volumetric effects.
+description: Creates realistic cloud effects for web using SVG filters (feTurbulence, feDisplacementMap), CSS animations, and layering techniques. Use for atmospheric backgrounds, weather effects, skyboxes,
+  parallax scenes, and decorative cloud elements. Activate on "cloud effect", "SVG clouds", "realistic clouds", "atmospheric background", "sky animation", "feTurbulence", "weather effects", "parallax clouds".
+  NOT for 3D rendering (use WebGL/Three.js skills), photo manipulation (use image editing tools), weather data APIs (use data integration skills), or simple CSS gradients without volumetric effects.
 allowed-tools: Read,Write,Edit,WebFetch,Bash
-category: Design & Creative
-tags:
-  - svg
-  - css
-  - animation
-  - atmospheric
-  - visual-effects
-  - web
-pairs-with:
+metadata:
+  category: Design & Creative
+  pairs-with:
   - skill: web-design-expert
     reason: Integrate clouds into overall web design
   - skill: physics-rendering-expert
     reason: Realistic lighting and shadow calculations
   - skill: color-theory-palette-harmony-expert
     reason: Sky gradients and atmospheric color
+  tags:
+  - svg
+  - css
+  - animation
+  - atmospheric
+  - visual-effects
+  - web
 ---
 
 # Web Cloud Designer
@@ -60,7 +63,7 @@ Generates Perlin noise that forms cloud shapes.
 <feTurbulence
   type="fractalNoise"      <!-- fractalNoise for clouds (NOT turbulence) -->
   baseFrequency="0.01"     <!-- 0.005-0.02: lower = larger, rounder shapes -->
-  numOctaves="4"           <!-- 3-5: detail level, >5 diminishing returns -->
+  numOctaves="4"           <!-- 3-5: detail level, &gt;5 diminishing returns -->
   seed="42"                <!-- Change for shape variation (free!) -->
   result="noise"
 />

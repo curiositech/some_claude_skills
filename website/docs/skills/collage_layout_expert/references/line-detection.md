@@ -1,7 +1,7 @@
 ---
 title: Line Detection Algorithms (State of the Art)
-sidebar_label: Line Detection Algorithms (...
-sidebar_position: 8
+sidebar_label: Line Detection Algorithms (Sta...
+sidebar_position: 2
 ---
 # Line Detection Algorithms (State of the Art)
 

@@ -1,7 +1,7 @@
 ---
 title: Mental Health NLP Models
 sidebar_label: Mental Health NLP Models
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Mental Health NLP Models
 

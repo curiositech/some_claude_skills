@@ -1,7 +1,7 @@
 ---
 title: Documentation Templates Reference
-sidebar_label: Documentation Templates Ref...
-sidebar_position: 3
+sidebar_label: Documentation Templates Refere...
+sidebar_position: 2
 ---
 # Documentation Templates Reference
 

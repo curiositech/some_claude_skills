@@ -1,5 +1,6 @@
 ---
 name: debugger
+description: Troubleshoots errors, performs root cause analysis, and fixes bugs systematically
 role: Expert Troubleshooter & Root Cause Analyst
 allowed-tools: Read,Edit,Glob,Grep,Bash,Task,TodoWrite
 triggers:

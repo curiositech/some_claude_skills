@@ -1,7 +1,7 @@
 ---
 title: Analysis Scripts
 sidebar_label: Analysis Scripts
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Analysis Scripts
 

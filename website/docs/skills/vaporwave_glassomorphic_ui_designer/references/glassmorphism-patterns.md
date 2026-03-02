@@ -1,6 +1,6 @@
 ---
 title: Glassmorphism Patterns for SwiftUI
-sidebar_label: Glassmorphism Patterns for ...
+sidebar_label: Glassmorphism Patterns for Swi...
 sidebar_position: 2
 ---
 # Glassmorphism Patterns for SwiftUI

@@ -1,7 +1,7 @@
 ---
-title: "Mobile: The Pocket PC Paradigm"
-sidebar_label: "Mobile: The Pocket PC Paradigm"
-sidebar_position: 3
+title: Mobile: The Pocket PC Paradigm
+sidebar_label: Mobile: The Pocket PC Paradigm
+sidebar_position: 2
 ---
 # Mobile: The Pocket PC Paradigm
 

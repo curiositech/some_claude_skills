@@ -1,7 +1,7 @@
 ---
 title: Component Documentation Template
-sidebar_label: Component Documentation Tem...
-sidebar_position: 1
+sidebar_label: Component Documentation Templa...
+sidebar_position: 2
 ---
 # Component Documentation Template
 

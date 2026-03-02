@@ -19,6 +19,13 @@ Read, Write, Edit, Bash, Grep, Glob
 
 `recovery` `social` `privacy` `sponsor` `groups` `messaging` `peer-support`
 
+## 🤝 Pairs Great With
+
+- **[Hipaa Compliance](/docs/skills/hipaa_compliance)**: Social features involving health disclosures must comply with HIPAA privacy requirements
+- **[Recovery Coach Patterns](/docs/skills/recovery_coach_patterns)**: Social components follow Recovery Coach codebase conventions and data patterns
+- **[Real Time Collaboration Engine](/docs/skills/real_time_collaboration_engine)**: Sponsor/sponsee messaging and group chat need real-time communication infrastructure
+- **[Crisis Detection Intervention Ai](/docs/skills/crisis_detection_intervention_ai)**: Social messages must be monitored for crisis signals requiring intervention
+
 ## References
 
 - [Accountability Features](./references/accountability)

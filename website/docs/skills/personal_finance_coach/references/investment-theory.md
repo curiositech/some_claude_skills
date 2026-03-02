@@ -1,7 +1,7 @@
 ---
 title: Investment Theory
 sidebar_label: Investment Theory
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Investment Theory
 

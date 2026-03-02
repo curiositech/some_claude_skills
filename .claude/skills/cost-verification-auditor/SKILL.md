@@ -1,7 +1,20 @@
 ---
 name: cost-verification-auditor
-description: Audit LLM token cost estimates against actual API usage. Activate on 'cost verification', 'token estimate accuracy', 'API cost audit', 'estimation variance'. NOT for pricing lookups, budget planning, or cost optimization strategies.
+description: Audit LLM token cost estimates against actual API usage. Activate on 'cost verification', 'token estimate accuracy', 'API cost audit', 'estimation variance'. NOT for pricing lookups, budget
+  planning, or cost optimization strategies.
 allowed-tools: Read,Write,Bash
+metadata:
+  tags:
+  - cost
+  - verification
+  - auditor
+  pairs-with:
+  - skill: cost-accrual-tracker
+    reason: Compares tracked estimates against actual API invoices to find estimation drift
+  - skill: cost-optimizer
+    reason: Audit findings calibrate the optimizer prediction models for future runs
+  - skill: logging-observability
+    reason: Token usage logs provide the raw data needed for cost verification analysis
 ---
 
 # Cost Verification Auditor

@@ -19,6 +19,12 @@ Read, Write, Edit, mcp__stability-ai__*, mcp__ideogram__*, WebFetch, WebSearch, 
 
 `infographics` `hand-drawn` `diagrams` `education` `recovery` `neuroscience` `AI-image-generation` `accessibility`
 
+## 🤝 Pairs Great With
+
+- **[Pixel Art Infographic Creator](/docs/skills/pixel_art_infographic_creator)**: Both create educational infographics but in contrasting visual styles for different audiences
+- **[Recovery Education Writer](/docs/skills/recovery_education_writer)**: Recovery education articles use hand-drawn brain diagrams and process illustrations
+- **[Diagramming Expert](/docs/skills/diagramming_expert)**: Diagram structure and information hierarchy principles apply across visual styles
+
 ## References
 
 - [Accessibility Standards for Hand-Drawn Infographics](./references/accessibility-standards)

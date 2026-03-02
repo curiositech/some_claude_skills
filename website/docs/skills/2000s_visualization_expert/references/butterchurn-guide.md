@@ -1,7 +1,7 @@
 ---
 title: Butterchurn Integration Guide
 sidebar_label: Butterchurn Integration Guide
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Butterchurn Integration Guide
 

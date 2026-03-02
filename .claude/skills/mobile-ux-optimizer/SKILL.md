@@ -1,9 +1,11 @@
 ---
 name: mobile-ux-optimizer
-description: Mobile-first UX optimization for touch interfaces, responsive layouts, and performance. Use for viewport handling, touch targets, gestures, mobile navigation. Activate on mobile, touch, responsive, dvh, viewport, safe area, hamburger menu. NOT for native app development (use React Native skills), desktop-only features, or general CSS (use Tailwind docs).
+description: Mobile-first UX optimization for touch interfaces, responsive layouts, and performance. Use for viewport handling, touch targets, gestures, mobile navigation. Activate on mobile, touch, responsive,
+  dvh, viewport, safe area, hamburger menu. NOT for native app development (use React Native skills), desktop-only features, or general CSS (use Tailwind docs).
 allowed-tools: Read,Write,Edit,Bash,Grep,Glob
-category: Design & Creative
-tags:
+metadata:
+  category: Design & Creative
+  tags:
   - mobile
   - ux
   - touch
@@ -11,6 +13,13 @@ tags:
   - viewport
   - safe-area
   - navigation
+  pairs-with:
+  - skill: pwa-expert
+    reason: PWAs are a primary mobile delivery mechanism requiring touch and viewport optimization
+  - skill: ux-friction-analyzer
+    reason: Mobile-specific friction points (fat finger errors, scroll hijacking) need specialized analysis
+  - skill: adhd-design-expert
+    reason: Mobile ADHD users face amplified cognitive load that requires specialized UX optimization
 ---
 
 # Mobile-First UX Optimization

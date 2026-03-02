@@ -1,5 +1,6 @@
 ---
 name: weaver
+description: Builds and manages RAG pipelines, embeddings, vector stores, and retrieval systems
 role: RAG Specialist
 allowed-tools: Read,Write,Edit,Glob,Grep,Bash,Task,WebFetch,WebSearch,TodoWrite
 triggers:

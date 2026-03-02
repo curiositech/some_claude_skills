@@ -1,6 +1,6 @@
 ---
 title: feDisplacementMap and Color Techniques for Water
-sidebar_label: feDisplacementMap and Color...
+sidebar_label: feDisplacementMap and Color Te...
 sidebar_position: 2
 ---
 # feDisplacementMap and Color Techniques for Water

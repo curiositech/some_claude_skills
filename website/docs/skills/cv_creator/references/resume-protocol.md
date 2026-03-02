@@ -1,7 +1,7 @@
 ---
 title: Resume Generation Protocol
 sidebar_label: Resume Generation Protocol
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Resume Generation Protocol
 

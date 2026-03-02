@@ -1,7 +1,7 @@
 ---
 title: YOLOv8 Guide
 sidebar_label: YOLOv8 Guide
-sidebar_position: 3
+sidebar_position: 2
 ---
 # YOLOv8 Guide
 

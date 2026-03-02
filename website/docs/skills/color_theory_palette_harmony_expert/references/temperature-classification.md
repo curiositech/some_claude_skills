@@ -1,7 +1,7 @@
 ---
 title: Warm/Cool Temperature Classification
-sidebar_label: Warm/Cool Temperature Class...
-sidebar_position: 6
+sidebar_label: Warm/Cool Temperature Classifi...
+sidebar_position: 2
 ---
 # Warm/Cool Temperature Classification
 

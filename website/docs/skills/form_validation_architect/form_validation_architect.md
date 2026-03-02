@@ -3,7 +3,7 @@ sidebar_label: Form Validation Architect
 sidebar_position: 1
 ---
 
-# 🤖 Form Validation Architect
+# ✅ Form Validation Architect
 
 End-to-end form handling with react-hook-form, Zod schemas, validation patterns, error messaging, field arrays, and multi-step wizards. Use for complex forms, validation architecture, autosave, field dependencies. Activate on "form validation", "react-hook-form", "Zod", "form error", "multi-step form", "wizard". NOT for simple HTML forms, backend validation only, or non-React frameworks.
 
@@ -14,6 +14,17 @@ End-to-end form handling with react-hook-form, Zod schemas, validation patterns,
 ```
 Read, Write, Edit, Bash(npm:*)
 ```
+
+## Tags
+
+`form` `validation` `architect` `form-validation` `react-hook-form`
+
+## 🤝 Pairs Great With
+
+- **[Typescript Advanced Patterns](/docs/skills/typescript_advanced_patterns)**: Zod schemas and generic form types leverage advanced TypeScript patterns
+- **[Rest Api Design](/docs/skills/rest_api_design)**: Form validation schemas should match API endpoint request validation for consistency
+- **[Ux Friction Analyzer](/docs/skills/ux_friction_analyzer)**: Form UX friction (error messages, field ordering) is a primary usability concern
+- **[React Performance Optimizer](/docs/skills/react_performance_optimizer)**: Large forms with field arrays require React render optimization for responsiveness
 
 ## References
 

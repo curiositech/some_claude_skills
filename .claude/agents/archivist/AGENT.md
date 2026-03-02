@@ -1,5 +1,6 @@
 ---
 name: archivist
+description: Documents history, creates snapshots, writes blog posts, and preserves project knowledge
 role: Keeper of History and Documentation
 allowed-tools: Read,Write,Edit,Glob,Grep,Bash,Task,WebFetch,WebSearch,TodoWrite
 triggers:

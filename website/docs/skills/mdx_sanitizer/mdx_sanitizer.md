@@ -19,6 +19,12 @@ Read, Write, Edit, Bash, Glob, Grep
 
 `mdx` `docusaurus` `markdown` `build-tools` `sanitization`
 
+## 🤝 Pairs Great With
+
+- **[Site Reliability Engineer](/docs/skills/site_reliability_engineer)**: MDX build failures are a primary Docusaurus deployment blocker that SRE validates
+- **[Technical Writer](/docs/skills/technical_writer)**: Technical writers produce the MDX content that needs sanitization for safe rendering
+- **[Skill Documentarian](/docs/skills/skill_documentarian)**: Skill documentation in MDX format requires sanitization before website deployment
+
 # MDX Sanitizer
 
 Comprehensive MDX content sanitizer that prevents JSX parsing errors caused by angle brackets, generics, and other conflicting patterns.

@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # 📊 Drizzle Migrations
 
-Manage database schema with Drizzle ORM and SQLite migrations. Use when adding tables, modifying columns, creating indexes, or running migrations. Activates for database schema changes, migration generation, and Drizzle query patterns.
+Drizzle ORM schema management and SQLite migrations — adding tables, modifying columns, creating indexes, generating and running migrations, Drizzle query patterns. NOT for Prisma, TypeORM, Sequelize, or raw SQL migration tools.
 
 ---
 
@@ -18,6 +18,12 @@ Read, Write, Edit, Bash(npm:*, npx:*)
 ## Tags
 
 `database` `drizzle` `migrations`
+
+## 🤝 Pairs Great With
+
+- **[Database Design Patterns](/docs/skills/database_design_patterns)**: Schema migration implementation follows database design pattern decisions
+- **[Supabase Admin](/docs/skills/supabase_admin)**: Drizzle migrations run against Supabase PostgreSQL databases with RLS considerations
+- **[Fullstack Debugger](/docs/skills/fullstack_debugger)**: Migration failures and schema mismatches are common fullstack debugging scenarios
 
 # Drizzle ORM Migrations
 

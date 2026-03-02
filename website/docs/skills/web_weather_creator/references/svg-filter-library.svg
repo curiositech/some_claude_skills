@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+  <defs>
+    <!--
+      WEB WEATHER CREATOR - SVG FILTER LIBRARY
+      Copy these filters to your project and reference with filter="url(#filter-name)"
+    -->
+
+    <!-- ============================================ -->
+    <!-- CLOUD FILTERS -->
+    <!-- ============================================ -->
+
+    <!-- Cumulus (fluffy) clouds -->
+    <filter id="cloud-cumulus" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="4" seed="1" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+      <feGaussianBlur in="displaced" stdDeviation="4" result="blurred"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1.2 0"/>
+    </filter>
+
+    <!-- Cirrus (wispy) clouds -->
+    <filter id="cloud-cirrus" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.003" numOctaves="5" seed="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+      <feGaussianBlur in="displaced" stdDeviation="2"/>
+    </filter>
+
+    <!-- Stratus (flat) clouds -->
+    <filter id="cloud-stratus" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+      <feGaussianBlur in="displaced" stdDeviation="6"/>
+    </filter>
+
+    <!-- Storm clouds -->
+    <filter id="cloud-storm" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.006" numOctaves="5" seed="4" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="40" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+      <feGaussianBlur in="displaced" stdDeviation="3" result="blurred"/>
+      <feColorMatrix type="matrix" values="0.6 0 0 0 0  0 0.6 0 0 0  0 0 0.7 0 0  0 0 0 1 0"/>
+    </filter>
+
+    <!-- Cartoon clouds -->
+    <filter id="cloud-cartoon" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="5" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+      <feGaussianBlur in="displaced" stdDeviation="10"/>
+    </filter>
+
+
+    <!-- ============================================ -->
+    <!-- WAVE/WATER FILTERS -->
+    <!-- ============================================ -->
+
+    <!-- Ocean swell -->
+    <filter id="wave-ocean" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="turbulence" baseFrequency="0.005 0.015" numOctaves="3" seed="10" result="turbulence">
+        <animate attributeName="baseFrequency" dur="20s" values="0.005 0.015; 0.007 0.018; 0.005 0.015" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="40" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Lake ripples -->
+    <filter id="wave-lake" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="turbulence" baseFrequency="0.02 0.04" numOctaves="2" seed="11" result="turbulence">
+        <animate attributeName="baseFrequency" dur="8s" values="0.02 0.04; 0.025 0.05; 0.02 0.04" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="15" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Beach shore -->
+    <filter id="wave-beach" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="turbulence" baseFrequency="0.008 0.02" numOctaves="4" seed="12" result="turbulence">
+        <animate attributeName="baseFrequency" dur="15s" values="0.008 0.02; 0.01 0.025; 0.008 0.02" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="30" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Pool reflection -->
+    <filter id="wave-pool" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="turbulence" baseFrequency="0.03 0.03" numOctaves="2" seed="13" result="turbulence">
+        <animate attributeName="baseFrequency" dur="5s" values="0.03 0.03; 0.035 0.035; 0.03 0.03" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+
+    <!-- ============================================ -->
+    <!-- FOG/MIST FILTERS -->
+    <!-- ============================================ -->
+
+    <!-- Light haze -->
+    <filter id="fog-light" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.005" numOctaves="3" seed="20" result="noise"/>
+      <feGaussianBlur in="noise" stdDeviation="15" result="blur"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.3 0"/>
+    </filter>
+
+    <!-- Morning mist -->
+    <filter id="fog-mist" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.003" numOctaves="4" seed="21" result="noise"/>
+      <feGaussianBlur in="noise" stdDeviation="25" result="blur"/>
+      <feColorMatrix type="matrix" values="0.9 0 0 0 0.05  0 0.9 0 0 0.05  0 0 0.95 0 0.08  0 0 0 0.5 0"/>
+    </filter>
+
+    <!-- Dense fog -->
+    <filter id="fog-dense" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.002" numOctaves="5" seed="22" result="noise"/>
+      <feGaussianBlur in="noise" stdDeviation="40" result="blur"/>
+      <feColorMatrix type="matrix" values="0.8 0 0 0 0.1  0 0.85 0 0 0.1  0 0 0.9 0 0.12  0 0 0 0.7 0"/>
+    </filter>
+
+    <!-- Eerie fog (horror) -->
+    <filter id="fog-eerie" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.004" numOctaves="4" seed="23" result="noise"/>
+      <feGaussianBlur in="noise" stdDeviation="30" result="blur"/>
+      <feColorMatrix type="matrix" values="0.5 0 0 0 0.1  0 0.55 0 0 0.12  0 0 0.65 0 0.15  0 0 0 0.6 0"/>
+    </filter>
+
+
+    <!-- ============================================ -->
+    <!-- LIGHTNING GLOW -->
+    <!-- ============================================ -->
+
+    <filter id="lightning-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="lightning-intense" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0.2  0 1 0 0 0.3  0 0 1.5 0 0.5  0 0 0 1 0" result="tinted"/>
+      <feMerge>
+        <feMergeNode in="tinted"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+
+    <!-- ============================================ -->
+    <!-- FOAM/SPRAY TEXTURE -->
+    <!-- ============================================ -->
+
+    <filter id="foam-texture" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="turbulence" baseFrequency="0.02 0.05" numOctaves="3" seed="30" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <filter id="spray-particles" x="-50%" y="-50%" width="200%" height="200%">
+      <feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="31" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 15 -7" result="particles"/>
+      <feGaussianBlur in="particles" stdDeviation="0.5"/>
+    </filter>
+
+
+    <!-- ============================================ -->
+    <!-- AURORA GLOW -->
+    <!-- ============================================ -->
+
+    <filter id="aurora-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feColorMatrix type="saturate" values="1.5" result="saturated"/>
+      <feMerge>
+        <feMergeNode in="saturated"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+
+    <!-- ============================================ -->
+    <!-- GOD RAYS SOFT EDGE -->
+    <!-- ============================================ -->
+
+    <filter id="godrays-mask" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+
+
+    <!-- ============================================ -->
+    <!-- LENS FLARE GLOW -->
+    <!-- ============================================ -->
+
+    <filter id="flare-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="15" result="blur1"/>
+      <feGaussianBlur stdDeviation="30" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+  </defs>
+</svg>

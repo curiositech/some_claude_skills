@@ -1,7 +1,7 @@
 ---
 title: Composition Guidelines for Educational Diagrams
-sidebar_label: Composition Guidelines for ...
-sidebar_position: 5
+sidebar_label: Composition Guidelines for Edu...
+sidebar_position: 2
 ---
 # Composition Guidelines for Educational Diagrams
 

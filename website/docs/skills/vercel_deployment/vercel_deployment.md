@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # ⚙️ Vercel Deployment
 
-Deploy Next.js applications to Vercel with proper configuration. Use when setting up deployment, configuring environment variables, edge functions, or troubleshooting builds. Activates for deployment issues, environment setup, and Vercel configuration.
+Deploy Next.js and React applications to Vercel — project setup, environment variables, edge functions, build troubleshooting, preview deployments, monorepo configuration. NOT for AWS/GCP/Azure deployment, self-hosted solutions, or Cloudflare Pages.
 
 ---
 
@@ -18,6 +18,12 @@ Read, Write, Edit, Bash(npm:*, npx:*, vercel:*)
 ## Tags
 
 `devops` `automation` `web` `react`
+
+## 🤝 Pairs Great With
+
+- **[Nextjs App Router Expert](/docs/skills/nextjs_app_router_expert)**: Vercel is optimized for Next.js deployment with native App Router feature support
+- **[Devops Automator](/docs/skills/devops_automator)**: Vercel deployment automation integrates with broader CI/CD pipeline workflows
+- **[Github Actions Pipeline Builder](/docs/skills/github_actions_pipeline_builder)**: Vercel preview deployments trigger from GitHub Actions PR workflows
 
 # Vercel Deployment
 

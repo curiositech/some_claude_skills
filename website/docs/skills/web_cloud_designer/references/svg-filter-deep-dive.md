@@ -1,7 +1,7 @@
 ---
 title: SVG Filter Deep Dive for Cloud Effects
-sidebar_label: SVG Filter Deep Dive for Cl...
-sidebar_position: 3
+sidebar_label: SVG Filter Deep Dive for Cloud...
+sidebar_position: 2
 ---
 # SVG Filter Deep Dive for Cloud Effects
 

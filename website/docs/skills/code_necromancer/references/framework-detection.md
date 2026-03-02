@@ -1,7 +1,7 @@
 ---
 title: Framework Detection Patterns
 sidebar_label: Framework Detection Patterns
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Framework Detection Patterns
 

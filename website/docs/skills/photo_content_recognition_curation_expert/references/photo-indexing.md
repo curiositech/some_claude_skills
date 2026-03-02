@@ -1,7 +1,7 @@
 ---
 title: Photo Indexing Pipeline Reference
-sidebar_label: Photo Indexing Pipeline Ref...
-sidebar_position: 4
+sidebar_label: Photo Indexing Pipeline Refere...
+sidebar_position: 2
 ---
 # Photo Indexing Pipeline Reference
 

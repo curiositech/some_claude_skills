@@ -1,7 +1,7 @@
 ---
 title: Learning Architecture
 sidebar_label: Learning Architecture
-sidebar_position: 5
+sidebar_position: 2
 ---
 # Learning Architecture
 

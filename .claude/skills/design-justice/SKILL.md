@@ -1,14 +1,23 @@
 ---
 name: design-justice
-description: Digital equity and trauma-informed design for marginalized populations. Activate on "accessibility", "offline-first", "trauma-informed", "reentry", "recovery population", "shared device", "unstable phone", "digital equity", "design justice", "low-literacy", "intermittent access". NOT for general UX, marketing optimization, or enterprise SaaS design.
+description: Digital equity and trauma-informed design for marginalized populations. Activate on "accessibility", "offline-first", "trauma-informed", "reentry", "recovery population", "shared device", "unstable
+  phone", "digital equity", "design justice", "low-literacy", "intermittent access". NOT for general UX, marketing optimization, or enterprise SaaS design.
 allowed-tools: Read,Write,Edit,Glob,Grep
-category: Lifestyle & Personal
-tags:
+metadata:
+  category: Lifestyle & Personal
+  tags:
   - accessibility
   - trauma-informed
   - equity
   - civic-tech
   - offline-first
+  pairs-with:
+  - skill: national-expungement-expert
+    reason: Expungement tools serve marginalized populations that design justice principles center
+  - skill: recovery-app-onboarding
+    reason: Recovery app onboarding for vulnerable users requires trauma-informed, equitable design
+  - skill: ux-friction-analyzer
+    reason: Friction analysis for underserved communities reveals equity gaps in digital experiences
 ---
 
 # Design Justice: Equity-Centered Digital Design

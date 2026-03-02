@@ -5,13 +5,20 @@ sidebar_position: 1
 
 # ⚙️ Terraform Iac Expert
 
-
+Terraform and OpenTofu infrastructure as code — module design, state management, multi-environment setups, remote backends, secrets management, CI/CD integration. NOT for Pulumi, CDK, Ansible, or Kubernetes manifests.
 
 ---
 
 ## Tags
 
 `terraform` `iac` `infrastructure` `aws` `gcp` `azure` `opentofu`
+
+## 🤝 Pairs Great With
+
+- **[Devops Automator](/docs/skills/devops_automator)**: Terraform plans and applies run through CI/CD automation pipelines
+- **[Docker Containerization](/docs/skills/docker_containerization)**: Terraform provisions the infrastructure that Docker containers deploy onto
+- **[Github Actions Pipeline Builder](/docs/skills/github_actions_pipeline_builder)**: Terraform plan/apply stages are common GitHub Actions workflow steps
+- **[Security Auditor](/docs/skills/security_auditor)**: Infrastructure security scanning (tfsec, checkov) is part of Terraform CI validation
 
 # Terraform IaC Expert
 

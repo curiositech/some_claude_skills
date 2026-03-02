@@ -19,6 +19,12 @@ Read, Write, Edit, Bash, Grep, Glob
 
 `pwa` `service-worker` `offline` `caching` `installable` `workbox` `manifest`
 
+## 🤝 Pairs Great With
+
+- **[Mobile Ux Optimizer](/docs/skills/mobile_ux_optimizer)**: PWAs target mobile users requiring touch optimization and responsive layout patterns
+- **[Caching Strategies](/docs/skills/caching_strategies)**: Service Worker cache strategies (stale-while-revalidate, cache-first) are core PWA patterns
+- **[React Performance Optimizer](/docs/skills/react_performance_optimizer)**: PWA performance budgets require aggressive React optimization for fast initial loads
+
 ## References
 
 - [Background Sync](./references/background-sync)

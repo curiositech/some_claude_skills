@@ -1,7 +1,7 @@
 ---
 title: Unicode Box Drawing Characters
 sidebar_label: Unicode Box Drawing Characters
-sidebar_position: 4
+sidebar_position: 2
 ---
 # Unicode Box Drawing Characters
 

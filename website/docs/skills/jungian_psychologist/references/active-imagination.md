@@ -1,7 +1,7 @@
 ---
-title: "Active Imagination: Protocols and Practice"
-sidebar_label: "Active Imagination: Protoco..."
-sidebar_position: 1
+title: Active Imagination: Protocols and Practice
+sidebar_label: Active Imagination: Protocols ...
+sidebar_position: 2
 ---
 # Active Imagination: Protocols and Practice
 

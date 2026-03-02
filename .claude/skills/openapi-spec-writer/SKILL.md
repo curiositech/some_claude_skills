@@ -1,9 +1,23 @@
 ---
 name: openapi-spec-writer
-description: Expert in writing OpenAPI 3.0/3.1 specifications for REST APIs. Specializes in schema design, documentation best practices, API-first development, and tooling integration. Generates comprehensive API documentation that serves as both documentation and contract.
+description: Expert in writing OpenAPI 3.0/3.1 specifications for REST APIs. Specializes in schema design, documentation best practices, API-first development, and tooling integration. Generates comprehensive
+  API documentation that serves as both documentation and contract.
 version: 1.0.0
-category: documentation
-tags: [openapi, swagger, api-documentation, rest, api-design]
+metadata:
+  category: documentation
+  tags:
+  - openapi
+  - swagger
+  - api-documentation
+  - rest
+  - api-design
+  pairs-with:
+  - skill: api-architect
+    reason: API design decisions are formalized and documented through OpenAPI specifications
+  - skill: rest-api-design
+    reason: REST endpoint design and OpenAPI documentation are tightly coupled deliverables
+  - skill: technical-writer
+    reason: API documentation quality depends on technical writing clarity and completeness
 ---
 
 # OpenAPI Spec Writer

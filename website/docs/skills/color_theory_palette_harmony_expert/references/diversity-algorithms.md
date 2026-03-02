@@ -1,6 +1,6 @@
 ---
-title: "Diversity Algorithms: Preventing Color Monotony"
-sidebar_label: "Diversity Algorithms: Preve..."
+title: Diversity Algorithms: Preventing Color Monotony
+sidebar_label: Diversity Algorithms: Preventi...
 sidebar_position: 2
 ---
 # Diversity Algorithms: Preventing Color Monotony

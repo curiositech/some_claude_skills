@@ -1,7 +1,7 @@
 ---
 title: Metal Shaders for Vaporwave Effects
-sidebar_label: Metal Shaders for Vaporwave...
-sidebar_position: 3
+sidebar_label: Metal Shaders for Vaporwave Ef...
+sidebar_position: 2
 ---
 # Metal Shaders for Vaporwave Effects
 

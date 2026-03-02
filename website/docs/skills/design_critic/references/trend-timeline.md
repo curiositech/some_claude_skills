@@ -1,7 +1,7 @@
 ---
 title: Design Trend Timeline
 sidebar_label: Design Trend Timeline
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Design Trend Timeline
 
@@ -172,7 +172,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
 **Anti-patterns** (dated):
 - Excessive bounce animations
-- Slow transitions (>300ms)
+- Slow transitions (&gt;300ms)
 - Distracting movement
 - Parallax overload
 

@@ -15,11 +15,14 @@ function validateBrackets(filePath) {
     }
     if (inCodeBlock) return;
 
+    // Strip inline code spans before checking (backtick-wrapped content is safe in MDX)
+    const lineNoInlineCode = line.replace(/`[^`]+`/g, '');
+
     // Check for unescaped < or > followed by digit (including decimals like <0.1ms)
     // Matches: <100, <0.5ms, >50%, etc.
     // Skip backslash-escaped angle brackets (MDX escaping)
-    const lessThanMatches = line.matchAll(/(?<!\\)<(\d+[\d.]*\w*)/g);
-    const greaterThanMatches = line.matchAll(/(?<!\\)>(\d+[\d.]*\w*)/g);
+    const lessThanMatches = lineNoInlineCode.matchAll(/(?<!\\)<(\d+[\d.]*\w*)/g);
+    const greaterThanMatches = lineNoInlineCode.matchAll(/(?<!\\)>(\d+[\d.]*\w*)/g);
 
     for (const match of lessThanMatches) {
       // Skip if already escaped with &lt;

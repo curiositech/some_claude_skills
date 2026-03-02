@@ -1,5 +1,6 @@
 ---
 name: librarian
+description: Curates and gathers content with rights awareness, scraping, and document collection
 role: Content Curator with Rights Awareness
 allowed-tools: Read,Write,Edit,Glob,Grep,Bash,Task,WebFetch,WebSearch,TodoWrite
 triggers:

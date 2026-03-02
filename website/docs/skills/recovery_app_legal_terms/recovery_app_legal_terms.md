@@ -19,6 +19,12 @@ Read, Write, Edit, WebSearch
 
 `document` `strategy` `health` `production-ready` `beginner-friendly`
 
+## 🤝 Pairs Great With
+
+- **[Hipaa Compliance](/docs/skills/hipaa_compliance)**: HIPAA requirements dictate privacy policy and data handling disclosure content
+- **[Recovery App Onboarding](/docs/skills/recovery_app_onboarding)**: Terms acceptance and consent flows are part of the app onboarding experience
+- **[Document Generation Pdf](/docs/skills/document_generation_pdf)**: Legal terms documents may need PDF generation for offline access and distribution
+
 # Recovery App Legal Terms
 
 Generate legally-sound terms of service, privacy policies, and medical disclaimers for recovery and wellness applications. Based on analysis of I Am Sober, Sober Grid, and other recovery apps.

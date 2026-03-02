@@ -1,7 +1,7 @@
 ---
 title: Advanced Caching Strategies
 sidebar_label: Advanced Caching Strategies
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Advanced Caching Strategies
 

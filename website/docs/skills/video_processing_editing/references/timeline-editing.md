@@ -1,7 +1,7 @@
 ---
 title: Timeline Editing Reference
 sidebar_label: Timeline Editing Reference
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Timeline Editing Reference
 

@@ -1,7 +1,7 @@
 ---
 title: README Template Reference
 sidebar_label: README Template Reference
-sidebar_position: 3
+sidebar_position: 2
 ---
 # README Template Reference
 # Copy and customize for your project

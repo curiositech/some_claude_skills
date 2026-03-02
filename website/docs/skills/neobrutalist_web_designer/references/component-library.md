@@ -1,7 +1,7 @@
 ---
 title: Neobrutalist Component Library
 sidebar_label: Neobrutalist Component Library
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Neobrutalist Component Library
 

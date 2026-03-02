@@ -1,6 +1,6 @@
 ---
-title: "Neuroscience of Addiction: Core Concepts"
-sidebar_label: "Neuroscience of Addiction: ..."
+title: Neuroscience of Addiction: Core Concepts
+sidebar_label: Neuroscience of Addiction: Cor...
 sidebar_position: 2
 ---
 # Neuroscience of Addiction: Core Concepts
@@ -81,7 +81,7 @@ The brain's pattern-detection system that decides what's important.
 ### In Recovery:
 - Salience network recalibrates over 2-4 weeks
 - Paranoia fades as dopamine normalizes
-- If persists >30 days → may need antipsychotic support
+- If persists &gt;30 days → may need antipsychotic support
 
 ---
 

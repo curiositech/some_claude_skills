@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # ✅ Code Review Checklist
 
-Generates comprehensive, context-aware code review checklists tailored to the specific codebase, programming language, and team standards. Analyzes PR diffs and suggests what reviewers should focus on.
+Generate context-aware code review checklists from PR diffs — tailored to language, codebase patterns, and team standards. Identifies what reviewers should focus on. NOT for automated code fixing, test generation, or security auditing.
 
 ---
 
@@ -18,6 +18,12 @@ Read, Grep, Glob
 ## Tags
 
 `code-review` `quality` `checklist` `pr-review` `best-practices`
+
+## 🤝 Pairs Great With
+
+- **[Security Auditor](/docs/skills/security_auditor)**: Security checks are a critical section of any thorough code review checklist
+- **[Refactoring Surgeon](/docs/skills/refactoring_surgeon)**: Code smell detection during review leads directly to targeted refactoring
+- **[Test Automation Expert](/docs/skills/test_automation_expert)**: Test coverage verification is a key code review checkpoint
 
 # Code Review Checklist Generator
 

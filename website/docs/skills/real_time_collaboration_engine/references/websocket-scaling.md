@@ -1,7 +1,7 @@
 ---
 title: WebSocket Scaling Strategies
 sidebar_label: WebSocket Scaling Strategies
-sidebar_position: 3
+sidebar_position: 2
 ---
 # WebSocket Scaling Strategies
 

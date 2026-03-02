@@ -1,7 +1,7 @@
 ---
 title: MVP Development (2-Week Protocol)
-sidebar_label: MVP Development (2-Week Pro...
-sidebar_position: 4
+sidebar_label: MVP Development (2-Week Protoc...
+sidebar_position: 2
 ---
 # MVP Development (2-Week Protocol)
 

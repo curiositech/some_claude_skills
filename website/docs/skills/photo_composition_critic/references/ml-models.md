@@ -1,7 +1,7 @@
 ---
 title: Computational Aesthetics Models
-sidebar_label: Computational Aesthetics Mo...
-sidebar_position: 4
+sidebar_label: Computational Aesthetics Model...
+sidebar_position: 2
 ---
 # Computational Aesthetics Models
 

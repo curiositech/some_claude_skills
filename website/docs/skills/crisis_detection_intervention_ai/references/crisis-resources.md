@@ -1,7 +1,7 @@
 ---
 title: Crisis Resources
 sidebar_label: Crisis Resources
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Crisis Resources
 

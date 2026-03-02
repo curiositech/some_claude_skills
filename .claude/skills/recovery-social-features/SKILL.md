@@ -1,15 +1,18 @@
 ---
 name: recovery-social-features
-description: Privacy-first social features for recovery apps - sponsors, groups, messaging, friend connections. Use for sponsor/sponsee systems, meeting-based groups, peer support, safe messaging. Activate on "sponsor", "sponsee", "recovery group", "accountability partner", "sober network", "meeting group", "peer support". NOT for general social media patterns (use standard social), dating features, or public profiles.
+description: Privacy-first social features for recovery apps - sponsors, groups, messaging, friend connections. Use for sponsor/sponsee systems, meeting-based groups, peer support, safe messaging. Activate
+  on "sponsor", "sponsee", "recovery group", "accountability partner", "sober network", "meeting group", "peer support". NOT for general social media patterns (use standard social), dating features, or
+  public profiles.
 allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-category: Lifestyle & Personal
-tags:
+- Read
+- Write
+- Edit
+- Bash
+- Grep
+- Glob
+metadata:
+  category: Lifestyle & Personal
+  tags:
   - recovery
   - social
   - privacy
@@ -17,6 +20,15 @@ tags:
   - groups
   - messaging
   - peer-support
+  pairs-with:
+  - skill: hipaa-compliance
+    reason: Social features involving health disclosures must comply with HIPAA privacy requirements
+  - skill: recovery-coach-patterns
+    reason: Social components follow Recovery Coach codebase conventions and data patterns
+  - skill: real-time-collaboration-engine
+    reason: Sponsor/sponsee messaging and group chat need real-time communication infrastructure
+  - skill: crisis-detection-intervention-ai
+    reason: Social messages must be monitored for crisis signals requiring intervention
 ---
 
 # Recovery-Focused Social Features

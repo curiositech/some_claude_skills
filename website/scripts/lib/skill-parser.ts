@@ -18,6 +18,7 @@ import {
   ValidationError,
   ValidationWarning,
   SKILL_CATEGORIES,
+  SkillMetadata,
 } from './types';
 
 // =============================================================================
@@ -99,14 +100,14 @@ export function parseSkillFile(
   const shortDescription = truncateDescription(frontmatter.description, 200);
 
   // Determine category
-  const category = normalizeCategory(frontmatter.category);
+  const category = normalizeCategory(frontmatter.metadata?.category);
 
   // Parse tags
-  const tags = Array.isArray(frontmatter.tags) ? frontmatter.tags : [];
+  const tags = Array.isArray(frontmatter.metadata?.tags) ? frontmatter.metadata.tags : [];
 
   // Parse skill pairings
-  const pairsWith: SkillPairing[] = Array.isArray(frontmatter['pairs-with'])
-    ? frontmatter['pairs-with']
+  const pairsWith: SkillPairing[] = Array.isArray(frontmatter.metadata?.['pairs-with'])
+    ? frontmatter.metadata['pairs-with']
     : [];
 
   // Find references and scripts
@@ -126,7 +127,7 @@ export function parseSkillFile(
     content,
     category,
     tags,
-    badge: frontmatter.badge,
+    badge: frontmatter.metadata?.badge,
     pairsWith,
     allowedTools,
     sourcePath: skillMdPath,
@@ -347,6 +348,18 @@ export function parseAllSkills(skillsDir: string): ParsedSkill[] {
 
     if (!fs.existsSync(skillMdPath)) {
       console.warn(`Skipping ${entry.name}: no SKILL.md found`);
+      continue;
+    }
+
+    // Check for private/deprecated before full parsing
+    const rawContent = fs.readFileSync(skillMdPath, 'utf-8');
+    const rawParsed = parseFrontmatter(rawContent);
+    if (rawParsed?.frontmatter?.metadata?.private) {
+      console.log(`Skipping ${entry.name}: private`);
+      continue;
+    }
+    if (rawParsed?.frontmatter?.metadata?.deprecated) {
+      console.log(`Skipping ${entry.name}: deprecated`);
       continue;
     }
 

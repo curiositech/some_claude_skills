@@ -1,7 +1,7 @@
 ---
 title: Color Science for Interior Design
-sidebar_label: Color Science for Interior ...
-sidebar_position: 1
+sidebar_label: Color Science for Interior Des...
+sidebar_position: 2
 ---
 # Color Science for Interior Design
 

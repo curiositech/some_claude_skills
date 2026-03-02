@@ -1,6 +1,6 @@
 ---
 title: Object Detection & Tracking Reference
-sidebar_label: Object Detection & Tracking...
+sidebar_label: Object Detection & Tracking Re...
 sidebar_position: 2
 ---
 # Object Detection & Tracking Reference

@@ -1,7 +1,7 @@
 ---
 title: MCP Testing and Debugging Guide
-sidebar_label: MCP Testing and Debugging G...
-sidebar_position: 3
+sidebar_label: MCP Testing and Debugging Guid...
+sidebar_position: 2
 ---
 # MCP Testing and Debugging Guide
 

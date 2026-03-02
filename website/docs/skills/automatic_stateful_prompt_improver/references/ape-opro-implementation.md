@@ -1,7 +1,7 @@
 ---
 title: APE and OPRO Implementation Guide
-sidebar_label: APE and OPRO Implementation...
-sidebar_position: 1
+sidebar_label: APE and OPRO Implementation Gu...
+sidebar_position: 2
 ---
 # APE and OPRO Implementation Guide
 

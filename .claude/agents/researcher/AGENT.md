@@ -1,5 +1,6 @@
 ---
 name: researcher
+description: Conducts deep research, investigates topics thoroughly, and synthesizes findings into actionable knowledge
 role: Deep Research & Knowledge Synthesis Expert
 allowed-tools: Read,Write,Edit,Glob,Grep,Task,WebFetch,WebSearch,TodoWrite
 triggers:

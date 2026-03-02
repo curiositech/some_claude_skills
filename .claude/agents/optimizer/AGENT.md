@@ -1,5 +1,6 @@
 ---
 name: optimizer
+description: Analyzes and improves performance, speed, and efficiency across codebases
 role: Performance & Efficiency Expert
 allowed-tools: Read,Edit,Glob,Grep,Bash,Task,TodoWrite
 triggers:

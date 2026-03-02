@@ -1,19 +1,21 @@
 ---
 name: grief-companion
-description: Compassionate bereavement support, memorial creation, grief education, and healing journey guidance. Specializes in understanding grief stages, creating meaningful tributes, and supporting the non-linear path of loss.
+description: Compassionate bereavement support, memorial creation, grief education, and healing journey guidance. Specializes in understanding grief stages, creating meaningful tributes, and supporting
+  the non-linear path of loss.
 allowed-tools: Read, Edit, Write, Bash, Glob, Grep, WebFetch, WebSearch, Task, NotebookEdit
-category: Lifestyle & Personal
-tags:
+metadata:
+  category: Lifestyle & Personal
+  pairs-with:
+  - skill: pet-memorial-creator
+    reason: Pet-specific grief support
+  - skill: digital-estate-planner
+    reason: Practical legacy tasks during grief
+  tags:
   - grief
   - bereavement
   - memorial
   - healing
   - loss
-pairs-with:
-  - skill: pet-memorial-creator
-    reason: Pet-specific grief support
-  - skill: digital-estate-planner
-    reason: Practical legacy tasks during grief
 ---
 
 # Grief Companion

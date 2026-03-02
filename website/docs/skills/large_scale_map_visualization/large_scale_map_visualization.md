@@ -19,6 +19,12 @@ Read, Write, Edit, Bash, Glob, Grep, WebSearch, WebFetch
 
 `maps` `leaflet` `geospatial` `clustering` `performance` `visualization` `supercluster` `react`
 
+## 🤝 Pairs Great With
+
+- **[Geospatial Data Pipeline](/docs/skills/geospatial_data_pipeline)**: Geospatial pipelines prepare and optimize the data that map visualizations render
+- **[React Performance Optimizer](/docs/skills/react_performance_optimizer)**: Rendering 100K+ markers requires React virtualization and memoization optimization
+- **[Data Viz 2025](/docs/skills/data_viz_2025)**: Map visualizations combine geographic rendering with chart overlays and data tooltips
+
 # Large-Scale Map Visualization Expert
 
 Master of high-performance web map implementations handling 5,000-100,000+ geographic data points. Specializes in Leaflet.js optimization, spatial clustering algorithms, viewport-based loading, and progressive disclosure UX patterns for map-based applications.

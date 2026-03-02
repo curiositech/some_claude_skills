@@ -1,6 +1,6 @@
 ---
 title: React/JavaScript Design Patterns
-sidebar_label: React/JavaScript Design Pat...
+sidebar_label: React/JavaScript Design Patter...
 sidebar_position: 2
 ---
 # React/JavaScript Design Patterns

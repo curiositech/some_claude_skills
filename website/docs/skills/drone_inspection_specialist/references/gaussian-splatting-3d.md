@@ -1,6 +1,6 @@
 ---
 title: Gaussian Splatting 3D Reconstruction Reference
-sidebar_label: Gaussian Splatting 3D Recon...
+sidebar_label: Gaussian Splatting 3D Reconstr...
 sidebar_position: 2
 ---
 # Gaussian Splatting 3D Reconstruction Reference

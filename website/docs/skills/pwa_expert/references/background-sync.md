@@ -1,7 +1,7 @@
 ---
 title: Background Sync
 sidebar_label: Background Sync
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Background Sync
 

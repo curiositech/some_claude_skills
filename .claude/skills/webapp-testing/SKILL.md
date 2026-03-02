@@ -1,19 +1,21 @@
 ---
 name: webapp-testing
-description: "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs. Activate on: Playwright, webapp testing, browser automation, E2E testing, UI testing. NOT for API-only testing without browser, unit tests, or mobile app testing."
+description: 'Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing
+  browser logs. Activate on: Playwright, webapp testing, browser automation, E2E testing, UI testing. NOT for API-only testing without browser, unit tests, or mobile app testing.'
 allowed-tools: Read,Write,Edit,Bash,Glob,Grep
-category: Code Quality & Testing
-tags:
+metadata:
+  category: Code Quality & Testing
+  pairs-with:
+  - skill: test-automation-expert
+    reason: Comprehensive testing strategy
+  - skill: site-reliability-engineer
+    reason: Validate deployed web apps
+  tags:
   - playwright
   - e2e
   - browser
   - automation
   - ui-testing
-pairs-with:
-  - skill: test-automation-expert
-    reason: Comprehensive testing strategy
-  - skill: site-reliability-engineer
-    reason: Validate deployed web apps
 ---
 
 # Web Application Testing

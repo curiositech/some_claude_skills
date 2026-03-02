@@ -1,6 +1,6 @@
 ---
 title: Performance Patterns for Recovery Apps
-sidebar_label: Performance Patterns for Re...
+sidebar_label: Performance Patterns for Recov...
 sidebar_position: 2
 ---
 # Performance Patterns for Recovery Apps

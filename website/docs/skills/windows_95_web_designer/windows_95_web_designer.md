@@ -3,7 +3,7 @@ sidebar_label: Windows 95 Web Designer
 sidebar_position: 1
 ---
 
-# 🤖 Windows 95 Web Designer
+# 🎨 Windows 95 Web Designer
 
 Modern web applications with authentic Windows 95 aesthetic. Gradient title bars, Start menu paradigm, taskbar patterns, 3D beveled chrome. Extrapolates Win95 to AI chatbots, mobile UIs, responsive layouts. Activate on 'windows 95', 'win95', 'start menu', 'taskbar', 'retro desktop', '95 aesthetic', 'clippy'. NOT for Windows 3.1 (use windows-3-1-web-designer), vaporwave/synthwave, macOS, flat design.
 
@@ -14,6 +14,16 @@ Modern web applications with authentic Windows 95 aesthetic. Gradient title bars
 ```
 Read, Write, Edit, Glob, Grep
 ```
+
+## Tags
+
+`windows` `web` `designer`
+
+## 🤝 Pairs Great With
+
+- **[Windows 3 1 Web Designer](/docs/skills/windows_3_1_web_designer)**: Both create retro Microsoft OS-themed web apps evolving from Win31 to Win95 design language
+- **[Neobrutalist Web Designer](/docs/skills/neobrutalist_web_designer)**: Win95 thick borders and high-contrast colors share DNA with neobrutalist design principles
+- **[Web Design Expert](/docs/skills/web_design_expert)**: Win95 aesthetic requires general web design expertise for modern responsive implementation
 
 ## References
 
@@ -215,7 +225,7 @@ Win95 mentally modeled multiple displays. Apply this:
 |------------|----------------|--------|
 | Mobile (&lt;640px) | Pocket PC | Single window, taskbar bottom |
 | Tablet (640-1024px) | Laptop | Cascading windows, taskbar |
-| Desktop (>1024px) | Full desktop | Multiple windows, desktop icons |
+| Desktop (&gt;1024px) | Full desktop | Multiple windows, desktop icons |
 
 ### Dark Mode: Plus! Themes
 

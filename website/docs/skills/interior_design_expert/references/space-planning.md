@@ -1,7 +1,7 @@
 ---
 title: Space Planning Mathematics
 sidebar_label: Space Planning Mathematics
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Space Planning Mathematics
 

@@ -1,15 +1,22 @@
 ---
 name: 2026-legal-research-agent
-description: >
-  Expert legal research agent for finding and scraping expungement data state by state.
-  Knows authoritative sources, URL patterns, Firecrawl configuration, and 2026 legal landscape.
-  Activate on "find expungement data", "scrape state laws", "legal research", "court URLs",
-  "statute sources", "Clean Slate laws", "automatic expungement research".
-  NOT for interpreting laws (use national-expungement-expert), building UI, or legal advice.
-category: Uncategorized
-tags:
+description: 'Expert legal research agent for finding and scraping expungement data state by state. Knows authoritative sources, URL patterns, Firecrawl configuration, and 2026 legal landscape. Activate
+  on "find expungement data", "scrape state laws", "legal research", "court URLs", "statute sources", "Clean Slate laws", "automatic expungement research". NOT for interpreting laws (use national-expungement-expert),
+  building UI, or legal advice.
+
+  '
+metadata:
+  category: Research & Analysis
+  tags:
   - imported
   - needs-review
+  pairs-with:
+  - skill: national-expungement-expert
+    reason: Research agent finds raw legal data that the expungement expert interprets into eligibility guidance
+  - skill: research-analyst
+    reason: General research methodology strengthens legal source evaluation and evidence gathering
+  - skill: document-generation-pdf
+    reason: Legal research outputs feed directly into generating court filing documents
 ---
 
 # 2026 Legal Research Agent

@@ -19,6 +19,13 @@ Read, Write, Edit, Bash, Grep, Glob
 
 `cloudflare` `workers` `edge-computing` `serverless` `kv` `caching` `rate-limiting`
 
+## 🤝 Pairs Great With
+
+- **[Devops Automator](/docs/skills/devops_automator)**: CI/CD pipelines deploy and manage Cloudflare Worker deployments across environments
+- **[Caching Strategies](/docs/skills/caching_strategies)**: Workers KV and Cache API are key components of edge caching architectures
+- **[Modern Auth 2026](/docs/skills/modern_auth_2026)**: Workers often handle auth token validation and session management at the edge
+- **[Api Architect](/docs/skills/api_architect)**: Workers frequently serve as API gateways requiring proper REST/GraphQL design
+
 # Cloudflare Workers Development
 
 Build high-performance edge APIs with Workers, KV for caching, and Durable Objects for real-time coordination.

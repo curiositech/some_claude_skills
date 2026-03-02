@@ -1,6 +1,6 @@
 ---
 title: 3D Gaussian Splatting Pipeline for Weddings
-sidebar_label: 3D Gaussian Splatting Pipel...
+sidebar_label: 3D Gaussian Splatting Pipeline...
 sidebar_position: 2
 ---
 # 3D Gaussian Splatting Pipeline for Weddings

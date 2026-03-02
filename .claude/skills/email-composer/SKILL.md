@@ -2,11 +2,19 @@
 name: email-composer
 description: Draft professional emails for various contexts including business, technical, and customer communication. Use when the user needs help writing emails or composing professional messages.
 allowed-tools: Read,Write,Edit
-category: Content & Writing
-tags:
+metadata:
+  category: Content & Writing
+  tags:
   - email
   - communication
   - professional-writing
+  pairs-with:
+  - skill: technical-writer
+    reason: Technical writing principles improve clarity and structure in professional emails
+  - skill: partner-text-coach
+    reason: Both skills analyze communication tone and suggest empathetic, effective messaging
+  - skill: job-application-optimizer
+    reason: Job application emails and follow-ups require the same persuasive writing skills
 ---
 
 # Email Composer

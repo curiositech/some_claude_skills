@@ -1,7 +1,7 @@
 ---
 title: Multi-Object Tracking Algorithms
-sidebar_label: Multi-Object Tracking Algor...
-sidebar_position: 1
+sidebar_label: Multi-Object Tracking Algorith...
+sidebar_position: 2
 ---
 # Multi-Object Tracking Algorithms
 

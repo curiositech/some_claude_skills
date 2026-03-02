@@ -1,7 +1,7 @@
 ---
-title: "Edward Tufte's Data Visualization Principles"
-sidebar_label: "Edward Tufte's Data Visuali..."
-sidebar_position: 5
+title: Edward Tufte's Data Visualization Principles
+sidebar_label: Edward Tufte's Data Visualizat...
+sidebar_position: 2
 ---
 # Edward Tufte's Data Visualization Principles
 

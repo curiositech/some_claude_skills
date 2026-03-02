@@ -1,12 +1,21 @@
 ---
 name: recovery-coach-patterns
-description: Follow Recovery Coach codebase patterns and conventions. Use when writing new code, components, API routes, or database queries. Activates for general development, code organization, styling, and architectural decisions in this project.
+description: Follow Recovery Coach codebase patterns and conventions. Use when writing new code, components, API routes, or database queries. Activates for general development, code organization, styling,
+  and architectural decisions in this project.
 allowed-tools: Read,Write,Edit,Bash(npm:*,npx:*)
-category: Lifestyle & Personal
-tags:
+metadata:
+  category: Lifestyle & Personal
+  tags:
   - recovery
   - patterns
   - next-js
+  pairs-with:
+  - skill: recovery-social-features
+    reason: Social features follow the same Recovery Coach codebase patterns and conventions
+  - skill: recovery-app-onboarding
+    reason: Onboarding components must follow Recovery Coach coding patterns and API conventions
+  - skill: vitest-testing-patterns
+    reason: Recovery Coach components need unit tests following established testing patterns
 ---
 
 # Recovery Coach Development Patterns

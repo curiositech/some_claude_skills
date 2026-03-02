@@ -3,7 +3,7 @@ sidebar_label: Computer Vision Pipeline
 sidebar_position: 1
 ---
 
-# 📊 Computer Vision Pipeline
+# 🤖 Computer Vision Pipeline
 
 Build production computer vision pipelines for object detection, tracking, and video analysis. Handles drone footage, wildlife monitoring, and real-time detection. Supports YOLO, Detectron2, TensorFlow, PyTorch. Use for archaeological surveys, conservation, security. Activate on "object detection", "video analysis", "YOLO", "tracking", "drone footage". NOT for simple image filters, photo editing, or face recognition APIs.
 
@@ -14,6 +14,17 @@ Build production computer vision pipelines for object detection, tracking, and v
 ```
 Read, Write, Edit, Bash(python*, pip*, ffmpeg*)
 ```
+
+## Tags
+
+`computer` `vision` `pipeline` `object-detection` `video-analysis`
+
+## 🤝 Pairs Great With
+
+- **[Drone Cv Expert](/docs/skills/drone_cv_expert)**: Drone footage is a primary input source for production CV pipelines
+- **[Clip Aware Embeddings](/docs/skills/clip_aware_embeddings)**: CLIP embeddings provide semantic understanding for CV pipeline classification stages
+- **[Data Pipeline Engineer](/docs/skills/data_pipeline_engineer)**: Video/image processing pipelines share ETL patterns for batching, queuing, and error handling
+- **[Geospatial Data Pipeline](/docs/skills/geospatial_data_pipeline)**: Geospatial CV pipelines combine coordinate transforms with object detection outputs
 
 ## References
 

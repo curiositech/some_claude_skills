@@ -1,7 +1,7 @@
 ---
 title: Graph Database Analysis Reference
-sidebar_label: Graph Database Analysis Ref...
-sidebar_position: 4
+sidebar_label: Graph Database Analysis Refere...
+sidebar_position: 2
 ---
 # Graph Database Analysis Reference
 

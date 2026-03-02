@@ -1,7 +1,7 @@
 ---
 title: Art-Historical Collage Styles
 sidebar_label: Art-Historical Collage Styles
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Art-Historical Collage Styles
 

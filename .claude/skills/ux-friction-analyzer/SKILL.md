@@ -1,21 +1,24 @@
 ---
 name: ux-friction-analyzer
-description: Comprehensive UX analysis using cognitive psychology, ADHD-friendly design, Gestalt principles, and flow state engineering. Specializes in friction audits, user journey simulation, cognitive load optimization, and Fitts' Law application. Activate on "analyze UX", "friction audit", "user journey", "ADHD-friendly", "optimize flow", "reduce cognitive load", "UX audit", "conversion optimization". NOT for visual design execution (use web-design-expert), A/B testing implementation (use frontend-developer), or accessibility compliance auditing (use accessibility-auditor).
+description: Comprehensive UX analysis using cognitive psychology, ADHD-friendly design, Gestalt principles, and flow state engineering. Specializes in friction audits, user journey simulation, cognitive
+  load optimization, and Fitts' Law application. Activate on "analyze UX", "friction audit", "user journey", "ADHD-friendly", "optimize flow", "reduce cognitive load", "UX audit", "conversion optimization".
+  NOT for visual design execution (use web-design-expert), A/B testing implementation (use frontend-developer), or accessibility compliance auditing (use accessibility-auditor).
 allowed-tools: Read,Write,Edit,WebFetch
-category: Design & Creative
-tags:
-  - ux
-  - accessibility
-  - cognitive-load
-  - adhd-friendly
-  - user-research
-pairs-with:
+metadata:
+  category: Design & Creative
+  pairs-with:
   - skill: web-design-expert
     reason: Implement UX recommendations
   - skill: adhd-design-expert
     reason: Deep neurodivergent design patterns
   - skill: frontend-developer
     reason: Technical implementation of UX fixes
+  tags:
+  - ux
+  - accessibility
+  - cognitive-load
+  - adhd-friendly
+  - user-research
 ---
 
 # UX Friction Analyzer

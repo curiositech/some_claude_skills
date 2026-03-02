@@ -1,7 +1,7 @@
 ---
 title: Rate Limiting (Production-Grade)
-sidebar_label: Rate Limiting (Production-G...
-sidebar_position: 4
+sidebar_label: Rate Limiting (Production-Grad...
+sidebar_position: 2
 ---
 # Rate Limiting (Production-Grade)
 

@@ -1,7 +1,7 @@
 ---
 title: dbt Project Structure Reference
-sidebar_label: dbt Project Structure Refer...
-sidebar_position: 1
+sidebar_label: dbt Project Structure Referenc...
+sidebar_position: 2
 ---
 # dbt Project Structure Reference
 # Complete project layout with staging, intermediate, and marts layers

@@ -1,6 +1,6 @@
 ---
 title: Medication-Assisted Treatment (MAT) Deep Dive
-sidebar_label: Medication-Assisted Treatme...
+sidebar_label: Medication-Assisted Treatment ...
 sidebar_position: 2
 ---
 # Medication-Assisted Treatment (MAT) Deep Dive

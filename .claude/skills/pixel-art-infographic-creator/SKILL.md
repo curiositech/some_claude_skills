@@ -1,13 +1,22 @@
 ---
 name: pixel-art-infographic-creator
-description: "Generate pixel art diagrams and infographics for recovery education articles in retro 16-bit game aesthetic"
+description: Generate pixel art diagrams and infographics in retro 16-bit SNES aesthetic — recovery education visuals, flowcharts, data visualizations, process diagrams with dithering and limited palettes.
+  NOT for photo-realistic images, vector graphics, or high-resolution illustration.
 allowed-tools: Read,Write,Edit,Bash(python:*,npm:*),WebFetch
-category: Design & Creative
-tags:
+metadata:
+  category: Design & Creative
+  tags:
   - pixel-art
   - infographics
   - education
   - retro-gaming
+  pairs-with:
+  - skill: hand-drawn-infographic-creator
+    reason: Both create educational infographics in different visual styles for varied audience preferences
+  - skill: win31-pixel-art-designer
+    reason: Shared pixel art techniques (dithering, limited palettes) applied to different content types
+  - skill: recovery-education-writer
+    reason: Recovery education articles use pixel art infographics to explain neuroscience concepts
 ---
 
 # Pixel Art Infographic Creator

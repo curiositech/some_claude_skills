@@ -1,7 +1,26 @@
 ---
 name: sobriety-tools-guardian
-description: Performance optimization and continuous improvement for sobriety.tools recovery app. Use for load time optimization, offline capability, crisis detection, performance monitoring, automated issue detection. Activate on "sobriety.tools", "recovery app perf", "crisis detection", "offline meetings", "HALT check-in", "sponsor contacts". NOT for general Next.js help, unrelated Cloudflare Workers, or non-recovery apps.
+description: Performance optimization and continuous improvement for sobriety.tools recovery app. Use for load time optimization, offline capability, crisis detection, performance monitoring, automated
+  issue detection. Activate on "sobriety.tools", "recovery app perf", "crisis detection", "offline meetings", "HALT check-in", "sponsor contacts". NOT for general Next.js help, unrelated Cloudflare Workers,
+  or non-recovery apps.
 allowed-tools: Read,Write,Edit,Bash,Grep,Glob,Task,WebFetch
+metadata:
+  category: Lifestyle & Personal
+  tags:
+  - sobriety
+  - tools
+  - guardian
+  - sobriety.tools
+  - recovery-app-perf
+  pairs-with:
+  - skill: sober-addict-protector
+    reason: App-level optimization supports the daily protection features the protector provides
+  - skill: pwa-expert
+    reason: Offline capability for sobriety tools requires PWA Service Worker caching strategies
+  - skill: performance-profiling
+    reason: Load time optimization for crisis-access features requires systematic performance profiling
+  - skill: crisis-detection-intervention-ai
+    reason: Sobriety tools must integrate crisis detection for users in high-risk situations
 ---
 
 # Sobriety Tools Guardian

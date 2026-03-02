@@ -1,6 +1,6 @@
 ---
 title: Data Sources & Implementation Reference
-sidebar_label: Data Sources & Implementati...
+sidebar_label: Data Sources & Implementation ...
 sidebar_position: 2
 ---
 # Data Sources & Implementation Reference

@@ -1,7 +1,7 @@
 ---
 title: Coordinate Systems & Transformations
-sidebar_label: Coordinate Systems & Transf...
-sidebar_position: 1
+sidebar_label: Coordinate Systems & Transform...
+sidebar_position: 2
 ---
 # Coordinate Systems & Transformations
 

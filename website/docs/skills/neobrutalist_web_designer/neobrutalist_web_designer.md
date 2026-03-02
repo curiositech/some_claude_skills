@@ -15,6 +15,16 @@ Modern web applications with authentic neobrutalist aesthetic. Bold typography, 
 Read, Write, Edit, Glob, Grep
 ```
 
+## Tags
+
+`neobrutalist` `web` `designer`
+
+## 🤝 Pairs Great With
+
+- **[Web Design Expert](/docs/skills/web_design_expert)**: Neobrutalism is a specific web design trend requiring general web design foundations
+- **[Typography Expert](/docs/skills/typography_expert)**: Bold, oversized typography is the defining visual element of neobrutalist design
+- **[Windows 95 Web Designer](/docs/skills/windows_95_web_designer)**: Both share retro-inspired thick borders and high-contrast aesthetics with different era references
+
 ## References
 
 - [Neobrutalist Component Library](./references/component-library)
@@ -295,7 +305,7 @@ Neobrutalism for SaaS emphasizes **function over flourish**:
 |------------|-------------|
 | Mobile (&lt;640px) | Shadow: 3px 3px, Border: 2px, Font scale down |
 | Tablet (640-1024px) | Shadow: 4px 4px, Border: 3px, Standard fonts |
-| Desktop (>1024px) | Shadow: 6px 6px, Border: 4px, Oversized headlines |
+| Desktop (&gt;1024px) | Shadow: 6px 6px, Border: 4px, Oversized headlines |
 
 ```css
 /* Mobile-first approach */

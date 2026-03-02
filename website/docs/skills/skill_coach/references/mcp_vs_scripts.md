@@ -1,6 +1,6 @@
 ---
-title: "Skills vs Agents vs MCPs vs Scripts: An Architectural Decision Guide"
-sidebar_label: Skills vs Agents vs MCPs vs...
+title: Skills vs Agents vs MCPs vs Scripts: An Architectural Decision Guide
+sidebar_label: Skills vs Agents vs MCPs vs Sc...
 sidebar_position: 2
 ---
 # Skills vs Agents vs MCPs vs Scripts: An Architectural Decision Guide

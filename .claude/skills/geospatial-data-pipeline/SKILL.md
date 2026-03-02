@@ -1,7 +1,26 @@
 ---
 name: geospatial-data-pipeline
-description: Process, analyze, and visualize geospatial data at scale. Handles drone imagery, GPS tracks, GeoJSON optimization, coordinate transformations, and tile generation. Use for mapping apps, drone data processing, location-based services. Activate on "geospatial", "GIS", "PostGIS", "GeoJSON", "map tiles", "coordinate systems". NOT for simple address validation, basic distance calculations, or static map embeds.
+description: Process, analyze, and visualize geospatial data at scale. Handles drone imagery, GPS tracks, GeoJSON optimization, coordinate transformations, and tile generation. Use for mapping apps, drone
+  data processing, location-based services. Activate on "geospatial", "GIS", "PostGIS", "GeoJSON", "map tiles", "coordinate systems". NOT for simple address validation, basic distance calculations, or static
+  map embeds.
 allowed-tools: Read,Write,Edit,Bash(npm:*,gdal*,postgres*)
+metadata:
+  category: Data & Analytics
+  tags:
+  - geospatial
+  - data
+  - pipeline
+  - gis
+  - postgis
+  pairs-with:
+  - skill: large-scale-map-visualization
+    reason: Geospatial pipelines produce the optimized data that map visualizations render
+  - skill: computer-vision-pipeline
+    reason: Drone imagery processing combines CV object detection with geospatial coordinates
+  - skill: drone-inspection-specialist
+    reason: Infrastructure inspection data flows through geospatial pipelines for analysis
+  - skill: data-pipeline-engineer
+    reason: Geospatial ETL shares batching, streaming, and transformation patterns with general data pipelines
 ---
 
 # Geospatial Data Pipeline

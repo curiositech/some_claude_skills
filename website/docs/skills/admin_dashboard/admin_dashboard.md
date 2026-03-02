@@ -19,6 +19,12 @@ Read, Write, Edit, Bash(npm:*, npx:*)
 
 `dashboard` `admin` `internal-tools`
 
+## 🤝 Pairs Great With
+
+- **[Reactive Dashboard Performance](/docs/skills/reactive_dashboard_performance)**: Performance optimization patterns keep admin dashboards responsive under heavy data loads
+- **[Supabase Admin](/docs/skills/supabase_admin)**: Admin dashboards typically display and manage Supabase-backed data and user records
+- **[Logging Observability](/docs/skills/logging_observability)**: Admin consoles surface the metrics and logs that observability systems collect
+
 # Admin & Developer Suite Development
 
 This skill helps you extend the admin dashboard and build internal tools following the established patterns.

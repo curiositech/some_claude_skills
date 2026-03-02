@@ -21,9 +21,18 @@ function getSkillNames() {
   return fs.readdirSync(SKILLS_DIR)
     .filter(name => {
       const skillPath = path.join(SKILLS_DIR, name);
-      return fs.statSync(skillPath).isDirectory() &&
-             !name.startsWith('.') &&
-             fs.existsSync(path.join(skillPath, 'SKILL.md'));
+      if (!fs.statSync(skillPath).isDirectory() || name.startsWith('.')) return false;
+      const skillMd = path.join(skillPath, 'SKILL.md');
+      if (!fs.existsSync(skillMd)) return false;
+
+      // Skip private and deprecated skills
+      const content = fs.readFileSync(skillMd, 'utf-8');
+      const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+      if (fmMatch) {
+        const fm = fmMatch[1];
+        if (/private:\s*true/i.test(fm) || /deprecated:\s*true/i.test(fm)) return false;
+      }
+      return true;
     });
 }
 

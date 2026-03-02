@@ -1,7 +1,7 @@
 ---
 title: Offline-First Patterns for Intermittent Access
-sidebar_label: Offline-First Patterns for ...
-sidebar_position: 3
+sidebar_label: Offline-First Patterns for Int...
+sidebar_position: 2
 ---
 # Offline-First Patterns for Intermittent Access
 

@@ -1,7 +1,7 @@
 ---
-title: "Testing Data Visualizations: Comprehensive Strategies"
-sidebar_label: Testing Data Visualizations...
-sidebar_position: 4
+title: Testing Data Visualizations: Comprehensive Strategies
+sidebar_label: Testing Data Visualizations: C...
+sidebar_position: 2
 ---
 # Testing Data Visualizations: Comprehensive Strategies
 

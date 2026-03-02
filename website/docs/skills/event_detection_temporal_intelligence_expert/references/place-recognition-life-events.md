@@ -1,6 +1,6 @@
 ---
 title: Place Recognition & Life Event Detection
-sidebar_label: Place Recognition & Life Ev...
+sidebar_label: Place Recognition & Life Event...
 sidebar_position: 2
 ---
 # Place Recognition & Life Event Detection

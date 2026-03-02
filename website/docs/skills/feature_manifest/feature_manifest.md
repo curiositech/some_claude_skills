@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # 🚀 Feature Manifest
 
-Manage feature manifests for code traceability. Use when creating new features, updating existing features, checking feature health, or exploring the feature-to-code relationship. Activates for manifest validation, feature creation, changelog updates, and traceability queries.
+Manage feature manifests for code traceability — create features, validate manifest health, map features to code, update changelogs. Activates for 'feature manifest', 'feature tracking', 'code traceability'. NOT for project management, issue tracking, or git workflow.
 
 ---
 
@@ -18,6 +18,12 @@ Read, Write, Edit, Bash(npm:*, npx:*)
 ## Tags
 
 `feature-management` `code-traceability` `documentation`
+
+## 🤝 Pairs Great With
+
+- **[Git Workflow Expert](/docs/skills/git_workflow_expert)**: Feature branches map to manifest entries for tracking code-to-feature traceability
+- **[Technical Writer](/docs/skills/technical_writer)**: Feature manifest documentation feeds into changelogs and release notes
+- **[Launch Readiness Auditor](/docs/skills/launch_readiness_auditor)**: Feature manifests provide the checklist for launch readiness feature completeness
 
 # Feature Manifest Management
 

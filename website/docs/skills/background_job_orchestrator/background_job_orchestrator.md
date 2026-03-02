@@ -3,7 +3,7 @@ sidebar_label: Background Job Orchestrator
 sidebar_position: 1
 ---
 
-# 🤖 Background Job Orchestrator
+# ⚙️ Background Job Orchestrator
 
 Expert in background job processing with Bull/BullMQ (Redis), Celery, and cloud queues. Implements retries, scheduling, priority queues, and worker management. Use for async task processing, email campaigns, report generation, batch operations. Activate on "background job", "async task", "queue", "worker", "BullMQ", "Celery". NOT for real-time WebSocket communication, synchronous API calls, or simple setTimeout operations.
 
@@ -14,6 +14,16 @@ Expert in background job processing with Bull/BullMQ (Redis), Celery, and cloud 
 ```
 Read, Write, Edit, Bash(npm:*, pip:*)
 ```
+
+## Tags
+
+`background` `job` `orchestrator` `background-job` `async-task`
+
+## 🤝 Pairs Great With
+
+- **[Data Pipeline Engineer](/docs/skills/data_pipeline_engineer)**: Background jobs are the execution layer for ETL/ELT data pipeline stages
+- **[Site Reliability Engineer](/docs/skills/site_reliability_engineer)**: Job queue health monitoring and failure alerting are core SRE concerns
+- **[Error Handling Patterns](/docs/skills/error_handling_patterns)**: Retry logic, dead letter queues, and failure recovery are critical for background job reliability
 
 ## References
 

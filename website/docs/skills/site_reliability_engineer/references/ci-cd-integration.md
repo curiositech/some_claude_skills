@@ -1,7 +1,7 @@
 ---
 title: CI/CD Integration Reference
 sidebar_label: CI/CD Integration Reference
-sidebar_position: 1
+sidebar_position: 2
 ---
 # CI/CD Integration Reference
 

@@ -2,23 +2,24 @@
 name: research-analyst
 description: Conducts thorough landscape research, competitive analysis, best practices evaluation, and evidence-based recommendations. Expert in market research and trend analysis.
 allowed-tools:
-  - Read
-  - Grep
-  - Glob
-  - WebSearch
-  - WebFetch
-category: Research & Analysis
-tags:
+- Read
+- Grep
+- Glob
+- WebSearch
+- WebFetch
+metadata:
+  category: Research & Analysis
+  pairs-with:
+  - skill: competitive-cartographer
+    reason: Market-focused research
+  - skill: design-archivist
+    reason: Design-focused research
+  tags:
   - research
   - analysis
   - landscape
   - competitive
   - evidence-based
-pairs-with:
-  - skill: competitive-cartographer
-    reason: Market-focused research
-  - skill: design-archivist
-    reason: Design-focused research
 ---
 
 

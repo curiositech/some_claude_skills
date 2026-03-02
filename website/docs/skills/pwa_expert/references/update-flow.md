@@ -1,7 +1,7 @@
 ---
 title: PWA Update Flow
 sidebar_label: PWA Update Flow
-sidebar_position: 6
+sidebar_position: 2
 ---
 # PWA Update Flow
 

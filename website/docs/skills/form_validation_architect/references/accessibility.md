@@ -1,7 +1,7 @@
 ---
 title: Form Accessibility Guidelines
 sidebar_label: Form Accessibility Guidelines
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Form Accessibility Guidelines
 

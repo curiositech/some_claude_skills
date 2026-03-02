@@ -1,7 +1,7 @@
 ---
 title: Edge-Based Assembly Strategy
 sidebar_label: Edge-Based Assembly Strategy
-sidebar_position: 5
+sidebar_position: 2
 ---
 # Edge-Based Assembly Strategy
 

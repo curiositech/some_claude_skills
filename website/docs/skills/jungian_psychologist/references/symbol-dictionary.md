@@ -1,7 +1,7 @@
 ---
 title: Jungian Symbol Dictionary
 sidebar_label: Jungian Symbol Dictionary
-sidebar_position: 7
+sidebar_position: 2
 ---
 # Jungian Symbol Dictionary
 

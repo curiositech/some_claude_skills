@@ -1,7 +1,7 @@
 ---
 title: CI/CD Test Integration
 sidebar_label: CI/CD Test Integration
-sidebar_position: 1
+sidebar_position: 2
 ---
 # CI/CD Test Integration
 

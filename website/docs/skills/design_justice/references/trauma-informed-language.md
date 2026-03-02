@@ -1,7 +1,7 @@
 ---
 title: Trauma-Informed Language Guide
 sidebar_label: Trauma-Informed Language Guide
-sidebar_position: 4
+sidebar_position: 2
 ---
 # Trauma-Informed Language Guide
 

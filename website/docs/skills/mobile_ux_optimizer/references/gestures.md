@@ -1,7 +1,7 @@
 ---
 title: Gesture Hooks
 sidebar_label: Gesture Hooks
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Gesture Hooks
 

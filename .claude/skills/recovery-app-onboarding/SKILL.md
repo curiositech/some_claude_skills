@@ -1,15 +1,19 @@
 ---
 name: recovery-app-onboarding
-description: Expert guidance for designing and implementing onboarding flows in recovery, wellness, and mental health applications. This skill should be used when building onboarding experiences, first-time user flows, feature discovery, or tutorial systems for apps serving vulnerable populations (addiction recovery, mental health, wellness). Activate on "onboarding", "first-time user", "tutorial", "feature tour", "welcome flow", "new user experience", "app introduction", "recovery app UX". NOT for general mobile UX (use mobile-ux-optimizer), marketing landing pages (use web-design-expert), or native app development (use iOS/Android skills).
+description: Expert guidance for designing and implementing onboarding flows in recovery, wellness, and mental health applications. This skill should be used when building onboarding experiences, first-time
+  user flows, feature discovery, or tutorial systems for apps serving vulnerable populations (addiction recovery, mental health, wellness). Activate on "onboarding", "first-time user", "tutorial", "feature
+  tour", "welcome flow", "new user experience", "app introduction", "recovery app UX". NOT for general mobile UX (use mobile-ux-optimizer), marketing landing pages (use web-design-expert), or native app
+  development (use iOS/Android skills).
 allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-category: Design & Creative
-tags:
+- Read
+- Write
+- Edit
+- Bash
+- Grep
+- Glob
+metadata:
+  category: Design & Creative
+  tags:
   - onboarding
   - recovery
   - wellness
@@ -17,6 +21,15 @@ tags:
   - mobile-ux
   - tutorial
   - progressive-disclosure
+  pairs-with:
+  - skill: mobile-ux-optimizer
+    reason: Recovery app onboarding is primarily mobile and requires touch-optimized UX
+  - skill: recovery-coach-patterns
+    reason: Onboarding flows must follow Recovery Coach codebase conventions and component patterns
+  - skill: ux-friction-analyzer
+    reason: Onboarding abandonment is a critical friction point requiring UX analysis
+  - skill: recovery-app-legal-terms
+    reason: Consent and terms acceptance are embedded in the onboarding flow
 ---
 
 # Recovery App Onboarding Excellence

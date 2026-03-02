@@ -1,0 +1,1410 @@
+{
+  "2026-legal-research-agent": [
+    {
+      "skill": "national-expungement-expert",
+      "reason": "Research agent finds raw legal data that the expungement expert interprets into eligibility guidance"
+    },
+    {
+      "skill": "research-analyst",
+      "reason": "General research methodology strengthens legal source evaluation and evidence gathering"
+    },
+    {
+      "skill": "document-generation-pdf",
+      "reason": "Legal research outputs feed directly into generating court filing documents"
+    }
+  ],
+  "admin-dashboard": [
+    {
+      "skill": "reactive-dashboard-performance",
+      "reason": "Performance optimization patterns keep admin dashboards responsive under heavy data loads"
+    },
+    {
+      "skill": "supabase-admin",
+      "reason": "Admin dashboards typically display and manage Supabase-backed data and user records"
+    },
+    {
+      "skill": "logging-observability",
+      "reason": "Admin consoles surface the metrics and logs that observability systems collect"
+    }
+  ],
+  "background-job-orchestrator": [
+    {
+      "skill": "data-pipeline-engineer",
+      "reason": "Background jobs are the execution layer for ETL/ELT data pipeline stages"
+    },
+    {
+      "skill": "site-reliability-engineer",
+      "reason": "Job queue health monitoring and failure alerting are core SRE concerns"
+    },
+    {
+      "skill": "error-handling-patterns",
+      "reason": "Retry logic, dead letter queues, and failure recovery are critical for background job reliability"
+    }
+  ],
+  "caching-strategies": [
+    {
+      "skill": "react-performance-optimizer",
+      "reason": "Client-side caching (memoization, SWR) complements server-side cache architecture"
+    },
+    {
+      "skill": "performance-profiling",
+      "reason": "Profiling identifies cache miss hotspots that caching strategies then address"
+    },
+    {
+      "skill": "cloudflare-worker-dev",
+      "reason": "Edge caching with Cloudflare KV/Cache API is a key tier in multi-level cache architectures"
+    }
+  ],
+  "chatbot-analytics": [
+    {
+      "skill": "llm-streaming-response-handler",
+      "reason": "Streaming response metrics (TTFT, tokens/sec) are key chatbot analytics dimensions"
+    },
+    {
+      "skill": "data-pipeline-engineer",
+      "reason": "Conversation data pipelines feed analytics dashboards and reporting systems"
+    },
+    {
+      "skill": "prompt-engineer",
+      "reason": "Analytics on prompt effectiveness drive iterative prompt optimization"
+    }
+  ],
+  "checklist-discipline": [
+    {
+      "skill": "launch-readiness-auditor",
+      "reason": "Launch readiness assessment is a high-stakes checklist application"
+    },
+    {
+      "skill": "code-review-checklist",
+      "reason": "Code review checklists are a direct application of checklist discipline to software quality"
+    },
+    {
+      "skill": "systems-thinking",
+      "reason": "Systems thinking identifies which process failure points most benefit from checklist intervention"
+    }
+  ],
+  "clinical-diagnostic-reasoning": [
+    {
+      "skill": "systems-thinking",
+      "reason": "Systems thinking reveals feedback loops and hidden dependencies in diagnostic reasoning chains"
+    },
+    {
+      "skill": "checklist-discipline",
+      "reason": "Diagnostic checklists reduce cognitive bias errors in medical decision-making"
+    },
+    {
+      "skill": "crisis-detection-intervention-ai",
+      "reason": "Crisis detection requires the same bias-aware reasoning used in clinical diagnostics"
+    }
+  ],
+  "cloudflare-worker-dev": [
+    {
+      "skill": "devops-automator",
+      "reason": "CI/CD pipelines deploy and manage Cloudflare Worker deployments across environments"
+    },
+    {
+      "skill": "caching-strategies",
+      "reason": "Workers KV and Cache API are key components of edge caching architectures"
+    },
+    {
+      "skill": "modern-auth-2026",
+      "reason": "Workers often handle auth token validation and session management at the edge"
+    },
+    {
+      "skill": "api-architect",
+      "reason": "Workers frequently serve as API gateways requiring proper REST/GraphQL design"
+    }
+  ],
+  "code-architecture": [
+    {
+      "skill": "refactoring-surgeon",
+      "reason": "Refactoring implements the architectural patterns that code-architecture prescribes"
+    },
+    {
+      "skill": "monorepo-management",
+      "reason": "Monorepo workspace boundaries enforce architectural module separation"
+    },
+    {
+      "skill": "microservices-patterns",
+      "reason": "Service decomposition decisions depend on application architecture patterns"
+    },
+    {
+      "skill": "typescript-advanced-patterns",
+      "reason": "TypeScript type system features enforce architectural boundaries at compile time"
+    }
+  ],
+  "code-review-checklist": [
+    {
+      "skill": "security-auditor",
+      "reason": "Security checks are a critical section of any thorough code review checklist"
+    },
+    {
+      "skill": "refactoring-surgeon",
+      "reason": "Code smell detection during review leads directly to targeted refactoring"
+    },
+    {
+      "skill": "test-automation-expert",
+      "reason": "Test coverage verification is a key code review checkpoint"
+    }
+  ],
+  "computer-vision-pipeline": [
+    {
+      "skill": "drone-cv-expert",
+      "reason": "Drone footage is a primary input source for production CV pipelines"
+    },
+    {
+      "skill": "clip-aware-embeddings",
+      "reason": "CLIP embeddings provide semantic understanding for CV pipeline classification stages"
+    },
+    {
+      "skill": "data-pipeline-engineer",
+      "reason": "Video/image processing pipelines share ETL patterns for batching, queuing, and error handling"
+    },
+    {
+      "skill": "geospatial-data-pipeline",
+      "reason": "Geospatial CV pipelines combine coordinate transforms with object detection outputs"
+    }
+  ],
+  "cost-accrual-tracker": [
+    {
+      "skill": "cost-optimizer",
+      "reason": "Real-time cost tracking data feeds the optimizer decision engine for model downgrades"
+    },
+    {
+      "skill": "cost-verification-auditor",
+      "reason": "Tracked costs are validated against actual API bills by the verification auditor"
+    },
+    {
+      "skill": "llm-router",
+      "reason": "Cost accrual data informs the router model selection to stay within budget"
+    }
+  ],
+  "cost-optimizer": [
+    {
+      "skill": "cost-accrual-tracker",
+      "reason": "The tracker provides the real-time cost data that the optimizer uses for budget decisions"
+    },
+    {
+      "skill": "llm-router",
+      "reason": "Model routing is the primary mechanism through which cost optimization is enacted"
+    },
+    {
+      "skill": "cost-verification-auditor",
+      "reason": "Post-execution auditing validates that optimization decisions actually reduced costs"
+    }
+  ],
+  "cost-verification-auditor": [
+    {
+      "skill": "cost-accrual-tracker",
+      "reason": "Compares tracked estimates against actual API invoices to find estimation drift"
+    },
+    {
+      "skill": "cost-optimizer",
+      "reason": "Audit findings calibrate the optimizer prediction models for future runs"
+    },
+    {
+      "skill": "logging-observability",
+      "reason": "Token usage logs provide the raw data needed for cost verification analysis"
+    }
+  ],
+  "crisis-detection-intervention-ai": [
+    {
+      "skill": "crisis-response-protocol",
+      "reason": "Detection identifies the crisis; response protocol determines the safe intervention"
+    },
+    {
+      "skill": "sober-addict-protector",
+      "reason": "Relapse crisis signals require the same NLP detection patterns as general crisis detection"
+    },
+    {
+      "skill": "clinical-diagnostic-reasoning",
+      "reason": "Bias-aware clinical reasoning improves accuracy of crisis signal classification"
+    }
+  ],
+  "crisis-response-protocol": [
+    {
+      "skill": "crisis-detection-intervention-ai",
+      "reason": "Detection triggers the response protocol; they form a complete safety pipeline"
+    },
+    {
+      "skill": "recovery-community-moderator",
+      "reason": "Community moderators need crisis response protocols for at-risk member interactions"
+    },
+    {
+      "skill": "hipaa-compliance",
+      "reason": "Crisis responses involving health data must comply with HIPAA privacy requirements"
+    }
+  ],
+  "dark-mode-design-expert": [
+    {
+      "skill": "color-contrast-auditor",
+      "reason": "Dark mode surfaces require careful contrast ratio verification for accessibility"
+    },
+    {
+      "skill": "design-system-generator",
+      "reason": "Dark mode token generation is a core capability of design system creation"
+    },
+    {
+      "skill": "web-design-expert",
+      "reason": "Dark mode is a fundamental aspect of modern web design implementation"
+    }
+  ],
+  "data-viz-2025": [
+    {
+      "skill": "react-performance-optimizer",
+      "reason": "Large dataset visualizations require React performance optimization for smooth rendering"
+    },
+    {
+      "skill": "large-scale-map-visualization",
+      "reason": "Map visualizations are a specialized subset of the broader data viz discipline"
+    },
+    {
+      "skill": "color-contrast-auditor",
+      "reason": "Data visualization accessibility depends on proper color contrast in charts and legends"
+    },
+    {
+      "skill": "typescript-advanced-patterns",
+      "reason": "Type-safe chart data structures and generic visualization components benefit from advanced TS"
+    }
+  ],
+  "database-design-patterns": [
+    {
+      "skill": "drizzle-migrations",
+      "reason": "Schema design decisions are implemented through ORM migration workflows"
+    },
+    {
+      "skill": "postgresql-optimization",
+      "reason": "Index strategies and query patterns depend on underlying schema design choices"
+    },
+    {
+      "skill": "supabase-admin",
+      "reason": "Supabase RLS policies and schema architecture implement database design patterns"
+    }
+  ],
+  "dependency-management": [
+    {
+      "skill": "security-auditor",
+      "reason": "Dependency vulnerability scanning is a critical security audit dimension"
+    },
+    {
+      "skill": "monorepo-management",
+      "reason": "Monorepo workspace dependency hoisting and version alignment require specialized management"
+    },
+    {
+      "skill": "devops-automator",
+      "reason": "CI/CD pipelines automate dependency auditing, lockfile validation, and update workflows"
+    }
+  ],
+  "design-justice": [
+    {
+      "skill": "national-expungement-expert",
+      "reason": "Expungement tools serve marginalized populations that design justice principles center"
+    },
+    {
+      "skill": "recovery-app-onboarding",
+      "reason": "Recovery app onboarding for vulnerable users requires trauma-informed, equitable design"
+    },
+    {
+      "skill": "ux-friction-analyzer",
+      "reason": "Friction analysis for underserved communities reveals equity gaps in digital experiences"
+    }
+  ],
+  "design-system-generator": [
+    {
+      "skill": "design-system-creator",
+      "reason": "Generator creates initial tokens and themes; creator builds the full component library from them"
+    },
+    {
+      "skill": "design-system-documenter",
+      "reason": "Generated design systems need comprehensive documentation for team adoption"
+    },
+    {
+      "skill": "component-template-generator",
+      "reason": "Design tokens from the generator feed into component template scaffolding"
+    },
+    {
+      "skill": "typography-expert",
+      "reason": "Type scale and font pairing decisions are foundational to design system generation"
+    }
+  ],
+  "docker-containerization": [
+    {
+      "skill": "devops-automator",
+      "reason": "Docker images are built, tested, and deployed through CI/CD automation pipelines"
+    },
+    {
+      "skill": "github-actions-pipeline-builder",
+      "reason": "Container builds and registry pushes are common GitHub Actions workflow stages"
+    },
+    {
+      "skill": "site-reliability-engineer",
+      "reason": "Container health checks, resource limits, and orchestration are SRE responsibilities"
+    },
+    {
+      "skill": "microservices-patterns",
+      "reason": "Microservices are typically deployed as individual Docker containers"
+    }
+  ],
+  "document-generation-pdf": [
+    {
+      "skill": "national-expungement-expert",
+      "reason": "Expungement court filings require automated PDF form generation at scale"
+    },
+    {
+      "skill": "2026-legal-research-agent",
+      "reason": "Legal research outputs are formatted into filing documents via PDF generation"
+    },
+    {
+      "skill": "cv-creator",
+      "reason": "Resume PDF generation shares template rendering and typography patterns"
+    },
+    {
+      "skill": "technical-writer",
+      "reason": "Technical documentation exports to PDF for offline distribution"
+    }
+  ],
+  "drizzle-migrations": [
+    {
+      "skill": "database-design-patterns",
+      "reason": "Schema migration implementation follows database design pattern decisions"
+    },
+    {
+      "skill": "supabase-admin",
+      "reason": "Drizzle migrations run against Supabase PostgreSQL databases with RLS considerations"
+    },
+    {
+      "skill": "fullstack-debugger",
+      "reason": "Migration failures and schema mismatches are common fullstack debugging scenarios"
+    }
+  ],
+  "email-composer": [
+    {
+      "skill": "technical-writer",
+      "reason": "Technical writing principles improve clarity and structure in professional emails"
+    },
+    {
+      "skill": "partner-text-coach",
+      "reason": "Both skills analyze communication tone and suggest empathetic, effective messaging"
+    },
+    {
+      "skill": "job-application-optimizer",
+      "reason": "Job application emails and follow-ups require the same persuasive writing skills"
+    }
+  ],
+  "error-handling-patterns": [
+    {
+      "skill": "typescript-advanced-patterns",
+      "reason": "Result/Either types and discriminated unions implement type-safe error handling in TS"
+    },
+    {
+      "skill": "logging-observability",
+      "reason": "Structured error logging with correlation IDs enables effective error tracking and debugging"
+    },
+    {
+      "skill": "background-job-orchestrator",
+      "reason": "Retry patterns and dead letter queues are error handling applied to job processing"
+    }
+  ],
+  "feature-manifest": [
+    {
+      "skill": "git-workflow-expert",
+      "reason": "Feature branches map to manifest entries for tracking code-to-feature traceability"
+    },
+    {
+      "skill": "technical-writer",
+      "reason": "Feature manifest documentation feeds into changelogs and release notes"
+    },
+    {
+      "skill": "launch-readiness-auditor",
+      "reason": "Feature manifests provide the checklist for launch readiness feature completeness"
+    }
+  ],
+  "form-validation-architect": [
+    {
+      "skill": "typescript-advanced-patterns",
+      "reason": "Zod schemas and generic form types leverage advanced TypeScript patterns"
+    },
+    {
+      "skill": "rest-api-design",
+      "reason": "Form validation schemas should match API endpoint request validation for consistency"
+    },
+    {
+      "skill": "ux-friction-analyzer",
+      "reason": "Form UX friction (error messages, field ordering) is a primary usability concern"
+    },
+    {
+      "skill": "react-performance-optimizer",
+      "reason": "Large forms with field arrays require React render optimization for responsiveness"
+    }
+  ],
+  "geospatial-data-pipeline": [
+    {
+      "skill": "large-scale-map-visualization",
+      "reason": "Geospatial pipelines produce the optimized data that map visualizations render"
+    },
+    {
+      "skill": "computer-vision-pipeline",
+      "reason": "Drone imagery processing combines CV object detection with geospatial coordinates"
+    },
+    {
+      "skill": "drone-inspection-specialist",
+      "reason": "Infrastructure inspection data flows through geospatial pipelines for analysis"
+    },
+    {
+      "skill": "data-pipeline-engineer",
+      "reason": "Geospatial ETL shares batching, streaming, and transformation patterns with general data pipelines"
+    }
+  ],
+  "git-workflow-expert": [
+    {
+      "skill": "github-actions-pipeline-builder",
+      "reason": "Git branching strategies determine which CI/CD pipelines trigger on which events"
+    },
+    {
+      "skill": "monorepo-management",
+      "reason": "Monorepo git workflows require specialized branching, tagging, and merge strategies"
+    },
+    {
+      "skill": "code-review-checklist",
+      "reason": "PR-based code review workflows depend on sound git branching practices"
+    }
+  ],
+  "github-actions-pipeline-builder": [
+    {
+      "skill": "devops-automator",
+      "reason": "GitHub Actions is one of the primary CI/CD platforms that DevOps automation targets"
+    },
+    {
+      "skill": "docker-containerization",
+      "reason": "Container builds and registry pushes are the most common GitHub Actions workflow steps"
+    },
+    {
+      "skill": "git-workflow-expert",
+      "reason": "Git branching strategies determine pipeline trigger rules and deployment gates"
+    },
+    {
+      "skill": "test-automation-expert",
+      "reason": "Automated test suites run as CI pipeline stages with matrix builds and caching"
+    }
+  ],
+  "hand-drawn-infographic-creator": [
+    {
+      "skill": "pixel-art-infographic-creator",
+      "reason": "Both create educational infographics but in contrasting visual styles for different audiences"
+    },
+    {
+      "skill": "recovery-education-writer",
+      "reason": "Recovery education articles use hand-drawn brain diagrams and process illustrations"
+    },
+    {
+      "skill": "diagramming-expert",
+      "reason": "Diagram structure and information hierarchy principles apply across visual styles"
+    }
+  ],
+  "hipaa-compliance": [
+    {
+      "skill": "recovery-app-legal-terms",
+      "reason": "HIPAA requirements directly inform privacy policy and terms of service content for health apps"
+    },
+    {
+      "skill": "security-auditor",
+      "reason": "HIPAA technical safeguards overlap with security vulnerability scanning and access controls"
+    },
+    {
+      "skill": "recovery-social-features",
+      "reason": "Social features handling health data must comply with HIPAA privacy and consent rules"
+    },
+    {
+      "skill": "crisis-response-protocol",
+      "reason": "Crisis responses involving health disclosures must follow HIPAA breach notification rules"
+    }
+  ],
+  "human-centered-design-fundamentals": [
+    {
+      "skill": "ux-friction-analyzer",
+      "reason": "UX friction analysis applies human-centered design principles to identify usability barriers"
+    },
+    {
+      "skill": "adhd-design-expert",
+      "reason": "ADHD-aware design is a specialized application of human-centered design for neurodivergent users"
+    },
+    {
+      "skill": "design-justice",
+      "reason": "Design justice extends human-centered design to explicitly center marginalized communities"
+    }
+  ],
+  "human-gate-designer": [
+    {
+      "skill": "task-decomposer",
+      "reason": "Task decomposition identifies which DAG nodes require human approval gates"
+    },
+    {
+      "skill": "output-contract-enforcer",
+      "reason": "Human gate inputs and outputs need schema validation before routing decisions"
+    },
+    {
+      "skill": "reactflow-expert",
+      "reason": "Human gates are visualized as interactive approval nodes in DAG dashboards"
+    }
+  ],
+  "large-scale-map-visualization": [
+    {
+      "skill": "geospatial-data-pipeline",
+      "reason": "Geospatial pipelines prepare and optimize the data that map visualizations render"
+    },
+    {
+      "skill": "react-performance-optimizer",
+      "reason": "Rendering 100K+ markers requires React virtualization and memoization optimization"
+    },
+    {
+      "skill": "data-viz-2025",
+      "reason": "Map visualizations combine geographic rendering with chart overlays and data tooltips"
+    }
+  ],
+  "launch-readiness-auditor": [
+    {
+      "skill": "checklist-discipline",
+      "reason": "Launch readiness assessment is a systematic checklist application for production deployments"
+    },
+    {
+      "skill": "security-auditor",
+      "reason": "Security audit is a critical gate in any launch readiness evaluation"
+    },
+    {
+      "skill": "test-automation-expert",
+      "reason": "Test coverage and CI pass rates are key launch readiness metrics"
+    },
+    {
+      "skill": "feature-manifest",
+      "reason": "Feature manifests track which features are complete and ready for launch"
+    }
+  ],
+  "liaison": [
+    {
+      "skill": "orchestrator",
+      "reason": "The orchestrator delegates work; the liaison translates its activity into human-readable briefings"
+    },
+    {
+      "skill": "technical-writer",
+      "reason": "Status briefings and decision requests require clear technical writing"
+    },
+    {
+      "skill": "recursive-synthesis",
+      "reason": "Multi-agent synthesis outputs are summarized by the liaison for human consumption"
+    }
+  ],
+  "llm-router": [
+    {
+      "skill": "cost-optimizer",
+      "reason": "Model routing is the primary mechanism for implementing cost optimization decisions"
+    },
+    {
+      "skill": "cost-accrual-tracker",
+      "reason": "Real-time cost data informs routing decisions to stay within budget constraints"
+    },
+    {
+      "skill": "prompt-engineer",
+      "reason": "Prompt complexity analysis determines which model tier the router should select"
+    }
+  ],
+  "llm-streaming-response-handler": [
+    {
+      "skill": "chatbot-analytics",
+      "reason": "Streaming metrics (time-to-first-token, throughput) are key analytics for chatbot performance"
+    },
+    {
+      "skill": "react-performance-optimizer",
+      "reason": "Real-time token rendering requires React performance optimization for smooth display"
+    },
+    {
+      "skill": "error-handling-patterns",
+      "reason": "Stream interruption recovery and retry logic are critical error handling concerns"
+    },
+    {
+      "skill": "websocket-streaming",
+      "reason": "WebSocket transport is an alternative to SSE for bidirectional LLM streaming"
+    }
+  ],
+  "mdx-sanitizer": [
+    {
+      "skill": "site-reliability-engineer",
+      "reason": "MDX build failures are a primary Docusaurus deployment blocker that SRE validates"
+    },
+    {
+      "skill": "technical-writer",
+      "reason": "Technical writers produce the MDX content that needs sanitization for safe rendering"
+    },
+    {
+      "skill": "skill-documentarian",
+      "reason": "Skill documentation in MDX format requires sanitization before website deployment"
+    }
+  ],
+  "mermaid-graph-renderer": [
+    {
+      "skill": "mermaid-graph-writer",
+      "reason": "The writer creates diagram syntax; the renderer converts it to visual SVG/PNG output"
+    },
+    {
+      "skill": "diagramming-expert",
+      "reason": "Rendering decisions (sizing, themes, fonts) complement diagram content authoring"
+    },
+    {
+      "skill": "document-generation-pdf",
+      "reason": "Rendered Mermaid diagrams are embedded in generated PDF documentation"
+    }
+  ],
+  "mermaid-graph-writer": [
+    {
+      "skill": "mermaid-graph-renderer",
+      "reason": "The writer creates the diagram syntax that the renderer converts to visual output"
+    },
+    {
+      "skill": "diagramming-expert",
+      "reason": "ASCII/Unicode diagramming expertise informs Mermaid syntax structure and layout decisions"
+    },
+    {
+      "skill": "technical-writer",
+      "reason": "Mermaid diagrams are embedded in technical documentation to explain system architecture"
+    }
+  ],
+  "microservices-patterns": [
+    {
+      "skill": "api-architect",
+      "reason": "Inter-service communication design (REST, gRPC, events) is core to microservice architecture"
+    },
+    {
+      "skill": "docker-containerization",
+      "reason": "Each microservice is typically containerized and independently deployable"
+    },
+    {
+      "skill": "code-architecture",
+      "reason": "Service internal architecture patterns (hexagonal, clean) apply within each microservice"
+    },
+    {
+      "skill": "background-job-orchestrator",
+      "reason": "Saga patterns and event-driven workflows use background job queues for orchestration"
+    }
+  ],
+  "mobile-ux-optimizer": [
+    {
+      "skill": "pwa-expert",
+      "reason": "PWAs are a primary mobile delivery mechanism requiring touch and viewport optimization"
+    },
+    {
+      "skill": "ux-friction-analyzer",
+      "reason": "Mobile-specific friction points (fat finger errors, scroll hijacking) need specialized analysis"
+    },
+    {
+      "skill": "adhd-design-expert",
+      "reason": "Mobile ADHD users face amplified cognitive load that requires specialized UX optimization"
+    }
+  ],
+  "modern-auth-2026": [
+    {
+      "skill": "oauth-oidc-implementer",
+      "reason": "OAuth/OIDC flows are core components of modern auth alongside passkeys and magic links"
+    },
+    {
+      "skill": "supabase-admin",
+      "reason": "Supabase Auth provides the backend infrastructure for passkey and OAuth implementation"
+    },
+    {
+      "skill": "security-auditor",
+      "reason": "Auth implementation security (token storage, session management) requires dedicated auditing"
+    },
+    {
+      "skill": "cloudflare-worker-dev",
+      "reason": "Edge-based auth token validation in Workers is a modern auth deployment pattern"
+    }
+  ],
+  "monorepo-management": [
+    {
+      "skill": "dependency-management",
+      "reason": "Workspace-level dependency hoisting and version alignment are monorepo-specific challenges"
+    },
+    {
+      "skill": "git-workflow-expert",
+      "reason": "Monorepo git strategies (sparse checkout, path-based triggers) differ from single-repo workflows"
+    },
+    {
+      "skill": "github-actions-pipeline-builder",
+      "reason": "Monorepo CI requires path-filtered workflows and build caching across workspaces"
+    },
+    {
+      "skill": "code-architecture",
+      "reason": "Module boundaries and dependency direction rules define monorepo workspace structure"
+    }
+  ],
+  "munger-worldly-wisdom": [
+    {
+      "skill": "systems-thinking",
+      "reason": "Munger latticework of mental models overlaps with systems thinking feedback loop analysis"
+    },
+    {
+      "skill": "research-craft",
+      "reason": "Munger evidence-based reasoning aligns with systematic research methodology"
+    },
+    {
+      "skill": "wisdom-accountability-coach",
+      "reason": "Both draw from philosophical frameworks for practical decision-making and personal growth"
+    }
+  ],
+  "national-expungement-expert": [
+    {
+      "skill": "2026-legal-research-agent",
+      "reason": "The research agent finds raw statute data that the expungement expert interprets for eligibility"
+    },
+    {
+      "skill": "document-generation-pdf",
+      "reason": "Expungement filings require automated court form PDF generation"
+    },
+    {
+      "skill": "design-justice",
+      "reason": "Expungement tools serve marginalized populations requiring equitable, accessible design"
+    }
+  ],
+  "neobrutalist-web-designer": [
+    {
+      "skill": "web-design-expert",
+      "reason": "Neobrutalism is a specific web design trend requiring general web design foundations"
+    },
+    {
+      "skill": "typography-expert",
+      "reason": "Bold, oversized typography is the defining visual element of neobrutalist design"
+    },
+    {
+      "skill": "windows-95-web-designer",
+      "reason": "Both share retro-inspired thick borders and high-contrast aesthetics with different era references"
+    }
+  ],
+  "nextjs-app-router-expert": [
+    {
+      "skill": "react-performance-optimizer",
+      "reason": "RSC and streaming SSR in App Router require React-specific performance optimization"
+    },
+    {
+      "skill": "vercel-deployment",
+      "reason": "Vercel is the primary deployment platform optimized for Next.js App Router features"
+    },
+    {
+      "skill": "fullstack-debugger",
+      "reason": "App Router debugging spans server components, client hydration, and API routes"
+    },
+    {
+      "skill": "typescript-advanced-patterns",
+      "reason": "App Router server/client component types benefit from advanced TypeScript generics"
+    }
+  ],
+  "oauth-oidc-implementer": [
+    {
+      "skill": "modern-auth-2026",
+      "reason": "OAuth/OIDC is one auth mechanism alongside passkeys in the modern auth stack"
+    },
+    {
+      "skill": "security-auditor",
+      "reason": "OAuth token handling and PKCE flow security require dedicated vulnerability scanning"
+    },
+    {
+      "skill": "api-architect",
+      "reason": "API authentication design patterns depend on OAuth scope and token architecture"
+    }
+  ],
+  "openapi-spec-writer": [
+    {
+      "skill": "api-architect",
+      "reason": "API design decisions are formalized and documented through OpenAPI specifications"
+    },
+    {
+      "skill": "rest-api-design",
+      "reason": "REST endpoint design and OpenAPI documentation are tightly coupled deliverables"
+    },
+    {
+      "skill": "technical-writer",
+      "reason": "API documentation quality depends on technical writing clarity and completeness"
+    }
+  ],
+  "output-contract-enforcer": [
+    {
+      "skill": "task-decomposer",
+      "reason": "Decomposed tasks define the output schemas that the enforcer validates between nodes"
+    },
+    {
+      "skill": "human-gate-designer",
+      "reason": "Human gate inputs/outputs need the same schema validation as automated node outputs"
+    },
+    {
+      "skill": "typescript-advanced-patterns",
+      "reason": "Branded types and Zod schemas implement runtime output contract validation in TypeScript"
+    }
+  ],
+  "performance-profiling": [
+    {
+      "skill": "react-performance-optimizer",
+      "reason": "React DevTools profiling identifies component re-render bottlenecks for optimization"
+    },
+    {
+      "skill": "caching-strategies",
+      "reason": "Profiling reveals cache miss patterns that inform caching architecture decisions"
+    },
+    {
+      "skill": "postgresql-optimization",
+      "reason": "Database query profiling with EXPLAIN ANALYZE identifies slow query bottlenecks"
+    },
+    {
+      "skill": "logging-observability",
+      "reason": "Performance metrics and traces collected by observability systems feed profiling analysis"
+    }
+  ],
+  "pixel-art-infographic-creator": [
+    {
+      "skill": "hand-drawn-infographic-creator",
+      "reason": "Both create educational infographics in different visual styles for varied audience preferences"
+    },
+    {
+      "skill": "win31-pixel-art-designer",
+      "reason": "Shared pixel art techniques (dithering, limited palettes) applied to different content types"
+    },
+    {
+      "skill": "recovery-education-writer",
+      "reason": "Recovery education articles use pixel art infographics to explain neuroscience concepts"
+    }
+  ],
+  "pixel-art-scaler": [
+    {
+      "skill": "win31-pixel-art-designer",
+      "reason": "Pixel art assets created by the designer need proper upscaling for high-DPI displays"
+    },
+    {
+      "skill": "pixel-art-infographic-creator",
+      "reason": "Pixel art infographics need deterministic scaling to preserve sharp edges at larger sizes"
+    },
+    {
+      "skill": "native-app-designer",
+      "reason": "App icon scaling from pixel art originals requires pattern-aware upscaling algorithms"
+    }
+  ],
+  "playwright-e2e-tester": [
+    {
+      "skill": "test-automation-expert",
+      "reason": "Playwright E2E tests are one tier in a comprehensive test automation strategy"
+    },
+    {
+      "skill": "webapp-testing",
+      "reason": "Both use Playwright but for different scopes: E2E test suites vs interactive debugging"
+    },
+    {
+      "skill": "vitest-testing-patterns",
+      "reason": "Unit tests (Vitest) and E2E tests (Playwright) form complementary test pyramid layers"
+    },
+    {
+      "skill": "github-actions-pipeline-builder",
+      "reason": "E2E tests run in CI pipelines with browser installation and artifact upload steps"
+    }
+  ],
+  "playwright-screenshot-inspector": [
+    {
+      "skill": "playwright-e2e-tester",
+      "reason": "Visual regression testing extends E2E test suites with screenshot comparison"
+    },
+    {
+      "skill": "webapp-testing",
+      "reason": "Screenshot inspection automates the visual verification that interactive testing does manually"
+    },
+    {
+      "skill": "color-contrast-auditor",
+      "reason": "Automated screenshot analysis can detect contrast violations across UI states"
+    }
+  ],
+  "postgresql-optimization": [
+    {
+      "skill": "database-design-patterns",
+      "reason": "Schema design choices directly impact query performance and indexing effectiveness"
+    },
+    {
+      "skill": "supabase-admin",
+      "reason": "Supabase runs PostgreSQL; optimization techniques apply directly to Supabase databases"
+    },
+    {
+      "skill": "performance-profiling",
+      "reason": "Database query profiling identifies the slow queries that need PostgreSQL optimization"
+    },
+    {
+      "skill": "drizzle-migrations",
+      "reason": "Index creation and schema changes through Drizzle must consider PostgreSQL performance impact"
+    }
+  ],
+  "pwa-expert": [
+    {
+      "skill": "mobile-ux-optimizer",
+      "reason": "PWAs target mobile users requiring touch optimization and responsive layout patterns"
+    },
+    {
+      "skill": "caching-strategies",
+      "reason": "Service Worker cache strategies (stale-while-revalidate, cache-first) are core PWA patterns"
+    },
+    {
+      "skill": "react-performance-optimizer",
+      "reason": "PWA performance budgets require aggressive React optimization for fast initial loads"
+    }
+  ],
+  "react-performance-optimizer": [
+    {
+      "skill": "performance-profiling",
+      "reason": "React profiling tools identify the re-render bottlenecks that optimization addresses"
+    },
+    {
+      "skill": "nextjs-app-router-expert",
+      "reason": "RSC and streaming SSR in Next.js require React-specific performance strategies"
+    },
+    {
+      "skill": "data-viz-2025",
+      "reason": "Data-heavy visualizations require React memoization and virtualization for smooth rendering"
+    },
+    {
+      "skill": "reactive-dashboard-performance",
+      "reason": "Dashboard widgets with real-time data need the same React optimization patterns"
+    }
+  ],
+  "reactflow-expert": [
+    {
+      "skill": "websocket-streaming",
+      "reason": "Live DAG state updates flow through WebSocket connections to ReactFlow visualizations"
+    },
+    {
+      "skill": "human-gate-designer",
+      "reason": "Human approval gates are rendered as interactive ReactFlow custom nodes"
+    },
+    {
+      "skill": "task-decomposer",
+      "reason": "Decomposed task DAGs are visualized as ReactFlow node graphs with ELKjs layout"
+    }
+  ],
+  "reactive-dashboard-performance": [
+    {
+      "skill": "react-performance-optimizer",
+      "reason": "Dashboard performance depends on React memoization, virtualization, and state management"
+    },
+    {
+      "skill": "admin-dashboard",
+      "reason": "Admin dashboards are the primary consumer of reactive dashboard performance patterns"
+    },
+    {
+      "skill": "data-viz-2025",
+      "reason": "Dashboard charts and graphs require performant data visualization rendering"
+    }
+  ],
+  "real-time-collaboration-engine": [
+    {
+      "skill": "websocket-streaming",
+      "reason": "WebSocket transport is the foundation for real-time collaborative editing connections"
+    },
+    {
+      "skill": "react-performance-optimizer",
+      "reason": "Optimistic updates and cursor rendering require React performance optimization"
+    },
+    {
+      "skill": "security-auditor",
+      "reason": "Collaborative editing requires access control and input sanitization security auditing"
+    }
+  ],
+  "recovery-app-legal-terms": [
+    {
+      "skill": "hipaa-compliance",
+      "reason": "HIPAA requirements dictate privacy policy and data handling disclosure content"
+    },
+    {
+      "skill": "recovery-app-onboarding",
+      "reason": "Terms acceptance and consent flows are part of the app onboarding experience"
+    },
+    {
+      "skill": "document-generation-pdf",
+      "reason": "Legal terms documents may need PDF generation for offline access and distribution"
+    }
+  ],
+  "recovery-app-onboarding": [
+    {
+      "skill": "mobile-ux-optimizer",
+      "reason": "Recovery app onboarding is primarily mobile and requires touch-optimized UX"
+    },
+    {
+      "skill": "recovery-coach-patterns",
+      "reason": "Onboarding flows must follow Recovery Coach codebase conventions and component patterns"
+    },
+    {
+      "skill": "ux-friction-analyzer",
+      "reason": "Onboarding abandonment is a critical friction point requiring UX analysis"
+    },
+    {
+      "skill": "recovery-app-legal-terms",
+      "reason": "Consent and terms acceptance are embedded in the onboarding flow"
+    }
+  ],
+  "recovery-coach-patterns": [
+    {
+      "skill": "recovery-social-features",
+      "reason": "Social features follow the same Recovery Coach codebase patterns and conventions"
+    },
+    {
+      "skill": "recovery-app-onboarding",
+      "reason": "Onboarding components must follow Recovery Coach coding patterns and API conventions"
+    },
+    {
+      "skill": "vitest-testing-patterns",
+      "reason": "Recovery Coach components need unit tests following established testing patterns"
+    }
+  ],
+  "recovery-community-moderator": [
+    {
+      "skill": "crisis-response-protocol",
+      "reason": "Community moderators must escalate crisis situations through safe response protocols"
+    },
+    {
+      "skill": "recovery-education-writer",
+      "reason": "Moderation decisions are informed by recovery education principles and harm reduction"
+    },
+    {
+      "skill": "sober-addict-protector",
+      "reason": "Daily sobriety protection patterns complement community-level moderation"
+    }
+  ],
+  "recovery-education-writer": [
+    {
+      "skill": "hand-drawn-infographic-creator",
+      "reason": "Recovery articles use anatomist-style diagrams to illustrate neuroscience concepts"
+    },
+    {
+      "skill": "pixel-art-infographic-creator",
+      "reason": "Retro pixel art infographics make recovery education content more approachable"
+    },
+    {
+      "skill": "recovery-community-moderator",
+      "reason": "Education content informs moderation standards and harm reduction messaging"
+    }
+  ],
+  "recovery-social-features": [
+    {
+      "skill": "hipaa-compliance",
+      "reason": "Social features involving health disclosures must comply with HIPAA privacy requirements"
+    },
+    {
+      "skill": "recovery-coach-patterns",
+      "reason": "Social components follow Recovery Coach codebase conventions and data patterns"
+    },
+    {
+      "skill": "real-time-collaboration-engine",
+      "reason": "Sponsor/sponsee messaging and group chat need real-time communication infrastructure"
+    },
+    {
+      "skill": "crisis-detection-intervention-ai",
+      "reason": "Social messages must be monitored for crisis signals requiring intervention"
+    }
+  ],
+  "research-craft": [
+    {
+      "skill": "research-analyst",
+      "reason": "Research craft provides the methodology that research analysis applies to specific domains"
+    },
+    {
+      "skill": "technical-writer",
+      "reason": "Research findings are communicated through technical writing with proper citations"
+    },
+    {
+      "skill": "munger-worldly-wisdom",
+      "reason": "Mental model frameworks complement systematic research methodology for deeper analysis"
+    }
+  ],
+  "rest-api-design": [
+    {
+      "skill": "api-architect",
+      "reason": "REST API design is a specific implementation of broader API architecture principles"
+    },
+    {
+      "skill": "openapi-spec-writer",
+      "reason": "REST endpoints designed here are formalized as OpenAPI specifications for documentation"
+    },
+    {
+      "skill": "form-validation-architect",
+      "reason": "Client-side form validation schemas should mirror API request validation for consistency"
+    }
+  ],
+  "skill-architect": [
+    {
+      "skill": "skill-creator",
+      "reason": "The architect designs skill structure; the creator guides implementation following those patterns"
+    },
+    {
+      "skill": "skill-grader",
+      "reason": "Grading feedback identifies architectural weaknesses that the architect addresses"
+    },
+    {
+      "skill": "skill-coach",
+      "reason": "Coaching guides quality improvement using the architectural patterns the architect defines"
+    },
+    {
+      "skill": "skill-documentarian",
+      "reason": "Documentation standards complement architectural design for complete skill delivery"
+    }
+  ],
+  "skill-creator": [
+    {
+      "skill": "skill-architect",
+      "reason": "Architecture patterns inform the creation workflow for structurally sound skills"
+    },
+    {
+      "skill": "skill-grader",
+      "reason": "Grading criteria guide creators toward higher-quality skill implementations"
+    },
+    {
+      "skill": "prompt-engineer",
+      "reason": "Skill descriptions and trigger phrases benefit from prompt engineering optimization"
+    }
+  ],
+  "skill-grader": [
+    {
+      "skill": "skill-architect",
+      "reason": "Grading reveals architectural gaps that the architect addresses with structural improvements"
+    },
+    {
+      "skill": "skill-creator",
+      "reason": "Grading feedback guides creators on which quality axes need improvement"
+    },
+    {
+      "skill": "skill-coach",
+      "reason": "Grading provides objective scores that coaching uses to prioritize improvement areas"
+    }
+  ],
+  "skillful-subagent-creator": [
+    {
+      "skill": "agent-creator",
+      "reason": "Subagent creation applies agent design patterns to specialized DAG workflow nodes"
+    },
+    {
+      "skill": "task-decomposer",
+      "reason": "Decomposed tasks define the subagent specializations and skill requirements"
+    },
+    {
+      "skill": "skill-architect",
+      "reason": "Subagent skill selection depends on understanding skill architecture and capabilities"
+    }
+  ],
+  "sobriety-tools-guardian": [
+    {
+      "skill": "sober-addict-protector",
+      "reason": "App-level optimization supports the daily protection features the protector provides"
+    },
+    {
+      "skill": "pwa-expert",
+      "reason": "Offline capability for sobriety tools requires PWA Service Worker caching strategies"
+    },
+    {
+      "skill": "performance-profiling",
+      "reason": "Load time optimization for crisis-access features requires systematic performance profiling"
+    },
+    {
+      "skill": "crisis-detection-intervention-ai",
+      "reason": "Sobriety tools must integrate crisis detection for users in high-risk situations"
+    }
+  ],
+  "supabase-admin": [
+    {
+      "skill": "postgresql-optimization",
+      "reason": "Supabase runs PostgreSQL; performance tuning applies directly to Supabase databases"
+    },
+    {
+      "skill": "modern-auth-2026",
+      "reason": "Supabase Auth provides the backend for passkey, OAuth, and magic link implementation"
+    },
+    {
+      "skill": "database-design-patterns",
+      "reason": "Supabase schema and RLS policy design follows relational database design patterns"
+    },
+    {
+      "skill": "drizzle-migrations",
+      "reason": "Drizzle ORM manages schema migrations against Supabase PostgreSQL databases"
+    }
+  ],
+  "systems-thinking": [
+    {
+      "skill": "munger-worldly-wisdom",
+      "reason": "Systems thinking is a core mental model in Munger latticework of worldly wisdom"
+    },
+    {
+      "skill": "checklist-discipline",
+      "reason": "Systems analysis identifies which process failure points most benefit from checklist intervention"
+    },
+    {
+      "skill": "clinical-diagnostic-reasoning",
+      "reason": "Diagnostic reasoning chains involve feedback loops and systemic interactions"
+    },
+    {
+      "skill": "research-craft",
+      "reason": "Systems mapping complements research methodology for analyzing complex phenomena"
+    }
+  ],
+  "task-decomposer": [
+    {
+      "skill": "output-contract-enforcer",
+      "reason": "Decomposed tasks define output schemas that the enforcer validates between nodes"
+    },
+    {
+      "skill": "skillful-subagent-creator",
+      "reason": "Decomposed tasks map to subagent specializations with curated skill sets"
+    },
+    {
+      "skill": "human-gate-designer",
+      "reason": "Task decomposition identifies which stages need human review gates"
+    },
+    {
+      "skill": "template-dag-library",
+      "reason": "Common decomposition patterns become reusable templates in the DAG library"
+    }
+  ],
+  "template-dag-library": [
+    {
+      "skill": "task-decomposer",
+      "reason": "Decomposed task patterns become parameterized templates stored in the library"
+    },
+    {
+      "skill": "reactflow-expert",
+      "reason": "DAG templates are visualized and browsed through ReactFlow node graph interfaces"
+    },
+    {
+      "skill": "skillful-subagent-creator",
+      "reason": "Template nodes specify which subagent skills to assign for each task type"
+    }
+  ],
+  "terraform-iac-expert": [
+    {
+      "skill": "devops-automator",
+      "reason": "Terraform plans and applies run through CI/CD automation pipelines"
+    },
+    {
+      "skill": "docker-containerization",
+      "reason": "Terraform provisions the infrastructure that Docker containers deploy onto"
+    },
+    {
+      "skill": "github-actions-pipeline-builder",
+      "reason": "Terraform plan/apply stages are common GitHub Actions workflow steps"
+    },
+    {
+      "skill": "security-auditor",
+      "reason": "Infrastructure security scanning (tfsec, checkov) is part of Terraform CI validation"
+    }
+  ],
+  "vercel-deployment": [
+    {
+      "skill": "nextjs-app-router-expert",
+      "reason": "Vercel is optimized for Next.js deployment with native App Router feature support"
+    },
+    {
+      "skill": "devops-automator",
+      "reason": "Vercel deployment automation integrates with broader CI/CD pipeline workflows"
+    },
+    {
+      "skill": "github-actions-pipeline-builder",
+      "reason": "Vercel preview deployments trigger from GitHub Actions PR workflows"
+    }
+  ],
+  "very-long-text-summarization": [
+    {
+      "skill": "research-craft",
+      "reason": "Long-text summarization supports research synthesis of academic papers and books"
+    },
+    {
+      "skill": "llm-router",
+      "reason": "Multi-pass summarization uses model routing to assign cheap models for extraction passes"
+    },
+    {
+      "skill": "cost-optimizer",
+      "reason": "Hierarchical summarization of large texts requires cost-aware model selection"
+    }
+  ],
+  "video-processing-editing": [
+    {
+      "skill": "ai-video-production-master",
+      "reason": "AI-generated video clips need FFmpeg post-processing for trimming, concatenation, and export"
+    },
+    {
+      "skill": "voice-audio-engineer",
+      "reason": "Audio tracks for video require voice synthesis, mixing, and synchronization"
+    },
+    {
+      "skill": "sound-engineer",
+      "reason": "Video sound design and audio mixing use spatial audio and effects processing techniques"
+    }
+  ],
+  "vitest-testing-patterns": [
+    {
+      "skill": "test-automation-expert",
+      "reason": "Vitest unit testing is one layer in a comprehensive test automation strategy"
+    },
+    {
+      "skill": "playwright-e2e-tester",
+      "reason": "Unit tests (Vitest) and E2E tests (Playwright) form complementary test pyramid layers"
+    },
+    {
+      "skill": "react-performance-optimizer",
+      "reason": "Component test patterns verify that performance optimizations preserve correct behavior"
+    },
+    {
+      "skill": "typescript-advanced-patterns",
+      "reason": "Type-safe test utilities and mock factories leverage advanced TypeScript patterns"
+    }
+  ],
+  "web-weather-creator": [
+    {
+      "skill": "web-cloud-designer",
+      "reason": "Cloud effects are a specific weather element sharing SVG filter and animation techniques"
+    },
+    {
+      "skill": "web-wave-designer",
+      "reason": "Wave effects share the same SVG feTurbulence and CSS animation infrastructure"
+    },
+    {
+      "skill": "dark-mode-design-expert",
+      "reason": "Atmospheric weather effects must adapt visual parameters for dark and light modes"
+    }
+  ],
+  "websocket-streaming": [
+    {
+      "skill": "reactflow-expert",
+      "reason": "WebSocket connections deliver live DAG state updates to ReactFlow visualization dashboards"
+    },
+    {
+      "skill": "real-time-collaboration-engine",
+      "reason": "WebSocket transport powers the real-time communication layer for collaborative editing"
+    },
+    {
+      "skill": "llm-streaming-response-handler",
+      "reason": "WebSocket is an alternative transport to SSE for bidirectional LLM streaming"
+    }
+  ],
+  "windows-3-1-web-designer": [
+    {
+      "skill": "win31-pixel-art-designer",
+      "reason": "Windows 3.1 web designs use pixel art icons and graphics from the same era"
+    },
+    {
+      "skill": "win31-audio-design",
+      "reason": "Windows 3.1 web apps use era-appropriate UI sound effects"
+    },
+    {
+      "skill": "windows-95-web-designer",
+      "reason": "Both create retro Microsoft OS-themed web apps with shared beveled border and system font patterns"
+    }
+  ],
+  "windows-95-web-designer": [
+    {
+      "skill": "windows-3-1-web-designer",
+      "reason": "Both create retro Microsoft OS-themed web apps evolving from Win31 to Win95 design language"
+    },
+    {
+      "skill": "neobrutalist-web-designer",
+      "reason": "Win95 thick borders and high-contrast colors share DNA with neobrutalist design principles"
+    },
+    {
+      "skill": "web-design-expert",
+      "reason": "Win95 aesthetic requires general web design expertise for modern responsive implementation"
+    }
+  ]
+}

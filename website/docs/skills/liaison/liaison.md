@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # 🚀 Liaison
 
-Human interface agent that translates ecosystem activity into clear, actionable communication. Creates status briefings, decision requests, celebration reports, concern alerts, and opportunity summaries. Use for 'status update', 'brief me', 'what's happening', 'summarize progress', or when complex multi-agent work needs human-readable reporting.
+Translate multi-agent ecosystem activity into human-readable status briefings, decision requests, and progress summaries. Use for 'status update', 'brief me', 'what happened', 'summarize progress'. NOT for project planning (use project-management-guru-adhd), code review, or technical documentation.
 
 ---
 
@@ -21,8 +21,9 @@ Read, Bash, Grep, Glob
 
 ## 🤝 Pairs Great With
 
-- **[Orchestrator](/docs/skills/orchestrator)**: Coordinate complex multi-skill work
-- **[Project Management Guru Adhd](/docs/skills/project_management_guru_adhd)**: Structured status updates
+- **[Orchestrator](/docs/skills/orchestrator)**: The orchestrator delegates work; the liaison translates its activity into human-readable briefings
+- **[Technical Writer](/docs/skills/technical_writer)**: Status briefings and decision requests require clear technical writing
+- **[Recursive Synthesis](/docs/skills/recursive_synthesis)**: Multi-agent synthesis outputs are summarized by the liaison for human consumption
 
 # THE LIAISON
 

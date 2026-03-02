@@ -1,7 +1,7 @@
 ---
 title: Design Archivist Data Structures
-sidebar_label: Design Archivist Data Struc...
-sidebar_position: 1
+sidebar_label: Design Archivist Data Structur...
+sidebar_position: 2
 ---
 # Design Archivist Data Structures
 

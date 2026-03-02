@@ -1,7 +1,7 @@
 ---
 title: Line Drawing Techniques for Hand-Drawn Infographics
-sidebar_label: Line Drawing Techniques for...
-sidebar_position: 6
+sidebar_label: Line Drawing Techniques for Ha...
+sidebar_position: 2
 ---
 # Line Drawing Techniques for Hand-Drawn Infographics
 

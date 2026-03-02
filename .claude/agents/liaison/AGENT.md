@@ -1,5 +1,6 @@
 ---
 name: liaison
+description: Provides status updates, summaries, and human-readable reports on project activity
 role: Human Interface and Informant
 allowed-tools: Read,Write,Edit,Glob,Grep,Bash,Task,WebFetch,WebSearch,TodoWrite
 triggers:

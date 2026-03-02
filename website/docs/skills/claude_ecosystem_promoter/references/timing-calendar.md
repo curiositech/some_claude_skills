@@ -1,7 +1,7 @@
 ---
 title: Optimal Timing Calendar for Promotion
-sidebar_label: Optimal Timing Calendar for...
-sidebar_position: 4
+sidebar_label: Optimal Timing Calendar for Pr...
+sidebar_position: 2
 ---
 # Optimal Timing Calendar for Promotion
 

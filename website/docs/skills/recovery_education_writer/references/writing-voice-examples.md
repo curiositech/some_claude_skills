@@ -1,7 +1,7 @@
 ---
-title: "Writing Voice Examples: Annotated"
-sidebar_label: "Writing Voice Examples: Ann..."
-sidebar_position: 4
+title: Writing Voice Examples: Annotated
+sidebar_label: Writing Voice Examples: Annota...
+sidebar_position: 2
 ---
 # Writing Voice Examples: Annotated
 
@@ -94,7 +94,7 @@ This document provides annotated examples of the recovery education writing voic
 >
 > 6. **Seek medical help if:**
 >    - Paranoia is severe (you're at risk of harming yourself or others)
->    - It's been >48 hours and it's not improving
+>    - It's been &gt;48 hours and it's not improving
 >    - You're hallucinating (seeing/hearing things that aren't there)
 >    - Emergency rooms can provide antipsychotics (Haldol, Zyprexa) that quickly reduce psychosis. You don't have to tell them you used meth—"I'm experiencing severe paranoia" is enough.
 >

@@ -1,7 +1,7 @@
 ---
-title: "Couples Therapy in Recovery: Why It's Essential"
-sidebar_label: Couples Therapy in Recovery...
-sidebar_position: 1
+title: Couples Therapy in Recovery: Why It's Essential
+sidebar_label: Couples Therapy in Recovery: W...
+sidebar_position: 2
 ---
 # Couples Therapy in Recovery: Why It's Essential
 

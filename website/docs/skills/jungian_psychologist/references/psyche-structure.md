@@ -1,7 +1,7 @@
 ---
 title: Structure of the Psyche
 sidebar_label: Structure of the Psyche
-sidebar_position: 5
+sidebar_position: 2
 ---
 # Structure of the Psyche
 

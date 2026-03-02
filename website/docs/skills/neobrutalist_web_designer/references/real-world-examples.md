@@ -1,7 +1,7 @@
 ---
 title: Real-World Neobrutalism Examples
-sidebar_label: Real-World Neobrutalism Exa...
-sidebar_position: 3
+sidebar_label: Real-World Neobrutalism Exampl...
+sidebar_position: 2
 ---
 # Real-World Neobrutalism Examples
 

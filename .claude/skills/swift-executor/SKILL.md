@@ -1,25 +1,27 @@
 ---
 name: swift-executor
-description: Rapid task execution without hesitation or deterrence. Expert in overcoming blockers, making quick decisions, and maintaining forward momentum. Use for urgent tasks, breaking through impediments, decisive action. Activates on 'swift', 'execute quickly', 'undeterred', 'overcome blocker', 'just do it'. NOT for strategic planning, careful analysis, or research tasks.
+description: Rapid task execution without hesitation or deterrence. Expert in overcoming blockers, making quick decisions, and maintaining forward momentum. Use for urgent tasks, breaking through impediments,
+  decisive action. Activates on 'swift', 'execute quickly', 'undeterred', 'overcome blocker', 'just do it'. NOT for strategic planning, careful analysis, or research tasks.
 allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-category: Productivity & Meta
-tags:
+- Read
+- Write
+- Edit
+- Bash
+- Grep
+- Glob
+metadata:
+  category: Productivity & Meta
+  pairs-with:
+  - skill: orchestrator
+    reason: Execute orchestrated tasks quickly
+  - skill: project-management-guru-adhd
+    reason: Break through ADHD paralysis
+  tags:
   - execution
   - urgency
   - decisiveness
   - momentum
   - blockers
-pairs-with:
-  - skill: orchestrator
-    reason: Execute orchestrated tasks quickly
-  - skill: project-management-guru-adhd
-    reason: Break through ADHD paralysis
 ---
 
 

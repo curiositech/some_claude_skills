@@ -1,7 +1,7 @@
 ---
 title: Practical Implementation Guide
 sidebar_label: Practical Implementation Guide
-sidebar_position: 7
+sidebar_position: 2
 ---
 # Practical Implementation Guide
 

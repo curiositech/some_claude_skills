@@ -1,7 +1,7 @@
 ---
 title: Claude Ecosystem Community Directory
-sidebar_label: Claude Ecosystem Community ...
-sidebar_position: 1
+sidebar_label: Claude Ecosystem Community Dir...
+sidebar_position: 2
 ---
 # Claude Ecosystem Community Directory
 

@@ -1,6 +1,6 @@
 ---
 title: Badge and Metadata Management Reference
-sidebar_label: Badge and Metadata Manageme...
+sidebar_label: Badge and Metadata Management ...
 sidebar_position: 2
 ---
 # Badge and Metadata Management Reference

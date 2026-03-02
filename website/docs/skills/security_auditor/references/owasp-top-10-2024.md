@@ -1,7 +1,7 @@
 ---
 title: OWASP Top 10 2021 Reference Guide
-sidebar_label: OWASP Top 10 2021 Reference...
-sidebar_position: 1
+sidebar_label: OWASP Top 10 2021 Reference Gu...
+sidebar_position: 2
 ---
 # OWASP Top 10 2021 Reference Guide
 

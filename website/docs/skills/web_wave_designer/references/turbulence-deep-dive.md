@@ -1,7 +1,7 @@
 ---
 title: feTurbulence Deep Dive for Water Effects
-sidebar_label: feTurbulence Deep Dive for ...
-sidebar_position: 3
+sidebar_label: feTurbulence Deep Dive for Wat...
+sidebar_position: 2
 ---
 # feTurbulence Deep Dive for Water Effects
 

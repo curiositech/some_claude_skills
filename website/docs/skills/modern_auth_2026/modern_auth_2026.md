@@ -19,6 +19,13 @@ Read, Write, Edit, Bash, Grep, Glob, WebSearch, mcp__supabase__*
 
 `authentication` `passkeys` `webauthn` `oauth` `passwordless` `supabase` `mfa` `social-login`
 
+## 🤝 Pairs Great With
+
+- **[Oauth Oidc Implementer](/docs/skills/oauth_oidc_implementer)**: OAuth/OIDC flows are core components of modern auth alongside passkeys and magic links
+- **[Supabase Admin](/docs/skills/supabase_admin)**: Supabase Auth provides the backend infrastructure for passkey and OAuth implementation
+- **[Security Auditor](/docs/skills/security_auditor)**: Auth implementation security (token storage, session management) requires dedicated auditing
+- **[Cloudflare Worker Dev](/docs/skills/cloudflare_worker_dev)**: Edge-based auth token validation in Workers is a modern auth deployment pattern
+
 # Modern Authentication Expert (2026)
 
 Master passwordless-first authentication with passkeys, OAuth, magic links, and cross-device sync for modern web and mobile applications.

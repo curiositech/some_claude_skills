@@ -1,11 +1,22 @@
 ---
 name: design-system-generator
-description: Design system generator that matches natural language descriptions to design trends. Expert in Swiss Modern, Neobrutalism, Glassmorphism, and 20+ other design trends. Includes trend matching scripts and comprehensive design pattern library.
-category: Design
-tags:
+description: Design system generator that matches natural language descriptions to design trends. Expert in Swiss Modern, Neobrutalism, Glassmorphism, and 20+ other design trends. Includes trend matching
+  scripts and comprehensive design pattern library.
+metadata:
+  category: Design
+  tags:
   - design-system
   - trends
   - generator
+  pairs-with:
+  - skill: design-system-creator
+    reason: Generator creates initial tokens and themes; creator builds the full component library from them
+  - skill: design-system-documenter
+    reason: Generated design systems need comprehensive documentation for team adoption
+  - skill: component-template-generator
+    reason: Design tokens from the generator feed into component template scaffolding
+  - skill: typography-expert
+    reason: Type scale and font pairing decisions are foundational to design system generation
 ---
 
 # Design System Generator

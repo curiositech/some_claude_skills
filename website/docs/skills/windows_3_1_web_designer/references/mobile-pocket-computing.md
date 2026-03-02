@@ -1,7 +1,7 @@
 ---
-title: "Mobile: The Pocket Computing Paradigm"
-sidebar_label: "Mobile: The Pocket Computin..."
-sidebar_position: 5
+title: Mobile: The Pocket Computing Paradigm
+sidebar_label: Mobile: The Pocket Computing P...
+sidebar_position: 2
 ---
 # Mobile: The Pocket Computing Paradigm
 

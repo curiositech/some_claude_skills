@@ -1,6 +1,6 @@
 ---
 title: Server-Sent Events (SSE) Protocol
-sidebar_label: Server-Sent Events (SSE) Pr...
+sidebar_label: Server-Sent Events (SSE) Proto...
 sidebar_position: 2
 ---
 # Server-Sent Events (SSE) Protocol

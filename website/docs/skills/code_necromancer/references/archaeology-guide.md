@@ -1,7 +1,7 @@
 ---
 title: Code Archaeology Guide
 sidebar_label: Code Archaeology Guide
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Code Archaeology Guide
 

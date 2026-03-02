@@ -26,9 +26,12 @@ function validateLiquid(filePath) {
     // Skip if in code block or frontmatter
     if (inCodeBlock || inFrontmatter) return;
 
+    // Strip inline code spans before checking (backtick-wrapped content is safe in MDX)
+    const lineNoInlineCode = line.replace(/`[^`]+`/g, '');
+
     // Check for unescaped Liquid syntax
-    const liquidMatch = line.match(/\{\{[^`].*?\}\}/);
-    if (liquidMatch && !line.includes('{`{{')) {
+    const liquidMatch = lineNoInlineCode.match(/\{\{[^`].*?\}\}/);
+    if (liquidMatch && !lineNoInlineCode.includes('{`{{')) {
       errors.push({
         line: idx + 1,
         column: line.indexOf(liquidMatch[0]) + 1,

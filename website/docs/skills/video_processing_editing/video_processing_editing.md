@@ -15,6 +15,16 @@ FFmpeg automation for cutting, trimming, concatenating videos. Audio mixing, tim
 Read, Write, Edit, Bash(ffmpeg*, ffprobe*, python*)
 ```
 
+## Tags
+
+`video` `processing` `editing` `video-editing` `ffmpeg`
+
+## 🤝 Pairs Great With
+
+- **[Ai Video Production Master](/docs/skills/ai_video_production_master)**: AI-generated video clips need FFmpeg post-processing for trimming, concatenation, and export
+- **[Voice Audio Engineer](/docs/skills/voice_audio_engineer)**: Audio tracks for video require voice synthesis, mixing, and synchronization
+- **[Sound Engineer](/docs/skills/sound_engineer)**: Video sound design and audio mixing use spatial audio and effects processing techniques
+
 ## References
 
 - [Export Optimization Reference](./references/export-optimization)

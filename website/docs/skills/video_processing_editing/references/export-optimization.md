@@ -1,7 +1,7 @@
 ---
 title: Export Optimization Reference
 sidebar_label: Export Optimization Reference
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Export Optimization Reference
 
@@ -424,7 +424,7 @@ ffmpeg -i original.mp4 -i encoded.mp4 \
 # 90+: Excellent (indistinguishable)
 # 80-90: Good quality
 # 70-80: Acceptable
-# <70: Noticeable quality loss
+# &lt;70: Noticeable quality loss
 ```
 
 ### Check File Metadata

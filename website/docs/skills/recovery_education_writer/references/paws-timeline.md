@@ -1,7 +1,7 @@
 ---
-title: "Post-Acute Withdrawal Syndrome (PAWS): Timeline and Management"
-sidebar_label: Post-Acute Withdrawal Syndr...
-sidebar_position: 3
+title: Post-Acute Withdrawal Syndrome (PAWS): Timeline and Management
+sidebar_label: Post-Acute Withdrawal Syndrome...
+sidebar_position: 2
 ---
 # Post-Acute Withdrawal Syndrome (PAWS): Timeline and Management
 
@@ -446,7 +446,7 @@ PAWS is normal, but some symptoms warrant professional intervention:
 
 - **Suicidal ideation:** Thoughts of self-harm or suicide
 - **Severe depression:** Can't get out of bed, no improvement after 3+ months
-- **Psychosis:** Hallucinations, delusions, paranoia persisting >30 days
+- **Psychosis:** Hallucinations, delusions, paranoia persisting &gt;30 days
 - **Severe insomnia:** &lt;3 hours/night for weeks despite sleep hygiene
 - **Functional impairment:** Can't work, care for self, maintain relationships
 

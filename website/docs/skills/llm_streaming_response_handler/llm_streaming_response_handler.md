@@ -15,6 +15,17 @@ Build production LLM streaming UIs with Server-Sent Events, real-time token disp
 Read, Write, Edit, Bash(npm:*)
 ```
 
+## Tags
+
+`llm` `streaming` `response` `llm-streaming` `sse`
+
+## 🤝 Pairs Great With
+
+- **[Chatbot Analytics](/docs/skills/chatbot_analytics)**: Streaming metrics (time-to-first-token, throughput) are key analytics for chatbot performance
+- **[React Performance Optimizer](/docs/skills/react_performance_optimizer)**: Real-time token rendering requires React performance optimization for smooth display
+- **[Error Handling Patterns](/docs/skills/error_handling_patterns)**: Stream interruption recovery and retry logic are critical error handling concerns
+- **[Websocket Streaming](/docs/skills/websocket_streaming)**: WebSocket transport is an alternative to SSE for bidirectional LLM streaming
+
 ## References
 
 - [Stream Error Recovery Strategies](./references/error-recovery)

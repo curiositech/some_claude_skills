@@ -1,7 +1,7 @@
 ---
 title: Animation Patterns for Water Effects
-sidebar_label: Animation Patterns for Wate...
-sidebar_position: 1
+sidebar_label: Animation Patterns for Water E...
+sidebar_position: 2
 ---
 # Animation Patterns for Water Effects
 

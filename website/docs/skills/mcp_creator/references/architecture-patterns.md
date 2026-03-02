@@ -1,7 +1,7 @@
 ---
 title: MCP Architecture Patterns
 sidebar_label: MCP Architecture Patterns
-sidebar_position: 1
+sidebar_position: 2
 ---
 # MCP Architecture Patterns
 

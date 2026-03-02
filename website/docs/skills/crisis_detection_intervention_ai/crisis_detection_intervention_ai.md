@@ -3,7 +3,7 @@ sidebar_label: Crisis Detection Intervention Ai
 sidebar_position: 1
 ---
 
-# 🤖 Crisis Detection Intervention Ai
+# 🏠 Crisis Detection Intervention Ai
 
 Detect crisis signals in user content using NLP, mental health sentiment analysis, and safe intervention protocols. Implements suicide ideation detection, automated escalation, and crisis resource integration. Use for mental health apps, recovery platforms, support communities. Activate on "crisis detection", "suicide prevention", "mental health NLP", "intervention protocol". NOT for general sentiment analysis, medical diagnosis, or replacing professional help.
 
@@ -14,6 +14,16 @@ Detect crisis signals in user content using NLP, mental health sentiment analysi
 ```
 Read, Write, Edit, Bash(npm:*)
 ```
+
+## Tags
+
+`crisis` `detection` `intervention` `crisis-detection` `suicide-prevention`
+
+## 🤝 Pairs Great With
+
+- **[Crisis Response Protocol](/docs/skills/crisis_response_protocol)**: Detection identifies the crisis; response protocol determines the safe intervention
+- **[Sober Addict Protector](/docs/skills/sober_addict_protector)**: Relapse crisis signals require the same NLP detection patterns as general crisis detection
+- **[Clinical Diagnostic Reasoning](/docs/skills/clinical_diagnostic_reasoning)**: Bias-aware clinical reasoning improves accuracy of crisis signal classification
 
 ## References
 

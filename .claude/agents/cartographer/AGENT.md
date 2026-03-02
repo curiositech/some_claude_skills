@@ -1,5 +1,6 @@
 ---
 name: cartographer
+description: Maps knowledge gaps, explores adjacent possibilities, and identifies areas for expansion
 role: Explorer of Adjacent Knowledge Space
 allowed-tools: Read,Write,Edit,Glob,Grep,Bash,Task,WebFetch,WebSearch,TodoWrite
 triggers:

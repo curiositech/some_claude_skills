@@ -1,7 +1,7 @@
 ---
-title: "AI Assistant Patterns: The Cue Card Paradigm"
-sidebar_label: "AI Assistant Patterns: The ..."
-sidebar_position: 1
+title: AI Assistant Patterns: The Cue Card Paradigm
+sidebar_label: AI Assistant Patterns: The Cue...
+sidebar_position: 2
 ---
 # AI Assistant Patterns: The Cue Card Paradigm
 

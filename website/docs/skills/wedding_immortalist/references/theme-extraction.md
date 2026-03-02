@@ -1,7 +1,7 @@
 ---
 title: Wedding Theme Extraction & Design System
-sidebar_label: Wedding Theme Extraction & ...
-sidebar_position: 3
+sidebar_label: Wedding Theme Extraction & Des...
+sidebar_position: 2
 ---
 # Wedding Theme Extraction & Design System
 

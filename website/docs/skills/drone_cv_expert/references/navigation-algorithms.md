@@ -1,7 +1,7 @@
 ---
 title: Navigation Algorithms Reference
-sidebar_label: Navigation Algorithms Refer...
-sidebar_position: 1
+sidebar_label: Navigation Algorithms Referenc...
+sidebar_position: 2
 ---
 # Navigation Algorithms Reference
 

@@ -1,7 +1,7 @@
 ---
 title: Authentication Patterns for Unstable Phone Access
-sidebar_label: Authentication Patterns for...
-sidebar_position: 1
+sidebar_label: Authentication Patterns for Un...
+sidebar_position: 2
 ---
 # Authentication Patterns for Unstable Phone Access
 

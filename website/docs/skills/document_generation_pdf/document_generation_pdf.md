@@ -15,6 +15,17 @@ Generate, fill, and assemble PDF documents at scale. Handles legal forms, contra
 Read, Write, Edit, Bash(npm:*, latex*)
 ```
 
+## Tags
+
+`document` `generation` `pdf` `pdf-generation` `form-filling`
+
+## 🤝 Pairs Great With
+
+- **[National Expungement Expert](/docs/skills/national_expungement_expert)**: Expungement court filings require automated PDF form generation at scale
+- **[2026 Legal Research Agent](/docs/skills/2026_legal_research_agent)**: Legal research outputs are formatted into filing documents via PDF generation
+- **[Cv Creator](/docs/skills/cv_creator)**: Resume PDF generation shares template rendering and typography patterns
+- **[Technical Writer](/docs/skills/technical_writer)**: Technical documentation exports to PDF for offline distribution
+
 ## References
 
 - [Document Assembly](./references/document-assembly)

@@ -1,7 +1,7 @@
 ---
 title: House Measurement Templates
 sidebar_label: House Measurement Templates
-sidebar_position: 1
+sidebar_position: 2
 ---
 # House Measurement Templates
 

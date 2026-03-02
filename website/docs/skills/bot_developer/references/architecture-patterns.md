@@ -1,7 +1,7 @@
 ---
 title: Architecture Patterns
 sidebar_label: Architecture Patterns
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Architecture Patterns
 

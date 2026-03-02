@@ -47,3 +47,6 @@ erichowens_com/
 
 # RAG Vector Database (can be rebuilt with scripts/build_embeddings.py)
 .chroma_db/
+
+# Private skills (stay on disk for local use, never pushed)
+.claude/skills/windags-*/

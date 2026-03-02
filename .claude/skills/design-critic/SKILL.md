@@ -1,11 +1,34 @@
 ---
 name: design-critic
 description: Aesthetic assessment and remix partner with trained visual taste. Provides structured design critiques using a 6-dimension scoring system inspired by VisualQuality-R1 chain-of-thought reasoning.
-category: design
+allowed-tools:
+- Read
+- Glob
+- Grep
+- WebFetch
+- WebSearch
 version: 1.0.0
-tags: [aesthetics, critique, scoring, remix, visual-quality, assessment, design-review]
-pairs-with: [web-design-expert, color-contrast-auditor, frontend-architect, design-system-generator, vibe-matcher]
-allowed-tools: [Read, Glob, Grep, WebFetch, WebSearch]
+metadata:
+  category: design
+  pairs-with:
+  - skill: web-design-expert
+    reason: Complementary skill
+  - skill: color-contrast-auditor
+    reason: Complementary skill
+  - skill: frontend-architect
+    reason: Complementary skill
+  - skill: design-system-generator
+    reason: Complementary skill
+  - skill: vibe-matcher
+    reason: Complementary skill
+  tags:
+  - aesthetics
+  - critique
+  - scoring
+  - remix
+  - visual-quality
+  - assessment
+  - design-review
 ---
 
 # Design Critic

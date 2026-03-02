@@ -1,7 +1,7 @@
 ---
 title: Temporal Diversity & Complete Pipeline
-sidebar_label: Temporal Diversity & Comple...
-sidebar_position: 4
+sidebar_label: Temporal Diversity & Complete ...
+sidebar_position: 2
 ---
 # Temporal Diversity & Complete Pipeline
 

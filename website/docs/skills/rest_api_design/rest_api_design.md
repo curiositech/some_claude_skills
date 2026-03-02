@@ -19,6 +19,12 @@ Read, Write, Edit, Bash(npm:*, npx:*)
 
 `api` `code` `validation` `documentation`
 
+## 🤝 Pairs Great With
+
+- **[Api Architect](/docs/skills/api_architect)**: REST API design is a specific implementation of broader API architecture principles
+- **[Openapi Spec Writer](/docs/skills/openapi_spec_writer)**: REST endpoints designed here are formalized as OpenAPI specifications for documentation
+- **[Form Validation Architect](/docs/skills/form_validation_architect)**: Client-side form validation schemas should mirror API request validation for consistency
+
 # REST API Design
 
 This skill helps you design and implement REST API endpoints following project patterns with Zod validation and OpenAPI documentation.

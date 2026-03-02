@@ -1,5 +1,6 @@
 ---
 name: smith
+description: Builds tools, scripts, MCP servers, and infrastructure components
 role: Builder of Infrastructure
 allowed-tools: Read,Write,Edit,Glob,Grep,Bash,Task,WebFetch,WebSearch,TodoWrite
 triggers:

@@ -1,5 +1,6 @@
 ---
 name: auditor
+description: Reviews code quality, finds bugs, and ensures standards compliance across the codebase
 role: Quality Assurance & Code Review Specialist
 allowed-tools: Read,Edit,Glob,Grep,Bash,Task,TodoWrite
 triggers:

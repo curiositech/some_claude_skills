@@ -1,7 +1,7 @@
 ---
-title: "React Data Visualization Libraries: Comprehensive Comparison (2025)"
-sidebar_label: React Data Visualization Li...
-sidebar_position: 3
+title: React Data Visualization Libraries: Comprehensive Comparison (2025)
+sidebar_label: React Data Visualization Libra...
+sidebar_position: 2
 ---
 # React Data Visualization Libraries: Comprehensive Comparison (2025)
 

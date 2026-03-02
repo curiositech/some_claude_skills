@@ -19,6 +19,12 @@ Read, Write, Edit, Bash, Grep, Glob
 
 `react` `performance` `testing` `dashboard` `optimization`
 
+## 🤝 Pairs Great With
+
+- **[React Performance Optimizer](/docs/skills/react_performance_optimizer)**: Dashboard performance depends on React memoization, virtualization, and state management
+- **[Admin Dashboard](/docs/skills/admin_dashboard)**: Admin dashboards are the primary consumer of reactive dashboard performance patterns
+- **[Data Viz 2025](/docs/skills/data_viz_2025)**: Dashboard charts and graphs require performant data visualization rendering
+
 # Reactive Dashboard Performance
 
 Expert in building production-grade reactive dashboards that load in &lt;100ms and have comprehensive test coverage.

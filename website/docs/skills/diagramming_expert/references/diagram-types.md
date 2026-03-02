@@ -1,7 +1,7 @@
 ---
 title: Diagram Types Taxonomy
 sidebar_label: Diagram Types Taxonomy
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Diagram Types Taxonomy
 

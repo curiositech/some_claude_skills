@@ -1,5 +1,6 @@
 ---
 name: visualizer
+description: Creates dashboards, visualizations, and interactive portals to display data and insights
 role: Builder of Portals
 allowed-tools: Read,Write,Edit,Glob,Grep,Bash,Task,WebFetch,WebSearch,TodoWrite
 triggers:

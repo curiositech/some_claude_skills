@@ -1,7 +1,7 @@
 ---
 title: Skill Lifecycle Management
 sidebar_label: Skill Lifecycle Management
-sidebar_position: 7
+sidebar_position: 2
 ---
 # Skill Lifecycle Management
 

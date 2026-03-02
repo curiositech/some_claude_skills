@@ -1,26 +1,29 @@
 ---
 name: orchestrator
-description: Master coordinator that delegates to specialist skills, synthesizes outputs, AND creates new skills on-the-fly when needed. Expert in problem decomposition, skill orchestration, quality assurance, and skill creation for capability gaps. Use for multi-skill coordination, complex task decomposition, workflow design. Activates on 'orchestrate', 'coordinate', 'multi-skill', 'complex task'. NOT for single-domain tasks or simple linear workflows.
+description: Master coordinator that delegates to specialist skills, synthesizes outputs, AND creates new skills on-the-fly when needed. Expert in problem decomposition, skill orchestration, quality assurance,
+  and skill creation for capability gaps. Use for multi-skill coordination, complex task decomposition, workflow design. Activates on 'orchestrate', 'coordinate', 'multi-skill', 'complex task'. NOT for
+  single-domain tasks or simple linear workflows.
 allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - Task
-category: Productivity & Meta
-tags:
+- Read
+- Write
+- Edit
+- Bash
+- Grep
+- Glob
+- Task
+metadata:
+  category: Productivity & Meta
+  pairs-with:
+  - skill: team-builder
+    reason: Design skill teams for tasks
+  - skill: liaison
+    reason: Communicate orchestration results
+  tags:
   - coordination
   - multi-skill
   - delegation
   - synthesis
   - workflow
-pairs-with:
-  - skill: team-builder
-    reason: Design skill teams for tasks
-  - skill: liaison
-    reason: Communicate orchestration results
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Knot Garden Physics
 sidebar_label: Knot Garden Physics
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Knot Garden Physics
 

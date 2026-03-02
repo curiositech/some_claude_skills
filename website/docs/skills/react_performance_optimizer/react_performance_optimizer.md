@@ -15,6 +15,17 @@ Optimize React apps for 60fps performance. Implements memoization, virtualizatio
 Read, Write, Edit, Bash(npm:*)
 ```
 
+## Tags
+
+`react` `performance` `optimizer` `react-performance` `slow-render`
+
+## 🤝 Pairs Great With
+
+- **[Performance Profiling](/docs/skills/performance_profiling)**: React profiling tools identify the re-render bottlenecks that optimization addresses
+- **[Nextjs App Router Expert](/docs/skills/nextjs_app_router_expert)**: RSC and streaming SSR in Next.js require React-specific performance strategies
+- **[Data Viz 2025](/docs/skills/data_viz_2025)**: Data-heavy visualizations require React memoization and virtualization for smooth rendering
+- **[Reactive Dashboard Performance](/docs/skills/reactive_dashboard_performance)**: Dashboard widgets with real-time data need the same React optimization patterns
+
 ## References
 
 - [Bundle Optimization Strategies](./references/bundle-optimization)

@@ -15,6 +15,16 @@ Track real-time API cost accrual during LLM execution. Activate on 'cost trackin
 Read, Write, Edit
 ```
 
+## Tags
+
+`cost` `accrual` `tracker`
+
+## 🤝 Pairs Great With
+
+- **[Cost Optimizer](/docs/skills/cost_optimizer)**: Real-time cost tracking data feeds the optimizer decision engine for model downgrades
+- **[Cost Verification Auditor](/docs/skills/cost_verification_auditor)**: Tracked costs are validated against actual API bills by the verification auditor
+- **[Llm Router](/docs/skills/llm_router)**: Cost accrual data informs the router model selection to stay within budget
+
 ## References
 
 - [Claude API Pricing Reference](./references/claude-api-pricing)

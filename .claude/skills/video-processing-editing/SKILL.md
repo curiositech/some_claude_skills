@@ -1,7 +1,23 @@
 ---
 name: video-processing-editing
-description: FFmpeg automation for cutting, trimming, concatenating videos. Audio mixing, timeline editing, transitions, effects. Export optimization for YouTube, social media. Subtitle handling, color grading, batch processing. Use for videogen projects, content creation, automated video production. Activate on "video editing", "FFmpeg", "trim video", "concatenate", "transitions", "export optimization". NOT for real-time video editing UI, 3D compositing, or motion graphics.
+description: FFmpeg automation for cutting, trimming, concatenating videos. Audio mixing, timeline editing, transitions, effects. Export optimization for YouTube, social media. Subtitle handling, color
+  grading, batch processing. Use for videogen projects, content creation, automated video production. Activate on "video editing", "FFmpeg", "trim video", "concatenate", "transitions", "export optimization".
+  NOT for real-time video editing UI, 3D compositing, or motion graphics.
 allowed-tools: Read,Write,Edit,Bash(ffmpeg*,ffprobe*,python*)
+metadata:
+  tags:
+  - video
+  - processing
+  - editing
+  - video-editing
+  - ffmpeg
+  pairs-with:
+  - skill: ai-video-production-master
+    reason: AI-generated video clips need FFmpeg post-processing for trimming, concatenation, and export
+  - skill: voice-audio-engineer
+    reason: Audio tracks for video require voice synthesis, mixing, and synchronization
+  - skill: sound-engineer
+    reason: Video sound design and audio mixing use spatial audio and effects processing techniques
 ---
 
 # Video Processing & Editing

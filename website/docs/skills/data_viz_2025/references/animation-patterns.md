@@ -1,7 +1,7 @@
 ---
 title: Animation Patterns for Data Visualizations
-sidebar_label: Animation Patterns for Data...
-sidebar_position: 1
+sidebar_label: Animation Patterns for Data Vi...
+sidebar_position: 2
 ---
 # Animation Patterns for Data Visualizations
 

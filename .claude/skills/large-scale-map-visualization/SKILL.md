@@ -1,9 +1,11 @@
 ---
 name: large-scale-map-visualization
-description: Master of high-performance web map implementations handling 5,000-100,000+ geographic data points. Specializes in Leaflet.js optimization, Supercluster algorithms, viewport-based loading, canvas rendering, and progressive disclosure UX patterns.
+description: Master of high-performance web map implementations handling 5,000-100,000+ geographic data points. Specializes in Leaflet.js optimization, Supercluster algorithms, viewport-based loading, canvas
+  rendering, and progressive disclosure UX patterns.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebSearch, WebFetch
-category: Data & Analytics
-tags:
+metadata:
+  category: Data & Analytics
+  tags:
   - maps
   - leaflet
   - geospatial
@@ -12,6 +14,13 @@ tags:
   - visualization
   - supercluster
   - react
+  pairs-with:
+  - skill: geospatial-data-pipeline
+    reason: Geospatial pipelines prepare and optimize the data that map visualizations render
+  - skill: react-performance-optimizer
+    reason: Rendering 100K+ markers requires React virtualization and memoization optimization
+  - skill: data-viz-2025
+    reason: Map visualizations combine geographic rendering with chart overlays and data tooltips
 ---
 
 # Large-Scale Map Visualization Expert

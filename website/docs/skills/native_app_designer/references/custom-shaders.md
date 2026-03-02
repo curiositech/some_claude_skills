@@ -1,7 +1,7 @@
 ---
 title: Custom Shaders for Unique Effects
-sidebar_label: Custom Shaders for Unique E...
-sidebar_position: 1
+sidebar_label: Custom Shaders for Unique Effe...
+sidebar_position: 2
 ---
 # Custom Shaders for Unique Effects
 

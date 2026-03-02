@@ -15,6 +15,16 @@ Audit LLM token cost estimates against actual API usage. Activate on 'cost verif
 Read, Write, Bash
 ```
 
+## Tags
+
+`cost` `verification` `auditor`
+
+## 🤝 Pairs Great With
+
+- **[Cost Accrual Tracker](/docs/skills/cost_accrual_tracker)**: Compares tracked estimates against actual API invoices to find estimation drift
+- **[Cost Optimizer](/docs/skills/cost_optimizer)**: Audit findings calibrate the optimizer prediction models for future runs
+- **[Logging Observability](/docs/skills/logging_observability)**: Token usage logs provide the raw data needed for cost verification analysis
+
 ## References
 
 - [Calibration Data](./references/calibration-data)

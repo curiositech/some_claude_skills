@@ -1,6 +1,6 @@
 ---
 title: Interfaces & Integration Workflows
-sidebar_label: Interfaces & Integration Wo...
+sidebar_label: Interfaces & Integration Workf...
 sidebar_position: 2
 ---
 # Interfaces & Integration Workflows

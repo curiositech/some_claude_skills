@@ -3,7 +3,7 @@ sidebar_label: Windows 3 1 Web Designer
 sidebar_position: 1
 ---
 
-# 🤖 Windows 3 1 Web Designer
+# 🎨 Windows 3 1 Web Designer
 
 Modern web applications with authentic Windows 3.1 aesthetic. Solid navy title bars, Program Manager navigation, beveled borders, single window controls. Extrapolates Win31 to AI chatbots (Cue Card paradigm), mobile UIs (pocket computing). Activate on 'windows 3.1', 'win31', 'program manager', 'retro desktop', '90s aesthetic', 'beveled'. NOT for Windows 95 (use windows-95-web-designer - has gradients, Start menu), vaporwave/synthwave, macOS, flat design.
 
@@ -14,6 +14,16 @@ Modern web applications with authentic Windows 3.1 aesthetic. Solid navy title b
 ```
 Read, Write, Edit, Glob, Grep
 ```
+
+## Tags
+
+`windows` `web` `designer`
+
+## 🤝 Pairs Great With
+
+- **[Win31 Pixel Art Designer](/docs/skills/win31_pixel_art_designer)**: Windows 3.1 web designs use pixel art icons and graphics from the same era
+- **[Win31 Audio Design](/docs/skills/win31_audio_design)**: Windows 3.1 web apps use era-appropriate UI sound effects
+- **[Windows 95 Web Designer](/docs/skills/windows_95_web_designer)**: Both create retro Microsoft OS-themed web apps with shared beveled border and system font patterns
 
 ## References
 
@@ -219,7 +229,7 @@ Win31 used Multiple Document Interface. Apply this:
 |------------|----------------|--------|
 | Mobile (&lt;640px) | Pocket computing | Single window, modal dialogs |
 | Tablet (640-1024px) | Laptop | Cascading windows |
-| Desktop (>1024px) | Full desktop | Tiled MDI windows |
+| Desktop (&gt;1024px) | Full desktop | Tiled MDI windows |
 
 ### Theming: Hotdog Stand and Beyond
 

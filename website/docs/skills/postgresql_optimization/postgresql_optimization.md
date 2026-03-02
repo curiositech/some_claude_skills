@@ -5,13 +5,20 @@ sidebar_position: 1
 
 # 📦 Postgresql Optimization
 
-
+Expert in PostgreSQL performance tuning, query optimization, and database administration. Specializes in EXPLAIN analysis, indexing strategies, connection pooling, partitioning, and production-grade PostgreSQL operations.
 
 ---
 
 ## Tags
 
 `postgresql` `sql` `performance` `indexing` `query-optimization` `database`
+
+## 🤝 Pairs Great With
+
+- **[Database Design Patterns](/docs/skills/database_design_patterns)**: Schema design choices directly impact query performance and indexing effectiveness
+- **[Supabase Admin](/docs/skills/supabase_admin)**: Supabase runs PostgreSQL; optimization techniques apply directly to Supabase databases
+- **[Performance Profiling](/docs/skills/performance_profiling)**: Database query profiling identifies the slow queries that need PostgreSQL optimization
+- **[Drizzle Migrations](/docs/skills/drizzle_migrations)**: Index creation and schema changes through Drizzle must consider PostgreSQL performance impact
 
 # PostgreSQL Optimization
 

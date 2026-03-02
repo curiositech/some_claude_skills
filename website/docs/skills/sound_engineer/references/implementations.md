@@ -1,7 +1,7 @@
 ---
 title: Sound Engineering Implementation Reference
-sidebar_label: Sound Engineering Implement...
-sidebar_position: 1
+sidebar_label: Sound Engineering Implementati...
+sidebar_position: 2
 ---
 # Sound Engineering Implementation Reference
 

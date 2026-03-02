@@ -1,7 +1,7 @@
 ---
 title: Formatting Rules & Best Practices
-sidebar_label: Formatting Rules & Best Pra...
-sidebar_position: 1
+sidebar_label: Formatting Rules & Best Practi...
+sidebar_position: 2
 ---
 # Formatting Rules & Best Practices
 

@@ -1,7 +1,7 @@
 ---
 title: Claude API Pricing Reference
 sidebar_label: Claude API Pricing Reference
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Claude API Pricing Reference
 

@@ -1,6 +1,6 @@
 ---
 title: DSPy Optimization Patterns for Prompt Learning
-sidebar_label: DSPy Optimization Patterns ...
+sidebar_label: DSPy Optimization Patterns for...
 sidebar_position: 2
 ---
 # DSPy Optimization Patterns for Prompt Learning

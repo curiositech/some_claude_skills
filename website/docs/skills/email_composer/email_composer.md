@@ -19,6 +19,12 @@ Read, Write, Edit
 
 `email` `communication` `professional-writing`
 
+## 🤝 Pairs Great With
+
+- **[Technical Writer](/docs/skills/technical_writer)**: Technical writing principles improve clarity and structure in professional emails
+- **[Partner Text Coach](/docs/skills/partner_text_coach)**: Both skills analyze communication tone and suggest empathetic, effective messaging
+- **[Job Application Optimizer](/docs/skills/job_application_optimizer)**: Job application emails and follow-ups require the same persuasive writing skills
+
 # Email Composer
 
 ## Quick start

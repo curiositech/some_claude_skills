@@ -1,7 +1,7 @@
 ---
 title: Puppeteer PDF Templates
 sidebar_label: Puppeteer PDF Templates
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Puppeteer PDF Templates
 

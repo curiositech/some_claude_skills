@@ -3,7 +3,7 @@ sidebar_label: Real Time Collaboration Engine
 sidebar_position: 1
 ---
 
-# 🎨 Real Time Collaboration Engine
+# ⚙️ Real Time Collaboration Engine
 
 Build real-time collaborative editing with WebSockets, OT/CRDT conflict resolution, and presence awareness. Implements cursor tracking, optimistic updates, and offline sync. Use for collaborative editors, whiteboards, video editing. Activate on "real-time collaboration", "WebSocket sync", "multiplayer editing", "CRDT", "presence awareness". NOT for simple chat, request-response APIs, or single-user apps.
 
@@ -14,6 +14,16 @@ Build real-time collaborative editing with WebSockets, OT/CRDT conflict resoluti
 ```
 Read, Write, Edit, Bash(npm:*, websocket:*)
 ```
+
+## Tags
+
+`real` `time` `collaboration` `real-time-collaboration` `websocket-sync`
+
+## 🤝 Pairs Great With
+
+- **[Websocket Streaming](/docs/skills/websocket_streaming)**: WebSocket transport is the foundation for real-time collaborative editing connections
+- **[React Performance Optimizer](/docs/skills/react_performance_optimizer)**: Optimistic updates and cursor rendering require React performance optimization
+- **[Security Auditor](/docs/skills/security_auditor)**: Collaborative editing requires access control and input sanitization security auditing
 
 ## References
 

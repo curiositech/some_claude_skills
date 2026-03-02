@@ -1,7 +1,7 @@
 ---
 title: Alexithymia Assessment & Understanding
-sidebar_label: Alexithymia Assessment & Un...
-sidebar_position: 1
+sidebar_label: Alexithymia Assessment & Under...
+sidebar_position: 2
 ---
 # Alexithymia Assessment & Understanding
 

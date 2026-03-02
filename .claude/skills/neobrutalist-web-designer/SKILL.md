@@ -1,7 +1,22 @@
 ---
 name: neobrutalist-web-designer
-description: Modern web applications with authentic neobrutalist aesthetic. Bold typography, hard shadows (no blur), thick black borders, high-contrast primary colors, raw visual tension. Extrapolates neobrutalism to SaaS dashboards, e-commerce, landing pages, startup MVPs. Activate on 'neobrutalism', 'neubrutalism', 'brutalist', 'bold borders', 'hard shadows', 'raw aesthetic', 'anti-minimalism', 'gumroad style', 'figma style'. NOT for glassmorphism (use vaporwave-glassomorphic-ui-designer), Windows retro (use windows-3-1-web-designer or windows-95-web-designer), soft shadows, gradients, neumorphism.
+description: Modern web applications with authentic neobrutalist aesthetic. Bold typography, hard shadows (no blur), thick black borders, high-contrast primary colors, raw visual tension. Extrapolates neobrutalism
+  to SaaS dashboards, e-commerce, landing pages, startup MVPs. Activate on 'neobrutalism', 'neubrutalism', 'brutalist', 'bold borders', 'hard shadows', 'raw aesthetic', 'anti-minimalism', 'gumroad style',
+  'figma style'. NOT for glassmorphism (use vaporwave-glassomorphic-ui-designer), Windows retro (use windows-3-1-web-designer or windows-95-web-designer), soft shadows, gradients, neumorphism.
 allowed-tools: Read,Write,Edit,Glob,Grep
+metadata:
+  category: Design & Creative
+  tags:
+  - neobrutalist
+  - web
+  - designer
+  pairs-with:
+  - skill: web-design-expert
+    reason: Neobrutalism is a specific web design trend requiring general web design foundations
+  - skill: typography-expert
+    reason: Bold, oversized typography is the defining visual element of neobrutalist design
+  - skill: windows-95-web-designer
+    reason: Both share retro-inspired thick borders and high-contrast aesthetics with different era references
 ---
 
 # Neobrutalist Web Designer
@@ -276,9 +291,9 @@ Neobrutalism for SaaS emphasizes **function over flourish**:
 
 | Breakpoint | Adjustments |
 |------------|-------------|
-| Mobile (<640px) | Shadow: 3px 3px, Border: 2px, Font scale down |
+| Mobile (&lt;640px) | Shadow: 3px 3px, Border: 2px, Font scale down |
 | Tablet (640-1024px) | Shadow: 4px 4px, Border: 3px, Standard fonts |
-| Desktop (>1024px) | Shadow: 6px 6px, Border: 4px, Oversized headlines |
+| Desktop (&gt;1024px) | Shadow: 6px 6px, Border: 4px, Oversized headlines |
 
 ```css
 /* Mobile-first approach */

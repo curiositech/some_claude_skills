@@ -1,7 +1,7 @@
 ---
 title: Content Detection Reference
 sidebar_label: Content Detection Reference
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Content Detection Reference
 

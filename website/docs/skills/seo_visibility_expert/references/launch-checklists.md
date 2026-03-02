@@ -1,7 +1,7 @@
 ---
 title: Launch Checklists
 sidebar_label: Launch Checklists
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Launch Checklists
 

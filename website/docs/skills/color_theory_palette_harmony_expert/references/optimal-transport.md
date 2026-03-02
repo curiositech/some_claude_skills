@@ -1,7 +1,7 @@
 ---
 title: Optimal Transport for Color Matching
-sidebar_label: Optimal Transport for Color...
-sidebar_position: 4
+sidebar_label: Optimal Transport for Color Ma...
+sidebar_position: 2
 ---
 # Optimal Transport for Color Matching
 

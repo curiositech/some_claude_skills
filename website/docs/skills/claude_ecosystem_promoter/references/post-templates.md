@@ -1,6 +1,6 @@
 ---
 title: Post Templates for Claude Ecosystem Promotion
-sidebar_label: Post Templates for Claude E...
+sidebar_label: Post Templates for Claude Ecos...
 sidebar_position: 2
 ---
 # Post Templates for Claude Ecosystem Promotion

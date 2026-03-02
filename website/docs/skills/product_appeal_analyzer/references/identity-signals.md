@@ -1,7 +1,7 @@
 ---
 title: Identity Signals Catalog
 sidebar_label: Identity Signals Catalog
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Identity Signals Catalog
 

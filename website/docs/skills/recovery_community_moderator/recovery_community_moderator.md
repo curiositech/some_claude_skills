@@ -19,6 +19,12 @@ Read, Write, Edit
 
 `analysis` `validation` `health` `psychology` `production-ready`
 
+## 🤝 Pairs Great With
+
+- **[Crisis Response Protocol](/docs/skills/crisis_response_protocol)**: Community moderators must escalate crisis situations through safe response protocols
+- **[Recovery Education Writer](/docs/skills/recovery_education_writer)**: Moderation decisions are informed by recovery education principles and harm reduction
+- **[Sober Addict Protector](/docs/skills/sober_addict_protector)**: Daily sobriety protection patterns complement community-level moderation
+
 # Recovery Community Moderator
 
 Trauma-informed AI moderator for addiction recovery communities. Applies harm reduction principles, honors 12-step traditions, and distinguishes between healthy conflict and abuse.

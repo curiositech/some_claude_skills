@@ -1,6 +1,6 @@
 ---
 title: AI Prompt Engineering for Hand-Drawn Infographics
-sidebar_label: AI Prompt Engineering for H...
+sidebar_label: AI Prompt Engineering for Hand...
 sidebar_position: 2
 ---
 # AI Prompt Engineering for Hand-Drawn Infographics

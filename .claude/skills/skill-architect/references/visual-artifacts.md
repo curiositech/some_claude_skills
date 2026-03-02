@@ -637,6 +637,202 @@ kanban
 
 ---
 
+### Requirement Diagram — Traceability & Compliance
+
+**Use when**: A skill deals with requirements management, compliance verification, regulatory traceability, or any formal "shall" requirements with verify/satisfy/trace relationships.
+
+````markdown
+```mermaid
+requirementDiagram
+  requirement auth_req {
+    id: REQ-001
+    text: The system shall authenticate users via OAuth 2.0
+    risk: high
+    verifymethod: test
+  }
+
+  requirement mfa_req {
+    id: REQ-002
+    text: The system shall support MFA for admin accounts
+    risk: medium
+    verifymethod: inspection
+  }
+
+  element auth_module {
+    type: module
+    docref: src/auth/oauth.ts
+  }
+
+  element mfa_module {
+    type: module
+    docref: src/auth/mfa.ts
+  }
+
+  auth_module - satisfies -> auth_req
+  mfa_module - satisfies -> mfa_req
+  mfa_req - derives -> auth_req
+```
+````
+
+**Relationship types**: `contains`, `copies`, `derives`, `satisfies`, `verifies`, `refines`, `traces`
+
+**Verify methods**: `analysis`, `demonstration`, `inspection`, `test`
+
+**Risk levels**: `low`, `medium`, `high`
+
+---
+
+### C4 Diagram — Multi-Level Architecture Views
+
+**Use when**: A skill models system architecture at different zoom levels (context, container, component, deployment). Simon Brown's C4 model is the standard for communicating software architecture to different audiences.
+
+````markdown
+```mermaid
+C4Context
+  title System Context Diagram — Skill Platform
+
+  Person(user, "Skill Author", "Creates and maintains skills")
+  Person(agent, "Claude Agent", "Executes skills at runtime")
+
+  System(platform, "Skill Platform", "Hosts, validates, and serves skills")
+  System_Ext(github, "GitHub", "Version control and distribution")
+  System_Ext(registry, "Plugin Registry", "Community skill marketplace")
+
+  Rel(user, platform, "Publishes skills to")
+  Rel(agent, platform, "Loads skills from")
+  Rel(platform, github, "Syncs with")
+  Rel(platform, registry, "Distributes to")
+```
+````
+
+**C4 sub-types** (each zooms in one level):
+- `C4Context` — highest level: systems and people
+- `C4Container` — zoom into one system: apps, databases, services
+- `C4Component` — zoom into one container: modules, classes
+- `C4Dynamic` — runtime interactions between containers/components
+- `C4Deployment` — physical/cloud infrastructure mapping
+
+````markdown
+```mermaid
+C4Container
+  title Container Diagram — Skill Platform
+
+  Person(author, "Skill Author")
+
+  System_Boundary(platform, "Skill Platform") {
+    Container(api, "API Server", "Node.js", "Handles skill CRUD and validation")
+    ContainerDb(db, "Skill Store", "SQLite", "Stores skill metadata and content")
+    Container(validator, "Validator", "Python", "Runs frontmatter and content checks")
+  }
+
+  Rel(author, api, "Publishes via", "HTTPS")
+  Rel(api, db, "Reads/writes")
+  Rel(api, validator, "Validates with")
+```
+````
+
+---
+
+### Packet Diagram — Network Protocol Structures
+
+**Use when**: A skill deals with network protocols, binary formats, data serialization, or packet-level communication structures.
+
+````markdown
+```mermaid
+packet-beta
+  0-15: "Source Port"
+  16-31: "Destination Port"
+  32-63: "Sequence Number"
+  64-95: "Acknowledgement Number"
+  96-99: "Data Offset"
+  100-105: "Reserved"
+  106: "URG"
+  107: "ACK"
+  108: "PSH"
+  109: "RST"
+  110: "SYN"
+  111: "FIN"
+  112-127: "Window Size"
+  128-143: "Checksum"
+  144-159: "Urgent Pointer"
+```
+````
+
+Fields are specified as bit ranges. Each line defines a field with `start-end: "Label"`.
+
+---
+
+### Radar Chart — Multi-Dimensional Comparisons
+
+**Use when**: A skill compares options across multiple dimensions (skill grading axes, framework comparisons, capability assessments, team skill matrices).
+
+````markdown
+```mermaid
+radar
+  title Skill Quality Assessment
+  axis Description, Scope, Disclosure, Anti-Patterns, Tools, Activation, Visuals, Output, Temporal, Docs
+  curve a["code-architecture"] { 90, 92, 85, 88, 80, 90, 95, 82, 70, 75 }
+  curve b["caching-strategies"] { 88, 90, 83, 85, 78, 88, 90, 80, 72, 73 }
+```
+````
+
+Each `curve` is a data series plotted against the shared axes. Values scale to fit the chart.
+
+---
+
+### Treemap — Hierarchical Size Comparisons
+
+**Use when**: Showing relative sizes within a hierarchy (codebase size by module, token budgets, skill library composition, disk usage).
+
+````markdown
+```mermaid
+treemap
+  title Skill Library by Category
+  SWE Skills
+    code-architecture: 434
+    microservices-patterns: 434
+    typescript-advanced-patterns: 401
+    monorepo-management: 369
+    performance-profiling: 362
+  Recovery Skills
+    sobriety-tools-guardian: 380
+    recovery-app-onboarding: 350
+    recovery-coach-patterns: 320
+  Design Skills
+    windows-3-1-web-designer: 310
+    neobrutalist-web-designer: 290
+```
+````
+
+Numbers represent relative size. The treemap fills space proportionally.
+
+---
+
+### ZenUML — Alternative Sequence Syntax
+
+**Use when**: You prefer a code-like syntax for sequence diagrams. ZenUML is available as a Mermaid plugin and uses a more programming-style notation.
+
+````markdown
+```mermaid
+zenuml
+  @Orchestrator as O
+  @Subagent as S
+  @Skill as SK
+
+  O->S.assignTask(context) {
+    S->SK.loadSkill() {
+      return applicability
+    }
+    S->S.executeSteps()
+    return artifacts
+  }
+```
+````
+
+**Note**: ZenUML requires the ZenUML plugin. It may not render in all Mermaid environments. Prefer `sequenceDiagram` for maximum compatibility.
+
+---
+
 ## Which Diagram Type for Which Skill Content?
 
 | Skill Content | Best Diagram Type | Why |
@@ -654,9 +850,16 @@ kanban
 | User experience flows | **User Journey** | Maps satisfaction across steps |
 | Quantity flows / budgets | **Sankey** | Shows proportional flow between categories |
 | Metrics / benchmarks | **XY Chart** | Numeric data visualization |
-| System architecture | **Block** or **Architecture** | Component layout and connections |
+| System architecture (component layout) | **Block** | Spatial block arrangement |
+| Infrastructure / cloud topology | **Architecture** | Service-to-service with icons |
 | Task status tracking | **Kanban** | Column-based workflow visualization |
 | Proportional breakdowns | **Pie** | Simple category proportions |
+| Requirements traceability / compliance | **Requirement** | Formal verify/satisfy/trace relationships |
+| Multi-level system views (C4 model) | **C4** | Context → Container → Component → Deploy |
+| Network protocols / binary formats | **Packet** | Bit-level field layout |
+| Multi-axis capability comparison | **Radar** | Spider chart across N dimensions |
+| Hierarchical size comparison | **Treemap** | Area-proportional nesting |
+| Sequence diagrams (code-style syntax) | **ZenUML** | Programming-like notation (plugin) |
 
 ---
 
@@ -730,14 +933,27 @@ description: CLIP semantic search for image-text matching.
 
 ## Encouraging Visual Artifacts in Skills You Create
 
-When creating or auditing a skill, ask:
+When creating or auditing a skill, ask these questions. If the answer is "yes" and the skill only uses prose, **that's an improvement opportunity**.
 
-1. **Does this skill have a decision tree?** → Render it as a flowchart
-2. **Does it describe a multi-step protocol?** → Render it as a sequence diagram
-3. **Does it manage states/lifecycle?** → Render it as a state diagram
-4. **Does it encode temporal knowledge?** → Render it as a timeline
-5. **Does it model data relationships?** → Render it as an ER diagram
-6. **Does it prioritize options on two axes?** → Render it as a quadrant chart
-7. **Does it describe system architecture?** → Render it as a block/architecture diagram
+| Question | Diagram |
+|----------|---------|
+| Does it have a decision tree or branching process? | Flowchart |
+| Does it describe a multi-step protocol or API interaction? | Sequence or ZenUML |
+| Does it manage states or lifecycle transitions? | State diagram |
+| Does it encode temporal knowledge (framework evolution, deprecations)? | Timeline |
+| Does it model data relationships or schemas? | ER diagram |
+| Does it prioritize options on two axes? | Quadrant chart |
+| Does it describe system architecture? | Block, Architecture, or C4 |
+| Does it compare options across multiple dimensions? | Radar chart |
+| Does it have phased rollouts or migration plans? | Gantt chart |
+| Does it involve branching strategies or release workflows? | Git graph |
+| Does it show quantity flows between categories? | Sankey diagram |
+| Does it need to show proportional breakdowns? | Pie or Treemap |
+| Does it plot metrics or benchmarks? | XY chart |
+| Does it have requirements with traceability? | Requirement diagram |
+| Does it model user experience across steps? | User journey |
+| Does it track task/work status? | Kanban |
+| Does it involve type hierarchies or interfaces? | Class diagram |
+| Does it deal with network protocols or binary formats? | Packet diagram |
 
-If the answer to any of these is "yes" and the skill only uses prose, **that's an improvement opportunity**.
+Mermaid supports **23 diagram types** — there is almost always a better option than prose for structured content.

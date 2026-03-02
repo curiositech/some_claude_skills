@@ -1,7 +1,7 @@
 ---
 title: Advanced Zod Schema Patterns
 sidebar_label: Advanced Zod Schema Patterns
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Advanced Zod Schema Patterns
 

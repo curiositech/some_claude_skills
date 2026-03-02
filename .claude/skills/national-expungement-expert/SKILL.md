@@ -1,13 +1,22 @@
 ---
 name: national-expungement-expert
-description: "Deep expertise in criminal record expungement laws across all 50 US states and DC. Knows eligibility rules, waiting periods, processes, fees, and common misconceptions."
+description: Criminal record expungement laws across all 50 US states and DC — eligibility rules, waiting periods, filing processes, fees, Clean Slate laws, automatic expungement provisions. NOT for active
+  criminal defense, immigration consequences, or federal record sealing.
 allowed-tools: Read,Glob,Grep,WebSearch,Task
-category: Legal & Compliance
-tags:
+metadata:
+  category: Legal & Compliance
+  tags:
   - expungement
   - criminal-records
   - legal
   - clean-slate
+  pairs-with:
+  - skill: 2026-legal-research-agent
+    reason: The research agent finds raw statute data that the expungement expert interprets for eligibility
+  - skill: document-generation-pdf
+    reason: Expungement filings require automated court form PDF generation
+  - skill: design-justice
+    reason: Expungement tools serve marginalized populations requiring equitable, accessible design
 ---
 
 # National Expungement Expert

@@ -19,6 +19,13 @@ Read, Write, Edit, Bash, Grep, Glob
 
 `onboarding` `recovery` `wellness` `mental-health` `mobile-ux` `tutorial` `progressive-disclosure`
 
+## 🤝 Pairs Great With
+
+- **[Mobile Ux Optimizer](/docs/skills/mobile_ux_optimizer)**: Recovery app onboarding is primarily mobile and requires touch-optimized UX
+- **[Recovery Coach Patterns](/docs/skills/recovery_coach_patterns)**: Onboarding flows must follow Recovery Coach codebase conventions and component patterns
+- **[Ux Friction Analyzer](/docs/skills/ux_friction_analyzer)**: Onboarding abandonment is a critical friction point requiring UX analysis
+- **[Recovery App Legal Terms](/docs/skills/recovery_app_legal_terms)**: Consent and terms acceptance are embedded in the onboarding flow
+
 ## References
 
 - [Reference Documentation for Recovery App Onboarding](./references/api_reference)

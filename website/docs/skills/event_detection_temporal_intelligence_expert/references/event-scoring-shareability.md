@@ -1,7 +1,7 @@
 ---
 title: Event Significance Scoring & Shareability Prediction
-sidebar_label: Event Significance Scoring ...
-sidebar_position: 1
+sidebar_label: Event Significance Scoring & S...
+sidebar_position: 2
 ---
 # Event Significance Scoring & Shareability Prediction
 

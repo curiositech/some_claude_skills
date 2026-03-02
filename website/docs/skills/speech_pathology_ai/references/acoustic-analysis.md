@@ -1,7 +1,7 @@
 ---
 title: Acoustic Analysis for Speech Pathology
-sidebar_label: Acoustic Analysis for Speec...
-sidebar_position: 1
+sidebar_label: Acoustic Analysis for Speech P...
+sidebar_position: 2
 ---
 # Acoustic Analysis for Speech Pathology
 

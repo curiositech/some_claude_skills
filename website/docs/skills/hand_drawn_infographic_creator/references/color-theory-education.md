@@ -1,7 +1,7 @@
 ---
 title: Color Theory for Educational Graphics
-sidebar_label: Color Theory for Educationa...
-sidebar_position: 4
+sidebar_label: Color Theory for Educational G...
+sidebar_position: 2
 ---
 # Color Theory for Educational Graphics
 

@@ -1,9 +1,26 @@
 ---
 name: playwright-e2e-tester
-description: Expert in end-to-end testing with Playwright, the modern cross-browser testing framework. Specializes in test generation, page object patterns, visual regression testing, and CI/CD integration. Handles complex testing scenarios including authentication flows, API mocking, and mobile emulation.
+description: Expert in end-to-end testing with Playwright, the modern cross-browser testing framework. Specializes in test generation, page object patterns, visual regression testing, and CI/CD integration.
+  Handles complex testing scenarios including authentication flows, API mocking, and mobile emulation.
 version: 1.0.0
-category: testing
-tags: [e2e, playwright, testing, automation, ci-cd, cross-browser]
+metadata:
+  category: testing
+  tags:
+  - e2e
+  - playwright
+  - testing
+  - automation
+  - ci-cd
+  - cross-browser
+  pairs-with:
+  - skill: test-automation-expert
+    reason: Playwright E2E tests are one tier in a comprehensive test automation strategy
+  - skill: webapp-testing
+    reason: 'Both use Playwright but for different scopes: E2E test suites vs interactive debugging'
+  - skill: vitest-testing-patterns
+    reason: Unit tests (Vitest) and E2E tests (Playwright) form complementary test pyramid layers
+  - skill: github-actions-pipeline-builder
+    reason: E2E tests run in CI pipelines with browser installation and artifact upload steps
 ---
 
 # Playwright E2E Tester

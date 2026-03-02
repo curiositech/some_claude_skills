@@ -1,14 +1,23 @@
 ---
 name: skill-creator
-description: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.
+description: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge,
+  workflows, or tool integrations.
 allowed-tools: Read,Write,Edit
-category: Productivity & Meta
-tags:
+license: Complete terms in LICENSE.txt
+metadata:
+  category: Productivity & Meta
+  tags:
   - creation
   - templates
   - documentation
   - beginner-friendly
-license: Complete terms in LICENSE.txt
+  pairs-with:
+  - skill: skill-architect
+    reason: Architecture patterns inform the creation workflow for structurally sound skills
+  - skill: skill-grader
+    reason: Grading criteria guide creators toward higher-quality skill implementations
+  - skill: prompt-engineer
+    reason: Skill descriptions and trigger phrases benefit from prompt engineering optimization
 ---
 
 # Skill Creator

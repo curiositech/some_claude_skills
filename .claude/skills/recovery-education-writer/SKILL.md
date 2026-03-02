@@ -1,14 +1,23 @@
 ---
 name: recovery-education-writer
-description: Write neuroscientific, peer-oriented drug education content that roots experiences in body/brain mechanisms. Use when creating educational articles, explaining neurological phenomena, demystifying recovery challenges, or answering "why does this happen?" questions. Activates for harm reduction content, psychoeducation, recovery science writing, and content that reduces shame through understanding.
+description: Write neuroscientific, peer-oriented drug education content that roots experiences in body/brain mechanisms. Use when creating educational articles, explaining neurological phenomena, demystifying
+  recovery challenges, or answering "why does this happen?" questions. Activates for harm reduction content, psychoeducation, recovery science writing, and content that reduces shame through understanding.
 allowed-tools: Read,Write,Edit,WebSearch
-category: Lifestyle & Personal
-tags:
+metadata:
+  category: Lifestyle & Personal
+  tags:
   - recovery
   - education
   - neuroscience
   - harm-reduction
   - psychoeducation
+  pairs-with:
+  - skill: hand-drawn-infographic-creator
+    reason: Recovery articles use anatomist-style diagrams to illustrate neuroscience concepts
+  - skill: pixel-art-infographic-creator
+    reason: Retro pixel art infographics make recovery education content more approachable
+  - skill: recovery-community-moderator
+    reason: Education content informs moderation standards and harm reduction messaging
 ---
 
 # Recovery Education Writer
@@ -220,7 +229,7 @@ Give concrete, practical next steps.
 - Acute psychosis: Resolves 3-7 days after stopping use (with sleep)
 - Paranoid thoughts: 2-4 weeks
 - Full resolution: 1-3 months
-- Red flag: If persists >30 days, may need antipsychotic medication
+- Red flag: If persists &gt;30 days, may need antipsychotic medication
 
 **Action:**
 - Ground yourself (5-4-3-2-1 technique)
@@ -383,7 +392,7 @@ Give concrete, practical next steps.
 - Cravings are automatic—not a sign of weakness
 - They're triggered by cues you might not even notice
 - The intensity decreases over time as neural pathways prune
-- Cravings come in waves—they peak and subside (usually <30 minutes)
+- Cravings come in waves—they peak and subside (usually &lt;30 minutes)
 
 **Action:**
 - Ride the wave (set a timer for 15 minutes, wait it out)

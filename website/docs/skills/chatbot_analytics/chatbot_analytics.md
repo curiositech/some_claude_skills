@@ -19,6 +19,12 @@ Read, Write, Edit, Bash(npm:*, npx:*)
 
 `analytics` `chatbot` `ai-metrics`
 
+## 🤝 Pairs Great With
+
+- **[Llm Streaming Response Handler](/docs/skills/llm_streaming_response_handler)**: Streaming response metrics (TTFT, tokens/sec) are key chatbot analytics dimensions
+- **[Data Pipeline Engineer](/docs/skills/data_pipeline_engineer)**: Conversation data pipelines feed analytics dashboards and reporting systems
+- **[Prompt Engineer](/docs/skills/prompt_engineer)**: Analytics on prompt effectiveness drive iterative prompt optimization
+
 # AI Chatbot Analytics
 
 This skill helps you implement analytics for the AI coaching chat feature while maintaining HIPAA compliance.

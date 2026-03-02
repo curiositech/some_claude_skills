@@ -1,7 +1,25 @@
 ---
 name: data-viz-2025
-description: State-of-the-art data visualization for React/Next.js/TypeScript with Tailwind CSS. Creates compelling, tested, and accessible visualizations following Tufte principles and NYT Graphics standards. Activate on "data viz", "chart", "graph", "visualization", "dashboard", "plot", "Recharts", "Nivo", "D3". NOT for static images, print graphics, or basic HTML tables.
+description: State-of-the-art data visualization for React/Next.js/TypeScript with Tailwind CSS. Creates compelling, tested, and accessible visualizations following Tufte principles and NYT Graphics standards.
+  Activate on "data viz", "chart", "graph", "visualization", "dashboard", "plot", "Recharts", "Nivo", "D3". NOT for static images, print graphics, or basic HTML tables.
 allowed-tools: Read,Write,Edit,Bash
+metadata:
+  category: Data & Analytics
+  tags:
+  - data
+  - viz
+  - '2025'
+  - data-viz
+  - chart
+  pairs-with:
+  - skill: react-performance-optimizer
+    reason: Large dataset visualizations require React performance optimization for smooth rendering
+  - skill: large-scale-map-visualization
+    reason: Map visualizations are a specialized subset of the broader data viz discipline
+  - skill: color-contrast-auditor
+    reason: Data visualization accessibility depends on proper color contrast in charts and legends
+  - skill: typescript-advanced-patterns
+    reason: Type-safe chart data structures and generic visualization components benefit from advanced TS
 ---
 
 # Data Visualization 2025: The Art & Science of Visual Communication

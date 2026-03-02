@@ -1,7 +1,20 @@
 ---
 name: cost-accrual-tracker
-description: Track real-time API cost accrual during LLM execution. Activate on 'cost tracking', 'token usage', 'API costs', 'budget monitoring', 'usage metrics'. NOT for cost estimation, pricing tiers, or billing systems.
+description: Track real-time API cost accrual during LLM execution. Activate on 'cost tracking', 'token usage', 'API costs', 'budget monitoring', 'usage metrics'. NOT for cost estimation, pricing tiers,
+  or billing systems.
 allowed-tools: Read,Write,Edit
+metadata:
+  tags:
+  - cost
+  - accrual
+  - tracker
+  pairs-with:
+  - skill: cost-optimizer
+    reason: Real-time cost tracking data feeds the optimizer decision engine for model downgrades
+  - skill: cost-verification-auditor
+    reason: Tracked costs are validated against actual API bills by the verification auditor
+  - skill: llm-router
+    reason: Cost accrual data informs the router model selection to stay within budget
 ---
 
 # Cost Accrual Tracker

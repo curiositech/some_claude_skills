@@ -1,6 +1,6 @@
 ---
 title: GLSL Shaders for Audio Visualization
-sidebar_label: GLSL Shaders for Audio Visu...
+sidebar_label: GLSL Shaders for Audio Visuali...
 sidebar_position: 2
 ---
 # GLSL Shaders for Audio Visualization

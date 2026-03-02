@@ -641,12 +641,15 @@ function updateSkillFile(skillPath: string, enrichment: SkillEnrichment): void {
   const existingFrontmatter = yaml.parse(match[1]);
   const body = match[2];
 
-  // Merge enrichment data
+  // Merge enrichment data under metadata key
   const updatedFrontmatter = {
     ...existingFrontmatter,
-    category: enrichment.category,
-    tags: enrichment.tags,
-    'pairs-with': enrichment.pairsWith,
+    metadata: {
+      ...existingFrontmatter.metadata,
+      category: enrichment.category,
+      tags: enrichment.tags,
+      'pairs-with': enrichment.pairsWith,
+    },
   };
 
   // Format as YAML

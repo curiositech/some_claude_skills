@@ -1,7 +1,7 @@
 ---
 title: Anatomical Diagram Conventions
 sidebar_label: Anatomical Diagram Conventions
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Anatomical Diagram Conventions
 

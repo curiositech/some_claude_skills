@@ -1,6 +1,6 @@
 ---
 title: API Reference Documentation Template
-sidebar_label: API Reference Documentation...
+sidebar_label: API Reference Documentation Te...
 sidebar_position: 2
 ---
 # API Reference Documentation Template

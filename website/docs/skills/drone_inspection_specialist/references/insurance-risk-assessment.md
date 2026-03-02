@@ -1,7 +1,7 @@
 ---
 title: Insurance & Risk Assessment Reference
-sidebar_label: Insurance & Risk Assessment...
-sidebar_position: 3
+sidebar_label: Insurance & Risk Assessment Re...
+sidebar_position: 2
 ---
 # Insurance & Risk Assessment Reference
 

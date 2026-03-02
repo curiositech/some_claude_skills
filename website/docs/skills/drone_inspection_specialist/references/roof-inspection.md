@@ -1,7 +1,7 @@
 ---
 title: Roof Inspection Reference
 sidebar_label: Roof Inspection Reference
-sidebar_position: 4
+sidebar_position: 2
 ---
 # Roof Inspection Reference
 

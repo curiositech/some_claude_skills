@@ -1,7 +1,7 @@
 ---
 title: Skill Integration Protocols
 sidebar_label: Skill Integration Protocols
-sidebar_position: 6
+sidebar_position: 2
 ---
 # Skill Integration Protocols
 

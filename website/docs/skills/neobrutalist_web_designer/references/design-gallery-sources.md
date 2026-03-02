@@ -1,6 +1,6 @@
 ---
 title: Design Gallery Sources for Neobrutalism
-sidebar_label: Design Gallery Sources for ...
+sidebar_label: Design Gallery Sources for Neo...
 sidebar_position: 2
 ---
 # Design Gallery Sources for Neobrutalism

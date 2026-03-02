@@ -1,7 +1,7 @@
 ---
 title: Network Theory Reference
 sidebar_label: Network Theory Reference
-sidebar_position: 5
+sidebar_position: 2
 ---
 # Network Theory Reference
 

@@ -1,7 +1,7 @@
 ---
 title: Perceptual Hashing Implementation Reference
-sidebar_label: Perceptual Hashing Implemen...
-sidebar_position: 3
+sidebar_label: Perceptual Hashing Implementat...
+sidebar_position: 2
 ---
 # Perceptual Hashing Implementation Reference
 

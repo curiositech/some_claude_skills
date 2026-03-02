@@ -1,7 +1,7 @@
 ---
 title: Stream Error Recovery Strategies
-sidebar_label: Stream Error Recovery Strat...
-sidebar_position: 1
+sidebar_label: Stream Error Recovery Strategi...
+sidebar_position: 2
 ---
 # Stream Error Recovery Strategies
 

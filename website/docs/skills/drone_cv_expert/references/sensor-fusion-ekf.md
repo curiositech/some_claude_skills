@@ -1,7 +1,7 @@
 ---
 title: Sensor Fusion & State Estimation Reference
-sidebar_label: Sensor Fusion & State Estim...
-sidebar_position: 3
+sidebar_label: Sensor Fusion & State Estimati...
+sidebar_position: 2
 ---
 # Sensor Fusion & State Estimation Reference
 

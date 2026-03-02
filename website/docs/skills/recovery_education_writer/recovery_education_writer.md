@@ -19,6 +19,12 @@ Read, Write, Edit, WebSearch
 
 `recovery` `education` `neuroscience` `harm-reduction` `psychoeducation`
 
+## 🤝 Pairs Great With
+
+- **[Hand Drawn Infographic Creator](/docs/skills/hand_drawn_infographic_creator)**: Recovery articles use anatomist-style diagrams to illustrate neuroscience concepts
+- **[Pixel Art Infographic Creator](/docs/skills/pixel_art_infographic_creator)**: Retro pixel art infographics make recovery education content more approachable
+- **[Recovery Community Moderator](/docs/skills/recovery_community_moderator)**: Education content informs moderation standards and harm reduction messaging
+
 ## References
 
 - [Harm Reduction Principles for Educational Content](./references/harm-reduction-principles)
@@ -235,7 +241,7 @@ Give concrete, practical next steps.
 - Acute psychosis: Resolves 3-7 days after stopping use (with sleep)
 - Paranoid thoughts: 2-4 weeks
 - Full resolution: 1-3 months
-- Red flag: If persists >30 days, may need antipsychotic medication
+- Red flag: If persists &gt;30 days, may need antipsychotic medication
 
 **Action:**
 - Ground yourself (5-4-3-2-1 technique)

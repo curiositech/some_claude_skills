@@ -19,6 +19,12 @@ Read, Write, Edit
 
 `creation` `templates` `documentation` `beginner-friendly`
 
+## 🤝 Pairs Great With
+
+- **[Skill Architect](/docs/skills/skill_architect)**: Architecture patterns inform the creation workflow for structurally sound skills
+- **[Skill Grader](/docs/skills/skill_grader)**: Grading criteria guide creators toward higher-quality skill implementations
+- **[Prompt Engineer](/docs/skills/prompt_engineer)**: Skill descriptions and trigger phrases benefit from prompt engineering optimization
+
 # Skill Creator
 
 This skill provides guidance for creating effective skills.

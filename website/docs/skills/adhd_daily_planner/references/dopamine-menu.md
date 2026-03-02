@@ -1,7 +1,7 @@
 ---
 title: The Dopamine Menu
 sidebar_label: The Dopamine Menu
-sidebar_position: 1
+sidebar_position: 2
 ---
 # The Dopamine Menu
 

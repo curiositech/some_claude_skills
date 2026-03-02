@@ -1,22 +1,24 @@
 ---
 name: ai-engineer
-description: Build production-ready LLM applications, advanced RAG systems, and intelligent agents. Implements vector search, multimodal AI, agent orchestration, and enterprise AI integrations. Use PROACTIVELY for LLM features, chatbots, AI agents, or AI-powered applications.
+description: Build production-ready LLM applications, advanced RAG systems, and intelligent agents. Implements vector search, multimodal AI, agent orchestration, and enterprise AI integrations. Use PROACTIVELY
+  for LLM features, chatbots, AI agents, or AI-powered applications.
 allowed-tools: Read,Write,Edit,Glob,Grep,Bash,WebFetch,mcp__SequentialThinking__sequentialthinking
-category: AI & Machine Learning
-tags:
-  - llm
-  - rag
-  - agents
-  - ai
-  - production
-  - embeddings
-pairs-with:
+metadata:
+  category: AI & Machine Learning
+  pairs-with:
   - skill: prompt-engineer
     reason: Optimize prompts for LLM applications
   - skill: chatbot-analytics
     reason: Monitor and analyze AI chatbot performance
   - skill: backend-architect
     reason: Design scalable AI service architecture
+  tags:
+  - llm
+  - rag
+  - agents
+  - ai
+  - production
+  - embeddings
 ---
 
 # AI Engineer

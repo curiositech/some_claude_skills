@@ -1,6 +1,6 @@
 ---
 title: FFmpeg Complete Reference Guide
-sidebar_label: FFmpeg Complete Reference G...
+sidebar_label: FFmpeg Complete Reference Guid...
 sidebar_position: 2
 ---
 # FFmpeg Complete Reference Guide

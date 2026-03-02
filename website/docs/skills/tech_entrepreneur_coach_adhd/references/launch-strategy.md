@@ -1,7 +1,7 @@
 ---
 title: Launch & First Dollar Strategy
 sidebar_label: Launch & First Dollar Strategy
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Launch & First Dollar Strategy
 

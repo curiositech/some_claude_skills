@@ -19,6 +19,12 @@ Read, Write, Edit, Bash(npm:*, npx:*)
 
 `recovery` `patterns` `next-js`
 
+## 🤝 Pairs Great With
+
+- **[Recovery Social Features](/docs/skills/recovery_social_features)**: Social features follow the same Recovery Coach codebase patterns and conventions
+- **[Recovery App Onboarding](/docs/skills/recovery_app_onboarding)**: Onboarding components must follow Recovery Coach coding patterns and API conventions
+- **[Vitest Testing Patterns](/docs/skills/vitest_testing_patterns)**: Recovery Coach components need unit tests following established testing patterns
+
 # Recovery Coach Development Patterns
 
 This skill helps you follow the established patterns and conventions in the Recovery Coach codebase.

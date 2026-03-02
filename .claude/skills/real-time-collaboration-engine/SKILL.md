@@ -1,7 +1,24 @@
 ---
 name: real-time-collaboration-engine
-description: Build real-time collaborative editing with WebSockets, OT/CRDT conflict resolution, and presence awareness. Implements cursor tracking, optimistic updates, and offline sync. Use for collaborative editors, whiteboards, video editing. Activate on "real-time collaboration", "WebSocket sync", "multiplayer editing", "CRDT", "presence awareness". NOT for simple chat, request-response APIs, or single-user apps.
+description: Build real-time collaborative editing with WebSockets, OT/CRDT conflict resolution, and presence awareness. Implements cursor tracking, optimistic updates, and offline sync. Use for collaborative
+  editors, whiteboards, video editing. Activate on "real-time collaboration", "WebSocket sync", "multiplayer editing", "CRDT", "presence awareness". NOT for simple chat, request-response APIs, or single-user
+  apps.
 allowed-tools: Read,Write,Edit,Bash(npm:*,websocket:*)
+metadata:
+  category: DevOps & Site Reliability
+  tags:
+  - real
+  - time
+  - collaboration
+  - real-time-collaboration
+  - websocket-sync
+  pairs-with:
+  - skill: websocket-streaming
+    reason: WebSocket transport is the foundation for real-time collaborative editing connections
+  - skill: react-performance-optimizer
+    reason: Optimistic updates and cursor rendering require React performance optimization
+  - skill: security-auditor
+    reason: Collaborative editing requires access control and input sanitization security auditing
 ---
 
 # Real-Time Collaboration Engine

@@ -1,6 +1,6 @@
 ---
 title: Lighting Design Reference (IES Standards)
-sidebar_label: Lighting Design Reference (...
+sidebar_label: Lighting Design Reference (IES...
 sidebar_position: 2
 ---
 # Lighting Design Reference (IES Standards)

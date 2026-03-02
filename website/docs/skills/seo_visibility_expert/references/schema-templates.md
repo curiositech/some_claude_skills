@@ -1,7 +1,7 @@
 ---
 title: JSON-LD Schema Templates
 sidebar_label: JSON-LD Schema Templates
-sidebar_position: 3
+sidebar_position: 2
 ---
 # JSON-LD Schema Templates
 

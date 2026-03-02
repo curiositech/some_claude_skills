@@ -1,7 +1,7 @@
 ---
-title: "MCP Server Specification: Prompt Learning Server"
-sidebar_label: "MCP Server Specification: P..."
-sidebar_position: 6
+title: MCP Server Specification: Prompt Learning Server
+sidebar_label: MCP Server Specification: Prom...
+sidebar_position: 2
 ---
 # MCP Server Specification: Prompt Learning Server
 

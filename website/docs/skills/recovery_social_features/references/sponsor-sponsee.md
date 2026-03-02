@@ -1,7 +1,7 @@
 ---
 title: Sponsor/Sponsee Implementation
 sidebar_label: Sponsor/Sponsee Implementation
-sidebar_position: 6
+sidebar_position: 2
 ---
 # Sponsor/Sponsee Implementation
 

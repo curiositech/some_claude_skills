@@ -1,7 +1,7 @@
 ---
 title: ADHD Design Patterns & Component Library
-sidebar_label: ADHD Design Patterns & Comp...
-sidebar_position: 1
+sidebar_label: ADHD Design Patterns & Compone...
+sidebar_position: 2
 ---
 # ADHD Design Patterns & Component Library
 

@@ -19,6 +19,13 @@ Read, Write, Edit, Bash(npm:*, npx:*)
 
 `testing` `code` `automation` `jest` `react`
 
+## 🤝 Pairs Great With
+
+- **[Test Automation Expert](/docs/skills/test_automation_expert)**: Vitest unit testing is one layer in a comprehensive test automation strategy
+- **[Playwright E2e Tester](/docs/skills/playwright_e2e_tester)**: Unit tests (Vitest) and E2E tests (Playwright) form complementary test pyramid layers
+- **[React Performance Optimizer](/docs/skills/react_performance_optimizer)**: Component test patterns verify that performance optimizations preserve correct behavior
+- **[Typescript Advanced Patterns](/docs/skills/typescript_advanced_patterns)**: Type-safe test utilities and mock factories leverage advanced TypeScript patterns
+
 # Vitest Testing Patterns
 
 This skill helps you write effective tests using Vitest and React Testing Library following project conventions.

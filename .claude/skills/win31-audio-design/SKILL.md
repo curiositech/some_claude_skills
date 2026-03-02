@@ -1,21 +1,23 @@
 ---
 name: win31-audio-design
-description: Expert in Windows 3.1 era sound vocabulary for modern web/mobile apps. Creates satisfying retro UI sounds using CC-licensed 8-bit audio, Web Audio API, and haptic coordination. Activate on 'win31 sounds', 'retro audio', '90s sound effects', 'chimes', 'tada', 'ding', 'satisfying UI sounds'. NOT for modern flat UI sounds, voice synthesis, or music composition.
+description: Expert in Windows 3.1 era sound vocabulary for modern web/mobile apps. Creates satisfying retro UI sounds using CC-licensed 8-bit audio, Web Audio API, and haptic coordination. Activate on
+  'win31 sounds', 'retro audio', '90s sound effects', 'chimes', 'tada', 'ding', 'satisfying UI sounds'. NOT for modern flat UI sounds, voice synthesis, or music composition.
 allowed-tools: Read,Write,Edit,Bash(ffmpeg:*,node:*,npm:*),mcp__ElevenLabs__text_to_sound_effects,WebFetch
-category: Design & Creative
-tags:
-  - audio
-  - retro
-  - windows
-  - 90s
-  - ui-sounds
-pairs-with:
+metadata:
+  category: Design & Creative
+  pairs-with:
   - skill: windows-3-1-web-designer
     reason: Visual + audio Win31 experience
   - skill: sound-engineer
     reason: Advanced audio processing
   - skill: mobile-ux-optimizer
     reason: Mobile haptic-audio coordination
+  tags:
+  - audio
+  - retro
+  - windows
+  - 90s
+  - ui-sounds
 ---
 
 # Win31 Audio Design: Satisfying Retro Sound Vocabulary
@@ -261,7 +263,7 @@ await playWithHaptic('error', Haptics.ImpactFeedbackStyle.Heavy);
 ### Anti-Pattern: Long Reverb Tails
 **What it looks like**: Sounds echoing in a cathedral
 **Why wrong**: Win31 sounds were DRY or short room
-**Instead**: No reverb or <100ms decay
+**Instead**: No reverb or &lt;100ms decay
 
 ### Anti-Pattern: Sub-Bass
 **What it looks like**: Deep rumbling under 100Hz

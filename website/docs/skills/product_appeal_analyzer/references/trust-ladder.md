@@ -1,7 +1,7 @@
 ---
 title: The Trust Ladder
 sidebar_label: The Trust Ladder
-sidebar_position: 4
+sidebar_position: 2
 ---
 # The Trust Ladder
 

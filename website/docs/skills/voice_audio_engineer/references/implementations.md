@@ -1,7 +1,7 @@
 ---
 title: Voice Audio Implementation Reference
-sidebar_label: Voice Audio Implementation ...
-sidebar_position: 1
+sidebar_label: Voice Audio Implementation Ref...
+sidebar_position: 2
 ---
 # Voice Audio Implementation Reference
 

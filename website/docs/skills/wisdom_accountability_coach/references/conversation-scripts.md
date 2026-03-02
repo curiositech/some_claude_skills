@@ -1,7 +1,7 @@
 ---
 title: Conversation Scripts & Example Dialogues
-sidebar_label: Conversation Scripts & Exam...
-sidebar_position: 1
+sidebar_label: Conversation Scripts & Example...
+sidebar_position: 2
 ---
 # Conversation Scripts & Example Dialogues
 

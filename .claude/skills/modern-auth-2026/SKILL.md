@@ -1,17 +1,20 @@
 ---
 name: modern-auth-2026
-description: Modern authentication implementation for 2026 - passkeys (WebAuthn), OAuth (Google, Apple), magic links, and cross-device sync. Use for passwordless-first authentication, social login setup, Supabase Auth, Next.js auth flows, and multi-factor authentication. Activate on "passkeys", "WebAuthn", "Google Sign-In", "Apple Sign-In", "magic link", "passwordless", "authentication", "login", "OAuth", "social login". NOT for session management without auth (use standard JWT docs), authorization/RBAC (use security-auditor), or API key management (use api-architect).
+description: Modern authentication implementation for 2026 - passkeys (WebAuthn), OAuth (Google, Apple), magic links, and cross-device sync. Use for passwordless-first authentication, social login setup,
+  Supabase Auth, Next.js auth flows, and multi-factor authentication. Activate on "passkeys", "WebAuthn", "Google Sign-In", "Apple Sign-In", "magic link", "passwordless", "authentication", "login", "OAuth",
+  "social login". NOT for session management without auth (use standard JWT docs), authorization/RBAC (use security-auditor), or API key management (use api-architect).
 allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-  - WebSearch
-  - mcp__supabase__*
-category: DevOps & Site Reliability
-tags:
+- Read
+- Write
+- Edit
+- Bash
+- Grep
+- Glob
+- WebSearch
+- mcp__supabase__*
+metadata:
+  category: DevOps & Site Reliability
+  tags:
   - authentication
   - passkeys
   - webauthn
@@ -20,6 +23,15 @@ tags:
   - supabase
   - mfa
   - social-login
+  pairs-with:
+  - skill: oauth-oidc-implementer
+    reason: OAuth/OIDC flows are core components of modern auth alongside passkeys and magic links
+  - skill: supabase-admin
+    reason: Supabase Auth provides the backend infrastructure for passkey and OAuth implementation
+  - skill: security-auditor
+    reason: Auth implementation security (token storage, session management) requires dedicated auditing
+  - skill: cloudflare-worker-dev
+    reason: Edge-based auth token validation in Workers is a modern auth deployment pattern
 ---
 
 # Modern Authentication Expert (2026)

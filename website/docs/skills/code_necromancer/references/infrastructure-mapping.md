@@ -1,7 +1,7 @@
 ---
 title: Infrastructure Mapping
 sidebar_label: Infrastructure Mapping
-sidebar_position: 4
+sidebar_position: 2
 ---
 # Infrastructure Mapping
 

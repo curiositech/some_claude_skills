@@ -1,7 +1,7 @@
 ---
 title: Accessibility Standards for Hand-Drawn Infographics
-sidebar_label: Accessibility Standards for...
-sidebar_position: 1
+sidebar_label: Accessibility Standards for Ha...
+sidebar_position: 2
 ---
 # Accessibility Standards for Hand-Drawn Infographics
 

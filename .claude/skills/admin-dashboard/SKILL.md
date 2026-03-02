@@ -1,12 +1,21 @@
 ---
 name: admin-dashboard
-description: Extend and modify the admin dashboard, developer portal, and operations console. Use when adding new admin tabs, metrics, monitoring features, or internal tools. Activates for dashboard development, analytics, user management, and internal tooling.
+description: Extend and modify the admin dashboard, developer portal, and operations console. Use when adding new admin tabs, metrics, monitoring features, or internal tools. Activates for dashboard development,
+  analytics, user management, and internal tooling.
 allowed-tools: Read,Write,Edit,Bash(npm:*,npx:*)
-category: Productivity & Meta
-tags:
+metadata:
+  category: Productivity & Meta
+  tags:
   - dashboard
   - admin
   - internal-tools
+  pairs-with:
+  - skill: reactive-dashboard-performance
+    reason: Performance optimization patterns keep admin dashboards responsive under heavy data loads
+  - skill: supabase-admin
+    reason: Admin dashboards typically display and manage Supabase-backed data and user records
+  - skill: logging-observability
+    reason: Admin consoles surface the metrics and logs that observability systems collect
 ---
 
 # Admin & Developer Suite Development

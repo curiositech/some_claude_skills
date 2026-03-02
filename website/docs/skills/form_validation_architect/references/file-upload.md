@@ -1,6 +1,6 @@
 ---
 title: File Upload with Progress Tracking
-sidebar_label: File Upload with Progress T...
+sidebar_label: File Upload with Progress Trac...
 sidebar_position: 2
 ---
 # File Upload with Progress Tracking

@@ -1,7 +1,7 @@
 ---
 title: Tag Taxonomy Reference
 sidebar_label: Tag Taxonomy Reference
-sidebar_position: 4
+sidebar_position: 2
 ---
 # Tag Taxonomy Reference
 

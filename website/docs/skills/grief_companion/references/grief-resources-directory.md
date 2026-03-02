@@ -1,7 +1,7 @@
 ---
 title: Grief Resources Directory
 sidebar_label: Grief Resources Directory
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Grief Resources Directory
 

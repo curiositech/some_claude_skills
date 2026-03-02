@@ -1,6 +1,6 @@
 ---
 title: Social Features Schema Patterns
-sidebar_label: Social Features Schema Patt...
+sidebar_label: Social Features Schema Pattern...
 sidebar_position: 2
 ---
 # Social Features Schema Patterns

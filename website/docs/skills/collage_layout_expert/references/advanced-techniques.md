@@ -1,7 +1,7 @@
 ---
 title: Advanced Collage Techniques
 sidebar_label: Advanced Collage Techniques
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Advanced Collage Techniques
 

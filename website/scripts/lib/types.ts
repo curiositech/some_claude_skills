@@ -6,6 +6,15 @@
 // SKILL FRONTMATTER (from SKILL.md files)
 // =============================================================================
 
+export interface SkillMetadata {
+  category?: string;
+  tags?: string[];
+  badge?: SkillBadge;
+  'pairs-with'?: SkillPairing[];
+  private?: boolean;
+  deprecated?: boolean;
+}
+
 export interface SkillFrontmatter {
   // Required fields
   name: string;
@@ -14,10 +23,7 @@ export interface SkillFrontmatter {
 
   // Optional fields
   title?: string;
-  category?: string;
-  tags?: string[];
-  badge?: SkillBadge;
-  'pairs-with'?: SkillPairing[];  // Skill synergy recommendations
+  metadata?: SkillMetadata;
 
   // Auto-generated (from git/file metadata)
   version?: string;

@@ -1,6 +1,6 @@
 ---
 title: Domain-Specific Research Guides
-sidebar_label: Domain-Specific Research Gu...
+sidebar_label: Domain-Specific Research Guide...
 sidebar_position: 2
 ---
 # Domain-Specific Research Guides

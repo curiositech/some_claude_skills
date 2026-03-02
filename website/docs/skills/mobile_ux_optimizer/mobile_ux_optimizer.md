@@ -19,6 +19,12 @@ Read, Write, Edit, Bash, Grep, Glob
 
 `mobile` `ux` `touch` `responsive` `viewport` `safe-area` `navigation`
 
+## 🤝 Pairs Great With
+
+- **[Pwa Expert](/docs/skills/pwa_expert)**: PWAs are a primary mobile delivery mechanism requiring touch and viewport optimization
+- **[Ux Friction Analyzer](/docs/skills/ux_friction_analyzer)**: Mobile-specific friction points (fat finger errors, scroll hijacking) need specialized analysis
+- **[Adhd Design Expert](/docs/skills/adhd_design_expert)**: Mobile ADHD users face amplified cognitive load that requires specialized UX optimization
+
 ## References
 
 - [Gesture Hooks](./references/gestures)

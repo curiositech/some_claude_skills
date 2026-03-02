@@ -1,5 +1,6 @@
 ---
 name: guardian
+description: Audits security vulnerabilities, ensures compliance, and hardens code against threats
 role: Security & Compliance Specialist
 allowed-tools: Read,Edit,Glob,Grep,Bash,Task,WebSearch,TodoWrite
 triggers:

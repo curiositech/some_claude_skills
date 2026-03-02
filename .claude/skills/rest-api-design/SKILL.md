@@ -1,13 +1,22 @@
 ---
 name: rest-api-design
-description: Design REST API endpoints with Zod validation and OpenAPI documentation. Use when creating new API routes, validating request/response schemas, or updating API documentation. Activates for endpoint design, schema validation, error handling, and API docs.
+description: Design REST API endpoints with Zod validation and OpenAPI documentation. Use when creating new API routes, validating request/response schemas, or updating API documentation. Activates for
+  endpoint design, schema validation, error handling, and API docs.
 allowed-tools: Read,Write,Edit,Bash(npm:*,npx:*)
-category: Code Quality & Testing
-tags:
+metadata:
+  category: Code Quality & Testing
+  tags:
   - api
   - code
   - validation
   - documentation
+  pairs-with:
+  - skill: api-architect
+    reason: REST API design is a specific implementation of broader API architecture principles
+  - skill: openapi-spec-writer
+    reason: REST endpoints designed here are formalized as OpenAPI specifications for documentation
+  - skill: form-validation-architect
+    reason: Client-side form validation schemas should mirror API request validation for consistency
 ---
 
 # REST API Design

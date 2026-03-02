@@ -1,7 +1,7 @@
 ---
 title: Optimization Techniques
 sidebar_label: Optimization Techniques
-sidebar_position: 7
+sidebar_position: 2
 ---
 # Optimization Techniques
 

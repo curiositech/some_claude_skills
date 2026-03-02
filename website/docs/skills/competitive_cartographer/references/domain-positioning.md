@@ -1,7 +1,7 @@
 ---
 title: Domain-Specific Positioning
 sidebar_label: Domain-Specific Positioning
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Domain-Specific Positioning
 

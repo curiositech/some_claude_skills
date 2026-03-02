@@ -1,7 +1,7 @@
 ---
 title: Design Token Architecture
 sidebar_label: Design Token Architecture
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Design Token Architecture
 

@@ -1,14 +1,25 @@
 ---
 name: vitest-testing-patterns
-description: Write tests using Vitest and React Testing Library. Use when creating unit tests, component tests, integration tests, or mocking dependencies. Activates for test file creation, mock patterns, coverage, and testing best practices.
+description: Write tests using Vitest and React Testing Library. Use when creating unit tests, component tests, integration tests, or mocking dependencies. Activates for test file creation, mock patterns,
+  coverage, and testing best practices.
 allowed-tools: Read,Write,Edit,Bash(npm:*,npx:*)
-category: Code Quality & Testing
-tags:
+metadata:
+  category: Code Quality & Testing
+  tags:
   - testing
   - code
   - automation
   - jest
   - react
+  pairs-with:
+  - skill: test-automation-expert
+    reason: Vitest unit testing is one layer in a comprehensive test automation strategy
+  - skill: playwright-e2e-tester
+    reason: Unit tests (Vitest) and E2E tests (Playwright) form complementary test pyramid layers
+  - skill: react-performance-optimizer
+    reason: Component test patterns verify that performance optimizations preserve correct behavior
+  - skill: typescript-advanced-patterns
+    reason: Type-safe test utilities and mock factories leverage advanced TypeScript patterns
 ---
 
 # Vitest Testing Patterns

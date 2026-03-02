@@ -1,9 +1,26 @@
 ---
 name: nextjs-app-router-expert
-description: Expert in Next.js 14/15 App Router architecture, React Server Components (RSC), Server Actions, and modern full-stack React development. Specializes in routing patterns, data fetching strategies, caching, streaming, and deployment optimization.
+description: Expert in Next.js 14/15 App Router architecture, React Server Components (RSC), Server Actions, and modern full-stack React development. Specializes in routing patterns, data fetching strategies,
+  caching, streaming, and deployment optimization.
 version: 1.0.0
-category: frontend
-tags: [nextjs, react, app-router, rsc, server-components, full-stack]
+metadata:
+  category: frontend
+  tags:
+  - nextjs
+  - react
+  - app-router
+  - rsc
+  - server-components
+  - full-stack
+  pairs-with:
+  - skill: react-performance-optimizer
+    reason: RSC and streaming SSR in App Router require React-specific performance optimization
+  - skill: vercel-deployment
+    reason: Vercel is the primary deployment platform optimized for Next.js App Router features
+  - skill: fullstack-debugger
+    reason: App Router debugging spans server components, client hydration, and API routes
+  - skill: typescript-advanced-patterns
+    reason: App Router server/client component types benefit from advanced TypeScript generics
 ---
 
 # Next.js App Router Expert

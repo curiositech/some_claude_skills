@@ -1,7 +1,7 @@
 ---
 title: Web Audio API FFT Reference
 sidebar_label: Web Audio API FFT Reference
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Web Audio API FFT Reference
 

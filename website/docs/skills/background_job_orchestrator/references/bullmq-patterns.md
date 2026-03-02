@@ -1,7 +1,7 @@
 ---
 title: Advanced BullMQ Patterns
 sidebar_label: Advanced BullMQ Patterns
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Advanced BullMQ Patterns
 

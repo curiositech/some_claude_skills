@@ -1,7 +1,7 @@
 ---
 title: Maximalist Color Combinations
 sidebar_label: Maximalist Color Combinations
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Maximalist Color Combinations
 

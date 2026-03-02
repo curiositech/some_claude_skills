@@ -1,19 +1,22 @@
 ---
 name: site-reliability-engineer
-description: Docusaurus build health validation and deployment safety for Claude Skills showcase. Pre-commit MDX validation (Liquid syntax, angle brackets, prop mismatches), pre-build link checking, post-build health reports. Activate on 'build errors', 'commit hooks', 'deployment safety', 'site health', 'MDX validation'. NOT for general DevOps (use deployment-engineer), Kubernetes/cloud infrastructure (use kubernetes-architect), runtime monitoring (use observability-engineer), or non-Docusaurus projects.
+description: Docusaurus build health validation and deployment safety for Claude Skills showcase. Pre-commit MDX validation (Liquid syntax, angle brackets, prop mismatches), pre-build link checking, post-build
+  health reports. Activate on 'build errors', 'commit hooks', 'deployment safety', 'site health', 'MDX validation'. NOT for general DevOps (use deployment-engineer), Kubernetes/cloud infrastructure (use
+  kubernetes-architect), runtime monitoring (use observability-engineer), or non-Docusaurus projects.
 allowed-tools: Read,Write,Edit,Bash,Grep,Glob
-category: DevOps & Site Reliability
-tags:
+metadata:
+  category: DevOps & Site Reliability
+  pairs-with:
+  - skill: devops-automator
+    reason: CI/CD for site deployments
+  - skill: skill-documentarian
+    reason: Maintain skill documentation quality
+  tags:
   - docusaurus
   - build-health
   - mdx
   - validation
   - deployment
-pairs-with:
-  - skill: devops-automator
-    reason: CI/CD for site deployments
-  - skill: skill-documentarian
-    reason: Maintain skill documentation quality
 ---
 
 # Site Reliability Engineer

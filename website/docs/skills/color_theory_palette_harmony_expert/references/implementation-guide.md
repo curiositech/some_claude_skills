@@ -1,7 +1,7 @@
 ---
 title: Implementation Guide
 sidebar_label: Implementation Guide
-sidebar_position: 3
+sidebar_position: 2
 ---
 # Implementation Guide
 

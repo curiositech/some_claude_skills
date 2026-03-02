@@ -1,7 +1,7 @@
 ---
 title: HRV Biofeedback & Interoception Training
-sidebar_label: HRV Biofeedback & Interocep...
-sidebar_position: 3
+sidebar_label: HRV Biofeedback & Interoceptio...
+sidebar_position: 2
 ---
 # HRV Biofeedback & Interoception Training
 

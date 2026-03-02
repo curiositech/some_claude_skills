@@ -1,28 +1,36 @@
 ---
 name: mdx-sanitizer
-description: Comprehensive MDX content sanitizer that escapes angle brackets, generics, and other JSX-conflicting patterns to prevent build failures
-version: "1.0.0"
-category: DevOps & Automation
-tags:
+description: Sanitize MDX content for Docusaurus builds. Fixes unescaped angle brackets (<, >, <=, >=), Liquid/Nunjucks template syntax ({{ }}), TypeScript generics (Promise<T>), and inline code backtick edge cases. Use when pre-commit hooks fail on bracket or Liquid validation, or when MDX/JSX build errors reference unexpected tokens. NOT for general markdown linting or prose editing.
+allowed-tools:
+- Read
+- Write
+- Edit
+- Bash
+- Glob
+- Grep
+version: 1.0.0
+triggers:
+- mdx error
+- angle bracket
+- jsx parsing
+- build failure mdx
+- escape angle brackets
+- sanitize markdown
+metadata:
+  category: DevOps & Automation
+  tags:
   - mdx
   - docusaurus
   - markdown
   - build-tools
   - sanitization
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Glob
-  - Grep
-triggers:
-  - "mdx error"
-  - "angle bracket"
-  - "jsx parsing"
-  - "build failure mdx"
-  - "escape angle brackets"
-  - "sanitize markdown"
+  pairs-with:
+  - skill: site-reliability-engineer
+    reason: MDX build failures are a primary Docusaurus deployment blocker that SRE validates
+  - skill: technical-writer
+    reason: Technical writers produce the MDX content that needs sanitization for safe rendering
+  - skill: skill-documentarian
+    reason: Skill documentation in MDX format requires sanitization before website deployment
 ---
 
 # MDX Sanitizer

@@ -1,7 +1,7 @@
 ---
 title: Professional Network Data Acquisition Guide
-sidebar_label: Professional Network Data A...
-sidebar_position: 3
+sidebar_label: Professional Network Data Acqu...
+sidebar_position: 2
 ---
 # Professional Network Data Acquisition Guide
 

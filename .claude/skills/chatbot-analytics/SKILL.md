@@ -1,12 +1,21 @@
 ---
 name: chatbot-analytics
-description: Implement AI chatbot analytics and conversation monitoring. Use when adding conversation metrics, tracking AI usage, measuring user engagement with chat, or building conversation dashboards. Activates for AI analytics, token tracking, conversation categorization, and chat performance.
+description: Implement AI chatbot analytics and conversation monitoring. Use when adding conversation metrics, tracking AI usage, measuring user engagement with chat, or building conversation dashboards.
+  Activates for AI analytics, token tracking, conversation categorization, and chat performance.
 allowed-tools: Read,Write,Edit,Bash(npm:*,npx:*)
-category: Data & Analytics
-tags:
+metadata:
+  category: Data & Analytics
+  tags:
   - analytics
   - chatbot
   - ai-metrics
+  pairs-with:
+  - skill: llm-streaming-response-handler
+    reason: Streaming response metrics (TTFT, tokens/sec) are key chatbot analytics dimensions
+  - skill: data-pipeline-engineer
+    reason: Conversation data pipelines feed analytics dashboards and reporting systems
+  - skill: prompt-engineer
+    reason: Analytics on prompt effectiveness drive iterative prompt optimization
 ---
 
 # AI Chatbot Analytics

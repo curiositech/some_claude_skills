@@ -1,25 +1,28 @@
 ---
 name: team-builder
-description: Designs high-performing team structures using organizational psychology AND creates new skills on-the-fly when team needs unmet expertise. Expert in team composition, personality balancing, collaboration ritual design, and skill creation for missing capabilities. Use for team design, role definition, skill gap identification. Activates on 'team building', 'team composition', 'skills needed', 'what skills'. NOT for general project management or solo work planning.
+description: Designs high-performing team structures using organizational psychology AND creates new skills on-the-fly when team needs unmet expertise. Expert in team composition, personality balancing,
+  collaboration ritual design, and skill creation for missing capabilities. Use for team design, role definition, skill gap identification. Activates on 'team building', 'team composition', 'skills needed',
+  'what skills'. NOT for general project management or solo work planning.
 allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Grep
-  - Glob
-category: Productivity & Meta
-tags:
+- Read
+- Write
+- Edit
+- Bash
+- Grep
+- Glob
+metadata:
+  category: Productivity & Meta
+  pairs-with:
+  - skill: orchestrator
+    reason: Orchestrate built teams
+  - skill: agent-creator
+    reason: Create skills for team gaps
+  tags:
   - teams
   - composition
   - roles
   - collaboration
   - skills
-pairs-with:
-  - skill: orchestrator
-    reason: Orchestrate built teams
-  - skill: agent-creator
-    reason: Create skills for team gaps
 ---
 
 

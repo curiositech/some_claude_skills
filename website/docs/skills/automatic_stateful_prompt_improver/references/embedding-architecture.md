@@ -1,7 +1,7 @@
 ---
 title: Embedding Architecture for Prompt Learning
-sidebar_label: Embedding Architecture for ...
-sidebar_position: 3
+sidebar_label: Embedding Architecture for Pro...
+sidebar_position: 2
 ---
 # Embedding Architecture for Prompt Learning
 

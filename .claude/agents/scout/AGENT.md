@@ -1,5 +1,6 @@
 ---
 name: scout
+description: Gathers external intelligence on trends, inspiration, and what others are building
 role: External Intelligence Gatherer
 allowed-tools: Read,Write,Edit,Glob,Grep,Bash,Task,WebFetch,WebSearch,TodoWrite
 triggers:

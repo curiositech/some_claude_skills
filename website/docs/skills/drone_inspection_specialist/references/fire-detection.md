@@ -1,7 +1,7 @@
 ---
 title: Forest Fire Detection Reference
-sidebar_label: Forest Fire Detection Refer...
-sidebar_position: 1
+sidebar_label: Forest Fire Detection Referenc...
+sidebar_position: 2
 ---
 # Forest Fire Detection Reference
 

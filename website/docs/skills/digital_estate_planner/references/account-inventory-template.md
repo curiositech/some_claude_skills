@@ -1,7 +1,7 @@
 ---
 title: Digital Account Inventory Template
-sidebar_label: Digital Account Inventory T...
-sidebar_position: 1
+sidebar_label: Digital Account Inventory Temp...
+sidebar_position: 2
 ---
 # Digital Account Inventory Template
 

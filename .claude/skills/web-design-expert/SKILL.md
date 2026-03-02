@@ -1,19 +1,22 @@
 ---
 name: web-design-expert
-description: Creates unique web designs with brand identity, color palettes, typography, and modern UI/UX patterns. Use for brand identity development, visual design systems, layout composition, and responsive web design. Activate on "web design", "brand identity", "color palette", "UI design", "visual design", "layout". NOT for typography details (use typography-expert), color theory deep-dives (use color-theory-expert), design system tokens (use design-system-creator), or code implementation without design direction.
+description: Creates unique web designs with brand identity, color palettes, typography, and modern UI/UX patterns. Use for brand identity development, visual design systems, layout composition, and responsive
+  web design. Activate on "web design", "brand identity", "color palette", "UI design", "visual design", "layout". NOT for typography details (use typography-expert), color theory deep-dives (use color-theory-expert),
+  design system tokens (use design-system-creator), or code implementation without design direction.
 allowed-tools: Read,Write,Edit,WebFetch,mcp__magic__21st_magic_component_builder,mcp__magic__21st_magic_component_inspiration,mcp__magic__21st_magic_component_refiner,mcp__magic__logo_search
-category: Design & Creative
-tags:
+metadata:
+  category: Design & Creative
+  pairs-with:
+  - skill: typography-expert
+    reason: Typography for web designs
+  - skill: color-theory-palette-harmony-expert
+    reason: Color palettes for web
+  tags:
   - web
   - brand
   - ui-ux
   - layout
   - visual-design
-pairs-with:
-  - skill: typography-expert
-    reason: Typography for web designs
-  - skill: color-theory-palette-harmony-expert
-    reason: Color palettes for web
 ---
 
 # Web Design Expert

@@ -1,6 +1,6 @@
 ---
 title: Face Recognition & Clustering Reference
-sidebar_label: Face Recognition & Clusteri...
+sidebar_label: Face Recognition & Clustering ...
 sidebar_position: 2
 ---
 # Face Recognition & Clustering Reference

@@ -1,6 +1,6 @@
 ---
 title: Physics Implementation Reference
-sidebar_label: Physics Implementation Refe...
+sidebar_label: Physics Implementation Referen...
 sidebar_position: 2
 ---
 # Physics Implementation Reference

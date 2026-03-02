@@ -1,7 +1,7 @@
 ---
 title: Mathematical Foundations
 sidebar_label: Mathematical Foundations
-sidebar_position: 9
+sidebar_position: 2
 ---
 # Mathematical Foundations
 
