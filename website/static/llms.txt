@@ -4,7 +4,7 @@
 
 ## Overview
 
-Some Claude Skills is a curated collection of 45+ expert AI skills for Claude Code. Each skill transforms Claude into a domain specialist with deep expertise, anti-pattern detection, and decision-tree guidance. Skills cover ML/computer vision, audio/video, design, psychology, development tools, and more.
+Some Claude Skills is a curated collection of 190+ expert AI skills for Claude Code. Each skill transforms Claude into a domain specialist with deep expertise, anti-pattern detection, and decision-tree guidance. Skills cover ML/computer vision, audio/video, design, psychology, development tools, recovery, legal, and more.
 
 ## What Are Claude Skills?
 
@@ -23,12 +23,15 @@ Claude Skills are markdown files (SKILL.md) that encode domain expertise for Cla
 - **sound-engineer**: ElevenLabs integration, audio production, voice synthesis
 - **jungian-psychologist**: Analytical psychology, shadow work, dream interpretation
 - **vaporwave-glassomorphic-ui-designer**: Retro-futuristic UI with modern glassmorphism
+- **recovery-coach-patterns**: Evidence-based addiction recovery coaching frameworks
+- **national-expungement-expert**: Clean Slate laws and expungement eligibility by state
+- **skill-documentarian**: Autonomous agent for cataloging and validating skills inventory
 
 ## Installation
 
 ```bash
-# Clone a skill to your project
-git clone https://github.com/erichowens/some_claude_skills
+# Clone all skills to your project
+git clone https://github.com/curiositech/some_claude_skills
 cp -r some_claude_skills/.claude/skills/skill-name .claude/skills/
 ```
 
@@ -36,7 +39,7 @@ Or download individual skills as ZIP files from the Skills Gallery.
 
 ## Documentation
 
-- [Skills Gallery](https://someclaudeskills.com/skills): Browse all 45+ skills
+- [Skills Gallery](https://someclaudeskills.com/skills): Browse all 190+ skills
 - [Getting Started Guide](https://someclaudeskills.com/docs/guides/claude-skills-guide): Learn how skills work
 - [Examples & Artifacts](https://someclaudeskills.com/artifacts): Real-world usage examples
 - [MCP Integrations](https://someclaudeskills.com/mcps): Model Context Protocol servers
@@ -44,56 +47,60 @@ Or download individual skills as ZIP files from the Skills Gallery.
 ## Links
 
 - Website: https://someclaudeskills.com
-- GitHub: https://github.com/erichowens/some_claude_skills
+- GitHub: https://github.com/curiositech/some_claude_skills
 - Author: https://linkedin.com/in/erich-owens-01a38446/
 
 ## Categories
 
-### Machine Learning & Computer Vision
-- clip-aware-embeddings
-- drone-cv-expert
-- drone-inspection-specialist
-- photo-composition-critic
-- photo-content-recognition-curation-expert
-- collage-layout-expert
-- event-detection-temporal-intelligence-expert
+### Design & Creative (~35 skills)
+- web-design-expert, native-app-designer, design-system-creator, typography-expert
+- vaporwave-glassomorphic-ui-designer, windows-3-1-web-designer, neobrutalist-web-designer
+- dark-mode-design-expert, pixel-art-infographic-creator, interior-design-expert
+- 2000s-visualization-expert, collage-layout-expert, color-contrast-auditor, and more
 
-### Audio & Media
-- sound-engineer
-- voice-audio-engineer
-- 2000s-visualization-expert
+### Software Engineering & Architecture (~45 skills)
+- api-architect, code-architecture, microservices-patterns, database-design-patterns
+- typescript-advanced-patterns, react-performance-optimizer, nextjs-app-router-expert
+- security-auditor, refactoring-surgeon, modern-auth-2026, real-time-collaboration-engine
+- test-automation-expert, playwright-e2e-tester, github-actions-pipeline-builder, and more
 
-### Design & UI
-- vaporwave-glassomorphic-ui-designer
-- windows-3-1-web-designer
-- web-design-expert
-- native-app-designer
-- design-system-creator
-- typography-expert
-- interior-design-expert
+### AI/ML & Computer Vision (~20 skills)
+- ai-engineer, computer-vision-pipeline, clip-aware-embeddings
+- drone-cv-expert, drone-inspection-specialist, metal-shader-expert
+- photo-composition-critic, event-detection-temporal-intelligence-expert
+- llm-router, ml-system-design-interview, vr-avatar-engineer, and more
 
-### Psychology & Coaching
-- jungian-psychologist
-- career-biographer
-- hrv-alexithymia-expert
-- wisdom-accountability-coach
-- personal-finance-coach
-- tech-entrepreneur-coach-adhd
-- adhd-design-expert
+### DevOps & Infrastructure (~12 skills)
+- devops-automator, site-reliability-engineer, cloudflare-worker-dev
+- vercel-deployment, logging-observability, terraform-iac-expert, and more
 
-### Development Tools
-- skill-coach
-- skill-documentarian
-- agent-creator
-- orchestrator
-- site-reliability-engineer
-- bot-developer
+### Career & Professional Development (~12 skills)
+- cv-creator, job-application-optimizer, career-biographer, hr-network-analyst
+- competitive-cartographer, interview-simulator, values-behavioral-interview, and more
 
-### Career & Professional
-- cv-creator
-- job-application-optimizer
-- competitive-cartographer
-- hr-network-analyst
+### Health, Psychology & Coaching (~15 skills)
+- jungian-psychologist, adhd-daily-planner, hrv-alexithymia-expert
+- clinical-diagnostic-reasoning, personal-finance-coach, wisdom-accountability-coach, and more
+
+### Meta & Orchestration (~20 skills)
+- agent-creator, orchestrator, skill-creator, skill-documentarian, mcp-creator
+- task-decomposer, research-analyst, prompt-engineer, systems-thinking, and more
+
+### Recovery & Wellness (~9 skills)
+- recovery-coach-patterns, recovery-app-onboarding, recovery-community-moderator
+- sober-addict-protector, sobriety-tools-guardian, modern-drug-rehab-computer, and more
+
+### Legal & Compliance (~4 skills)
+- 2026-legal-research-agent, national-expungement-expert, hipaa-compliance
+- digital-estate-planner
+
+### Audio, Media & Storytelling (~8 skills)
+- sound-engineer, voice-audio-engineer, win31-audio-design
+- wedding-immortalist, pet-memorial-creator, email-composer, bot-developer
+
+## Corpus Distillation Pipeline
+
+The `/corpus/` directory contains a knowledge distillation pipeline that converts large text corpora (books, research papers, documentation) into dense skill knowledge.
 
 ## Contact
 
