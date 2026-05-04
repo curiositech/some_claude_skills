@@ -17,7 +17,7 @@ function countActualSkills() {
   }
 
   const entries = fs.readdirSync(SKILLS_DIR, { withFileTypes: true });
-  return entries.filter(e => e.isDirectory()).length;
+  return entries.filter(e => e.isDirectory() && !e.name.startsWith('.')).length;
 }
 
 function getReadmeSkillCount() {
@@ -28,7 +28,7 @@ function getReadmeSkillCount() {
 
   const content = fs.readFileSync(README_PATH, 'utf-8');
 
-  // Match patterns like "46+ production-ready skills" or "46 production-ready skills"
+  // Match patterns like "190+ production-ready skills" or "190 production-ready skills"
   const match = content.match(/(\d+)\+?\s*production-ready skills/i);
 
   if (!match) {
@@ -39,13 +39,26 @@ function getReadmeSkillCount() {
   return parseInt(match[1], 10);
 }
 
+function checkRepoUrls() {
+  if (!fs.existsSync(README_PATH)) return;
+
+  const content = fs.readFileSync(README_PATH, 'utf-8');
+  const staleRefs = (content.match(/erichowens\/some_claude_skills/g) || []).length;
+
+  if (staleRefs > 0) {
+    console.warn(`⚠️  README.md contains ${staleRefs} stale reference(s) to 'erichowens/some_claude_skills' (should be 'curiositech/some_claude_skills')`);
+  }
+}
+
 function main() {
   const actual = countActualSkills();
   const claimed = getReadmeSkillCount();
 
   console.log(`📊 Skills inventory check:`);
   console.log(`   Actual skills in .claude/skills/: ${actual}`);
-  console.log(`   README.md claims: ${claimed}+`);
+  console.log(`   README.md claims: ${claimed !== null ? claimed + '+' : 'unknown'}`);
+
+  checkRepoUrls();
 
   if (claimed === null) {
     console.warn('⚠️  Could not validate README skill count');

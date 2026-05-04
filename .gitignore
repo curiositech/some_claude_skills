@@ -50,3 +50,6 @@ erichowens_com/
 
 # Private skills (stay on disk for local use, never pushed)
 .claude/skills/windags-*/
+
+# Archive directory (downloaded locally, not tracked going forward)
+archive/
