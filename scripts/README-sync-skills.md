@@ -2,7 +2,17 @@
 
 ## Overview
 
-This project maintains the **canonical source** for all 143+ Claude Code skills. They are automatically symlinked to `~/.claude/skills/` for global availability across all projects.
+This project maintains the **canonical source** for 500+ AI skills. They can be synced to one or more AI tools on your machine. Sync targets are **opt-in** — you choose which tools you want on first run and your preferences are saved locally.
+
+### Supported targets
+
+| # | Tool | Output location | Format |
+|---|------|-----------------|--------|
+| 1 | **Claude Code** | `~/.claude/skills/` | Symlinks (existing behaviour) |
+| 2 | **Cursor** | `.cursor/rules/` | Generated `.md` rule files |
+| 3 | **Windsurf** | `.windsurf/rules/` | Generated `.md` rule files |
+| 4 | **Codex CLI** | `~/.codex/instructions/` | Generated `.md` instruction files |
+| 5 | **Gemini** | `.gemini/rules/` | Generated `.md` rule files |
 
 ## Architecture
 
@@ -14,7 +24,7 @@ This project maintains the **canonical source** for all 143+ Claude Code skills.
 │  │  ├── computer-vision-pipeline/                      │    │
 │  │  ├── document-generation-pdf/                       │    │
 │  │  ├── crisis-detection-intervention-ai/              │    │
-│  │  └── ... (143 skills)                               │    │
+│  │  └── ... (500+ skills)                              │    │
 │  └─────────────────────────────────────────────────────┘    │
 │                           │                                  │
 │                           │ Git commits                      │
@@ -22,35 +32,77 @@ This project maintains the **canonical source** for all 143+ Claude Code skills.
 │                   GitHub Repository                          │
 └─────────────────────────────────────────────────────────────┘
                             │
-                            │ sync-skills.sh
-                            │ (automatic via git hooks)
+                            │ sync-skills-to-user.sh
+                            │ (manual or via git hooks)
                             ▼
-┌─────────────────────────────────────────────────────────────┐
-│  User Level: ~/.claude/skills/ (Symlinks)                   │
-│  ┌─────────────────────────────────────────────────────┐    │
-│  │  computer-vision-pipeline@ → /path/to/project/...   │    │
-│  │  document-generation-pdf@ → /path/to/project/...    │    │
-│  │  crisis-detection-intervention-ai@ → /path/to/...   │    │
-│  │  ... (143 symlinks)                                 │    │
-│  └─────────────────────────────────────────────────────┘    │
-│                                                              │
-│  Available globally in ALL Claude Code sessions             │
-└─────────────────────────────────────────────────────────────┘
+        ┌───────────────────┴───────────────────┐
+        │                                       │
+        ▼                                       ▼
+~/.claude/skills/ (symlinks)       .cursor/rules/*.md
+~/.codex/instructions/*.md         .windsurf/rules/*.md
+                                   .gemini/rules/*.md
 ```
 
 ## How It Works
 
 ### 1. Source of Truth
 
-All skills live in `/coding/some_claude_skills/.claude/skills/`:
+All skills live in `.claude/skills/` in the project root:
 - **Version controlled** in git
 - **Tracked changes** via commits
 - **Collaborative editing** via pull requests
 - **Documentation** alongside skill code
 
-### 2. Automatic Syncing
+### 2. First-run opt-in
 
-The `sync-skills.sh` script runs automatically via git hooks:
+The first time you run `./scripts/sync-skills-to-user.sh` interactively, it asks which AI tools you want to sync to:
+
+```
+🔧 First-time setup: Which AI tools should skills be synced to?
+   Select all that apply (comma-separated, e.g. 1,3,5):
+
+   [1] Claude Code       (~/.claude/skills/)
+   [2] Cursor            (.cursor/rules/)
+   [3] Windsurf          (.windsurf/rules/)
+   [4] Codex CLI         (~/.codex/instructions/)
+   [5] Gemini            (.gemini/rules/)
+   [6] All of the above
+   [0] None — skip sync entirely
+
+Your choice:
+```
+
+No tool is pre-selected. Choices are saved to `.claude-sync.json` (gitignored).
+
+### 3. Changing your preferences
+
+```bash
+# Re-run the setup wizard
+./scripts/sync-skills-to-user.sh --reconfigure
+
+# Or edit the file directly
+$EDITOR .claude-sync.json
+```
+
+### 4. Non-interactive environments
+
+When the script runs without a TTY (e.g., in a git hook on a fresh clone) and no
+`.claude-sync.json` exists, it prints a single info line and exits cleanly:
+
+```
+ℹ️  No .claude-sync.json found. Run ./scripts/sync-skills-to-user.sh interactively to configure.
+```
+
+### 5. Format translation
+
+For every target other than Claude Code, the script reads each `SKILL.md`, strips
+the YAML frontmatter (everything between `---` markers), and writes the clean
+markdown body to the target directory.  The helper library lives at
+`scripts/lib/translate-skill.sh`.
+
+### 6. Automatic Syncing
+
+The `sync-skills-to-user.sh` script runs automatically via git hooks:
 
 | Git Operation | When | Hook |
 |---------------|------|------|
@@ -58,29 +110,38 @@ The `sync-skills.sh` script runs automatically via git hooks:
 | `git pull` | Pulling remote changes | `post-merge` |
 | `git merge` | Merging branches | `post-merge` |
 
-**What happens**:
-1. Migrates any user-level skills to project (one-time)
-2. Removes stale symlinks
-3. Creates fresh symlinks for all project skills
-
-### 3. Global Availability
-
-Skills appear in `~/.claude/skills/` as symlinks:
-- **Read by Claude Code** when scanning for skills
-- **Updated automatically** when project skills change
-- **No manual copying** required
-- **Always in sync** with project version
+Because the hooks run non-interactively, they will silently do nothing until you
+have configured `.claude-sync.json` at least once interactively.
 
 ## Usage
+
+### First-time setup
+
+```bash
+./scripts/sync-skills-to-user.sh
+# → interactive prompt; answer once, preferences saved
+```
 
 ### Manual Sync
 
 ```bash
+# From project root
+./scripts/sync-skills-to-user.sh
+
 # From website/ directory
 npm run sync:user-skills
+```
 
-# From project root
-./scripts/sync-skills.sh
+### Dry run (see what would change without touching anything)
+
+```bash
+./scripts/sync-skills-to-user.sh --dry-run
+```
+
+### Reconfigure targets
+
+```bash
+./scripts/sync-skills-to-user.sh --reconfigure
 ```
 
 ### After Creating New Skill
@@ -203,10 +264,12 @@ npm run sync:user-skills
 
 | File | Purpose |
 |------|---------|
-| `scripts/sync-skills.sh` | Main sync script |
+| `scripts/sync-skills-to-user.sh` | Main sync script (multi-target, interactive) |
+| `scripts/lib/translate-skill.sh` | Helper: strip YAML frontmatter from SKILL.md |
+| `.claude-sync.json` | User-local config (gitignored) |
 | `.git/hooks/post-checkout` | Auto-sync on branch switch |
 | `.git/hooks/post-merge` | Auto-sync on pull/merge |
-| `website/package.json` | npm run sync:user-skills |
+| `website/package.json` | `npm run sync:user-skills` |
 
 ## Architecture Decisions
 
