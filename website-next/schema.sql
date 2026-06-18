@@ -11,6 +11,13 @@
 -- expert-decision feedback loop). This is how the system accrues
 -- painting expertise over time.
 
+-- Runtime config (e.g. the admin-selected free-tier model) -----------------
+CREATE TABLE IF NOT EXISTS config (
+  key        TEXT PRIMARY KEY,
+  value      TEXT,
+  updated_at TEXT
+);
+
 -- Anonymous identity + free-tier quota -------------------------------------
 CREATE TABLE IF NOT EXISTS users (
   id              TEXT PRIMARY KEY,         -- internal id (== cookie_uuid)

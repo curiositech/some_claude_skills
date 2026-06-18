@@ -34,5 +34,6 @@ bucket_name = "someclaudeskills-mspaint"
 [vars]
 # Free generations granted per anonymous identity before a key is required.
 FREE_USES_LIMIT = "5"
-# Cheap Workers AI model used for the free tier.
-CF_TEXT_MODEL = "@cf/meta/llama-3.1-8b-instruct"
+# Default free-tier model. Overridable at runtime from the admin tool
+# (/api/admin). Must be one of the ids in functions/_lib/models.ts.
+CF_TEXT_MODEL = "@cf/qwen/qwen3-30b-a3b-fp8"

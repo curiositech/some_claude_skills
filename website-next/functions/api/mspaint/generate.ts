@@ -26,7 +26,7 @@ import {
   buildReflectionUserContent,
   extractJson,
 } from "../../_lib/cta";
-import { runText, classifyPrompt, cfModel } from "../../_lib/workers-ai";
+import { runText, classifyPrompt, resolveDrawModel, UTILITY_MODEL } from "../../_lib/workers-ai";
 
 const ALLOWED_ANTHROPIC = new Set([
   "claude-haiku-4-5-20251001",
@@ -205,8 +205,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
           cookie
         );
       }
-      modelUsed = cfModel(env);
-      const text = await runText(env, drawSystem, prompt, 4096);
+      modelUsed = await resolveDrawModel(env);
+      const text = await runText(env, drawSystem, prompt, 4096, modelUsed);
       draw = parseDraw(text);
     }
   } catch (e) {
@@ -270,7 +270,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
               env,
               REFLECTION_SYSTEM_PROMPT,
               buildReflectionUserContent(prompt, category, draw!.description, draw!.commands.length),
-              700
+              700,
+              UTILITY_MODEL
             );
             const ref = extractJson<Record<string, unknown>>(text);
             if (!ref) return;

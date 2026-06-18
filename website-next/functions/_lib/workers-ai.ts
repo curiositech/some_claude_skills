@@ -5,26 +5,44 @@
  */
 
 import type { Env } from "./env";
-import { DEFAULT_CF_MODEL } from "./env";
 import { extractJson } from "./cta";
+import { getConfig, CONFIG_MODEL_KEY } from "./db";
+import { RECOMMENDED_MODEL, isAllowedModel } from "./models";
 
 interface CfTextResult {
   response?: string;
 }
 
+/** Synchronous fallback model (env var or recommended default). */
 export function cfModel(env: Env): string {
-  return env.CF_TEXT_MODEL || DEFAULT_CF_MODEL;
+  const fromEnv = env.CF_TEXT_MODEL;
+  if (fromEnv && isAllowedModel(fromEnv)) return fromEnv;
+  return RECOMMENDED_MODEL;
 }
+
+/**
+ * The drawing model, honoring the admin's runtime selection (D1 config),
+ * then the env var, then the recommended default. Validated against the catalog.
+ */
+export async function resolveDrawModel(env: Env): Promise<string> {
+  const fromConfig = await getConfig(env, CONFIG_MODEL_KEY);
+  if (fromConfig && isAllowedModel(fromConfig)) return fromConfig;
+  return cfModel(env);
+}
+
+/** Cheap, fixed model for utility passes (classification, reflection). */
+export const UTILITY_MODEL = RECOMMENDED_MODEL;
 
 /** Run a text model with a system + user message. Returns raw text. */
 export async function runText(
   env: Env,
   system: string,
   user: string,
-  maxTokens = 4096
+  maxTokens = 4096,
+  model?: string
 ): Promise<string> {
   if (!env.AI) throw new Error("Workers AI binding (AI) not configured");
-  const out = (await env.AI.run(cfModel(env), {
+  const out = (await env.AI.run(model || cfModel(env), {
     messages: [
       { role: "system", content: system },
       { role: "user", content: user },
@@ -47,7 +65,7 @@ const CLASSIFY_SYSTEM = `You analyze MS Paint drawing prompts. Return ONLY JSON:
 export async function classifyPrompt(env: Env, prompt: string): Promise<Classification> {
   const fallback: Classification = { category: "general", subcategories: [], tools: [] };
   try {
-    const text = await runText(env, CLASSIFY_SYSTEM, prompt, 256);
+    const text = await runText(env, CLASSIFY_SYSTEM, prompt, 256, UTILITY_MODEL);
     const parsed = extractJson<Partial<Classification>>(text);
     if (!parsed) return fallback;
     return {

@@ -106,12 +106,30 @@ Tunable vars (in `wrangler.toml`): `FREE_USES_LIMIT` (default 5),
 
 Token-gated. Pass `?token=<ADMIN_TOKEN>` (or header `X-Admin-Token`).
 
-| Route | Returns |
-|-------|---------|
-| `/api/admin?token=…` | HTML gallery of all drawings + lessons + stats |
-| `/api/admin/data?token=…&limit=&offset=` | JSON of generations |
-| `/api/admin/stats?token=…` | aggregate stats + per-category counts |
-| `/api/admin/image?token=…&key=…` | streams a drawing PNG from R2 |
+| Route | Method | Returns |
+|-------|--------|---------|
+| `/api/admin?token=…` | GET | HTML gallery + **model picker** + lessons + stats |
+| `/api/admin/data?token=…&limit=&offset=` | GET | JSON of generations |
+| `/api/admin/stats?token=…` | GET | aggregate stats + per-category counts |
+| `/api/admin/models?token=…` | GET | model catalog + currently-active model (JSON) |
+| `/api/admin/model?token=…` | POST | set the active free-tier model (`{model}` JSON or form) |
+| `/api/admin/image?token=…&key=…` | GET | streams a drawing PNG from R2 |
+
+### Choosing the drawing model (with prices)
+
+The gallery shows the **currently-active model** in the header and a price table
+you pick from (Cloudflare per-token pricing + an estimated `$/drawing`). The
+catalog lives in `functions/_lib/models.ts`. The selection is stored in D1
+(`config.cf_text_model`) and read at request time, so it changes live with no
+redeploy. Each drawing card also shows which model produced it.
+
+Notes:
+- The picker controls the **free-tier drawing** model only. Classification and
+  the reflection pass always use the cheap recommended model to keep costs flat.
+- Bring-your-own-key (Anthropic) users are unaffected.
+- Default is `@cf/qwen/qwen3-30b-a3b-fp8` (best value: reliable JSON, ~3B-tier
+  price). Cheapest is `@cf/meta/llama-3.1-8b-instruct-fp8-fast`; most capable is
+  `@cf/meta/llama-3.3-70b-instruct-fp8-fast` (~6× the cost).
 
 R2 is private; images are only served through the token-gated `image` route.
 

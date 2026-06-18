@@ -18,6 +18,28 @@ function nowIso(): string {
   return new Date().toISOString();
 }
 
+/** Read a config value (returns null if absent or no DB). */
+export async function getConfig(env: Env, key: string): Promise<string | null> {
+  if (!env.MSPAINT_DB) return null;
+  const row = await env.MSPAINT_DB.prepare("SELECT value FROM config WHERE key = ?")
+    .bind(key)
+    .first<{ value: string }>();
+  return row ? row.value : null;
+}
+
+/** Upsert a config value. */
+export async function setConfig(env: Env, key: string, value: string): Promise<void> {
+  if (!env.MSPAINT_DB) return;
+  await env.MSPAINT_DB.prepare(
+    `INSERT INTO config (key, value, updated_at) VALUES (?, ?, ?)
+     ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = excluded.updated_at`
+  )
+    .bind(key, value, nowIso())
+    .run();
+}
+
+export const CONFIG_MODEL_KEY = "cf_text_model";
+
 /**
  * Find-or-create the user row, keyed primarily on the cookie UUID but
  * reconciled against the IP/UA hash so a fresh cookie can't reset the count
