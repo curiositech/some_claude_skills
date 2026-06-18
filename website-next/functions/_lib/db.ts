@@ -158,6 +158,7 @@ export interface GenerationRecord {
   latencyMs?: number;
   status: string;
   error?: string | null;
+  batchId?: string | null;
 }
 
 const j = (v: unknown): string | null =>
@@ -170,8 +171,8 @@ export async function recordGeneration(env: Env, r: GenerationRecord): Promise<v
         id, created_at, user_id, cookie_uuid, ip_ua_hash, country, user_agent,
         provider, model, prompt, category, subcategories, recommended_tools,
         reference_query, thinking, plan, description, commands, command_count,
-        canvas_before_key, canvas_after_key, usage_tokens, latency_ms, status, error
-      ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
+        canvas_before_key, canvas_after_key, usage_tokens, latency_ms, status, error, batch_id
+      ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
     )
     .bind(
       r.id,
@@ -198,9 +199,67 @@ export async function recordGeneration(env: Env, r: GenerationRecord): Promise<v
       j(r.usageTokens),
       r.latencyMs ?? null,
       r.status,
-      r.error ?? null
+      r.error ?? null,
+      r.batchId ?? null
     )
     .run();
+}
+
+// --- Batch runs (admin soak tests) ---------------------------------------
+export async function createBatch(
+  env: Env,
+  b: { id: string; model: string; prompt: string; target: number }
+): Promise<void> {
+  if (!env.MSPAINT_DB) return;
+  await env.MSPAINT_DB.prepare(
+    `INSERT INTO batches (id, created_at, model, prompt, target, completed, ok_count, fail_count, status)
+     VALUES (?,?,?,?,?,0,0,0,'running')`
+  )
+    .bind(b.id, nowIso(), b.model, b.prompt, b.target)
+    .run();
+}
+
+export async function incrementBatch(env: Env, id: string, ok: boolean): Promise<void> {
+  if (!env.MSPAINT_DB) return;
+  await env.MSPAINT_DB.prepare(
+    `UPDATE batches SET completed = completed + 1,
+       ok_count = ok_count + ?, fail_count = fail_count + ?,
+       status = CASE WHEN completed + 1 >= target THEN 'done' ELSE status END
+     WHERE id = ?`
+  )
+    .bind(ok ? 1 : 0, ok ? 0 : 1, id)
+    .run();
+}
+
+// --- Wisdom explorer ------------------------------------------------------
+export interface CategorySummary {
+  category: string;
+  lessons: number;
+}
+
+export async function listLessonCategories(env: Env): Promise<CategorySummary[]> {
+  if (!env.MSPAINT_DB) return [];
+  const { results } = await env.MSPAINT_DB.prepare(
+    `SELECT category, COUNT(*) AS lessons FROM lessons GROUP BY category ORDER BY lessons DESC`
+  ).all<{ category: string; lessons: number }>();
+  return (results || []).map((r) => ({ category: r.category || "general", lessons: r.lessons }));
+}
+
+export async function getLessons(
+  env: Env,
+  category: string | null,
+  limit = 100
+): Promise<Record<string, unknown>[]> {
+  if (!env.MSPAINT_DB) return [];
+  const stmt = category
+    ? env.MSPAINT_DB.prepare(
+        `SELECT * FROM lessons WHERE category = ? ORDER BY helpfulness DESC, created_at DESC LIMIT ?`
+      ).bind(category, limit)
+    : env.MSPAINT_DB.prepare(
+        `SELECT * FROM lessons ORDER BY created_at DESC LIMIT ?`
+      ).bind(limit);
+  const { results } = await stmt.all<Record<string, unknown>>();
+  return results || [];
 }
 
 export interface LessonRecord {

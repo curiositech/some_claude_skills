@@ -7,10 +7,35 @@
 import type { Env } from "./env";
 import { extractJson } from "./cta";
 import { getConfig, CONFIG_MODEL_KEY } from "./db";
-import { RECOMMENDED_MODEL, isAllowedModel } from "./models";
+import { RECOMMENDED_MODEL, isAllowedModel, modelApi } from "./models";
 
-interface CfTextResult {
-  response?: string;
+/** Pull assistant text out of whatever shape a Workers AI model returns. */
+function extractModelText(out: unknown): string {
+  if (typeof out === "string") return out;
+  if (!out || typeof out !== "object") return "";
+  const o = out as Record<string, unknown>;
+  // Chat models: { response: "..." }
+  if (typeof o.response === "string") return o.response;
+  // gpt-oss / Responses API: { output_text } or { output: [{ content:[{text}] }] }
+  if (typeof o.output_text === "string") return o.output_text;
+  if (Array.isArray(o.output)) {
+    const parts: string[] = [];
+    for (const item of o.output as Array<Record<string, unknown>>) {
+      const content = item?.content;
+      if (Array.isArray(content)) {
+        for (const c of content as Array<Record<string, unknown>>) {
+          if (typeof c?.text === "string") parts.push(c.text);
+        }
+      } else if (typeof item?.text === "string") {
+        parts.push(item.text as string);
+      }
+    }
+    if (parts.length) return parts.join("");
+  }
+  // Nested { result: { response } }
+  const result = o.result as Record<string, unknown> | undefined;
+  if (result && typeof result.response === "string") return result.response;
+  return "";
 }
 
 /** Synchronous fallback model (env var or recommended default). */
@@ -42,14 +67,20 @@ export async function runText(
   model?: string
 ): Promise<string> {
   if (!env.AI) throw new Error("Workers AI binding (AI) not configured");
-  const out = (await env.AI.run(model || cfModel(env), {
-    messages: [
-      { role: "system", content: system },
-      { role: "user", content: user },
-    ],
-    max_tokens: maxTokens,
-  })) as CfTextResult;
-  return out.response || "";
+  const id = model || cfModel(env);
+  // gpt-oss uses the Responses API (instructions + input); everyone else chat.
+  const input =
+    modelApi(id) === "responses"
+      ? { instructions: system, input: user, max_tokens: maxTokens }
+      : {
+          messages: [
+            { role: "system", content: system },
+            { role: "user", content: user },
+          ],
+          max_tokens: maxTokens,
+        };
+  const out = await env.AI.run(id, input);
+  return extractModelText(out);
 }
 
 export interface Classification {

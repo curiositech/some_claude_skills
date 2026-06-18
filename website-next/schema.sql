@@ -58,11 +58,26 @@ CREATE TABLE IF NOT EXISTS generations (
   usage_tokens      TEXT,                   -- JSON
   latency_ms        INTEGER,
   status            TEXT,                   -- 'ok' | 'error' | 'quota_exceeded'
-  error             TEXT
+  error             TEXT,
+  batch_id          TEXT                    -- admin soak-test batch id (nullable)
 );
 CREATE INDEX IF NOT EXISTS idx_gen_user ON generations(user_id);
 CREATE INDEX IF NOT EXISTS idx_gen_created ON generations(created_at);
 CREATE INDEX IF NOT EXISTS idx_gen_category ON generations(category);
+CREATE INDEX IF NOT EXISTS idx_gen_batch ON generations(batch_id);
+
+-- Admin batch runs (premium-model x N soak tests) --------------------------
+CREATE TABLE IF NOT EXISTS batches (
+  id         TEXT PRIMARY KEY,
+  created_at TEXT NOT NULL,
+  model      TEXT,
+  prompt     TEXT,
+  target     INTEGER,
+  completed  INTEGER NOT NULL DEFAULT 0,
+  ok_count   INTEGER NOT NULL DEFAULT 0,
+  fail_count INTEGER NOT NULL DEFAULT 0,
+  status     TEXT
+);
 
 -- Accrued expertise: Cognitive Demands Table + Knowledge Audit -------------
 CREATE TABLE IF NOT EXISTS lessons (

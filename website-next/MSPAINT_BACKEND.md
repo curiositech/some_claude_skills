@@ -109,11 +109,36 @@ Token-gated. Pass `?token=<ADMIN_TOKEN>` (or header `X-Admin-Token`).
 | Route | Method | Returns |
 |-------|--------|---------|
 | `/api/admin?token=…` | GET | HTML gallery + **model picker** + lessons + stats |
+| `/api/admin/batch?token=…` | GET | **Batch console** — run a model N× and watch wisdom accrue live |
+| `/api/admin/wisdom?token=…` | GET | **Wisdom explorer** — loop diagram + Cognitive Demands Table + Knowledge Audit + the exact injected text |
 | `/api/admin/data?token=…&limit=&offset=` | GET | JSON of generations |
 | `/api/admin/stats?token=…` | GET | aggregate stats + per-category counts |
 | `/api/admin/models?token=…` | GET | model catalog + currently-active model (JSON) |
 | `/api/admin/model?token=…` | POST | set the active free-tier model (`{model}` JSON or form) |
+| `/api/admin/run?token=…` | POST | run ONE drawing (the batch unit): `{model, prompt, batchId, index, total}` |
 | `/api/admin/image?token=…&key=…` | GET | streams a drawing PNG from R2 |
+
+### Batch console (soak test)
+
+`/api/admin/batch` runs a chosen model on one prompt N times (default 100),
+**driven from the browser** so it never hits a Worker time limit. Each iteration
+goes through the full loop (assess → recall wisdom → draw → reflect → accrue),
+renders the result to a canvas (and uploads it so it shows in the gallery), and
+updates live metrics: parse-success rate, avg commands, avg latency, estimated
+spend, and lessons accrued. A side panel shows **exactly the "Lessons from
+artists past" text the agent saw** that iteration — so you can literally watch
+the wisdom pool grow and feed back in.
+
+### Wisdom explorer
+
+`/api/admin/wisdom` makes the accrual loop legible:
+- a **diagram** of the 5 stages with the wisdom-injection step highlighted,
+  spelling out **when** (step 2, before drawing), **how much** (top 4 by
+  helpfulness then recency), and **where it comes from** (step 5 of every prior
+  drawing);
+- the **exact injected block** an agent drawing a given category sees right now;
+- the **Cognitive Demands Table** (difficult element / why / common errors /
+  cues & strategies) and the **Knowledge Audit** cards, per category.
 
 ### Choosing the drawing model (with prices)
 
@@ -128,8 +153,15 @@ Notes:
   the reflection pass always use the cheap recommended model to keep costs flat.
 - Bring-your-own-key (Anthropic) users are unaffected.
 - Default is `@cf/qwen/qwen3-30b-a3b-fp8` (best value: reliable JSON, ~3B-tier
-  price). Cheapest is `@cf/meta/llama-3.1-8b-instruct-fp8-fast`; most capable is
-  `@cf/meta/llama-3.3-70b-instruct-fp8-fast` (~6× the cost).
+  price).
+- **Best:** `@cf/moonshotai/kimi-k2.7-code` (frontier 1T MoE, 262K ctx, native
+  structured JSON) — priciest output ($4/M). `@cf/openai/gpt-oss-120b` is the
+  best *value* flagship ($0.35/$0.75). Also strong: Llama 4 Scout, QwQ-32B.
+- **Worst:** `@cf/meta/llama-3.2-1b` (cheapest, frequently malformed JSON — a
+  good baseline) and `@cf/meta/llama-2-7b-chat-fp16` (a trap: ancient *and* the
+  most expensive output on the platform).
+- gpt-oss models use Cloudflare's Responses API (`instructions`/`input`); the
+  client transparently handles that — everything else uses chat `messages`.
 
 R2 is private; images are only served through the token-gated `image` route.
 
