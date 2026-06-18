@@ -18,15 +18,20 @@ import {
   recordGeneration,
   recordLesson,
   retrieveWisdom,
+  getFlags,
+  recordEvent,
+  updateGenerationFinal,
 } from "../../_lib/db";
-import { storePng } from "../../_lib/r2";
+import { storePng, storeDataUrl } from "../../_lib/r2";
 import {
   buildDrawSystemPrompt,
   REFLECTION_SYSTEM_PROMPT,
   buildReflectionUserContent,
   extractJson,
 } from "../../_lib/cta";
-import { runText, classifyPrompt, resolveDrawModel, UTILITY_MODEL } from "../../_lib/workers-ai";
+import { runText, runVision, classifyPrompt, resolveDrawModel, UTILITY_MODEL } from "../../_lib/workers-ai";
+import { hasVision } from "../../_lib/models";
+import { searchReferences } from "../../_lib/references";
 
 const ALLOWED_ANTHROPIC = new Set([
   "claude-haiku-4-5-20251001",
@@ -39,6 +44,7 @@ interface DrawResult {
   plan: unknown;
   description: string;
   commands: unknown[];
+  needsAnotherTurn: boolean;
 }
 
 function jsonResponse(body: unknown, status: number, setCookie?: string): Response {
@@ -53,6 +59,7 @@ function parseDraw(text: string): DrawResult | null {
     plan?: unknown;
     description?: string;
     commands?: unknown[];
+    needsAnotherTurn?: boolean;
   }>(text);
   if (!parsed || !Array.isArray(parsed.commands)) return null;
   return {
@@ -60,6 +67,7 @@ function parseDraw(text: string): DrawResult | null {
     plan: parsed.plan ?? null,
     description: parsed.description || "Drawing",
     commands: parsed.commands,
+    needsAnotherTurn: !!parsed.needsAnotherTurn,
   };
 }
 
@@ -181,10 +189,15 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const wisdom = await retrieveWisdom(env, category, 4);
   const drawSystem = buildDrawSystemPrompt(wisdom);
 
+  // Public feature flags (admin-controlled) for non-key visitors.
+  const flags = await getFlags(env);
+
   // 3. Draw.
   let draw: DrawResult | null = null;
   let usage: unknown = null;
   let modelUsed = "";
+  const refKeys: string[] = [];
+  let referenceQuery: string | null = null;
   try {
     if (usingOwnKey) {
       modelUsed = body.model && ALLOWED_ANTHROPIC.has(body.model) ? body.model : DEFAULT_ANTHROPIC;
@@ -206,7 +219,24 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         );
       }
       modelUsed = await resolveDrawModel(env);
-      const text = await runText(env, drawSystem, prompt, 4096, modelUsed);
+
+      // Optional: look at reference photos first (admin flag + vision model).
+      const refImages: string[] = [];
+      if (flags.references && hasVision(modelUsed) && env.PEXELS_API_KEY) {
+        const { images, query } = await searchReferences(env, prompt, 1);
+        referenceQuery = query;
+        for (let i = 0; i < images.length; i++) {
+          refImages.push(images[i].dataUrl);
+          const k = await storeDataUrl(env, `drawings/${generationId}/ref${i}.jpg`, images[i].dataUrl);
+          if (k) refKeys.push(k);
+          if (env.MSPAINT_DB)
+            await recordEvent(env, { generationId, seq: 2, phase: "look", type: "reference_image", data: { url: images[i].url, key: k } }).catch(() => {});
+        }
+      }
+
+      const text = refImages.length
+        ? await runVision(env, drawSystem, prompt, refImages, 4096, modelUsed)
+        : await runText(env, drawSystem, prompt, 4096, modelUsed);
       draw = parseDraw(text);
     }
   } catch (e) {
@@ -246,11 +276,12 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
     await recordGeneration(env, {
       id: generationId, userId, identity: id, provider, model: modelUsed,
-      prompt, category, subcategories, recommendedTools,
+      prompt, category, subcategories, recommendedTools, referenceQuery,
       thinking: draw.thinking, plan: draw.plan, description: draw.description,
       commands: draw.commands, commandCount: draw.commands.length,
       canvasBeforeKey, usageTokens: usage, latencyMs, status: "ok",
     }).catch(() => {});
+    if (refKeys.length) await updateGenerationFinal(env, generationId, { referenceKeys: refKeys }).catch(() => {});
 
     // Decrement quota only for the free path.
     if (usingOwnKey) {
@@ -311,7 +342,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       commands: draw.commands,
       recommendedTools,
       classification: { category: category || "general", subcategories },
+      category: category || "general",
       referenceImages: [],
+      needsAnotherTurn: draw.needsAnotherTurn,
+      canDraw: hasVision(modelUsed),
+      flags,
       usage,
       usesRemaining,
       usesLimit: limit,

@@ -59,7 +59,11 @@ CREATE TABLE IF NOT EXISTS generations (
   latency_ms        INTEGER,
   status            TEXT,                   -- 'ok' | 'error' | 'quota_exceeded'
   error             TEXT,
-  batch_id          TEXT                    -- admin soak-test batch id (nullable)
+  batch_id          TEXT,                   -- admin soak-test batch id (nullable)
+  pass_count        INTEGER,                -- number of draw turns (look-as-you-go)
+  reference_keys    TEXT,                   -- JSON of R2 keys for reference photos
+  aesthetic_score   REAL,                   -- vision critique score (1-5)
+  critique          TEXT                    -- JSON of the vision critique
 );
 CREATE INDEX IF NOT EXISTS idx_gen_user ON generations(user_id);
 CREATE INDEX IF NOT EXISTS idx_gen_created ON generations(created_at);
@@ -96,6 +100,23 @@ CREATE TABLE IF NOT EXISTS lessons (
   do_differently      TEXT,
   tools_needed        TEXT,                 -- JSON list
   aesthetic_score     REAL,
-  helpfulness         INTEGER NOT NULL DEFAULT 0   -- ranking for re-injection
+  helpfulness         INTEGER NOT NULL DEFAULT 0,  -- ranking for re-injection
+  saw_image           INTEGER NOT NULL DEFAULT 0   -- 1 = vision critique (saw the render)
 );
 CREATE INDEX IF NOT EXISTS idx_lessons_category ON lessons(category);
+
+-- Replay-grade event log (per-step: assess, search, look, plan, draw, critique)
+CREATE TABLE IF NOT EXISTS gen_events (
+  id            TEXT PRIMARY KEY,
+  generation_id TEXT,
+  batch_id      TEXT,
+  seq           INTEGER,
+  ts            TEXT,
+  phase         TEXT,
+  type          TEXT,
+  data          TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_events_gen ON gen_events(generation_id, seq);
+
+-- Runtime config / feature flags -------------------------------------------
+-- (also created above; key/value store. public_features holds the JSON flags.)

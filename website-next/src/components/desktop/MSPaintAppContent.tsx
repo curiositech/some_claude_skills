@@ -67,6 +67,15 @@ export function MSPaintAppContent() {
 
   const currentPromptRef = useRef<string>("");
   const currentGenerationIdRef = useRef<string | null>(null);
+  // Iterative "look as you go" + vision critique (admin-controlled flags)
+  const needsAnotherTurnRef = useRef(false);
+  const canDrawRef = useRef(false);
+  const categoryRef = useRef<string>("general");
+  const passRef = useRef(0);
+  const cumulativeCmdRef = useRef(0);
+  const flagsRef = useRef<{ references: boolean; critique: boolean; iterative: boolean; maxTurns: number }>({
+    references: false, critique: false, iterative: false, maxTurns: 1,
+  });
 
   // Fetch the current free-tier quota on mount (cookie set by the server)
   useEffect(() => {
@@ -130,6 +139,12 @@ export function MSPaintAppContent() {
 
       // Track quota + which generation this is (for the output snapshot upload).
       currentGenerationIdRef.current = data.generationId || null;
+      needsAnotherTurnRef.current = !!data.needsAnotherTurn;
+      canDrawRef.current = !!data.canDraw;
+      categoryRef.current = data.category || "general";
+      passRef.current = 0;
+      cumulativeCmdRef.current = Array.isArray(data.commands) ? data.commands.length : 0;
+      if (data.flags) flagsRef.current = data.flags;
       setUnlimited(!!data.unlimited);
       if (!data.unlimited && typeof data.usesRemaining === "number") {
         setUsesRemaining(data.usesRemaining);
@@ -157,17 +172,71 @@ export function MSPaintAppContent() {
     }
   }, [canvasRef]);
 
-  // When playback finishes, upload the final rendered canvas as the logged
-  // "output" for this generation (best-effort; never disrupts the user).
-  const handlePlaybackComplete = useCallback(() => {
+  // When playback finishes: optionally let the agent take another turn
+  // (look-as-you-go), then upload the final render and (optionally) critique it.
+  const handlePlaybackComplete = useCallback(async () => {
     const genId = currentGenerationIdRef.current;
     if (!genId || !canvasRef) return;
     const image = canvasRef.toDataURL("image/png");
+    const flags = flagsRef.current;
+
+    // 1. Agent-requested continuation ("I want another turn to keep drawing").
+    if (
+      flags.iterative && canDrawRef.current && needsAnotherTurnRef.current &&
+      passRef.current < flags.maxTurns - 1
+    ) {
+      passRef.current += 1;
+      try {
+        const r = await fetch("/api/mspaint/continue", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            generationId: genId,
+            prompt: currentPromptRef.current,
+            category: categoryRef.current,
+            pass: passRef.current,
+            currentImage: image,
+          }),
+        });
+        const d = await r.json();
+        if (d.ok && Array.isArray(d.commands) && d.commands.length) {
+          needsAnotherTurnRef.current = !!d.needsAnotherTurn;
+          cumulativeCmdRef.current += d.commands.length;
+          // Replay the new commands on top of the existing canvas (no clear).
+          setCommands(d.commands);
+          setPlaybackState((p) => ({
+            ...p, totalCommands: d.commands.length, currentCommandIndex: 0,
+            isPlaying: true, isPaused: false,
+          }));
+          return; // loop: this handler fires again when the new pass finishes
+        }
+      } catch {
+        /* fall through to finalize */
+      }
+    }
+
+    // 2. Finalize: store the rendered output.
     fetch("/api/mspaint/snapshot", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ generationId: genId, image }),
     }).catch(() => {});
+
+    // 3. Optional vision critique of the finished drawing.
+    if (flags.critique) {
+      fetch("/api/mspaint/critique", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          generationId: genId,
+          prompt: currentPromptRef.current,
+          category: categoryRef.current,
+          image,
+          commandCount: cumulativeCmdRef.current,
+          passCount: passRef.current + 1,
+        }),
+      }).catch(() => {});
+    }
   }, [canvasRef]);
 
   const handlePlay    = useCallback(() => setPlaybackState(p => ({ ...p, isPlaying: true,  isPaused: false })), []);

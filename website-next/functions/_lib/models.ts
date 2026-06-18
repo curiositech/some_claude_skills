@@ -23,6 +23,8 @@ export interface ModelInfo {
   recommended?: boolean;
   /** Family schema for invocation: "messages" (chat) or "responses" (gpt-oss). */
   api?: "messages" | "responses";
+  /** Can accept image input (reference photos / its own canvas). */
+  vision?: boolean;
   /** Highlight in the picker: the headline best / worst pick. */
   extreme?: "best" | "worst";
 }
@@ -51,6 +53,7 @@ export const MODEL_CATALOG: ModelInfo[] = [
     outPrice: 4.0,
     tier: "best",
     extreme: "best",
+    vision: true,
     note: "THE BEST: frontier 1T-param MoE (32B active), 262K context, reasoning + vision + native structured JSON outputs. Most capable here; priciest output.",
   }),
   m({
@@ -70,6 +73,7 @@ export const MODEL_CATALOG: ModelInfo[] = [
     inPrice: 0.27,
     outPrice: 0.85,
     tier: "premium",
+    vision: true,
     note: "Meta flagship, multimodal MoE (16 experts), 131K context. Excellent value at the top end.",
   }),
   m({
@@ -165,3 +169,10 @@ export function modelInfo(id: string): ModelInfo | undefined {
 export function modelApi(id: string): "messages" | "responses" {
   return modelInfo(id)?.api || "messages";
 }
+
+export function hasVision(id: string): boolean {
+  return !!modelInfo(id)?.vision;
+}
+
+/** Cheapest capable vision model — used as the "critic" that sees renders. */
+export const VISION_CRITIC_MODEL = "@cf/meta/llama-4-scout-17b-16e-instruct";

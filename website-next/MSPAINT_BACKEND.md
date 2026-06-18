@@ -194,3 +194,50 @@ website-next/
    ├─ mspaint/PromptInput/PromptInput.*  remaining-uses badge
    └─ desktop/MSPaintAppContent.tsx      quota fetch + output snapshot upload
 ```
+
+## Vision, references, look-as-you-go, critique & replays
+
+Vision runs on the multimodal models in the catalog (Kimi K2.7, Llama 4 Scout —
+marked 👁). Three optional capabilities:
+
+- **Look at references first** — fetches a reference photo (Pexels;
+  `PEXELS_API_KEY`) and shows it to the vision model before it plans/draws.
+- **Look as you go / "another turn"** — the draw protocol lets the agent set
+  `"needsAnotherTurn": true` so it doesn't quit early with a sparse picture. The
+  client renders the partial canvas and a vision model sees it and continues,
+  up to a turn cap. (Server can't rasterize, so this round-trips through the
+  browser by design.)
+- **Critique its own result** — after the final render, a vision model SEES the
+  image, scores it 1–5, and the elicited lesson is accrued (`saw_image = 1`).
+
+### Who gets what
+
+- **Public visitors:** controlled by admin feature flags (the "What the public
+  gets" panel on `/api/admin`, stored in `config.public_features`). Honored by
+  `/api/mspaint/generate` + `/api/mspaint/continue` + `/api/mspaint/critique`.
+- **You (admin):** the batch console (`/api/admin/batch`) is unrestricted — any
+  model, references/critique toggles, and a max-turns dial — ideal for high-cost
+  "training" runs that accrue lessons fast.
+
+### Replays
+
+Every step is logged to `gen_events` (assess → search → look → plan → draw ×N →
+critique). `/api/admin/replay?id=<generationId>` plays the whole agentic process
+back: the reference photos it looked at, its plan, each draw turn rendered
+cumulatively on a canvas, and the final critique/score. Click any drawing in the
+gallery or batch grid to open its replay.
+
+### New endpoints
+
+| Route | Method | Purpose |
+|-------|--------|---------|
+| `/api/admin/flags` | GET/POST | read/set public feature flags |
+| `/api/admin/run` | POST | one batch draw pass (references/reflect options) |
+| `/api/admin/continue` | POST | a continuation/look-as-you-go turn (vision) |
+| `/api/admin/critique` | POST | vision critique of a render → lesson + score |
+| `/api/admin/replay?id=` | GET | step-by-step replay viewer |
+| `/api/mspaint/continue` | POST | public look-as-you-go (flag-gated) |
+| `/api/mspaint/critique` | POST | public vision critique (flag-gated) |
+
+Note: references require `PEXELS_API_KEY`; all vision features require the active
+free-tier model to be vision-capable (Kimi / Llama 4 Scout).

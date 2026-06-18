@@ -83,6 +83,35 @@ export async function runText(
   return extractModelText(out);
 }
 
+/**
+ * Run a vision-capable chat model with one or more images (data URLs) plus
+ * text. Uses the OpenAI-style multimodal content array supported by Workers AI
+ * multimodal chat models (Kimi K2.7, Llama 4 Scout).
+ */
+export async function runVision(
+  env: Env,
+  system: string,
+  user: string,
+  images: string[],
+  maxTokens = 4096,
+  model?: string
+): Promise<string> {
+  if (!env.AI) throw new Error("Workers AI binding (AI) not configured");
+  const id = model || cfModel(env);
+  const content: Array<Record<string, unknown>> = [{ type: "text", text: user }];
+  for (const url of images) {
+    if (url) content.push({ type: "image_url", image_url: { url } });
+  }
+  const out = await env.AI.run(id, {
+    messages: [
+      { role: "system", content: system },
+      { role: "user", content },
+    ],
+    max_tokens: maxTokens,
+  });
+  return extractModelText(out);
+}
+
 export interface Classification {
   category: string;
   subcategories: string[];

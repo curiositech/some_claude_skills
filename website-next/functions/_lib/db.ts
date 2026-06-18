@@ -40,6 +40,103 @@ export async function setConfig(env: Env, key: string, value: string): Promise<v
 
 export const CONFIG_MODEL_KEY = "cf_text_model";
 
+// --- Public feature flags (what non-admin visitors get) -------------------
+export interface FeatureFlags {
+  references: boolean; // look at reference photos before drawing
+  critique: boolean; // vision critique of the final render
+  iterative: boolean; // allow agent-requested extra drawing turns
+  maxTurns: number; // cap on total draw turns for the public
+}
+
+const FLAG_KEY = "public_features";
+const DEFAULT_FLAGS: FeatureFlags = {
+  references: false,
+  critique: false,
+  iterative: false,
+  maxTurns: 1,
+};
+
+export async function getFlags(env: Env): Promise<FeatureFlags> {
+  const raw = await getConfig(env, FLAG_KEY);
+  if (!raw) return { ...DEFAULT_FLAGS };
+  try {
+    return { ...DEFAULT_FLAGS, ...(JSON.parse(raw) as Partial<FeatureFlags>) };
+  } catch {
+    return { ...DEFAULT_FLAGS };
+  }
+}
+
+export async function setFlags(env: Env, flags: FeatureFlags): Promise<void> {
+  await setConfig(env, FLAG_KEY, JSON.stringify(flags));
+}
+
+// --- Replay-grade event log -----------------------------------------------
+export interface EventRecord {
+  generationId: string;
+  batchId?: string | null;
+  seq: number;
+  phase: string; // assess | search | look | plan | draw | turn | critique
+  type: string;
+  data: unknown;
+}
+
+export async function recordEvent(env: Env, e: EventRecord): Promise<void> {
+  if (!env.MSPAINT_DB) return;
+  await env.MSPAINT_DB.prepare(
+    `INSERT INTO gen_events (id, generation_id, batch_id, seq, ts, phase, type, data)
+     VALUES (?,?,?,?,?,?,?,?)`
+  )
+    .bind(
+      crypto.randomUUID(),
+      e.generationId,
+      e.batchId ?? null,
+      e.seq,
+      new Date().toISOString(),
+      e.phase,
+      e.type,
+      e.data === undefined ? null : JSON.stringify(e.data)
+    )
+    .run();
+}
+
+export async function getEvents(env: Env, generationId: string): Promise<Record<string, unknown>[]> {
+  if (!env.MSPAINT_DB) return [];
+  const { results } = await env.MSPAINT_DB.prepare(
+    `SELECT * FROM gen_events WHERE generation_id = ? ORDER BY seq ASC`
+  )
+    .bind(generationId)
+    .all<Record<string, unknown>>();
+  return results || [];
+}
+
+export async function getGeneration(env: Env, id: string): Promise<Record<string, unknown> | null> {
+  if (!env.MSPAINT_DB) return null;
+  return (
+    (await env.MSPAINT_DB.prepare("SELECT * FROM generations WHERE id = ?")
+      .bind(id)
+      .first<Record<string, unknown>>()) || null
+  );
+}
+
+export async function updateGenerationFinal(
+  env: Env,
+  id: string,
+  f: { passCount?: number; referenceKeys?: unknown; aestheticScore?: number | null; critique?: string | null }
+): Promise<void> {
+  if (!env.MSPAINT_DB) return;
+  await env.MSPAINT_DB.prepare(
+    `UPDATE generations SET pass_count = ?, reference_keys = ?, aesthetic_score = ?, critique = ? WHERE id = ?`
+  )
+    .bind(
+      f.passCount ?? null,
+      f.referenceKeys === undefined ? null : JSON.stringify(f.referenceKeys),
+      f.aestheticScore ?? null,
+      f.critique ?? null,
+      id
+    )
+    .run();
+}
+
 /**
  * Find-or-create the user row, keyed primarily on the cookie UUID but
  * reconciled against the IP/UA hash so a fresh cookie can't reset the count
@@ -277,6 +374,7 @@ export interface LessonRecord {
   doDifferently?: string | null;
   toolsNeeded?: unknown;
   aestheticScore?: number | null;
+  sawImage?: boolean;
 }
 
 export async function recordLesson(env: Env, l: LessonRecord): Promise<void> {
@@ -286,8 +384,8 @@ export async function recordLesson(env: Env, l: LessonRecord): Promise<void> {
         id, generation_id, created_at, category, subcategories,
         difficult_element, why_difficult, common_errors, cues_and_strategies,
         what_worked, what_didnt, wish_i_knew, do_differently, tools_needed,
-        aesthetic_score, helpfulness
-      ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,0)`
+        aesthetic_score, helpfulness, saw_image
+      ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,0,?)`
     )
     .bind(
       l.id,
@@ -304,7 +402,8 @@ export async function recordLesson(env: Env, l: LessonRecord): Promise<void> {
       l.wishIKnew ?? null,
       l.doDifferently ?? null,
       j(l.toolsNeeded),
-      l.aestheticScore ?? null
+      l.aestheticScore ?? null,
+      l.sawImage ? 1 : 0
     )
     .run();
 }

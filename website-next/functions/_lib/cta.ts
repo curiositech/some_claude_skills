@@ -69,13 +69,75 @@ ${renderWisdom(wisdom)}
 3. Use filled shapes for masses; use lines/curves for contours; use spray for texture/shading.
 4. Keep everything inside the 640x480 canvas.
 
+## Finishing the job (important)
+Do NOT stop early with a sparse, unfinished drawing. If you would run out of
+room before the picture is complete, draw as much as you can THIS turn and set
+"needsAnotherTurn": true — you will be shown the current canvas and may continue.
+Only set it to false when the drawing is genuinely complete.
+
 ## Response format — return ONLY this JSON object, no prose around it:
 {
   "thinking": "your artistic reasoning",
   "plan": ["ordered steps you will take, e.g. 'sky gradient', 'mountain silhouette', 'sun'"],
   "description": "one short sentence describing the result",
+  "needsAnotherTurn": false,
   "commands": [ ...paint commands... ]
 }`;
+}
+
+/**
+ * System prompt for a CONTINUATION turn (look-as-you-go). The agent is shown
+ * the current canvas image and adds more commands without clearing.
+ */
+export function buildContinuePrompt(wisdom: Wisdom[]): string {
+  return `You are an expert artist continuing an in-progress MS Paint drawing.
+
+${PAINT_COMMAND_SPEC}
+${renderWisdom(wisdom)}
+
+You are shown the CURRENT canvas. Add MORE commands to push it toward the goal:
+fill empty areas, add missing elements, refine details and shading. Do NOT emit
+clearCanvas. Keep going until the picture is complete; set "needsAnotherTurn":
+true if you still need another turn after this one.
+
+Return ONLY this JSON object:
+{
+  "thinking": "what's missing and what you'll add",
+  "description": "what you added",
+  "needsAnotherTurn": false,
+  "commands": [ ...more paint commands... ]
+}`;
+}
+
+/** Build the user message for a continuation turn. */
+export function buildContinueUserContent(prompt: string, pass: number): string {
+  return `Goal: "${prompt}". This is continuation turn ${pass}. The image above is the canvas so far. Add what's missing.`;
+}
+
+/**
+ * Vision critique — the model SEES the rendered drawing and elicits a
+ * Cognitive Demands Table + Knowledge Audit grounded in what it actually looks
+ * like, plus a 1-5 aesthetic score.
+ */
+export const CRITIQUE_VISION_SYSTEM = `You are a drawing coach. You are shown the FINISHED MS Paint drawing (image) an AI agent made for a prompt. Judge what you actually see and elicit transferable expertise.
+
+Return ONLY this JSON object:
+{
+  "aestheticScore": 3.5,
+  "difficultElement": "the most cognitively demanding part of this subject",
+  "whyDifficult": "why it's hard in MS Paint",
+  "commonErrors": "the typical mistake (point to what you see in this image)",
+  "cuesAndStrategies": "the concrete technique an expert uses, specific to the command set",
+  "whatWorked": ["1-3 things that actually look good"],
+  "whatDidnt": ["1-3 things that look wrong/incomplete in the image"],
+  "wishIKnew": "one thing that would have helped before starting",
+  "doDifferently": "the single highest-leverage change next time",
+  "toolsNeeded": ["paint commands most central to this subject"]
+}
+aestheticScore is 1.0 (awful) to 5.0 (excellent). Be honest and specific to THIS image.`;
+
+export function buildCritiqueUserContent(prompt: string, commandCount: number): string {
+  return `The drawing above was made for the prompt: "${prompt}" using ${commandCount} paint commands. Critique what you see and return the JSON.`;
 }
 
 /**
