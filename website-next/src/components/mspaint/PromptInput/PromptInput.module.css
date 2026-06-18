@@ -60,6 +60,20 @@
   cursor: default;
 }
 
+.quota {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-family: "MS Sans Serif", "Segoe UI", Tahoma, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #000080;
+  background: #C0C0C0;
+  border: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  white-space: nowrap;
+}
+
 .spinner {
   animation: spin 1s linear infinite;
 }

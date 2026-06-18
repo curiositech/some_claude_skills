@@ -1,0 +1,38 @@
+# Cloudflare Pages bindings for the OS2 / MS Paint app.
+#
+# Cloudflare Pages reads this file for Functions bindings. The build output
+# (static export) lives in `out/`. If you deploy via the Pages Git integration,
+# add the same bindings in the dashboard (Settings -> Functions) OR keep this
+# file and deploy with `wrangler pages deploy`.
+#
+# Secrets are NOT stored here. Set them with:
+#   npx wrangler pages secret put ADMIN_TOKEN
+#   npx wrangler pages secret put IDENTITY_SALT
+#   npx wrangler pages secret put ANTHROPIC_API_KEY   # optional fallback
+#   npx wrangler pages secret put PEXELS_API_KEY       # optional references
+
+name = "someclaudeskills-os2"
+pages_build_output_dir = "out"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Cloudflare Workers AI — free-tier drawing brain (cheap Llama model).
+[ai]
+binding = "AI"
+
+# D1 — usage quota, generation log, accrued lessons.
+[[d1_databases]]
+binding = "MSPAINT_DB"
+database_name = "someclaudeskills-mspaint"
+database_id = "2576030c-1019-41df-87c5-1016ef9af4cf"
+
+# R2 — drawing snapshots (before/after PNGs) and reference images.
+[[r2_buckets]]
+binding = "MSPAINT_BUCKET"
+bucket_name = "someclaudeskills-mspaint"
+
+[vars]
+# Free generations granted per anonymous identity before a key is required.
+FREE_USES_LIMIT = "5"
+# Cheap Workers AI model used for the free tier.
+CF_TEXT_MODEL = "@cf/meta/llama-3.1-8b-instruct"

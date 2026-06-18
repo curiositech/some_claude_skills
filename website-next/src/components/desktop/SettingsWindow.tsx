@@ -82,7 +82,13 @@ export function SettingsWindow() {
           <div className="space-y-4">
             <p className="text-[10px] font-[family-name:var(--font-system)] text-[var(--color-text-secondary)] leading-relaxed">
               API keys are stored in your browser (localStorage) and sent with each
-              request. They are never logged or stored on the server.
+              request. Your API key is never logged or stored on the server.
+            </p>
+            <p className="text-[9px] font-[family-name:var(--font-system)] text-[var(--color-text-muted)] leading-relaxed">
+              Note: free AI drawings (without your own key) are powered by Cloudflare
+              and are limited per visitor. To improve the drawing AI, the prompt,
+              the generated drawing, and the resulting image are logged. Add your own
+              key for unlimited drawing.
             </p>
 
             {/* Anthropic key */}

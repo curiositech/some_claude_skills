@@ -60,7 +60,25 @@ export function MSPaintAppContent() {
   const [sessionId, setSessionId] = useState(generateSessionId);
   const [hasApiKey, setHasApiKey] = useState(false);
 
+  // Free-tier quota (Cloudflare-powered drawings before a key is required)
+  const [usesRemaining, setUsesRemaining] = useState<number | null>(null);
+  const [usesLimit, setUsesLimit] = useState<number>(5);
+  const [unlimited, setUnlimited] = useState(false);
+
   const currentPromptRef = useRef<string>("");
+  const currentGenerationIdRef = useRef<string | null>(null);
+
+  // Fetch the current free-tier quota on mount (cookie set by the server)
+  useEffect(() => {
+    fetch("/api/mspaint/usage")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!d) return;
+        setUsesRemaining(d.usesRemaining ?? null);
+        if (typeof d.usesLimit === "number") setUsesLimit(d.usesLimit);
+      })
+      .catch(() => {});
+  }, []);
 
   // Sync API key status from localStorage (re-check when window gains focus)
   useEffect(() => {
@@ -102,7 +120,19 @@ export function MSPaintAppContent() {
 
       const data = await response.json();
       if (!response.ok) {
+        // Quota exhausted — reflect it in the UI before surfacing the message.
+        if (data.quotaExceeded) {
+          setUsesRemaining(0);
+          setUnlimited(false);
+        }
         throw new Error(data.error || `Generate failed: ${response.statusText}`);
+      }
+
+      // Track quota + which generation this is (for the output snapshot upload).
+      currentGenerationIdRef.current = data.generationId || null;
+      setUnlimited(!!data.unlimited);
+      if (!data.unlimited && typeof data.usesRemaining === "number") {
+        setUsesRemaining(data.usesRemaining);
       }
 
       setAiThinking(data.thinking || null);
@@ -125,6 +155,19 @@ export function MSPaintAppContent() {
     } finally {
       setIsGenerating(false);
     }
+  }, [canvasRef]);
+
+  // When playback finishes, upload the final rendered canvas as the logged
+  // "output" for this generation (best-effort; never disrupts the user).
+  const handlePlaybackComplete = useCallback(() => {
+    const genId = currentGenerationIdRef.current;
+    if (!genId || !canvasRef) return;
+    const image = canvasRef.toDataURL("image/png");
+    fetch("/api/mspaint/snapshot", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ generationId: genId, image }),
+    }).catch(() => {});
   }, [canvasRef]);
 
   const handlePlay    = useCallback(() => setPlaybackState(p => ({ ...p, isPlaying: true,  isPaused: false })), []);
@@ -162,6 +205,9 @@ export function MSPaintAppContent() {
         onSubmit={handlePromptSubmit}
         isLoading={isGenerating}
         disabled={playbackState.isPlaying && !playbackState.isPaused}
+        usesRemaining={usesRemaining}
+        usesLimit={usesLimit}
+        unlimited={unlimited || hasApiKey}
       />
 
       {/* API Key status bar */}
@@ -172,9 +218,13 @@ export function MSPaintAppContent() {
       )}>
         <span className={cn(
           "text-[9px] font-[family-name:var(--font-system)] font-bold",
-          hasApiKey ? "text-[var(--color-success)]" : "text-[var(--color-error)]"
+          "text-[var(--color-success)]"
         )}>
-          {hasApiKey ? "API key set — ready to draw" : "No API key — add one in Settings"}
+          {hasApiKey
+            ? "API key set — unlimited drawing"
+            : usesRemaining === 0
+              ? "Free drawings used up — add a key in Settings for unlimited"
+              : "Free AI drawing (Cloudflare) — no key needed"}
         </span>
         <button
           onClick={() => { openSettingsWindow(); setHasApiKey(!!localStorage.getItem(LS_KEY_ANTHROPIC)); }}
@@ -238,7 +288,7 @@ export function MSPaintAppContent() {
               onPlaybackStateChange={setPlaybackState}
               onColorPick={(color) => setForegroundColor(color)}
               onCommandExecuted={handleCommandExecuted}
-              onPlaybackComplete={() => {}}
+              onPlaybackComplete={handlePlaybackComplete}
               clearSignal={clearSignal}
             />
           </div>

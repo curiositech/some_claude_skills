@@ -16,4 +16,9 @@
   display: block;
   cursor: crosshair;
   image-rendering: pixelated;
+  /* Stop the browser hijacking touch as scroll/zoom so drawing works on mobile */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
