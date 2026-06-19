@@ -192,7 +192,7 @@ export function hasReasoning(id: string): boolean {
 /** Output-token budget for a draw call. Reasoning models burn much of the
  *  budget on their chain-of-thought before the JSON, so they get more room —
  *  otherwise the command array is truncated mid-stream and fails to parse. */
-export const DRAW_MAX_TOKENS = 4096;
+export const DRAW_MAX_TOKENS = 8192;
 export const DRAW_MAX_TOKENS_REASONING = 12000;
 export function drawBudget(id: string): number {
   return hasReasoning(id) ? DRAW_MAX_TOKENS_REASONING : DRAW_MAX_TOKENS;

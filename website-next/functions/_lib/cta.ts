@@ -64,10 +64,23 @@ ${PAINT_COMMAND_SPEC}
 ${renderWisdom(wisdom)}
 
 ## How to think (do this before drawing)
-1. Block in big shapes and background first, then mid-tones, then details last.
-2. Pick a small, deliberate colour set from the palette.
-3. Use filled shapes for masses; use lines/curves for contours; use spray for texture/shading.
-4. Keep everything inside the 640x480 canvas.
+1. DECOMPOSE the subject into its real parts and draw each one. "A cowboy on a
+   horse" = horse body + 4 legs + neck + head + tail, THEN rider torso + arms +
+   hat, THEN ground and sky. Draw the thing's actual anatomy/structure, not a
+   single box standing in for it.
+2. Block in big shapes and background first, then mid-tones, then details last.
+3. Pick a small, deliberate colour set from the palette.
+4. Use filled shapes for masses; lines/curves for contours/limbs; spray for texture.
+5. Keep everything inside the 640x480 canvas and cover the whole frame — no large
+   empty grey/blank regions unless they are deliberately sky, ground, or water.
+
+## Hard rules (breaking these ruins the drawing)
+- NEVER write the name of the subject as text to substitute for drawing it.
+  Writing "cowboy" instead of drawing a cowboy is a failure. \`placeText\` is ONLY
+  for text that genuinely belongs IN the scene (a sign, a banner) — never a label.
+- Be generous with commands. A recognizable subject usually needs 25-60 commands;
+  a handful of rectangles is not a drawing. Build each part from multiple shapes.
+- Make it READABLE as the subject: someone should recognize it without the prompt.
 
 ## Finishing the job (important)
 Do NOT stop early with a sparse, unfinished drawing. If you would run out of
@@ -197,13 +210,47 @@ Commands emitted: ${commandCount}${traceBlock}
 Produce the cognitive task analysis JSON now${trace ? ", grounded in the trace above" : ""}.`;
 }
 
-/** Extract the first balanced JSON object from a model's text output. */
+/**
+ * Strip the JSON-illegal noise LLMs commonly emit — `//` line comments and
+ * `/* *​/` block comments — but ONLY outside string literals, so values like
+ * "http://..." or "#000000" survive untouched.
+ */
+function stripJsonNoise(s: string): string {
+  let out = "";
+  let inStr = false;
+  let esc = false;
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (inStr) {
+      out += c;
+      if (esc) esc = false;
+      else if (c === "\\") esc = true;
+      else if (c === '"') inStr = false;
+      continue;
+    }
+    if (c === '"') { inStr = true; out += c; continue; }
+    if (c === "/" && s[i + 1] === "/") { while (i < s.length && s[i] !== "\n") i++; out += "\n"; continue; }
+    if (c === "/" && s[i + 1] === "*") { i += 2; while (i < s.length && !(s[i] === "*" && s[i + 1] === "/")) i++; i++; continue; }
+    out += c;
+  }
+  return out;
+}
+
+/**
+ * Extract the first balanced JSON object from a model's text output, tolerating
+ * the usual LLM mistakes: ```code fences```, `//` and block comments, and
+ * trailing commas. Tries the raw slice first (fast path), then a repaired one.
+ */
 export function extractJson<T = Record<string, unknown>>(text: string): T | null {
   const match = text.match(/\{[\s\S]*\}/);
   if (!match) return null;
-  try {
-    return JSON.parse(match[0]) as T;
-  } catch {
-    return null;
+  const repaired = stripJsonNoise(match[0]).replace(/,(\s*[}\]])/g, "$1");
+  for (const candidate of [match[0], repaired]) {
+    try {
+      return JSON.parse(candidate) as T;
+    } catch {
+      /* try the next candidate */
+    }
   }
+  return null;
 }
