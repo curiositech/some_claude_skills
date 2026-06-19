@@ -8,7 +8,7 @@
 import type { Env } from "../../_lib/env";
 import { getFlags, retrieveWisdom, recordEvent } from "../../_lib/db";
 import { resolveDrawModel, runVision } from "../../_lib/workers-ai";
-import { hasVision } from "../../_lib/models";
+import { hasVision, drawBudget } from "../../_lib/models";
 import { buildContinuePrompt, buildContinueUserContent, extractJson } from "../../_lib/cta";
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
@@ -36,7 +36,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   let ok = true, needsAnotherTurn = false;
   let commands: unknown[] = [];
   try {
-    const text = await runVision(env, buildContinuePrompt(wisdom), buildContinueUserContent(b.prompt, pass), [b.currentImage], 4096, model);
+    const text = await runVision(env, buildContinuePrompt(wisdom), buildContinueUserContent(b.prompt, pass), [b.currentImage], drawBudget(model), model);
     const p = extractJson<{ commands?: unknown[]; needsAnotherTurn?: boolean }>(text);
     if (p && Array.isArray(p.commands)) {
       commands = p.commands;

@@ -29,8 +29,8 @@ import {
   buildReflectionUserContent,
   extractJson,
 } from "../../_lib/cta";
-import { runText, runVision, classifyPrompt, resolveDrawModel, UTILITY_MODEL } from "../../_lib/workers-ai";
-import { hasVision } from "../../_lib/models";
+import { runText, runTextRich, runVisionRich, classifyPrompt, resolveDrawModel, UTILITY_MODEL } from "../../_lib/workers-ai";
+import { hasVision, drawBudget } from "../../_lib/models";
 import { searchReferences } from "../../_lib/references";
 
 const ALLOWED_ANTHROPIC = new Set([
@@ -198,6 +198,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   let modelUsed = "";
   const refKeys: string[] = [];
   let referenceQuery: string | null = null;
+  // The draw agent's concurrent reasoning trace (reasoning models), fed to the
+  // reflection pass so the CDM lesson distills real thinking, not a guess.
+  let drawReasoning: string | null = null;
   try {
     if (usingOwnKey) {
       modelUsed = body.model && ALLOWED_ANTHROPIC.has(body.model) ? body.model : DEFAULT_ANTHROPIC;
@@ -234,10 +237,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         }
       }
 
-      const text = refImages.length
-        ? await runVision(env, drawSystem, prompt, refImages, 4096, modelUsed)
-        : await runText(env, drawSystem, prompt, 4096, modelUsed);
-      draw = parseDraw(text);
+      const result = refImages.length
+        ? await runVisionRich(env, drawSystem, prompt, refImages, drawBudget(modelUsed), modelUsed)
+        : await runTextRich(env, drawSystem, prompt, drawBudget(modelUsed), modelUsed);
+      drawReasoning = result.reasoning;
+      draw = parseDraw(result.text);
     }
   } catch (e) {
     const msg = e instanceof Error ? e.message : "unknown";
@@ -300,7 +304,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
             const text = await runText(
               env,
               REFLECTION_SYSTEM_PROMPT,
-              buildReflectionUserContent(prompt, category, draw!.description, draw!.commands.length),
+              buildReflectionUserContent(prompt, category, draw!.description, draw!.commands.length, drawReasoning, draw!.thinking),
               700,
               UTILITY_MODEL
             );

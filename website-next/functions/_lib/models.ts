@@ -25,6 +25,12 @@ export interface ModelInfo {
   api?: "messages" | "responses";
   /** Can accept image input (reference photos / its own canvas). */
   vision?: boolean;
+  /**
+   * Emits a chain-of-thought before its answer (qwen3, QwQ, gpt-oss, Kimi).
+   * Reasoning shares the output token budget, so these need a larger draw
+   * budget or the command JSON gets truncated mid-array. See DRAW_MAX_TOKENS.
+   */
+  reasoning?: boolean;
   /** Highlight in the picker: the headline best / worst pick. */
   extreme?: "best" | "worst";
 }
@@ -47,6 +53,7 @@ export const MODEL_CATALOG: ModelInfo[] = [
   // ---- The best -----------------------------------------------------------
   m({
     id: "@cf/moonshotai/kimi-k2.7-code",
+    reasoning: true,
     label: "Kimi K2.7 Code",
     vendor: "Moonshot AI",
     inPrice: 0.95,
@@ -58,6 +65,7 @@ export const MODEL_CATALOG: ModelInfo[] = [
   }),
   m({
     id: "@cf/openai/gpt-oss-120b",
+    reasoning: true,
     label: "GPT-OSS 120B",
     vendor: "OpenAI",
     inPrice: 0.35,
@@ -78,6 +86,7 @@ export const MODEL_CATALOG: ModelInfo[] = [
   }),
   m({
     id: "@cf/qwen/qwq-32b",
+    reasoning: true,
     label: "QwQ 32B (reasoning)",
     vendor: "Qwen",
     inPrice: 0.66,
@@ -88,6 +97,7 @@ export const MODEL_CATALOG: ModelInfo[] = [
   // ---- Value sweet spots --------------------------------------------------
   m({
     id: "@cf/openai/gpt-oss-20b",
+    reasoning: true,
     label: "GPT-OSS 20B",
     vendor: "OpenAI",
     inPrice: 0.2,
@@ -98,6 +108,7 @@ export const MODEL_CATALOG: ModelInfo[] = [
   }),
   m({
     id: "@cf/qwen/qwen3-30b-a3b-fp8",
+    reasoning: true,
     label: "Qwen3 30B-A3B (fp8)",
     vendor: "Qwen",
     inPrice: 0.051,
@@ -172,6 +183,19 @@ export function modelApi(id: string): "messages" | "responses" {
 
 export function hasVision(id: string): boolean {
   return !!modelInfo(id)?.vision;
+}
+
+export function hasReasoning(id: string): boolean {
+  return !!modelInfo(id)?.reasoning;
+}
+
+/** Output-token budget for a draw call. Reasoning models burn much of the
+ *  budget on their chain-of-thought before the JSON, so they get more room —
+ *  otherwise the command array is truncated mid-stream and fails to parse. */
+export const DRAW_MAX_TOKENS = 4096;
+export const DRAW_MAX_TOKENS_REASONING = 12000;
+export function drawBudget(id: string): number {
+  return hasReasoning(id) ? DRAW_MAX_TOKENS_REASONING : DRAW_MAX_TOKENS;
 }
 
 /** Cheapest capable vision model — used as the "critic" that sees renders. */

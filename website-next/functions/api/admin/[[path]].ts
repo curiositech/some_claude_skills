@@ -30,7 +30,7 @@ import {
   getGeneration,
   updateGenerationFinal,
 } from "../../_lib/db";
-import { resolveDrawModel, runText, runVision, classifyPrompt, UTILITY_MODEL } from "../../_lib/workers-ai";
+import { resolveDrawModel, runText, runTextRich, runVision, runVisionRich, classifyPrompt, UTILITY_MODEL } from "../../_lib/workers-ai";
 import {
   buildDrawSystemPrompt,
   buildContinuePrompt,
@@ -42,7 +42,7 @@ import {
   buildCritiqueUserContent,
   extractJson,
 } from "../../_lib/cta";
-import { MODEL_CATALOG, isAllowedModel, modelInfo, hasVision, VISION_CRITIC_MODEL } from "../../_lib/models";
+import { MODEL_CATALOG, isAllowedModel, modelInfo, hasVision, drawBudget, VISION_CRITIC_MODEL } from "../../_lib/models";
 import { searchReferences } from "../../_lib/references";
 import { storePng, storeDataUrl } from "../../_lib/r2";
 
@@ -168,13 +168,16 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
     // 4. Draw (vision if we have references, else text).
     let raw = "";
+    let drawReasoning: string | null = null;
     let parseOk = true;
     let needsAnotherTurn = false;
     let draw: { thinking: string | null; plan: unknown; description: string; commands: unknown[] } | null = null;
     try {
-      raw = refImages.length
-        ? await runVision(env, drawSystem, prompt, refImages, 4096, model)
-        : await runText(env, drawSystem, prompt, 4096, model);
+      const drawRes = refImages.length
+        ? await runVisionRich(env, drawSystem, prompt, refImages, drawBudget(model), model)
+        : await runTextRich(env, drawSystem, prompt, drawBudget(model), model);
+      raw = drawRes.text;
+      drawReasoning = drawRes.reasoning;
       const p = extractJson<{ thinking?: string; plan?: unknown; description?: string; commands?: unknown[]; needsAnotherTurn?: boolean }>(raw);
       if (p && Array.isArray(p.commands)) {
         draw = { thinking: p.thinking ?? null, plan: p.plan ?? null, description: p.description || "Drawing", commands: p.commands };
@@ -203,7 +206,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     // 5. Text reflection (unless caller will run a vision critique instead).
     let lesson: Record<string, unknown> | null = null;
     if (parseOk && draw && b.reflect !== false) {
-      lesson = await reflectAndStore(env, generationId, prompt, cls.category, cls.subcategories, draw.description, draw.commands.length);
+      lesson = await reflectAndStore(env, generationId, prompt, cls.category, cls.subcategories, draw.description, draw.commands.length, drawReasoning, draw.thinking);
     }
 
     if (b.batchId) await incrementBatch(env, b.batchId, parseOk).catch(() => {});
@@ -236,7 +239,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     let draw: { thinking: string | null; description: string; commands: unknown[] } | null = null;
     let raw = "";
     try {
-      raw = await runVision(env, buildContinuePrompt(wisdom), buildContinueUserContent(b.prompt, pass), [b.currentImage], 4096, model);
+      raw = await runVision(env, buildContinuePrompt(wisdom), buildContinueUserContent(b.prompt, pass), [b.currentImage], drawBudget(model), model);
       const p = extractJson<{ thinking?: string; description?: string; commands?: unknown[]; needsAnotherTurn?: boolean }>(raw);
       if (p && Array.isArray(p.commands)) {
         draw = { thinking: p.thinking ?? null, description: p.description || "continued", commands: p.commands };
@@ -301,13 +304,15 @@ async function reflectAndStore(
   category: string,
   subcategories: string[],
   description: string,
-  commandCount: number
+  commandCount: number,
+  reasoning?: string | null,
+  thinking?: string | null
 ): Promise<Record<string, unknown> | null> {
   try {
     const text = await runText(
       env,
       REFLECTION_SYSTEM_PROMPT,
-      buildReflectionUserContent(prompt, category, description, commandCount),
+      buildReflectionUserContent(prompt, category, description, commandCount, reasoning, thinking),
       700,
       UTILITY_MODEL
     );

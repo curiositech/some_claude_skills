@@ -147,6 +147,12 @@ export function buildCritiqueUserContent(prompt: string, commandCount: number): 
  */
 export const REFLECTION_SYSTEM_PROMPT = `You are a drawing coach running a cognitive task analysis on an MS Paint AI agent that just finished a drawing. Elicit transferable expertise.
 
+When the agent's own reasoning trace (its concurrent think-aloud, captured WHILE
+it drew) is provided below, treat it as primary evidence: DISTILL the real
+strategy, struggle, and decision points it reveals — do not invent a plausible
+rationale. A concurrent trace is far more reliable than a guess reconstructed
+after the fact. If no trace is provided, infer carefully from the result.
+
 Return ONLY this JSON object:
 {
   "difficultElement": "the single most cognitively demanding part of drawing this subject",
@@ -161,19 +167,34 @@ Return ONLY this JSON object:
 }
 Be specific and reusable — another agent drawing the same category should be able to act on cuesAndStrategies and doDifferently.`;
 
-/** Build the reflection user message from the drawing result. */
+/** Build the reflection user message from the drawing result.
+ *
+ * `reasoning` is the draw agent's concurrent chain-of-thought (from a reasoning
+ * model's <think> trace or reasoning field). When present it anchors the
+ * cognitive task analysis in what the agent actually thought, rather than a
+ * post-hoc reconstruction. `thinking` is the shorter rationale the agent wrote
+ * into its own JSON output.
+ */
 export function buildReflectionUserContent(
   prompt: string,
   category: string | null,
   description: string | null,
-  commandCount: number
+  commandCount: number,
+  reasoning?: string | null,
+  thinking?: string | null
 ): string {
+  const trace = (reasoning || thinking || "").trim();
+  // Cap the trace so a long reasoning dump can't blow the reflection budget.
+  const traceBlock = trace
+    ? `\n\nAgent's concurrent reasoning trace (think-aloud while drawing):\n"""\n${trace.slice(0, 6000)}\n"""`
+    : "\n\n(No reasoning trace was captured for this drawing.)";
+
   return `Prompt: "${prompt}"
 Category: ${category || "general"}
 Agent's description of result: ${description || "(none)"}
-Commands emitted: ${commandCount}
+Commands emitted: ${commandCount}${traceBlock}
 
-Produce the cognitive task analysis JSON now.`;
+Produce the cognitive task analysis JSON now${trace ? ", grounded in the trace above" : ""}.`;
 }
 
 /** Extract the first balanced JSON object from a model's text output. */
