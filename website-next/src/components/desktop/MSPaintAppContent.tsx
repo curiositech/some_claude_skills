@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
-import { Settings } from "lucide-react";
+import { Settings, Sparkles } from "lucide-react";
 import { ToolPalette } from "@/components/mspaint/ToolPalette/ToolPalette";
 import { ColorPalette } from "@/components/mspaint/ColorPalette/ColorPalette";
 import { Canvas } from "@/components/mspaint/Canvas/Canvas";
@@ -11,7 +11,7 @@ import { PromptInput } from "@/components/mspaint/PromptInput/PromptInput";
 import { PlaybackControls } from "@/components/mspaint/PlaybackControls/PlaybackControls";
 import { CommandLog } from "@/components/mspaint/CommandLog/CommandLog";
 import { ReferencePanel, type ReferenceImageData } from "@/components/mspaint/ReferencePanel";
-import { openSettingsWindow } from "@/lib/windowHelpers";
+import { openSettingsWindow, openMSPaintWisdomWindow } from "@/lib/windowHelpers";
 import { LS_KEY_ANTHROPIC, LS_KEY_MODEL, type MsPaintModel } from "@/components/desktop/SettingsWindow";
 import { cn } from "@/lib/utils";
 import type {
@@ -296,9 +296,23 @@ export function MSPaintAppContent() {
               : "Free AI drawing (Cloudflare) — no key needed"}
         </span>
         <button
-          onClick={() => { openSettingsWindow(); setHasApiKey(!!localStorage.getItem(LS_KEY_ANTHROPIC)); }}
+          onClick={openMSPaintWisdomWindow}
+          title="How this drawing agent gets smarter over time"
           className={cn(
             "ml-auto flex items-center gap-1 px-2 py-0.5",
+            "text-[9px] font-[family-name:var(--font-system)] cursor-pointer",
+            "bg-[var(--color-surface-raised)]",
+            "border border-t-[var(--color-border-raised-light)] border-l-[var(--color-border-raised-light)]",
+            "border-b-[var(--color-border-raised-dark)] border-r-[var(--color-border-raised-dark)]"
+          )}
+        >
+          <Sparkles size={10} />
+          How it learns
+        </button>
+        <button
+          onClick={() => { openSettingsWindow(); setHasApiKey(!!localStorage.getItem(LS_KEY_ANTHROPIC)); }}
+          className={cn(
+            "flex items-center gap-1 px-2 py-0.5",
             "text-[9px] font-[family-name:var(--font-system)] cursor-pointer",
             "bg-[var(--color-surface-raised)]",
             "border border-t-[var(--color-border-raised-light)] border-l-[var(--color-border-raised-light)]",

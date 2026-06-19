@@ -14,6 +14,7 @@ export type WindowContentType =
   | { type: "media" }
   | { type: "winamp" }
   | { type: "mspaint" }
+  | { type: "mspaint-wisdom" }
   | { type: "tutorials" }
   | { type: "artifacts" }
   // Misc content windows

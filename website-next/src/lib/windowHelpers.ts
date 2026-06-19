@@ -86,6 +86,17 @@ export function openMSPaintWindow() {
   });
 }
 
+export function openMSPaintWisdomWindow() {
+  const geo = clampGeometry(90, 40, 720, 600);
+  useWindowManager.getState().openWindow({
+    id: "mspaint-wisdom",
+    title: "How MS Paint Learns — README",
+    ...geo,
+    isMinimized: false, isMaximized: false,
+    content: { type: "mspaint-wisdom" },
+  });
+}
+
 export function openMediaWindow() {
   useWindowManager.getState().openWindow({
     id: "media",
