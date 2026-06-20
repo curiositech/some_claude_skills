@@ -30,7 +30,7 @@ import {
   extractJson,
 } from "../../_lib/cta";
 import { runText, runTextRich, runVisionRich, classifyPrompt, resolveDrawModel, UTILITY_MODEL } from "../../_lib/workers-ai";
-import { hasVision, drawBudget } from "../../_lib/models";
+import { hasVision, drawBudget, isAllowedModel } from "../../_lib/models";
 import { searchReferences } from "../../_lib/references";
 
 const ALLOWED_ANTHROPIC = new Set([
@@ -127,6 +127,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     canvasSnapshot?: string;
     apiKey?: string;
     model?: string;
+    adminToken?: string;
   };
   try {
     body = await request.json();
@@ -140,6 +141,19 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const userAnthropicKey = body.apiKey?.trim();
   const usingOwnKey = !!userAnthropicKey;
 
+  // Admin unlock: a valid ADMIN_TOKEN (header or body) lets ONLY the operator
+  // draw on the server-side Anthropic key and pick any catalog model, uncounted.
+  // The public NEVER reaches the server key — they get Workers AI free or their
+  // own key. This is the "gate the expensive stuff to me" boundary.
+  const adminToken = (request.headers.get("X-Admin-Token") || body.adminToken || "").trim();
+  const isAdmin = !!env.ADMIN_TOKEN && adminToken === env.ADMIN_TOKEN;
+  const serverKey = isAdmin ? env.ANTHROPIC_API_KEY?.trim() : undefined;
+  // The key used to draw with Claude: the visitor's own, or (admin only) the
+  // server's. Admin draws are uncounted (no free-quota consumption).
+  const anthropicKey = userAnthropicKey || serverKey;
+  const usingAnthropic = !!anthropicKey;
+  const uncounted = usingOwnKey || isAdmin;
+
   // Identify the user (cookie + IP/UA hash). DB is optional — degrade if absent.
   const id = await identify(request, env);
   const cookie = id.isNewCookie ? identityCookie(id.cookieUuid) : undefined;
@@ -152,8 +166,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     userId = r.userId;
     used = r.quota.used;
 
-    // Free path is gated by quota; bring-your-own-key is unlimited.
-    if (!usingOwnKey && r.quota.exceeded) {
+    // Free path is gated by quota; bring-your-own-key and admin are unlimited.
+    if (!uncounted && r.quota.exceeded) {
       return jsonResponse(
         {
           error: `You've used all ${limit} free drawings. Add your own Anthropic API key in Settings for unlimited drawing.`,
@@ -168,7 +182,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   const generationId = crypto.randomUUID();
-  const provider = usingOwnKey ? "anthropic" : "cloudflare";
+  const provider = usingOwnKey
+    ? "anthropic"
+    : serverKey
+      ? "anthropic-admin"
+      : "cloudflare";
 
   // 1. Situation assessment (cheap, via Workers AI when available).
   let category: string | null = null;
@@ -202,10 +220,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // reflection pass so the CDM lesson distills real thinking, not a guess.
   let drawReasoning: string | null = null;
   try {
-    if (usingOwnKey) {
+    if (usingAnthropic) {
       modelUsed = body.model && ALLOWED_ANTHROPIC.has(body.model) ? body.model : DEFAULT_ANTHROPIC;
       const r = await drawWithAnthropic(
-        userAnthropicKey!,
+        anthropicKey!,
         modelUsed,
         drawSystem,
         prompt,
@@ -221,7 +239,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
           cookie
         );
       }
-      modelUsed = await resolveDrawModel(env);
+      // Admins may pick any catalog model per-request (frontier models included);
+      // the public gets the configured free-tier model.
+      modelUsed = isAdmin && body.model && isAllowedModel(body.model)
+        ? body.model
+        : await resolveDrawModel(env);
 
       // Optional: look at reference photos first (admin flag + vision model).
       const refImages: string[] = [];
@@ -287,8 +309,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     }).catch(() => {});
     if (refKeys.length) await updateGenerationFinal(env, generationId, { referenceKeys: refKeys }).catch(() => {});
 
-    // Decrement quota only for the free path.
-    if (usingOwnKey) {
+    // Decrement quota only for the free path; own-key and admin are uncounted.
+    if (uncounted) {
       await bumpTotal(env, userId).catch(() => {});
     } else {
       await consumeFreeUse(env, userId).catch(() => {});
@@ -333,7 +355,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     }
   }
 
-  const usesRemaining = usingOwnKey ? null : Math.max(0, limit - used);
+  const usesRemaining = uncounted ? null : Math.max(0, limit - used);
 
   return jsonResponse(
     {
@@ -354,7 +376,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       usage,
       usesRemaining,
       usesLimit: limit,
-      unlimited: usingOwnKey,
+      unlimited: uncounted,
+      admin: isAdmin,
     },
     200,
     cookie

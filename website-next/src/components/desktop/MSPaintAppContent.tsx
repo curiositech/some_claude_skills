@@ -12,7 +12,7 @@ import { PlaybackControls } from "@/components/mspaint/PlaybackControls/Playback
 import { CommandLog } from "@/components/mspaint/CommandLog/CommandLog";
 import { ReferencePanel, type ReferenceImageData } from "@/components/mspaint/ReferencePanel";
 import { openSettingsWindow, openMSPaintWisdomWindow } from "@/lib/windowHelpers";
-import { LS_KEY_ANTHROPIC, LS_KEY_MODEL, type MsPaintModel } from "@/components/desktop/SettingsWindow";
+import { LS_KEY_ANTHROPIC, LS_KEY_MODEL, LS_KEY_ADMIN, type MsPaintModel } from "@/components/desktop/SettingsWindow";
 import { cn } from "@/lib/utils";
 import type {
   ToolType, FillMode, BrushShape, ToolSize, PaintCommand, PlaybackState,
@@ -121,9 +121,14 @@ export function MSPaintAppContent() {
       const canvasSnapshot = canvasRef?.toDataURL("image/png");
       const userApiKey = localStorage.getItem(LS_KEY_ANTHROPIC) || undefined;
       const userModel   = (localStorage.getItem(LS_KEY_MODEL) as MsPaintModel | null) || undefined;
+      const adminToken  = localStorage.getItem(LS_KEY_ADMIN) || undefined;
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      // Operator unlock: server-side Claude + any model, uncounted. Ignored by
+      // the server unless it matches ADMIN_TOKEN, so it's safe to always send.
+      if (adminToken) headers["X-Admin-Token"] = adminToken;
       const response = await fetch("/api/mspaint/generate", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify({ prompt, canvasSnapshot, apiKey: userApiKey, model: userModel }),
       });
 
