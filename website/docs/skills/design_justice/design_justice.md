@@ -21,8 +21,6 @@ Read, Write, Edit, Glob, Grep
 
 ## 🤝 Pairs Great With
 
-- **[National Expungement Expert](/docs/skills/national_expungement_expert)**: Expungement tools serve marginalized populations that design justice principles center
-- **[Recovery App Onboarding](/docs/skills/recovery_app_onboarding)**: Recovery app onboarding for vulnerable users requires trauma-informed, equitable design
 - **[Ux Friction Analyzer](/docs/skills/ux_friction_analyzer)**: Friction analysis for underserved communities reveals equity gaps in digital experiences
 
 ## References

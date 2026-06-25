@@ -50,3 +50,6 @@ erichowens_com/
 
 # Private skills (stay on disk for local use, never pushed)
 .claude/skills/windags-*/
+
+# Local-only sensitive skills (never publish)
+/.claude/skills-private/

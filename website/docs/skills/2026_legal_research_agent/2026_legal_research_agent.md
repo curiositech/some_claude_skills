@@ -16,7 +16,6 @@ Expert legal research agent for finding and scraping expungement data state by s
 
 ## 🤝 Pairs Great With
 
-- **[National Expungement Expert](/docs/skills/national_expungement_expert)**: Research agent finds raw legal data that the expungement expert interprets into eligibility guidance
 - **[Research Analyst](/docs/skills/research_analyst)**: General research methodology strengthens legal source evaluation and evidence gathering
 - **[Document Generation Pdf](/docs/skills/document_generation_pdf)**: Legal research outputs feed directly into generating court filing documents
 

@@ -21,9 +21,7 @@ Read, Write, Edit
 
 ## 🤝 Pairs Great With
 
-- **[Recovery App Legal Terms](/docs/skills/recovery_app_legal_terms)**: HIPAA requirements directly inform privacy policy and terms of service content for health apps
 - **[Security Auditor](/docs/skills/security_auditor)**: HIPAA technical safeguards overlap with security vulnerability scanning and access controls
-- **[Recovery Social Features](/docs/skills/recovery_social_features)**: Social features handling health data must comply with HIPAA privacy and consent rules
 - **[Crisis Response Protocol](/docs/skills/crisis_response_protocol)**: Crisis responses involving health disclosures must follow HIPAA breach notification rules
 
 # HIPAA Compliance for Recovery Coach

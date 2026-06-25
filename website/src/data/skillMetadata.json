@@ -1237,18 +1237,6 @@
       "hasExamples": false,
       "hasChangelog": false
     },
-    "national-expungement-expert": {
-      "id": "national-expungement-expert",
-      "createdAt": "2026-01-31T05:00:01-08:00",
-      "updatedAt": "2026-03-04T16:26:07-08:00",
-      "totalLines": 461,
-      "totalFiles": 2,
-      "skillMdSize": 3183,
-      "skillMdLines": 78,
-      "hasReferences": true,
-      "hasExamples": false,
-      "hasChangelog": false
-    },
     "native-app-designer": {
       "id": "native-app-designer",
       "createdAt": "2025-11-20T19:36:09-08:00",
@@ -1585,78 +1573,6 @@
       "hasExamples": false,
       "hasChangelog": false
     },
-    "recovery-app-legal-terms": {
-      "id": "recovery-app-legal-terms",
-      "createdAt": "2025-12-26T12:51:47-08:00",
-      "updatedAt": "2026-03-04T16:26:07-08:00",
-      "totalLines": 1211,
-      "totalFiles": 5,
-      "skillMdSize": 7613,
-      "skillMdLines": 226,
-      "hasReferences": false,
-      "hasExamples": false,
-      "hasChangelog": false
-    },
-    "recovery-app-onboarding": {
-      "id": "recovery-app-onboarding",
-      "createdAt": "2026-01-03T22:46:05-08:00",
-      "updatedAt": "2026-03-04T16:26:07-08:00",
-      "totalLines": 664,
-      "totalFiles": 4,
-      "skillMdSize": 16018,
-      "skillMdLines": 584,
-      "hasReferences": true,
-      "hasExamples": false,
-      "hasChangelog": false
-    },
-    "recovery-coach-patterns": {
-      "id": "recovery-coach-patterns",
-      "createdAt": "2025-12-26T19:13:25-08:00",
-      "updatedAt": "2026-03-04T16:26:07-08:00",
-      "totalLines": 399,
-      "totalFiles": 1,
-      "skillMdSize": 10348,
-      "skillMdLines": 399,
-      "hasReferences": false,
-      "hasExamples": false,
-      "hasChangelog": false
-    },
-    "recovery-community-moderator": {
-      "id": "recovery-community-moderator",
-      "createdAt": "2025-12-26T12:51:47-08:00",
-      "updatedAt": "2026-03-04T16:26:07-08:00",
-      "totalLines": 776,
-      "totalFiles": 4,
-      "skillMdSize": 6566,
-      "skillMdLines": 176,
-      "hasReferences": false,
-      "hasExamples": false,
-      "hasChangelog": false
-    },
-    "recovery-education-writer": {
-      "id": "recovery-education-writer",
-      "createdAt": "2026-01-31T05:00:01-08:00",
-      "updatedAt": "2026-03-04T16:26:07-08:00",
-      "totalLines": 2353,
-      "totalFiles": 7,
-      "skillMdSize": 21563,
-      "skillMdLines": 535,
-      "hasReferences": true,
-      "hasExamples": false,
-      "hasChangelog": false
-    },
-    "recovery-social-features": {
-      "id": "recovery-social-features",
-      "createdAt": "2025-12-28T01:43:03-08:00",
-      "updatedAt": "2026-03-04T16:26:07-08:00",
-      "totalLines": 1489,
-      "totalFiles": 7,
-      "skillMdSize": 10512,
-      "skillMdLines": 348,
-      "hasReferences": true,
-      "hasExamples": false,
-      "hasChangelog": false
-    },
     "recursive-synthesis": {
       "id": "recursive-synthesis",
       "createdAt": "2026-03-04T16:26:07-08:00",
@@ -1857,18 +1773,6 @@
       "totalFiles": 2,
       "skillMdSize": 14650,
       "skillMdLines": 426,
-      "hasReferences": true,
-      "hasExamples": false,
-      "hasChangelog": false
-    },
-    "sobriety-tools-guardian": {
-      "id": "sobriety-tools-guardian",
-      "createdAt": "2026-01-15T20:08:53-08:00",
-      "updatedAt": "2026-03-04T16:26:07-08:00",
-      "totalLines": 2365,
-      "totalFiles": 7,
-      "skillMdSize": 9442,
-      "skillMdLines": 289,
       "hasReferences": true,
       "hasExamples": false,
       "hasChangelog": false

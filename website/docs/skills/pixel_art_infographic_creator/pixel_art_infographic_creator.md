@@ -23,7 +23,6 @@ Read, Write, Edit, Bash(python:*, npm:*), WebFetch
 
 - **[Hand Drawn Infographic Creator](/docs/skills/hand_drawn_infographic_creator)**: Both create educational infographics in different visual styles for varied audience preferences
 - **[Win31 Pixel Art Designer](/docs/skills/win31_pixel_art_designer)**: Shared pixel art techniques (dithering, limited palettes) applied to different content types
-- **[Recovery Education Writer](/docs/skills/recovery_education_writer)**: Recovery education articles use pixel art infographics to explain neuroscience concepts
 
 # Pixel Art Infographic Creator
 

@@ -1,10 +1,6 @@
 {
   "2026-legal-research-agent": [
     {
-      "skill": "national-expungement-expert",
-      "reason": "Research agent finds raw legal data that the expungement expert interprets into eligibility guidance"
-    },
-    {
       "skill": "research-analyst",
       "reason": "General research methodology strengthens legal source evaluation and evidence gathering"
     },
@@ -227,10 +223,6 @@
       "reason": "Detection triggers the response protocol; they form a complete safety pipeline"
     },
     {
-      "skill": "recovery-community-moderator",
-      "reason": "Community moderators need crisis response protocols for at-risk member interactions"
-    },
-    {
       "skill": "hipaa-compliance",
       "reason": "Crisis responses involving health data must comply with HIPAA privacy requirements"
     }
@@ -297,14 +289,6 @@
   ],
   "design-justice": [
     {
-      "skill": "national-expungement-expert",
-      "reason": "Expungement tools serve marginalized populations that design justice principles center"
-    },
-    {
-      "skill": "recovery-app-onboarding",
-      "reason": "Recovery app onboarding for vulnerable users requires trauma-informed, equitable design"
-    },
-    {
       "skill": "ux-friction-analyzer",
       "reason": "Friction analysis for underserved communities reveals equity gaps in digital experiences"
     }
@@ -346,10 +330,6 @@
     }
   ],
   "document-generation-pdf": [
-    {
-      "skill": "national-expungement-expert",
-      "reason": "Expungement court filings require automated PDF form generation at scale"
-    },
     {
       "skill": "2026-legal-research-agent",
       "reason": "Legal research outputs are formatted into filing documents via PDF generation"
@@ -493,26 +473,14 @@
       "reason": "Both create educational infographics but in contrasting visual styles for different audiences"
     },
     {
-      "skill": "recovery-education-writer",
-      "reason": "Recovery education articles use hand-drawn brain diagrams and process illustrations"
-    },
-    {
       "skill": "diagramming-expert",
       "reason": "Diagram structure and information hierarchy principles apply across visual styles"
     }
   ],
   "hipaa-compliance": [
     {
-      "skill": "recovery-app-legal-terms",
-      "reason": "HIPAA requirements directly inform privacy policy and terms of service content for health apps"
-    },
-    {
       "skill": "security-auditor",
       "reason": "HIPAA technical safeguards overlap with security vulnerability scanning and access controls"
-    },
-    {
-      "skill": "recovery-social-features",
-      "reason": "Social features handling health data must comply with HIPAA privacy and consent rules"
     },
     {
       "skill": "crisis-response-protocol",
@@ -749,20 +717,6 @@
       "reason": "Both draw from philosophical frameworks for practical decision-making and personal growth"
     }
   ],
-  "national-expungement-expert": [
-    {
-      "skill": "2026-legal-research-agent",
-      "reason": "The research agent finds raw statute data that the expungement expert interprets for eligibility"
-    },
-    {
-      "skill": "document-generation-pdf",
-      "reason": "Expungement filings require automated court form PDF generation"
-    },
-    {
-      "skill": "design-justice",
-      "reason": "Expungement tools serve marginalized populations requiring equitable, accessible design"
-    }
-  ],
   "neobrutalist-web-designer": [
     {
       "skill": "web-design-expert",
@@ -863,10 +817,6 @@
     {
       "skill": "win31-pixel-art-designer",
       "reason": "Shared pixel art techniques (dithering, limited palettes) applied to different content types"
-    },
-    {
-      "skill": "recovery-education-writer",
-      "reason": "Recovery education articles use pixel art infographics to explain neuroscience concepts"
     }
   ],
   "pixel-art-scaler": [
@@ -1007,98 +957,6 @@
       "reason": "Collaborative editing requires access control and input sanitization security auditing"
     }
   ],
-  "recovery-app-legal-terms": [
-    {
-      "skill": "hipaa-compliance",
-      "reason": "HIPAA requirements dictate privacy policy and data handling disclosure content"
-    },
-    {
-      "skill": "recovery-app-onboarding",
-      "reason": "Terms acceptance and consent flows are part of the app onboarding experience"
-    },
-    {
-      "skill": "document-generation-pdf",
-      "reason": "Legal terms documents may need PDF generation for offline access and distribution"
-    }
-  ],
-  "recovery-app-onboarding": [
-    {
-      "skill": "mobile-ux-optimizer",
-      "reason": "Recovery app onboarding is primarily mobile and requires touch-optimized UX"
-    },
-    {
-      "skill": "recovery-coach-patterns",
-      "reason": "Onboarding flows must follow Recovery Coach codebase conventions and component patterns"
-    },
-    {
-      "skill": "ux-friction-analyzer",
-      "reason": "Onboarding abandonment is a critical friction point requiring UX analysis"
-    },
-    {
-      "skill": "recovery-app-legal-terms",
-      "reason": "Consent and terms acceptance are embedded in the onboarding flow"
-    }
-  ],
-  "recovery-coach-patterns": [
-    {
-      "skill": "recovery-social-features",
-      "reason": "Social features follow the same Recovery Coach codebase patterns and conventions"
-    },
-    {
-      "skill": "recovery-app-onboarding",
-      "reason": "Onboarding components must follow Recovery Coach coding patterns and API conventions"
-    },
-    {
-      "skill": "vitest-testing-patterns",
-      "reason": "Recovery Coach components need unit tests following established testing patterns"
-    }
-  ],
-  "recovery-community-moderator": [
-    {
-      "skill": "crisis-response-protocol",
-      "reason": "Community moderators must escalate crisis situations through safe response protocols"
-    },
-    {
-      "skill": "recovery-education-writer",
-      "reason": "Moderation decisions are informed by recovery education principles and harm reduction"
-    },
-    {
-      "skill": "sober-addict-protector",
-      "reason": "Daily sobriety protection patterns complement community-level moderation"
-    }
-  ],
-  "recovery-education-writer": [
-    {
-      "skill": "hand-drawn-infographic-creator",
-      "reason": "Recovery articles use anatomist-style diagrams to illustrate neuroscience concepts"
-    },
-    {
-      "skill": "pixel-art-infographic-creator",
-      "reason": "Retro pixel art infographics make recovery education content more approachable"
-    },
-    {
-      "skill": "recovery-community-moderator",
-      "reason": "Education content informs moderation standards and harm reduction messaging"
-    }
-  ],
-  "recovery-social-features": [
-    {
-      "skill": "hipaa-compliance",
-      "reason": "Social features involving health disclosures must comply with HIPAA privacy requirements"
-    },
-    {
-      "skill": "recovery-coach-patterns",
-      "reason": "Social components follow Recovery Coach codebase conventions and data patterns"
-    },
-    {
-      "skill": "real-time-collaboration-engine",
-      "reason": "Sponsor/sponsee messaging and group chat need real-time communication infrastructure"
-    },
-    {
-      "skill": "crisis-detection-intervention-ai",
-      "reason": "Social messages must be monitored for crisis signals requiring intervention"
-    }
-  ],
   "research-craft": [
     {
       "skill": "research-analyst",
@@ -1185,24 +1043,6 @@
     {
       "skill": "skill-architect",
       "reason": "Subagent skill selection depends on understanding skill architecture and capabilities"
-    }
-  ],
-  "sobriety-tools-guardian": [
-    {
-      "skill": "sober-addict-protector",
-      "reason": "App-level optimization supports the daily protection features the protector provides"
-    },
-    {
-      "skill": "pwa-expert",
-      "reason": "Offline capability for sobriety tools requires PWA Service Worker caching strategies"
-    },
-    {
-      "skill": "performance-profiling",
-      "reason": "Load time optimization for crisis-access features requires systematic performance profiling"
-    },
-    {
-      "skill": "crisis-detection-intervention-ai",
-      "reason": "Sobriety tools must integrate crisis detection for users in high-risk situations"
     }
   ],
   "supabase-admin": [

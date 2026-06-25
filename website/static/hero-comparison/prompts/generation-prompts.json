@@ -1,11 +1,22 @@
 {
   "style_guide_base": "Pixel art, 16-bit video game aesthetic, retro Windows 95 interface elements, clean pixel art style, no anti-aliasing, visible pixels --ar 16:9",
   "exemplars_skip": [
-    "vr-avatar-engineer", "diagramming-expert", "adhd-design-expert", "collage-layout-expert",
-    "color-theory-palette-harmony-expert", "design-system-creator", "interior-design-expert",
-    "vaporwave-glassomorphic-ui-designer", "career-biographer", "competitive-cartographer",
-    "design-archivist", "hr-network-analyst", "agent-creator", "orchestrator",
-    "jungian-psychologist", "wisdom-accountability-coach"
+    "vr-avatar-engineer",
+    "diagramming-expert",
+    "adhd-design-expert",
+    "collage-layout-expert",
+    "color-theory-palette-harmony-expert",
+    "design-system-creator",
+    "interior-design-expert",
+    "vaporwave-glassomorphic-ui-designer",
+    "career-biographer",
+    "competitive-cartographer",
+    "design-archivist",
+    "hr-network-analyst",
+    "agent-creator",
+    "orchestrator",
+    "jungian-psychologist",
+    "wisdom-accountability-coach"
   ],
   "skills": [
     {
@@ -322,27 +333,6 @@
       "composition": "desktop",
       "palette": "lavender_workspace",
       "prompt": "Pixel art desktop showing Kanban board with dopamine-friendly task cards and progress badges, soft lavender and bright accents, retro Windows 95 interface, timer widget visible, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
-    },
-    {
-      "id": "recovery-app-legal-terms",
-      "name": "Recovery App Legal Terms",
-      "composition": "desktop",
-      "palette": "mint_teal",
-      "prompt": "Pixel art desktop showing legal document with privacy policy sections and compliance checkboxes, mint and teal color scheme, retro Windows 95 document viewer, scale of justice icon, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
-    },
-    {
-      "id": "recovery-coach-patterns",
-      "name": "Recovery Coach Patterns",
-      "composition": "desktop",
-      "palette": "lavender_workspace",
-      "prompt": "Pixel art desktop showing recovery pattern library with conversation templates, soft lavender and healing green, retro Windows 95 interface, supportive chat bubbles, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
-    },
-    {
-      "id": "recovery-community-moderator",
-      "name": "Recovery Community Moderator",
-      "composition": "interaction",
-      "palette": "lavender_workspace",
-      "prompt": "Pixel art scene with community forum moderation dashboard and support resources, soft lavender color scheme, retro Windows 95 interface, shield icon and helpful hands, 16-bit video game aesthetic, clean pixel art style --ar 16:9"
     },
     {
       "id": "refactoring-surgeon",

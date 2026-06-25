@@ -514,11 +514,6 @@
     "fileCount": 1,
     "folderCount": 0
   },
-  "national-expungement-expert": {
-    "hasContent": true,
-    "fileCount": 2,
-    "folderCount": 1
-  },
   "native-app-designer": {
     "hasContent": true,
     "fileCount": 5,
@@ -659,36 +654,6 @@
     "fileCount": 6,
     "folderCount": 3
   },
-  "recovery-app-legal-terms": {
-    "hasContent": true,
-    "fileCount": 5,
-    "folderCount": 2
-  },
-  "recovery-app-onboarding": {
-    "hasContent": true,
-    "fileCount": 4,
-    "folderCount": 3
-  },
-  "recovery-coach-patterns": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "recovery-community-moderator": {
-    "hasContent": true,
-    "fileCount": 4,
-    "folderCount": 2
-  },
-  "recovery-education-writer": {
-    "hasContent": true,
-    "fileCount": 7,
-    "folderCount": 1
-  },
-  "recovery-social-features": {
-    "hasContent": true,
-    "fileCount": 7,
-    "folderCount": 1
-  },
   "recursive-synthesis": {
     "hasContent": true,
     "fileCount": 3,
@@ -773,11 +738,6 @@
     "hasContent": true,
     "fileCount": 2,
     "folderCount": 1
-  },
-  "sobriety-tools-guardian": {
-    "hasContent": true,
-    "fileCount": 7,
-    "folderCount": 3
   },
   "sound-engineer": {
     "hasContent": true,

@@ -533,11 +533,6 @@ export const skillFolderIndex: SkillFolderIndex = {
     "fileCount": 1,
     "folderCount": 0
   },
-  "national-expungement-expert": {
-    "hasContent": true,
-    "fileCount": 2,
-    "folderCount": 1
-  },
   "native-app-designer": {
     "hasContent": true,
     "fileCount": 5,
@@ -678,36 +673,6 @@ export const skillFolderIndex: SkillFolderIndex = {
     "fileCount": 6,
     "folderCount": 3
   },
-  "recovery-app-legal-terms": {
-    "hasContent": true,
-    "fileCount": 5,
-    "folderCount": 2
-  },
-  "recovery-app-onboarding": {
-    "hasContent": true,
-    "fileCount": 4,
-    "folderCount": 3
-  },
-  "recovery-coach-patterns": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "recovery-community-moderator": {
-    "hasContent": true,
-    "fileCount": 4,
-    "folderCount": 2
-  },
-  "recovery-education-writer": {
-    "hasContent": true,
-    "fileCount": 7,
-    "folderCount": 1
-  },
-  "recovery-social-features": {
-    "hasContent": true,
-    "fileCount": 7,
-    "folderCount": 1
-  },
   "recursive-synthesis": {
     "hasContent": true,
     "fileCount": 3,
@@ -792,11 +757,6 @@ export const skillFolderIndex: SkillFolderIndex = {
     "hasContent": true,
     "fileCount": 2,
     "folderCount": 1
-  },
-  "sobriety-tools-guardian": {
-    "hasContent": true,
-    "fileCount": 7,
-    "folderCount": 3
   },
   "sound-engineer": {
     "hasContent": true,
@@ -1063,7 +1023,6 @@ export const skillsWithContent = [
   "mobile-ux-optimizer",
   "modern-drug-rehab-computer",
   "monorepo-management",
-  "national-expungement-expert",
   "native-app-designer",
   "neobrutalist-web-designer",
   "nextjs-app-router-expert",
@@ -1087,11 +1046,6 @@ export const skillsWithContent = [
   "pwa-expert",
   "react-performance-optimizer",
   "real-time-collaboration-engine",
-  "recovery-app-legal-terms",
-  "recovery-app-onboarding",
-  "recovery-community-moderator",
-  "recovery-education-writer",
-  "recovery-social-features",
   "recursive-synthesis",
   "refactoring-surgeon",
   "security-auditor",
@@ -1106,7 +1060,6 @@ export const skillsWithContent = [
   "skill-logger",
   "skillful-subagent-creator",
   "sober-addict-protector",
-  "sobriety-tools-guardian",
   "sound-engineer",
   "speech-pathology-ai",
   "supabase-admin",

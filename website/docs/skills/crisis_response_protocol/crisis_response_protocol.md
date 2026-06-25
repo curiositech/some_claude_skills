@@ -22,7 +22,6 @@ Read, Write, Edit
 ## 🤝 Pairs Great With
 
 - **[Crisis Detection Intervention Ai](/docs/skills/crisis_detection_intervention_ai)**: Detection triggers the response protocol; they form a complete safety pipeline
-- **[Recovery Community Moderator](/docs/skills/recovery_community_moderator)**: Community moderators need crisis response protocols for at-risk member interactions
 - **[Hipaa Compliance](/docs/skills/hipaa_compliance)**: Crisis responses involving health data must comply with HIPAA privacy requirements
 
 # Crisis Response Protocol
