@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 export const LS_KEY_ANTHROPIC = "mspaint_anthropic_api_key";
 export const LS_KEY_PEXELS    = "mspaint_pexels_api_key";
 export const LS_KEY_MODEL     = "mspaint_model";
+export const LS_KEY_ADMIN     = "mspaint_admin_token";
 
 export type MsPaintModel = "claude-haiku-4-5-20251001" | "claude-sonnet-4-20250514";
 
@@ -25,6 +26,7 @@ export const MODEL_OPTIONS: { value: MsPaintModel; label: string; note: string }
 export function SettingsWindow() {
   const [anthropicKey, setAnthropicKey] = useState("");
   const [pexelsKey, setPexelsKey] = useState("");
+  const [adminToken, setAdminToken] = useState("");
   const [model, setModel] = useState<MsPaintModel>("claude-sonnet-4-20250514");
   const [saved, setSaved] = useState(false);
   const [activeTab, setActiveTab] = useState<"api" | "about">("api");
@@ -32,6 +34,7 @@ export function SettingsWindow() {
   useEffect(() => {
     setAnthropicKey(localStorage.getItem(LS_KEY_ANTHROPIC) || "");
     setPexelsKey(localStorage.getItem(LS_KEY_PEXELS) || "");
+    setAdminToken(localStorage.getItem(LS_KEY_ADMIN) || "");
     const saved = localStorage.getItem(LS_KEY_MODEL) as MsPaintModel | null;
     if (saved && MODEL_OPTIONS.some(o => o.value === saved)) setModel(saved);
   }, []);
@@ -46,6 +49,11 @@ export function SettingsWindow() {
       localStorage.setItem(LS_KEY_PEXELS, pexelsKey.trim());
     } else {
       localStorage.removeItem(LS_KEY_PEXELS);
+    }
+    if (adminToken.trim()) {
+      localStorage.setItem(LS_KEY_ADMIN, adminToken.trim());
+    } else {
+      localStorage.removeItem(LS_KEY_ADMIN);
     }
     localStorage.setItem(LS_KEY_MODEL, model);
     setSaved(true);
@@ -82,7 +90,13 @@ export function SettingsWindow() {
           <div className="space-y-4">
             <p className="text-[10px] font-[family-name:var(--font-system)] text-[var(--color-text-secondary)] leading-relaxed">
               API keys are stored in your browser (localStorage) and sent with each
-              request. They are never logged or stored on the server.
+              request. Your API key is never logged or stored on the server.
+            </p>
+            <p className="text-[9px] font-[family-name:var(--font-system)] text-[var(--color-text-muted)] leading-relaxed">
+              Note: free AI drawings (without your own key) are powered by Cloudflare
+              and are limited per visitor. To improve the drawing AI, the prompt,
+              the generated drawing, and the resulting image are logged. Add your own
+              key for unlimited drawing.
             </p>
 
             {/* Anthropic key */}
@@ -179,6 +193,39 @@ export function SettingsWindow() {
                   "placeholder:text-[var(--color-text-muted)]"
                 )}
               />
+            </div>
+
+            {/* Operator unlock (admin token) */}
+            <div className="space-y-1.5 border-t-2 border-t-[var(--color-border-raised-dark)] pt-3">
+              <label className="block text-[10px] font-bold font-[family-name:var(--font-system)] text-[var(--color-text-primary)]">
+                Operator Unlock (admin only)
+              </label>
+              <p className="text-[9px] font-[family-name:var(--font-system)] text-[var(--color-text-muted)]">
+                The site operator&apos;s ADMIN_TOKEN. Unlocks server-side Claude
+                drawing and any model, uncounted, on the operator&apos;s account.
+                Leave blank — this is not needed for normal use.
+              </p>
+              <input
+                type="password"
+                value={adminToken}
+                onChange={(e) => setAdminToken(e.target.value)}
+                placeholder="(operator only)"
+                className={cn(
+                  "w-full px-2 py-1.5",
+                  "text-[10px] font-[family-name:var(--font-code)]",
+                  "text-[var(--color-text-primary)]",
+                  "bg-[var(--color-surface-inset)]",
+                  "border border-t-[var(--color-border-inset-dark)] border-l-[var(--color-border-inset-dark)]",
+                  "border-b-[var(--color-border-raised-light)] border-r-[var(--color-border-raised-light)]",
+                  "outline-none",
+                  "placeholder:text-[var(--color-text-muted)]"
+                )}
+              />
+              {adminToken && (
+                <p className="text-[9px] text-[var(--color-success)] font-[family-name:var(--font-system)]">
+                  Operator mode armed — drawings use server Claude, uncounted.
+                </p>
+              )}
             </div>
 
             {/* Save button */}

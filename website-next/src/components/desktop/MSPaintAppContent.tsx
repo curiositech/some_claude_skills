@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
-import { Settings } from "lucide-react";
+import { Settings, Sparkles } from "lucide-react";
 import { ToolPalette } from "@/components/mspaint/ToolPalette/ToolPalette";
 import { ColorPalette } from "@/components/mspaint/ColorPalette/ColorPalette";
 import { Canvas } from "@/components/mspaint/Canvas/Canvas";
@@ -11,8 +11,8 @@ import { PromptInput } from "@/components/mspaint/PromptInput/PromptInput";
 import { PlaybackControls } from "@/components/mspaint/PlaybackControls/PlaybackControls";
 import { CommandLog } from "@/components/mspaint/CommandLog/CommandLog";
 import { ReferencePanel, type ReferenceImageData } from "@/components/mspaint/ReferencePanel";
-import { openSettingsWindow } from "@/lib/windowHelpers";
-import { LS_KEY_ANTHROPIC, LS_KEY_MODEL, type MsPaintModel } from "@/components/desktop/SettingsWindow";
+import { openSettingsWindow, openMSPaintWisdomWindow } from "@/lib/windowHelpers";
+import { LS_KEY_ANTHROPIC, LS_KEY_MODEL, LS_KEY_ADMIN, type MsPaintModel } from "@/components/desktop/SettingsWindow";
 import { cn } from "@/lib/utils";
 import type {
   ToolType, FillMode, BrushShape, ToolSize, PaintCommand, PlaybackState,
@@ -60,7 +60,34 @@ export function MSPaintAppContent() {
   const [sessionId, setSessionId] = useState(generateSessionId);
   const [hasApiKey, setHasApiKey] = useState(false);
 
+  // Free-tier quota (Cloudflare-powered drawings before a key is required)
+  const [usesRemaining, setUsesRemaining] = useState<number | null>(null);
+  const [usesLimit, setUsesLimit] = useState<number>(5);
+  const [unlimited, setUnlimited] = useState(false);
+
   const currentPromptRef = useRef<string>("");
+  const currentGenerationIdRef = useRef<string | null>(null);
+  // Iterative "look as you go" + vision critique (admin-controlled flags)
+  const needsAnotherTurnRef = useRef(false);
+  const canDrawRef = useRef(false);
+  const categoryRef = useRef<string>("general");
+  const passRef = useRef(0);
+  const cumulativeCmdRef = useRef(0);
+  const flagsRef = useRef<{ references: boolean; critique: boolean; iterative: boolean; maxTurns: number }>({
+    references: false, critique: false, iterative: false, maxTurns: 1,
+  });
+
+  // Fetch the current free-tier quota on mount (cookie set by the server)
+  useEffect(() => {
+    fetch("/api/mspaint/usage")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!d) return;
+        setUsesRemaining(d.usesRemaining ?? null);
+        if (typeof d.usesLimit === "number") setUsesLimit(d.usesLimit);
+      })
+      .catch(() => {});
+  }, []);
 
   // Sync API key status from localStorage (re-check when window gains focus)
   useEffect(() => {
@@ -94,15 +121,38 @@ export function MSPaintAppContent() {
       const canvasSnapshot = canvasRef?.toDataURL("image/png");
       const userApiKey = localStorage.getItem(LS_KEY_ANTHROPIC) || undefined;
       const userModel   = (localStorage.getItem(LS_KEY_MODEL) as MsPaintModel | null) || undefined;
+      const adminToken  = localStorage.getItem(LS_KEY_ADMIN) || undefined;
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      // Operator unlock: server-side Claude + any model, uncounted. Ignored by
+      // the server unless it matches ADMIN_TOKEN, so it's safe to always send.
+      if (adminToken) headers["X-Admin-Token"] = adminToken;
       const response = await fetch("/api/mspaint/generate", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify({ prompt, canvasSnapshot, apiKey: userApiKey, model: userModel }),
       });
 
       const data = await response.json();
       if (!response.ok) {
+        // Quota exhausted — reflect it in the UI before surfacing the message.
+        if (data.quotaExceeded) {
+          setUsesRemaining(0);
+          setUnlimited(false);
+        }
         throw new Error(data.error || `Generate failed: ${response.statusText}`);
+      }
+
+      // Track quota + which generation this is (for the output snapshot upload).
+      currentGenerationIdRef.current = data.generationId || null;
+      needsAnotherTurnRef.current = !!data.needsAnotherTurn;
+      canDrawRef.current = !!data.canDraw;
+      categoryRef.current = data.category || "general";
+      passRef.current = 0;
+      cumulativeCmdRef.current = Array.isArray(data.commands) ? data.commands.length : 0;
+      if (data.flags) flagsRef.current = data.flags;
+      setUnlimited(!!data.unlimited);
+      if (!data.unlimited && typeof data.usesRemaining === "number") {
+        setUsesRemaining(data.usesRemaining);
       }
 
       setAiThinking(data.thinking || null);
@@ -124,6 +174,73 @@ export function MSPaintAppContent() {
       alert(`MS Paint: ${msg}\n\nIf you need an API key, open Settings from the Skills menu.`);
     } finally {
       setIsGenerating(false);
+    }
+  }, [canvasRef]);
+
+  // When playback finishes: optionally let the agent take another turn
+  // (look-as-you-go), then upload the final render and (optionally) critique it.
+  const handlePlaybackComplete = useCallback(async () => {
+    const genId = currentGenerationIdRef.current;
+    if (!genId || !canvasRef) return;
+    const image = canvasRef.toDataURL("image/png");
+    const flags = flagsRef.current;
+
+    // 1. Agent-requested continuation ("I want another turn to keep drawing").
+    if (
+      flags.iterative && canDrawRef.current && needsAnotherTurnRef.current &&
+      passRef.current < flags.maxTurns - 1
+    ) {
+      passRef.current += 1;
+      try {
+        const r = await fetch("/api/mspaint/continue", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            generationId: genId,
+            prompt: currentPromptRef.current,
+            category: categoryRef.current,
+            pass: passRef.current,
+            currentImage: image,
+          }),
+        });
+        const d = await r.json();
+        if (d.ok && Array.isArray(d.commands) && d.commands.length) {
+          needsAnotherTurnRef.current = !!d.needsAnotherTurn;
+          cumulativeCmdRef.current += d.commands.length;
+          // Replay the new commands on top of the existing canvas (no clear).
+          setCommands(d.commands);
+          setPlaybackState((p) => ({
+            ...p, totalCommands: d.commands.length, currentCommandIndex: 0,
+            isPlaying: true, isPaused: false,
+          }));
+          return; // loop: this handler fires again when the new pass finishes
+        }
+      } catch {
+        /* fall through to finalize */
+      }
+    }
+
+    // 2. Finalize: store the rendered output.
+    fetch("/api/mspaint/snapshot", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ generationId: genId, image }),
+    }).catch(() => {});
+
+    // 3. Optional vision critique of the finished drawing.
+    if (flags.critique) {
+      fetch("/api/mspaint/critique", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          generationId: genId,
+          prompt: currentPromptRef.current,
+          category: categoryRef.current,
+          image,
+          commandCount: cumulativeCmdRef.current,
+          passCount: passRef.current + 1,
+        }),
+      }).catch(() => {});
     }
   }, [canvasRef]);
 
@@ -162,6 +279,9 @@ export function MSPaintAppContent() {
         onSubmit={handlePromptSubmit}
         isLoading={isGenerating}
         disabled={playbackState.isPlaying && !playbackState.isPaused}
+        usesRemaining={usesRemaining}
+        usesLimit={usesLimit}
+        unlimited={unlimited || hasApiKey}
       />
 
       {/* API Key status bar */}
@@ -172,14 +292,32 @@ export function MSPaintAppContent() {
       )}>
         <span className={cn(
           "text-[9px] font-[family-name:var(--font-system)] font-bold",
-          hasApiKey ? "text-[var(--color-success)]" : "text-[var(--color-error)]"
+          "text-[var(--color-success)]"
         )}>
-          {hasApiKey ? "API key set — ready to draw" : "No API key — add one in Settings"}
+          {hasApiKey
+            ? "API key set — unlimited drawing"
+            : usesRemaining === 0
+              ? "Free drawings used up — add a key in Settings for unlimited"
+              : "Free AI drawing (Cloudflare) — no key needed"}
         </span>
+        <button
+          onClick={openMSPaintWisdomWindow}
+          title="How this drawing agent gets smarter over time"
+          className={cn(
+            "ml-auto flex items-center gap-1 px-2 py-0.5",
+            "text-[9px] font-[family-name:var(--font-system)] cursor-pointer",
+            "bg-[var(--color-surface-raised)]",
+            "border border-t-[var(--color-border-raised-light)] border-l-[var(--color-border-raised-light)]",
+            "border-b-[var(--color-border-raised-dark)] border-r-[var(--color-border-raised-dark)]"
+          )}
+        >
+          <Sparkles size={10} />
+          How it learns
+        </button>
         <button
           onClick={() => { openSettingsWindow(); setHasApiKey(!!localStorage.getItem(LS_KEY_ANTHROPIC)); }}
           className={cn(
-            "ml-auto flex items-center gap-1 px-2 py-0.5",
+            "flex items-center gap-1 px-2 py-0.5",
             "text-[9px] font-[family-name:var(--font-system)] cursor-pointer",
             "bg-[var(--color-surface-raised)]",
             "border border-t-[var(--color-border-raised-light)] border-l-[var(--color-border-raised-light)]",
@@ -238,7 +376,7 @@ export function MSPaintAppContent() {
               onPlaybackStateChange={setPlaybackState}
               onColorPick={(color) => setForegroundColor(color)}
               onCommandExecuted={handleCommandExecuted}
-              onPlaybackComplete={() => {}}
+              onPlaybackComplete={handlePlaybackComplete}
               clearSignal={clearSignal}
             />
           </div>

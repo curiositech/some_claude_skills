@@ -19,6 +19,7 @@ import {
   openBaitWindow,
   openSkillsBrowserWindow,
   openMediaWindow,
+  openMSPaintWisdomWindow,
   openTutorialsWindow,
   openArtifactsWindow,
   openWelcomeWindow,
@@ -37,6 +38,7 @@ import { SkillsBrowserWindow } from "./SkillsBrowserWindow";
 import { MediaWindow } from "./MediaWindow";
 import { WinampWindow } from "./WinampWindow";
 import { MSPaintWindow } from "./MSPaintWindow";
+import { MSPaintWisdomWindow } from "./MSPaintWisdomWindow";
 import { TutorialsWindow } from "./TutorialsWindow";
 import { ArtifactsWindow } from "./ArtifactsWindow";
 import { Taskbar } from "./Taskbar";
@@ -341,6 +343,7 @@ export function Desktop({
         case "bait":           openBaitWindow();           break;
         case "skills-browser": openSkillsBrowserWindow();  break;
         case "media":          openMediaWindow();          break;
+        case "mspaint-wisdom": openMSPaintWisdomWindow();  break;
         case "tutorials":      openTutorialsWindow();      break;
         case "artifacts":      openArtifactsWindow();      break;
         case "browser":        openBrowserWindow();        break;
@@ -424,6 +427,7 @@ export function Desktop({
         case "media":     return <MediaWindow />;
         case "winamp":    return <WinampWindow />;
         case "mspaint":   return <MSPaintWindow />;
+        case "mspaint-wisdom": return <MSPaintWisdomWindow />;
         case "tutorials": return <TutorialsWindow />;
         case "artifacts": return <ArtifactsWindow />;
         // Content windows

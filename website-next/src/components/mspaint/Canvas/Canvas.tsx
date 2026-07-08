@@ -165,15 +165,19 @@ export function Canvas({
     return canvas.getContext('2d');
   }, []);
 
-  // Get mouse position relative to canvas
-  const getMousePos = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
+  // Get pointer position relative to canvas, mapped to the canvas's internal
+  // coordinate space (the canvas is often scaled down on mobile, so screen
+  // pixels != canvas pixels — without this scaling, touches land in the wrong spot).
+  const getPointerPos = useCallback((e: React.PointerEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current;
     if (!canvas) return { x: 0, y: 0 };
 
     const rect = canvas.getBoundingClientRect();
+    const scaleX = rect.width ? canvas.width / rect.width : 1;
+    const scaleY = rect.height ? canvas.height / rect.height : 1;
     return {
-      x: Math.floor(e.clientX - rect.left),
-      y: Math.floor(e.clientY - rect.top),
+      x: Math.floor((e.clientX - rect.left) * scaleX),
+      y: Math.floor((e.clientY - rect.top) * scaleY),
     };
   }, []);
 
@@ -566,9 +570,14 @@ export function Canvas({
     }
   }, [getContext, width, height, generateHistoryId]);
 
-  // Mouse event handlers
-  const handleMouseDown = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
-    const pos = getMousePos(e);
+  // Pointer event handlers (unify mouse + touch + pen)
+  const handlePointerDown = useCallback((e: React.PointerEvent<HTMLCanvasElement>) => {
+    // Stop the browser from treating the gesture as scroll/zoom/select on touch.
+    e.preventDefault();
+    // Route all subsequent move/up events for this finger to the canvas.
+    try { e.currentTarget.setPointerCapture(e.pointerId); } catch { /* not all browsers */ }
+
+    const pos = getPointerPos(e);
     const ctx = getContext();
     if (!ctx) return;
 
@@ -678,10 +687,11 @@ export function Canvas({
         setGradientStart(pos);
         break;
     }
-  }, [selectedTool, foregroundColor, backgroundColor, toolSize, brushShape, fillMode, getMousePos, getContext, drawPixel, drawBrush, floodFill, pickColor, spray, onColorPick, curvePhase, curveStart, curveEnd, drawCurve, polygonPoints, drawPolygon, zoomLevel, width, height, cloneSource, isSettingCloneSource, stampClone, saveHistoryState]);
+  }, [selectedTool, foregroundColor, backgroundColor, toolSize, brushShape, fillMode, getPointerPos, getContext, drawPixel, drawBrush, floodFill, pickColor, spray, onColorPick, curvePhase, curveStart, curveEnd, drawCurve, polygonPoints, drawPolygon, zoomLevel, width, height, cloneSource, isSettingCloneSource, stampClone, saveHistoryState]);
 
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
-    const pos = getMousePos(e);
+  const handlePointerMove = useCallback((e: React.PointerEvent<HTMLCanvasElement>) => {
+    if (isDrawing) e.preventDefault();
+    const pos = getPointerPos(e);
     onMouseMove(pos);
 
     if (!isDrawing) return;
@@ -732,12 +742,13 @@ export function Canvas({
     }
 
     setLastPos(pos);
-  }, [isDrawing, selectedTool, foregroundColor, backgroundColor, toolSize, brushShape, lastPos, getMousePos, getContext, drawLine, drawBrush, spray, onMouseMove]);
+  }, [isDrawing, selectedTool, foregroundColor, backgroundColor, toolSize, brushShape, lastPos, getPointerPos, getContext, drawLine, drawBrush, spray, onMouseMove]);
 
-  const handleMouseUp = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
+  const handlePointerUp = useCallback((e: React.PointerEvent<HTMLCanvasElement>) => {
+    try { e.currentTarget.releasePointerCapture(e.pointerId); } catch { /* ignore */ }
     if (!isDrawing) return;
 
-    const pos = getMousePos(e);
+    const pos = getPointerPos(e);
     const ctx = getContext();
     if (!ctx) return;
 
@@ -790,9 +801,9 @@ export function Canvas({
     setIsDrawing(false);
     setLastPos(null);
     setShapeStart(null);
-  }, [isDrawing, shapeStart, selectedTool, foregroundColor, backgroundColor, fillMode, toolSize, getMousePos, getContext, drawLine, drawRectangle, drawEllipse, drawRoundedRect, curvePhase, curveStart, drawGradient, gradientStart, saveHistoryState]);
+  }, [isDrawing, shapeStart, selectedTool, foregroundColor, backgroundColor, fillMode, toolSize, getPointerPos, getContext, drawLine, drawRectangle, drawEllipse, drawRoundedRect, curvePhase, curveStart, drawGradient, gradientStart, saveHistoryState]);
 
-  const handleMouseLeave = useCallback(() => {
+  const handlePointerLeave = useCallback(() => {
     onMouseMove(null);
     setIsDrawing(false);
     setLastPos(null);
@@ -1239,10 +1250,11 @@ export function Canvas({
           width={width}
           height={height}
           className={styles.canvas}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseLeave}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerUp}
+          onPointerLeave={handlePointerLeave}
           onContextMenu={(e) => e.preventDefault()}
         />
         {playbackState.ghostCursorPosition && playbackState.isPlaying && (
