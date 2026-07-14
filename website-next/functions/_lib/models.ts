@@ -82,7 +82,8 @@ export const MODEL_CATALOG: ModelInfo[] = [
     outPrice: 0.85,
     tier: "premium",
     vision: true,
-    note: "Meta flagship, multimodal MoE (16 experts), 131K context. Excellent value at the top end.",
+    recommended: true,
+    note: "Meta flagship, multimodal MoE (16 experts), 131K context. Fast, vision-capable, reliable JSON. Default.",
   }),
   m({
     id: "@cf/qwen/qwq-32b",
@@ -114,8 +115,7 @@ export const MODEL_CATALOG: ModelInfo[] = [
     inPrice: 0.051,
     outPrice: 0.34,
     tier: "value",
-    recommended: true,
-    note: "Best value: MoE w/ reasoning + function-calling at near-3B price. Reliable JSON. Default.",
+    note: "Cheap MoE, but emits subtly malformed JSON (stray quotes) that fails the draw parser — verified live. Not recommended for drawing.",
   }),
   m({
     id: "@cf/meta/llama-3.1-8b-instruct-fp8",

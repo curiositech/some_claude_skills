@@ -36,4 +36,6 @@ bucket_name = "someclaudeskills-mspaint"
 FREE_USES_LIMIT = "5"
 # Default free-tier model. Overridable at runtime from the admin tool
 # (/api/admin). Must be one of the ids in functions/_lib/models.ts.
-CF_TEXT_MODEL = "@cf/qwen/qwen3-30b-a3b-fp8"
+# Scout: fast, vision-capable, reliably parseable. (qwen3-30b emits subtly
+# malformed JSON — stray quotes — and 502s the draw path; don't default to it.)
+CF_TEXT_MODEL = "@cf/meta/llama-4-scout-17b-16e-instruct"
