@@ -39,6 +39,10 @@ const ALLOWED_ANTHROPIC = new Set([
 ]);
 const DEFAULT_ANTHROPIC = "claude-sonnet-4-20250514";
 
+// Below this many commands a drawing reads as an unfinished sketch; trigger
+// one density retry on the free (Workers AI) path.
+const MIN_DRAW_COMMANDS = 20;
+
 interface DrawResult {
   thinking: string | null;
   plan: unknown;
@@ -59,14 +63,22 @@ function parseDraw(text: string): DrawResult | null {
     plan?: unknown;
     description?: string;
     commands?: unknown[];
+    parts?: Array<{ part?: string; commands?: unknown[] }>;
     needsAnotherTurn?: boolean;
   }>(text);
-  if (!parsed || !Array.isArray(parsed.commands)) return null;
+  if (!parsed) return null;
+  // Preferred shape: parts-grouped commands (schema-enforced density).
+  // Fallback: a flat commands array (older models / continuation turns).
+  let commands: unknown[] = Array.isArray(parsed.commands) ? parsed.commands : [];
+  if (!commands.length && Array.isArray(parsed.parts)) {
+    commands = parsed.parts.flatMap((p) => (Array.isArray(p?.commands) ? p.commands : []));
+  }
+  if (!commands.length) return null;
   return {
     thinking: parsed.thinking ?? null,
     plan: parsed.plan ?? null,
     description: parsed.description || "Drawing",
-    commands: parsed.commands,
+    commands,
     needsAnotherTurn: !!parsed.needsAnotherTurn,
   };
 }
@@ -264,6 +276,25 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         : await runTextRich(env, drawSystem, prompt, drawBudget(modelUsed), modelUsed);
       drawReasoning = result.reasoning;
       draw = parseDraw(result.text);
+
+      // Sparse-draw retry: mid-size models ignore numeric floors and stop at a
+      // handful of boxes. One follow-up demanding full density is cheap and
+      // reliably helps. Keep the better of the two attempts.
+      if (draw && draw.commands.length < MIN_DRAW_COMMANDS) {
+        const retryUser =
+          `${prompt}\n\nYour previous attempt used only ${draw.commands.length} paint commands — ` +
+          `that is a sparse sketch, not a finished drawing. Decompose the subject further ` +
+          `(each body part its own polygon/ellipse, full background coverage, details last) and ` +
+          `return the COMPLETE drawing again as one JSON object with 25-60 commands.`;
+        const retry = refImages.length
+          ? await runVisionRich(env, drawSystem, retryUser, refImages, drawBudget(modelUsed), modelUsed)
+          : await runTextRich(env, drawSystem, retryUser, drawBudget(modelUsed), modelUsed);
+        const retryDraw = parseDraw(retry.text);
+        if (retryDraw && retryDraw.commands.length > draw.commands.length) {
+          draw = retryDraw;
+          drawReasoning = retry.reasoning ?? drawReasoning;
+        }
+      }
     }
   } catch (e) {
     const msg = e instanceof Error ? e.message : "unknown";

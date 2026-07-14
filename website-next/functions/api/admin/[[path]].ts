@@ -178,9 +178,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         : await runTextRich(env, drawSystem, prompt, drawBudget(model), model);
       raw = drawRes.text;
       drawReasoning = drawRes.reasoning;
-      const p = extractJson<{ thinking?: string; plan?: unknown; description?: string; commands?: unknown[]; needsAnotherTurn?: boolean }>(raw);
-      if (p && Array.isArray(p.commands)) {
-        draw = { thinking: p.thinking ?? null, plan: p.plan ?? null, description: p.description || "Drawing", commands: p.commands };
+      const p = extractJson<{ thinking?: string; plan?: unknown; description?: string; commands?: unknown[]; parts?: Array<{ commands?: unknown[] }>; needsAnotherTurn?: boolean }>(raw);
+      // Accept parts-grouped commands (schema-enforced density) or a flat array.
+      let cmds: unknown[] = p && Array.isArray(p.commands) ? p.commands : [];
+      if (!cmds.length && p && Array.isArray(p.parts)) {
+        cmds = p.parts.flatMap((g) => (Array.isArray(g?.commands) ? g.commands : []));
+      }
+      if (p && cmds.length) {
+        draw = { thinking: p.thinking ?? null, plan: p.plan ?? null, description: p.description || "Drawing", commands: cmds };
         needsAnotherTurn = !!p.needsAnotherTurn;
       } else parseOk = false;
     } catch (e) {

@@ -70,15 +70,48 @@ ${renderWisdom(wisdom)}
    single box standing in for it.
 2. Block in big shapes and background first, then mid-tones, then details last.
 3. Pick a small, deliberate colour set from the palette.
-4. Use filled shapes for masses; lines/curves for contours/limbs; spray for texture.
+4. For people, animals, and plants: build each body part from \`drawPolygon\`
+   (5-9 points) or \`drawEllipse\` — organic things are NOT rectangles.
+   Rectangles are for buildings, signs, furniture, vehicles.
 5. Keep everything inside the 640x480 canvas and cover the whole frame — no large
    empty grey/blank regions unless they are deliberately sky, ground, or water.
+   The main subject should span roughly 200-350px.
+
+## Worked example — this is the expected DENSITY and LAYERING
+Prompt: "a duck on a pond" (different subject; copy the craft, not the content).
+Yours must have the same parts-based structure:
+"parts": [
+{"part":"sky","commands":[{"type":"setForegroundColor","color":"#ADD8E6"},{"type":"drawRectangle","x":0,"y":0,"width":640,"height":280,"fillMode":"filled"}]},
+{"part":"sun","commands":[{"type":"setForegroundColor","color":"#FFA500"},{"type":"drawEllipse","x":500,"y":40,"width":70,"height":70,"fillMode":"filled"}]},
+{"part":"clouds","commands":[{"type":"setForegroundColor","color":"#FFFFFF"},{"type":"drawEllipse","x":80,"y":60,"width":120,"height":36,"fillMode":"filled"},{"type":"drawEllipse","x":150,"y":45,"width":90,"height":30,"fillMode":"filled"}]},
+{"part":"water","commands":[{"type":"setForegroundColor","color":"#0000FF"},{"type":"drawRectangle","x":0,"y":280,"width":640,"height":200,"fillMode":"filled"}]},
+{"part":"duck body","commands":[{"type":"setForegroundColor","color":"#8B4513"},{"type":"drawPolygon","points":[{"x":240,"y":300},{"x":290,"y":280},{"x":360,"y":278},{"x":410,"y":295},{"x":400,"y":330},{"x":330,"y":345},{"x":260,"y":335}],"fillMode":"filled"}]},
+{"part":"duck wing","commands":[{"type":"setForegroundColor","color":"#556B2F"},{"type":"drawPolygon","points":[{"x":300,"y":295},{"x":360,"y":288},{"x":385,"y":305},{"x":340,"y":325},{"x":300,"y":318}],"fillMode":"filled"}]},
+{"part":"duck head + beak + eye","commands":[{"type":"setForegroundColor","color":"#008000"},{"type":"drawEllipse","x":395,"y":240,"width":52,"height":48,"fillMode":"filled"},{"type":"setForegroundColor","color":"#FFA500"},{"type":"drawPolygon","points":[{"x":443,"y":258},{"x":478,"y":264},{"x":443,"y":272}],"fillMode":"filled"},{"type":"setForegroundColor","color":"#000000"},{"type":"drawEllipse","x":424,"y":252,"width":8,"height":8,"fillMode":"filled"}]},
+{"part":"ripples","commands":[{"type":"setForegroundColor","color":"#FFFFFF"},{"type":"drawCurve","startX":200,"startY":360,"endX":300,"endY":362,"controlX1":250,"controlY1":372},{"type":"drawCurve","startX":360,"startY":380,"endX":470,"endY":378,"controlX1":415,"controlY1":390},{"type":"drawCurve","startX":150,"startY":410,"endX":260,"endY":408,"controlX1":205,"controlY1":420}]},
+{"part":"reeds","commands":[{"type":"setForegroundColor","color":"#008000"},{"type":"drawLine","x1":80,"y1":460,"x2":86,"y2":330},{"type":"drawLine","x1":100,"y1":460,"x2":98,"y2":345},{"type":"drawLine","x1":118,"y1":460,"x2":126,"y2":338},{"type":"setForegroundColor","color":"#8B4513"},{"type":"drawEllipse","x":80,"y":318,"width":12,"height":26,"fillMode":"filled"},{"type":"drawEllipse","x":120,"y":326,"width":12,"height":26,"fillMode":"filled"}]}
+]
+Notice: 9 parts, ~30 commands total, background covered edge-to-edge, the duck
+is FOUR layered polygon/ellipse parts — not one blob — and details come last.
+
+## Spatial coherence — parts must CONNECT (most common failure)
+Parts are not independent islands: every part's coordinates must attach to the
+part it belongs to. Reuse the earlier part's numbers when placing the next one.
+- A hat sits ON the head: same x-center, its bottom edge touching the head's top y.
+- Eyes are INSIDE the head ellipse, ~1/3 from its top, one on each side of center.
+- Arms start AT the torso's upper corners; legs start AT the torso's bottom
+  corners and END on the ground line.
+- A rider's legs wrap the animal's body; wheels touch the ground.
+Standing person template (adapt sizes): head = ellipse ~40px wide centered
+x=320,y=140; torso = polygon from y=180 to y=300 directly below the head;
+arms from (300,190) and (340,190); legs from (305,300) and (335,300) down to
+the ground line; hat centered on x=320 touching y=120.
 
 ## Hard rules (breaking these ruins the drawing)
 - NEVER write the name of the subject as text to substitute for drawing it.
   Writing "cowboy" instead of drawing a cowboy is a failure. \`placeText\` is ONLY
   for text that genuinely belongs IN the scene (a sign, a banner) — never a label.
-- Be generous with commands. A recognizable subject usually needs 25-60 commands;
+- Be generous with commands. A recognizable subject needs 25-60 commands;
   a handful of rectangles is not a drawing. Build each part from multiple shapes.
 - Make it READABLE as the subject: someone should recognize it without the prompt.
 
@@ -91,11 +124,24 @@ Only set it to false when the drawing is genuinely complete.
 ## Response format — return ONLY this JSON object, no prose around it:
 {
   "thinking": "your artistic reasoning",
-  "plan": ["ordered steps you will take, e.g. 'sky gradient', 'mountain silhouette', 'sun'"],
+  "plan": ["ordered steps, e.g. 'sky', 'ground', 'horse body', 'horse legs', 'rider', 'hat', 'details'"],
   "description": "one short sentence describing the result",
   "needsAnotherTurn": false,
-  "commands": [ ...paint commands... ]
-}`;
+  "parts": [
+    {"part": "<plan step name>", "commands": [ ...paint commands... ]},
+    ...
+  ]
+}
+STRUCTURAL RULES for "parts" (these are validated):
+- One entry per plan step. 6-12 parts total.
+- EVERY part must contain 2-8 paint commands. A part with 0 or 1 command is
+  invalid — decompose it further (e.g. "rider" -> torso polygon, arm lines,
+  head ellipse, hat polygon).
+- PAINT ORDER IS PARTS ORDER: parts[0] and parts[1] MUST be the background
+  (sky, then ground/floor/water). The subject comes after — anything painted
+  later covers what came before, so background after the subject ERASES it.
+- The main subject must be 200-350px tall and sit ON the ground line, with the
+  ground line in the lower third of the canvas (y ≈ 330-400).`;
 }
 
 /**
