@@ -104,6 +104,12 @@ function extractModelReasoning(out: unknown): string | null {
 function unpack(out: unknown): ModelResult {
   const fieldReasoning = extractModelReasoning(out);
   const { text, reasoning: inlineReasoning } = splitReasoning(extractModelText(out));
+  if (!text) {
+    // Diagnostic: an empty answer usually means a new model's response envelope
+    // isn't recognized above, or the inference timed out upstream. Log the raw
+    // shape so the next model onboarding isn't a mystery.
+    console.log("[mspaint] empty model response envelope:", JSON.stringify(out)?.slice(0, 500));
+  }
   return { text, reasoning: fieldReasoning || inlineReasoning };
 }
 

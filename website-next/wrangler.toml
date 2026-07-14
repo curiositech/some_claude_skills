@@ -36,6 +36,7 @@ bucket_name = "someclaudeskills-mspaint"
 FREE_USES_LIMIT = "5"
 # Default free-tier model. Overridable at runtime from the admin tool
 # (/api/admin). Must be one of the ids in functions/_lib/models.ts.
-# Scout: fast, vision-capable, reliably parseable. (qwen3-30b emits subtly
-# malformed JSON — stray quotes — and 502s the draw path; don't default to it.)
-CF_TEXT_MODEL = "@cf/meta/llama-4-scout-17b-16e-instruct"
+# Mistral Small 3.1: won the July 2026 bake-off — the only model that reliably
+# draws a recognizable figure AND finishes under the ~60s inference wall.
+# (Scout draws blobs; qwen3 emits malformed JSON; GLM/Nemotron/Kimi time out.)
+CF_TEXT_MODEL = "@cf/mistralai/mistral-small-3.1-24b-instruct"
