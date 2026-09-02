@@ -210,7 +210,8 @@ For existing skills, skip to Step 4.
 Order of implementation:
 1. **Scripts first** (`scripts/`) — Working code, not templates
 2. **References next** (`references/`) — Domain knowledge, schemas, guides
-3. **SKILL.md last** — Core process, anti-patterns, reference index
+3. **Demos + assets** (`demo/`, `assets/`, `prompts/`, `templates/`) — For visual/design skills, ship rendered HTML demos, inspiration images with attribution, image-gen prompts, and starter templates. See `references/visual-design-skills.md`.
+4. **SKILL.md last** — Core process, anti-patterns, reference index
 
 Write in imperative form: "To accomplish X, do Y" not "You should do X."
 
@@ -402,6 +403,7 @@ Skills are one of seven Claude extension types: **Skills** (domain knowledge), *
 | 8 | Vague Description | Use `[What] [When] [Keywords]. NOT for [Exclusions]` |
 | 9 | Eager Loading | Never "read all files first"; lazy-load references |
 | 10 | Prose-Only Processes | Use Mermaid diagrams (23 types) — flowcharts, sequences, states, ER, timelines, etc. |
+| 11 | Text-Only Visual Skill | Ship `demo/` HTML, `assets/` screenshots, `prompts/`, and procedural build guides |
 
 **Full case studies**: See `references/antipatterns.md`
 
@@ -422,6 +424,7 @@ Skills are one of seven Claude extension types: **Skills** (domain knowledge), *
 □ Processes/decisions/lifecycles use Mermaid diagrams (23 types), not prose
 □ CHANGELOG.md tracks version history
 □ If subagent-consumed: output contracts are defined
+□ If visual/design skill: demo/, assets/, prompts/, templates/ per visual-design-skills.md
 ```
 
 Run automated checks: `python scripts/validate_skill.py <path>` and `python scripts/validate_mermaid.py <path>`
@@ -475,6 +478,7 @@ Consult these for deep dives — they are NOT loaded by default:
 | `references/claude-extension-taxonomy.md` | Skills vs Plugins vs MCPs vs Hooks vs Agent SDK — the 7-type taxonomy |
 | `references/plugin-architecture.md` | Creating, packaging, and distributing plugins via marketplaces |
 | `references/visual-artifacts.md` | Adding Mermaid diagrams: all 23 types, YAML config, best practices |
+| `references/visual-design-skills.md` | Requirements for Design & Creative skills: demos, assets, screenshots, prompts, procedural builds, attribution |
 | `references/mcp-template.md` | Building an MCP server for a skill |
 | `references/subagent-template.md` | Defining subagent prompts and multi-agent pipelines |
 | `scripts/validate_mermaid.py` | Validates Mermaid syntax in any file — checks diagram types, balanced blocks, structural correctness |
