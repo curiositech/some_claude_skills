@@ -39,8 +39,9 @@ tmp/
 temp/
 *.tmp
 
-# Claude plugin artifacts
-.claude-plugin/
+# Claude plugin temp files only (marketplace.json and plugin.json are committed via CI)
+.claude-plugin/*.tmp
+.claude/skills/*/.claude-plugin/*.tmp
 
 # Private portfolio site (submodule)
 erichowens_com/
