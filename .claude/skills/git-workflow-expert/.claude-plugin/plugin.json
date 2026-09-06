@@ -1,0 +1,4 @@
+{
+  "name": "git-workflow-expert",
+  "description": "Git branching strategies, conflict resolution, rebase workflows, monorepo patterns, and advanced operations like cherry-pick, bisect, and reflog recovery. Activate on \"git\", \"branching strategy\", \"merge conflict\", \"rebase\", \"cherry-pick\", \"monorepo git\", \"git bisect\", \"git reflog\", \"squash commits\". NOT for GitHub Actions CI/CD (use github-actions-pipeline-builder), GitHub API/webhooks, or PR review processes (use code-review-checklist)."
+}

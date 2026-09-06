@@ -1,0 +1,4 @@
+{
+  "name": "web-cloud-designer",
+  "description": "Creates realistic cloud effects for web using SVG filters (feTurbulence, feDisplacementMap), CSS animations, and layering techniques. Use for atmospheric backgrounds, weather effects, skyboxes, parallax scenes, and decorative cloud elements. Activate on \"cloud effect\", \"SVG clouds\", \"realistic clouds\", \"atmospheric background\", \"sky animation\", \"feTurbulence\", \"weather effects\", \"parallax clouds\". NOT for 3D rendering (use WebGL/Three.js skills), photo manipulation (use image editing tools), weather data APIs (use data integration skills), or simple CSS gradients without volumetric effects."
+}

@@ -1,0 +1,950 @@
+{
+  "name": "some-claude-skills",
+  "description": "A curated collection of 190+ Claude Code skills covering AI engineering, design, frontend, backend, DevOps, product, and creative domains.",
+  "owner": {
+    "name": "Erich Owens",
+    "url": "https://www.erichowens.com"
+  },
+  "plugins": [
+    {
+      "name": "2000s-visualization-expert",
+      "source": "./.claude/skills/2000s-visualization-expert",
+      "description": "Expert in 2000s-era music visualization (Milkdrop, AVS, Geiss) and modern WebGL implementations. Specializes in Butterchurn integration, Web Audio API AnalyserNode FFT data, GLSL shaders for audio-reactive visuals, and psychedelic generative art. Activate on \"Milkdrop\", \"music visualization\", \"WebGL visualizer\", \"Butterchurn\", \"audio reactive\", \"FFT visualization\", \"spectrum analyzer\". NOT for simple bar charts/waveforms (use basic canvas), video editing, or non-audio visuals."
+    },
+    {
+      "name": "2026-legal-research-agent",
+      "source": "./.claude/skills/2026-legal-research-agent",
+      "description": "'Expert legal research agent for finding and scraping expungement data state by state. Knows authoritative sources, URL patterns, Firecrawl configuration, and 2026 legal landscape. Activate on \"find expungement data\", \"scrape state laws\", \"legal research\", \"court URLs\", \"statute sources\", \"Clean Slate laws\", \"automatic expungement research\". NOT for interpreting laws (use national-expungement-expert), building UI, or legal advice. '"
+    },
+    {
+      "name": "adhd-daily-planner",
+      "source": "./.claude/skills/adhd-daily-planner",
+      "description": "Time-blind friendly planning, executive function support, and daily structure for ADHD brains. Specializes in realistic time estimation, dopamine-aware task design, and building systems that actually work for neurodivergent minds."
+    },
+    {
+      "name": "adhd-design-expert",
+      "source": "./.claude/skills/adhd-design-expert",
+      "description": "Designs digital experiences for ADHD brains using neuroscience research and UX principles. Expert in reducing cognitive load, time blindness solutions, dopamine-driven engagement, and compassionate design patterns. Activate on 'ADHD design', 'cognitive load', 'accessibility', 'neurodivergent UX', 'time blindness', 'dopamine-driven', 'executive function'. NOT for general accessibility (WCAG only), neurotypical UX design, or simple UI styling without ADHD context."
+    },
+    {
+      "name": "admin-dashboard",
+      "source": "./.claude/skills/admin-dashboard",
+      "description": "Extend and modify the admin dashboard, developer portal, and operations console. Use when adding new admin tabs, metrics, monitoring features, or internal tools. Activates for dashboard development, analytics, user management, and internal tooling."
+    },
+    {
+      "name": "agent-creator",
+      "source": "./.claude/skills/agent-creator",
+      "description": "Meta-agent for creating new custom agents, skills, and MCP integrations. Expert in agent design, MCP development, skill architecture, and rapid prototyping. Activate on 'create agent', 'new skill', 'MCP server', 'custom tool', 'agent design'. NOT for using existing agents (invoke them directly), general coding (use language-specific skills), or infrastructure setup (use deployment-engineer)."
+    },
+    {
+      "name": "ai-engineer",
+      "source": "./.claude/skills/ai-engineer",
+      "description": "Build production-ready LLM applications, advanced RAG systems, and intelligent agents. Implements vector search, multimodal AI, agent orchestration, and enterprise AI integrations. Use PROACTIVELY for LLM features, chatbots, AI agents, or AI-powered applications."
+    },
+    {
+      "name": "ai-video-production-master",
+      "source": "./.claude/skills/ai-video-production-master",
+      "description": "Expert in script-to-video production pipelines for Apple Silicon Macs. Specializes in hybrid local/cloud workflows, LoRA training for character consistency, motion graphics generation, and artist commissioning. Activate on 'AI video production', 'script to video', 'video generation pipeline', 'character consistency', 'LoRA training', 'cloud GPU', 'motion graphics', 'Wan I2V', 'InVideo alternative'. NOT for real-time video editing, video compositing (use DaVinci/Premiere), audio production, or 3D modeling (use Blender/Maya)."
+    },
+    {
+      "name": "anthropic-technical-deep-dive",
+      "source": "./.claude/skills/anthropic-technical-deep-dive",
+      "description": "Prepare for Anthropic-specific technical interviews covering Constitutional AI, RLHF, interpretability, scaling laws, MCP, agentic systems, and AI safety. Activate on \"anthropic interview\", \"constitutional AI prep\", \"alignment interview\", \"safety interview\", \"RLHF opinion\", \"interpretability prep\", \"anthropic technical\". NOT for general ML interview prep, system design interviews, coding challenges, or behavioral interview practice."
+    },
+    {
+      "name": "api-architect",
+      "source": "./.claude/skills/api-architect",
+      "description": "'Expert API designer for REST, GraphQL, gRPC architectures. Activate on: API design, REST API, GraphQL schema, gRPC service, OpenAPI, Swagger, API versioning, endpoint design, rate limiting, OAuth flow. NOT for: database schema (use data-pipeline-engineer), frontend consumption (use web-design-expert), deployment (use devops-automator).'"
+    },
+    {
+      "name": "automatic-stateful-prompt-improver",
+      "source": "./.claude/skills/automatic-stateful-prompt-improver",
+      "description": "Automatically intercepts and optimizes prompts using the prompt-learning MCP server. Learns from performance over time via embedding-indexed history. Uses APE, OPRO, DSPy patterns. Activate on \"optimize prompt\", \"improve this prompt\", \"prompt engineering\", or ANY complex task request. Requires prompt-learning MCP server. NOT for simple questions (just answer them), NOT for direct commands (just execute them), NOT for conversational responses (no optimization needed)."
+    },
+    {
+      "name": "background-job-orchestrator",
+      "source": "./.claude/skills/background-job-orchestrator",
+      "description": "Expert in background job processing with Bull/BullMQ (Redis), Celery, and cloud queues. Implements retries, scheduling, priority queues, and worker management. Use for async task processing, email campaigns, report generation, batch operations. Activate on \"background job\", \"async task\", \"queue\", \"worker\", \"BullMQ\", \"Celery\". NOT for real-time WebSocket communication, synchronous API calls, or simple setTimeout operations."
+    },
+    {
+      "name": "boss-whisperer",
+      "source": "./.claude/skills/boss-whisperer",
+      "description": "Reverse-engineers your manager from pasted comms \u2014 an email thread, Slack history, or a described situation \u2014 to show what they actually want, how to manage up, and where the politics sit. Two tiers: a fast anonymised read on what you paste, or an opt-in deep dossier adding public research on the named boss. Gottman communication analysis plus Munger misjudgment inversion. Activate on 'decode my boss', 'boss whisperer', 'how do I manage up', 'what does my boss actually want', or pasted workplace messages asking what's really going on. NOT a mental-health diagnosis tool, and NOT for manipulating or gathering leverage over someone \u2014 empowering read only, public sources only, no deception."
+    },
+    {
+      "name": "bot-developer",
+      "source": "./.claude/skills/bot-developer",
+      "description": "Expert bot developer specializing in Discord, Telegram, Slack automation with deep knowledge of rate limiting, state machines, event sourcing, moderation systems, and conversational AI integration. Activate on 'Discord bot', 'Telegram bot', 'Slack bot', 'chat automation', 'moderation system'. NOT for web APIs (use backend-architect), general automation scripts (use python-pro), or frontend chat widgets (use frontend-developer)."
+    },
+    {
+      "name": "caching-strategies",
+      "source": "./.claude/skills/caching-strategies",
+      "description": "Design multi-tier caching architectures for web applications \u2014 cache-aside vs write-through vs write-behind, TTL design, cache invalidation, Redis patterns, CDN configuration, browser caching, and stampede prevention. Use when choosing a caching pattern, designing cache invalidation strategies, implementing Redis caching, configuring Cache-Control headers, or preventing cache stampedes. Activate on \"cache invalidation\", \"cache-aside\", \"write-through\", \"TTL\", \"Redis cache\", \"CDN caching\", \"cache stampede\", \"stale data\", \"browser cache\". NOT for database query caching within an ORM, memoization of pure functions, or CPU-level caching."
+    },
+    {
+      "name": "career-biographer",
+      "source": "./.claude/skills/career-biographer",
+      "description": "AI-powered career biographer that conducts empathetic interviews, extracts structured career narratives, and transforms professional stories into portfolios, CVs, and personal brand assets. This skill should be used when users want to document their career journey, create professional portfolios, generate CVs, or craft compelling career narratives."
+    },
+    {
+      "name": "chatbot-analytics",
+      "source": "./.claude/skills/chatbot-analytics",
+      "description": "Implement AI chatbot analytics and conversation monitoring. Use when adding conversation metrics, tracking AI usage, measuring user engagement with chat, or building conversation dashboards. Activates for AI analytics, token tracking, conversation categorization, and chat performance."
+    },
+    {
+      "name": "checklist-discipline",
+      "source": "./.claude/skills/checklist-discipline",
+      "description": "Design and implement systematic checklists that reduce errors by 30-50% in complex, high-stakes domains (medicine, aviation, construction, finance). NOT for simple tasks or when comprehensive instruction is needed."
+    },
+    {
+      "name": "claude-ecosystem-promoter",
+      "source": "./.claude/skills/claude-ecosystem-promoter",
+      "description": "Marketing and promotion specialist for Claude ecosystem technology - MCP servers, skills, plugins, and agents. Expert in community engagement, registry submissions, content marketing, and developer relations. Activate on 'promote MCP', 'share skill', 'market plugin', 'launch agent', 'developer marketing', 'MCP registry'. NOT for creating MCPs/skills (use agent-creator), general marketing (use content-marketer), or SEO optimization (use seo-visibility-expert)."
+    },
+    {
+      "name": "clinical-diagnostic-reasoning",
+      "source": "./.claude/skills/clinical-diagnostic-reasoning",
+      "description": "Identify and counteract cognitive biases in medical decision-making through systematic error analysis and contextual algorithm application. For diagnostic reasoning, treatment decisions, and clinical judgment improvement. NOT for basic medical knowledge, technical procedures, or non-clinical healthcare domains."
+    },
+    {
+      "name": "clip-aware-embeddings",
+      "source": "./.claude/skills/clip-aware-embeddings",
+      "description": "Semantic image-text matching with CLIP and alternatives. Use for image search, zero-shot classification, similarity matching. NOT for counting objects, fine-grained classification (celebrities, car models), spatial reasoning, or compositional queries. Activate on \"CLIP\", \"embeddings\", \"image similarity\", \"semantic search\", \"zero-shot classification\", \"image-text matching\"."
+    },
+    {
+      "name": "cloudflare-worker-dev",
+      "source": "./.claude/skills/cloudflare-worker-dev",
+      "description": "Cloudflare Workers, KV, Durable Objects, and edge computing development. Use for serverless APIs, caching, rate limiting, real-time features. Activate on \"Workers\", \"KV\", \"Durable Objects\", \"wrangler\", \"edge function\", \"Cloudflare\". NOT for Cloudflare Pages configuration (use deployment docs), DNS management, or general CDN settings."
+    },
+    {
+      "name": "code-architecture",
+      "source": "./.claude/skills/code-architecture",
+      "description": "Application architecture patterns and code organization \u2014 clean architecture, hexagonal architecture, feature-based structure, dependency inversion, module boundaries, SOLID principles at module scale. Activate on \"clean architecture\", \"hexagonal architecture\", \"feature-based structure\", \"dependency inversion\", \"module boundaries\", \"architecture pattern\", \"folder structure\", \"fat controller\", \"circular dependency\", \"IoC container\". NOT for microservice decomposition (use microservices-patterns) or database schema design (use database-design-patterns)."
+    },
+    {
+      "name": "code-necromancer",
+      "source": "./.claude/skills/code-necromancer",
+      "description": "Systematic framework for resurrecting and modernizing legacy codebases through archaeology, resurrection, and rejuvenation phases. Activate on \"legacy code\", \"inherited codebase\", \"no documentation\", \"technical debt\", \"resurrect\", \"modernize\". NOT for greenfield projects or well-documented active codebases."
+    },
+    {
+      "name": "code-review-checklist",
+      "source": "./.claude/skills/code-review-checklist",
+      "description": "Generate context-aware code review checklists from PR diffs \u2014 tailored to language, codebase patterns, and team standards. Identifies what reviewers should focus on. NOT for automated code fixing, test generation, or security auditing."
+    },
+    {
+      "name": "collage-layout-expert",
+      "source": "./.claude/skills/collage-layout-expert",
+      "description": "'Expert in ALL computational collage composition: photo mosaics, grid layouts, scrapbook/journal styles, magazine editorial, vision boards, mood boards, social media collages, memory walls, abstract/generative arrangements, and art-historical techniques (Hockney joiners, Dadaist photomontage, Surrealist assemblage, Rauschenberg combines). Masters edge-based assembly, Poisson blending, optimal transport color harmonization, and aesthetic optimization. Activate on ''collage'', ''photo mosaic'', ''grid layout'', ''scrapbook'', ''vision board'', ''mood board'', ''photo wall'', ''magazine layout'', ''Hockney'', ''joiner'', ''photomontage''. NOT for simple image editing (use native-app-designer), generating new images (use Stability AI), single photo enhancement (use photo-composition-critic), or basic image similarity search (use clip-aware-embeddings).'"
+    },
+    {
+      "name": "color-contrast-auditor",
+      "source": "./.claude/skills/color-contrast-auditor",
+      "description": "Detects and fixes color contrast violations using WCAG 2.1 guidelines and perceptual analysis. Expert in contrast ratio calculation, color blindness simulation, and providing accessible alternatives. Activate on \"check contrast\", \"color accessibility\", \"WCAG audit\", \"readability check\", \"contrast ratio\", \"hard to read\", \"can't see text\". NOT for general color theory (use color-theory-palette-harmony-expert), brand color selection (use web-design-expert), or non-visual accessibility (use ux-friction-analyzer)."
+    },
+    {
+      "name": "color-theory-palette-harmony-expert",
+      "source": "./.claude/skills/color-theory-palette-harmony-expert",
+      "description": "Expert in color theory, palette harmony, and perceptual color science for computational photo composition. Specializes in earth-mover distance optimization, warm/cool alternation, diversity-aware palette selection, and hue-based photo sequencing. Activate on \"color palette\", \"color harmony\", \"warm cool\", \"earth mover distance\", \"Wasserstein\", \"LAB space\", \"hue sorted\", \"palette matching\". NOT for basic RGB manipulation (use standard image processing), single-photo color grading (use native-app-designer), UI color schemes (use vaporwave-glassomorphic-ui-designer), or color blindness simulation (accessibility specialists)."
+    },
+    {
+      "name": "competitive-cartographer",
+      "source": "./.claude/skills/competitive-cartographer",
+      "description": "Strategic analyst that maps competitive landscapes, identifies white space opportunities, and provides positioning recommendations. Use when users need competitive analysis, market positioning strategy, differentiation tactics, or \"how do I stand out?\" guidance across any domain (portfolios, products, services). NOT for market size estimation or financial forecasting."
+    },
+    {
+      "name": "component-template-generator",
+      "source": "./.claude/skills/component-template-generator",
+      "description": "Generates starter component code using design tokens. Creates React/Vue/Svelte components with proper token usage, variants, and accessibility built in."
+    },
+    {
+      "name": "computer-vision-pipeline",
+      "source": "./.claude/skills/computer-vision-pipeline",
+      "description": "Build production computer vision pipelines for object detection, tracking, and video analysis. Handles drone footage, wildlife monitoring, and real-time detection. Supports YOLO, Detectron2, TensorFlow, PyTorch. Use for archaeological surveys, conservation, security. Activate on \"object detection\", \"video analysis\", \"YOLO\", \"tracking\", \"drone footage\". NOT for simple image filters, photo editing, or face recognition APIs."
+    },
+    {
+      "name": "cost-accrual-tracker",
+      "source": "./.claude/skills/cost-accrual-tracker",
+      "description": "Track real-time API cost accrual during LLM execution. Activate on 'cost tracking', 'token usage', 'API costs', 'budget monitoring', 'usage metrics'. NOT for cost estimation, pricing tiers, or billing systems."
+    },
+    {
+      "name": "cost-optimizer",
+      "source": "./.claude/skills/cost-optimizer",
+      "description": "Tracks cumulative LLM costs across DAG execution and makes real-time decisions to stay within budget. Downgrades models, skips optional nodes, or stops early when cost exceeds thresholds. Use when managing execution budgets, analyzing cost breakdowns, or optimizing model routing for cost. Activate on \"cost budget\", \"too expensive\", \"reduce cost\", \"cost optimization\", \"model downgrade\", \"budget exceeded\". NOT for LLM model selection logic (use llm-router), pricing comparisons across providers, or billing/invoicing."
+    },
+    {
+      "name": "cost-verification-auditor",
+      "source": "./.claude/skills/cost-verification-auditor",
+      "description": "Audit LLM token cost estimates against actual API usage. Activate on 'cost verification', 'token estimate accuracy', 'API cost audit', 'estimation variance'. NOT for pricing lookups, budget planning, or cost optimization strategies."
+    },
+    {
+      "name": "crisis-detection-intervention-ai",
+      "source": "./.claude/skills/crisis-detection-intervention-ai",
+      "description": "Detect crisis signals in user content using NLP, mental health sentiment analysis, and safe intervention protocols. Implements suicide ideation detection, automated escalation, and crisis resource integration. Use for mental health apps, recovery platforms, support communities. Activate on \"crisis detection\", \"suicide prevention\", \"mental health NLP\", \"intervention protocol\". NOT for general sentiment analysis, medical diagnosis, or replacing professional help."
+    },
+    {
+      "name": "crisis-response-protocol",
+      "source": "./.claude/skills/crisis-response-protocol",
+      "description": "Handle mental health crisis situations in AI coaching safely. Use when implementing crisis detection, safety protocols, emergency escalation, or suicide prevention features. Activates for crisis keywords, safety planning, hotline integration, and risk assessment."
+    },
+    {
+      "name": "cv-creator",
+      "source": "./.claude/skills/cv-creator",
+      "description": "Professional CV and resume builder transforming career narratives into ATS-optimized, multi-format resumes. Integrates with career-biographer for data and competitive-cartographer for positioning. Generates PDF, DOCX, LaTeX, JSON Resume, HTML, and Markdown. Activate on 'resume', 'CV', 'ATS optimization', 'job application'. NOT for cover letters, portfolio websites (use web-design-expert), LinkedIn optimization, or interview preparation."
+    },
+    {
+      "name": "dark-mode-design-expert",
+      "source": "./.claude/skills/dark-mode-design-expert",
+      "description": "Master dark mode UI design with atmospheric theming, WCAG accessibility, and cross-platform best practices. Specializes in weather/sky/ocean-inspired color systems that adapt to time of day and environmental conditions."
+    },
+    {
+      "name": "data-pipeline-engineer",
+      "source": "./.claude/skills/data-pipeline-engineer",
+      "description": "'Expert data engineer for ETL/ELT pipelines, streaming, data warehousing. Activate on: data pipeline, ETL, ELT, data warehouse, Spark, Kafka, Airflow, dbt, data modeling, star schema, streaming data, batch processing, data quality. NOT for: API design (use api-architect), ML training (use ML skills), dashboards (use design skills).'"
+    },
+    {
+      "name": "data-viz-2025",
+      "source": "./.claude/skills/data-viz-2025",
+      "description": "State-of-the-art data visualization for React/Next.js/TypeScript with Tailwind CSS. Creates compelling, tested, and accessible visualizations following Tufte principles and NYT Graphics standards. Activate on \"data viz\", \"chart\", \"graph\", \"visualization\", \"dashboard\", \"plot\", \"Recharts\", \"Nivo\", \"D3\". NOT for static images, print graphics, or basic HTML tables."
+    },
+    {
+      "name": "database-design-patterns",
+      "source": "./.claude/skills/database-design-patterns",
+      "description": "Schema design, normalization decisions, indexing strategies, and migration safety for relational databases. Use when designing tables, choosing between normalize vs denormalize, selecting index types, planning zero-downtime migrations, or setting up connection pooling. Activate on \"schema design\", \"normalization\", \"denormalization\", \"foreign key\", \"index strategy\", \"migration\", \"connection pooling\", \"composite key\", \"surrogate key\", \"soft delete\", \"polymorphic association\". NOT for PostgreSQL-specific query tuning or EXPLAIN analysis (use postgresql-optimization), NoSQL or document database design, or cloud database provisioning."
+    },
+    {
+      "name": "dependency-management",
+      "source": "./.claude/skills/dependency-management",
+      "description": "Managing third-party dependencies \u2014 version pinning, security auditing, license compliance, update workflows, lockfile management, supply chain security. Activate on \"npm audit\", \"dependabot\", \"renovate\", \"pin versions\", \"dependency update\", \"supply chain\", \"license compliance\", \"lockfile\", \"security advisory\", \"typosquatting\", \"SBOM\". NOT for internal monorepo package management (use monorepo-management) or publishing your own packages to npm/PyPI."
+    },
+    {
+      "name": "design-accessibility-auditor",
+      "source": "./.claude/skills/design-accessibility-auditor",
+      "description": "Audit designs, color palettes, and UI components for WCAG 2.1 accessibility compliance, providing specific fixes for contrast, touch targets, focus indicators, and screen reader support. NOT for color harmony aesthetics or design system creation."
+    },
+    {
+      "name": "design-archivist",
+      "source": "./.claude/skills/design-archivist",
+      "description": "Long-running design anthropologist that builds comprehensive visual databases from 500-1000 real-world examples, extracting color palettes, typography patterns, layout systems, and interaction design across any domain (portfolios, e-commerce, SaaS, adult content, technical showcases). This skill should be used when users need exhaustive design research, pattern recognition across large example sets, or systematic visual analysis for competitive positioning."
+    },
+    {
+      "name": "design-critic",
+      "source": "./.claude/skills/design-critic",
+      "description": "Aesthetic assessment and remix partner with trained visual taste. Provides structured design critiques using a 6-dimension scoring system inspired by VisualQuality-R1 chain-of-thought reasoning."
+    },
+    {
+      "name": "design-justice",
+      "source": "./.claude/skills/design-justice",
+      "description": "Digital equity and trauma-informed design for marginalized populations. Activate on \"accessibility\", \"offline-first\", \"trauma-informed\", \"reentry\", \"recovery population\", \"shared device\", \"unstable phone\", \"digital equity\", \"design justice\", \"low-literacy\", \"intermittent access\". NOT for general UX, marketing optimization, or enterprise SaaS design."
+    },
+    {
+      "name": "design-system-creator",
+      "source": "./.claude/skills/design-system-creator",
+      "description": "Builds comprehensive design systems and design bibles with production-ready CSS. Expert in design tokens, component libraries, CSS architecture. Use for design system creation, token architecture, component documentation, style guide generation. Activate on \"design system\", \"design tokens\", \"CSS architecture\", \"component library\", \"style guide\", \"design bible\". NOT for typography deep-dives (use typography-expert), color theory mathematics (use color-theory-palette-harmony-expert), brand identity strategy (use web-design-expert), or actual UI implementation (use web-design-expert or native-app-designer)."
+    },
+    {
+      "name": "design-system-documenter",
+      "source": "./.claude/skills/design-system-documenter",
+      "description": "Creates comprehensive documentation for design systems - token tables, usage guidelines, component examples, and accessibility notes. Use after generating tokens to create developer-friendly docs."
+    },
+    {
+      "name": "design-system-generator",
+      "source": "./.claude/skills/design-system-generator",
+      "description": "Design system generator that matches natural language descriptions to design trends. Expert in Swiss Modern, Neobrutalism, Glassmorphism, and 20+ other design trends. Includes trend matching scripts and comprehensive design pattern library."
+    },
+    {
+      "name": "design-trend-analyzer",
+      "source": "./.claude/skills/design-trend-analyzer",
+      "description": "Analyze design trends and recommend appropriate styles, color palettes, and typography systems for your project based on current design movements. NOT for accessibility auditing or full design system creation."
+    },
+    {
+      "name": "devops-automator",
+      "source": "./.claude/skills/devops-automator",
+      "description": "'Expert DevOps engineer for CI/CD, IaC, Kubernetes, and deployment automation. Activate on: CI/CD, GitHub Actions, Terraform, Docker, Kubernetes, Helm, ArgoCD, GitOps, deployment pipeline, infrastructure as code, container orchestration. NOT for: application code (use language skills), database schema (use data-pipeline-engineer), API design (use api-architect).'"
+    },
+    {
+      "name": "diagramming-expert",
+      "source": "./.claude/skills/diagramming-expert",
+      "description": "Master of text-based visual communication using ASCII art, Unicode box-drawing, and structured diagram notation. Creates clear, maintainable diagrams for systems, processes, hierarchies, relationships, and psychological structures. Proactively generates diagrams to enhance understanding. Activate on visualization needs, system architecture, process flows, psychological mapping, or when complex concepts would benefit from visual representation. NOT for photo editing, vector graphics, or GUI-based design tools."
+    },
+    {
+      "name": "digital-estate-planner",
+      "source": "./.claude/skills/digital-estate-planner",
+      "description": "Organizing digital life for legacy, emergency access, and death preparedness. Specializes in password management, account documentation, digital asset preservation, and ensuring loved ones can access what they need."
+    },
+    {
+      "name": "docker-containerization",
+      "source": "./.claude/skills/docker-containerization",
+      "description": "Write production-grade Dockerfiles, docker-compose configurations, multi-stage builds, and container optimization. Activate on \"Dockerfile\", \"docker\", \"docker-compose\", \"container\", \"multi-stage build\", \"docker image\", \"container optimization\", \"docker security\". NOT for Kubernetes orchestration, cloud-specific container services (ECS, Cloud Run), or CI/CD pipelines (use github-actions-pipeline-builder)."
+    },
+    {
+      "name": "document-generation-pdf",
+      "source": "./.claude/skills/document-generation-pdf",
+      "description": "Generate, fill, and assemble PDF documents at scale. Handles legal forms, contracts, invoices, certificates. Supports form filling (pdf-lib), template rendering (Puppeteer, LaTeX), digital signatures (DocuSign), and document assembly. Use for legal tech, HR automation, invoice generation. Activate on \"PDF generation\", \"form filling\", \"document automation\", \"digital signatures\". NOT for simple PDF viewing, basic file conversion, or OCR text extraction."
+    },
+    {
+      "name": "drizzle-migrations",
+      "source": "./.claude/skills/drizzle-migrations",
+      "description": "Drizzle ORM schema management and SQLite migrations \u2014 adding tables, modifying columns, creating indexes, generating and running migrations, Drizzle query patterns. NOT for Prisma, TypeORM, Sequelize, or raw SQL migration tools."
+    },
+    {
+      "name": "drone-cv-expert",
+      "source": "./.claude/skills/drone-cv-expert",
+      "description": "Expert in drone systems, computer vision, and autonomous navigation. Specializes in flight control, SLAM, object detection, sensor fusion, and path planning. Activate on \"drone\", \"UAV\", \"SLAM\", \"visual odometry\", \"PID control\", \"MAVLink\", \"Pixhawk\", \"path planning\", \"A*\", \"RRT\", \"EKF\", \"sensor fusion\", \"optical flow\", \"ByteTrack\". NOT for domain-specific inspection tasks like fire detection, roof damage assessment, or thermal analysis (use drone-inspection-specialist), GPU shader optimization (use metal-shader-expert), or general image classification without drone context (use clip-aware-embeddings)."
+    },
+    {
+      "name": "drone-inspection-specialist",
+      "source": "./.claude/skills/drone-inspection-specialist",
+      "description": "Advanced CV for infrastructure inspection including forest fire detection, wildfire precondition assessment, roof inspection, hail damage analysis, thermal imaging, and 3D Gaussian Splatting reconstruction. Expert in multi-modal detection, insurance risk modeling, and reinsurance data pipelines. Activate on \"fire detection\", \"wildfire risk\", \"roof inspection\", \"hail damage\", \"thermal analysis\", \"Gaussian Splatting\", \"3DGS\", \"insurance inspection\", \"defensible space\", \"property assessment\", \"catastrophe modeling\", \"NDVI\", \"fuel load\". NOT for general drone flight control, SLAM, path planning, or sensor fusion (use drone-cv-expert), GPU shader development (use metal-shader-expert), or generic object detection without inspection context (use clip-aware-embeddings)."
+    },
+    {
+      "name": "email-composer",
+      "source": "./.claude/skills/email-composer",
+      "description": "Draft professional emails for various contexts including business, technical, and customer communication. Use when the user needs help writing emails or composing professional messages."
+    },
+    {
+      "name": "error-handling-patterns",
+      "source": "./.claude/skills/error-handling-patterns",
+      "description": "Design error handling strategies for TypeScript and Python applications \u2014 exception hierarchies, Result/Either types, retry patterns, error boundaries, and structured error logging. Use when designing error handling architecture, choosing between exceptions and Result types, implementing retry logic, or building error recovery flows. Activate on \"error handling\", \"exception hierarchy\", \"Result type\", \"retry pattern\", \"circuit breaker\", \"error boundary\", \"Pokemon exception\". NOT for debugging specific runtime errors, logging infrastructure setup, or monitoring/alerting configuration."
+    },
+    {
+      "name": "event-detection-temporal-intelligence-expert",
+      "source": "./.claude/skills/event-detection-temporal-intelligence-expert",
+      "description": "Expert in temporal event detection, spatio-temporal clustering (ST-DBSCAN), and photo context understanding. Use for detecting photo events, clustering by time/location, shareability prediction, place recognition, event significance scoring, and life event detection. Activate on 'event detection', 'temporal clustering', 'ST-DBSCAN', 'spatio-temporal', 'shareability prediction', 'place recognition', 'life events', 'photo events', 'temporal diversity'. NOT for individual photo aesthetic quality (use photo-composition-critic), color palette analysis (use color-theory-palette-harmony-expert), face recognition implementation (use photo-content-recognition-curation-expert), or basic EXIF timestamp extraction."
+    },
+    {
+      "name": "fancy-yard-landscaper",
+      "source": "./.claude/skills/fancy-yard-landscaper",
+      "description": "Expert landscape designer transforming yards through photo mapping, 3D visualization, seasonal planning, and deep plant knowledge. Specializes in fast-growing privacy screens (knows arborvitae pitfalls), architecture-appropriate design, outdoor living spaces, and realistic maintenance expectations. Activate on \"landscape design\", \"yard design\", \"garden planning\", \"plant selection\", \"privacy screen\", \"outdoor living\", \"backyard makeover\", \"arborvitae\", \"hedge\", \"fast growing tree\", \"landscaping ideas\". NOT for interior design (use interior-design-expert), hardscape construction (consult contractors), or lawn care chemicals (consult local experts)."
+    },
+    {
+      "name": "feature-manifest",
+      "source": "./.claude/skills/feature-manifest",
+      "description": "Manage feature manifests for code traceability \u2014 create features, validate manifest health, map features to code, update changelogs. Activates for 'feature manifest', 'feature tracking', 'code traceability'. NOT for project management, issue tracking, or git workflow."
+    },
+    {
+      "name": "form-validation-architect",
+      "source": "./.claude/skills/form-validation-architect",
+      "description": "End-to-end form handling with react-hook-form, Zod schemas, validation patterns, error messaging, field arrays, and multi-step wizards. Use for complex forms, validation architecture, autosave, field dependencies. Activate on \"form validation\", \"react-hook-form\", \"Zod\", \"form error\", \"multi-step form\", \"wizard\". NOT for simple HTML forms, backend validation only, or non-React frameworks."
+    },
+    {
+      "name": "frontend-architect",
+      "source": "./.claude/skills/frontend-architect",
+      "description": "Frontend stack expert for Cloudflare deployment, shadcn/ui components, and internal tools architecture. Guides technology choices, deployment patterns, and design system integration."
+    },
+    {
+      "name": "fullstack-debugger",
+      "source": "./.claude/skills/fullstack-debugger",
+      "description": "'Expert debugger for Next.js + Cloudflare Workers + Supabase stacks. Systematic troubleshooting for auth, caching, workers, RLS, CORS, and build issues. Activate on: ''debug'', ''not working'', ''error'', ''broken'', ''500'', ''401'', ''403'', ''cache issue'', ''RLS'', ''CORS''. NOT for: feature development (use language skills), architecture design (use system-architect).'"
+    },
+    {
+      "name": "geospatial-data-pipeline",
+      "source": "./.claude/skills/geospatial-data-pipeline",
+      "description": "Process, analyze, and visualize geospatial data at scale. Handles drone imagery, GPS tracks, GeoJSON optimization, coordinate transformations, and tile generation. Use for mapping apps, drone data processing, location-based services. Activate on \"geospatial\", \"GIS\", \"PostGIS\", \"GeoJSON\", \"map tiles\", \"coordinate systems\". NOT for simple address validation, basic distance calculations, or static map embeds."
+    },
+    {
+      "name": "git-workflow-expert",
+      "source": "./.claude/skills/git-workflow-expert",
+      "description": "Git branching strategies, conflict resolution, rebase workflows, monorepo patterns, and advanced operations like cherry-pick, bisect, and reflog recovery. Activate on \"git\", \"branching strategy\", \"merge conflict\", \"rebase\", \"cherry-pick\", \"monorepo git\", \"git bisect\", \"git reflog\", \"squash commits\". NOT for GitHub Actions CI/CD (use github-actions-pipeline-builder), GitHub API/webhooks, or PR review processes (use code-review-checklist)."
+    },
+    {
+      "name": "github-actions-pipeline-builder",
+      "source": "./.claude/skills/github-actions-pipeline-builder",
+      "description": "Build production CI/CD pipelines with GitHub Actions. Implements matrix builds, caching, deployments, testing, security scanning. Use for automated testing, deployments, release workflows. Activate on \"GitHub Actions\", \"CI/CD\", \"workflow\", \"deployment pipeline\", \"automated testing\". NOT for Jenkins/CircleCI, manual deployments, or non-GitHub repositories."
+    },
+    {
+      "name": "grief-companion",
+      "source": "./.claude/skills/grief-companion",
+      "description": "Compassionate bereavement support, memorial creation, grief education, and healing journey guidance. Specializes in understanding grief stages, creating meaningful tributes, and supporting the non-linear path of loss."
+    },
+    {
+      "name": "hand-drawn-infographic-creator",
+      "source": "./.claude/skills/hand-drawn-infographic-creator",
+      "description": "Generate hand-drawn style diagrams and infographics for recovery education articles. Creates anatomist's notebook aesthetic visuals - brain diagrams, timelines, social comparisons, and process flows using continuous line art, semantic color coding, and margin annotations."
+    },
+    {
+      "name": "hinge-profile-optimizer",
+      "source": "./.claude/skills/hinge-profile-optimizer",
+      "description": "Comprehensive, research-backed Hinge dating profile optimization. Audits an existing profile, runs a discovery interview, writes prompts and captions, orders photos strategically, and gives post-launch algorithm strategy. Grounded in peer-reviewed behavioral research (Toma, Donath, Bruch & Newman) and signaling theory, not vibes. Activate on 'hinge profile', 'dating profile help', 'why am I not getting matches', 'dating app photo order'. NOT for a quick one-line prompt fix (full process runs ~45 min), other dating apps without adaptation, or general dating coaching outside profile scope."
+    },
+    {
+      "name": "hipaa-compliance",
+      "source": "./.claude/skills/hipaa-compliance",
+      "description": "Ensure HIPAA compliance when handling PHI (Protected Health Information). Use when writing code that accesses user health data, check-ins, journal entries, or any sensitive information. Activates for audit logging, data access, security events, and compliance questions."
+    },
+    {
+      "name": "hiring-manager-deep-dive",
+      "source": "./.claude/skills/hiring-manager-deep-dive",
+      "description": "Prepares for hiring manager rounds at Staff+ (L6+) level \u2014 scope of impact, influence without authority, ambiguity navigation, mentorship, strategic thinking. Use when practicing HM rounds or calibrating story depth for target level. Activate on \"hiring manager round\", \"HM screen\", \"staff level\", \"scope of impact\". NOT for coding interviews, system design, behavioral/values rounds, or resume writing."
+    },
+    {
+      "name": "hr-network-analyst",
+      "source": "./.claude/skills/hr-network-analyst",
+      "description": "Professional network graph analyst identifying Gladwellian superconnectors, mavens, and influence brokers using betweenness centrality, structural holes theory, and multi-source network reconstruction. Activate on 'superconnectors', 'network analysis', 'who knows who', 'professional network', 'influence mapping', 'betweenness centrality'. NOT for surveillance, discrimination, stalking, privacy violation, or speculation without data."
+    },
+    {
+      "name": "hrv-alexithymia-expert",
+      "source": "./.claude/skills/hrv-alexithymia-expert",
+      "description": "Heart rate variability biometrics and emotional awareness training. Expert in HRV analysis, interoception training, biofeedback, and emotional intelligence. Activate on 'HRV', 'heart rate variability', 'alexithymia', 'biofeedback', 'vagal tone', 'interoception', 'RMSSD', 'autonomic nervous system'. NOT for general fitness tracking without HRV focus, simple heart rate monitoring, or diagnosing medical conditions (only licensed professionals diagnose)."
+    },
+    {
+      "name": "human-centered-design-fundamentals",
+      "source": "./.claude/skills/human-centered-design-fundamentals",
+      "description": "Apply cognitive psychology principles to design discoverable, understandable products through affordances, signifiers, feedback, and conceptual models. For physical and digital interfaces requiring human interaction. NOT for pure aesthetics, marketing, or AI-only systems."
+    },
+    {
+      "name": "human-gate-designer",
+      "source": "./.claude/skills/human-gate-designer",
+      "description": "Designs human-in-the-loop review points for DAG workflows. Determines what to present to the human, how to collect feedback, and how to route approve/reject/modify decisions back into the DAG. Use when adding approval gates, designing review UX, or handling human feedback in agent workflows. Activate on \"human review\", \"approval gate\", \"human-in-the-loop\", \"human gate\", \"approval workflow\", \"user review step\". NOT for executing human gates at runtime (use dag-runtime with Temporal signals), general UX design, or chatbot conversation design."
+    },
+    {
+      "name": "indie-monetization-strategist",
+      "source": "./.claude/skills/indie-monetization-strategist",
+      "description": "Monetization strategies for indie developers, solopreneurs, and small teams. Covers freemium models, SaaS pricing, sponsorships, donations, email list building, and passive income for developer tools, content sites, and educational apps. Activate on 'monetization', 'make money', 'pricing', 'freemium', 'SaaS', 'sponsorship', 'donations', 'passive income', 'indie hacker'. NOT for enterprise sales, B2B outbound, VC fundraising, or large-scale advertising (use enterprise/marketing skills)."
+    },
+    {
+      "name": "interior-design-expert",
+      "source": "./.claude/skills/interior-design-expert",
+      "description": "Expert interior designer with deep knowledge of space planning, color theory (Munsell, NCS), lighting design (IES standards), furniture proportions, and AI-assisted visualization. Use for room layout optimization, lighting calculations, color palette selection for interiors, furniture placement, style consultation. Activate on \"interior design\", \"room layout\", \"lighting design\", \"furniture placement\", \"space planning\", \"Munsell color\". NOT for exterior/landscape design, architectural structure, web/UI design (use web-design-expert), brand color theory (use color-theory-palette-harmony-expert), or building codes/permits."
+    },
+    {
+      "name": "interview-loop-strategist",
+      "source": "./.claude/skills/interview-loop-strategist",
+      "description": "Orchestrates end-to-end interview preparation for senior ML/AI engineers targeting Anthropic and peer companies. Use for prep timeline generation, story coherence across rounds, mock scheduling, and debrief analysis. Activate on \"interview prep\", \"interview loop\", \"Anthropic interview\", \"prep timeline\". NOT for resume writing, career narratives, or individual round-type practice."
+    },
+    {
+      "name": "interview-simulator",
+      "source": "./.claude/skills/interview-simulator",
+      "description": "Designs and orchestrates a realistic interview simulation platform with voice AI, whiteboard evaluation, gaze-tracking proctoring, and mobile spaced repetition. Use for building mock interview infrastructure, configuring sessions, and adaptive difficulty. Activate on \"interview simulator\", \"mock interview\", \"practice session\", \"voice mock\". NOT for individual round-type coaching, resume writing, or prep timeline coordination."
+    },
+    {
+      "name": "job-application-optimizer",
+      "source": "./.claude/skills/job-application-optimizer",
+      "description": "Strategic job application planning and Resume SEO optimization. Approaches applications like marketing campaigns with market research, opportunity qualification, and content optimization. Activate on 'optimize resume', 'tailor resume', 'ATS optimization', 'job fit score', 'should I apply'. NOT for initial career narratives (career-biographer), portfolio design (cv-creator), or market positioning (competitive-cartographer)."
+    },
+    {
+      "name": "jungian-psychologist",
+      "source": "./.claude/skills/jungian-psychologist",
+      "description": "Expert in Jungian analytical psychology, depth psychology, shadow work, archetypal analysis, dream interpretation, active imagination, addiction/recovery through Jungian lens, and the individuation process - grounded in primary sources and clinical frameworks. Activate on 'Jung', 'Jungian', 'shadow work', 'archetypes', 'dream interpretation', 'active imagination', 'individuation', 'anima', 'animus', 'collective unconscious', 'addiction', 'recovery', 'spiritus contra spiritum'. NOT for therapy or diagnosis (only licensed analysts diagnose), active psychosis, severe dissociation, or replacing the relational container of actual Jungian analysis."
+    },
+    {
+      "name": "knot-theory-educator",
+      "source": "./.claude/skills/knot-theory-educator",
+      "description": "'Expert in visualizing and explaining braid theory, knot mathematics, and topological concepts for educational purposes. Use for creating interactive visualizations, explainer cards, step-wise animations, and translating abstract algebra into intuitive understanding. Activate on keywords: braid theory, knot visualization, \u03c3 notation, crossing diagrams, Yang-Baxter, topological education. NOT for general math tutoring, pure knot invariant computation, or non-educational knot theory research.'"
+    },
+    {
+      "name": "large-scale-map-visualization",
+      "source": "./.claude/skills/large-scale-map-visualization",
+      "description": "Master of high-performance web map implementations handling 5,000-100,000+ geographic data points. Specializes in Leaflet.js optimization, Supercluster algorithms, viewport-based loading, canvas rendering, and progressive disclosure UX patterns."
+    },
+    {
+      "name": "launch-readiness-auditor",
+      "source": "./.claude/skills/launch-readiness-auditor",
+      "description": "Expert at evaluating software projects for production readiness. Assesses codebases holistically to determine what's shippable, what's blocking launch, and how to get from current state to \"good enough to charge money for.\""
+    },
+    {
+      "name": "liaison",
+      "source": "./.claude/skills/liaison",
+      "description": "Translate multi-agent ecosystem activity into human-readable status briefings, decision requests, and progress summaries. Use for 'status update', 'brief me', 'what happened', 'summarize progress'. NOT for project planning (use project-management-guru-adhd), code review, or technical documentation."
+    },
+    {
+      "name": "llm-router",
+      "source": "./.claude/skills/llm-router",
+      "description": "Selects the optimal LLM model and provider for each task based on complexity, cost budget, and capability requirements. Routes cheap tasks to Haiku/GPT-4o-mini and complex tasks to Sonnet/Opus/o1. Use when deciding which model to call, optimizing LLM costs, or building multi-model agent systems. Activate on \"which model\", \"model selection\", \"route to model\", \"LLM cost\", \"model routing\", \"cheap vs expensive model\". NOT for prompt engineering (use prompt-engineer), model fine-tuning, or training custom models."
+    },
+    {
+      "name": "llm-streaming-response-handler",
+      "source": "./.claude/skills/llm-streaming-response-handler",
+      "description": "Build production LLM streaming UIs with Server-Sent Events, real-time token display, cancellation, error recovery. Handles OpenAI/Anthropic/Claude streaming APIs. Use for chatbots, AI assistants, real-time text generation. Activate on \"LLM streaming\", \"SSE\", \"token stream\", \"chat UI\", \"real-time AI\". NOT for batch processing, non-streaming APIs, or WebSocket bidirectional chat."
+    },
+    {
+      "name": "logging-observability",
+      "source": "./.claude/skills/logging-observability",
+      "description": "'Structured logging, distributed tracing, and metrics for production applications. [What: OpenTelemetry setup, log level strategy, correlation IDs, SLI/SLO alerting thresholds, Grafana dashboard design, PagerDuty integration] [When: setting up production logging, adding observability to a service, debugging distributed systems, designing alerting, implementing traces/metrics/logs] [Keywords: logging, observability, OpenTelemetry, OTel, structured logs, distributed tracing, correlation ID, metrics, Grafana, Prometheus, PagerDuty, Winston, Pino, structlog, log levels, SLI, SLO, alerting] NOT for application performance profiling (use a profiler), load testing, or database query optimization.'"
+    },
+    {
+      "name": "maximalist-wall-decorator",
+      "source": "./.claude/skills/maximalist-wall-decorator",
+      "description": "Expert in maximalist interior wall decoration including bold color choices, freehand paintings, statement wallpapers, eclectic lamp arrangements, gallery walls, and curated chaos. Embraces \"more is more\" philosophy with sophisticated color theory and composition. Activate on \"wall decor\", \"maximalist design\", \"bold colors\", \"gallery wall\", \"statement wallpaper\", \"freehand painting\", \"eclectic style\", \"accent wall\", \"lamp collection\", \"more is more\", \"silly decor\". NOT for minimalist design (different aesthetic), exterior design (use fancy-yard-landscaper), or professional murals (consult mural artists)."
+    },
+    {
+      "name": "mcp-creator",
+      "source": "./.claude/skills/mcp-creator",
+      "description": "Expert MCP (Model Context Protocol) server developer creating safe, performant, production-ready servers with proper security, error handling, and developer experience. Activate on 'create MCP', 'MCP server', 'build MCP', 'custom tool server', 'MCP development', 'Model Context Protocol'. NOT for using existing MCPs (just invoke them), general API development (use backend-architect), or skills/agents without external state (use skill-coach/agent-creator)."
+    },
+    {
+      "name": "mdx-sanitizer",
+      "source": "./.claude/skills/mdx-sanitizer",
+      "description": "Sanitize MDX content for Docusaurus builds. Fixes unescaped angle brackets (<, >, &lt;=, &gt;=), Liquid/Nunjucks template syntax ({{ }}), TypeScript generics (Promise&lt;T&gt;), and inline code backtick edge cases. Use when pre-commit hooks fail on bracket or Liquid validation, or when MDX/JSX build errors reference unexpected tokens. NOT for general markdown linting or prose editing."
+    },
+    {
+      "name": "mermaid-graph-renderer",
+      "source": "./.claude/skills/mermaid-graph-renderer",
+      "description": "Renders Mermaid diagrams to SVG, PNG, and PDF in both web and offline contexts. Covers client-side lazy loading, SSR trade-offs, CLI batch export, and native Rust rendering. Use when exporting diagrams to images, optimizing Mermaid rendering performance on web pages, setting up CI/CD diagram pipelines, or choosing a rendering library. Activate on \"render mermaid\", \"export diagram\", \"mermaid to png\", \"mermaid to svg\", \"mermaid performance\", \"diagram export\". NOT for writing Mermaid syntax (use mermaid-graph-writer), general image processing, or non-Mermaid diagram formats."
+    },
+    {
+      "name": "mermaid-graph-writer",
+      "source": "./.claude/skills/mermaid-graph-writer",
+      "description": "Writes precise, well-structured Mermaid diagrams for any visualization need. Use when creating flowcharts, sequence diagrams, state machines, ER models, timelines, mindmaps, Gantt charts, or any other Mermaid-supported diagram type. Activate on \"mermaid\", \"diagram\", \"flowchart\", \"sequence diagram\", \"state diagram\", \"ER diagram\", \"visualize\", \"draw graph\". NOT for rendering/exporting Mermaid to images (use mermaid-graph-renderer), ASCII art, or GUI-based design tools."
+    },
+    {
+      "name": "metal-shader-expert",
+      "source": "./.claude/skills/metal-shader-expert",
+      "description": "20 years Weta/Pixar experience in real-time graphics, Metal shaders, and visual effects. Expert in MSL shaders, PBR rendering, tile-based deferred rendering (TBDR), and GPU debugging. Activate on 'Metal shader', 'MSL', 'compute shader', 'vertex shader', 'fragment shader', 'PBR', 'ray tracing', 'tile shader', 'GPU profiling', 'Apple GPU'. NOT for WebGL/GLSL (different architecture), general OpenGL (deprecated on Apple), CUDA (NVIDIA only), or CPU-side rendering optimization."
+    },
+    {
+      "name": "microservices-patterns",
+      "source": "./.claude/skills/microservices-patterns",
+      "description": "Microservice architecture patterns \u2014 service decomposition, inter-service communication, API gateway, saga pattern, event-driven architecture, service mesh, circuit breaker, CQRS, event sourcing. Activate on \"microservices\", \"service decomposition\", \"saga pattern\", \"API gateway\", \"event-driven\", \"service mesh\", \"circuit breaker\", \"CQRS\", \"event sourcing\", \"bounded context\", \"strangler fig\", \"distributed transactions\", \"choreography vs orchestration\". NOT for monolith design, serverless functions, or Kubernetes infrastructure."
+    },
+    {
+      "name": "ml-system-design-interview",
+      "source": "./.claude/skills/ml-system-design-interview",
+      "description": "Coaches end-to-end ML system design interviews covering inference pipelines, recommendation systems, RAG, feature stores, and monitoring. Use for L6+ design rounds, ML architecture whiteboarding, system design practice, serving tradeoff analysis. Activate on \"ML system design\", \"ML interview\", \"recommendation system design\", \"RAG architecture\", \"feature store design\", \"model serving\". NOT for coding interviews, behavioral questions, ML theory quizzes, or paper implementations."
+    },
+    {
+      "name": "mobile-ux-optimizer",
+      "source": "./.claude/skills/mobile-ux-optimizer",
+      "description": "Mobile-first UX optimization for touch interfaces, responsive layouts, and performance. Use for viewport handling, touch targets, gestures, mobile navigation. Activate on mobile, touch, responsive, dvh, viewport, safe area, hamburger menu. NOT for native app development (use React Native skills), desktop-only features, or general CSS (use Tailwind docs)."
+    },
+    {
+      "name": "modern-auth-2026",
+      "source": "./.claude/skills/modern-auth-2026",
+      "description": "Modern authentication implementation for 2026 - passkeys (WebAuthn), OAuth (Google, Apple), magic links, and cross-device sync. Use for passwordless-first authentication, social login setup, Supabase Auth, Next.js auth flows, and multi-factor authentication. Activate on \"passkeys\", \"WebAuthn\", \"Google Sign-In\", \"Apple Sign-In\", \"magic link\", \"passwordless\", \"authentication\", \"login\", \"OAuth\", \"social login\". NOT for session management without auth (use standard JWT docs), authorization/RBAC (use security-auditor), or API key management (use api-architect)."
+    },
+    {
+      "name": "modern-drug-rehab-computer",
+      "source": "./.claude/skills/modern-drug-rehab-computer",
+      "description": "Comprehensive knowledge system for addiction recovery environments, supporting both residential and outpatient (IOP/PHP) patients. Expert in evidence-based treatment modalities (CBT, DBT, MI, EMDR, MAT), recovery resources, coping strategies, crisis intervention, family systems, and holistic wellness. Activate on \"rehab\", \"addiction recovery\", \"substance abuse\", \"treatment center\", \"IOP\", \"PHP\", \"detox\", \"sobriety support\", \"MAT\", \"Suboxone\", \"methadone\", \"12 step\", \"SMART Recovery\". NOT for prescribing medications (consult medical professionals), emergency overdose situations (call 911), or replacing licensed counselors/therapists."
+    },
+    {
+      "name": "monorepo-management",
+      "source": "./.claude/skills/monorepo-management",
+      "description": "Monorepo tooling, task orchestration, and workspace architecture for JavaScript/TypeScript repositories. Use when setting up Turborepo, Nx, pnpm workspaces, or npm workspaces; designing package boundaries; configuring remote caching; optimizing CI for affected packages; managing versioning with Changesets; or untangling circular dependencies. Activate on \"monorepo\", \"turborepo\", \"nx\", \"pnpm workspace\", \"task pipeline\", \"remote cache\", \"changesets\", \"CODEOWNERS\", \"circular dependency\", \"affected packages\", \"workspace\". NOT for git submodules or multi-repo federation strategies, non-JavaScript monorepos (Bazel, Pants, Buck), or single-package repository setup."
+    },
+    {
+      "name": "munger-worldly-wisdom",
+      "source": "./.claude/skills/munger-worldly-wisdom",
+      "description": "'Multidisciplinary decision-making using mental models from psychology, economics, mathematics, and science to identify high-conviction opportunities and avoid cognitive biases. Keywords: latticework, lollapalooza, circle of competence, inversion, moats. NOT for single-discipline analysis, high-frequency trading, or speculative diversification.'"
+    },
+    {
+      "name": "native-app-designer",
+      "source": "./.claude/skills/native-app-designer",
+      "description": "Creates breathtaking iOS/Mac and web apps with organic, non-AI aesthetic. Expert in SwiftUI, React animations, physics-based motion, and human-crafted design. Use for iOS/Mac app UI, React/Vue animations, native-feel web apps, physics-based motion design. Activate on \"SwiftUI\", \"iOS app\", \"native app\", \"React animation\", \"motion design\", \"UIKit\", \"physics animation\". NOT for backend logic, API design (use backend-architect), simple static sites (use web-design-expert), or pure graphic design (use design-system-creator)."
+    },
+    {
+      "name": "neobrutalist-web-designer",
+      "source": "./.claude/skills/neobrutalist-web-designer",
+      "description": "Modern web applications with authentic neobrutalist aesthetic. Bold typography, hard shadows (no blur), thick black borders, high-contrast primary colors, raw visual tension. Extrapolates neobrutalism to SaaS dashboards, e-commerce, landing pages, startup MVPs. Activate on 'neobrutalism', 'neubrutalism', 'brutalist', 'bold borders', 'hard shadows', 'raw aesthetic', 'anti-minimalism', 'gumroad style', 'figma style'. NOT for glassmorphism (use vaporwave-glassomorphic-ui-designer), Windows retro (use windows-3-1-web-designer or windows-95-web-designer), soft shadows, gradients, neumorphism."
+    },
+    {
+      "name": "nextjs-app-router-expert",
+      "source": "./.claude/skills/nextjs-app-router-expert",
+      "description": "Expert in Next.js 14/15 App Router architecture, React Server Components (RSC), Server Actions, and modern full-stack React development. Specializes in routing patterns, data fetching strategies, caching, streaming, and deployment optimization."
+    },
+    {
+      "name": "oauth-oidc-implementer",
+      "source": "./.claude/skills/oauth-oidc-implementer",
+      "description": "Expert in implementing OAuth 2.0 and OpenID Connect (OIDC) authentication flows. Specializes in secure token handling, social login integration, API authorization, and identity provider configuration. Handles both client-side and server-side flows with security best practices."
+    },
+    {
+      "name": "openapi-spec-writer",
+      "source": "./.claude/skills/openapi-spec-writer",
+      "description": "Expert in writing OpenAPI 3.0/3.1 specifications for REST APIs. Specializes in schema design, documentation best practices, API-first development, and tooling integration. Generates comprehensive API documentation that serves as both documentation and contract."
+    },
+    {
+      "name": "orchestrator",
+      "source": "./.claude/skills/orchestrator",
+      "description": "Master coordinator that delegates to specialist skills, synthesizes outputs, AND creates new skills on-the-fly when needed. Expert in problem decomposition, skill orchestration, quality assurance, and skill creation for capability gaps. Use for multi-skill coordination, complex task decomposition, workflow design. Activates on 'orchestrate', 'coordinate', 'multi-skill', 'complex task'. NOT for single-domain tasks or simple linear workflows."
+    },
+    {
+      "name": "output-contract-enforcer",
+      "source": "./.claude/skills/output-contract-enforcer",
+      "description": "Validates that a DAG node's output matches its declared JSON schema before passing to downstream nodes. The glue that makes multi-agent DAGs reliable. Use when checking output contract compliance, generating validation schemas from descriptions, or debugging contract mismatches between nodes. Activate on \"validate output\", \"output contract\", \"schema validation\", \"contract mismatch\", \"output doesn't match\". NOT for content quality assessment (use dag-quality), skill grading (use skill-grader), or general JSON schema work outside DAG context."
+    },
+    {
+      "name": "panic-room-finder",
+      "source": "./.claude/skills/panic-room-finder",
+      "description": "Expert in residential hollow space detection, hidden room discovery, and safe room planning. Helps map house dimensions, identify anomalies suggesting hidden spaces, and safely explore potential voids. Knowledge of architectural history, construction methods, and non-destructive investigation techniques. Activate on \"panic room\", \"hidden room\", \"secret room\", \"hollow space\", \"house mapping\", \"find hidden space\", \"room dimensions\", \"hidden door\", \"false wall\", \"priest hole\", \"prohibition era\", \"safe room\". NOT for illegal entry, structural modifications without permits, or bypassing security systems."
+    },
+    {
+      "name": "partner-text-coach",
+      "source": "./.claude/skills/partner-text-coach",
+      "description": "Real-time communication coach for navigating partner/relationship texts. Analyzes incoming messages for emotional subtext, suggests thoughtful responses, helps de-escalate conflict, and provides follow-up conversation strategies. Expert in attachment theory, nonviolent communication (NVC), Gottman research, and healthy relationship dynamics. Activate on \"what should I say\", \"how to respond\", \"partner text\", \"relationship message\", \"what does this mean\", \"text my partner\", \"conversation with partner\". NOT for manipulation tactics, revenge/ghosting advice, replacing couples therapy, or abusive relationships (seek professional help)."
+    },
+    {
+      "name": "performance-profiling",
+      "source": "./.claude/skills/performance-profiling",
+      "description": "Application performance profiling and bottleneck identification \u2014 Node.js profiling, Chrome DevTools, flame graphs, memory leak detection, CPU profiling, React rendering performance. Activate on \"profiling\", \"performance bottleneck\", \"flame graph\", \"memory leak\", \"slow app\", \"CPU profiling\", \"heap snapshot\", \"React re-renders\", \"EXPLAIN ANALYZE\", \"event loop lag\", \"clinic.js\", \"Core Web Vitals\". NOT for infrastructure monitoring or observability (use logging-observability), load testing (use a load-testing skill), or database schema optimization."
+    },
+    {
+      "name": "personal-finance-coach",
+      "source": "./.claude/skills/personal-finance-coach",
+      "description": "Expert personal finance coach with deep knowledge of tax optimization, investment theory (MPT, factor investing), retirement mathematics (Trinity Study, SWR research), and wealth-building strategies grounded in academic research. Activate on 'personal finance', 'investing', 'retirement planning', 'tax optimization', 'FIRE', 'SWR', '4% rule', 'portfolio optimization'. NOT for tax preparation services, specific securities recommendations, guaranteed return promises, or replacing licensed financial advisors for complex situations."
+    },
+    {
+      "name": "pet-memorial-creator",
+      "source": "./.claude/skills/pet-memorial-creator",
+      "description": "Compassionate support for pet loss, memorial creation, and honoring the bond between humans and their animal companions. Specializes in tribute writing, keepsake ideas, and navigating the unique grief of losing a pet."
+    },
+    {
+      "name": "photo-composition-critic",
+      "source": "./.claude/skills/photo-composition-critic",
+      "description": "Expert photography composition critic grounded in graduate-level visual aesthetics education, computational aesthetics research (AVA, NIMA, LAION-Aesthetics, VisualQuality-R1), and professional image analysis with custom tooling. Use for image quality assessment, composition analysis, aesthetic scoring, photo critique. Activate on \"photo critique\", \"composition analysis\", \"image aesthetics\", \"NIMA\", \"AVA dataset\", \"visual quality\". NOT for photo editing/retouching (use native-app-designer), generating images (use Stability AI directly), or basic image processing (use clip-aware-embeddings)."
+    },
+    {
+      "name": "photo-content-recognition-curation-expert",
+      "source": "./.claude/skills/photo-content-recognition-curation-expert",
+      "description": "Expert in photo content recognition, intelligent curation, and quality filtering. Specializes in face/animal/place recognition, perceptual hashing for de-duplication, screenshot/meme detection, burst photo selection, and quick indexing strategies. Activate on 'face recognition', 'face clustering', 'perceptual hash', 'near-duplicate', 'burst photo', 'screenshot detection', 'photo curation', 'photo indexing', 'NSFW detection', 'pet recognition', 'DINOHash', 'HDBSCAN faces'. NOT for GPS-based location clustering (use event-detection-temporal-intelligence-expert), color palette extraction (use color-theory-palette-harmony-expert), semantic image-text matching (use clip-aware-embeddings), or video analysis/frame extraction."
+    },
+    {
+      "name": "physics-rendering-expert",
+      "source": "./.claude/skills/physics-rendering-expert",
+      "description": "Real-time rope/cable physics using Position-Based Dynamics (PBD), Verlet integration, and constraint solvers. Expert in quaternion math, Gauss-Seidel/Jacobi solvers, and tangling detection. Activate on 'rope simulation', 'PBD', 'Position-Based Dynamics', 'Verlet', 'constraint solver', 'quaternion', 'cable dynamics', 'cloth simulation', 'leash physics'. NOT for fluid dynamics (SPH/MPM), fracture simulation (FEM), offline cinematic physics, molecular dynamics, or general game physics engines (use Unity/Unreal built-ins)."
+    },
+    {
+      "name": "pixel-art-infographic-creator",
+      "source": "./.claude/skills/pixel-art-infographic-creator",
+      "description": "Generate pixel art diagrams and infographics in retro 16-bit SNES aesthetic \u2014 recovery education visuals, flowcharts, data visualizations, process diagrams with dithering and limited palettes. NOT for photo-realistic images, vector graphics, or high-resolution illustration."
+    },
+    {
+      "name": "pixel-art-scaler",
+      "source": "./.claude/skills/pixel-art-scaler",
+      "description": "Deterministic pixel art upscaling using EPX/Scale2x, hq2x/hq4x, and xBR algorithms that add valid sub-pixels through pattern recognition. Activate on 'pixel art scaling', 'EPX', 'Scale2x', 'hq2x', 'hq4x', 'xBR', 'retro game upscaling'. NOT for AI/ML upscaling, photo enlargement, or simple nearest-neighbor."
+    },
+    {
+      "name": "playwright-e2e-tester",
+      "source": "./.claude/skills/playwright-e2e-tester",
+      "description": "Expert in end-to-end testing with Playwright, the modern cross-browser testing framework. Specializes in test generation, page object patterns, visual regression testing, and CI/CD integration. Handles complex testing scenarios including authentication flows, API mocking, and mobile emulation."
+    },
+    {
+      "name": "playwright-screenshot-inspector",
+      "source": "./.claude/skills/playwright-screenshot-inspector",
+      "description": "LLM-powered visual testing expert for automated screenshot capture, analysis, and UI verification using Playwright with multimodal AI inspection."
+    },
+    {
+      "name": "port-daddy",
+      "source": "./.claude/skills/port-daddy",
+      "description": ">- Multi-agent coordination daemon for coding agents. Use for deterministic port claims, session tracking, salvage, file claims, notes, pub/sub, tuple-space coordination, background fleets, and debugging multi-agent failures across Claude Code, Codex, Gemini CLI, Cursor, or Windsurf. NOT for production deploy orchestration, Docker or Kubernetes networking, or cloud service discovery."
+    },
+    {
+      "name": "postgresql-optimization",
+      "source": "./.claude/skills/postgresql-optimization",
+      "description": "Expert in PostgreSQL performance tuning, query optimization, and database administration. Specializes in EXPLAIN analysis, indexing strategies, connection pooling, partitioning, and production-grade PostgreSQL operations."
+    },
+    {
+      "name": "product-appeal-analyzer",
+      "source": "./.claude/skills/product-appeal-analyzer",
+      "description": "Evaluate product desirability, market positioning, and emotional resonance\u2014the complement to friction analysis. Assess whether users will WANT a product (not just use it), identity fit, trust signals, and value proposition clarity. Activate on \"will they like it\", \"market positioning\", \"appeal analysis\", \"product desirability\", \"value proposition\", \"why would someone choose this\", \"landing page review\", \"conversion optimization\", \"messaging strategy\". NOT for UX friction analysis (use ux-friction-analyzer), visual design implementation (use web-design-expert), or A/B test setup (use frontend-developer)."
+    },
+    {
+      "name": "project-management-guru-adhd",
+      "source": "./.claude/skills/project-management-guru-adhd",
+      "description": "Expert project manager for ADHD engineers managing multiple concurrent projects. Specializes in hyperfocus management, context-switching minimization, and parakeet-style gentle reminders. Activate on 'ADHD project management', 'context switching', 'hyperfocus', 'task prioritization', 'multiple projects', 'productivity for ADHD', 'task chunking', 'deadline management'. NOT for neurotypical project management, rigid waterfall processes, or general productivity advice without ADHD context."
+    },
+    {
+      "name": "prompt-engineer",
+      "source": "./.claude/skills/prompt-engineer",
+      "description": "Expert prompt optimization for LLMs and AI systems. Use PROACTIVELY when building AI features, improving agent performance, or crafting system prompts. Masters prompt patterns and techniques."
+    },
+    {
+      "name": "pwa-expert",
+      "source": "./.claude/skills/pwa-expert",
+      "description": "Progressive Web App development with Service Workers, offline support, and app-like behavior. Use for caching strategies, install prompts, push notifications, background sync. Activate on \"PWA\", \"Service Worker\", \"offline\", \"install prompt\", \"beforeinstallprompt\", \"manifest.json\", \"workbox\", \"cache-first\". NOT for native app development (use React Native), general web performance (use performance docs), or server-side rendering."
+    },
+    {
+      "name": "react-performance-optimizer",
+      "source": "./.claude/skills/react-performance-optimizer",
+      "description": "Optimize React apps for 60fps performance. Implements memoization, virtualization, code splitting, bundle optimization. Use for slow renders, large lists, bundle bloat. Activate on \"React performance\", \"slow render\", \"useMemo\", \"bundle size\", \"virtualization\". NOT for backend optimization, non-React frameworks, or premature optimization."
+    },
+    {
+      "name": "reactflow-expert",
+      "source": "./.claude/skills/reactflow-expert",
+      "description": "Builds DAG visualizations using ReactFlow v12 with custom nodes, ELKjs auto-layout, Zustand state management, and live state updates via WebSocket. Use when implementing workflow visualization dashboards, creating custom agent node components, integrating ELK layout algorithms, or wiring execution state into React components. Activate on \"ReactFlow\", \"workflow visualization\", \"DAG visualization\", \"ELKjs\", \"custom nodes\", \"node-based editor\", \"graph visualization\". NOT for writing Mermaid diagrams (use mermaid-graph-writer), general React development, or static diagram rendering."
+    },
+    {
+      "name": "reactive-dashboard-performance",
+      "source": "./.claude/skills/reactive-dashboard-performance",
+      "description": "Expert in building blazing-fast reactive dashboards with comprehensive testing. Masters React performance patterns, testing strategies for async components, and real-world patterns from Linear, Vercel, Notion."
+    },
+    {
+      "name": "real-time-collaboration-engine",
+      "source": "./.claude/skills/real-time-collaboration-engine",
+      "description": "Build real-time collaborative editing with WebSockets, OT/CRDT conflict resolution, and presence awareness. Implements cursor tracking, optimistic updates, and offline sync. Use for collaborative editors, whiteboards, video editing. Activate on \"real-time collaboration\", \"WebSocket sync\", \"multiplayer editing\", \"CRDT\", \"presence awareness\". NOT for simple chat, request-response APIs, or single-user apps."
+    },
+    {
+      "name": "recursive-synthesis",
+      "source": "./.claude/skills/recursive-synthesis",
+      "description": "Orchestrate multi-agent collaborative document synthesis through 6 phases - Divergence, Synthesis, Commentary, Consolidation, Reality Check, Final Merge. Produces authoritative founding documents from complex multi-perspective inputs. Use for constitutional documents, architecture decisions, organizational charters, or any document requiring rigorous multi-perspective synthesis. Activates on \"synthesize document\", \"multi-agent authorship\", \"collaborative synthesis\", \"founding document\", \"architecture document\", \"recursive synthesis\", \"constitutional document\", \"multi-perspective document\". NOT for simple document writing, single-author tasks, quick summaries, or documents that don't require adversarial review."
+    },
+    {
+      "name": "refactoring-surgeon",
+      "source": "./.claude/skills/refactoring-surgeon",
+      "description": "'Expert code refactoring specialist for improving code quality without changing behavior. Activate on: refactor, code smell, technical debt, legacy code, cleanup, simplify, extract method, extract class, DRY, SOLID principles. NOT for: new feature development (use feature skills), bug fixing (use debugging skills), performance optimization (use performance skills).'"
+    },
+    {
+      "name": "research-analyst",
+      "source": "./.claude/skills/research-analyst",
+      "description": "Conducts thorough landscape research, competitive analysis, best practices evaluation, and evidence-based recommendations. Expert in market research and trend analysis."
+    },
+    {
+      "name": "research-craft",
+      "source": "./.claude/skills/research-craft",
+      "description": "Systematic research methodology for formulating problems, building evidence-based arguments, and communicating findings in academic contexts. For scholarly writing, thesis development, and knowledge contribution. NOT for creative writing, journalistic reporting, or business analytics."
+    },
+    {
+      "name": "rest-api-design",
+      "source": "./.claude/skills/rest-api-design",
+      "description": "Design REST API endpoints with Zod validation and OpenAPI documentation. Use when creating new API routes, validating request/response schemas, or updating API documentation. Activates for endpoint design, schema validation, error handling, and API docs."
+    },
+    {
+      "name": "security-auditor",
+      "source": "./.claude/skills/security-auditor",
+      "description": "Security vulnerability scanner and OWASP compliance auditor for codebases. Dependency scanning (npm audit, pip-audit), secret detection (high-entropy strings, API keys), SAST for injection/XSS vulnerabilities, and security posture reports. Activate on 'security audit', 'vulnerability scan', 'OWASP', 'secret detection', 'dependency check', 'CVE', 'security review', 'penetration testing prep'. NOT for runtime WAF configuration (use infrastructure tools), network security/firewalls, or compliance certifications like SOC2/HIPAA (legal/organizational)."
+    },
+    {
+      "name": "senior-coding-interview",
+      "source": "./.claude/skills/senior-coding-interview",
+      "description": "Prepare for L6+ coding interviews \u2014 in-memory databases, concurrency, state management, iterative follow-ups. Use when practicing real-world system-building problems or preparing communication strategies for live coding. Activate on \"coding interview\", \"staff interview\", \"codesignal\", \"live coding\", \"rate limiter interview\". NOT for LeetCode/competitive programming, behavioral interviews, or system design whiteboard."
+    },
+    {
+      "name": "seo-visibility-expert",
+      "source": "./.claude/skills/seo-visibility-expert",
+      "description": "Comprehensive SEO, discoverability, and AI crawler optimization for web projects. Use for technical SEO audits, llms.txt/robots.txt setup, schema markup, social launch strategies (Product Hunt, HN, Reddit), and Answer Engine Optimization (AEO). Activate on 'SEO', 'discoverability', 'llms.txt', 'robots.txt', 'Product Hunt', 'launch strategy', 'get traffic', 'be found', 'search ranking'. NOT for paid advertising, PPC campaigns, or social media content creation (use marketing skills)."
+    },
+    {
+      "name": "site-reliability-engineer",
+      "source": "./.claude/skills/site-reliability-engineer",
+      "description": "Docusaurus build health validation and deployment safety for Claude Skills showcase. Pre-commit MDX validation (Liquid syntax, angle brackets, prop mismatches), pre-build link checking, post-build health reports. Activate on 'build errors', 'commit hooks', 'deployment safety', 'site health', 'MDX validation'. NOT for general DevOps (use deployment-engineer), Kubernetes/cloud infrastructure (use kubernetes-architect), runtime monitoring (use observability-engineer), or non-Docusaurus projects."
+    },
+    {
+      "name": "skill-architect",
+      "source": "./.claude/skills/skill-architect",
+      "description": "Design, create, audit, and improve Claude Agent Skills with expert-level progressive disclosure. Use when building new skills, reviewing existing skills, debugging activation failures, encoding domain expertise, or designing skills for subagent consumption. Activate on \"create skill\", \"improve skill\", \"skill audit\", \"skill review\", \"activation debugging\", \"shibboleth\", \"progressive disclosure\", \"skill description\". NOT for general Claude Code features, runtime debugging, non-skill coding, or MCP server implementation."
+    },
+    {
+      "name": "skill-coach",
+      "source": "./.claude/skills/skill-coach",
+      "description": "'Guides creation of high-quality Agent Skills with domain expertise, anti-pattern detection, and progressive disclosure best practices. Activate on keywords: create skill, review skill, skill quality, skill best practices, skill anti-patterns, improve skill, skill audit. NOT for general coding advice, slash commands, MCP development, or non-skill Claude Code features.'"
+    },
+    {
+      "name": "skill-creator",
+      "source": "./.claude/skills/skill-creator",
+      "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations."
+    },
+    {
+      "name": "skill-documentarian",
+      "source": "./.claude/skills/skill-documentarian",
+      "description": "Documentation expert for Claude Skills showcase website. Maintains skill-to-website sync, manages tag taxonomy and badges, creates blog-style artifacts, and preserves multi-skill collaborations for posterity. Activate on 'document', 'sync skills', 'create artifact', 'validate skills', 'add tags', 'tag management', 'badge', 'metadata'. NOT for code implementation (use domain skills), design creation (use web-design-expert), testing (use test-automator), or project planning (use orchestrator)."
+    },
+    {
+      "name": "skill-grader",
+      "source": "./.claude/skills/skill-grader",
+      "description": "Evaluates Claude Agent Skills on 10 quality axes with letter grades (A+ through F) and specific improvement recommendations. Use when auditing a skill, comparing skills, prioritizing improvements, or performing quality control on a skill library. Activate on \"grade skill\", \"evaluate skill\", \"skill quality\", \"skill audit\", \"skill review\", \"rate skill\". NOT for creating skills (use skill-architect), grading code quality, or evaluating non-skill documents."
+    },
+    {
+      "name": "skill-logger",
+      "source": "./.claude/skills/skill-logger",
+      "description": "Logs and scores skill usage quality, tracking output effectiveness, user satisfaction signals, and improvement opportunities. Expert in skill analytics, quality metrics, feedback loops, and continuous improvement. Activate on \"skill logging\", \"skill quality\", \"skill analytics\", \"skill scoring\", \"skill performance\", \"skill metrics\", \"track skill usage\", \"skill improvement\". NOT for creating skills (use agent-creator), skill documentation (use skill-coach), or runtime debugging (use debugger skills)."
+    },
+    {
+      "name": "skillful-subagent-creator",
+      "source": "./.claude/skills/skillful-subagent-creator",
+      "description": "Creates Claude subagents equipped with curated skills for solving problems within DAG workflows. Use when designing a specialist subagent, selecting skills for a subagent, writing the 4-section subagent prompt, or wiring subagents into orchestration DAGs. Activate on \"create subagent\", \"subagent with skills\", \"specialist agent\", \"agent DAG\", \"orchestrate agents\", \"skill-equipped agent\". NOT for creating skills themselves (use skill-architect), general Claude Code usage, or single-agent prompting without skills."
+    },
+    {
+      "name": "sober-addict-protector",
+      "source": "./.claude/skills/sober-addict-protector",
+      "description": "Daily protection and relapse prevention companion for people in recovery. Expert in identifying high-risk situations, managing triggers, maintaining accountability, encouraging therapy/couples counseling investment, and building sustainable recovery habits. Activate on \"relapse prevention\", \"staying sober\", \"trigger management\", \"recovery daily\", \"sobriety check-in\", \"high risk situation\", \"couples therapy recovery\", \"protect sobriety\". NOT for active crisis (call 988 or your sponsor), prescribing medications (consult doctors), or replacing counselors/therapists."
+    },
+    {
+      "name": "sound-engineer",
+      "source": "./.claude/skills/sound-engineer",
+      "description": "Expert in spatial audio, procedural sound design, game audio middleware, and app UX sound design. Specializes in HRTF/Ambisonics, Wwise/FMOD integration, UI sound design, and adaptive music systems. Activate on 'spatial audio', 'HRTF', 'binaural', 'Wwise', 'FMOD', 'procedural sound', 'footstep system', 'adaptive music', 'UI sounds', 'notification audio', 'sonic branding'. NOT for music composition/production (use DAW), audio post-production for film (linear media), voice cloning/TTS (use voice-audio-engineer), podcast editing (use standard audio editors), or hardware design."
+    },
+    {
+      "name": "speech-pathology-ai",
+      "source": "./.claude/skills/speech-pathology-ai",
+      "description": "Expert speech-language pathologist specializing in AI-powered speech therapy, phoneme analysis, articulation visualization, voice disorders, fluency intervention, and assistive communication technology. Activate on 'speech therapy', 'articulation', 'phoneme analysis', 'voice disorder', 'fluency', 'stuttering', 'AAC', 'pronunciation', 'speech recognition', 'mellifluo.us'. NOT for general audio processing, music production, or voice acting coaching without clinical context."
+    },
+    {
+      "name": "supabase-admin",
+      "source": "./.claude/skills/supabase-admin",
+      "description": "Supabase administration, RLS policies, migrations, and schema design. Use for database architecture, Row Level Security, performance tuning, auth integration. Activate on \"Supabase\", \"RLS\", \"migration\", \"policy\", \"schema\", \"auth.uid()\". NOT for Supabase Auth UI configuration (use dashboard), edge functions (use cloudflare-worker-dev), or general SQL without Supabase context."
+    },
+    {
+      "name": "swift-executor",
+      "source": "./.claude/skills/swift-executor",
+      "description": "Rapid task execution without hesitation or deterrence. Expert in overcoming blockers, making quick decisions, and maintaining forward momentum. Use for urgent tasks, breaking through impediments, decisive action. Activates on 'swift', 'execute quickly', 'undeterred', 'overcome blocker', 'just do it'. NOT for strategic planning, careful analysis, or research tasks."
+    },
+    {
+      "name": "swiss-modern-web-designer",
+      "source": "./.claude/skills/swiss-modern-web-designer",
+      "description": "Modern web applications with authentic Swiss International Typographic Style. Mathematical grid systems, strict typographic hierarchy, generous whitespace, objective clarity. Extrapolates M\u00fcller-Brockmann's grid principles to SaaS dashboards, developer tools, fintech, and enterprise platforms. Activate on 'swiss modern', 'swiss design', 'international typographic style', 'grid system', 'typographic hierarchy', 'm\u00fcller-brockmann', 'helvetica aesthetic', 'minimal professional', 'stripe style', 'linear style', 'vercel style', 'clean grid'. NOT for neobrutalism (use neobrutalist-web-designer), Windows retro (use windows-3-1-web-designer or windows-95-web-designer), glassmorphism (use vaporwave-glassomorphic-ui-designer), maximalism, decorative, experimental."
+    },
+    {
+      "name": "systems-thinking",
+      "source": "./.claude/skills/systems-thinking",
+      "description": "Analyze complex systems through stocks, flows, and feedback loops to find high-leverage interventions. For organizational, environmental, social, and technical systems exhibiting circular causality. NOT for linear problems or simple cause-effect chains."
+    },
+    {
+      "name": "task-decomposer",
+      "source": "./.claude/skills/task-decomposer",
+      "description": "Breaks natural-language problem descriptions into sub-tasks suitable for DAG nodes. The entry point of the meta-DAG. Identifies phases, dependencies, parallelization opportunities, and vague/pluripotent nodes that can't yet be specified. Uses domain meta-skills when available. Activate on \"decompose task\", \"break down problem\", \"plan workflow\", \"what are the steps\", \"sub-tasks\", \"task breakdown\". NOT for executing the decomposed tasks (use dag-runtime), building the DAG structure (use dag-planner), or matching skills to nodes (use dag-skills-matcher)."
+    },
+    {
+      "name": "team-builder",
+      "source": "./.claude/skills/team-builder",
+      "description": "Designs high-performing team structures using organizational psychology AND creates new skills on-the-fly when team needs unmet expertise. Expert in team composition, personality balancing, collaboration ritual design, and skill creation for missing capabilities. Use for team design, role definition, skill gap identification. Activates on 'team building', 'team composition', 'skills needed', 'what skills'. NOT for general project management or solo work planning."
+    },
+    {
+      "name": "tech-entrepreneur-coach-adhd",
+      "source": "./.claude/skills/tech-entrepreneur-coach-adhd",
+      "description": "Big tech ML engineer to indie founder transition coach. Expert in idea validation, MVP development, marketing, monetization, and sustainable growth for ADHD entrepreneurs. Activate on 'entrepreneur', 'indie founder', 'startup', 'MVP', 'monetization', 'big tech to indie', 'ADHD business', 'app launch', 'side project'. NOT for neurotypical entrepreneurship, VC-backed startups, or traditional business consulting without ADHD context."
+    },
+    {
+      "name": "tech-presentation-interview",
+      "source": "./.claude/skills/tech-presentation-interview",
+      "description": "Prepares for \"reverse system design\" rounds where you present YOUR past technical work. Use for project selection, narrative arc structuring, whiteboard diagrams, depth calibration, and hostile Q&A handling. Activate on \"tech presentation\", \"present your work\", \"reverse system design\", \"project deep dive\". NOT for designing hypothetical systems, resume writing, or career narrative extraction."
+    },
+    {
+      "name": "technical-writer",
+      "source": "./.claude/skills/technical-writer",
+      "description": "'Expert technical documentation specialist for developer docs, API references, and runbooks. Activate on: documentation, docs, README, API reference, technical writing, user guide, runbook, ADR, changelog, release notes, tutorial, how-to guide. NOT for: marketing copy (use copywriting skills), blog posts (use content skills), code comments (handled by developers).'"
+    },
+    {
+      "name": "terraform-iac-expert",
+      "source": "./.claude/skills/terraform-iac-expert",
+      "description": "Terraform and OpenTofu infrastructure as code \u2014 module design, state management, multi-environment setups, remote backends, secrets management, CI/CD integration. NOT for Pulumi, CDK, Ansible, or Kubernetes manifests."
+    },
+    {
+      "name": "test-automation-expert",
+      "source": "./.claude/skills/test-automation-expert",
+      "description": "Comprehensive test automation specialist covering unit, integration, and E2E testing strategies. Expert in Jest, Vitest, Playwright, Cypress, pytest, and modern testing frameworks. Guides test pyramid design, coverage optimization, flaky test detection, and CI/CD integration. Activate on 'test strategy', 'unit tests', 'integration tests', 'E2E testing', 'test coverage', 'flaky tests', 'mocking', 'test fixtures', 'TDD', 'BDD', 'test automation'. NOT for manual QA processes, load/performance testing (use performance-engineer), or security testing (use security-auditor)."
+    },
+    {
+      "name": "typescript-advanced-patterns",
+      "source": "./.claude/skills/typescript-advanced-patterns",
+      "description": "'Advanced TypeScript type system patterns for production codebases. [What: branded types for nominal typing, discriminated unions, template literal types, conditional types, the infer keyword, satisfies operator, const assertions, Zod schema inference, type-safe event emitters, exhaustive switch checking] [When: designing domain models, building type-safe APIs, creating reusable generic utilities, eliminating runtime bugs with compile-time guarantees, refactoring any-typed codebases] [Keywords: branded types, discriminated union, template literal types, conditional types, infer, satisfies, const assertion, Zod inference, exhaustive, mapped types, utility types, nominal typing, type narrowing, generic constraints] NOT for basic TypeScript syntax or React component typing (use a React-specific skill).'"
+    },
+    {
+      "name": "typography-expert",
+      "source": "./.claude/skills/typography-expert",
+      "description": "Working type director's reference for selecting, pairing, and shipping typefaces with real taste. Covers a broad, opinionated catalog of typefaces and foundries (libre through commercial), a mood/era/register-driven selection framework that never collapses to one answer, font pairing as logic, fluid type scales, variable-font axes (incl. opsz/GRAD), OpenType features, web-font performance (subsetting, font-display, size-adjust fallback metrics), and licensing literacy (SIL OFL vs commercial EULA, desktop/web/app, trials). Explicitly retires the overused AI-design defaults (Inter, Roboto, Montserrat, Poppins, Fraunces, Geist, S\u00f6hne, the Fontshare/ITF starter pack) and names fresher alternatives in every role. Use for font selection, pairing, type scales, web-font optimization, variable fonts, OpenType, and typographic systems. NOT for logo/wordmark design, icon fonts, general CSS, or image-based/raster typography."
+    },
+    {
+      "name": "ultimate-seo-geo-skill",
+      "source": "./.claude/skills/ultimate-seo-geo-skill",
+      "description": "\"Use this skill when running SEO audits, optimizing for AI search engines (AI Overviews, ChatGPT, Perplexity), generating schema markup, diagnosing traffic drops, fixing Core Web Vitals, managing site migrations, or building keyword strategies. Runs scored full-site audits (0-100 Health Score) across 21 modules including technical SEO, E-E-A-T, hreflang, and programmatic SEO. Three modes: Audit, Plan, Execute. NOT for PPC/Ads, social media management, or generic marketing strategy unrelated to organic search.\""
+    },
+    {
+      "name": "ux-friction-analyzer",
+      "source": "./.claude/skills/ux-friction-analyzer",
+      "description": "Comprehensive UX analysis using cognitive psychology, ADHD-friendly design, Gestalt principles, and flow state engineering. Specializes in friction audits, user journey simulation, cognitive load optimization, and Fitts' Law application. Activate on \"analyze UX\", \"friction audit\", \"user journey\", \"ADHD-friendly\", \"optimize flow\", \"reduce cognitive load\", \"UX audit\", \"conversion optimization\". NOT for visual design execution (use web-design-expert), A/B testing implementation (use frontend-developer), or accessibility compliance auditing (use accessibility-auditor)."
+    },
+    {
+      "name": "values-behavioral-interview",
+      "source": "./.claude/skills/values-behavioral-interview",
+      "description": "Coaches behavioral and values-fit interview preparation with negative framing, deep follow-ups, introspection, and mission alignment. Use for culture-fit rounds, Anthropic behavioral prep, failure stories, and self-awareness drilling. Activate on \"behavioral interview\", \"values interview\", \"culture fit\", \"tell me about a failure\". NOT for coding interviews, system design, resume writing, or technical deep dives."
+    },
+    {
+      "name": "vaporwave-glassomorphic-ui-designer",
+      "source": "./.claude/skills/vaporwave-glassomorphic-ui-designer",
+      "description": "Vaporwave + glassomorphic UI designer for photo/memory apps. Masters SwiftUI Material effects, neon pastels, frosted glass blur, retro-futuristic design. Expert in 2025 UI trends (glassmorphism, neubrutalism, Y2K), iOS HIG, dark mode, accessibility, Metal shaders. Activate on 'vaporwave', 'glassmorphism', 'SwiftUI design', 'frosted glass', 'neon aesthetic', 'retro-futuristic', 'Y2K design'. NOT for backend/API (use backend-architect), Windows 3.1 retro (use windows-3-1-web-designer), generic web (use web-design-expert), non-photo apps (use native-app-designer)."
+    },
+    {
+      "name": "vercel-deployment",
+      "source": "./.claude/skills/vercel-deployment",
+      "description": "Deploy Next.js and React applications to Vercel \u2014 project setup, environment variables, edge functions, build troubleshooting, preview deployments, monorepo configuration. NOT for AWS/GCP/Azure deployment, self-hosted solutions, or Cloudflare Pages."
+    },
+    {
+      "name": "very-long-text-summarization",
+      "source": "./.claude/skills/very-long-text-summarization",
+      "description": "Summarizes very long texts (books, handbooks, biographies, codebases) using hierarchical multi-pass extraction with cheap model armies. Produces structured knowledge maps, not just summaries. Use when processing 50+ page documents, professional handbooks, career biographies, or any text too large for a single context window. Activate on \"summarize book\", \"summarize handbook\", \"long document\", \"extract knowledge\", \"distill text\", \"professional biography\". NOT for short text summarization (&lt;10 pages), real-time chat summarization, or code documentation (use technical-writer)."
+    },
+    {
+      "name": "vibe-matcher",
+      "source": "./.claude/skills/vibe-matcher",
+      "description": "Synesthete designer that translates emotional vibes and brand keywords into concrete visual DNA (colors, typography, layouts, interactions). Use when users describe desired \"feel\" (edgy, trustworthy, premium, playful, minimal) and need specific design specifications. NOT for technical implementation or coding."
+    },
+    {
+      "name": "video-processing-editing",
+      "source": "./.claude/skills/video-processing-editing",
+      "description": "FFmpeg automation for cutting, trimming, concatenating videos. Audio mixing, timeline editing, transitions, effects. Export optimization for YouTube, social media. Subtitle handling, color grading, batch processing. Use for videogen projects, content creation, automated video production. Activate on \"video editing\", \"FFmpeg\", \"trim video\", \"concatenate\", \"transitions\", \"export optimization\". NOT for real-time video editing UI, 3D compositing, or motion graphics."
+    },
+    {
+      "name": "vitest-testing-patterns",
+      "source": "./.claude/skills/vitest-testing-patterns",
+      "description": "Write tests using Vitest and React Testing Library. Use when creating unit tests, component tests, integration tests, or mocking dependencies. Activates for test file creation, mock patterns, coverage, and testing best practices."
+    },
+    {
+      "name": "voice-audio-engineer",
+      "source": "./.claude/skills/voice-audio-engineer",
+      "description": "Expert in voice synthesis, TTS, voice cloning, podcast production, speech processing, and voice UI design via ElevenLabs integration. Specializes in vocal clarity, loudness standards (LUFS), de-essing, dialogue mixing, and voice transformation. Activate on 'TTS', 'text-to-speech', 'voice clone', 'voice synthesis', 'ElevenLabs', 'podcast', 'voice recording', 'speech-to-speech', 'voice UI', 'audiobook', 'dialogue'. NOT for spatial audio (use sound-engineer), music production (use DAW tools), game audio middleware (use sound-engineer), sound effects generation (use sound-engineer with ElevenLabs SFX), or live concert audio."
+    },
+    {
+      "name": "vr-avatar-engineer",
+      "source": "./.claude/skills/vr-avatar-engineer",
+      "description": "Expert in photorealistic and stylized VR avatar systems for Apple Vision Pro, Meta Quest, and cross-platform metaverse. Specializes in facial tracking (52+ blend shapes), subsurface scattering, Persona-style generation, Photon networking, and real-time LOD. Activate on 'VR avatar', 'Vision Pro Persona', 'Meta avatar', 'facial tracking', 'blend shapes', 'avatar networking', 'photorealistic avatar'. NOT for 2D profile pictures (use image generation), non-VR game characters (use game engine tools), static 3D models (use modeling tools), or motion capture hardware setup."
+    },
+    {
+      "name": "web-cloud-designer",
+      "source": "./.claude/skills/web-cloud-designer",
+      "description": "Creates realistic cloud effects for web using SVG filters (feTurbulence, feDisplacementMap), CSS animations, and layering techniques. Use for atmospheric backgrounds, weather effects, skyboxes, parallax scenes, and decorative cloud elements. Activate on \"cloud effect\", \"SVG clouds\", \"realistic clouds\", \"atmospheric background\", \"sky animation\", \"feTurbulence\", \"weather effects\", \"parallax clouds\". NOT for 3D rendering (use WebGL/Three.js skills), photo manipulation (use image editing tools), weather data APIs (use data integration skills), or simple CSS gradients without volumetric effects."
+    },
+    {
+      "name": "web-design-expert",
+      "source": "./.claude/skills/web-design-expert",
+      "description": "Creates unique web designs with brand identity, color palettes, typography, and modern UI/UX patterns. Use for brand identity development, visual design systems, layout composition, and responsive web design. Activate on \"web design\", \"brand identity\", \"color palette\", \"UI design\", \"visual design\", \"layout\". NOT for typography details (use typography-expert), color theory deep-dives (use color-theory-expert), design system tokens (use design-system-creator), or code implementation without design direction."
+    },
+    {
+      "name": "web-wave-designer",
+      "source": "./.claude/skills/web-wave-designer",
+      "description": "Creates realistic ocean and water wave effects for web using SVG filters (feTurbulence, feDisplacementMap), CSS animations, and layering techniques. Use for ocean backgrounds, underwater distortion, beach scenes, ripple effects, liquid glass, and water-themed UI. Activate on \"ocean wave\", \"water effect\", \"SVG water\", \"ripple animation\", \"underwater distortion\", \"liquid glass\", \"wave animation\", \"feTurbulence water\", \"beach waves\", \"sea foam\". NOT for 3D ocean simulation (use WebGL/Three.js), video water effects (use video editing), physics-based fluid simulation (use canvas/WebGL), or simple gradient backgrounds without wave motion."
+    },
+    {
+      "name": "web-weather-creator",
+      "source": "./.claude/skills/web-weather-creator",
+      "description": "Master of stylized atmospheric effects using SVG filters and CSS animations. Creates clouds, waves, lightning, rain, fog, aurora borealis, god rays, lens flares, twilight skies, and ocean spray\u2014all with a premium aesthetic that's stylized but never cheap-looking."
+    },
+    {
+      "name": "webapp-testing",
+      "source": "./.claude/skills/webapp-testing",
+      "description": "'Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs. Activate on: Playwright, webapp testing, browser automation, E2E testing, UI testing. NOT for API-only testing without browser, unit tests, or mobile app testing.'"
+    },
+    {
+      "name": "websocket-streaming",
+      "source": "./.claude/skills/websocket-streaming",
+      "description": "Implements real-time bidirectional communication between DAG execution engines and visualization dashboards via WebSocket. Covers connection management, typed event protocols, reconnection with backoff, and React hook integration. Activate on \"WebSocket\", \"real-time updates\", \"live streaming\", \"execution events\", \"state streaming\", \"push notifications\". NOT for HTTP REST APIs, server-sent events (SSE), or general networking."
+    },
+    {
+      "name": "wedding-immortalist",
+      "source": "./.claude/skills/wedding-immortalist",
+      "description": "Transform thousands of wedding photos and hours of footage into an immersive 3D Gaussian Splatting experience with theatre mode replay, face-clustered guest roster, and AI-curated best photos per person. Expert in 3DGS pipelines, face clustering, aesthetic scoring, and adaptive design matching the couple's wedding theme (disco, rustic, modern, LGBTQ+ celebrations). Activate on \"wedding photos\", \"wedding video\", \"3D wedding\", \"Gaussian Splatting wedding\", \"wedding memory\", \"wedding immortalize\", \"face clustering wedding\", \"best wedding photos\". NOT for general photo editing (use native-app-designer), non-wedding 3DGS (use drone-inspection-specialist), or event planning (not a wedding planner)."
+    },
+    {
+      "name": "win31-audio-design",
+      "source": "./.claude/skills/win31-audio-design",
+      "description": "Expert in Windows 3.1 era sound vocabulary for modern web/mobile apps. Creates satisfying retro UI sounds using CC-licensed 8-bit audio, Web Audio API, and haptic coordination. Activate on 'win31 sounds', 'retro audio', '90s sound effects', 'chimes', 'tada', 'ding', 'satisfying UI sounds'. NOT for modern flat UI sounds, voice synthesis, or music composition."
+    },
+    {
+      "name": "win31-pixel-art-designer",
+      "source": "./.claude/skills/win31-pixel-art-designer",
+      "description": "Expert in Windows 3.1 era pixel art and graphics. Creates icons, banners, splash screens, and UI assets with authentic 16/256-color palettes, dithering patterns, and Program Manager styling. Activate on 'win31 icons', 'pixel art 90s', 'retro icons', '16-color', 'dithering', 'program manager icons', 'VGA palette'. NOT for modern flat icons, vaporwave art, or high-res illustrations."
+    },
+    {
+      "name": "windows-3-1-web-designer",
+      "source": "./.claude/skills/windows-3-1-web-designer",
+      "description": "Modern web applications with authentic Windows 3.1 aesthetic. Solid navy title bars, Program Manager navigation, beveled borders, single window controls. Extrapolates Win31 to AI chatbots (Cue Card paradigm), mobile UIs (pocket computing). Activate on 'windows 3.1', 'win31', 'program manager', 'retro desktop', '90s aesthetic', 'beveled'. NOT for Windows 95 (use windows-95-web-designer - has gradients, Start menu), vaporwave/synthwave, macOS, flat design."
+    },
+    {
+      "name": "windows-95-web-designer",
+      "source": "./.claude/skills/windows-95-web-designer",
+      "description": "Modern web applications with authentic Windows 95 aesthetic. Gradient title bars, Start menu paradigm, taskbar patterns, 3D beveled chrome. Extrapolates Win95 to AI chatbots, mobile UIs, responsive layouts. Activate on 'windows 95', 'win95', 'start menu', 'taskbar', 'retro desktop', '95 aesthetic', 'clippy'. NOT for Windows 3.1 (use windows-3-1-web-designer), vaporwave/synthwave, macOS, flat design."
+    },
+    {
+      "name": "wisdom-accountability-coach",
+      "source": "./.claude/skills/wisdom-accountability-coach",
+      "description": "Longitudinal memory tracking, philosophy teaching, and personal accountability with compassion. Expert in pattern recognition, Stoicism/Buddhism, and growth guidance. Activate on 'accountability', 'philosophy', 'Stoicism', 'Buddhism', 'personal growth', 'commitment tracking', 'wisdom teaching'. NOT for therapy or mental health treatment (refer to professionals), crisis intervention, or replacing professional coaching credentials."
+    }
+  ]
+}

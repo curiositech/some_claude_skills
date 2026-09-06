@@ -1,0 +1,4 @@
+{
+  "name": "database-design-patterns",
+  "description": "Schema design, normalization decisions, indexing strategies, and migration safety for relational databases. Use when designing tables, choosing between normalize vs denormalize, selecting index types, planning zero-downtime migrations, or setting up connection pooling. Activate on \"schema design\", \"normalization\", \"denormalization\", \"foreign key\", \"index strategy\", \"migration\", \"connection pooling\", \"composite key\", \"surrogate key\", \"soft delete\", \"polymorphic association\". NOT for PostgreSQL-specific query tuning or EXPLAIN analysis (use postgresql-optimization), NoSQL or document database design, or cloud database provisioning."
+}

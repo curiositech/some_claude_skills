@@ -1,0 +1,4 @@
+{
+  "name": "design-accessibility-auditor",
+  "description": "Audit designs, color palettes, and UI components for WCAG 2.1 accessibility compliance, providing specific fixes for contrast, touch targets, focus indicators, and screen reader support. NOT for color harmony aesthetics or design system creation."
+}

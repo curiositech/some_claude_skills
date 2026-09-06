@@ -1,0 +1,4 @@
+{
+  "name": "microservices-patterns",
+  "description": "Microservice architecture patterns \u2014 service decomposition, inter-service communication, API gateway, saga pattern, event-driven architecture, service mesh, circuit breaker, CQRS, event sourcing. Activate on \"microservices\", \"service decomposition\", \"saga pattern\", \"API gateway\", \"event-driven\", \"service mesh\", \"circuit breaker\", \"CQRS\", \"event sourcing\", \"bounded context\", \"strangler fig\", \"distributed transactions\", \"choreography vs orchestration\". NOT for monolith design, serverless functions, or Kubernetes infrastructure."
+}

@@ -1,0 +1,4 @@
+{
+  "name": "liaison",
+  "description": "Translate multi-agent ecosystem activity into human-readable status briefings, decision requests, and progress summaries. Use for 'status update', 'brief me', 'what happened', 'summarize progress'. NOT for project planning (use project-management-guru-adhd), code review, or technical documentation."
+}

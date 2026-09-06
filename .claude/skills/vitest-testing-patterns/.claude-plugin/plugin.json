@@ -1,0 +1,4 @@
+{
+  "name": "vitest-testing-patterns",
+  "description": "Write tests using Vitest and React Testing Library. Use when creating unit tests, component tests, integration tests, or mocking dependencies. Activates for test file creation, mock patterns, coverage, and testing best practices."
+}

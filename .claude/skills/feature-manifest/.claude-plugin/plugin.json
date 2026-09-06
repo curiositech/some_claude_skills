@@ -1,0 +1,4 @@
+{
+  "name": "feature-manifest",
+  "description": "Manage feature manifests for code traceability \u2014 create features, validate manifest health, map features to code, update changelogs. Activates for 'feature manifest', 'feature tracking', 'code traceability'. NOT for project management, issue tracking, or git workflow."
+}

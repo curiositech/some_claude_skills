@@ -1,0 +1,4 @@
+{
+  "name": "web-wave-designer",
+  "description": "Creates realistic ocean and water wave effects for web using SVG filters (feTurbulence, feDisplacementMap), CSS animations, and layering techniques. Use for ocean backgrounds, underwater distortion, beach scenes, ripple effects, liquid glass, and water-themed UI. Activate on \"ocean wave\", \"water effect\", \"SVG water\", \"ripple animation\", \"underwater distortion\", \"liquid glass\", \"wave animation\", \"feTurbulence water\", \"beach waves\", \"sea foam\". NOT for 3D ocean simulation (use WebGL/Three.js), video water effects (use video editing), physics-based fluid simulation (use canvas/WebGL), or simple gradient backgrounds without wave motion."
+}

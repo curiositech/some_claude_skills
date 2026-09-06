@@ -1,0 +1,4 @@
+{
+  "name": "dependency-management",
+  "description": "Managing third-party dependencies \u2014 version pinning, security auditing, license compliance, update workflows, lockfile management, supply chain security. Activate on \"npm audit\", \"dependabot\", \"renovate\", \"pin versions\", \"dependency update\", \"supply chain\", \"license compliance\", \"lockfile\", \"security advisory\", \"typosquatting\", \"SBOM\". NOT for internal monorepo package management (use monorepo-management) or publishing your own packages to npm/PyPI."
+}

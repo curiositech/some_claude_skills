@@ -1,0 +1,4 @@
+{
+  "name": "monorepo-management",
+  "description": "Monorepo tooling, task orchestration, and workspace architecture for JavaScript/TypeScript repositories. Use when setting up Turborepo, Nx, pnpm workspaces, or npm workspaces; designing package boundaries; configuring remote caching; optimizing CI for affected packages; managing versioning with Changesets; or untangling circular dependencies. Activate on \"monorepo\", \"turborepo\", \"nx\", \"pnpm workspace\", \"task pipeline\", \"remote cache\", \"changesets\", \"CODEOWNERS\", \"circular dependency\", \"affected packages\", \"workspace\". NOT for git submodules or multi-repo federation strategies, non-JavaScript monorepos (Bazel, Pants, Buck), or single-package repository setup."
+}

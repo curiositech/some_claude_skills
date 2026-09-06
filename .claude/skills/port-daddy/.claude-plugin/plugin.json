@@ -1,0 +1,4 @@
+{
+  "name": "port-daddy",
+  "description": ">- Multi-agent coordination daemon for coding agents. Use for deterministic port claims, session tracking, salvage, file claims, notes, pub/sub, tuple-space coordination, background fleets, and debugging multi-agent failures across Claude Code, Codex, Gemini CLI, Cursor, or Windsurf. NOT for production deploy orchestration, Docker or Kubernetes networking, or cloud service discovery."
+}

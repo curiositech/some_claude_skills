@@ -1,0 +1,4 @@
+{
+  "name": "mermaid-graph-writer",
+  "description": "Writes precise, well-structured Mermaid diagrams for any visualization need. Use when creating flowcharts, sequence diagrams, state machines, ER models, timelines, mindmaps, Gantt charts, or any other Mermaid-supported diagram type. Activate on \"mermaid\", \"diagram\", \"flowchart\", \"sequence diagram\", \"state diagram\", \"ER diagram\", \"visualize\", \"draw graph\". NOT for rendering/exporting Mermaid to images (use mermaid-graph-renderer), ASCII art, or GUI-based design tools."
+}

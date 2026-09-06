@@ -1,0 +1,4 @@
+{
+  "name": "ml-system-design-interview",
+  "description": "Coaches end-to-end ML system design interviews covering inference pipelines, recommendation systems, RAG, feature stores, and monitoring. Use for L6+ design rounds, ML architecture whiteboarding, system design practice, serving tradeoff analysis. Activate on \"ML system design\", \"ML interview\", \"recommendation system design\", \"RAG architecture\", \"feature store design\", \"model serving\". NOT for coding interviews, behavioral questions, ML theory quizzes, or paper implementations."
+}

@@ -1,0 +1,4 @@
+{
+  "name": "anthropic-technical-deep-dive",
+  "description": "Prepare for Anthropic-specific technical interviews covering Constitutional AI, RLHF, interpretability, scaling laws, MCP, agentic systems, and AI safety. Activate on \"anthropic interview\", \"constitutional AI prep\", \"alignment interview\", \"safety interview\", \"RLHF opinion\", \"interpretability prep\", \"anthropic technical\". NOT for general ML interview prep, system design interviews, coding challenges, or behavioral interview practice."
+}

@@ -1,0 +1,4 @@
+{
+  "name": "recursive-synthesis",
+  "description": "Orchestrate multi-agent collaborative document synthesis through 6 phases - Divergence, Synthesis, Commentary, Consolidation, Reality Check, Final Merge. Produces authoritative founding documents from complex multi-perspective inputs. Use for constitutional documents, architecture decisions, organizational charters, or any document requiring rigorous multi-perspective synthesis. Activates on \"synthesize document\", \"multi-agent authorship\", \"collaborative synthesis\", \"founding document\", \"architecture document\", \"recursive synthesis\", \"constitutional document\", \"multi-perspective document\". NOT for simple document writing, single-author tasks, quick summaries, or documents that don't require adversarial review."
+}

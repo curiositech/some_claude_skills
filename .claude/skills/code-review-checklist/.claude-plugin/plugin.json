@@ -1,0 +1,4 @@
+{
+  "name": "code-review-checklist",
+  "description": "Generate context-aware code review checklists from PR diffs \u2014 tailored to language, codebase patterns, and team standards. Identifies what reviewers should focus on. NOT for automated code fixing, test generation, or security auditing."
+}

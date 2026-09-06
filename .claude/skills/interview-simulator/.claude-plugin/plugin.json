@@ -1,0 +1,4 @@
+{
+  "name": "interview-simulator",
+  "description": "Designs and orchestrates a realistic interview simulation platform with voice AI, whiteboard evaluation, gaze-tracking proctoring, and mobile spaced repetition. Use for building mock interview infrastructure, configuring sessions, and adaptive difficulty. Activate on \"interview simulator\", \"mock interview\", \"practice session\", \"voice mock\". NOT for individual round-type coaching, resume writing, or prep timeline coordination."
+}

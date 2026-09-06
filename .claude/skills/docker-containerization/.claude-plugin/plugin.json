@@ -1,0 +1,4 @@
+{
+  "name": "docker-containerization",
+  "description": "Write production-grade Dockerfiles, docker-compose configurations, multi-stage builds, and container optimization. Activate on \"Dockerfile\", \"docker\", \"docker-compose\", \"container\", \"multi-stage build\", \"docker image\", \"container optimization\", \"docker security\". NOT for Kubernetes orchestration, cloud-specific container services (ECS, Cloud Run), or CI/CD pipelines (use github-actions-pipeline-builder)."
+}

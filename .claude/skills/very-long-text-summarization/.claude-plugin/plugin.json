@@ -1,0 +1,4 @@
+{
+  "name": "very-long-text-summarization",
+  "description": "Summarizes very long texts (books, handbooks, biographies, codebases) using hierarchical multi-pass extraction with cheap model armies. Produces structured knowledge maps, not just summaries. Use when processing 50+ page documents, professional handbooks, career biographies, or any text too large for a single context window. Activate on \"summarize book\", \"summarize handbook\", \"long document\", \"extract knowledge\", \"distill text\", \"professional biography\". NOT for short text summarization (&lt;10 pages), real-time chat summarization, or code documentation (use technical-writer)."
+}

@@ -1,0 +1,4 @@
+{
+  "name": "performance-profiling",
+  "description": "Application performance profiling and bottleneck identification \u2014 Node.js profiling, Chrome DevTools, flame graphs, memory leak detection, CPU profiling, React rendering performance. Activate on \"profiling\", \"performance bottleneck\", \"flame graph\", \"memory leak\", \"slow app\", \"CPU profiling\", \"heap snapshot\", \"React re-renders\", \"EXPLAIN ANALYZE\", \"event loop lag\", \"clinic.js\", \"Core Web Vitals\". NOT for infrastructure monitoring or observability (use logging-observability), load testing (use a load-testing skill), or database schema optimization."
+}

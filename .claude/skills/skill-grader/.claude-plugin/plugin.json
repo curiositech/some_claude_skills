@@ -1,0 +1,4 @@
+{
+  "name": "skill-grader",
+  "description": "Evaluates Claude Agent Skills on 10 quality axes with letter grades (A+ through F) and specific improvement recommendations. Use when auditing a skill, comparing skills, prioritizing improvements, or performing quality control on a skill library. Activate on \"grade skill\", \"evaluate skill\", \"skill quality\", \"skill audit\", \"skill review\", \"rate skill\". NOT for creating skills (use skill-architect), grading code quality, or evaluating non-skill documents."
+}

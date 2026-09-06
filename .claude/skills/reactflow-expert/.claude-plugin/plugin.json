@@ -1,0 +1,4 @@
+{
+  "name": "reactflow-expert",
+  "description": "Builds DAG visualizations using ReactFlow v12 with custom nodes, ELKjs auto-layout, Zustand state management, and live state updates via WebSocket. Use when implementing workflow visualization dashboards, creating custom agent node components, integrating ELK layout algorithms, or wiring execution state into React components. Activate on \"ReactFlow\", \"workflow visualization\", \"DAG visualization\", \"ELKjs\", \"custom nodes\", \"node-based editor\", \"graph visualization\". NOT for writing Mermaid diagrams (use mermaid-graph-writer), general React development, or static diagram rendering."
+}

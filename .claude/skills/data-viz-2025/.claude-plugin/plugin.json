@@ -1,0 +1,4 @@
+{
+  "name": "data-viz-2025",
+  "description": "State-of-the-art data visualization for React/Next.js/TypeScript with Tailwind CSS. Creates compelling, tested, and accessible visualizations following Tufte principles and NYT Graphics standards. Activate on \"data viz\", \"chart\", \"graph\", \"visualization\", \"dashboard\", \"plot\", \"Recharts\", \"Nivo\", \"D3\". NOT for static images, print graphics, or basic HTML tables."
+}

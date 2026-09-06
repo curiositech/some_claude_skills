@@ -1,0 +1,4 @@
+{
+  "name": "color-contrast-auditor",
+  "description": "Detects and fixes color contrast violations using WCAG 2.1 guidelines and perceptual analysis. Expert in contrast ratio calculation, color blindness simulation, and providing accessible alternatives. Activate on \"check contrast\", \"color accessibility\", \"WCAG audit\", \"readability check\", \"contrast ratio\", \"hard to read\", \"can't see text\". NOT for general color theory (use color-theory-palette-harmony-expert), brand color selection (use web-design-expert), or non-visual accessibility (use ux-friction-analyzer)."
+}

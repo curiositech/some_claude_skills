@@ -1,0 +1,4 @@
+{
+  "name": "geospatial-data-pipeline",
+  "description": "Process, analyze, and visualize geospatial data at scale. Handles drone imagery, GPS tracks, GeoJSON optimization, coordinate transformations, and tile generation. Use for mapping apps, drone data processing, location-based services. Activate on \"geospatial\", \"GIS\", \"PostGIS\", \"GeoJSON\", \"map tiles\", \"coordinate systems\". NOT for simple address validation, basic distance calculations, or static map embeds."
+}

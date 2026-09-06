@@ -1,0 +1,4 @@
+{
+  "name": "modern-auth-2026",
+  "description": "Modern authentication implementation for 2026 - passkeys (WebAuthn), OAuth (Google, Apple), magic links, and cross-device sync. Use for passwordless-first authentication, social login setup, Supabase Auth, Next.js auth flows, and multi-factor authentication. Activate on \"passkeys\", \"WebAuthn\", \"Google Sign-In\", \"Apple Sign-In\", \"magic link\", \"passwordless\", \"authentication\", \"login\", \"OAuth\", \"social login\". NOT for session management without auth (use standard JWT docs), authorization/RBAC (use security-auditor), or API key management (use api-architect)."
+}

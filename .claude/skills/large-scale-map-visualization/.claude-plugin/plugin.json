@@ -1,0 +1,4 @@
+{
+  "name": "large-scale-map-visualization",
+  "description": "Master of high-performance web map implementations handling 5,000-100,000+ geographic data points. Specializes in Leaflet.js optimization, Supercluster algorithms, viewport-based loading, canvas rendering, and progressive disclosure UX patterns."
+}

@@ -1,0 +1,4 @@
+{
+  "name": "output-contract-enforcer",
+  "description": "Validates that a DAG node's output matches its declared JSON schema before passing to downstream nodes. The glue that makes multi-agent DAGs reliable. Use when checking output contract compliance, generating validation schemas from descriptions, or debugging contract mismatches between nodes. Activate on \"validate output\", \"output contract\", \"schema validation\", \"contract mismatch\", \"output doesn't match\". NOT for content quality assessment (use dag-quality), skill grading (use skill-grader), or general JSON schema work outside DAG context."
+}

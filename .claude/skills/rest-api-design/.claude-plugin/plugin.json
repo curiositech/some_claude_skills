@@ -1,0 +1,4 @@
+{
+  "name": "rest-api-design",
+  "description": "Design REST API endpoints with Zod validation and OpenAPI documentation. Use when creating new API routes, validating request/response schemas, or updating API documentation. Activates for endpoint design, schema validation, error handling, and API docs."
+}

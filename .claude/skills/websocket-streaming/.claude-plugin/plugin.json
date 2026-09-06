@@ -1,0 +1,4 @@
+{
+  "name": "websocket-streaming",
+  "description": "Implements real-time bidirectional communication between DAG execution engines and visualization dashboards via WebSocket. Covers connection management, typed event protocols, reconnection with backoff, and React hook integration. Activate on \"WebSocket\", \"real-time updates\", \"live streaming\", \"execution events\", \"state streaming\", \"push notifications\". NOT for HTTP REST APIs, server-sent events (SSE), or general networking."
+}

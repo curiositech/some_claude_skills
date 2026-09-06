@@ -1,0 +1,4 @@
+{
+  "name": "drizzle-migrations",
+  "description": "Drizzle ORM schema management and SQLite migrations \u2014 adding tables, modifying columns, creating indexes, generating and running migrations, Drizzle query patterns. NOT for Prisma, TypeORM, Sequelize, or raw SQL migration tools."
+}

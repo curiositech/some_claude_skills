@@ -1,0 +1,4 @@
+{
+  "name": "mermaid-graph-renderer",
+  "description": "Renders Mermaid diagrams to SVG, PNG, and PDF in both web and offline contexts. Covers client-side lazy loading, SSR trade-offs, CLI batch export, and native Rust rendering. Use when exporting diagrams to images, optimizing Mermaid rendering performance on web pages, setting up CI/CD diagram pipelines, or choosing a rendering library. Activate on \"render mermaid\", \"export diagram\", \"mermaid to png\", \"mermaid to svg\", \"mermaid performance\", \"diagram export\". NOT for writing Mermaid syntax (use mermaid-graph-writer), general image processing, or non-Mermaid diagram formats."
+}
