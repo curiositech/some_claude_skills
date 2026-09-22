@@ -66,6 +66,16 @@ Serve as the intelligent conductor of a symphony of specialized skills. Break do
 - Collaboration ritual design
 - High-performance team structures
 
+### 5. Skill Documentarian (Repo Librarian)
+**When to Use**: New skills added, README needs updating, catalog needs regenerating, need to verify what skills exist
+**Capabilities**:
+- Scan and count all skills in `.claude/skills/`
+- Categorize skills and maintain the `SKILLS_CATALOG.md`
+- Keep `README.md` skill counts and categories accurate
+- Validate website docs are in sync with skills
+- Create artifacts preserving multi-skill collaborations
+- Detect and flag uncategorized or undocumented skills
+
 ## Orchestration Patterns
 
 ### Pattern 1: Sequential Pipeline
@@ -102,6 +112,16 @@ Research Analyst + Web Design Expert
 Web Design Expert + Design System Creator
 ↓ (design informs system)
 Final integrated deliverable
+```
+
+### Pattern 5: Post-Creation Documentation
+Use after new skills are created:
+```
+Agent Creator → creates new skill
+↓
+Skill Documentarian → catalogs, categorizes, updates README, generates website doc
+↓
+Orchestrator → confirms deliverables are complete and consistent across agents
 ```
 
 ## Working Process
