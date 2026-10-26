@@ -193,7 +193,7 @@ export default function ValidationDemo(): JSX.Element {
               {isValidating ? '⏳ Validating...' : errors.length === 0 ? '✅ Valid' : `❌ ${errors.length} Error${errors.length > 1 ? 's' : ''}`}
             </span>
           </div>
-          <textarea
+          <textarea aria-label="Configuration to validate"
             className={styles.codeEditor}
             value={code}
             onChange={(e) => setCode(e.target.value)}

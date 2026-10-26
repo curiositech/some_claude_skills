@@ -76,7 +76,7 @@ export default function MetricsPage(): JSX.Element {
       </Head>
 
       <div className="page-backsplash page-backsplash--metrics page-backsplash--medium" style={{
-        background: '#0f172a',
+        background: "var(--theme-code-bg)",
         minHeight: '100vh',
         paddingTop: '60px'
       }}>
@@ -102,7 +102,7 @@ export default function MetricsPage(): JSX.Element {
                 fontFamily: 'var(--font-heading)',
                 fontSize: '48px',
                 margin: '0 0 12px 0',
-                color: 'var(--win31-navy)'
+                color: "var(--theme-link)"
               }}>
                 Ecosystem Metrics
               </h1>
@@ -111,7 +111,7 @@ export default function MetricsPage(): JSX.Element {
                 fontFamily: 'var(--font-code)',
                 fontSize: '14px',
                 lineHeight: '1.6',
-                color: '#333',
+                color: "var(--theme-text)",
                 margin: 0
               }}>
                 Real-time statistics and growth metrics for the Claude Skills ecosystem.
@@ -146,7 +146,7 @@ export default function MetricsPage(): JSX.Element {
                 </div>
                 <div style={{
                   fontSize: '14px',
-                  color: '#666',
+                  color: "var(--theme-muted)",
                   fontFamily: 'var(--font-code)',
                   marginTop: '8px'
                 }}>
@@ -167,14 +167,14 @@ export default function MetricsPage(): JSX.Element {
                 <div style={{
                   fontSize: '48px',
                   fontWeight: 'bold',
-                  color: '#6366f1',
+                  color: "var(--theme-link)",
                   fontFamily: 'var(--font-code)'
                 }}>
                   {ecosystemData.summary.total_agents}
                 </div>
                 <div style={{
                   fontSize: '14px',
-                  color: '#666',
+                  color: "var(--theme-muted)",
                   fontFamily: 'var(--font-code)',
                   marginTop: '8px'
                 }}>
@@ -195,14 +195,14 @@ export default function MetricsPage(): JSX.Element {
                 <div style={{
                   fontSize: '48px',
                   fontWeight: 'bold',
-                  color: '#10b981',
+                  color: 'var(--theme-success)',
                   fontFamily: 'var(--font-code)'
                 }}>
                   {(metrics.totalLines / 1000).toFixed(1)}k
                 </div>
                 <div style={{
                   fontSize: '14px',
-                  color: '#666',
+                  color: "var(--theme-muted)",
                   fontFamily: 'var(--font-code)',
                   marginTop: '8px'
                 }}>
@@ -223,14 +223,14 @@ export default function MetricsPage(): JSX.Element {
                 <div style={{
                   fontSize: '48px',
                   fontWeight: 'bold',
-                  color: '#f59e0b',
+                  color: "var(--theme-text)",
                   fontFamily: 'var(--font-code)'
                 }}>
                   {ecosystemData.summary.unique_tools}
                 </div>
                 <div style={{
                   fontSize: '14px',
-                  color: '#666',
+                  color: "var(--theme-muted)",
                   fontFamily: 'var(--font-code)',
                   marginTop: '8px'
                 }}>
@@ -263,77 +263,77 @@ export default function MetricsPage(): JSX.Element {
                   fontFamily: 'var(--font-system)',
                   fontSize: '16px',
                   margin: '0 0 16px 0',
-                  color: 'var(--win31-navy)'
+                  color: "var(--theme-link)"
                 }}>
                   Code Quality
                 </h3>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontFamily: 'var(--font-code)', fontSize: '12px', color: '#333' }}>
+                    <span style={{ fontFamily: 'var(--font-code)', fontSize: '12px', color: "var(--theme-text)" }}>
                       Avg Lines per Skill
                     </span>
                     <span style={{
                       fontFamily: 'var(--font-code)',
                       fontSize: '18px',
                       fontWeight: 'bold',
-                      color: 'var(--win31-navy)'
+                      color: "var(--theme-link)"
                     }}>
                       {metrics.avgLinesPerSkill}
                     </span>
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontFamily: 'var(--font-code)', fontSize: '12px', color: '#333' }}>
+                    <span style={{ fontFamily: 'var(--font-code)', fontSize: '12px', color: "var(--theme-text)" }}>
                       Avg Files per Skill
                     </span>
                     <span style={{
                       fontFamily: 'var(--font-code)',
                       fontSize: '18px',
                       fontWeight: 'bold',
-                      color: 'var(--win31-navy)'
+                      color: "var(--theme-link)"
                     }}>
                       {metrics.avgFilesPerSkill}
                     </span>
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontFamily: 'var(--font-code)', fontSize: '12px', color: '#333' }}>
+                    <span style={{ fontFamily: 'var(--font-code)', fontSize: '12px', color: "var(--theme-text)" }}>
                       With References
                     </span>
                     <span style={{
                       fontFamily: 'var(--font-code)',
                       fontSize: '18px',
                       fontWeight: 'bold',
-                      color: '#10b981'
+                      color: 'var(--theme-success)'
                     }}>
                       {metrics.withReferences} ({Math.round(metrics.withReferences / metrics.totalSkills * 100)}%)
                     </span>
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontFamily: 'var(--font-code)', fontSize: '12px', color: '#333' }}>
+                    <span style={{ fontFamily: 'var(--font-code)', fontSize: '12px', color: "var(--theme-text)" }}>
                       With Examples
                     </span>
                     <span style={{
                       fontFamily: 'var(--font-code)',
                       fontSize: '18px',
                       fontWeight: 'bold',
-                      color: '#10b981'
+                      color: 'var(--theme-success)'
                     }}>
                       {metrics.withExamples} ({Math.round(metrics.withExamples / metrics.totalSkills * 100)}%)
                     </span>
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontFamily: 'var(--font-code)', fontSize: '12px', color: '#333' }}>
+                    <span style={{ fontFamily: 'var(--font-code)', fontSize: '12px', color: "var(--theme-text)" }}>
                       With Changelog
                     </span>
                     <span style={{
                       fontFamily: 'var(--font-code)',
                       fontSize: '18px',
                       fontWeight: 'bold',
-                      color: '#10b981'
+                      color: 'var(--theme-success)'
                     }}>
                       {metrics.withChangelog} ({Math.round(metrics.withChangelog / metrics.totalSkills * 100)}%)
                     </span>
@@ -358,7 +358,7 @@ export default function MetricsPage(): JSX.Element {
                   fontFamily: 'var(--font-system)',
                   fontSize: '16px',
                   margin: '0 0 16px 0',
-                  color: 'var(--win31-navy)'
+                  color: "var(--theme-link)"
                 }}>
                   Most Used Tools
                 </h3>
@@ -377,20 +377,20 @@ export default function MetricsPage(): JSX.Element {
                           minWidth: '24px',
                           height: '20px',
                           background: index < 3 ? 'var(--win31-lime)' : 'var(--win31-light-gray)',
-                          color: index < 3 ? '#000' : '#666',
+                          color: index < 3 ? 'var(--theme-accent-ink)' : 'var(--theme-muted)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           fontFamily: 'var(--font-code)',
                           fontSize: '10px',
                           fontWeight: 'bold',
-                          border: '1px solid #808080'
+                          border: "1px solid var(--theme-border)"
                         }}>
                           {index + 1}
                         </div>
                         <div style={{ flex: 1 }}>
                           <div style={{
-                            background: '#000',
+                            background: "var(--theme-code-bg)",
                             height: '20px',
                             width: `${(count as number) / (ecosystemData.tool_usage.Read as number) * 100}%`,
                             minWidth: '40px',
@@ -412,7 +412,7 @@ export default function MetricsPage(): JSX.Element {
                           fontFamily: 'var(--font-code)',
                           fontSize: '14px',
                           fontWeight: 'bold',
-                          color: 'var(--win31-navy)',
+                          color: "var(--theme-link)",
                           minWidth: '30px',
                           textAlign: 'right'
                         }}>
@@ -448,8 +448,8 @@ export default function MetricsPage(): JSX.Element {
                     href={`/docs/skills/${skill.id.replace(/-/g, '_')}`}
                     style={{
                       display: 'block',
-                      background: '#fff',
-                      border: '2px solid #808080',
+                      background: "var(--theme-elevated)",
+                      border: "2px solid var(--theme-border)",
                       padding: '12px',
                       textDecoration: 'none',
                       color: 'inherit'
@@ -459,7 +459,7 @@ export default function MetricsPage(): JSX.Element {
                       fontFamily: 'var(--font-code)',
                       fontSize: '12px',
                       fontWeight: 'bold',
-                      color: 'var(--win31-navy)',
+                      color: "var(--theme-link)",
                       marginBottom: '6px',
                       overflow: 'hidden',
                       textOverflow: 'ellipsis',
@@ -470,14 +470,14 @@ export default function MetricsPage(): JSX.Element {
                     <div style={{
                       fontFamily: 'var(--font-code)',
                       fontSize: '10px',
-                      color: '#666'
+                      color: "var(--theme-muted)"
                     }}>
                       Updated: {new Date(skill.updatedAt).toLocaleDateString()}
                     </div>
                     <div style={{
                       fontFamily: 'var(--font-code)',
                       fontSize: '10px',
-                      color: '#999',
+                      color: "var(--theme-muted)",
                       marginTop: '4px'
                     }}>
                       {skill.totalLines} lines · {skill.totalFiles} files
@@ -511,7 +511,7 @@ export default function MetricsPage(): JSX.Element {
                     href={`/docs/skills/${skill.id.replace(/-/g, '_')}`}
                     style={{
                       display: 'block',
-                      background: index === 0 ? '#fff5cc' : '#fff',
+                      background: index === 0 ? 'var(--theme-warning-surface)' : 'var(--theme-elevated)',
                       border: index === 0 ? '2px solid var(--win31-bright-yellow)' : '2px solid #808080',
                       padding: '12px',
                       textDecoration: 'none',
@@ -524,8 +524,8 @@ export default function MetricsPage(): JSX.Element {
                         position: 'absolute',
                         top: '-1px',
                         right: '8px',
-                        background: 'var(--win31-bright-yellow)',
-                        color: '#000',
+                        background: 'var(--theme-sticker-yellow)',
+                        color: "var(--theme-accent-ink)",
                         padding: '2px 6px',
                         fontSize: '9px',
                         fontWeight: 'bold',
@@ -538,7 +538,7 @@ export default function MetricsPage(): JSX.Element {
                       fontFamily: 'var(--font-code)',
                       fontSize: '12px',
                       fontWeight: 'bold',
-                      color: 'var(--win31-navy)',
+                      color: "var(--theme-link)",
                       marginBottom: '6px',
                       overflow: 'hidden',
                       textOverflow: 'ellipsis',
@@ -549,7 +549,7 @@ export default function MetricsPage(): JSX.Element {
                     <div style={{
                       fontFamily: 'var(--font-code)',
                       fontSize: '14px',
-                      color: '#10b981',
+                      color: 'var(--theme-success)',
                       fontWeight: 'bold'
                     }}>
                       {skill.totalLines.toLocaleString()} lines
@@ -557,7 +557,7 @@ export default function MetricsPage(): JSX.Element {
                     <div style={{
                       fontFamily: 'var(--font-code)',
                       fontSize: '10px',
-                      color: '#666',
+                      color: "var(--theme-muted)",
                       marginTop: '4px'
                     }}>
                       {skill.totalFiles} files · {(skill.skillMdSize / 1024).toFixed(1)}KB
@@ -585,7 +585,7 @@ export default function MetricsPage(): JSX.Element {
                 fontFamily: 'var(--font-code)',
                 fontSize: '12px',
                 lineHeight: '1.6',
-                color: '#333',
+                color: "var(--theme-text)",
                 margin: 0
               }}>
                 <strong>Data Sources:</strong> Metrics are calculated from skill metadata, ecosystem state data,

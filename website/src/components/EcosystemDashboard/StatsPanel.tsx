@@ -41,7 +41,7 @@ export default function StatsPanel({
         {/* Summary Stats */}
         <div className={styles.statBox}>
           <div className={styles.statLabel}>Agents</div>
-          <div className={styles.statValue} style={{ color: 'var(--win31-navy)' }}>
+          <div className={styles.statValue} style={{ color: "var(--theme-link)" }}>
             {totalAgents}
           </div>
           <div className={styles.statSubtext}>Meta-coordinators</div>
@@ -49,7 +49,7 @@ export default function StatsPanel({
 
         <div className={styles.statBox}>
           <div className={styles.statLabel}>Skills</div>
-          <div className={styles.statValue} style={{ color: 'var(--win31-teal)' }}>
+          <div className={styles.statValue} style={{ color: "var(--theme-link)" }}>
             {totalSkills}
           </div>
           <div className={styles.statSubtext}>Domain experts</div>
@@ -57,7 +57,7 @@ export default function StatsPanel({
 
         <div className={styles.statBox}>
           <div className={styles.statLabel}>Tools</div>
-          <div className={styles.statValue} style={{ color: '#f59e0b' }}>
+          <div className={styles.statValue} style={{ color: "var(--theme-text)" }}>
             {totalTools}
           </div>
           <div className={styles.statSubtext}>Unique capabilities</div>

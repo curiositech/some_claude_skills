@@ -180,7 +180,7 @@ export default function SkillsGallery(): JSX.Element {
               <h1 className="win31-font hero-title" style={{ fontSize: '32px' }}>
                 Skills Gallery
               </h1>
-              <p className="win31-font" style={{ fontSize: '16px', textAlign: 'center', color: '#333', marginBottom: '20px' }}>
+              <p className="win31-font" style={{ fontSize: '16px', textAlign: 'center', color: "var(--theme-text)", marginBottom: '20px' }}>
                 Modular prompt extensions for Claude Code - Click any card for quick install
               </p>
 
@@ -205,13 +205,13 @@ export default function SkillsGallery(): JSX.Element {
             gap: '8px',
             alignItems: 'center',
             padding: '12px 16px',
-            background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+            background: 'var(--theme-sunken)',
             borderRadius: '8px',
-            border: '1px solid #dee2e6',
+            border: '1px solid var(--theme-border)',
           }}>
             <span className="win31-font" style={{
               fontSize: '12px',
-              color: '#495057',
+              color: 'var(--theme-muted)',
               fontWeight: 'bold',
               marginRight: '4px',
             }} title="Quick access to frequently used tags">
@@ -227,12 +227,14 @@ export default function SkillsGallery(): JSX.Element {
                   onClick={() => handleTagToggle(tag.id)}
                   title={`${tag.description} (${count} skills)`}
                   className="win31-font"
+                  aria-pressed={isSelected}
                   style={{
+                    minHeight: '24px',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '4px',
-                    backgroundColor: isSelected ? colors.text : colors.bg,
-                    color: isSelected ? '#fff' : colors.text,
+                    backgroundColor: isSelected ? 'var(--theme-action-bg)' : colors.bg,
+                    color: isSelected ? 'var(--theme-action-text)' : colors.text,
                     border: `1px solid ${colors.border}`,
                     borderRadius: '16px',
                     padding: '5px 12px',
@@ -246,7 +248,6 @@ export default function SkillsGallery(): JSX.Element {
                   {tag.label}
                   <span style={{
                     fontSize: '10px',
-                    opacity: 0.8,
                     marginLeft: '2px',
                   }}>
                     ({count})
@@ -256,14 +257,15 @@ export default function SkillsGallery(): JSX.Element {
             })}
             <button
               onClick={() => setShowTagFilter(!showTagFilter)}
+              aria-expanded={showTagFilter}
               className="win31-font"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '4px',
-                backgroundColor: showTagFilter ? '#6c757d' : '#fff',
-                color: showTagFilter ? '#fff' : '#495057',
-                border: '1px solid #adb5bd',
+                backgroundColor: showTagFilter ? 'var(--theme-action-bg)' : 'var(--theme-elevated)',
+                color: showTagFilter ? 'var(--theme-action-text)' : 'var(--theme-muted)',
+                border: '1px solid var(--theme-border)',
                 borderRadius: '16px',
                 padding: '5px 12px',
                 fontSize: '12px',
@@ -279,17 +281,17 @@ export default function SkillsGallery(): JSX.Element {
           {/* View Controls */}
           <div className="category-filter" style={{ justifyContent: 'flex-start' }}>
             {/* View Mode Toggle */}
-            <div style={{ display: 'flex', border: '2px solid #808080', marginRight: '8px' }}>
+            <div style={{ display: 'flex', border: "2px solid var(--theme-border)", marginRight: '8px' }}>
               <button
                 onClick={() => setViewMode('cards')}
                 className="win31-push-button"
                 style={{
                   fontSize: '14px',
                   padding: '10px 16px',
-                  background: viewMode === 'cards' ? 'var(--win31-navy)' : 'var(--win31-gray)',
-                  color: viewMode === 'cards' ? 'white' : 'black',
+                  background: viewMode === 'cards' ? 'var(--theme-action-bg)' : 'var(--theme-surface)',
+                  color: viewMode === 'cards' ? 'var(--theme-action-text)' : 'var(--theme-text)',
                   fontWeight: viewMode === 'cards' ? 'bold' : 'normal',
-                  borderRight: '1px solid #808080',
+                  borderRight: "1px solid var(--theme-border)",
                 }}
                 title="Card View"
               >
@@ -301,8 +303,8 @@ export default function SkillsGallery(): JSX.Element {
                 style={{
                   fontSize: '14px',
                   padding: '10px 16px',
-                  background: viewMode === 'list' ? 'var(--win31-navy)' : 'var(--win31-gray)',
-                  color: viewMode === 'list' ? 'white' : 'black',
+                  background: viewMode === 'list' ? 'var(--theme-action-bg)' : 'var(--theme-surface)',
+                  color: viewMode === 'list' ? 'var(--theme-action-text)' : 'var(--theme-text)',
                   fontWeight: viewMode === 'list' ? 'bold' : 'normal',
                 }}
                 title="List View (Sortable)"
@@ -317,8 +319,8 @@ export default function SkillsGallery(): JSX.Element {
               style={{
                 fontSize: '14px',
                 padding: '10px 20px',
-                background: showStarredOnly ? 'var(--win31-yellow)' : 'var(--win31-gray)',
-                color: 'black',
+                background: showStarredOnly ? 'var(--theme-sticker-yellow)' : 'var(--theme-surface)',
+                color: showStarredOnly ? 'var(--theme-accent-ink)' : 'var(--theme-text)',
                 fontWeight: showStarredOnly ? 'bold' : 'normal',
               }}
             >
@@ -331,8 +333,8 @@ export default function SkillsGallery(): JSX.Element {
               style={{
                 fontSize: '14px',
                 padding: '10px 20px',
-                background: selectedCategory === 'all' && !showStarredOnly && selectedTags.length === 0 && !searchQuery ? 'var(--win31-blue)' : 'var(--win31-gray)',
-                color: selectedCategory === 'all' && !showStarredOnly && selectedTags.length === 0 && !searchQuery ? 'white' : 'black',
+                background: selectedCategory === 'all' && !showStarredOnly && selectedTags.length === 0 && !searchQuery ? 'var(--theme-action-bg)' : 'var(--theme-surface)',
+                color: selectedCategory === 'all' && !showStarredOnly && selectedTags.length === 0 && !searchQuery ? 'var(--theme-action-text)' : 'var(--theme-text)',
                 fontWeight: selectedCategory === 'all' && !showStarredOnly && selectedTags.length === 0 && !searchQuery ? 'bold' : 'normal',
               }}
               title="Clear all filters and show all skills"
@@ -346,10 +348,10 @@ export default function SkillsGallery(): JSX.Element {
             <div className="win31-panel-box" style={{ marginBottom: '20px', padding: '20px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                 <div>
-                  <h3 className="win31-font" style={{ margin: 0, fontSize: '14px', color: 'var(--win31-navy)' }}>
+                  <h3 className="win31-font" style={{ margin: 0, fontSize: '14px', color: "var(--theme-link)" }}>
                     Browse All Tags
                   </h3>
-                  <p className="win31-font" style={{ margin: '4px 0 0 0', fontSize: '11px', color: '#666', fontStyle: 'italic' }}>
+                  <p className="win31-font" style={{ margin: '4px 0 0 0', fontSize: '11px', color: "var(--theme-muted)", fontStyle: 'italic' }}>
                     Organized by <strong>purpose</strong> (what it does) and <strong>domain</strong> (subject area) • Matches skills with <strong>any</strong> selected tag
                   </p>
                 </div>
@@ -370,7 +372,7 @@ export default function SkillsGallery(): JSX.Element {
                     className="win31-font"
                     style={{
                       fontSize: '11px',
-                      color: '#666',
+                      color: "var(--theme-muted)",
                       marginBottom: '6px',
                       fontWeight: 'bold'
                     }}
@@ -388,12 +390,14 @@ export default function SkillsGallery(): JSX.Element {
                           onClick={() => handleTagToggle(tag.id)}
                           title={`${tag.description} (${count} skills)`}
                           className="win31-font"
+                          aria-pressed={isSelected}
                           style={{
+                            minHeight: '24px',
                             display: 'inline-flex',
                             alignItems: 'center',
                             gap: '3px',
-                            backgroundColor: isSelected ? colors.text : colors.bg,
-                            color: isSelected ? '#fff' : colors.text,
+                            backgroundColor: isSelected ? 'var(--theme-action-bg)' : colors.bg,
+                            color: isSelected ? 'var(--theme-action-text)' : colors.text,
                             border: `1px solid ${colors.border}`,
                             borderRadius: '12px',
                             padding: '4px 12px',
@@ -401,12 +405,11 @@ export default function SkillsGallery(): JSX.Element {
                             fontWeight: isSelected ? 600 : 500,
                             cursor: 'pointer',
                             transition: 'all 0.15s ease',
-                            opacity: count === 0 ? 0.5 : 1,
                           }}
                         >
                           {tag.label}
                           {count > 0 && (
-                            <span style={{ fontSize: '10px', opacity: 0.75 }}>
+                            <span style={{ fontSize: '10px' }}>
                               ({count})
                             </span>
                           )}
@@ -422,7 +425,7 @@ export default function SkillsGallery(): JSX.Element {
           {/* Active Tag Pills */}
           {selectedTags.length > 0 && !showTagFilter && (
             <div style={{ marginBottom: '20px', display: 'flex', flexWrap: 'wrap', gap: '8px', alignItems: 'center' }}>
-              <span className="win31-font" style={{ fontSize: '12px', color: '#666' }}>Active tags:</span>
+              <span className="win31-font" style={{ fontSize: '12px', color: "var(--theme-muted)" }}>Active tags:</span>
               {selectedTags.map((tagId) => {
                 const tag = ALL_TAGS.find(t => t.id === tagId);
                 if (!tag) return null;
@@ -455,7 +458,7 @@ export default function SkillsGallery(): JSX.Element {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#666',
+                  color: "var(--theme-muted)",
                   fontSize: '11px',
                   cursor: 'pointer',
                   textDecoration: 'underline',

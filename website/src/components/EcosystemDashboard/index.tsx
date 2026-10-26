@@ -263,7 +263,7 @@ export default function EcosystemDashboard({ data }: EcosystemDashboardProps): J
                   marginTop: '8px',
                   padding: '8px 16px',
                   background: '#10b981',
-                  color: 'white',
+                  color: "var(--theme-titlebar-text)",
                   textDecoration: 'none',
                   fontFamily: 'var(--font-system)',
                   fontSize: '12px',

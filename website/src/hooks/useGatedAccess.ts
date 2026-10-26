@@ -1,3 +1,4 @@
+import { getLocalPreference, setLocalPreference, removeLocalPreference } from '../utils/browserPreferences';
 /**
  * useGatedAccess - Client-side skill gating via URL param + localStorage
  *
@@ -23,7 +24,7 @@ function isBrowser(): boolean {
 export function useGatedAccess() {
   const [isUnlocked, setIsUnlocked] = useState(() => {
     if (!isBrowser()) return false;
-    return localStorage.getItem(STORAGE_KEY) === 'true';
+    return getLocalPreference(STORAGE_KEY) === 'true';
   });
 
   // Check URL param on mount, store in localStorage, strip from URL
@@ -34,7 +35,7 @@ export function useGatedAccess() {
     const unlockValue = params.get(UNLOCK_PARAM);
 
     if (unlockValue === UNLOCK_SECRET) {
-      localStorage.setItem(STORAGE_KEY, 'true');
+      setLocalPreference(STORAGE_KEY, 'true');
       setIsUnlocked(true);
 
       // Strip the unlock param from URL without reload
@@ -47,7 +48,7 @@ export function useGatedAccess() {
 
   const lockAccess = useCallback(() => {
     if (!isBrowser()) return;
-    localStorage.removeItem(STORAGE_KEY);
+    removeLocalPreference(STORAGE_KEY);
     setIsUnlocked(false);
   }, []);
 

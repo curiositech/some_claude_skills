@@ -87,12 +87,12 @@ export const Win31Modal: React.FC<Win31ModalProps> = ({
       className={styles.overlay}
       onClick={onClose}
       role="presentation"
-      aria-modal="true"
     >
       <div
         className={styles.modal}
         onClick={(e) => e.stopPropagation()}
         role="dialog"
+        aria-modal="true"
         aria-labelledby="modal-title"
       >
         <div className={styles.titleBar}>

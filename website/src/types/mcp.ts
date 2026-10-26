@@ -81,7 +81,7 @@ export type McpCategory = (typeof MCP_CATEGORIES)[number];
  * Status labels and colors
  */
 export const MCP_STATUS_CONFIG: Record<McpStatus, { label: string; color: string; bg: string }> = {
-  stable: { label: 'Stable', color: '#166534', bg: '#dcfce7' },
-  beta: { label: 'Beta', color: '#854d0e', bg: '#fef9c3' },
-  experimental: { label: 'Experimental', color: '#9a3412', bg: '#ffedd5' },
+  stable: { label: 'Stable', color: 'var(--theme-success)', bg: 'var(--theme-success-surface)' },
+  beta: { label: 'Beta', color: 'var(--theme-warning)', bg: 'var(--theme-warning-surface)' },
+  experimental: { label: 'Experimental', color: 'var(--theme-danger)', bg: 'var(--theme-danger-surface)' },
 };

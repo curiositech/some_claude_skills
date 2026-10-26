@@ -103,7 +103,7 @@
   display: inline-block;
   padding: 0.5rem 1rem;
   background-color: var(--ifm-color-primary);
-  color: white !important;
+  color: var(--theme-titlebar-text) !important;
   border-radius: var(--ifm-global-radius);
   text-decoration: none;
   font-weight: 500;

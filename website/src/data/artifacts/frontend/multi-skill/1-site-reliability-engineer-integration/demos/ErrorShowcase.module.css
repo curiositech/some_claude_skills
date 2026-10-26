@@ -22,7 +22,7 @@
 }
 
 .subtitle {
-  color: var(--ifm-color-emphasis-700);
+  color: var(--theme-muted);
   font-size: 1rem;
 }
 
@@ -30,20 +30,20 @@
   display: flex;
   gap: 0.5rem;
   margin-bottom: 2rem;
-  border-bottom: 2px solid #808080;
+  border-bottom: 2px solid var(--theme-border);
   padding-bottom: 0.5rem;
 }
 
 .tabButton {
   /* Windows 3.1 button */
   padding: 0.75rem 1.5rem;
-  background: #c0c0c0;
+  background: var(--theme-surface);
   border: none;
-  border-top: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
-  border-right: 2px solid #000000;
-  border-bottom: 2px solid #000000;
-  color: #000000;
+  border-top: 2px solid var(--theme-border-light);
+  border-left: 2px solid var(--theme-border-light);
+  border-right: 2px solid var(--theme-border);
+  border-bottom: 2px solid var(--theme-border);
+  color: var(--theme-text);
   cursor: pointer;
   font-size: 0.9375rem;
   font-weight: 600;
@@ -51,17 +51,17 @@
 }
 
 .tabButton:hover:not(.active) {
-  background: #d0d0d0;
+  background: var(--theme-surface);
 }
 
 .tabButton.active {
   /* Active state - invert bevel */
-  background: #a0a0a0;
-  border-top: 2px solid #000000;
-  border-left: 2px solid #000000;
-  border-right: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
-  color: #000000;
+  background: var(--theme-surface);
+  border-top: 2px solid var(--theme-border);
+  border-left: 2px solid var(--theme-border);
+  border-right: 2px solid var(--theme-border-light);
+  border-bottom: 2px solid var(--theme-border-light);
+  color: var(--theme-text);
 }
 
 .comparison {
@@ -73,15 +73,15 @@
 
 .comparePanel {
   /* Windows 3.1 window chrome */
-  background: #c0c0c0;
+  background: var(--theme-surface);
   border: 2px solid;
-  border-top-color: #ffffff;
-  border-left-color: #ffffff;
-  border-right-color: #000000;
-  border-bottom-color: #000000;
+  border-top-color: var(--theme-border-light);
+  border-left-color: var(--theme-border-light);
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
   box-shadow:
-    inset 1px 1px 0 #dfdfdf,
-    inset -1px -1px 0 #808080;
+    inset 1px 1px 0 var(--theme-border),
+    inset -1px -1px 0 var(--theme-border);
   border-radius: 0;
   overflow: hidden;
 }
@@ -98,50 +98,50 @@
 }
 
 .beforeHeader {
-  background: #000080; /* Windows blue */
-  color: #ffffff;
-  border-bottom: 1px solid #000000;
+  background: var(--theme-titlebar); /* Windows blue */
+  color: var(--theme-titlebar-text);
+  border-bottom: 1px solid var(--theme-border);
 }
 
 .afterHeader {
-  background: #000080; /* Windows blue */
-  color: #ffffff;
-  border-bottom: 1px solid #000000;
+  background: var(--theme-titlebar); /* Windows blue */
+  color: var(--theme-titlebar-text);
+  border-bottom: 1px solid var(--theme-border);
 }
 
 .errorIcon {
   font-size: 1.125rem;
-  color: #ff0000;
+  color: var(--theme-danger);
 }
 
 .successIcon {
   font-size: 1.125rem;
-  color: #00ff00;
+  color: var(--theme-text);
 }
 
 .codeContainer {
   position: relative;
   /* Windows 3.1 inset panel */
-  background: #ffffff;
+  background: var(--theme-elevated);
   box-shadow:
-    inset 2px 2px 0 #808080,
-    inset -2px -2px 0 #ffffff;
+    inset 2px 2px 0 var(--theme-border),
+    inset -2px -2px 0 var(--theme-border-light);
 }
 
 .codeBlock {
   padding: 1rem;
   font-family: 'Courier New', Monaco, monospace;
   font-size: 0.875rem;
-  background: #ffffff !important;
-  color: #000000 !important;
+  background: var(--theme-elevated) !important;
+  color: var(--theme-code-muted) !important;
   margin: 0 !important;
   border-radius: 0 !important;
 }
 
 /* Override syntax highlighter colors for Windows 3.1 aesthetic */
 .codeBlock :global(pre) {
-  background: #ffffff !important;
-  color: #000000 !important;
+  background: var(--theme-elevated) !important;
+  color: var(--theme-code-muted) !important;
   margin: 0 !important;
 }
 
@@ -174,8 +174,8 @@
 
 .validationOutput {
   /* Windows 3.1 terminal */
-  background: #000000;
-  color: #00ff00; /* DOS green */
+  background: var(--theme-code-bg);
+  color: var(--theme-text); /* DOS green */
   padding: 1rem;
   font-family: 'Courier New', Monaco, monospace;
   font-size: 0.875rem;
@@ -183,12 +183,12 @@
 
   /* Windows 3.1 inset bevel */
   border: 2px solid;
-  border-top-color: #000000;
-  border-left-color: #000000;
-  border-right-color: #808080;
-  border-bottom-color: #808080;
+  border-top-color: var(--theme-border);
+  border-left-color: var(--theme-border);
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
   border-radius: 0;
-  box-shadow: inset 2px 2px 0 #000000;
+  box-shadow: inset 2px 2px 0 var(--theme-border);
 }
 
 .tryItSection {
@@ -196,15 +196,15 @@
   padding: 1.5rem;
 
   /* Windows 3.1 window */
-  background: #c0c0c0;
+  background: var(--theme-surface);
   border: 2px solid;
-  border-top-color: #ffffff;
-  border-left-color: #ffffff;
-  border-right-color: #000000;
-  border-bottom-color: #000000;
+  border-top-color: var(--theme-border-light);
+  border-left-color: var(--theme-border-light);
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
   box-shadow:
-    inset 1px 1px 0 #dfdfdf,
-    inset -1px -1px 0 #808080;
+    inset 1px 1px 0 var(--theme-border),
+    inset -1px -1px 0 var(--theme-border);
   border-radius: 0;
 }
 
@@ -212,60 +212,60 @@
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
-  color: #000080; /* Windows blue */
+  color: var(--theme-link); /* Windows blue */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .tryItText {
-  color: #000000;
+  color: var(--theme-text);
   margin-bottom: 1rem;
   line-height: 1.6;
 }
 
 .commandBlock {
   /* Windows 3.1 terminal */
-  background: #000000;
-  color: #00ff00; /* DOS green */
+  background: var(--theme-code-bg);
+  color: var(--theme-text); /* DOS green */
   padding: 1rem;
   font-family: 'Courier New', Monaco, monospace;
   font-size: 0.9375rem;
   margin: 1rem 0;
 
   border: 2px solid;
-  border-top-color: #000000;
-  border-left-color: #000000;
-  border-right-color: #808080;
-  border-bottom-color: #808080;
+  border-top-color: var(--theme-border);
+  border-left-color: var(--theme-border);
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
   border-radius: 0;
-  box-shadow: inset 2px 2px 0 #000000;
+  box-shadow: inset 2px 2px 0 var(--theme-border);
 }
 
 /* Dark mode adjustments */
 [data-theme='dark'] .comparePanel,
 [data-theme='dark'] .tryItSection {
-  background: #404040;
+  background: var(--theme-surface);
   border-top-color: #606060;
   border-left-color: #606060;
-  border-right-color: #000000;
-  border-bottom-color: #000000;
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
 }
 
 [data-theme='dark'] .tabButton {
-  background: #404040;
-  color: #d0d0d0;
+  background: var(--theme-surface);
+  color: var(--theme-muted);
 }
 
 [data-theme='dark'] .tabButton:hover:not(.active) {
-  background: #484848;
+  background: var(--theme-surface);
 }
 
 [data-theme='dark'] .tabButton.active {
-  background: #303030;
+  background: var(--theme-surface);
 }
 
 [data-theme='dark'] .codeContainer {
-  background: #303030;
+  background: var(--theme-surface);
   border-top-color: #202020;
   border-left-color: #202020;
   border-right-color: #505050;
@@ -273,25 +273,25 @@
 }
 
 [data-theme='dark'] .codeBlock {
-  background: #303030 !important;
-  color: #d0d0d0 !important;
+  background: var(--theme-surface) !important;
+  color: var(--theme-muted) !important;
 }
 
 [data-theme='dark'] .codeBlock :global(pre) {
-  background: #303030 !important;
-  color: #d0d0d0 !important;
+  background: var(--theme-surface) !important;
+  color: var(--theme-muted) !important;
 }
 
 [data-theme='dark'] .sectionTitle {
-  color: #d0d0d0;
+  color: var(--theme-muted);
 }
 
 [data-theme='dark'] .tryItTitle {
-  color: #5B9BD5; /* Lighter blue for dark mode */
+  color: var(--theme-link); /* Lighter blue for dark mode */
 }
 
 [data-theme='dark'] .tryItText {
-  color: #d0d0d0;
+  color: var(--theme-muted);
 }
 
 /* Responsive */
@@ -318,3 +318,7 @@
     padding: 1rem;
   }
 }
+
+.codeBlock { background: var(--theme-code-bg) !important; color: var(--theme-code-text) !important; }
+.codeBlock :is(code,span) { background: transparent !important; color: var(--theme-code-text) !important; }
+.validationOutput, .commandBlock { color: var(--theme-code-text); background: var(--theme-code-bg); }

@@ -33,7 +33,7 @@
 }
 
 .phase:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 /* Phase header - like a Windows 3.1 list item */
@@ -64,7 +64,7 @@
 }
 
 .number {
-  color: var(--win31-black);
+  color: var(--theme-text);
   font-family: var(--font-system);
   font-size: 13px;
   font-weight: 700;
@@ -92,7 +92,7 @@
 .phaseDuration {
   font-family: var(--font-system);
   font-size: 11px;
-  color: var(--win31-light-gray);
+  color: var(--theme-muted);
   font-weight: 500;
   letter-spacing: 0.3px;
 }
@@ -116,7 +116,7 @@
   font-family: var(--font-system);
   font-size: 11px;
   font-weight: 600;
-  color: var(--win31-black);
+  color: var(--theme-text);
   letter-spacing: 0.3px;
   white-space: nowrap;
 }
@@ -129,8 +129,8 @@
 
 .skillBadge {
   display: inline-block;
-  background: var(--win31-light-gray);
-  color: var(--win31-navy);
+  background: var(--theme-sunken);
+  color: var(--theme-link);
   padding: 2px 6px;
   border-style: solid;
   border-width: 1px;
@@ -147,8 +147,8 @@
 }
 
 .skillBadge:hover {
-  background: var(--win31-white);
-  color: var(--win31-navy);
+  background: var(--theme-elevated);
+  color: var(--theme-link);
 }
 
 .skillBadge:active {
@@ -174,14 +174,14 @@
   font-family: var(--font-system);
   font-size: 11px;
   font-weight: 700;
-  color: var(--win31-black);
+  color: var(--theme-text);
   letter-spacing: 0.3px;
   white-space: nowrap;
 }
 
 .outcomeText {
   margin: 0;
-  color: var(--win31-black);
+  color: var(--theme-text);
   line-height: 1.5;
   font-family: var(--font-system);
   font-size: 12px;
@@ -219,3 +219,4 @@
     gap: 4px;
   }
 }
+.phaseDuration { color: var(--theme-titlebar-text); }

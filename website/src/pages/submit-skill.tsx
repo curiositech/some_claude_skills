@@ -232,8 +232,8 @@ _Add any additional context, examples, or references here._
     padding: '8px 12px',
     fontSize: '14px',
     fontFamily: 'var(--font-code)',
-    border: '2px inset #808080',
-    background: 'white',
+    border: "2px inset var(--theme-border)",
+    background: "var(--theme-elevated)",
     boxSizing: 'border-box',
   };
 
@@ -242,11 +242,11 @@ _Add any additional context, examples, or references here._
     marginBottom: '6px',
     fontWeight: 'bold',
     fontSize: '13px',
-    color: '#000080',
+    color: "var(--theme-link)",
   };
 
   const errorStyle: React.CSSProperties = {
-    color: '#c00',
+    color: "var(--theme-danger)",
     fontSize: '12px',
     marginTop: '4px',
   };
@@ -275,10 +275,10 @@ _Add any additional context, examples, or references here._
               </div>
               <div style={{ padding: '32px', textAlign: 'center' }}>
                 <div style={{ fontSize: '64px', marginBottom: '16px' }}>✅</div>
-                <h1 style={{ marginTop: 0, fontSize: '28px', color: '#000080' }}>
+                <h1 style={{ marginTop: 0, fontSize: '28px', color: "var(--theme-link)" }}>
                   Skill Submitted!
                 </h1>
-                <p style={{ fontSize: '15px', color: '#333', marginBottom: '24px', lineHeight: '1.6' }}>
+                <p style={{ fontSize: '15px', color: "var(--theme-text)", marginBottom: '24px', lineHeight: '1.6' }}>
                   Your skill idea has been submitted as a GitHub Issue.
                   The maintainers will review it and may reach out for clarification.
                 </p>
@@ -335,10 +335,10 @@ _Add any additional context, examples, or references here._
               </div>
             </div>
             <div style={{ padding: '24px', textAlign: 'center' }}>
-              <h1 style={{ marginTop: 0, fontSize: '28px', marginBottom: '12px', color: '#000080' }}>
+              <h1 style={{ marginTop: 0, fontSize: '28px', marginBottom: '12px', color: "var(--theme-link)" }}>
                 Submit a Skill Idea
               </h1>
-              <p style={{ fontSize: '14px', color: '#555', marginBottom: 0, lineHeight: '1.6' }}>
+              <p style={{ fontSize: '14px', color: "var(--theme-muted)", marginBottom: 0, lineHeight: '1.6' }}>
                 Have an idea for a useful Claude skill? Submit it here and we'll review it for inclusion
                 in the collection. Good skills are specific, actionable, and help Claude do something it
                 couldn't do well without guidance.
@@ -361,46 +361,46 @@ _Add any additional context, examples, or references here._
 
               {/* Skill Name */}
               <div style={fieldGroupStyle}>
-                <label style={labelStyle}>
-                  Skill Name <span style={{ color: '#c00' }}>*</span>
+                <label htmlFor="skill-name" style={labelStyle}>
+                  Skill Name <span style={{ color: "var(--theme-danger)" }}>*</span>
                 </label>
                 <input
                   type="text"
-                  name="name"
+                  id="skill-name" name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="e.g., api-architect, code-necromancer"
                   style={inputStyle}
                 />
                 {errors.name && <div style={errorStyle}>{errors.name}</div>}
-                <div style={{ fontSize: '12px', color: '#666', marginTop: '4px' }}>
+                <div style={{ fontSize: '12px', color: "var(--theme-muted)", marginTop: '4px' }}>
                   Will become: <code>{toKebabCase(formData.name) || 'skill-name'}</code>
                 </div>
               </div>
 
               {/* Title (auto-generated) */}
               <div style={fieldGroupStyle}>
-                <label style={labelStyle}>Display Title</label>
+                <label htmlFor="skill-title" style={labelStyle}>Display Title</label>
                 <input
                   type="text"
-                  name="title"
+                  id="skill-title" name="title"
                   value={formData.title}
                   onChange={handleChange}
                   placeholder="Human-readable title"
                   style={inputStyle}
                 />
-                <div style={{ fontSize: '12px', color: '#666', marginTop: '4px' }}>
+                <div style={{ fontSize: '12px', color: "var(--theme-muted)", marginTop: '4px' }}>
                   Auto-generated from name, but you can customize it
                 </div>
               </div>
 
               {/* Category */}
               <div style={fieldGroupStyle}>
-                <label style={labelStyle}>
-                  Category <span style={{ color: '#c00' }}>*</span>
+                <label htmlFor="skill-category" style={labelStyle}>
+                  Category <span style={{ color: "var(--theme-danger)" }}>*</span>
                 </label>
                 <select
-                  name="category"
+                  id="skill-category" name="category"
                   value={formData.category}
                   onChange={handleChange}
                   style={{ ...inputStyle, cursor: 'pointer' }}
@@ -415,11 +415,11 @@ _Add any additional context, examples, or references here._
 
               {/* Description */}
               <div style={fieldGroupStyle}>
-                <label style={labelStyle}>
-                  Description <span style={{ color: '#c00' }}>*</span>
+                <label htmlFor="skill-description" style={labelStyle}>
+                  Description <span style={{ color: "var(--theme-danger)" }}>*</span>
                 </label>
                 <textarea
-                  name="description"
+                  id="skill-description" name="description"
                   value={formData.description}
                   onChange={handleChange}
                   rows={4}
@@ -427,53 +427,53 @@ _Add any additional context, examples, or references here._
                   style={{ ...inputStyle, resize: 'vertical' }}
                 />
                 {errors.description && <div style={errorStyle}>{errors.description}</div>}
-                <div style={{ fontSize: '12px', color: '#666', marginTop: '4px' }}>
+                <div style={{ fontSize: '12px', color: "var(--theme-muted)", marginTop: '4px' }}>
                   {formData.description.length} characters (min 50)
                 </div>
               </div>
 
               {/* Tags */}
               <div style={fieldGroupStyle}>
-                <label style={labelStyle}>
-                  Tags <span style={{ color: '#c00' }}>*</span>
+                <label htmlFor="skill-tags" style={labelStyle}>
+                  Tags <span style={{ color: "var(--theme-danger)" }}>*</span>
                 </label>
                 <input
                   type="text"
-                  name="tags"
+                  id="skill-tags" name="tags"
                   value={formData.tags}
                   onChange={handleChange}
                   placeholder="api, rest, graphql, microservices"
                   style={inputStyle}
                 />
                 {errors.tags && <div style={errorStyle}>{errors.tags}</div>}
-                <div style={{ fontSize: '12px', color: '#666', marginTop: '4px' }}>
+                <div style={{ fontSize: '12px', color: "var(--theme-muted)", marginTop: '4px' }}>
                   Comma-separated list of relevant tags (aim for 3-5)
                 </div>
               </div>
 
               {/* Allowed Tools */}
               <div style={fieldGroupStyle}>
-                <label style={labelStyle}>Allowed Tools</label>
+                <label htmlFor="skill-allowedTools" style={labelStyle}>Allowed Tools</label>
                 <input
                   type="text"
-                  name="allowedTools"
+                  id="skill-allowedTools" name="allowedTools"
                   value={formData.allowedTools}
                   onChange={handleChange}
                   placeholder="Read, Write, Edit, Bash, WebSearch"
                   style={inputStyle}
                 />
-                <div style={{ fontSize: '12px', color: '#666', marginTop: '4px' }}>
+                <div style={{ fontSize: '12px', color: "var(--theme-muted)", marginTop: '4px' }}>
                   Comma-separated Claude tools this skill needs access to
                 </div>
               </div>
 
               {/* Use Cases */}
               <div style={fieldGroupStyle}>
-                <label style={labelStyle}>
-                  When to Use <span style={{ color: '#c00' }}>*</span>
+                <label htmlFor="skill-useCases" style={labelStyle}>
+                  When to Use <span style={{ color: "var(--theme-danger)" }}>*</span>
                 </label>
                 <textarea
-                  name="useCases"
+                  id="skill-useCases" name="useCases"
                   value={formData.useCases}
                   onChange={handleChange}
                   rows={4}
@@ -485,9 +485,9 @@ _Add any additional context, examples, or references here._
 
               {/* Anti-patterns */}
               <div style={fieldGroupStyle}>
-                <label style={labelStyle}>When NOT to Use (Optional)</label>
+                <label htmlFor="skill-antiPatterns" style={labelStyle}>When NOT to Use (Optional)</label>
                 <textarea
-                  name="antiPatterns"
+                  id="skill-antiPatterns" name="antiPatterns"
                   value={formData.antiPatterns}
                   onChange={handleChange}
                   rows={3}
@@ -498,9 +498,9 @@ _Add any additional context, examples, or references here._
 
               {/* Pairs With */}
               <div style={fieldGroupStyle}>
-                <label style={labelStyle}>Works Well With (Optional)</label>
+                <label htmlFor="skill-pairsWith" style={labelStyle}>Works Well With (Optional)</label>
                 <textarea
-                  name="pairsWith"
+                  id="skill-pairsWith" name="pairsWith"
                   value={formData.pairsWith}
                   onChange={handleChange}
                   rows={2}
@@ -511,20 +511,20 @@ _Add any additional context, examples, or references here._
 
               {/* Submitter Info */}
               <div style={{
-                background: '#f5f5f5',
-                border: '1px solid #ddd',
+                background: "var(--theme-elevated)",
+                border: "1px solid var(--theme-border)",
                 padding: '16px',
                 marginTop: '24px',
               }}>
-                <div style={{ fontWeight: 'bold', marginBottom: '12px', color: '#000080', fontSize: '14px' }}>
+                <div style={{ fontWeight: 'bold', marginBottom: '12px', color: "var(--theme-link)", fontSize: '14px' }}>
                   Submitter Info (Optional)
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                   <div>
-                    <label style={{ ...labelStyle, color: '#555' }}>Your Name</label>
-                    <input
+                    <label htmlFor="skill-submitterName" style={{ ...labelStyle, color: "var(--theme-muted)" }}>Your Name</label>
+                <input
                       type="text"
-                      name="submitterName"
+                      id="skill-submitterName" name="submitterName"
                       value={formData.submitterName}
                       onChange={handleChange}
                       placeholder="Jane Doe"
@@ -532,10 +532,10 @@ _Add any additional context, examples, or references here._
                     />
                   </div>
                   <div>
-                    <label style={{ ...labelStyle, color: '#555' }}>GitHub Username</label>
-                    <input
+                    <label htmlFor="skill-submitterGithub" style={{ ...labelStyle, color: "var(--theme-muted)" }}>GitHub Username</label>
+                <input
                       type="text"
-                      name="submitterGithub"
+                      id="skill-submitterGithub" name="submitterGithub"
                       value={formData.submitterGithub}
                       onChange={handleChange}
                       placeholder="@janedoe"
@@ -552,7 +552,7 @@ _Add any additional context, examples, or references here._
                 justifyContent: 'flex-end',
                 marginTop: '24px',
                 paddingTop: '16px',
-                borderTop: '2px groove #ccc',
+                borderTop: "2px groove var(--theme-border)",
               }}>
                 <button
                   type="button"
@@ -566,7 +566,7 @@ _Add any additional context, examples, or references here._
                   type="button"
                   className="win31-btn-3d"
                   onClick={handlePreview}
-                  style={{ padding: '10px 20px', background: '#000080', color: 'white', fontWeight: 'bold' }}
+                  style={{ padding: '10px 20px', background: "var(--theme-titlebar)", color: "var(--theme-titlebar-text)", fontWeight: 'bold' }}
                 >
                   Preview & Submit →
                 </button>
@@ -618,15 +618,15 @@ _Add any additional context, examples, or references here._
                   </div>
                 </div>
                 <div style={{ padding: '20px' }}>
-                  <h3 style={{ marginTop: 0, color: '#000080' }}>Generated SKILL.md Preview</h3>
+                  <h3 style={{ marginTop: 0, color: "var(--theme-link)" }}>Generated SKILL.md Preview</h3>
                   <pre style={{
-                    background: '#1a1a2e',
-                    color: '#0f0',
+                    background: "var(--theme-code-bg)",
+                    color: "var(--theme-text)",
                     padding: '16px',
                     fontSize: '12px',
                     overflow: 'auto',
                     maxHeight: '400px',
-                    border: '2px inset #000',
+                    border: "2px inset var(--theme-border)",
                     fontFamily: 'Consolas, Monaco, monospace',
                     lineHeight: '1.4',
                   }}>
@@ -652,8 +652,8 @@ _Add any additional context, examples, or references here._
                       onClick={handleSubmitToGitHub}
                       style={{
                         padding: '12px 24px',
-                        background: '#000080',
-                        color: 'white',
+                        background: "var(--theme-titlebar)",
+                        color: "var(--theme-titlebar-text)",
                         fontWeight: 'bold',
                       }}
                     >
@@ -670,7 +670,7 @@ _Add any additional context, examples, or references here._
 
                   <p style={{
                     fontSize: '12px',
-                    color: '#666',
+                    color: "var(--theme-muted)",
                     textAlign: 'center',
                     marginTop: '16px',
                     marginBottom: 0,
@@ -695,7 +695,7 @@ _Add any additional context, examples, or references here._
               </div>
             </div>
             <div style={{ padding: '20px' }}>
-              <h3 style={{ marginTop: 0, fontSize: '16px', color: '#000080' }}>What Makes a Good Skill?</h3>
+              <h3 style={{ marginTop: 0, fontSize: '16px', color: "var(--theme-link)" }}>What Makes a Good Skill?</h3>
               <ul style={{ lineHeight: '1.7', marginBottom: 0 }}>
                 <li><strong>Specific:</strong> Targets a particular domain or task type</li>
                 <li><strong>Actionable:</strong> Provides clear guidance Claude can follow</li>
@@ -704,7 +704,7 @@ _Add any additional context, examples, or references here._
                 <li><strong>Tested:</strong> You've tried the approach and it works</li>
               </ul>
 
-              <h3 style={{ fontSize: '16px', color: '#000080', marginTop: '20px' }}>Examples of Good Skills</h3>
+              <h3 style={{ fontSize: '16px', color: "var(--theme-link)", marginTop: '20px' }}>Examples of Good Skills</h3>
               <ul style={{ lineHeight: '1.7', marginBottom: 0 }}>
                 <li><Link to="/docs/skills/cv_creator">cv-creator</Link> - Specific (resumes), bounded (not cover letters), has anti-patterns</li>
                 <li><Link to="/docs/skills/drone_cv_expert">drone-cv-expert</Link> - Domain expertise, pairs with inspection specialist</li>

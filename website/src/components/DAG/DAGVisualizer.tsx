@@ -556,7 +556,7 @@ function drawNode(
  */
 function drawLegend(ctx: CanvasRenderingContext2D, width: number, height: number): void {
   const legendItems = [
-    { color: '#f0f0f0', border: '#ccc', label: 'Pending' },
+    { color: '#f0f0f0', border: "var(--theme-border)", label: 'Pending' },
     { color: '#ffffcc', border: '#ffeb3b', label: 'Ready' },
     { color: '#bbdefb', border: '#2196f3', label: 'Running' },
     { color: '#c8e6c9', border: '#4caf50', label: 'Completed' },
@@ -657,8 +657,8 @@ function findNodeAtPosition(
 function renderNodeTooltip(node: DAGNode, state: TaskState | undefined): JSX.Element {
   return (
     <div style={{
-      background: '#fff',
-      border: '2px solid #000',
+      background: "var(--theme-elevated)",
+      border: "2px solid var(--theme-border)",
       padding: '12px',
       borderRadius: '4px',
       maxWidth: '320px',
@@ -674,7 +674,7 @@ function renderNodeTooltip(node: DAGNode, state: TaskState | undefined): JSX.Ele
       </div>
 
       {node.description && (
-        <div style={{ marginBottom: '4px', fontStyle: 'italic', color: '#666' }}>
+        <div style={{ marginBottom: '4px', fontStyle: 'italic', color: "var(--theme-muted)" }}>
           {node.description}
         </div>
       )}
@@ -704,7 +704,7 @@ function renderNodeTooltip(node: DAGNode, state: TaskState | undefined): JSX.Ele
       )}
 
       {node.config && (
-        <div style={{ marginBottom: '4px', fontSize: '12px', color: '#555' }}>
+        <div style={{ marginBottom: '4px', fontSize: '12px', color: "var(--theme-muted)" }}>
           <strong>Config:</strong>
           {node.config.model && ` Model: ${node.config.model} |`}
           {` Timeout: ${node.config.timeoutMs}ms`}
@@ -716,7 +716,7 @@ function renderNodeTooltip(node: DAGNode, state: TaskState | undefined): JSX.Ele
         <div style={{
           marginTop: '8px',
           paddingTop: '8px',
-          borderTop: '1px solid #ddd',
+          borderTop: "1px solid var(--theme-border)",
           fontWeight: 'bold'
         }}>
           Status: <span style={{

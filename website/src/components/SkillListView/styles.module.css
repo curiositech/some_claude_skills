@@ -98,7 +98,7 @@
 }
 
 .sortBtn:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .sortBtn:active {
@@ -118,7 +118,7 @@
 
 /* List Container */
 .listContainer {
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   margin: 4px;
   border: 2px solid;
   border-color: var(--win31-dark-gray) var(--win31-white) var(--win31-white) var(--win31-dark-gray);
@@ -135,12 +135,12 @@
   padding: 12px;
   border-bottom: 2px solid var(--win31-light-gray);
   cursor: pointer;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   transition: background 0.1s ease;
 }
 
 .skillRow:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .skillRow:last-child {
@@ -172,7 +172,7 @@
   top: 4px;
   left: 4px;
   background: #00ff00;
-  color: var(--win31-black);
+  color: var(--theme-text);
   font-size: 9px;
   padding: 2px 6px;
   font-weight: bold;
@@ -187,7 +187,7 @@
   top: 4px;
   left: 4px;
   background: #00ccff;
-  color: var(--win31-black);
+  color: var(--theme-text);
   font-size: 9px;
   padding: 2px 6px;
   font-weight: bold;
@@ -217,13 +217,13 @@
   margin: 0;
   font-size: 18px;
   font-weight: bold;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   font-family: 'VT323', 'Courier New', monospace;
 }
 
 .skillCategory {
   font-size: 11px;
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -231,7 +231,7 @@
 .skillDesc {
   margin: 6px 0;
   font-size: 13px;
-  color: #333;
+  color: var(--theme-text);
   line-height: 1.4;
   font-family: 'VT323', 'Courier New', monospace;
   overflow: hidden;
@@ -251,7 +251,7 @@
 
 .metaItem {
   font-size: 11px;
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
   display: flex;
   align-items: center;
   gap: 4px;
@@ -263,7 +263,7 @@
   padding: 2px 6px;
   background: var(--win31-gray);
   border: 1px solid var(--win31-dark-gray);
-  color: var(--win31-black);
+  color: var(--theme-text);
   text-transform: uppercase;
   font-family: 'VT323', monospace;
 }
@@ -275,12 +275,12 @@
   justify-content: center;
   padding: 0 16px;
   font-size: 24px;
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
   font-weight: bold;
 }
 
 .skillRow:hover .skillAction {
-  color: var(--win31-navy);
+  color: var(--theme-link);
 }
 
 /* Status Bar */
@@ -314,7 +314,7 @@
 }
 
 .listContainer::-webkit-scrollbar-track {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
   border: 1px solid var(--win31-dark-gray);
 }
 
@@ -325,7 +325,7 @@
 }
 
 .listContainer::-webkit-scrollbar-thumb:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .listContainer::-webkit-scrollbar-corner {
@@ -335,13 +335,13 @@
 /* Sort indicators - keep for potential table view */
 .sortIndicator {
   margin-left: 6px;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   font-size: 10px;
 }
 
 .sortIndicatorInactive {
   margin-left: 6px;
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
   font-size: 10px;
 }
 

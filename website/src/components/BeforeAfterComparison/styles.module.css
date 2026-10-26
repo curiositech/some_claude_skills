@@ -34,14 +34,14 @@
   font-family: var(--font-system);
   font-size: 12px;
   font-weight: 600;
-  color: var(--win31-black);
+  color: var(--theme-text);
   letter-spacing: 0.3px;
 }
 
 .badge {
   display: inline-block;
-  background: var(--win31-light-gray);
-  color: var(--win31-black);
+  background: var(--theme-sunken);
+  color: var(--theme-text);
   padding: 2px 8px;
   border-style: solid;
   border-width: 1px;
@@ -71,7 +71,7 @@
   border-bottom-color: var(--win31-black);
   border-right-color: var(--win31-black);
   background: var(--win31-gray);
-  color: var(--win31-black);
+  color: var(--theme-text);
   font-family: var(--font-system);
   font-size: 11px;
   font-weight: 600;
@@ -81,7 +81,7 @@
 }
 
 .viewModeButton:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .viewModeButton:active {
@@ -114,7 +114,7 @@
   display: flex;
   flex-direction: column;
   border-right: 2px groove var(--win31-dark-gray);
-  background: var(--win31-white);
+  background: var(--theme-elevated);
 }
 
 .pane:last-child {
@@ -138,7 +138,7 @@
   font-family: var(--font-system);
   font-size: 11px;
   font-weight: 700;
-  color: var(--win31-black);
+  color: var(--theme-text);
   letter-spacing: 0.3px;
 }
 
@@ -155,7 +155,7 @@
 .lineCount {
   font-family: var(--font-system);
   font-size: 10px;
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
   font-weight: 600;
   letter-spacing: 0.3px;
 }
@@ -164,14 +164,14 @@
 .codeContainer {
   flex: 1;
   overflow: auto;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
 }
 
 /* Override syntax highlighter styles for readability */
 .syntaxHighlighter {
   margin: 0 !important;
   padding: 12px !important;
-  background: var(--win31-white) !important;
+  background: var(--theme-elevated) !important;
   font-family: var(--font-code) !important;
   font-size: 11px !important;
   line-height: 1.5 !important;
@@ -179,8 +179,8 @@
 
 /* Force light theme colors for readability on beige */
 .syntaxHighlighter code {
-  background: var(--win31-white) !important;
-  color: var(--win31-black) !important;
+  background: var(--theme-elevated) !important;
+  color: var(--theme-text) !important;
 }
 
 /* Unified View */
@@ -188,7 +188,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   border-top: 1px solid var(--win31-dark-gray);
 }
 
@@ -207,7 +207,7 @@
   font-family: var(--font-system);
   font-size: 11px;
   font-weight: 700;
-  color: var(--win31-black);
+  color: var(--theme-text);
   letter-spacing: 0.3px;
 }
 
@@ -234,7 +234,7 @@
   font-family: var(--font-system);
   font-size: 11px;
   font-weight: 700;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
@@ -264,7 +264,7 @@
   font-family: var(--font-system);
   font-size: 10px;
   font-weight: 600;
-  color: var(--win31-black);
+  color: var(--theme-text);
   letter-spacing: 0.3px;
 }
 
@@ -272,13 +272,13 @@
   font-family: var(--font-system);
   font-size: 11px;
   font-weight: 700;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   letter-spacing: 0.3px;
 }
 
 /* Diff View - Line-by-line with green/red highlighting */
 .diffView {
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   font-family: var(--font-code);
   font-size: 11px;
   line-height: 1.5;
@@ -307,8 +307,8 @@
 }
 
 .contextLine {
-  background: var(--win31-white);
-  color: var(--win31-black);
+  background: var(--theme-elevated);
+  color: var(--theme-text);
 }
 
 .linePrefix {
@@ -353,7 +353,7 @@
   font-family: var(--font-code);
   font-size: 11px;
   line-height: 1.5;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   overflow-x: auto;
 }
 
@@ -367,14 +367,14 @@
   width: 40px;
   text-align: right;
   padding-right: 12px;
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
   user-select: none;
   flex-shrink: 0;
 }
 
 .lineText {
   flex: 1;
-  color: var(--win31-black);
+  color: var(--theme-text);
 }
 
 /* Responsive design */

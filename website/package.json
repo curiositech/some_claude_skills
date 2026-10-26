@@ -81,6 +81,7 @@
     "@docusaurus/module-type-aliases": "3.9.2",
     "@docusaurus/tsconfig": "3.9.2",
     "@docusaurus/types": "3.9.2",
+    "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "^16.3.1",
     "@types/node": "^24.10.1",
     "@vitest/coverage-v8": "^3.2.4",

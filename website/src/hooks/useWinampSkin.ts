@@ -1,3 +1,4 @@
+import { getLocalPreference, setLocalPreference } from '../utils/browserPreferences';
 import { useState, useEffect } from 'react';
 import { WinampSkin, WINAMP_SKINS, DEFAULT_SKIN } from '../types/skins';
 
@@ -9,7 +10,7 @@ export function useWinampSkin() {
 
   // Load skin preference from localStorage on mount
   useEffect(() => {
-    const savedSkin = localStorage.getItem(SKIN_STORAGE_KEY);
+    const savedSkin = getLocalPreference(SKIN_STORAGE_KEY);
     if (savedSkin && WINAMP_SKINS[savedSkin]) {
       setCurrentSkinId(savedSkin);
     }
@@ -30,7 +31,7 @@ export function useWinampSkin() {
     });
 
     // Save preference
-    localStorage.setItem(SKIN_STORAGE_KEY, currentSkinId);
+    setLocalPreference(SKIN_STORAGE_KEY, currentSkinId);
   }, [currentSkinId, isLoaded]);
 
   const setSkin = (skinId: string) => {

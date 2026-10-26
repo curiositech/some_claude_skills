@@ -76,7 +76,7 @@ export default function LayoutWrapper(props: Props): JSX.Element {
           zIndex={docWindow.zIndex}
           onBringToFront={() => bringToFront('doc')}
         >
-          <div style={{ background: '#F5F5DC', height: '100%', overflow: 'auto' }}>
+          <div style={{ background: "var(--theme-elevated)", height: '100%', overflow: 'auto' }}>
             <Layout {...props} />
           </div>
         </DraggableWin31Window>

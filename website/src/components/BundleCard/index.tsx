@@ -15,9 +15,9 @@ interface BundleCardProps {
  * Difficulty badge colors and labels
  */
 const DIFFICULTY_CONFIG = {
-  beginner: { label: 'Beginner', color: '#4a9', bg: '#e8fff0' },
-  intermediate: { label: 'Intermediate', color: '#48a', bg: '#e8f4ff' },
-  advanced: { label: 'Advanced', color: '#a48', bg: '#fff0f8' },
+  beginner: { label: 'Beginner', color: 'var(--theme-success)', bg: 'var(--theme-success-surface)' },
+  intermediate: { label: 'Intermediate', color: 'var(--theme-info)', bg: 'var(--theme-info-surface)' },
+  advanced: { label: 'Advanced', color: 'var(--theme-danger)', bg: 'var(--theme-danger-surface)' },
 };
 
 /**

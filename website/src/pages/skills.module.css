@@ -4,7 +4,7 @@
 
 .hero {
   background: linear-gradient(135deg, var(--ifm-color-primary-dark) 0%, var(--ifm-color-primary) 100%);
-  color: white;
+  color: var(--theme-titlebar-text);
   padding: 4rem 0;
   margin-bottom: 3rem;
 }
@@ -74,13 +74,13 @@
 
 .categoryButtonActive {
   background-color: var(--ifm-color-primary);
-  color: white;
+  color: var(--theme-titlebar-text);
   border-color: var(--ifm-color-primary);
 }
 
 .categoryButtonActive:hover {
   background-color: var(--ifm-color-primary-dark);
-  color: white;
+  color: var(--theme-titlebar-text);
 }
 
 .resultsInfo {
@@ -110,7 +110,7 @@
 .resetButton {
   padding: 0.75rem 1.5rem;
   background-color: var(--ifm-color-primary);
-  color: white;
+  color: var(--theme-titlebar-text);
   border: none;
   border-radius: var(--ifm-global-radius);
   font-size: 1rem;

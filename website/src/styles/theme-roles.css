@@ -1,0 +1,145 @@
+/* Component contract shared by native Docusaurus and the existing Win31 UI. */
+:root:root {
+  --win31-gray: var(--theme-surface);
+  --win31-light-gray: var(--theme-sunken);
+  --win31-desktop: var(--theme-desktop);
+  --win31-navy: var(--theme-titlebar);
+  --win31-active-title: var(--theme-titlebar);
+  --win31-title-text: var(--theme-titlebar-text);
+  --win31-border-outer-light: var(--theme-border-light);
+  --win31-border-outer-dark: var(--theme-border);
+  --win31-border-inner-light: var(--theme-border-light);
+  --win31-border-inner-dark: var(--theme-border-shadow);
+  --ifm-color-primary: var(--theme-link);
+  --ifm-color-primary-dark: var(--theme-link-hover);
+  --ifm-color-primary-darker: var(--theme-link-hover);
+  --ifm-color-primary-darkest: var(--theme-link-hover);
+  --ifm-color-primary-light: var(--theme-link);
+  --ifm-color-primary-lighter: var(--theme-link);
+  --ifm-color-primary-lightest: var(--theme-info-surface);
+  --ifm-font-color-base: var(--theme-text);
+  --ifm-font-color-secondary: var(--theme-muted);
+  --ifm-color-content: var(--theme-text);
+  --ifm-color-content-secondary: var(--theme-muted);
+  --ifm-background-color: var(--theme-elevated);
+  --ifm-background-surface-color: var(--theme-surface);
+  --ifm-navbar-background-color: var(--theme-surface);
+  --ifm-navbar-link-color: var(--theme-text);
+  --ifm-navbar-link-hover-color: var(--theme-link);
+  --ifm-menu-color: var(--theme-text);
+  --ifm-menu-color-active: var(--theme-link);
+  --ifm-menu-color-background-active: var(--theme-info-surface);
+  --ifm-dropdown-background-color: var(--theme-surface);
+  --ifm-card-background-color: var(--theme-surface);
+  --ifm-footer-background-color: var(--theme-surface);
+  --ifm-footer-color: var(--theme-text);
+  --ifm-footer-link-color: var(--theme-link);
+  --ifm-footer-title-color: var(--theme-text);
+  --ifm-table-stripe-background: var(--theme-sunken);
+  --ifm-table-head-background: var(--theme-surface);
+  --ifm-table-border-color: var(--theme-border);
+  --ifm-code-background: var(--theme-inline-code-bg);
+}
+html:root body { color: var(--theme-text); }
+html:root .win31-window-inner,
+html:root .win31-doc-content,
+html:root .markdown,
+html:root .theme-doc-markdown { color: var(--theme-text); }
+html:root .win31-doc-content { background: var(--theme-elevated) !important; }
+html:root .win31-doc-content :is(h1,h2,h3,h4,h5,h6,p,li) { color: var(--theme-text) !important; }
+html:root :is(.markdown,.win31-doc-content) a { color: var(--theme-link) !important; text-decoration: underline; }
+html:root :is(.markdown,.win31-doc-content) a:hover { color: var(--theme-link-hover) !important; }
+html:root :is(.markdown,.win31-doc-content) :not(pre) > code {
+  color: var(--theme-inline-code-text) !important;
+  background: var(--theme-inline-code-bg) !important;
+}
+html:root pre, html:root pre code, html:root code[class*='language-'] {
+  background: var(--theme-code-bg) !important;
+  color: var(--theme-code-text) !important;
+}
+html:root pre code span { background: transparent !important; color: inherit !important; }
+html:root .token:is(.comment,.prolog,.doctype,.cdata) { color: var(--theme-code-muted) !important; }
+html:root .token:is(.string,.char,.builtin,.inserted) { color: var(--theme-code-green) !important; }
+html:root .token:is(.keyword,.atrule,.attr-value,.function,.class-name) { color: var(--theme-code-blue) !important; }
+html:root .token:is(.number,.boolean,.constant,.symbol) { color: var(--theme-code-amber) !important; }
+html:root .win31-titlebar, html:root .theme-picker__dropdown-titlebar {
+  background: var(--theme-titlebar) !important; color: var(--theme-titlebar-text) !important;
+}
+html:root .win31-title-text { color: var(--theme-titlebar-text) !important; }
+html:root :is(.win31-button,.win31-menu-item,.win31-taskbar,.theme-picker__btn,.theme-picker__item) {
+  color: var(--theme-text); background: var(--theme-surface);
+}
+html:root :is(.win31-button,.theme-picker__btn):hover { background: var(--theme-sunken); }
+html:root :is(input,textarea,select) {
+  color: var(--theme-field-text); background-color: var(--theme-field-bg);
+}
+html:root :is(input,textarea)::placeholder { color: var(--theme-muted); opacity: 1; }
+html:root :is(button,a,input,textarea,select,summary):focus-visible {
+  outline: 3px solid var(--theme-focus); outline-offset: 3px;
+}
+/* Native Docusaurus keeps prepaint/system/storage behavior; only its chrome changes. */
+html:root button[class*='toggleButton'] {
+  width: 44px; height: 44px; border-radius: 0;
+  color: var(--theme-text); background: var(--theme-surface);
+  border: 2px outset var(--theme-border-light);
+  box-shadow: 2px 2px 0 var(--theme-border);
+}
+html:root button[class*='toggleButton']:hover { background: var(--theme-sunken); }
+@media (prefers-reduced-motion: reduce) {
+  html:root *, html:root *::before, html:root *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important; scroll-behavior: auto !important;
+  }
+}
+/* The terminal hero stays intentionally dark in both appearances. */
+html:root .install-hero__content { color: var(--theme-code-text); background: var(--theme-code-bg); }
+html:root .install-hero__content .install-hero__subtitle,
+html:root .install-hero__content .install-hero__exposition { color: var(--theme-code-text) !important; }
+html:root .install-hero__content .install-hero__exposition a { color: var(--theme-code-blue); }
+html:root .install-hero__badge--teal { color: var(--theme-code-blue); border-color: var(--theme-code-blue); }
+html:root .install-hero__sticker { background: var(--theme-sticker-red); color: var(--theme-titlebar-text); }
+html:root .inline-sticker { background: var(--theme-sticker-cyan); color: var(--theme-titlebar-text); }
+html:root .fork-sticker { background: var(--theme-sticker-orange); color: var(--theme-titlebar-text); }
+html:root .footer--dark {
+  --ifm-footer-background-color: var(--theme-surface);
+  --ifm-footer-color: var(--theme-text);
+  --ifm-footer-link-color: var(--theme-link);
+  --ifm-footer-title-color: var(--theme-text);
+}
+/* Prism line wrappers may carry their own inline foreground. Pair every code
+   descendant with the terminal surface before applying semantic syntax roles. */
+html:root pre :is(code, code *) { color: var(--theme-code-text) !important; background: transparent !important; }
+html:root pre .token:is(.comment,.prolog,.doctype,.cdata) { color: var(--theme-code-muted) !important; }
+html:root pre .token:is(.string,.char,.builtin,.inserted) { color: var(--theme-code-green) !important; }
+html:root pre .token:is(.keyword,.atrule,.attr-value,.function,.class-name) { color: var(--theme-code-blue) !important; }
+html:root pre .token:is(.number,.boolean,.constant,.symbol) { color: var(--theme-code-amber) !important; }
+html:root .footer--dark { background: var(--theme-surface); color: var(--theme-text); }
+html:root .footer--dark .footer__link-item { color: var(--theme-link) !important; }
+html:root :is(button,a,input,textarea,select,summary):focus-visible {
+  outline: 3px solid var(--theme-focus);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--theme-elevated);
+}
+html:root .theme-announcement-bar,
+html:root .theme-announcement-bar a {
+  color: var(--theme-titlebar-text) !important;
+  background: var(--theme-titlebar);
+}
+/* Sidebar categories share the same selected/inactive pairs as document links. */
+html:root .menu__link { color: var(--theme-text) !important; }
+html:root .menu__link--active { color: var(--theme-titlebar-text) !important; background: var(--theme-titlebar) !important; }
+html:root .menu__link span { color: inherit !important; }
+html:root .menu__link:not(.menu__link--active):hover { color: var(--theme-text) !important; background: var(--theme-sunken) !important; }
+html:root .menu__list-item-collapsible:has(> .menu__link--active) {
+  background: var(--theme-titlebar) !important;
+  color: var(--theme-titlebar-text) !important;
+}
+/* Window controls keep their own foreground when nested in an inverse title. */
+html:root .win31-btn-3d { color: var(--theme-text); background: var(--theme-surface); }
+html:root .bundle-gallery__filter-btn--active {
+  color: var(--theme-action-text); background: var(--theme-action-bg);
+}
+/* Guide artwork is a terminal panel inside the otherwise themed document. */
+html:root .win31-doc-content .guide-hero-title { color: var(--theme-code-green) !important; }
+html:root .win31-doc-content .guide-hero-subtitle { color: var(--theme-code-muted) !important; }
+html:root .footer-sticker { color: var(--theme-titlebar-text); background: var(--theme-sticker-red); }

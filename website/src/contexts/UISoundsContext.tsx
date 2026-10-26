@@ -1,3 +1,4 @@
+import { getLocalPreference, setLocalPreference } from '../utils/browserPreferences';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 interface UISoundsContextType {
@@ -27,7 +28,7 @@ export function UISoundsProvider({ children }: { children: React.ReactNode }) {
   const [isMuted, setIsMuted] = useState<boolean>(() => {
     // Load mute state from localStorage
     if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('ui-sounds-muted');
+      const stored = getLocalPreference('ui-sounds-muted');
       return stored === 'true';
     }
     return false;
@@ -36,7 +37,7 @@ export function UISoundsProvider({ children }: { children: React.ReactNode }) {
   const [volume, setVolumeState] = useState<number>(() => {
     // Load volume from localStorage (default 0.3)
     if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('ui-sounds-volume');
+      const stored = getLocalPreference('ui-sounds-volume');
       return stored ? parseFloat(stored) : 0.3;
     }
     return 0.3;
@@ -69,14 +70,14 @@ export function UISoundsProvider({ children }: { children: React.ReactNode }) {
   // Persist mute state
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('ui-sounds-muted', String(isMuted));
+      setLocalPreference('ui-sounds-muted', String(isMuted));
     }
   }, [isMuted]);
 
   // Persist volume
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('ui-sounds-volume', String(volume));
+      setLocalPreference('ui-sounds-volume', String(volume));
     }
   }, [volume]);
 

@@ -158,8 +158,8 @@ export default function DAGBuilderPage(): React.ReactElement {
               style={{
                 width: '600px',
                 maxHeight: '80vh',
-                background: '#c0c0c0',
-                border: '4px solid #000000',
+                background: "var(--theme-surface)",
+                border: "4px solid var(--theme-border)",
                 boxShadow: '8px 8px 0 rgba(0,0,0,0.3)',
               }}
               onClick={e => e.stopPropagation()}
@@ -171,7 +171,7 @@ export default function DAGBuilderPage(): React.ReactElement {
                   alignItems: 'center',
                   padding: '4px 8px',
                   background: 'linear-gradient(90deg, #000080, #1084d0)',
-                  color: 'white',
+                  color: "var(--theme-titlebar-text)",
                   fontFamily: 'var(--font-system)',
                   fontSize: '14px',
                   fontWeight: 'bold',
@@ -180,10 +180,10 @@ export default function DAGBuilderPage(): React.ReactElement {
                 <span>📤 Export - {exportFormat.toUpperCase()}</span>
                 <button
                   style={{
-                    background: '#c0c0c0',
+                    background: "var(--theme-surface)",
                     border: '2px solid',
-                    borderColor: '#ffffff #808080 #808080 #ffffff',
-                    color: '#000000',
+                    borderColor: "var(--theme-border-light) var(--theme-border) var(--theme-border) var(--theme-border-light)",
+                    color: "var(--theme-text)",
                     width: '20px',
                     height: '20px',
                     fontSize: '14px',
@@ -200,9 +200,9 @@ export default function DAGBuilderPage(): React.ReactElement {
               <div style={{ padding: '16px' }}>
                 <pre
                   style={{
-                    background: '#ffffff',
+                    background: "var(--theme-elevated)",
                     border: '2px solid',
-                    borderColor: '#808080 #ffffff #ffffff #808080',
+                    borderColor: "var(--theme-border) var(--theme-border-light) var(--theme-border-light) var(--theme-border)",
                     padding: '12px',
                     margin: '0 0 16px 0',
                     maxHeight: '400px',

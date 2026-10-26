@@ -103,7 +103,7 @@ export default function ErrorShowcase(): JSX.Element {
               customStyle={{
                 margin: 0,
                 padding: '1rem',
-                background: '#ffffff',
+                background: "var(--theme-elevated)",
                 borderRadius: 0
               }}
             >
@@ -132,7 +132,7 @@ export default function ErrorShowcase(): JSX.Element {
               customStyle={{
                 margin: 0,
                 padding: '1rem',
-                background: '#ffffff',
+                background: "var(--theme-elevated)",
                 borderRadius: 0
               }}
             >

@@ -20,11 +20,11 @@ export interface TagDefinition {
 
 // Color mapping for tag types
 export const TAG_TYPE_COLORS: Record<TagType, { bg: string; text: string; border: string }> = {
-  'skill-type': { bg: '#f3e8ff', text: '#7c3aed', border: '#c4b5fd' },   // Purple
-  'domain': { bg: '#dbeafe', text: '#1d4ed8', border: '#93c5fd' },       // Blue
-  'output': { bg: '#dcfce7', text: '#15803d', border: '#86efac' },       // Green
-  'complexity': { bg: '#ffedd5', text: '#c2410c', border: '#fdba74' },   // Orange
-  'integration': { bg: '#fce7f3', text: '#be185d', border: '#f9a8d4' },  // Pink
+  'skill-type': { bg: 'var(--theme-info-surface)', text: 'var(--theme-info)', border: 'var(--theme-info)' },
+  'domain': { bg: 'var(--theme-info-surface)', text: 'var(--theme-info)', border: 'var(--theme-info)' },
+  'output': { bg: 'var(--theme-success-surface)', text: 'var(--theme-success)', border: 'var(--theme-success)' },
+  'complexity': { bg: 'var(--theme-warning-surface)', text: 'var(--theme-warning)', border: 'var(--theme-warning)' },
+  'integration': { bg: 'var(--theme-danger-surface)', text: 'var(--theme-danger)', border: 'var(--theme-danger)' },
 };
 
 // All available tags - expanded taxonomy for rich discoverability

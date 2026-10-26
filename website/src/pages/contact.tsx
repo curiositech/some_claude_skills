@@ -28,20 +28,20 @@ export default function HireAuthor(): JSX.Element {
                 marginTop: 0,
                 fontSize: '36px',
                 marginBottom: '12px',
-                color: '#FF7F50',
+                color: 'var(--theme-danger)',
                 textShadow: '2px 2px 0px #808080'
               }}>
                 Erich Owens
               </h1>
               <p style={{
                 fontSize: '18px',
-                color: '#333',
+                color: "var(--theme-text)",
                 marginBottom: '24px',
                 fontStyle: 'italic'
               }}>
                 Architect & Tool Builder Who Makes Complex Systems Legible
               </p>
-              <p style={{ fontSize: '15px', color: '#666', maxWidth: '700px', margin: '0 auto 24px', lineHeight: '1.6' }}>
+              <p style={{ fontSize: '15px', color: "var(--theme-muted)", maxWidth: '700px', margin: '0 auto 24px', lineHeight: '1.6' }}>
                 Founder of Curiositech, a Portland-based product studio building purpose-driven apps for recovery, legal aid, AI, and developer tools. Previously led 80+ engineers at Meta across VR/AR, computer vision, and ML. I build systems that last and tools that explain them.
               </p>
               <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -50,7 +50,7 @@ export default function HireAuthor(): JSX.Element {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="win31-btn-3d"
-                  style={{ padding: '12px 24px', fontWeight: 'bold', background: '#000080', color: 'white' }}
+                  style={{ padding: '12px 24px', fontWeight: 'bold', background: "var(--theme-titlebar)", color: "var(--theme-titlebar-text)" }}
                 >
                   Contact via LinkedIn
                 </a>
@@ -88,7 +88,7 @@ export default function HireAuthor(): JSX.Element {
               </div>
             </div>
             <div style={{ padding: '24px' }}>
-              <h2 style={{ marginTop: 0, fontSize: '22px', marginBottom: '16px', color: '#000080' }}>What Sets Me Apart</h2>
+              <h2 style={{ marginTop: 0, fontSize: '22px', marginBottom: '16px', color: "var(--theme-link)" }}>What Sets Me Apart</h2>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {[
                   "Domain agility: Uses mathematical foundations to master new fields rapidly—from NLP to computer vision to VR/AR to medical AI to drone systems to psychology AI",
@@ -106,7 +106,7 @@ export default function HireAuthor(): JSX.Element {
                     <span style={{
                       position: 'absolute',
                       left: 0,
-                      color: '#FF7F50',
+                      color: 'var(--theme-danger)',
                       fontWeight: 'bold'
                     }}>✓</span>
                     {item}
@@ -128,7 +128,7 @@ export default function HireAuthor(): JSX.Element {
               </div>
             </div>
             <div style={{ padding: '24px' }}>
-              <h2 style={{ marginTop: 0, fontSize: '22px', marginBottom: '20px', color: '#000080' }}>Work Experience</h2>
+              <h2 style={{ marginTop: 0, fontSize: '22px', marginBottom: '20px', color: "var(--theme-link)" }}>Work Experience</h2>
 
               <div style={{ display: 'grid', gap: '16px' }}>
                 {[
@@ -294,12 +294,12 @@ export default function HireAuthor(): JSX.Element {
                 ].map((job, i) => (
                   <div key={i} style={{
                     padding: '16px',
-                    background: '#FAF7F0',
-                    border: '2px solid #e0e0e0'
+                    background: 'var(--theme-elevated)',
+                    border: '2px solid var(--theme-border)'
                   }}>
-                    <div style={{ fontWeight: 'bold', color: '#000080', fontSize: '15px' }}>{job.role}</div>
-                    <div style={{ color: '#FF7F50', fontWeight: 'bold', fontSize: '14px' }}>{job.company}</div>
-                    <div style={{ color: '#808080', fontStyle: 'italic', fontSize: '13px', marginBottom: '8px' }}>{job.period}</div>
+                    <div style={{ fontWeight: 'bold', color: "var(--theme-link)", fontSize: '15px' }}>{job.role}</div>
+                    <div style={{ color: 'var(--theme-danger)', fontWeight: 'bold', fontSize: '14px' }}>{job.company}</div>
+                    <div style={{ color: "var(--theme-muted)", fontStyle: 'italic', fontSize: '13px', marginBottom: '8px' }}>{job.period}</div>
                     <div style={{ fontSize: '14px', lineHeight: '1.5', marginBottom: '8px' }}>{job.desc}</div>
                     <ul style={{ margin: '8px 0', paddingLeft: '20px', fontSize: '13px' }}>
                       {job.achievements.map((a, j) => (
@@ -309,11 +309,11 @@ export default function HireAuthor(): JSX.Element {
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginTop: '8px' }}>
                       {job.tags.map((tag, k) => (
                         <span key={k} style={{
-                          background: '#C0C0C0',
+                          background: "var(--theme-surface)",
                           padding: '2px 6px',
                           fontSize: '11px',
                           fontFamily: 'monospace',
-                          border: '1px solid #808080'
+                          border: "1px solid var(--theme-border)"
                         }}>{tag}</span>
                       ))}
                     </div>
@@ -335,7 +335,7 @@ export default function HireAuthor(): JSX.Element {
               </div>
             </div>
             <div style={{ padding: '24px' }}>
-              <h2 style={{ marginTop: 0, fontSize: '22px', marginBottom: '20px', color: '#000080' }}>Featured Projects</h2>
+              <h2 style={{ marginTop: 0, fontSize: '22px', marginBottom: '20px', color: "var(--theme-link)" }}>Featured Projects</h2>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
                 {[
@@ -384,23 +384,23 @@ export default function HireAuthor(): JSX.Element {
                   }
                 ].map((project, i) => (
                   <div key={i} style={{
-                    background: '#C0C0C0',
-                    border: '2px outset #fff'
+                    background: "var(--theme-surface)",
+                    border: "2px outset var(--theme-border-light)"
                   }}>
                     <div style={{
-                      background: '#000080',
-                      color: 'white',
+                      background: "var(--theme-titlebar)",
+                      color: "var(--theme-titlebar-text)",
                       padding: '4px 8px',
                       fontWeight: 'bold',
                       fontSize: '13px'
                     }}>{project.title}</div>
-                    <div style={{ padding: '12px', background: 'white', margin: '4px', border: '2px inset #ccc' }}>
+                    <div style={{ padding: '12px', background: "var(--theme-elevated)", margin: '4px', border: "2px inset var(--theme-border)" }}>
                       <p style={{ fontSize: '13px', marginBottom: '8px' }}>{project.desc}</p>
-                      <p style={{ fontSize: '13px', color: '#FF7F50', fontWeight: 'bold', marginBottom: '8px' }}>{project.impact}</p>
+                      <p style={{ fontSize: '13px', color: 'var(--theme-danger)', fontWeight: 'bold', marginBottom: '8px' }}>{project.impact}</p>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
                         {project.tags.map((tag, k) => (
                           <span key={k} style={{
-                            background: '#C0C0C0',
+                            background: "var(--theme-surface)",
                             padding: '2px 6px',
                             fontSize: '10px',
                             fontFamily: 'monospace'
@@ -435,7 +435,7 @@ export default function HireAuthor(): JSX.Element {
               </div>
             </div>
             <div style={{ padding: '24px' }}>
-              <h2 style={{ marginTop: 0, fontSize: '22px', marginBottom: '20px', color: '#000080' }}>Education</h2>
+              <h2 style={{ marginTop: 0, fontSize: '22px', marginBottom: '20px', color: "var(--theme-link)" }}>Education</h2>
 
               {[
                 {
@@ -463,11 +463,11 @@ export default function HireAuthor(): JSX.Element {
                   borderBottom: i < 2 ? '1px solid #808080' : 'none'
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                    <h3 style={{ margin: 0, fontSize: '16px', color: '#000080' }}>{edu.degree}</h3>
-                    <span style={{ fontSize: '13px', color: '#808080', fontWeight: 'bold' }}>{edu.year}</span>
+                    <h3 style={{ margin: 0, fontSize: '16px', color: "var(--theme-link)" }}>{edu.degree}</h3>
+                    <span style={{ fontSize: '13px', color: "var(--theme-muted)", fontWeight: 'bold' }}>{edu.year}</span>
                   </div>
                   <div style={{ fontSize: '14px', marginBottom: '4px' }}>{edu.school}</div>
-                  <div style={{ fontSize: '13px', color: '#666' }}>{edu.details}</div>
+                  <div style={{ fontSize: '13px', color: "var(--theme-muted)" }}>{edu.details}</div>
                 </div>
               ))}
             </div>
@@ -485,7 +485,7 @@ export default function HireAuthor(): JSX.Element {
               </div>
             </div>
             <div style={{ padding: '24px' }}>
-              <h2 style={{ marginTop: 0, fontSize: '22px', marginBottom: '16px', color: '#000080' }}>How to Contact</h2>
+              <h2 style={{ marginTop: 0, fontSize: '22px', marginBottom: '16px', color: "var(--theme-link)" }}>How to Contact</h2>
               <div style={{
                 display: 'grid',
                 gap: '12px',
@@ -561,7 +561,7 @@ export default function HireAuthor(): JSX.Element {
               </div>
             </div>
             <div style={{ padding: '24px' }}>
-              <h2 style={{ marginTop: 0, fontSize: '22px', marginBottom: '16px', color: '#000080' }}>Good Fits for Consulting</h2>
+              <h2 style={{ marginTop: 0, fontSize: '22px', marginBottom: '16px', color: "var(--theme-link)" }}>Good Fits for Consulting</h2>
               <ul style={{ marginBottom: 0, paddingLeft: '20px', lineHeight: '1.9' }}>
                 <li><strong>VR/AR applications:</strong> avatar systems, haptic feedback, spatial computing, embodied experiences</li>
                 <li><strong>Computer vision systems:</strong> CLIP embeddings, face tracking, photo understanding, event detection</li>
@@ -594,24 +594,24 @@ export default function HireAuthor(): JSX.Element {
                 textAlign: 'center'
               }}>
                 <div>
-                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#000080' }}>15</div>
-                  <div style={{ fontSize: '13px', color: '#666' }}>Years in Industry</div>
+                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: "var(--theme-link)" }}>15</div>
+                  <div style={{ fontSize: '13px', color: "var(--theme-muted)" }}>Years in Industry</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#000080' }}>15</div>
-                  <div style={{ fontSize: '13px', color: '#666' }}>Patents</div>
+                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: "var(--theme-link)" }}>15</div>
+                  <div style={{ fontSize: '13px', color: "var(--theme-muted)" }}>Patents</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#000080' }}>192+</div>
-                  <div style={{ fontSize: '13px', color: '#666' }}>Claude Skills</div>
+                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: "var(--theme-link)" }}>192+</div>
+                  <div style={{ fontSize: '13px', color: "var(--theme-muted)" }}>Claude Skills</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#000080' }}>4</div>
-                  <div style={{ fontSize: '13px', color: '#666' }}>Hackathon Wins</div>
+                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: "var(--theme-link)" }}>4</div>
+                  <div style={{ fontSize: '13px', color: "var(--theme-muted)" }}>Hackathon Wins</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#000080' }}>MS</div>
-                  <div style={{ fontSize: '13px', color: '#666' }}>Applied Math</div>
+                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: "var(--theme-link)" }}>MS</div>
+                  <div style={{ fontSize: '13px', color: "var(--theme-muted)" }}>Applied Math</div>
                 </div>
               </div>
             </div>
@@ -628,7 +628,7 @@ export default function HireAuthor(): JSX.Element {
                 <div className="win31-btn-3d win31-btn-3d--small">[]</div>
               </div>
             </div>
-            <div style={{ padding: '20px', fontSize: '13px', color: '#666', lineHeight: '1.6' }}>
+            <div style={{ padding: '20px', fontSize: '13px', color: "var(--theme-muted)", lineHeight: '1.6' }}>
               <p style={{ marginTop: 0, marginBottom: '8px' }}>
                 <strong>This page was built using Claude Skills:</strong>
               </p>

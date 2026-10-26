@@ -342,7 +342,7 @@ export default function LifecycleTour(): JSX.Element {
           <h1 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>
             winDAGs Lifecycle Tour
           </h1>
-          <p style={{ color: '#6B7280', fontSize: '1.1rem' }}>
+          <p style={{ color: "var(--theme-muted)", fontSize: '1.1rem' }}>
             Watch a DAG of skillful agents build a portfolio website from a single sentence.
           </p>
         </div>
@@ -360,8 +360,8 @@ export default function LifecycleTour(): JSX.Element {
                 padding: '6px 12px',
                 fontSize: '0.8rem',
                 border: i === currentPhase ? '2px solid #000080' : '2px solid #c0c0c0',
-                background: i === currentPhase ? '#000080' : i < currentPhase ? '#d4edda' : '#f8f9fa',
-                color: i === currentPhase ? '#fff' : '#333',
+                background: i === currentPhase ? 'var(--theme-action-bg)' : i < currentPhase ? 'var(--theme-success-surface)' : 'var(--theme-surface)',
+                color: i === currentPhase ? 'var(--theme-action-text)' : 'var(--theme-text)',
                 cursor: 'pointer',
                 fontFamily: 'var(--font-system, sans-serif)',
               }}
@@ -374,15 +374,15 @@ export default function LifecycleTour(): JSX.Element {
         {/* Controls */}
         <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginBottom: '1.5rem' }}>
           <button onClick={prev} disabled={currentPhase === 0}
-            style={{ padding: '8px 16px', cursor: 'pointer', border: '2px outset #c0c0c0', background: '#c0c0c0' }}>
+            style={{ padding: '8px 16px', cursor: 'pointer', border: '2px outset #c0c0c0', background: "var(--theme-surface)" }}>
             ◀ Previous
           </button>
           <button onClick={toggleAutoPlay}
-            style={{ padding: '8px 16px', cursor: 'pointer', border: '2px outset #c0c0c0', background: isAutoPlaying ? '#ff6b6b' : '#c0c0c0' }}>
+            style={{ padding: '8px 16px', cursor: 'pointer', border: '2px outset #c0c0c0', background: isAutoPlaying ? 'var(--theme-danger-surface)' : 'var(--theme-surface)', color: 'var(--theme-text)' }}>
             {isAutoPlaying ? '⏸ Pause' : '▶ Auto-Play'}
           </button>
           <button onClick={next} disabled={currentPhase === PHASES.length - 1}
-            style={{ padding: '8px 16px', cursor: 'pointer', border: '2px outset #c0c0c0', background: '#c0c0c0' }}>
+            style={{ padding: '8px 16px', cursor: 'pointer', border: '2px outset #c0c0c0', background: "var(--theme-surface)" }}>
             Next ▶
           </button>
         </div>
@@ -394,19 +394,19 @@ export default function LifecycleTour(): JSX.Element {
         }}>
           {/* Left: Description */}
           <div style={{
-            border: '4px solid #000', boxShadow: '8px 8px 0 rgba(0,0,0,0.3)',
-            background: '#fff',
+            border: "4px solid var(--theme-border)", boxShadow: '8px 8px 0 rgba(0,0,0,0.3)',
+            background: "var(--theme-elevated)",
           }}>
             {/* Win31 title bar */}
             <div style={{
-              background: 'linear-gradient(90deg, #000080, #1084d0)',
-              color: '#fff', padding: '4px 8px', fontWeight: 'bold',
+              background: 'var(--theme-titlebar)',
+              color: "var(--theme-titlebar-text)", padding: '4px 8px', fontWeight: 'bold',
               fontSize: '0.9rem', fontFamily: 'var(--font-system, sans-serif)',
             }}>
               {phase.title}
             </div>
             <div style={{ padding: '1rem' }}>
-              <p style={{ fontStyle: 'italic', color: '#6B7280', marginBottom: '0.75rem', fontSize: '0.9rem' }}>
+              <p style={{ fontStyle: 'italic', color: "var(--theme-muted)", marginBottom: '0.75rem', fontSize: '0.9rem' }}>
                 {phase.subtitle}
               </p>
               <p style={{ marginBottom: '1rem', lineHeight: 1.6 }}>
@@ -418,14 +418,14 @@ export default function LifecycleTour(): JSX.Element {
                     padding: '4px 0', borderBottom: '1px solid #eee',
                     fontSize: '0.85rem', display: 'flex', alignItems: 'flex-start', gap: '6px',
                   }}>
-                    <span style={{ color: '#10B981', flexShrink: 0 }}>▸</span> {d}
+                    <span style={{ color: 'var(--theme-success)', flexShrink: 0 }}>▸</span> {d}
                   </li>
                 ))}
               </ul>
               {phase.highlight && (
                 <div style={{
                   marginTop: '1rem', padding: '8px 12px',
-                  background: '#FEF3C7', border: '1px solid #F59E0B',
+                  background: "var(--theme-warning-surface)", border: '1px solid #F59E0B',
                   fontSize: '0.85rem', borderRadius: '4px',
                 }}>
                   💡 {phase.highlight}
@@ -436,12 +436,12 @@ export default function LifecycleTour(): JSX.Element {
 
           {/* Right: DAG Visualization */}
           <div style={{
-            border: '4px solid #000', boxShadow: '8px 8px 0 rgba(0,0,0,0.3)',
-            background: '#fff', minHeight: '400px',
+            border: "4px solid var(--theme-border)", boxShadow: '8px 8px 0 rgba(0,0,0,0.3)',
+            background: "var(--theme-elevated)", minHeight: '400px',
           }}>
             <div style={{
-              background: 'linear-gradient(90deg, #000080, #1084d0)',
-              color: '#fff', padding: '4px 8px', fontWeight: 'bold',
+              background: 'var(--theme-titlebar)',
+              color: "var(--theme-titlebar-text)", padding: '4px 8px', fontWeight: 'bold',
               fontSize: '0.9rem', fontFamily: 'var(--font-system, sans-serif)',
             }}>
               DAG Visualization — ${phase.costSoFar.toFixed(3)} spent
@@ -461,7 +461,7 @@ export default function LifecycleTour(): JSX.Element {
           overflow: 'hidden', marginBottom: '1rem',
         }}>
           <div style={{
-            background: '#000080',
+            background: "var(--theme-titlebar)",
             height: '100%',
             width: `${((currentPhase + 1) / PHASES.length) * 100}%`,
             transition: 'width 0.5s ease',
@@ -469,7 +469,7 @@ export default function LifecycleTour(): JSX.Element {
         </div>
 
         {/* Phase Counter */}
-        <p style={{ textAlign: 'center', color: '#6B7280', fontSize: '0.9rem' }}>
+        <p style={{ textAlign: 'center', color: "var(--theme-muted)", fontSize: '0.9rem' }}>
           Phase {currentPhase + 1} of {PHASES.length} · Portfolio Website Builder Template
         </p>
       </main>

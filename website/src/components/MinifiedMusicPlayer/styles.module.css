@@ -88,11 +88,11 @@
   text-shadow:
     1px 1px 0 #ff8800,
     2px 2px 0 #ff6600,
-    -1px -1px 0 #000;
+    -1px -1px 0 var(--theme-border);
 }
 
 .nullsoftSubtext {
-  color: #00ff00;
+  color: var(--theme-text);
   font-family: 'VT323', monospace;
   font-size: 8px;
   letter-spacing: 1px;
@@ -290,12 +290,12 @@
 }
 
 .modeBtn:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .modeBtn.active {
   opacity: 1;
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
   /* Pressed/active state - inverted bevel */
   box-shadow:
     inset 1px 1px 0 var(--win31-dark-gray),
@@ -335,7 +335,7 @@
 }
 
 .transportBtn:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .transportBtn:active {
@@ -349,7 +349,7 @@
 
 .btnIcon {
   font-size: 8px;
-  color: var(--win31-black);
+  color: var(--theme-text);
   line-height: 1;
 }
 
@@ -437,7 +437,7 @@
   align-items: center;
   justify-content: center;
   font-size: 8px;
-  color: var(--win31-black);
+  color: var(--theme-text);
 
   /* Classic 3D button bevel */
   box-shadow:
@@ -448,7 +448,7 @@
 }
 
 .expandBtn:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .expandBtn:active {
@@ -487,7 +487,7 @@
 }
 
 .skinBtn:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .skinMenu {
@@ -515,7 +515,7 @@
   cursor: pointer;
   font-family: 'VT323', monospace;
   font-size: 11px;
-  color: var(--win31-black);
+  color: var(--theme-text);
   text-align: left;
 }
 
@@ -575,7 +575,7 @@
   --winamp-vis-green: #00ffff;
   --winamp-vis-yellow: #ff00ff;
   --winamp-vis-red: #ff0080;
-  background: #1a1a2e;
+  background: var(--theme-code-bg);
 }
 
 .skin_synthwave .btnIcon {

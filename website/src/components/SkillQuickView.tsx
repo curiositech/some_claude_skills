@@ -67,14 +67,14 @@ export default function SkillQuickView({ skill, onClose, isStarred = false, onTo
         {/* Title Bar */}
         <div
           style={{
-            background: 'linear-gradient(90deg, var(--win31-navy), var(--win31-blue))',
+            background: 'var(--theme-titlebar)',
             padding: '8px 12px',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
           }}
         >
-          <span style={{ color: 'white', fontWeight: 'bold', fontFamily: 'var(--font-code)' }}>
+          <span style={{ color: "var(--theme-titlebar-text)", fontWeight: 'bold', fontFamily: 'var(--font-code)' }}>
             {skill.title}
           </span>
           <button
@@ -94,7 +94,7 @@ export default function SkillQuickView({ skill, onClose, isStarred = false, onTo
         </div>
 
         {/* Hero Image */}
-        <div style={{ position: 'relative', paddingBottom: '45%', background: '#000' }}>
+        <div style={{ position: 'relative', paddingBottom: '45%', background: "var(--theme-code-bg)" }}>
           <img
             src={skill.heroImage ? useBaseUrl(skill.heroImage) : useBaseUrl(`/img/skills/${skill.id}-hero.webp`)}
             alt={skill.title}
@@ -124,29 +124,29 @@ export default function SkillQuickView({ skill, onClose, isStarred = false, onTo
               padding: '4px 12px',
               fontSize: '12px',
               fontFamily: 'var(--font-code)',
-              color: '#000',
+              color: "var(--theme-accent-ink)",
               fontWeight: 600,
             }}>
               {skill.category}
             </div>
             <div style={{
-              background: '#e8ffe8',
+              background: "var(--theme-success-surface)",
               border: '1px solid #4a4',
               padding: '4px 12px',
               fontSize: '12px',
               fontFamily: 'var(--font-code)',
-              color: '#060',
+              color: "var(--theme-success)",
             }}>
               30 sec install
             </div>
             {!statsLoading && (
               <div style={{
-                background: '#e8f4ff',
+                background: "var(--theme-info-surface)",
                 border: '1px solid #48a',
                 padding: '4px 12px',
                 fontSize: '12px',
                 fontFamily: 'var(--font-code)',
-                color: '#036',
+                color: "var(--theme-link)",
                 display: 'flex',
                 alignItems: 'center',
                 gap: '6px',
@@ -175,7 +175,7 @@ export default function SkillQuickView({ skill, onClose, isStarred = false, onTo
               <div style={{
                 fontSize: '13px',
                 fontWeight: 'bold',
-                color: 'var(--win31-navy)',
+                color: "var(--theme-link)",
                 marginBottom: '10px',
                 fontFamily: 'var(--font-code)',
               }}>
@@ -195,17 +195,17 @@ export default function SkillQuickView({ skill, onClose, isStarred = false, onTo
                         alignItems: 'flex-start',
                         gap: '8px',
                         padding: '8px',
-                        background: 'white',
-                        border: '1px solid #ccc',
+                        background: "var(--theme-elevated)",
+                        border: "1px solid var(--theme-border)",
                         transition: 'all 0.15s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background = '#fff8dc';
+                        e.currentTarget.style.background = 'var(--theme-sunken)';
                         e.currentTarget.style.borderColor = 'var(--win31-navy)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'white';
-                        e.currentTarget.style.borderColor = '#ccc';
+                        e.currentTarget.style.background = 'var(--theme-elevated)';
+                        e.currentTarget.style.borderColor = 'var(--theme-border)';
                       }}
                     >
                       <span style={{ fontSize: '16px' }}>→</span>
@@ -213,14 +213,14 @@ export default function SkillQuickView({ skill, onClose, isStarred = false, onTo
                         <div style={{
                           fontWeight: 'bold',
                           fontSize: '13px',
-                          color: 'var(--win31-navy)',
+                          color: "var(--theme-link)",
                           fontFamily: 'var(--font-code)',
                         }}>
                           {pairedSkill.title}
                         </div>
                         <div style={{
                           fontSize: '12px',
-                          color: '#555',
+                          color: "var(--theme-muted)",
                           marginTop: '2px',
                         }}>
                           {pairing.reason}
@@ -237,7 +237,7 @@ export default function SkillQuickView({ skill, onClose, isStarred = false, onTo
           <p style={{
             fontSize: '14px',
             lineHeight: '1.6',
-            color: '#333',
+            color: "var(--theme-text)",
             marginBottom: '20px',
           }}>
             {skill.description}
@@ -265,7 +265,8 @@ export default function SkillQuickView({ skill, onClose, isStarred = false, onTo
               style={{
                 fontSize: '14px',
                 padding: '12px 24px',
-                background: isStarred ? 'var(--win31-yellow)' : 'var(--win31-gray)',
+                background: isStarred ? 'var(--theme-sticker-yellow)' : 'var(--theme-surface)',
+                color: isStarred ? 'var(--theme-accent-ink)' : 'var(--theme-text)',
               }}
               onClick={() => onToggleStar?.(skill.id)}
             >

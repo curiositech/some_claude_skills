@@ -115,7 +115,7 @@ export function TagList({
       {hiddenCount > 0 && (
         <span style={{
           fontSize: size === 'sm' ? '11px' : '13px',
-          color: '#666',
+          color: "var(--theme-muted)",
           marginLeft: '2px'
         }}>
           +{hiddenCount}

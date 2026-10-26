@@ -91,16 +91,16 @@ export type AgentRole = (typeof AGENT_ROLES)[number];
  * Status configuration for display
  */
 export const AGENT_STATUS_CONFIG: Record<AgentStatus, { label: string; color: string; bg: string; glow: string }> = {
-  active: { label: 'Active', color: '#166534', bg: '#dcfce7', glow: '#22c55e' },
-  idle: { label: 'Idle', color: '#6b7280', bg: '#f3f4f6', glow: '#9ca3af' },
-  creating: { label: 'Creating...', color: '#7c3aed', bg: '#ede9fe', glow: '#a78bfa' },
+  active: { label: 'Active', color: 'var(--theme-success)', bg: 'var(--theme-success-surface)', glow: '#22c55e' },
+  idle: { label: 'Idle', color: 'var(--theme-info)', bg: 'var(--theme-info-surface)', glow: '#9ca3af' },
+  creating: { label: 'Creating...', color: 'var(--theme-info)', bg: 'var(--theme-info-surface)', glow: '#a78bfa' },
 };
 
 /**
  * Badge configuration for display
  */
 export const AGENT_BADGE_CONFIG: Record<AgentBadge, { label: string; color: string; bg: string }> = {
-  FOUNDING: { label: 'Founding Council', color: '#92400e', bg: '#fef3c7' },
-  NEW: { label: 'New', color: '#166534', bg: '#dcfce7' },
-  ACTIVE: { label: 'Active', color: '#1d4ed8', bg: '#dbeafe' },
+  FOUNDING: { label: 'Founding Council', color: 'var(--theme-warning)', bg: 'var(--theme-warning-surface)' },
+  NEW: { label: 'New', color: 'var(--theme-success)', bg: 'var(--theme-success-surface)' },
+  ACTIVE: { label: 'Active', color: 'var(--theme-info)', bg: 'var(--theme-info-surface)' },
 };

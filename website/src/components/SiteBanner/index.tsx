@@ -77,7 +77,7 @@ export default function SiteBanner() {
           e.currentTarget.style.opacity = "1";
         }}
         onMouseLeave={(e) => {
-          if (!open) e.currentTarget.style.opacity = "0.65";
+          if (!open) e.currentTarget.style.opacity = "1";
         }}
         aria-label="Switch site"
         aria-expanded={open}
@@ -168,23 +168,23 @@ const styles: Record<string, React.CSSProperties> = {
     fontWeight: 700,
     fontFamily: "var(--font-system, 'IBM Plex Mono', monospace)",
     background: "var(--win31-gray, #c0c0c0)",
-    color: "var(--win31-black, #000000)",
+    color: "var(--theme-text)",
     cursor: "pointer",
-    opacity: 0.65,
+    opacity: 1,
     transition: "opacity 0.15s",
     boxShadow: "1px 1px 0 var(--win31-border-outer-dark, #000000)",
   },
   buttonRaised: {
-    borderTop: "1px solid var(--win31-border-outer-light, #dfdfdf)",
-    borderLeft: "1px solid var(--win31-border-outer-light, #dfdfdf)",
-    borderBottom: "1px solid var(--win31-border-outer-dark, #000000)",
-    borderRight: "1px solid var(--win31-border-outer-dark, #000000)",
+    borderTop: "1px solid var(--win31-border-outer-light, var(--theme-border))",
+    borderLeft: "1px solid var(--win31-border-outer-light, var(--theme-border))",
+    borderBottom: "1px solid var(--win31-border-outer-dark, var(--theme-border))",
+    borderRight: "1px solid var(--win31-border-outer-dark, var(--theme-border))",
   },
   buttonPressed: {
-    borderTop: "1px solid var(--win31-border-outer-dark, #000000)",
-    borderLeft: "1px solid var(--win31-border-outer-dark, #000000)",
-    borderBottom: "1px solid var(--win31-border-outer-light, #dfdfdf)",
-    borderRight: "1px solid var(--win31-border-outer-light, #dfdfdf)",
+    borderTop: "1px solid var(--win31-border-outer-dark, var(--theme-border))",
+    borderLeft: "1px solid var(--win31-border-outer-dark, var(--theme-border))",
+    borderBottom: "1px solid var(--win31-border-outer-light, var(--theme-border))",
+    borderRight: "1px solid var(--win31-border-outer-light, var(--theme-border))",
   },
   icon: {
     fontSize: 8,
@@ -199,10 +199,10 @@ const styles: Record<string, React.CSSProperties> = {
     background: "var(--win31-gray, #c0c0c0)",
     borderWidth: 2,
     borderStyle: "solid",
-    borderTopColor: "var(--win31-border-outer-light, #dfdfdf)",
-    borderLeftColor: "var(--win31-border-outer-light, #dfdfdf)",
-    borderBottomColor: "var(--win31-border-outer-dark, #000000)",
-    borderRightColor: "var(--win31-border-outer-dark, #000000)",
+    borderTopColor: "var(--win31-border-outer-light, var(--theme-border))",
+    borderLeftColor: "var(--win31-border-outer-light, var(--theme-border))",
+    borderBottomColor: "var(--win31-border-outer-dark, var(--theme-border))",
+    borderRightColor: "var(--win31-border-outer-dark, var(--theme-border))",
     boxShadow: "2px 2px 0 var(--win31-border-outer-dark, #000000)",
   },
   titleStrip: {
@@ -211,7 +211,7 @@ const styles: Record<string, React.CSSProperties> = {
     fontSize: 9,
     fontWeight: 700,
     fontFamily: "var(--font-system, 'IBM Plex Mono', monospace)",
-    color: "#ffffff",
+    color: "var(--theme-titlebar-text)",
   },
   linkList: {
     padding: "2px 0",
@@ -223,13 +223,13 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "6px 8px",
     fontSize: 10,
     fontFamily: "var(--font-system, 'IBM Plex Mono', monospace)",
-    color: "var(--win31-black, #000000)",
+    color: "var(--theme-text)",
     textDecoration: "none",
     cursor: "pointer",
     transition: "background 0.1s, color 0.1s",
   },
   linkCurrent: {
-    background: "var(--win31-white, #ffffff)",
+    background: "var(--theme-elevated)",
     cursor: "default",
   },
   marker: {
@@ -249,20 +249,20 @@ const styles: Record<string, React.CSSProperties> = {
   },
   linkDesc: {
     fontSize: 8,
-    opacity: 0.7,
+    opacity: 1,
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap" as const,
   },
   linkDescCurrent: {
-    color: "var(--win31-dark-gray, #808080)",
+    color: "var(--theme-muted)",
     opacity: 1,
   },
   footer: {
     padding: "4px 8px",
-    borderTop: "1px solid var(--win31-border-inner-light, #ffffff)",
+    borderTop: "1px solid var(--win31-border-inner-light, var(--theme-border-light))",
     fontSize: 8,
     fontFamily: "var(--font-code, 'IBM Plex Mono', monospace)",
-    color: "var(--win31-dark-gray, #808080)",
+    color: "var(--theme-muted)",
   },
 };

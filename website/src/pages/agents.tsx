@@ -65,7 +65,7 @@ export default function AgentsDashboard(): JSX.Element {
                 style={{
                   fontSize: '16px',
                   textAlign: 'center',
-                  color: '#333',
+                  color: "var(--theme-text)",
                   marginBottom: '20px',
                 }}
               >
@@ -118,8 +118,8 @@ export default function AgentsDashboard(): JSX.Element {
                 style={{
                   fontSize: '14px',
                   padding: '10px 20px',
-                  background: selectedRole === role ? 'var(--win31-blue)' : 'var(--win31-gray)',
-                  color: selectedRole === role ? 'white' : 'black',
+                  background: selectedRole === role ? 'var(--theme-action-bg)' : 'var(--theme-surface)',
+                  color: selectedRole === role ? 'var(--theme-action-text)' : 'var(--theme-text)',
                   fontWeight: selectedRole === role ? 'bold' : 'normal',
                 }}
               >
@@ -134,8 +134,8 @@ export default function AgentsDashboard(): JSX.Element {
               className={`win31-push-button ${viewMode === 'grid' ? 'active' : ''}`}
               onClick={() => setViewMode('grid')}
               style={{
-                background: viewMode === 'grid' ? 'var(--win31-navy)' : 'var(--win31-gray)',
-                color: viewMode === 'grid' ? 'white' : 'black',
+                background: viewMode === 'grid' ? 'var(--theme-action-bg)' : 'var(--theme-surface)',
+                color: viewMode === 'grid' ? 'var(--theme-action-text)' : 'var(--theme-text)',
               }}
             >
               Grid View
@@ -144,8 +144,8 @@ export default function AgentsDashboard(): JSX.Element {
               className={`win31-push-button ${viewMode === 'network' ? 'active' : ''}`}
               onClick={() => setViewMode('network')}
               style={{
-                background: viewMode === 'network' ? 'var(--win31-navy)' : 'var(--win31-gray)',
-                color: viewMode === 'network' ? 'white' : 'black',
+                background: viewMode === 'network' ? 'var(--theme-action-bg)' : 'var(--theme-surface)',
+                color: viewMode === 'network' ? 'var(--theme-action-text)' : 'var(--theme-text)',
               }}
             >
               Network View
@@ -189,11 +189,11 @@ export default function AgentsDashboard(): JSX.Element {
           >
             <h2
               className="win31-font"
-              style={{ fontSize: '20px', color: 'var(--win31-navy)', marginBottom: '16px' }}
+              style={{ fontSize: '20px', color: "var(--theme-link)", marginBottom: '16px' }}
             >
               The Council Philosophy
             </h2>
-            <p className="win31-font" style={{ fontSize: '14px', color: '#333', marginBottom: '20px' }}>
+            <p className="win31-font" style={{ fontSize: '14px', color: "var(--theme-text)", marginBottom: '20px' }}>
               The Founding Council operates as a living network of specialized intelligences. Each
               agent has a unique role but collaborates through coordination links. Together, they
               form a self-improving system that can design new agents, build infrastructure, map

@@ -1,0 +1,12 @@
+{
+  "baseline": 278,
+  "current": 267,
+  "added": [],
+  "removed": [
+    "src/components/ThemePicker/index.tsx: error TS2503: Cannot find namespace 'JSX'.",
+    "src/components/win31/Win31Button.test.tsx: error TS2339: Property 'toBeInTheDocument' does not exist on type 'Assertion<HTMLElement>'.",
+    "src/components/win31/Win31Button.test.tsx: error TS2339: Property 'toBeDisabled' does not exist on type 'Assertion<HTMLElement>'.",
+    "src/components/win31/Win31Modal.test.tsx: error TS2339: Property 'toBeInTheDocument' does not exist on type 'Assertion<HTMLElement>'.",
+    "src/components/win31/Win31Modal.test.tsx: error TS2339: Property 'toHaveAttribute' does not exist on type 'Assertion<HTMLElement>'."
+  ]
+}

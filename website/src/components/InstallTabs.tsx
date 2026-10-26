@@ -22,24 +22,24 @@ const tabs: TabConfig[] = [
     id: 'claude-code',
     label: 'Claude Code',
     icon: 'terminal',
-    color: 'var(--win31-lime)',
-    borderColor: 'var(--win31-lime)',
+    color: 'var(--theme-code-green)',
+    borderColor: 'var(--theme-code-green)',
     requirement: 'CLI tool',
   },
   {
     id: 'claude-web',
     label: 'Claude.ai',
     icon: 'web',
-    color: 'var(--win31-bright-yellow)',
-    borderColor: 'var(--win31-bright-yellow)',
+    color: 'var(--theme-code-amber)',
+    borderColor: 'var(--theme-code-amber)',
     requirement: 'Pro/Max/Team',
   },
   {
     id: 'claude-desktop',
     label: 'Desktop App',
     icon: 'desktop',
-    color: '#8B7355',
-    borderColor: '#8B7355',
+    color: 'var(--theme-code-amber)',
+    borderColor: 'var(--theme-code-amber)',
     requirement: 'Pro/Max/Team',
   },
 ];
@@ -73,15 +73,15 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
 
   return (
     <div style={{
-      background: '#000',
+      background: "var(--theme-code-bg)",
       border: `3px solid ${activeTabConfig.borderColor}`,
       fontFamily: 'var(--font-code)',
     }}>
       {/* Tab Headers - ADHD friendly: large touch targets, clear active state */}
       <div style={{
         display: 'flex',
-        borderBottom: '2px solid #333',
-        background: '#111',
+        borderBottom: '2px solid var(--theme-code-muted)',
+        background: "var(--theme-code-bg)",
       }}>
         {tabs.map((tab) => (
           <button
@@ -91,8 +91,8 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
               flex: 1,
               padding: compact ? '10px 8px' : '14px 12px',
               border: 'none',
-              background: activeTab === tab.id ? '#000' : 'transparent',
-              color: activeTab === tab.id ? tab.color : '#666',
+              background: activeTab === tab.id ? 'var(--theme-code-bg)' : 'transparent',
+              color: activeTab === tab.id ? tab.color : 'var(--theme-code-muted)',
               cursor: 'pointer',
               fontFamily: 'var(--font-code)',
               fontSize: compact ? '11px' : '12px',
@@ -113,8 +113,7 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
             <span>{tab.label}</span>
             <span style={{
               fontSize: '9px',
-              opacity: 0.7,
-              color: activeTab === tab.id ? tab.color : '#555',
+              color: activeTab === tab.id ? tab.color : 'var(--theme-code-muted)',
             }}>
               {tab.requirement}
             </span>
@@ -136,25 +135,25 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 marginBottom: '8px',
               }}>
                 <span style={{
-                  background: 'var(--win31-lime)',
-                  color: '#000',
+                  background: 'var(--theme-code-green)',
+                  color: "var(--theme-accent-ink)",
                   padding: '2px 8px',
                   fontSize: '10px',
                   fontWeight: 'bold',
                 }}>
                   STEP 1
                 </span>
-                <span style={{ color: 'var(--win31-lime)', fontSize: '12px' }}>
+                <span style={{ color: 'var(--theme-code-green)', fontSize: '12px' }}>
                   Add the marketplace (one time only)
                 </span>
               </div>
               <div style={{ display: 'flex', gap: '8px' }}>
                 <code style={{
                   flex: 1,
-                  background: '#111',
+                  background: "var(--theme-code-bg)",
                   padding: '10px 12px',
                   border: '2px solid var(--win31-lime)',
-                  color: 'var(--win31-lime)',
+                  color: 'var(--theme-code-green)',
                   fontSize: '11px',
                   display: 'block',
                 }}>
@@ -163,9 +162,9 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 <button
                   onClick={() => copyToClipboard('/plugin marketplace add erichowens/some_claude_skills', 'marketplace')}
                   style={{
-                    background: copiedItem === 'marketplace' ? 'var(--win31-lime)' : '#222',
+                    background: copiedItem === 'marketplace' ? 'var(--theme-code-green)' : 'var(--theme-code-bg)',
                     border: '2px solid var(--win31-lime)',
-                    color: copiedItem === 'marketplace' ? '#000' : 'var(--win31-lime)',
+                    color: copiedItem === 'marketplace' ? 'var(--theme-accent-ink)' : 'var(--theme-code-green)',
                     padding: '8px 12px',
                     cursor: 'pointer',
                     fontFamily: 'var(--font-code)',
@@ -187,25 +186,25 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 marginBottom: '8px',
               }}>
                 <span style={{
-                  background: 'var(--win31-bright-yellow)',
-                  color: '#000',
+                  background: 'var(--theme-code-amber)',
+                  color: "var(--theme-accent-ink)",
                   padding: '2px 8px',
                   fontSize: '10px',
                   fontWeight: 'bold',
                 }}>
                   STEP 2
                 </span>
-                <span style={{ color: 'var(--win31-bright-yellow)', fontSize: '12px' }}>
+                <span style={{ color: 'var(--theme-code-amber)', fontSize: '12px' }}>
                   Install this skill
                 </span>
               </div>
               <div style={{ display: 'flex', gap: '8px' }}>
                 <code style={{
                   flex: 1,
-                  background: '#111',
+                  background: "var(--theme-code-bg)",
                   padding: '10px 12px',
                   border: '2px solid var(--win31-bright-yellow)',
-                  color: 'var(--win31-bright-yellow)',
+                  color: 'var(--theme-code-amber)',
                   fontSize: '11px',
                   display: 'block',
                 }}>
@@ -214,9 +213,9 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 <button
                   onClick={() => copyToClipboard(`/plugin install ${skillId}@some-claude-skills`, 'install')}
                   style={{
-                    background: copiedItem === 'install' ? 'var(--win31-bright-yellow)' : '#222',
+                    background: copiedItem === 'install' ? 'var(--theme-code-amber)' : 'var(--theme-code-bg)',
                     border: '2px solid var(--win31-bright-yellow)',
-                    color: copiedItem === 'install' ? '#000' : 'var(--win31-bright-yellow)',
+                    color: copiedItem === 'install' ? 'var(--theme-accent-ink)' : 'var(--theme-code-amber)',
                     padding: '8px 12px',
                     cursor: 'pointer',
                     fontFamily: 'var(--font-code)',
@@ -231,14 +230,14 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
 
             {/* Usage */}
             <div style={{
-              background: '#111',
-              border: '1px solid #333',
+              background: "var(--theme-code-bg)",
+              border: '1px solid var(--theme-code-muted)',
               padding: '10px',
               fontSize: '10px',
-              color: '#888',
+              color: "var(--theme-code-muted)",
             }}>
-              <span style={{ color: 'var(--win31-lime)' }}>Done!</span> Claude will auto-invoke this skill, or use{' '}
-              <code style={{ color: 'var(--win31-bright-yellow)', background: '#222', padding: '2px 4px' }}>
+              <span style={{ color: 'var(--theme-code-green)' }}>Done!</span> Claude will auto-invoke this skill, or use{' '}
+              <code style={{ color: 'var(--theme-code-amber)', background: "var(--theme-code-bg)", padding: '2px 4px' }}>
                 /skill {skillFileName}
               </code>
             </div>
@@ -247,7 +246,7 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
             <div style={{
               marginTop: '12px',
               fontSize: '9px',
-              color: '#555',
+              color: "var(--theme-code-muted)",
               textAlign: 'right',
             }}>
               Source:{' '}
@@ -255,7 +254,7 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 href="https://code.claude.com/docs/en/plugin-marketplaces"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: 'var(--win31-teal)', textDecoration: 'underline' }}
+                style={{ color: "var(--theme-code-blue)", textDecoration: 'underline' }}
               >
                 Claude Code Docs
               </a>
@@ -267,12 +266,12 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
         {activeTab === 'claude-web' && (
           <div>
             <div style={{
-              background: '#1a1a0a',
+              background: 'var(--theme-code-bg)',
               border: '1px solid var(--win31-bright-yellow)',
               padding: '8px 10px',
               marginBottom: '12px',
               fontSize: '10px',
-              color: 'var(--win31-bright-yellow)',
+              color: 'var(--theme-code-amber)',
             }}>
               Requires Claude Pro, Max, Team, or Enterprise plan
             </div>
@@ -286,25 +285,25 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 marginBottom: '6px',
               }}>
                 <span style={{
-                  background: 'var(--win31-bright-yellow)',
-                  color: '#000',
+                  background: 'var(--theme-code-amber)',
+                  color: "var(--theme-accent-ink)",
                   padding: '2px 8px',
                   fontSize: '10px',
                   fontWeight: 'bold',
                 }}>
                   1
                 </span>
-                <span style={{ color: 'var(--win31-bright-yellow)', fontSize: '11px' }}>
+                <span style={{ color: 'var(--theme-code-amber)', fontSize: '11px' }}>
                   Go to{' '}
                   <a
                     href="https://claude.ai/projects"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ color: 'var(--win31-lime)', textDecoration: 'underline' }}
+                    style={{ color: 'var(--theme-code-green)', textDecoration: 'underline' }}
                   >
                     claude.ai/projects
                   </a>
-                  {' '}and click <strong style={{ color: '#fff' }}>+ New Project</strong>
+                  {' '}and click <strong style={{ color: "var(--theme-titlebar-text)" }}>+ New Project</strong>
                 </span>
               </div>
             </div>
@@ -318,15 +317,15 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 marginBottom: '6px',
               }}>
                 <span style={{
-                  background: 'var(--win31-bright-yellow)',
-                  color: '#000',
+                  background: 'var(--theme-code-amber)',
+                  color: "var(--theme-accent-ink)",
                   padding: '2px 8px',
                   fontSize: '10px',
                   fontWeight: 'bold',
                 }}>
                   2
                 </span>
-                <span style={{ color: 'var(--win31-bright-yellow)', fontSize: '11px' }}>
+                <span style={{ color: 'var(--theme-code-amber)', fontSize: '11px' }}>
                   Name your project (e.g., "{skillName}")
                 </span>
               </div>
@@ -341,16 +340,16 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 marginBottom: '6px',
               }}>
                 <span style={{
-                  background: 'var(--win31-bright-yellow)',
-                  color: '#000',
+                  background: 'var(--theme-code-amber)',
+                  color: "var(--theme-accent-ink)",
                   padding: '2px 8px',
                   fontSize: '10px',
                   fontWeight: 'bold',
                 }}>
                   3
                 </span>
-                <span style={{ color: 'var(--win31-bright-yellow)', fontSize: '11px' }}>
-                  Click <strong style={{ color: '#fff' }}>Set project instructions</strong>
+                <span style={{ color: 'var(--theme-code-amber)', fontSize: '11px' }}>
+                  Click <strong style={{ color: "var(--theme-titlebar-text)" }}>Set project instructions</strong>
                 </span>
               </div>
             </div>
@@ -364,15 +363,15 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 marginBottom: '8px',
               }}>
                 <span style={{
-                  background: 'var(--win31-bright-yellow)',
-                  color: '#000',
+                  background: 'var(--theme-code-amber)',
+                  color: "var(--theme-accent-ink)",
                   padding: '2px 8px',
                   fontSize: '10px',
                   fontWeight: 'bold',
                 }}>
                   4
                 </span>
-                <span style={{ color: 'var(--win31-bright-yellow)', fontSize: '11px' }}>
+                <span style={{ color: 'var(--theme-code-amber)', fontSize: '11px' }}>
                   Copy & paste the skill content:
                 </span>
               </div>
@@ -384,9 +383,9 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                   style={{
                     flex: 1,
                     minWidth: '120px',
-                    background: '#111',
+                    background: "var(--theme-code-bg)",
                     border: '2px solid var(--win31-lime)',
-                    color: 'var(--win31-lime)',
+                    color: 'var(--theme-code-green)',
                     padding: '10px 12px',
                     fontSize: '11px',
                     textDecoration: 'none',
@@ -403,9 +402,9 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                   style={{
                     flex: 1,
                     minWidth: '120px',
-                    background: '#111',
+                    background: "var(--theme-code-bg)",
                     border: '2px solid var(--win31-teal)',
-                    color: 'var(--win31-teal)',
+                    color: "var(--theme-code-blue)",
                     padding: '10px 12px',
                     fontSize: '11px',
                     textDecoration: 'none',
@@ -422,12 +421,12 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
             <div style={{
               marginTop: '12px',
               padding: '10px',
-              background: '#1a1a0a',
-              border: '1px solid #333',
+              background: 'var(--theme-code-bg)',
+              border: '1px solid var(--theme-code-muted)',
             }}>
               <div style={{
                 fontSize: '10px',
-                color: '#888',
+                color: "var(--theme-code-muted)",
                 marginBottom: '6px',
               }}>
                 📦 Optional: This skill includes validation scripts and reference docs
@@ -438,9 +437,9 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 rel="noopener noreferrer"
                 style={{
                   display: 'inline-block',
-                  background: '#111',
-                  border: '2px solid #555',
-                  color: '#aaa',
+                  background: "var(--theme-code-bg)",
+                  border: '2px solid var(--theme-code-muted)',
+                  color: "var(--theme-code-muted)",
                   padding: '6px 10px',
                   fontSize: '10px',
                   textDecoration: 'none',
@@ -455,7 +454,7 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
             <div style={{
               marginTop: '12px',
               fontSize: '9px',
-              color: '#555',
+              color: "var(--theme-code-muted)",
               textAlign: 'right',
             }}>
               Source:{' '}
@@ -463,7 +462,7 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 href="https://support.anthropic.com/en/articles/9519177-how-can-i-create-and-manage-projects"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: 'var(--win31-teal)', textDecoration: 'underline' }}
+                style={{ color: "var(--theme-code-blue)", textDecoration: 'underline' }}
               >
                 Claude Help Center
               </a>
@@ -475,12 +474,12 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
         {activeTab === 'claude-desktop' && (
           <div>
             <div style={{
-              background: '#1a1a0a',
+              background: 'var(--theme-code-bg)',
               border: '1px solid #8B7355',
               padding: '8px 10px',
               marginBottom: '12px',
               fontSize: '10px',
-              color: '#8B7355',
+              color: 'var(--theme-code-amber)',
             }}>
               Requires Claude Pro, Max, Team, or Enterprise plan
             </div>
@@ -494,16 +493,16 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 marginBottom: '6px',
               }}>
                 <span style={{
-                  background: '#8B7355',
-                  color: '#fff',
+                  background: 'var(--theme-code-amber)',
+                  color: "var(--theme-accent-ink)",
                   padding: '2px 8px',
                   fontSize: '10px',
                   fontWeight: 'bold',
                 }}>
                   1
                 </span>
-                <span style={{ color: '#8B7355', fontSize: '11px' }}>
-                  Open Claude Desktop and go to <strong style={{ color: '#fff' }}>Settings</strong> → <strong style={{ color: '#fff' }}>Capabilities</strong>
+                <span style={{ color: 'var(--theme-code-amber)', fontSize: '11px' }}>
+                  Open Claude Desktop and go to <strong style={{ color: "var(--theme-titlebar-text)" }}>Settings</strong> → <strong style={{ color: "var(--theme-titlebar-text)" }}>Capabilities</strong>
                 </span>
               </div>
             </div>
@@ -517,16 +516,16 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 marginBottom: '6px',
               }}>
                 <span style={{
-                  background: '#8B7355',
-                  color: '#fff',
+                  background: 'var(--theme-code-amber)',
+                  color: "var(--theme-accent-ink)",
                   padding: '2px 8px',
                   fontSize: '10px',
                   fontWeight: 'bold',
                 }}>
                   2
                 </span>
-                <span style={{ color: '#8B7355', fontSize: '11px' }}>
-                  Enable <strong style={{ color: '#fff' }}>"Code execution and file creation"</strong>
+                <span style={{ color: 'var(--theme-code-amber)', fontSize: '11px' }}>
+                  Enable <strong style={{ color: "var(--theme-titlebar-text)" }}>"Code execution and file creation"</strong>
                 </span>
               </div>
             </div>
@@ -540,16 +539,16 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 marginBottom: '6px',
               }}>
                 <span style={{
-                  background: '#8B7355',
-                  color: '#fff',
+                  background: 'var(--theme-code-amber)',
+                  color: "var(--theme-accent-ink)",
                   padding: '2px 8px',
                   fontSize: '10px',
                   fontWeight: 'bold',
                 }}>
                   3
                 </span>
-                <span style={{ color: '#8B7355', fontSize: '11px' }}>
-                  Scroll down to the <strong style={{ color: '#fff' }}>Skills</strong> section
+                <span style={{ color: 'var(--theme-code-amber)', fontSize: '11px' }}>
+                  Scroll down to the <strong style={{ color: "var(--theme-titlebar-text)" }}>Skills</strong> section
                 </span>
               </div>
             </div>
@@ -563,16 +562,16 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 marginBottom: '6px',
               }}>
                 <span style={{
-                  background: '#8B7355',
-                  color: '#fff',
+                  background: 'var(--theme-code-amber)',
+                  color: "var(--theme-accent-ink)",
                   padding: '2px 8px',
                   fontSize: '10px',
                   fontWeight: 'bold',
                 }}>
                   4
                 </span>
-                <span style={{ color: '#8B7355', fontSize: '11px' }}>
-                  Click <strong style={{ color: '#fff' }}>"Upload skill"</strong> button
+                <span style={{ color: 'var(--theme-code-amber)', fontSize: '11px' }}>
+                  Click <strong style={{ color: "var(--theme-titlebar-text)" }}>"Upload skill"</strong> button
                 </span>
               </div>
             </div>
@@ -586,17 +585,17 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 marginBottom: '8px',
               }}>
                 <span style={{
-                  background: '#8B7355',
-                  color: '#fff',
+                  background: 'var(--theme-code-amber)',
+                  color: "var(--theme-accent-ink)",
                   padding: '2px 8px',
                   fontSize: '10px',
                   fontWeight: 'bold',
                 }}>
                   5
                 </span>
-                <span style={{ color: '#8B7355', fontSize: '11px' }}>
+                <span style={{ color: 'var(--theme-code-amber)', fontSize: '11px' }}>
                   Upload the skill ZIP file you downloaded from the{' '}
-                  <strong style={{ color: 'var(--win31-teal)' }}>"Get This Skill"</strong>{' '}
+                  <strong style={{ color: "var(--theme-code-blue)" }}>"Get This Skill"</strong>{' '}
                   panel above
                 </span>
               </div>
@@ -606,12 +605,12 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
             <div style={{
               marginTop: '12px',
               padding: '10px',
-              background: '#0a1a1a',
-              border: '1px solid #333',
+              background: 'var(--theme-code-bg)',
+              border: '1px solid var(--theme-code-muted)',
             }}>
               <div style={{
                 fontSize: '10px',
-                color: '#888',
+                color: "var(--theme-code-muted)",
                 marginBottom: '6px',
                 fontWeight: 'bold',
               }}>
@@ -619,11 +618,11 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
               </div>
               <div style={{
                 fontSize: '9px',
-                color: '#666',
+                color: "var(--theme-code-muted)",
                 lineHeight: '1.4',
               }}>
-                • Must contain a folder named <code style={{ color: '#8B7355' }}>{skillId}</code><br/>
-                • Folder must contain <code style={{ color: '#8B7355' }}>SKILL.md</code> file<br/>
+                • Must contain a folder named <code style={{ color: 'var(--theme-code-amber)' }}>{skillId}</code><br/>
+                • Folder must contain <code style={{ color: 'var(--theme-code-amber)' }}>SKILL.md</code> file<br/>
                 • Skill name in SKILL.md must match folder name
               </div>
             </div>
@@ -632,7 +631,7 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
             <div style={{
               marginTop: '12px',
               fontSize: '9px',
-              color: '#555',
+              color: "var(--theme-code-muted)",
               textAlign: 'right',
             }}>
               Source:{' '}
@@ -640,7 +639,7 @@ export default function InstallTabs({ skillId, skillName, compact = false }: Ins
                 href="https://support.claude.com/en/articles/12512180-using-skills-in-claude"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: 'var(--win31-teal)', textDecoration: 'underline' }}
+                style={{ color: "var(--theme-code-blue)", textDecoration: 'underline' }}
               >
                 Using Skills in Claude
               </a>

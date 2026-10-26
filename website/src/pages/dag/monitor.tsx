@@ -293,15 +293,15 @@ export default function DAGMonitorPage(): React.ReactElement {
           style={{
             marginTop: '24px',
             padding: '16px',
-            background: '#c0c0c0',
+            background: "var(--theme-surface)",
             border: '2px solid',
-            borderColor: '#ffffff #808080 #808080 #ffffff',
+            borderColor: "var(--theme-border-light) var(--theme-border) var(--theme-border) var(--theme-border-light)",
           }}
         >
           <h3 style={{ margin: '0 0 8px 0', fontFamily: 'var(--font-system)', fontSize: '14px' }}>
             Demo Instructions
           </h3>
-          <p style={{ margin: 0, fontFamily: 'var(--font-system)', fontSize: '12px', color: '#333333' }}>
+          <p style={{ margin: 0, fontFamily: 'var(--font-system)', fontSize: '12px', color: "var(--theme-text)" }}>
             Click "Start" to begin the simulated workflow execution. The demo will process nodes
             in dependency order, showing real-time progress, logs, and statistics. You can pause,
             resume, or stop execution at any time. Failed nodes can be retried.

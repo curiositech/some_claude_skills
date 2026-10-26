@@ -39,7 +39,7 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
       <div
         style={{
           marginBottom: '24px',
-          background: '#000',
+          background: "var(--theme-code-bg)",
           border: '3px solid var(--win31-black)',
           overflow: 'hidden',
         }}
@@ -92,7 +92,7 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
               fontFamily: 'var(--font-pixel)',
               fontSize: '12px',
               fontWeight: 'bold',
-              color: '#fff',
+              color: "var(--theme-titlebar-text)",
               letterSpacing: '1px',
             }}
           >
@@ -156,7 +156,7 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
                   fontFamily: 'var(--font-system)',
                   fontSize: '14px',
                   fontWeight: '700',
-                  color: 'var(--win31-black)',
+                  color: "var(--theme-text)",
                 }}
               >
                 <span style={{ fontSize: '18px' }}>
@@ -168,7 +168,7 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
                 style={{
                   fontFamily: 'var(--font-system)',
                   fontSize: '11px',
-                  color: 'var(--win31-dark-gray)',
+                  color: "var(--theme-muted)",
                   lineHeight: '1.4',
                 }}
               >
@@ -204,7 +204,7 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
                   fontFamily: 'var(--font-system)',
                   fontSize: '14px',
                   fontWeight: '600',
-                  color: 'var(--win31-black)',
+                  color: "var(--theme-text)",
                 }}
               >
                 <span style={{ fontSize: '18px' }}>🔗</span>
@@ -214,7 +214,7 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
                 style={{
                   fontFamily: 'var(--font-system)',
                   fontSize: '11px',
-                  color: 'var(--win31-dark-gray)',
+                  color: "var(--theme-muted)",
                   lineHeight: '1.4',
                 }}
               >
@@ -240,10 +240,10 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
               padding: '2px 8px',
               fontFamily: 'var(--font-pixel)',
               fontSize: '10px',
-              color: 'var(--win31-black)',
+              color: "var(--theme-text)",
               borderStyle: 'solid',
               borderWidth: '1px',
-              borderColor: 'var(--win31-dark-gray) #fff #fff var(--win31-dark-gray)',
+              borderColor: "var(--win31-dark-gray) var(--theme-border-light) var(--theme-border-light) var(--win31-dark-gray)",
             }}
           >
             Ready to install
@@ -253,10 +253,10 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
               padding: '2px 8px',
               fontFamily: 'var(--font-pixel)',
               fontSize: '10px',
-              color: 'var(--win31-black)',
+              color: "var(--theme-text)",
               borderStyle: 'solid',
               borderWidth: '1px',
-              borderColor: 'var(--win31-dark-gray) #fff #fff var(--win31-dark-gray)',
+              borderColor: "var(--win31-dark-gray) var(--theme-border-light) var(--theme-border-light) var(--win31-dark-gray)",
             }}
           >
             MIT License
@@ -286,7 +286,7 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
             alignItems: 'center',
             fontFamily: 'var(--font-pixel)',
             fontSize: '10px',
-            color: 'var(--win31-black)',
+            color: "var(--theme-accent-ink)",
             letterSpacing: '2px',
             textTransform: 'uppercase',
           }}
@@ -301,7 +301,7 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
               style={{
                 fontFamily: 'var(--font-system)',
                 fontSize: '13px',
-                color: 'var(--win31-black)',
+                color: "var(--theme-accent-ink)",
                 lineHeight: '1.6',
                 marginBottom: '16px',
               }}
@@ -328,17 +328,17 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
                 position: 'absolute',
                 top: '-8px',
                 left: '12px',
-                background: 'var(--win31-yellow)',
+                background: 'var(--theme-sticker-yellow)',
                 padding: '0 6px',
                 fontFamily: 'var(--font-pixel)',
                 fontSize: '10px',
                 fontWeight: 'bold',
-                color: 'var(--win31-black)',
+                color: "var(--theme-accent-ink)",
               }}>
                 ⚠ Security Note
               </div>
               <div style={{
-                color: 'var(--win31-black)',
+                color: "var(--theme-text)",
                 fontSize: '11px',
                 fontFamily: 'var(--font-system)',
                 marginTop: '4px',
@@ -373,7 +373,7 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
               alignItems: 'center',
               fontFamily: 'var(--font-pixel)',
               fontSize: '10px',
-              color: 'var(--win31-black)',
+              color: "var(--theme-text)",
               letterSpacing: '2px',
               textTransform: 'uppercase',
             }}
@@ -391,7 +391,7 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
                   padding: '40px',
                   textAlign: 'center',
                   fontFamily: 'var(--font-system)',
-                  color: 'var(--win31-dark-gray)',
+                  color: "var(--theme-muted)",
                 }}>
                   ⏳ Loading skill folder contents...
                 </div>
@@ -408,7 +408,7 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
                   padding: '40px',
                   textAlign: 'center',
                   fontFamily: 'var(--font-system)',
-                  color: 'var(--win31-dark-gray)',
+                  color: "var(--theme-muted)",
                 }}>
                   Could not load folder contents.{' '}
                   <a href={githubFolderUrl} target="_blank" rel="noopener noreferrer">

@@ -48,7 +48,7 @@ export default function McpsGallery(): JSX.Element {
               <h1 className="win31-font hero-title" style={{ fontSize: '32px' }}>
                 MCP Gallery
               </h1>
-              <p className="win31-font" style={{ fontSize: '16px', textAlign: 'center', color: '#333', marginBottom: '20px' }}>
+              <p className="win31-font" style={{ fontSize: '16px', textAlign: 'center', color: "var(--theme-text)", marginBottom: '20px' }}>
                 Model Context Protocol servers that extend Claude's capabilities with new tools
               </p>
 
@@ -75,8 +75,8 @@ export default function McpsGallery(): JSX.Element {
                 style={{
                   fontSize: '14px',
                   padding: '10px 20px',
-                  background: selectedCategory === category ? 'var(--win31-blue)' : 'var(--win31-gray)',
-                  color: selectedCategory === category ? 'white' : 'black',
+                  background: selectedCategory === category ? 'var(--theme-action-bg)' : 'var(--theme-surface)',
+                  color: selectedCategory === category ? 'var(--theme-action-text)' : 'var(--theme-text)',
                   fontWeight: selectedCategory === category ? 'bold' : 'normal',
                 }}
               >
@@ -123,10 +123,10 @@ export default function McpsGallery(): JSX.Element {
 
           {/* Call to Action */}
           <div className="win31-panel-box" style={{ marginTop: '40px', padding: '30px', textAlign: 'center' }}>
-            <h2 className="win31-font" style={{ fontSize: '20px', color: 'var(--win31-navy)', marginBottom: '16px' }}>
+            <h2 className="win31-font" style={{ fontSize: '20px', color: "var(--theme-link)", marginBottom: '16px' }}>
               Want to contribute an MCP?
             </h2>
-            <p className="win31-font" style={{ fontSize: '14px', color: '#333', marginBottom: '20px' }}>
+            <p className="win31-font" style={{ fontSize: '14px', color: "var(--theme-text)", marginBottom: '20px' }}>
               We're always looking for new MCP servers to feature. If you've built something useful,
               we'd love to showcase it here.
             </p>
@@ -141,7 +141,7 @@ export default function McpsGallery(): JSX.Element {
                 fontSize: '14px',
                 textDecoration: 'none',
                 background: 'var(--win31-navy)',
-                color: 'white',
+                color: "var(--theme-titlebar-text)",
               }}
             >
               Submit Your MCP

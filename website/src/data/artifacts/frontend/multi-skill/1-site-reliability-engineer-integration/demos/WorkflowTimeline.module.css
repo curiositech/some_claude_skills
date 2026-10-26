@@ -34,25 +34,25 @@
 }
 
 .subtitle {
-  color: var(--ifm-color-emphasis-700);
+  color: var(--theme-muted);
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
 
 .replayButton {
   /* Classic Windows 3.1 button */
-  background: #c0c0c0;
+  background: var(--theme-surface);
   border: none;
-  border-top: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
-  border-right: 2px solid #000000;
-  border-bottom: 2px solid #000000;
+  border-top: 2px solid var(--theme-border-light);
+  border-left: 2px solid var(--theme-border-light);
+  border-right: 2px solid var(--theme-border);
+  border-bottom: 2px solid var(--theme-border);
   box-shadow: none;
 
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #000000;
+  color: var(--theme-text);
   cursor: pointer;
   transition: all 0.1s ease;
   display: inline-flex;
@@ -61,16 +61,16 @@
 }
 
 .replayButton:hover:not(:disabled) {
-  background: #d0d0d0;
+  background: var(--theme-surface);
 }
 
 .replayButton:active:not(:disabled) {
   /* Pressed state - invert bevel */
-  border-top: 2px solid #000000;
-  border-left: 2px solid #000000;
-  border-right: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
-  background: #a0a0a0;
+  border-top: 2px solid var(--theme-border);
+  border-left: 2px solid var(--theme-border);
+  border-right: 2px solid var(--theme-border-light);
+  border-bottom: 2px solid var(--theme-border-light);
+  background: var(--theme-surface);
 }
 
 .replayButton:disabled {
@@ -80,7 +80,7 @@
 
 .replayIcon {
   font-size: 0.875rem;
-  color: #000080; /* Windows 3.1 blue */
+  color: var(--theme-link); /* Windows 3.1 blue */
 }
 
 .timeline {
@@ -119,19 +119,19 @@
 
 .phaseCard {
   /* Windows 3.1 window chrome */
-  background: #c0c0c0;
+  background: var(--theme-surface);
 
   /* Classic beveled border */
   border: 2px solid;
-  border-top-color: #ffffff;
-  border-left-color: #ffffff;
-  border-right-color: #000000;
-  border-bottom-color: #000000;
+  border-top-color: var(--theme-border-light);
+  border-left-color: var(--theme-border-light);
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
 
   /* Inner shadow for depth */
   box-shadow:
-    inset 1px 1px 0 #dfdfdf,
-    inset -1px -1px 0 #808080;
+    inset 1px 1px 0 var(--theme-border),
+    inset -1px -1px 0 var(--theme-border);
 
   border-radius: 0; /* Windows 3.1 had no rounded corners */
   padding: 1.5rem;
@@ -145,7 +145,7 @@
   background: #c8c8c8;
   box-shadow:
     inset 1px 1px 0 #e0e0e0,
-    inset -1px -1px 0 #808080,
+    inset -1px -1px 0 var(--theme-border),
     0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(-1px);
 }
@@ -180,23 +180,23 @@
   justify-content: center;
 
   /* Windows 3.1 beveled circle */
-  background: #c0c0c0;
+  background: var(--theme-surface);
   border-radius: 50%;
   border: 3px solid;
-  border-top-color: #ffffff;
-  border-left-color: #ffffff;
-  border-right-color: #000000;
-  border-bottom-color: #000000;
+  border-top-color: var(--theme-border-light);
+  border-left-color: var(--theme-border-light);
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
 
   box-shadow:
-    inset 2px 2px 0 #dfdfdf,
-    inset -2px -2px 0 #808080;
+    inset 2px 2px 0 var(--theme-border),
+    inset -2px -2px 0 var(--theme-border);
 }
 
 .phaseNumberText {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #000000;
+  color: var(--theme-text);
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
@@ -215,13 +215,13 @@
 .skillName {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #000080; /* Windows 3.1 blue */
+  color: var(--theme-link); /* Windows 3.1 blue */
   font-family: 'Courier New', monospace;
 }
 
 .role {
   font-size: 0.875rem;
-  color: #000000;
+  color: var(--theme-text);
   margin-top: 0.25rem;
 }
 
@@ -232,35 +232,35 @@
   padding: 0.5rem 1rem;
 
   /* Windows 3.1 inset panel */
-  background: #ffffff;
+  background: var(--theme-elevated);
   border: 2px solid;
-  border-top-color: #808080;
-  border-left-color: #808080;
-  border-right-color: #dfdfdf;
-  border-bottom-color: #dfdfdf;
-  box-shadow: inset 1px 1px 0 #000000;
+  border-top-color: var(--theme-border);
+  border-left-color: var(--theme-border);
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
+  box-shadow: inset 1px 1px 0 var(--theme-border);
 
   font-size: 0.875rem;
   font-weight: 600;
-  color: #000000;
+  color: var(--theme-text);
   white-space: nowrap;
 }
 
 .durationIcon {
   font-size: 1rem;
-  color: #000000;
+  color: var(--theme-text);
 }
 
 .expandButton {
-  background: #c0c0c0;
+  background: var(--theme-surface);
   border: 2px solid;
-  border-top-color: #ffffff;
-  border-left-color: #ffffff;
-  border-right-color: #000000;
-  border-bottom-color: #000000;
+  border-top-color: var(--theme-border-light);
+  border-left-color: var(--theme-border-light);
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
   padding: 0.5rem;
   cursor: pointer;
-  color: #000000;
+  color: var(--theme-text);
   transition: all 0.1s ease;
   min-width: 24px;
   min-height: 24px;
@@ -270,15 +270,15 @@
 }
 
 .expandButton:hover {
-  background: #d0d0d0;
+  background: var(--theme-surface);
 }
 
 .expandButton:active {
-  border-top-color: #000000;
-  border-left-color: #000000;
-  border-right-color: #ffffff;
-  border-bottom-color: #ffffff;
-  background: #a0a0a0;
+  border-top-color: var(--theme-border);
+  border-left-color: var(--theme-border);
+  border-right-color: var(--theme-border-light);
+  border-bottom-color: var(--theme-border-light);
+  background: var(--theme-surface);
 }
 
 .chevronDown,
@@ -295,27 +295,27 @@
   padding: 1rem;
 
   /* Windows 3.1 inset panel */
-  background: #ffffff;
+  background: var(--theme-elevated);
   border: 2px solid;
-  border-top-color: #808080;
-  border-left-color: #808080;
-  border-right-color: #ffffff;
-  border-bottom-color: #ffffff;
-  box-shadow: inset 1px 1px 0 #000000;
+  border-top-color: var(--theme-border);
+  border-left-color: var(--theme-border);
+  border-right-color: var(--theme-border-light);
+  border-bottom-color: var(--theme-border-light);
+  box-shadow: inset 1px 1px 0 var(--theme-border);
 
   margin-bottom: 1rem;
 }
 
 .outcomeIcon {
   font-size: 1.25rem;
-  color: #008000; /* Windows green */
+  color: var(--theme-success); /* Windows green */
   flex-shrink: 0;
 }
 
 .outcomeText {
   font-size: 0.9375rem;
   line-height: 1.5;
-  color: #000000;
+  color: var(--theme-text);
 }
 
 .metrics {
@@ -330,20 +330,20 @@
   padding: 0.75rem;
 
   /* Windows 3.1 inset bevel - IMPORTANT: visible metric boxes */
-  background: #ffffff;
+  background: var(--theme-elevated);
   border: 2px solid;
-  border-top-color: #808080;
-  border-left-color: #808080;
-  border-right-color: #ffffff;
-  border-bottom-color: #ffffff;
-  box-shadow: inset 1px 1px 0 #000000;
+  border-top-color: var(--theme-border);
+  border-left-color: var(--theme-border);
+  border-right-color: var(--theme-border-light);
+  border-bottom-color: var(--theme-border-light);
+  box-shadow: inset 1px 1px 0 var(--theme-border);
 }
 
 .metricValue {
   /* CRITICAL FIX: Solid, high-contrast color instead of transparent gradient */
   font-size: 1.75rem;
   font-weight: 900;
-  color: #000080; /* Windows 3.1 blue - HIGHLY VISIBLE */
+  color: var(--theme-link); /* Windows 3.1 blue - HIGHLY VISIBLE */
   margin-bottom: 0.25rem;
 
   /* Remove all transparency and gradients */
@@ -355,7 +355,7 @@
 
 .metricLabel {
   font-size: 0.75rem;
-  color: #000000;
+  color: var(--theme-text);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 600;
@@ -364,7 +364,7 @@
 .details {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 2px solid #808080;
+  border-top: 2px solid var(--theme-border);
   animation: slideDown 0.3s ease;
 }
 
@@ -382,14 +382,14 @@
 .actionsHeader {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #000000;
+  color: var(--theme-text);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 1rem;
   padding: 0.5rem;
   background: #808080;
-  color: #ffffff;
-  border: 1px solid #000000;
+  color: var(--theme-titlebar-text);
+  border: 1px solid var(--theme-border);
 }
 
 .actionsList {
@@ -414,7 +414,7 @@
 }
 
 .actionBullet {
-  color: #000080;
+  color: var(--theme-link);
   font-size: 0.875rem;
   flex-shrink: 0;
 }
@@ -422,7 +422,7 @@
 .actionText {
   font-size: 0.9375rem;
   line-height: 1.6;
-  color: #000000;
+  color: var(--theme-text);
 }
 
 .summary {
@@ -431,17 +431,17 @@
 
 .summaryCard {
   /* Windows 3.1 window */
-  background: #c0c0c0;
+  background: var(--theme-surface);
 
   border: 2px solid;
-  border-top-color: #ffffff;
-  border-left-color: #ffffff;
-  border-right-color: #000000;
-  border-bottom-color: #000000;
+  border-top-color: var(--theme-border-light);
+  border-left-color: var(--theme-border-light);
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
 
   box-shadow:
-    inset 1px 1px 0 #dfdfdf,
-    inset -1px -1px 0 #808080,
+    inset 1px 1px 0 var(--theme-border),
+    inset -1px -1px 0 var(--theme-border),
     0 4px 8px rgba(0, 0, 0, 0.2);
 
   padding: 2rem;
@@ -454,10 +454,10 @@
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #000080; /* Windows blue */
+  color: var(--theme-link); /* Windows blue */
   padding: 0.5rem;
-  background: #000080;
-  color: #ffffff;
+  background: var(--theme-titlebar);
+  color: var(--theme-titlebar-text);
 }
 
 .summaryStats {
@@ -473,7 +473,7 @@
 .summaryStatValue {
   font-size: 2.5rem;
   font-weight: 900;
-  color: #000080; /* Solid Windows blue */
+  color: var(--theme-link); /* Solid Windows blue */
   margin-bottom: 0.5rem;
 
   /* Remove all gradients and effects */
@@ -485,7 +485,7 @@
 
 .summaryStatLabel {
   font-size: 0.875rem;
-  color: #000000;
+  color: var(--theme-text);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
@@ -494,21 +494,21 @@
 /* Dark mode: Keep Windows 3.1 aesthetic but adjust for dark backgrounds */
 [data-theme='dark'] .phaseCard,
 [data-theme='dark'] .summaryCard {
-  background: #404040; /* Darker gray but still Windows-style */
+  background: var(--theme-surface); /* Darker gray but still Windows-style */
   border-top-color: #606060;
   border-left-color: #606060;
-  border-right-color: #000000;
-  border-bottom-color: #000000;
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
 }
 
 [data-theme='dark'] .phaseCard:hover {
-  background: #484848;
+  background: var(--theme-surface);
 }
 
 [data-theme='dark'] .metric,
 [data-theme='dark'] .outcome,
 [data-theme='dark'] .duration {
-  background: #303030;
+  background: var(--theme-surface);
   border-top-color: #202020;
   border-left-color: #202020;
   border-right-color: #505050;
@@ -516,12 +516,12 @@
 }
 
 [data-theme='dark'] .skillName {
-  color: #5B9BD5; /* Lighter blue for dark mode visibility */
+  color: var(--theme-link); /* Lighter blue for dark mode visibility */
 }
 
 [data-theme='dark'] .metricValue,
 [data-theme='dark'] .summaryStatValue {
-  color: #5B9BD5; /* Lighter blue for dark mode */
+  color: var(--theme-link); /* Lighter blue for dark mode */
 }
 
 [data-theme='dark'] .outcomeText,
@@ -529,16 +529,16 @@
 [data-theme='dark'] .role,
 [data-theme='dark'] .metricLabel,
 [data-theme='dark'] .summaryStatLabel {
-  color: #d0d0d0;
+  color: var(--theme-muted);
 }
 
 [data-theme='dark'] .replayButton {
-  background: #404040;
-  color: #d0d0d0;
+  background: var(--theme-surface);
+  color: var(--theme-muted);
 }
 
 [data-theme='dark'] .replayIcon {
-  color: #5B9BD5;
+  color: var(--theme-link);
 }
 
 /* Responsive */
@@ -567,3 +567,5 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.actionsHeader { background: var(--theme-titlebar); color: var(--theme-titlebar-text); }

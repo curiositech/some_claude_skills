@@ -1,0 +1,182 @@
+[
+  {
+    "mode": "light",
+    "state": "selected quick tag",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 243
+      },
+      {
+        "id": "color-contrast",
+        "count": 247
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "expanded selected tags",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 243
+      },
+      {
+        "id": "color-contrast",
+        "count": 247
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "list view",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 275
+      },
+      {
+        "id": "color-contrast",
+        "count": 279
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "quick-view default install",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 1033
+      },
+      {
+        "id": "color-contrast",
+        "count": 1038
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "quick-view web install",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 1033
+      },
+      {
+        "id": "color-contrast",
+        "count": 1038
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "quick-view desktop install",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 1033
+      },
+      {
+        "id": "color-contrast",
+        "count": 1038
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "selected quick tag",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 243
+      },
+      {
+        "id": "color-contrast",
+        "count": 247
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "expanded selected tags",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 243
+      },
+      {
+        "id": "color-contrast",
+        "count": 247
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "list view",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 275
+      },
+      {
+        "id": "color-contrast",
+        "count": 279
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "quick-view default install",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 1033
+      },
+      {
+        "id": "color-contrast",
+        "count": 1038
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "quick-view web install",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 1033
+      },
+      {
+        "id": "color-contrast",
+        "count": 1038
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "quick-view desktop install",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 1033
+      },
+      {
+        "id": "color-contrast",
+        "count": 1038
+      }
+    ]
+  }
+]

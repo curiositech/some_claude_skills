@@ -131,8 +131,8 @@
   font-size: 15px;
   line-height: 1.7;
   padding: 24px;
-  background: #F5F5DC !important; /* Soft beige - easier on eyes than white */
-  color: var(--win31-black) !important;
+  background: var(--theme-elevated) !important; /* Soft beige - easier on eyes than white */
+  color: var(--theme-text) !important;
 }
 
 .win31-doc-content h1 {
@@ -141,7 +141,7 @@
   font-weight: normal;
   margin-bottom: 20px;
   margin-top: 10px;
-  color: var(--win31-navy) !important;
+  color: var(--theme-link) !important;
   border-bottom: 3px solid var(--win31-navy);
   padding-bottom: 8px;
   letter-spacing: 1px;
@@ -154,7 +154,7 @@
   font-weight: normal;
   margin-top: 32px;
   margin-bottom: 16px;
-  color: var(--win31-teal) !important;
+  color: var(--theme-link) !important;
   letter-spacing: 0.5px;
   line-height: 1.2;
 }
@@ -165,7 +165,7 @@
   font-weight: 600;
   margin-top: 24px;
   margin-bottom: 12px;
-  color: var(--win31-black) !important;
+  color: var(--theme-text) !important;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -175,8 +175,8 @@
 }
 
 .win31-doc-content code {
-  background: var(--win31-light-gray) !important;
-  color: var(--win31-navy) !important;
+  background: var(--theme-sunken) !important;
+  color: var(--theme-link) !important;
   padding: 3px 8px;
   border: 1px solid var(--win31-dark-gray);
   font-family: var(--font-code);
@@ -186,8 +186,8 @@
 }
 
 .win31-doc-content pre {
-  background: #1a1a1a !important; /* Dark background for code blocks */
-  color: #E0E0E0 !important;
+  background: var(--theme-code-bg) !important; /* Dark background for code blocks */
+  color: var(--theme-text) !important;
   border: 2px solid var(--win31-black);
   padding: 16px;
   overflow-x: auto;
@@ -201,7 +201,7 @@
   background: none !important;
   border: none;
   padding: 0;
-  color: #E0E0E0 !important;
+  color: var(--theme-code-green) !important;
 }
 
 .win31-doc-content ul,
@@ -212,24 +212,24 @@
 
 .win31-doc-content li {
   margin-bottom: 6px;
-  color: var(--win31-black) !important;
+  color: var(--theme-text) !important;
 }
 
 .win31-doc-content a {
-  color: var(--win31-navy) !important;
+  color: var(--theme-link) !important;
   text-decoration: underline;
 }
 
 .win31-doc-content a:hover {
-  color: var(--win31-teal) !important;
+  color: var(--theme-link) !important;
 }
 
 .win31-doc-content blockquote {
   border-left: 4px solid var(--win31-navy);
   padding: 12px 16px;
   margin: 16px 0;
-  color: var(--win31-black) !important;
-  background: var(--win31-light-gray) !important;
+  color: var(--theme-text) !important;
+  background: var(--theme-sunken) !important;
   font-style: italic;
   border-radius: 0;
 }
@@ -487,20 +487,20 @@
   content: '✕';
   font-size: 10px;
   font-weight: bold;
-  color: var(--win31-black);
+  color: var(--theme-text);
 }
 
 .win31-maximize-icon::before {
   content: '▲';
   font-size: 8px;
-  color: var(--win31-black);
+  color: var(--theme-text);
 }
 
 .win31-minimize-icon::before {
   content: '_';
   font-size: 12px;
   font-weight: bold;
-  color: var(--win31-black);
+  color: var(--theme-text);
   line-height: 8px;
 }
 
@@ -523,7 +523,7 @@
   font-size: 13px !important;
   font-weight: 500 !important;
   letter-spacing: 0.3px !important;
-  color: var(--win31-black) !important;
+  color: var(--theme-text) !important;
   padding: 6px 12px !important;
   border-radius: 0 !important;
 }
@@ -542,7 +542,7 @@
   background: none !important;
   content: '▸' !important;
   font-size: 10px !important;
-  color: var(--win31-black) !important;
+  color: var(--theme-text) !important;
 }
 
 .menu__list-item--collapsed .menu__caret::before {
@@ -569,7 +569,7 @@
   font-family: var(--font-system) !important;
   font-size: 14px !important;
   font-weight: 600 !important;
-  color: var(--win31-black) !important;
+  color: var(--theme-text) !important;
   letter-spacing: 0.5px !important;
 }
 
@@ -582,7 +582,7 @@
 .theme-doc-breadcrumbs,
 .breadcrumbs {
   font-family: var(--font-system) !important;
-  background: var(--win31-light-gray) !important;
+  background: var(--theme-sunken) !important;
   padding: 8px 16px !important;
   border: 2px inset var(--win31-gray) !important;
   margin-bottom: 16px !important;
@@ -593,11 +593,11 @@
   font-family: var(--font-system) !important;
   font-size: 12px !important;
   font-weight: 500 !important;
-  color: var(--win31-navy) !important;
+  color: var(--theme-link) !important;
 }
 
 .breadcrumbs__item--active {
-  color: var(--win31-black) !important;
+  color: var(--theme-text) !important;
 }
 
 /* Override table of contents */
@@ -614,13 +614,13 @@
   font-family: var(--font-system) !important;
   font-size: 12px !important;
   font-weight: 500 !important;
-  color: var(--win31-black) !important;
+  color: var(--theme-text) !important;
 }
 
 .table-of-contents__link:hover,
 .table-of-contents__link--active {
-  color: var(--win31-navy) !important;
-  background: var(--win31-light-gray) !important;
+  color: var(--theme-link) !important;
+  background: var(--theme-sunken) !important;
 }
 
 /* Override pagination */
@@ -636,94 +636,23 @@
 }
 
 .pagination-nav__link:hover {
-  background: var(--win31-light-gray) !important;
+  background: var(--theme-sunken) !important;
   border: 2px inset var(--win31-gray) !important;
 }
 
 .pagination-nav__label,
 .pagination-nav__sublabel {
   font-family: var(--font-system) !important;
-  color: var(--win31-black) !important;
+  color: var(--theme-text) !important;
 }
 
 /* Make main wrapper beige instead of white */
 main[class*="docMainContainer"],
 .main-wrapper {
-  background: #F5F5DC !important;
+  background: var(--theme-elevated) !important;
 }
 
-/* Syntax Highlighting Overrides - Dark Background Theme */
-/* Override Prism.js syntax highlighting for dark code blocks */
-
-.win31-doc-content pre .token.comment,
-.win31-doc-content pre .token.prolog,
-.win31-doc-content pre .token.doctype,
-.win31-doc-content pre .token.cdata {
-  color: #7C7C7C !important; /* Gray for comments */
-  font-style: italic;
-}
-
-.win31-doc-content pre .token.punctuation {
-  color: #D4D4D4 !important; /* Light gray for punctuation */
-}
-
-.win31-doc-content pre .token.property,
-.win31-doc-content pre .token.tag,
-.win31-doc-content pre .token.boolean,
-.win31-doc-content pre .token.number,
-.win31-doc-content pre .token.constant,
-.win31-doc-content pre .token.symbol,
-.win31-doc-content pre .token.deleted {
-  color: #CE9178 !important; /* Peach/orange for numbers and constants */
-}
-
-.win31-doc-content pre .token.selector,
-.win31-doc-content pre .token.attr-name,
-.win31-doc-content pre .token.string,
-.win31-doc-content pre .token.char,
-.win31-doc-content pre .token.builtin,
-.win31-doc-content pre .token.inserted {
-  color: #CE9178 !important; /* Peach/orange for strings */
-}
-
-.win31-doc-content pre .token.operator,
-.win31-doc-content pre .token.entity,
-.win31-doc-content pre .token.url {
-  color: #D4D4D4 !important; /* Light gray for operators */
-}
-
-.win31-doc-content pre .language-css .token.string,
-.win31-doc-content pre .style .token.string {
-  color: #CE9178 !important;
-}
-
-.win31-doc-content pre .token.atrule,
-.win31-doc-content pre .token.attr-value,
-.win31-doc-content pre .token.keyword {
-  color: #C586C0 !important; /* Purple for keywords */
-  font-weight: 500;
-}
-
-.win31-doc-content pre .token.function,
-.win31-doc-content pre .token.class-name {
-  color: #DCDCAA !important; /* Yellow for functions */
-  font-weight: 500;
-}
-
-.win31-doc-content pre .token.regex,
-.win31-doc-content pre .token.important,
-.win31-doc-content pre .token.variable {
-  color: #9CDCFE !important; /* Light blue for variables */
-}
-
-.win31-doc-content pre .token.important,
-.win31-doc-content pre .token.bold {
-  font-weight: bold;
-}
-
-.win31-doc-content pre .token.italic {
-  font-style: italic;
-}
+/* Syntax highlighting is paired with its surface in styles/theme-roles.css. */
 
 /* Responsive adaptations while keeping retro feel */
 @media (max-width: 768px) {

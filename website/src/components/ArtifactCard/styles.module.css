@@ -65,7 +65,7 @@
 /* Hero Image - Inset Window Style */
 .heroImage {
   margin: 12px 12px 0 12px;
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
   border-style: solid;
   border-width: 2px;
   border-top-color: var(--win31-dark-gray);
@@ -95,18 +95,18 @@
 }
 
 .title a {
-  color: var(--win31-navy);
+  color: var(--theme-link);
   text-decoration: none;
 }
 
 .title a:hover {
-  color: var(--win31-teal);
+  color: var(--theme-link);
   text-decoration: underline;
 }
 
 .description {
   font-family: var(--font-system);
-  color: var(--win31-black);
+  color: var(--theme-text);
   font-size: 12px;
   font-weight: 500;
   line-height: 1.5;
@@ -121,7 +121,7 @@
   gap: 6px;
   margin: 0 12px 12px 12px;
   padding: 8px;
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
   border-style: solid;
   border-width: 1px;
   border-top-color: var(--win31-dark-gray);
@@ -133,7 +133,7 @@
 .skillTag {
   display: inline-block;
   background: var(--win31-gray);
-  color: var(--win31-black);
+  color: var(--theme-text);
   padding: 3px 8px;
   border-style: solid;
   border-width: 1px;
@@ -149,12 +149,12 @@
 }
 
 .skillTag a {
-  color: var(--win31-navy);
+  color: var(--theme-link);
   text-decoration: none;
 }
 
 .skillTag:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .skillTag:active {
@@ -170,7 +170,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   padding: 8px;
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
   border-top: 2px groove var(--win31-dark-gray);
   border-bottom: 2px groove var(--win31-dark-gray);
   margin: 0 12px 12px 12px;
@@ -195,7 +195,7 @@
   font-family: var(--font-pixel);
   font-size: 18px;
   font-weight: normal;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   line-height: 1;
 }
 
@@ -203,7 +203,7 @@
   font-family: var(--font-system);
   font-size: 9px;
   font-weight: 600;
-  color: var(--win31-black);
+  color: var(--theme-text);
   margin-top: 4px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -227,7 +227,7 @@
   font-family: var(--font-system);
   font-size: 11px;
   font-weight: 500;
-  color: var(--win31-black);
+  color: var(--theme-text);
   letter-spacing: 0.3px;
 }
 
@@ -238,12 +238,12 @@
 }
 
 .date {
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
 }
 
 .viewButton {
   background: var(--win31-gray);
-  color: var(--win31-black);
+  color: var(--theme-text);
   padding: 3px 12px;
   border-style: solid;
   border-width: 2px;
@@ -260,8 +260,8 @@
 }
 
 .viewButton:hover {
-  background: var(--win31-light-gray);
-  color: var(--win31-black);
+  background: var(--theme-sunken);
+  color: var(--theme-text);
 }
 
 .viewButton:active {
@@ -277,8 +277,8 @@
   position: absolute;
   top: 3px;
   right: 24px;
-  background: var(--win31-bright-yellow);
-  color: var(--win31-black);
+  background: var(--theme-sticker-yellow);
+  color: var(--theme-accent-ink);
   padding: 2px 8px;
   border-style: solid;
   border-width: 1px;

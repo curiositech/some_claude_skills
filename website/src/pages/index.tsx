@@ -193,7 +193,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                 <h1 className="install-hero__main-title">Make Claude an Expert at Anything</h1>
                 <p className="install-hero__subtitle" style={{
                   fontSize: '16px',
-                  color: '#666',
+                  color: "var(--theme-code-muted)",
                   marginTop: '-8px',
                   marginBottom: '16px',
                   fontStyle: 'italic'
@@ -241,7 +241,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                         top: '-1px',
                         right: '16px',
                         background: 'var(--win31-lime)',
-                        color: '#000',
+                        color: 'var(--theme-accent-ink)',
                         padding: '3px 10px',
                         fontSize: '9px',
                         fontWeight: 'bold',
@@ -270,7 +270,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                         }}>
                           <span style={{
                             background: 'var(--win31-lime)',
-                            color: '#000',
+                            color: 'var(--theme-accent-ink)',
                             padding: '2px 6px',
                             fontSize: '9px',
                             fontWeight: 'bold',
@@ -285,7 +285,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                         <div style={{ display: 'flex', gap: '6px' }}>
                           <code style={{
                             flex: 1,
-                            background: '#000',
+                            background: "var(--theme-code-bg)",
                             padding: '8px 10px',
                             border: '2px solid var(--win31-lime)',
                             color: 'var(--win31-lime)',
@@ -302,7 +302,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                             className="win31-btn-3d"
                             style={{
                               background: copied === 'marketplace' ? 'var(--win31-lime)' : 'var(--win31-gray)',
-                              color: copied === 'marketplace' ? '#000' : 'inherit',
+                              color: copied === 'marketplace' ? 'var(--theme-accent-ink)' : 'var(--theme-text)',
                               fontWeight: 'bold',
                               fontSize: '11px',
                               padding: '6px 10px',
@@ -324,7 +324,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                         }}>
                           <span style={{
                             background: 'var(--win31-bright-yellow)',
-                            color: '#000',
+                            color: 'var(--theme-accent-ink)',
                             padding: '2px 6px',
                             fontSize: '9px',
                             fontWeight: 'bold',
@@ -337,7 +337,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                           </span>
                         </div>
                         <code style={{
-                          background: '#000',
+                          background: "var(--theme-code-bg)",
                           padding: '8px 10px',
                           border: '2px solid var(--win31-bright-yellow)',
                           color: 'var(--win31-bright-yellow)',
@@ -352,7 +352,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                       <div style={{
                         marginTop: '10px',
                         fontSize: '10px',
-                        color: '#888',
+                        color: 'var(--theme-code-muted)',
                         fontFamily: 'var(--font-code)',
                       }}>
                         Browse skills below and click "Get" for exact install commands
@@ -362,7 +362,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                     {/* SECONDARY: Git Clone (collapsed toggle) */}
                     <details style={{
                       background: 'var(--win31-gray)',
-                      border: '2px solid #808080',
+                      border: "2px solid var(--theme-border)",
                     }}>
                       <summary style={{
                         padding: '8px 12px',
@@ -370,7 +370,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                         fontSize: '11px',
                         fontFamily: 'var(--font-code)',
                         fontWeight: 'bold',
-                        color: '#333',
+                        color: "var(--theme-text)",
                         listStyle: 'none',
                         display: 'flex',
                         alignItems: 'center',
@@ -588,7 +588,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
               padding: '24px',
               fontSize: '15px',
               lineHeight: '1.7',
-              color: '#333'
+              color: "var(--theme-text)"
             }}>
               <h2 style={{ marginTop: 0, fontSize: '20px', marginBottom: '16px' }}>Why This Exists</h2>
               <p style={{ marginBottom: '12px' }}>

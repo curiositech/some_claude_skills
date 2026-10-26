@@ -7,7 +7,7 @@
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background: #000;
+  background: var(--theme-code-bg);
   z-index: 10000;
   overflow: hidden;
   /* Ensure no margin/padding interference */
@@ -56,7 +56,7 @@
 }
 
 .loadingText {
-  color: #00ff00;
+  color: var(--theme-text);
   font-family: 'VT323', monospace;
   font-size: 24px;
   text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
@@ -84,7 +84,7 @@
 }
 
 .errorText {
-  color: #ff4444;
+  color: var(--theme-danger);
   font-family: 'VT323', monospace;
   font-size: 18px;
   text-align: center;
@@ -93,7 +93,7 @@
 .errorButton {
   padding: 8px 24px;
   background: #ff4444;
-  color: #000;
+  color: var(--theme-text);
   border: none;
   border-radius: 4px;
   font-family: 'VT323', monospace;
