@@ -21,12 +21,12 @@
 }
 
 .modal {
-  background: #c0c0c0;
+  background: var(--theme-surface);
   border: 2px solid;
-  border-color: #ffffff #808080 #808080 #ffffff;
+  border-color: var(--theme-border-light) var(--theme-border) var(--theme-border) var(--theme-border-light);
   box-shadow:
-    inset 1px 1px 0 #dfdfdf,
-    inset -1px -1px 0 #808080,
+    inset 1px 1px 0 var(--theme-border),
+    inset -1px -1px 0 var(--theme-border),
     4px 4px 0 rgba(0, 0, 0, 0.3);
   width: 100%;
   max-width: 1100px;
@@ -49,7 +49,7 @@
 
 /* Title Bar */
 .titleBar {
-  background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+  background: var(--theme-titlebar);
   padding: 3px 4px;
   display: flex;
   align-items: center;
@@ -68,7 +68,7 @@
 }
 
 .titleText {
-  color: white;
+  color: var(--theme-titlebar-text);
   font-family: 'MS Sans Serif', 'Segoe UI', Tahoma, sans-serif;
   font-weight: bold;
   font-size: 12px;
@@ -84,9 +84,9 @@
 .titleBtnClose {
   width: 18px;
   height: 16px;
-  background: #c0c0c0;
+  background: var(--theme-surface);
   border: 1px solid;
-  border-color: #ffffff #808080 #808080 #ffffff;
+  border-color: var(--theme-border-light) var(--theme-border) var(--theme-border) var(--theme-border-light);
   font-size: 10px;
   display: flex;
   align-items: center;
@@ -96,7 +96,7 @@
 }
 
 .titleBtn:hover {
-  background: #d4d4d4;
+  background: var(--theme-sunken);
 }
 
 .titleBtnClose {
@@ -104,24 +104,24 @@
 }
 
 .titleBtnClose:hover {
-  background: #ff6b6b;
-  color: white;
+  background: var(--theme-danger-surface);
+  color: var(--theme-danger);
 }
 
 .titleBtn:active,
 .titleBtnClose:active {
-  border-color: #808080 #ffffff #ffffff #808080;
+  border-color: var(--theme-border) var(--theme-border-light) var(--theme-border-light) var(--theme-border);
 }
 
 /* Install Banner - Big CTA */
 .installBanner {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--theme-titlebar);
   padding: 16px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  border-bottom: 2px solid #808080;
+  border-bottom: 2px solid var(--theme-border);
 }
 
 .installLeft {
@@ -129,7 +129,7 @@
 }
 
 .installTitle {
-  color: white;
+  color: var(--theme-titlebar-text);
   font-size: 18px;
   font-weight: bold;
   margin: 0 0 4px 0;
@@ -137,24 +137,25 @@
 }
 
 .installSubtitle {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--theme-titlebar-text);
   font-size: 13px;
   margin: 0;
 }
 
 .installSubtitle code {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--theme-code-bg);
   padding: 2px 6px;
   border-radius: 3px;
   font-family: 'Monaco', 'Consolas', monospace;
   font-size: 12px;
+  color: var(--theme-code-text);
 }
 
 .installNote {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--theme-warning);
   font-size: 11px;
   margin: 8px 0 0 0;
-  background: rgba(255, 193, 7, 0.2);
+  background: var(--theme-warning-surface);
   padding: 6px 10px;
   border-radius: 4px;
   border-left: 3px solid #ffc107;
@@ -168,7 +169,7 @@
 }
 
 .installCommand {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--theme-code-bg);
   border-radius: 6px;
   padding: 8px 12px;
   display: flex;
@@ -177,14 +178,14 @@
 }
 
 .installCommand code {
-  color: #00ff88;
+  color: var(--theme-code-green);
   font-family: 'Monaco', 'Consolas', monospace;
   font-size: 13px;
   white-space: nowrap;
 }
 
 .installConfig {
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--theme-code-bg);
   border-radius: 6px;
   padding: 10px 14px;
   display: flex;
@@ -194,7 +195,7 @@
 }
 
 .configCode {
-  color: #00ff88;
+  color: var(--theme-code-green);
   font-family: 'Monaco', 'Consolas', monospace;
   font-size: 11px;
   margin: 0;
@@ -204,8 +205,8 @@
 }
 
 .copyBtn {
-  background: #00d084;
-  color: white;
+  background: var(--theme-success-surface);
+  color: var(--theme-success);
   border: none;
   padding: 6px 12px;
   border-radius: 4px;
@@ -217,7 +218,7 @@
 }
 
 .copyBtn:hover {
-  background: #00b371;
+  background: var(--theme-success-surface);
   transform: scale(1.05);
 }
 
@@ -227,16 +228,16 @@
 }
 
 .installLink {
-  color: white;
+  color: var(--theme-titlebar-text);
   font-size: 12px;
   text-decoration: none;
-  opacity: 0.9;
+  opacity: 1;
   transition: opacity 0.2s;
 }
 
 .installLink:hover {
   opacity: 1;
-  color: white;
+  color: var(--theme-titlebar-text);
   text-decoration: underline;
 }
 
@@ -254,7 +255,7 @@
   flex-shrink: 0;
   padding: 12px;
   border-right: 2px solid;
-  border-color: #808080 #ffffff #ffffff #808080;
+  border-color: var(--theme-border) var(--theme-border-light) var(--theme-border-light) var(--theme-border);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -262,9 +263,9 @@
 }
 
 .heroContainer {
-  background: white;
+  background: var(--theme-elevated);
   border: 2px solid;
-  border-color: #808080 #ffffff #ffffff #808080;
+  border-color: var(--theme-border) var(--theme-border-light) var(--theme-border-light) var(--theme-border);
   padding: 4px;
 }
 
@@ -301,8 +302,8 @@
 }
 
 .stickerFeatured {
-  background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
-  color: #5d4e00;
+  background: var(--theme-sticker-yellow);
+  color: var(--theme-accent-ink);
 }
 
 .stickerFeatured span {
@@ -315,8 +316,8 @@
 }
 
 .stickerNew {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
-  color: white;
+  background: var(--theme-danger-surface);
+  color: var(--theme-danger);
 }
 
 .stickerStatus {
@@ -324,26 +325,26 @@
 }
 
 .stickerCategory {
-  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
-  color: white;
+  background: var(--theme-info-surface);
+  color: var(--theme-info);
 }
 
 .stickerTools {
-  background: linear-gradient(135deg, #667eea 0%, #5567d5 100%);
-  color: white;
+  background: var(--theme-info-surface);
+  color: var(--theme-info);
 }
 
 .stickerVersion {
-  background: #333;
-  color: #00ff88;
+  background: var(--theme-code-bg);
+  color: var(--theme-code-green);
   font-family: monospace;
 }
 
 /* Quick Facts */
 .quickFacts {
-  background: white;
+  background: var(--theme-elevated);
   border: 2px solid;
-  border-color: #808080 #ffffff #ffffff #808080;
+  border-color: var(--theme-border) var(--theme-border-light) var(--theme-border-light) var(--theme-border);
   padding: 10px;
 }
 
@@ -366,7 +367,7 @@
 }
 
 .quickFacts strong {
-  color: #000080;
+  color: var(--theme-link);
 }
 
 /* Right Column */
@@ -383,14 +384,14 @@
   display: flex;
   padding: 8px 8px 0 8px;
   gap: 2px;
-  background: #c0c0c0;
+  background: var(--theme-surface);
 }
 
 .tab {
   padding: 6px 16px;
-  background: #d4d4d4;
+  background: var(--theme-surface);
   border: 2px solid;
-  border-color: #ffffff #808080 #c0c0c0 #ffffff;
+  border-color: var(--theme-border-light) var(--theme-border) #c0c0c0 var(--theme-border-light);
   border-bottom: none;
   font-size: 12px;
   cursor: pointer;
@@ -399,12 +400,12 @@
 }
 
 .tab:hover {
-  background: #e4e4e4;
+  background: var(--theme-sunken);
 }
 
 .tabActive {
-  background: white;
-  border-color: #808080 #ffffff #ffffff #808080;
+  background: var(--theme-elevated);
+  border-color: var(--theme-border) var(--theme-border-light) var(--theme-border-light) var(--theme-border);
   border-bottom: 2px solid white;
   font-weight: bold;
 }
@@ -412,9 +413,9 @@
 /* Tab Content */
 .tabContent {
   flex: 1;
-  background: white;
+  background: var(--theme-elevated);
   border: 2px solid;
-  border-color: #808080 #ffffff #ffffff #808080;
+  border-color: var(--theme-border) var(--theme-border-light) var(--theme-border-light) var(--theme-border);
   margin: 0 8px 8px 8px;
   padding: 12px;
   overflow-y: auto;
@@ -423,21 +424,21 @@
 /* Overview Tab */
 .overview h3 {
   margin: 0 0 8px 0;
-  color: #000080;
+  color: var(--theme-link);
   font-size: 16px;
 }
 
 .description {
   font-size: 14px;
   line-height: 1.5;
-  color: #333;
+  color: var(--theme-text);
   margin-bottom: 12px;
 }
 
 .longDescription {
   font-size: 13px;
   line-height: 1.6;
-  color: #444;
+  color: var(--theme-muted);
 }
 
 .longDescription p {
@@ -446,15 +447,15 @@
 
 .features {
   margin-top: 16px;
-  background: #f8f9fa;
-  border: 1px solid #ddd;
+  background: var(--theme-sunken);
+  border: 1px solid var(--theme-border);
   border-radius: 4px;
   padding: 12px;
 }
 
 .features h4 {
   margin: 0 0 8px 0;
-  color: #000080;
+  color: var(--theme-link);
   font-size: 14px;
 }
 
@@ -476,8 +477,8 @@
 }
 
 .toolCard {
-  background: #f8f9fa;
-  border: 1px solid #ddd;
+  background: var(--theme-sunken);
+  border: 1px solid var(--theme-border);
   border-left: 4px solid #667eea;
   padding: 10px 12px;
   border-radius: 0 4px 4px 0;
@@ -488,8 +489,8 @@
 }
 
 .toolName {
-  background: #000080;
-  color: #00ff88;
+  background: var(--theme-code-bg);
+  color: var(--theme-code-green);
   padding: 2px 8px;
   border-radius: 3px;
   font-size: 13px;
@@ -499,7 +500,7 @@
 .toolDescription {
   margin: 0;
   font-size: 12px;
-  color: #555;
+  color: var(--theme-muted);
   line-height: 1.4;
 }
 
@@ -511,7 +512,7 @@
 }
 
 .exampleCard {
-  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+  background: var(--theme-sunken);
   border: 2px solid #e0e0e0;
   border-radius: 6px;
   padding: 14px;
@@ -524,19 +525,19 @@
 
 .exampleTitle {
   margin: 0 0 6px 0;
-  color: #000080;
+  color: var(--theme-link);
   font-size: 14px;
 }
 
 .exampleDescription {
   margin: 0 0 10px 0;
   font-size: 13px;
-  color: #555;
+  color: var(--theme-muted);
   line-height: 1.4;
 }
 
 .examplePrompt {
-  background: #1e1e1e;
+  background: var(--theme-code-bg);
   border-radius: 4px;
   padding: 10px;
 }
@@ -544,14 +545,15 @@
 .promptLabel {
   display: block;
   font-size: 10px;
-  color: #888;
+  color: var(--theme-code-muted);
   margin-bottom: 4px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .examplePrompt code {
-  color: #00ff88;
+  background: transparent;
+  color: var(--theme-code-green);
   font-family: 'Monaco', 'Consolas', monospace;
   font-size: 12px;
   word-break: break-word;
@@ -560,7 +562,7 @@
 .noExamples {
   text-align: center;
   padding: 30px;
-  color: #666;
+  color: var(--theme-muted);
 }
 
 .noExamples p {
@@ -571,8 +573,8 @@
 .statusBar {
   display: flex;
   border-top: 2px solid;
-  border-color: #ffffff #808080 #808080 #ffffff;
-  background: #c0c0c0;
+  border-color: var(--theme-border-light) var(--theme-border) var(--theme-border) var(--theme-border-light);
+  background: var(--theme-surface);
   padding: 2px;
   gap: 2px;
 }
@@ -581,8 +583,8 @@
   padding: 2px 8px;
   font-size: 11px;
   border: 1px solid;
-  border-color: #808080 #ffffff #ffffff #808080;
-  background: #c0c0c0;
+  border-color: var(--theme-border) var(--theme-border-light) var(--theme-border-light) var(--theme-border);
+  background: var(--theme-surface);
   flex-shrink: 0;
 }
 
@@ -604,7 +606,7 @@
     width: 100%;
     border-right: none;
     border-bottom: 2px solid;
-    border-color: #808080 #ffffff #ffffff #808080;
+    border-color: var(--theme-border) var(--theme-border-light) var(--theme-border-light) var(--theme-border);
     max-height: 200px;
   }
 
@@ -615,6 +617,7 @@
   .installBanner {
     flex-direction: column;
     text-align: center;
+    background: var(--theme-titlebar);
   }
 
   .installRight {
@@ -624,20 +627,26 @@
   .installCommand {
     flex-direction: column;
     gap: 8px;
+    background: var(--theme-code-bg);
   }
 
   .installCommand code {
     font-size: 11px;
     word-break: break-all;
     white-space: normal;
+    color: var(--theme-code-green);
   }
 
   .installConfig {
     max-width: 100%;
     width: 100%;
+    background: var(--theme-code-bg);
   }
 
   .configCode {
     font-size: 10px;
+    color: var(--theme-code-green);
   }
 }
+
+.titleBtn, .titleBtnClose, .tab { color: var(--theme-text); }

@@ -1,0 +1,72 @@
+[
+  {
+    "mode": "light",
+    "palette": "Windows Default",
+    "inputContrast": 18.883060964594996
+  },
+  {
+    "mode": "light",
+    "palette": "Hot Dog Stand",
+    "inputContrast": 18.883060964594996
+  },
+  {
+    "mode": "light",
+    "palette": "Fluorescent",
+    "inputContrast": 18.883060964594996
+  },
+  {
+    "mode": "light",
+    "palette": "Ocean",
+    "inputContrast": 18.883060964594996
+  },
+  {
+    "mode": "light",
+    "palette": "Plasma Power Saver",
+    "inputContrast": 18.883060964594996
+  },
+  {
+    "mode": "light",
+    "palette": "Pumpkin (Large)",
+    "inputContrast": 18.883060964594996
+  },
+  {
+    "mode": "light",
+    "palette": "Rugby",
+    "inputContrast": 18.883060964594996
+  },
+  {
+    "mode": "dark",
+    "palette": "Windows Default",
+    "inputContrast": 14.712547629284156
+  },
+  {
+    "mode": "dark",
+    "palette": "Hot Dog Stand",
+    "inputContrast": 14.712547629284156
+  },
+  {
+    "mode": "dark",
+    "palette": "Fluorescent",
+    "inputContrast": 14.712547629284156
+  },
+  {
+    "mode": "dark",
+    "palette": "Ocean",
+    "inputContrast": 14.712547629284156
+  },
+  {
+    "mode": "dark",
+    "palette": "Plasma Power Saver",
+    "inputContrast": 14.712547629284156
+  },
+  {
+    "mode": "dark",
+    "palette": "Pumpkin (Large)",
+    "inputContrast": 14.712547629284156
+  },
+  {
+    "mode": "dark",
+    "palette": "Rugby",
+    "inputContrast": 14.712547629284156
+  }
+]

@@ -30,13 +30,14 @@ const NODE_SIZES = {
   large: { width: 200, height: 100, fontSize: 14 },
 };
 
-const STATUS_COLORS: Record<TaskState['status'], string> = {
-  pending: '#6b7280', // gray
-  ready: '#3b82f6',   // blue
-  running: '#f59e0b', // amber
-  completed: '#10b981', // green
-  failed: '#ef4444',   // red
-  skipped: '#9ca3af',  // light gray
+const STATUS_ROLES: Record<TaskState['status'], {background: string; text: string}> = {
+  pending: { background: 'var(--theme-sunken)', text: 'var(--theme-muted)' },
+  ready: { background: 'var(--theme-info-surface)', text: 'var(--theme-info)' },
+  running: { background: 'var(--theme-warning-surface)', text: 'var(--theme-warning)' },
+  completed: { background: 'var(--theme-success-surface)', text: 'var(--theme-success)' },
+  failed: { background: 'var(--theme-danger-surface)', text: 'var(--theme-danger)' },
+  skipped: { background: 'var(--theme-sunken)', text: 'var(--theme-muted)' },
+  cancelled: { background: 'var(--theme-sunken)', text: 'var(--theme-muted)' },
 };
 
 const NODE_TYPE_ICONS: Record<DAGNodeType['type'], string> = {
@@ -61,6 +62,8 @@ function getStatusLabel(state: TaskState): string {
       return 'Failed';
     case 'skipped':
       return 'Skipped';
+    case 'cancelled':
+      return 'Cancelled';
   }
 }
 
@@ -73,7 +76,7 @@ export function DAGNode({
   size = 'medium',
 }: DAGNodeProps): React.ReactElement {
   const dimensions = NODE_SIZES[size];
-  const statusColor = STATUS_COLORS[node.state.status];
+  const statusRole = STATUS_ROLES[node.state.status];
   const icon = NODE_TYPE_ICONS[node.type];
 
   const handleClick = (e: React.MouseEvent) => {
@@ -114,8 +117,8 @@ export function DAGNode({
         width={dimensions.width}
         height={dimensions.height}
         rx={8}
-        fill="#c0c0c0"
-        stroke={selected ? '#000080' : '#000000'}
+        fill="var(--theme-surface)"
+        stroke={selected ? 'var(--theme-focus)' : 'var(--theme-border)'}
         strokeWidth={selected ? 3 : 2}
         className={styles.nodeBody}
       />
@@ -126,14 +129,14 @@ export function DAGNode({
         y={2}
         width={dimensions.width - 4}
         height={20}
-        fill="#000080"
+        fill="var(--theme-titlebar)"
       />
 
       {/* Title text */}
       <text
         x={8}
         y={15}
-        fill="#ffffff"
+        fill="var(--theme-titlebar-text)"
         fontSize={dimensions.fontSize - 2}
         fontWeight="bold"
         fontFamily="var(--font-code)"
@@ -146,7 +149,7 @@ export function DAGNode({
         x={dimensions.width / 2}
         y={dimensions.height / 2 + 2}
         textAnchor="middle"
-        fill="#000000"
+        fill="var(--theme-text)"
         fontSize={dimensions.fontSize}
         fontWeight="bold"
         fontFamily="var(--font-code)"
@@ -162,13 +165,13 @@ export function DAGNode({
           width={60}
           height={14}
           rx={3}
-          fill={statusColor}
+          fill={statusRole.background}
         />
         <text
           x={30}
           y={10}
           textAnchor="middle"
-          fill="#ffffff"
+          fill={statusRole.text}
           fontSize={9}
           fontWeight="bold"
           fontFamily="var(--font-system)"
@@ -205,7 +208,7 @@ export function DAGNode({
           height={dimensions.height + 8}
           rx={10}
           fill="none"
-          stroke="#000080"
+          stroke="var(--theme-focus)"
           strokeWidth={2}
           strokeDasharray="4,4"
         />

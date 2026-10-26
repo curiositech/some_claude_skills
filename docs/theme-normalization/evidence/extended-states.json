@@ -1,0 +1,302 @@
+[
+  {
+    "mode": "light",
+    "state": "all 9 agent cards expanded",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 403
+      },
+      {
+        "id": "color-contrast",
+        "count": 407
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "MCP 1 overview",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 42
+      },
+      {
+        "id": "color-contrast",
+        "count": 46
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "MCP 1 tools",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 45
+      },
+      {
+        "id": "color-contrast",
+        "count": 52
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "MCP 1 examples",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 45
+      },
+      {
+        "id": "color-contrast",
+        "count": 54
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "MCP 2 overview",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 42
+      },
+      {
+        "id": "color-contrast",
+        "count": 46
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "MCP 2 tools",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 44
+      },
+      {
+        "id": "color-contrast",
+        "count": 52
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "MCP 2 examples",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 44
+      },
+      {
+        "id": "color-contrast",
+        "count": 52
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "monitor running",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 5
+      },
+      {
+        "id": "color-contrast",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "monitor paused",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 5
+      },
+      {
+        "id": "color-contrast",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "monitor stopped",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 5
+      },
+      {
+        "id": "color-contrast",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "all 9 agent cards expanded",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 403
+      },
+      {
+        "id": "color-contrast",
+        "count": 407
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "MCP 1 overview",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 42
+      },
+      {
+        "id": "color-contrast",
+        "count": 46
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "MCP 1 tools",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 45
+      },
+      {
+        "id": "color-contrast",
+        "count": 52
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "MCP 1 examples",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 45
+      },
+      {
+        "id": "color-contrast",
+        "count": 54
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "MCP 2 overview",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 42
+      },
+      {
+        "id": "color-contrast",
+        "count": 46
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "MCP 2 tools",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 44
+      },
+      {
+        "id": "color-contrast",
+        "count": 52
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "MCP 2 examples",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 44
+      },
+      {
+        "id": "color-contrast",
+        "count": 52
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "monitor running",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 5
+      },
+      {
+        "id": "color-contrast",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "monitor paused",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 5
+      },
+      {
+        "id": "color-contrast",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "monitor stopped",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 5
+      },
+      {
+        "id": "color-contrast",
+        "count": 24
+      }
+    ]
+  }
+]

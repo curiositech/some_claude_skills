@@ -34,9 +34,9 @@
   flex: 1;
   font-family: var(--font-code);
   font-size: 11px;
-  color: var(--win31-black);
+  color: var(--theme-text);
   padding: 2px 8px;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   border: 1px inset var(--win31-gray);
 }
 
@@ -58,7 +58,7 @@
 .win31-file-manager-tree-inner {
   height: 100%;
   overflow: auto;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   border: 2px inset var(--win31-gray);
 }
 
@@ -81,7 +81,7 @@
 .win31-file-manager-view-inner {
   height: 100%;
   overflow: auto;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   border: 2px inset var(--win31-gray);
 }
 
@@ -100,7 +100,7 @@
 }
 
 .win31-tree-item:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .win31-tree-item--selected {
@@ -115,7 +115,7 @@
 .win31-tree-toggle {
   width: 10px;
   font-size: 8px;
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
   flex-shrink: 0;
 }
 
@@ -128,7 +128,7 @@
   font-family: var(--font-system);
   font-size: 11px;
   font-weight: 500;
-  color: var(--win31-black);
+  color: var(--theme-text);
   letter-spacing: 0.3px;
 }
 
@@ -145,7 +145,7 @@
   height: 100%;
   padding: 40px;
   text-align: center;
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
 }
 
 .win31-file-viewer-empty-icon {
@@ -180,7 +180,7 @@
 .win31-file-viewer-folder-name {
   font-family: var(--font-heading);
   font-size: 24px;
-  color: var(--win31-navy);
+  color: var(--theme-link);
 }
 
 .win31-file-viewer-folder-info {
@@ -201,7 +201,7 @@
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   gap: 16px;
   padding: 12px;
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
   border: 2px inset var(--win31-gray);
 }
 
@@ -231,7 +231,7 @@
 .win31-file-viewer-grid-label {
   font-family: var(--font-system);
   font-size: 10px;
-  color: var(--win31-black);
+  color: var(--theme-text);
   word-break: break-all;
   max-width: 70px;
 }
@@ -261,16 +261,16 @@
   font-family: var(--font-system);
   font-size: 12px;
   font-weight: 600;
-  color: var(--win31-black);
+  color: var(--theme-text);
   flex: 1;
 }
 
 .win31-file-viewer-file-size {
   font-family: var(--font-code);
   font-size: 10px;
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
   padding: 2px 8px;
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
   border: 1px solid var(--win31-dark-gray);
 }
 
@@ -278,7 +278,7 @@
   flex: 1;
   overflow: auto;
   padding: 12px;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
 }
 
 .win31-file-viewer-pre {
@@ -288,7 +288,7 @@
   white-space: pre-wrap;
   word-wrap: break-word;
   margin: 0;
-  color: var(--win31-black);
+  color: var(--theme-text);
   background: transparent !important;
   border: none !important;
   padding: 0 !important;
@@ -297,7 +297,7 @@
 .win31-file-viewer-no-content {
   text-align: center;
   padding: 40px;
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
   font-family: var(--font-system);
   font-size: 12px;
 }
@@ -305,12 +305,12 @@
 .win31-file-viewer-link {
   display: inline-block;
   margin-top: 12px;
-  color: var(--win31-navy) !important;
+  color: var(--theme-link) !important;
   text-decoration: underline;
 }
 
 .win31-file-viewer-link:hover {
-  color: var(--win31-teal) !important;
+  color: var(--theme-link) !important;
 }
 
 /* Group Box */
@@ -326,12 +326,12 @@
   position: absolute;
   top: -8px;
   left: 12px;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   padding: 0 6px;
   font-family: var(--font-system);
   font-size: 11px;
   font-weight: 600;
-  color: var(--win31-black);
+  color: var(--theme-text);
 }
 
 /* Scrollbar Styling */
@@ -345,7 +345,7 @@
 .win31-file-manager-tree-inner::-webkit-scrollbar-track,
 .win31-file-manager-view-inner::-webkit-scrollbar-track,
 .win31-file-viewer-body::-webkit-scrollbar-track {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
   border-left: 1px solid var(--win31-dark-gray);
 }
 

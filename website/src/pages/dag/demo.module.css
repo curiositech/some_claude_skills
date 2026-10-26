@@ -45,7 +45,7 @@
 
 .intro {
   font-size: 1.1rem;
-  color: var(--ifm-color-emphasis-700);
+  color: var(--theme-muted);
   margin: 1rem 0 2rem;
 }
 
@@ -70,7 +70,7 @@
 
 .complexity {
   font-size: 1rem;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--theme-muted);
 }
 
 .realTaskNote {
@@ -93,26 +93,26 @@
 
 .realTaskNote em {
   font-style: italic;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--theme-muted);
 }
 
 .dagExplanation {
   margin: 2rem 0;
   padding: 1.5rem;
-  background: var(--ifm-color-success-lightest);
-  border: 2px solid var(--ifm-color-success-dark);
+  background: var(--theme-success-surface);
+  border: 2px solid var(--theme-success);
   border-radius: 4px;
 }
 
 .dagExplanation h3 {
   margin-top: 0;
-  color: var(--ifm-color-success-darkest);
+  color: var(--theme-success);
 }
 
 .dagExplanation h4 {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
-  color: var(--ifm-color-success-darker);
+  color: var(--theme-success);
   font-size: 1.1rem;
 }
 
@@ -127,5 +127,12 @@
 }
 
 .dagExplanation strong {
-  color: var(--ifm-color-success-darkest);
+  color: var(--theme-success);
+}
+
+/* The canvas must shrink with its page instead of contributing a minimum width. */
+.container { width: 100%; min-width: 0; }
+@media (max-width: 480px) {
+  .container { padding: 1rem; }
+  .controls select { max-width: 100%; }
 }

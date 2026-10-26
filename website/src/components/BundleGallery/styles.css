@@ -11,7 +11,7 @@
 /* Filters Section */
 .bundle-gallery__filters {
   background: var(--win31-gray);
-  border: 2px groove #fff;
+  border: 2px groove var(--theme-border-light);
   padding: 16px;
   margin-bottom: 20px;
   display: flex;
@@ -27,8 +27,8 @@
   width: 100%;
   padding: 8px 12px;
   font-size: 14px;
-  border: 2px inset #808080;
-  background: #fff;
+  border: 2px inset var(--theme-border);
+  background: var(--theme-elevated);
   font-family: var(--font-code);
 }
 
@@ -46,7 +46,7 @@
 
 .bundle-gallery__filter-label {
   font-size: 12px;
-  color: #333;
+  color: var(--theme-text);
   font-weight: bold;
   min-width: 70px;
 }
@@ -61,7 +61,7 @@
   font-size: 12px;
   padding: 6px 12px;
   background: var(--win31-gray);
-  border: 2px outset #fff;
+  border: 2px outset var(--theme-border-light);
   cursor: pointer;
   font-family: var(--font-system);
   display: inline-flex;
@@ -70,13 +70,14 @@
 }
 
 .bundle-gallery__filter-btn:hover {
-  background: #d4d4d4;
+  background: var(--theme-sunken);
+  color: var(--theme-text);
 }
 
 .bundle-gallery__filter-btn--active {
   background: var(--win31-navy);
-  color: white;
-  border: 2px inset #000;
+  color: var(--theme-titlebar-text);
+  border: 2px inset var(--theme-border);
   font-weight: bold;
 }
 
@@ -93,11 +94,11 @@
 /* Results Bar */
 .bundle-gallery__results-bar {
   padding: 8px 12px;
-  background: #f0f0f0;
-  border: 1px solid #ccc;
+  background: var(--theme-elevated);
+  border: 1px solid var(--theme-border);
   margin-bottom: 16px;
   font-size: 12px;
-  color: #666;
+  color: var(--theme-muted);
 }
 
 /* Grid Layout */
@@ -112,19 +113,19 @@
   text-align: center;
   padding: 60px 20px;
   background: var(--win31-gray);
-  border: 2px groove #fff;
+  border: 2px groove var(--theme-border-light);
 }
 
 .bundle-gallery__empty h3 {
   margin: 0 0 8px 0;
   font-size: 18px;
-  color: var(--win31-navy);
+  color: var(--theme-link);
 }
 
 .bundle-gallery__empty p {
   margin: 0 0 20px 0;
   font-size: 14px;
-  color: #666;
+  color: var(--theme-muted);
 }
 
 /* Responsive */
@@ -157,4 +158,9 @@
     padding: 4px 8px;
     font-size: 11px;
   }
+}
+
+.bundle-gallery__filter-btn--active:is(:hover,:active,:focus-visible) {
+  background: var(--theme-action-bg);
+  color: var(--theme-action-text);
 }

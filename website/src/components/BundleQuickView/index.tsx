@@ -12,9 +12,9 @@ interface BundleQuickViewProps {
  * Difficulty badge configuration
  */
 const DIFFICULTY_CONFIG = {
-  beginner: { label: 'Beginner', color: '#4a9', bg: '#e8fff0' },
-  intermediate: { label: 'Intermediate', color: '#48a', bg: '#e8f4ff' },
-  advanced: { label: 'Advanced', color: '#a48', bg: '#fff0f8' },
+  beginner: { label: 'Beginner', color: 'var(--theme-success)', bg: 'var(--theme-success-surface)' },
+  intermediate: { label: 'Intermediate', color: 'var(--theme-info)', bg: 'var(--theme-info-surface)' },
+  advanced: { label: 'Advanced', color: 'var(--theme-danger)', bg: 'var(--theme-danger-surface)' },
 };
 
 /**
@@ -93,7 +93,7 @@ export default function BundleQuickView({
       <div
         style={{
           backgroundColor: 'var(--win31-gray, #c0c0c0)',
-          border: '4px solid var(--win31-black, #000)',
+          border: "4px solid var(--win31-black, var(--theme-border))",
           boxShadow: '12px 12px 0 rgba(0, 0, 0, 0.5)',
           maxWidth: '700px',
           width: '100%',
@@ -116,7 +116,7 @@ export default function BundleQuickView({
         >
           <span
             style={{
-              color: 'white',
+              color: "var(--theme-titlebar-text)",
               fontWeight: 'bold',
               fontFamily: 'var(--font-system)',
               fontSize: '14px',
@@ -128,7 +128,7 @@ export default function BundleQuickView({
             onClick={onClose}
             style={{
               background: 'var(--win31-gray, #c0c0c0)',
-              border: '2px outset #fff',
+              border: "2px outset var(--theme-border-light)",
               width: '20px',
               height: '20px',
               display: 'flex',
@@ -180,8 +180,8 @@ export default function BundleQuickView({
                 fontSize: '11px',
                 fontFamily: 'var(--font-code)',
                 padding: '3px 8px',
-                background: '#f0f0f0',
-                color: '#333',
+                background: "var(--theme-elevated)",
+                color: "var(--theme-text)",
                 border: '1px solid #999',
               }}
             >
@@ -193,9 +193,9 @@ export default function BundleQuickView({
                   fontSize: '11px',
                   fontFamily: 'var(--font-code)',
                   padding: '3px 8px',
-                  background: '#ffd700',
-                  color: '#000',
-                  border: '1px solid #000',
+                  background: 'var(--theme-sticker-yellow)',
+                  color: "var(--theme-accent-ink)",
+                  border: "1px solid var(--theme-border)",
                   fontWeight: 600,
                 }}
               >
@@ -209,7 +209,7 @@ export default function BundleQuickView({
             style={{
               margin: '0 0 16px 0',
               lineHeight: 1.6,
-              color: '#333',
+              color: "var(--theme-text)",
             }}
           >
             {bundle.description}
@@ -220,7 +220,7 @@ export default function BundleQuickView({
             style={{
               marginBottom: '16px',
               padding: '12px',
-              background: '#1a1a2e',
+              background: "var(--theme-code-bg)",
               border: '2px inset #666',
             }}
           >
@@ -234,7 +234,7 @@ export default function BundleQuickView({
             >
               <span
                 style={{
-                  color: '#888',
+                  color: "var(--theme-code-muted)",
                   fontSize: '11px',
                   fontFamily: 'var(--font-code)',
                 }}
@@ -244,13 +244,13 @@ export default function BundleQuickView({
               <button
                 onClick={copyInstallCommand}
                 style={{
-                  background: copied ? '#4a9' : 'var(--win31-gray)',
-                  border: '2px outset #fff',
+                  background: copied ? 'var(--theme-success-surface)' : 'var(--theme-surface)',
+                  border: "2px outset var(--theme-border-light)",
                   padding: '2px 8px',
                   cursor: 'pointer',
                   fontSize: '11px',
                   fontFamily: 'var(--font-code)',
-                  color: copied ? '#fff' : '#000',
+                  color: copied ? 'var(--theme-success)' : 'var(--theme-text)',
                 }}
               >
                 {copied ? '✓ Copied!' : 'Copy'}
@@ -258,7 +258,7 @@ export default function BundleQuickView({
             </div>
             <code
               style={{
-                color: '#4af',
+                color: 'var(--theme-code-blue)',
                 fontFamily: 'var(--font-code)',
                 fontSize: '13px',
                 wordBreak: 'break-all',
@@ -273,8 +273,8 @@ export default function BundleQuickView({
             style={{
               marginBottom: '16px',
               padding: '10px',
-              background: '#f8f8f8',
-              border: '1px solid #ddd',
+              background: "var(--theme-elevated)",
+              border: "1px solid var(--theme-border)",
               display: 'flex',
               alignItems: 'center',
               gap: '16px',
@@ -284,7 +284,7 @@ export default function BundleQuickView({
               <span
                 style={{
                   fontSize: '11px',
-                  color: '#666',
+                  color: "var(--theme-muted)",
                   fontFamily: 'var(--font-code)',
                 }}
               >
@@ -293,7 +293,7 @@ export default function BundleQuickView({
               <span
                 style={{
                   fontSize: '14px',
-                  color: '#060',
+                  color: "var(--theme-success)",
                   fontWeight: 600,
                   fontFamily: 'var(--font-code)',
                 }}
@@ -305,7 +305,7 @@ export default function BundleQuickView({
               <span
                 style={{
                   fontSize: '11px',
-                  color: '#666',
+                  color: "var(--theme-muted)",
                   fontFamily: 'var(--font-code)',
                 }}
               >
@@ -314,7 +314,7 @@ export default function BundleQuickView({
               <span
                 style={{
                   fontSize: '12px',
-                  color: '#333',
+                  color: "var(--theme-text)",
                   fontFamily: 'var(--font-code)',
                 }}
               >
@@ -330,7 +330,7 @@ export default function BundleQuickView({
                 margin: '0 0 8px 0',
                 fontSize: '13px',
                 fontFamily: 'var(--font-system)',
-                color: '#000080',
+                color: "var(--theme-link)",
               }}
             >
               🔧 Included Skills ({requiredSkills.length}
@@ -347,8 +347,8 @@ export default function BundleQuickView({
                     alignItems: 'flex-start',
                     gap: '8px',
                     padding: '6px 8px',
-                    background: '#fff',
-                    border: '1px solid #ccc',
+                    background: "var(--theme-elevated)",
+                    border: "1px solid var(--theme-border)",
                   }}
                 >
                   <span style={{ fontSize: '12px' }}>✓</span>
@@ -360,7 +360,7 @@ export default function BundleQuickView({
                         border: 'none',
                         padding: 0,
                         cursor: onViewSkill ? 'pointer' : 'default',
-                        color: '#000080',
+                        color: "var(--theme-link)",
                         fontWeight: 600,
                         fontSize: '12px',
                         fontFamily: 'var(--font-code)',
@@ -374,7 +374,7 @@ export default function BundleQuickView({
                       style={{
                         margin: '2px 0 0 0',
                         fontSize: '11px',
-                        color: '#666',
+                        color: "var(--theme-muted)",
                       }}
                     >
                       {skill.role}
@@ -392,7 +392,7 @@ export default function BundleQuickView({
                     margin: '12px 0 6px 0',
                     fontSize: '11px',
                     fontFamily: 'var(--font-code)',
-                    color: '#666',
+                    color: "var(--theme-muted)",
                   }}
                 >
                   Optional:
@@ -406,11 +406,11 @@ export default function BundleQuickView({
                         alignItems: 'flex-start',
                         gap: '8px',
                         padding: '4px 8px',
-                        background: '#f8f8f8',
-                        border: '1px dashed #ccc',
+                        background: "var(--theme-elevated)",
+                        border: "1px dashed var(--theme-border)",
                       }}
                     >
-                      <span style={{ fontSize: '11px', color: '#999' }}>○</span>
+                      <span style={{ fontSize: '11px', color: "var(--theme-muted)" }}>○</span>
                       <div style={{ flex: 1 }}>
                         <button
                           onClick={() => onViewSkill?.(skill.id)}
@@ -419,7 +419,7 @@ export default function BundleQuickView({
                             border: 'none',
                             padding: 0,
                             cursor: onViewSkill ? 'pointer' : 'default',
-                            color: '#666',
+                            color: "var(--theme-muted)",
                             fontSize: '11px',
                             fontFamily: 'var(--font-code)',
                             textDecoration: onViewSkill ? 'underline' : 'none',
@@ -428,7 +428,7 @@ export default function BundleQuickView({
                         >
                           {skill.id}
                         </button>
-                        <span style={{ fontSize: '10px', color: '#888', marginLeft: '8px' }}>
+                        <span style={{ fontSize: '10px', color: "var(--theme-muted)", marginLeft: '8px' }}>
                           {skill.role}
                         </span>
                       </div>
@@ -447,7 +447,7 @@ export default function BundleQuickView({
                   margin: '0 0 8px 0',
                   fontSize: '13px',
                   fontFamily: 'var(--font-system)',
-                  color: '#000080',
+                  color: "var(--theme-link)",
                 }}
               >
                 💡 Use Cases
@@ -461,7 +461,7 @@ export default function BundleQuickView({
                 }}
               >
                 {bundle.useCases.map((useCase, i) => (
-                  <li key={i} style={{ color: '#333' }}>
+                  <li key={i} style={{ color: "var(--theme-text)" }}>
                     {useCase}
                   </li>
                 ))}
@@ -481,7 +481,7 @@ export default function BundleQuickView({
         <div
           style={{
             padding: '12px 16px',
-            borderTop: '2px groove #fff',
+            borderTop: "2px groove var(--theme-border-light)",
             display: 'flex',
             justifyContent: 'flex-end',
             gap: '8px',
@@ -492,7 +492,7 @@ export default function BundleQuickView({
             onClick={onClose}
             style={{
               background: 'var(--win31-gray)',
-              border: '2px outset #fff',
+              border: "2px outset var(--theme-border-light)",
               padding: '6px 16px',
               cursor: 'pointer',
               fontFamily: 'var(--font-system)',
@@ -505,7 +505,7 @@ export default function BundleQuickView({
             onClick={copyInstallCommand}
             style={{
               background: copied ? '#4a9' : '#000080',
-              color: '#fff',
+              color: "var(--theme-titlebar-text)",
               border: '2px outset #4444aa',
               padding: '6px 16px',
               cursor: 'pointer',

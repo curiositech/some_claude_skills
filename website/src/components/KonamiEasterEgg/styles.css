@@ -29,7 +29,7 @@
     0 0 10px #ffff00,
     0 0 20px #ffff00,
     0 0 30px #ff0000,
-    2px 2px 0 #000;
+    2px 2px 0 var(--theme-border);
   margin-top: 20px;
   animation: konamiPulse 0.5s ease-in-out infinite;
 }
@@ -290,7 +290,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: white;
+  background: var(--theme-elevated);
   opacity: 0;
   animation: screenFlash 0.3s ease-out;
   pointer-events: none;

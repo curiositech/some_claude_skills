@@ -1,0 +1,3642 @@
+[
+  {
+    "mode": "light",
+    "palette": "Windows Default",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(51, 0, 5)",
+        "background": "rgb(255, 233, 232)",
+        "ratio": 15.812378549124846
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(0, 26, 4)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.268638335873966
+      },
+      {
+        "stroke": "rgb(0, 14, 39)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 19.228799300909277
+      },
+      {
+        "stroke": "rgb(32, 19, 0)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.188681540361024
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(41, 41, 41)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 7.996176558292853
+      },
+      {
+        "color": "rgb(0, 14, 39)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.568791357824864
+      },
+      {
+        "color": "rgb(32, 19, 0)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 9.997107841512815
+      },
+      {
+        "color": "rgb(0, 26, 4)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.041054771125658
+      },
+      {
+        "color": "rgb(51, 0, 5)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.098668272441436
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "palette": "Hot Dog Stand",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 17.584625724934273
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 17.584625724934273
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 17.584625724934273
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 17.584625724934273
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 17.584625724934273
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(51, 0, 5)",
+        "background": "rgb(255, 233, 232)",
+        "ratio": 15.812378549124846
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 17.584625724934273
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 17.584625724934273
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 17.584625724934273
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 17.584625724934273
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 17.584625724934273
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(0, 26, 4)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.268638335873966
+      },
+      {
+        "stroke": "rgb(0, 14, 39)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 19.228799300909277
+      },
+      {
+        "stroke": "rgb(32, 19, 0)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.188681540361024
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(41, 41, 41)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 13.547836628153716
+      },
+      {
+        "color": "rgb(0, 14, 39)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 17.90659043469437
+      },
+      {
+        "color": "rgb(32, 19, 0)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 16.937993152538102
+      },
+      {
+        "color": "rgb(0, 26, 4)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 17.012451966492918
+      },
+      {
+        "color": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 0)",
+        "ratio": 17.11006590706963
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "palette": "Fluorescent",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 15.059690715954142
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 15.059690715954142
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 15.059690715954142
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 15.059690715954142
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 15.059690715954142
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(51, 0, 5)",
+        "background": "rgb(255, 233, 232)",
+        "ratio": 15.812378549124846
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 15.059690715954142
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 15.059690715954142
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 15.059690715954142
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 15.059690715954142
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 15.059690715954142
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(0, 26, 4)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.268638335873966
+      },
+      {
+        "stroke": "rgb(0, 14, 39)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 19.228799300909277
+      },
+      {
+        "stroke": "rgb(32, 19, 0)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.188681540361024
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(41, 41, 41)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 11.602534661910331
+      },
+      {
+        "color": "rgb(0, 14, 39)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 15.335425271029932
+      },
+      {
+        "color": "rgb(32, 19, 0)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 14.505906592284115
+      },
+      {
+        "color": "rgb(0, 26, 4)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 14.569674040438914
+      },
+      {
+        "color": "rgb(51, 0, 5)",
+        "background": "rgb(0, 255, 255)",
+        "ratio": 14.653271825097267
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "palette": "Ocean",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(51, 0, 5)",
+        "background": "rgb(255, 233, 232)",
+        "ratio": 15.812378549124846
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(0, 26, 4)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.268638335873966
+      },
+      {
+        "stroke": "rgb(0, 14, 39)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 19.228799300909277
+      },
+      {
+        "stroke": "rgb(32, 19, 0)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.188681540361024
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(41, 41, 41)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 7.996176558292853
+      },
+      {
+        "color": "rgb(0, 14, 39)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.568791357824864
+      },
+      {
+        "color": "rgb(32, 19, 0)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 9.997107841512815
+      },
+      {
+        "color": "rgb(0, 26, 4)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.041054771125658
+      },
+      {
+        "color": "rgb(51, 0, 5)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.098668272441436
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "palette": "Plasma Power Saver",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 13.93836625909282
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 13.93836625909282
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 13.93836625909282
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 13.93836625909282
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 13.93836625909282
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(51, 0, 5)",
+        "background": "rgb(255, 233, 232)",
+        "ratio": 15.812378549124846
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 13.93836625909282
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 13.93836625909282
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 13.93836625909282
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 13.93836625909282
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 13.93836625909282
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(0, 26, 4)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.268638335873966
+      },
+      {
+        "stroke": "rgb(0, 14, 39)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 19.228799300909277
+      },
+      {
+        "stroke": "rgb(32, 19, 0)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.188681540361024
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(41, 41, 41)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 10.73862542742663
+      },
+      {
+        "color": "rgb(0, 14, 39)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 14.193569987471038
+      },
+      {
+        "color": "rgb(32, 19, 0)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 13.425816161632566
+      },
+      {
+        "color": "rgb(0, 26, 4)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 13.484835570766094
+      },
+      {
+        "color": "rgb(51, 0, 5)",
+        "background": "rgb(230, 217, 236)",
+        "ratio": 13.562208776032685
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "palette": "Pumpkin (Large)",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.498974784667555
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 15.411315928872186
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.498974784667555
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.498974784667555
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.498974784667555
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.498974784667555
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(51, 0, 5)",
+        "background": "rgb(255, 233, 232)",
+        "ratio": 15.812378549124846
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.498974784667555
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 15.411315928872186
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.498974784667555
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 15.411315928872186
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.498974784667555
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.498974784667555
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.498974784667555
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(0, 26, 4)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.268638335873966
+      },
+      {
+        "stroke": "rgb(0, 14, 39)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 19.228799300909277
+      },
+      {
+        "stroke": "rgb(32, 19, 0)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.188681540361024
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(17, 17, 17)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.498974784667555
+      },
+      {
+        "color": "rgb(0, 14, 39)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.636276839190118
+      },
+      {
+        "color": "rgb(32, 19, 0)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.223217914365346
+      },
+      {
+        "color": "rgb(0, 26, 4)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.254970922764705
+      },
+      {
+        "color": "rgb(51, 0, 5)",
+        "background": "rgb(255, 128, 0)",
+        "ratio": 7.296598449586549
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "palette": "Rugby",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(51, 0, 5)",
+        "background": "rgb(255, 233, 232)",
+        "ratio": 15.812378549124846
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(41, 41, 41)",
+        "background": "rgb(232, 232, 232)",
+        "ratio": 11.8734395428825
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(0, 26, 4)",
+        "background": "rgb(229, 244, 231)",
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(0, 14, 39)",
+        "background": "rgb(231, 241, 255)",
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(17, 17, 17)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(32, 19, 0)",
+        "background": "rgb(255, 240, 191)",
+        "ratio": 15.995951862978416
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(51, 0, 5)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.373460014750574
+      },
+      {
+        "stroke": "rgb(17, 17, 17)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.883060964594996
+      },
+      {
+        "stroke": "rgb(0, 26, 4)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.268638335873966
+      },
+      {
+        "stroke": "rgb(0, 14, 39)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 19.228799300909277
+      },
+      {
+        "stroke": "rgb(32, 19, 0)",
+        "background": "rgb(255, 255, 255)",
+        "ratio": 18.188681540361024
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(41, 41, 41)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 7.996176558292853
+      },
+      {
+        "color": "rgb(0, 14, 39)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.568791357824864
+      },
+      {
+        "color": "rgb(32, 19, 0)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 9.997107841512815
+      },
+      {
+        "color": "rgb(0, 26, 4)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.041054771125658
+      },
+      {
+        "color": "rgb(51, 0, 5)",
+        "background": "rgb(192, 192, 192)",
+        "ratio": 10.098668272441436
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "palette": "Windows Default",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(255, 205, 197)",
+        "background": "rgb(54, 34, 38)",
+        "ratio": 10.462802128129052
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 128)",
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(218, 243, 189)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.955606863623563
+      },
+      {
+        "stroke": "rgb(199, 230, 255)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 12.88523112615422
+      },
+      {
+        "stroke": "rgb(255, 226, 178)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.34860856923212
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(225, 227, 236)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.222626642751312
+      },
+      {
+        "color": "rgb(199, 230, 255)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.079458188939508
+      },
+      {
+        "color": "rgb(255, 226, 178)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.477896599241548
+      },
+      {
+        "color": "rgb(218, 243, 189)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.999828426278542
+      },
+      {
+        "color": "rgb(255, 205, 197)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 10.121193173908392
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "palette": "Hot Dog Stand",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(255, 205, 197)",
+        "background": "rgb(54, 34, 38)",
+        "ratio": 10.462802128129052
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(128, 0, 0)",
+        "ratio": 10.949825131812458
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(218, 243, 189)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.955606863623563
+      },
+      {
+        "stroke": "rgb(199, 230, 255)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 12.88523112615422
+      },
+      {
+        "stroke": "rgb(255, 226, 178)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.34860856923212
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(225, 227, 236)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.222626642751312
+      },
+      {
+        "color": "rgb(199, 230, 255)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.079458188939508
+      },
+      {
+        "color": "rgb(255, 226, 178)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.477896599241548
+      },
+      {
+        "color": "rgb(218, 243, 189)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.999828426278542
+      },
+      {
+        "color": "rgb(255, 205, 197)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 10.121193173908392
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "palette": "Fluorescent",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(255, 205, 197)",
+        "background": "rgb(54, 34, 38)",
+        "ratio": 10.462802128129052
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(218, 243, 189)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.955606863623563
+      },
+      {
+        "stroke": "rgb(199, 230, 255)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 12.88523112615422
+      },
+      {
+        "stroke": "rgb(255, 226, 178)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.34860856923212
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(225, 227, 236)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.222626642751312
+      },
+      {
+        "color": "rgb(199, 230, 255)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.079458188939508
+      },
+      {
+        "color": "rgb(255, 226, 178)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.477896599241548
+      },
+      {
+        "color": "rgb(218, 243, 189)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.999828426278542
+      },
+      {
+        "color": "rgb(255, 205, 197)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 10.121193173908392
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "palette": "Ocean",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(255, 205, 197)",
+        "background": "rgb(54, 34, 38)",
+        "ratio": 10.462802128129052
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 64)",
+        "ratio": 19.55247006932495
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(218, 243, 189)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.955606863623563
+      },
+      {
+        "stroke": "rgb(199, 230, 255)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 12.88523112615422
+      },
+      {
+        "stroke": "rgb(255, 226, 178)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.34860856923212
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(225, 227, 236)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.222626642751312
+      },
+      {
+        "color": "rgb(199, 230, 255)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.079458188939508
+      },
+      {
+        "color": "rgb(255, 226, 178)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.477896599241548
+      },
+      {
+        "color": "rgb(218, 243, 189)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.999828426278542
+      },
+      {
+        "color": "rgb(255, 205, 197)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 10.121193173908392
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "palette": "Plasma Power Saver",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(255, 205, 197)",
+        "background": "rgb(54, 34, 38)",
+        "ratio": 10.462802128129052
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 0, 96)",
+        "ratio": 12.603037910218974
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(218, 243, 189)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.955606863623563
+      },
+      {
+        "stroke": "rgb(199, 230, 255)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 12.88523112615422
+      },
+      {
+        "stroke": "rgb(255, 226, 178)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.34860856923212
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(225, 227, 236)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.222626642751312
+      },
+      {
+        "color": "rgb(199, 230, 255)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.079458188939508
+      },
+      {
+        "color": "rgb(255, 226, 178)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.477896599241548
+      },
+      {
+        "color": "rgb(218, 243, 189)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.999828426278542
+      },
+      {
+        "color": "rgb(255, 205, 197)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 10.121193173908392
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "palette": "Pumpkin (Large)",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(255, 205, 197)",
+        "background": "rgb(54, 34, 38)",
+        "ratio": 10.462802128129052
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(96, 48, 0)",
+        "ratio": 10.936701170201951
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(218, 243, 189)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.955606863623563
+      },
+      {
+        "stroke": "rgb(199, 230, 255)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 12.88523112615422
+      },
+      {
+        "stroke": "rgb(255, 226, 178)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.34860856923212
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(225, 227, 236)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.222626642751312
+      },
+      {
+        "color": "rgb(199, 230, 255)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.079458188939508
+      },
+      {
+        "color": "rgb(255, 226, 178)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.477896599241548
+      },
+      {
+        "color": "rgb(218, 243, 189)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.999828426278542
+      },
+      {
+        "color": "rgb(255, 205, 197)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 10.121193173908392
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "palette": "Rugby",
+    "text": [
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "pending-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Pending",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "ready-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "running-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "completed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "failed-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "rgb(255, 205, 197)",
+        "background": "rgb(54, 34, 38)",
+        "ratio": 10.462802128129052
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "skipped-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Skipped",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "cancelled-skill",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Cancelled",
+        "foreground": "rgb(225, 227, 236)",
+        "background": "rgb(48, 56, 73)",
+        "ratio": 9.174760876500075
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "completed-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Done",
+        "foreground": "rgb(218, 243, 189)",
+        "background": "rgb(35, 48, 34)",
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "ready-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "rgb(199, 230, 255)",
+        "background": "rgb(28, 42, 59)",
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "⚙️ skill",
+        "foreground": "rgb(255, 255, 255)",
+        "background": "rgb(0, 64, 0)",
+        "ratio": 12.115209882029829
+      },
+      {
+        "text": "running-edge",
+        "foreground": "rgb(244, 240, 233)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running...",
+        "foreground": "rgb(255, 226, 178)",
+        "background": "rgb(50, 41, 25)",
+        "ratio": 11.435108517321355
+      }
+    ],
+    "edges": [
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(255, 205, 197)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 11.770784373594614
+      },
+      {
+        "stroke": "rgb(183, 199, 221)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 9.73041859968073
+      },
+      {
+        "stroke": "rgb(218, 243, 189)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.955606863623563
+      },
+      {
+        "stroke": "rgb(199, 230, 255)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 12.88523112615422
+      },
+      {
+        "stroke": "rgb(255, 226, 178)",
+        "background": "rgb(24, 30, 41)",
+        "ratio": 13.34860856923212
+      }
+    ],
+    "dots": [
+      {
+        "color": "rgb(225, 227, 236)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.222626642751312
+      },
+      {
+        "color": "rgb(199, 230, 255)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.079458188939508
+      },
+      {
+        "color": "rgb(255, 226, 178)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.477896599241548
+      },
+      {
+        "color": "rgb(218, 243, 189)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 11.999828426278542
+      },
+      {
+        "color": "rgb(255, 205, 197)",
+        "background": "rgb(36, 42, 55)",
+        "ratio": 10.121193173908392
+      }
+    ]
+  }
+]

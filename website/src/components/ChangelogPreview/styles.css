@@ -16,7 +16,7 @@
 .changelog-preview__header h2 {
   margin: 0;
   font-size: 18px;
-  color: #333;
+  color: var(--theme-text);
 }
 
 .changelog-preview__see-all {
@@ -56,26 +56,26 @@
 
 .changelog-preview__desc {
   flex: 1;
-  color: #333;
+  color: var(--theme-text);
   line-height: 1.4;
 }
 
 .changelog-preview__scope {
   display: inline-block;
-  background: #f5f5f5;
+  background: var(--theme-elevated);
   border: 1px solid;
   border-radius: 3px;
   padding: 1px 6px;
   margin-right: 6px;
   font-size: 11px;
   font-family: var(--font-code);
-  color: #555;
+  color: var(--theme-muted);
 }
 
 .changelog-preview__skill-count {
   display: inline-block;
   background: var(--win31-lime);
-  color: #000;
+  color: var(--theme-text);
   padding: 1px 6px;
   margin-left: 6px;
   font-size: 10px;
@@ -85,14 +85,14 @@
 
 .changelog-preview__date {
   flex-shrink: 0;
-  color: #888;
+  color: var(--theme-muted);
   font-size: 11px;
   font-family: var(--font-code);
 }
 
 /* Dark theme support */
 [data-theme='dark'] .changelog-preview__header h2 {
-  color: #e0e0e0;
+  color: var(--theme-text);
 }
 
 [data-theme='dark'] .changelog-preview__item {
@@ -100,14 +100,14 @@
 }
 
 [data-theme='dark'] .changelog-preview__desc {
-  color: #d0d0d0;
+  color: var(--theme-muted);
 }
 
 [data-theme='dark'] .changelog-preview__scope {
   background: #333;
-  color: #aaa;
+  color: var(--theme-muted);
 }
 
 [data-theme='dark'] .changelog-preview__date {
-  color: #888;
+  color: var(--theme-muted);
 }

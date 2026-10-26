@@ -1,0 +1,6748 @@
+[
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Classic: normal",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Classic: expand hover",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Classic: expand focus",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Classic: selected and inactive menu labels",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Classic: menu hover",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Matrix: normal",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Matrix: expand hover",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          33,
+          42,
+          52
+        ],
+        "ratio": 12.37769211591953,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Matrix: expand focus",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Matrix: selected and inactive menu labels",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Matrix: menu hover",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Synthwave: normal",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Synthwave: expand hover",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          51,
+          36,
+          63
+        ],
+        "ratio": 12.527621251494903,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Synthwave: expand focus",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Synthwave: selected and inactive menu labels",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Synthwave: menu hover",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Ice: normal",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Ice: expand hover",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          196,
+          232,
+          237
+        ],
+        "ratio": 12.41989756395165,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Ice: expand focus",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Ice: selected and inactive menu labels",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Ice: menu hover",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Amber: normal",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Amber: expand hover",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          66,
+          55,
+          49
+        ],
+        "ratio": 10.543279821408078,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Amber: expand focus",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Amber: selected and inactive menu labels",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Amber: menu hover",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "ecosystem selected documents",
+    "text": [
+      {
+        "text": "📚 Council Documents",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "All Skills Gallery: normal",
+    "text": [
+      {
+        "text": "All Skills Gallery",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "All Skills Gallery: enter",
+    "text": [
+      {
+        "text": "All Skills Gallery",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "All Skills Gallery: leave",
+    "text": [
+      {
+        "text": "All Skills Gallery",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "All Skills Gallery: focus",
+    "text": [
+      {
+        "text": "All Skills Gallery",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Artifacts & Examples: normal",
+    "text": [
+      {
+        "text": "Artifacts & Examples",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Artifacts & Examples: enter",
+    "text": [
+      {
+        "text": "Artifacts & Examples",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Artifacts & Examples: leave",
+    "text": [
+      {
+        "text": "Artifacts & Examples",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Artifacts & Examples: focus",
+    "text": [
+      {
+        "text": "Artifacts & Examples",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Getting Started: normal",
+    "text": [
+      {
+        "text": "Getting Started",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Getting Started: enter",
+    "text": [
+      {
+        "text": "Getting Started",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Getting Started: leave",
+    "text": [
+      {
+        "text": "Getting Started",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Getting Started: focus",
+    "text": [
+      {
+        "text": "Getting Started",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Contribution Guide: normal",
+    "text": [
+      {
+        "text": "Contribution Guide",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Contribution Guide: enter",
+    "text": [
+      {
+        "text": "Contribution Guide",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Contribution Guide: leave",
+    "text": [
+      {
+        "text": "Contribution Guide",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Contribution Guide: focus",
+    "text": [
+      {
+        "text": "Contribution Guide",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "ecosystem timeline link: normal",
+    "text": [
+      {
+        "text": ".archive",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 40, 92)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 11.754706707714277,
+        "target": 7
+      },
+      {
+        "text": "351 lines",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 40, 92)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 11.754706707714277,
+        "target": 7
+      },
+      {
+        "text": "•",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 40, 92)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 11.754706707714277,
+        "target": 7
+      },
+      {
+        "text": "2 files",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 40, 92)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 11.754706707714277,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "ecosystem timeline link: enter",
+    "text": [
+      {
+        "text": ".archive",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "351 lines",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "•",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "2 files",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "ecosystem timeline link: leave",
+    "text": [
+      {
+        "text": ".archive",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      },
+      {
+        "text": "351 lines",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      },
+      {
+        "text": "•",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      },
+      {
+        "text": "2 files",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "ecosystem timeline link: focus",
+    "text": [
+      {
+        "text": ".archive",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      },
+      {
+        "text": "351 lines",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      },
+      {
+        "text": "•",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      },
+      {
+        "text": "2 files",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          232,
+          232,
+          232
+        ],
+        "ratio": 15.411315928872186,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Council Overview: normal",
+    "text": [
+      {
+        "text": "Read Council Overview →",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Council Overview: enter",
+    "text": [
+      {
+        "text": "Read Council Overview →",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Council Overview: leave",
+    "text": [
+      {
+        "text": "Read Council Overview →",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 1440,
+    "state": "Council Overview: focus",
+    "text": [
+      {
+        "text": "Read Council Overview →",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "width": 390,
+    "state": "phone compact player intentionally hidden by existing navigation",
+    "excluded": true,
+    "text": []
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Classic: normal",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Classic: expand hover",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Classic: expand focus",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Classic: selected and inactive menu labels",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Classic: menu hover",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 0)",
+        "background": [
+          0,
+          0,
+          0
+        ],
+        "ratio": 15.303999999999998,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Matrix: normal",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Matrix: expand hover",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          33,
+          42,
+          52
+        ],
+        "ratio": 12.37769211591953,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Matrix: expand focus",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Matrix: selected and inactive menu labels",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Matrix: menu hover",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          1,
+          4,
+          9
+        ],
+        "ratio": 15.040390378162488,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 255, 65)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 13.860337025957014,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(214, 245, 214)",
+        "background": [
+          13,
+          17,
+          23
+        ],
+        "ratio": 16.123063687789784,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Synthwave: normal",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Synthwave: expand hover",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          51,
+          36,
+          63
+        ],
+        "ratio": 12.527621251494903,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Synthwave: expand focus",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Synthwave: selected and inactive menu labels",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Synthwave: menu hover",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 148, 255)",
+        "background": [
+          10,
+          10,
+          21
+        ],
+        "ratio": 10.244062101051362,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 0, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 5.438898812787084,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 233, 255)",
+        "background": [
+          26,
+          26,
+          46
+        ],
+        "ratio": 14.906258527199084,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Ice: normal",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Ice: expand hover",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          196,
+          232,
+          237
+        ],
+        "ratio": 12.41989756395165,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Ice: expand focus",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Ice: selected and inactive menu labels",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Ice: menu hover",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(196, 255, 255)",
+        "background": [
+          0,
+          77,
+          64
+        ],
+        "ratio": 8.9414196107676,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(0, 131, 143)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 4.060642910512029,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(16, 35, 43)",
+        "background": [
+          224,
+          247,
+          250
+        ],
+        "ratio": 14.533092637890629,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Amber: normal",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Amber: expand hover",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          66,
+          55,
+          49
+        ],
+        "ratio": 10.543279821408078,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Amber: expand focus",
+    "text": [
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Amber: selected and inactive menu labels",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Amber: menu hover",
+    "text": [
+      {
+        "text": "01/29",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "Charli XCX & Troye Sivan - 1999 (Lo-Fi) ***",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "0:00",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          10,
+          10,
+          10
+        ],
+        "ratio": 9.185674539178615,
+        "target": 7
+      },
+      {
+        "text": "↻",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "Classic",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Matrix",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Synthwave",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 7
+      },
+      {
+        "text": "Ice",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "Amber",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "⏮",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "▶",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏹",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "⏭",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 152, 0)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 6.389781219380237,
+        "target": 3
+      },
+      {
+        "text": "▼",
+        "icon": true,
+        "manual": false,
+        "foreground": "rgb(255, 243, 230)",
+        "background": [
+          45,
+          45,
+          45
+        ],
+        "ratio": 12.60136615006415,
+        "target": 3
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "ecosystem selected documents",
+    "text": [
+      {
+        "text": "📚 Council Documents",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "All Skills Gallery: normal",
+    "text": [
+      {
+        "text": "All Skills Gallery",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "All Skills Gallery: enter",
+    "text": [
+      {
+        "text": "All Skills Gallery",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "All Skills Gallery: leave",
+    "text": [
+      {
+        "text": "All Skills Gallery",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "All Skills Gallery: focus",
+    "text": [
+      {
+        "text": "All Skills Gallery",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Artifacts & Examples: normal",
+    "text": [
+      {
+        "text": "Artifacts & Examples",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Artifacts & Examples: enter",
+    "text": [
+      {
+        "text": "Artifacts & Examples",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Artifacts & Examples: leave",
+    "text": [
+      {
+        "text": "Artifacts & Examples",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Artifacts & Examples: focus",
+    "text": [
+      {
+        "text": "Artifacts & Examples",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Getting Started: normal",
+    "text": [
+      {
+        "text": "Getting Started",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Getting Started: enter",
+    "text": [
+      {
+        "text": "Getting Started",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Getting Started: leave",
+    "text": [
+      {
+        "text": "Getting Started",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Getting Started: focus",
+    "text": [
+      {
+        "text": "Getting Started",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Contribution Guide: normal",
+    "text": [
+      {
+        "text": "Contribution Guide",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Contribution Guide: enter",
+    "text": [
+      {
+        "text": "Contribution Guide",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Contribution Guide: leave",
+    "text": [
+      {
+        "text": "Contribution Guide",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Contribution Guide: focus",
+    "text": [
+      {
+        "text": "Contribution Guide",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "ecosystem timeline link: normal",
+    "text": [
+      {
+        "text": ".archive",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(184, 225, 255)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 8.532421718763556,
+        "target": 7
+      },
+      {
+        "text": "351 lines",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(184, 225, 255)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 8.532421718763556,
+        "target": 7
+      },
+      {
+        "text": "•",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(184, 225, 255)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 8.532421718763556,
+        "target": 7
+      },
+      {
+        "text": "2 files",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(184, 225, 255)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 8.532421718763556,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "ecosystem timeline link: enter",
+    "text": [
+      {
+        "text": ".archive",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "351 lines",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "•",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      },
+      {
+        "text": "2 files",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "ecosystem timeline link: leave",
+    "text": [
+      {
+        "text": ".archive",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      },
+      {
+        "text": "351 lines",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      },
+      {
+        "text": "•",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      },
+      {
+        "text": "2 files",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "ecosystem timeline link: focus",
+    "text": [
+      {
+        "text": ".archive",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      },
+      {
+        "text": "351 lines",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      },
+      {
+        "text": "•",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      },
+      {
+        "text": "2 files",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          48,
+          56,
+          73
+        ],
+        "ratio": 10.342235690228703,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Council Overview: normal",
+    "text": [
+      {
+        "text": "Read Council Overview →",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Council Overview: enter",
+    "text": [
+      {
+        "text": "Read Council Overview →",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Council Overview: leave",
+    "text": [
+      {
+        "text": "Read Council Overview →",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 1440,
+    "state": "Council Overview: focus",
+    "text": [
+      {
+        "text": "Read Council Overview →",
+        "icon": false,
+        "manual": false,
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707,
+        "target": 7
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "width": 390,
+    "state": "phone compact player intentionally hidden by existing navigation",
+    "excluded": true,
+    "text": []
+  }
+]

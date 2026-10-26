@@ -13,7 +13,7 @@ export default function SkillPageTitle({ title }: SkillPageTitleProps): JSX.Elem
         letterSpacing: '1px',
         textTransform: 'uppercase',
         marginBottom: '24px',
-        color: 'var(--win31-black)',
+        color: "var(--theme-text)",
       }}
     >
       {title}

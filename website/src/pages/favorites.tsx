@@ -31,7 +31,7 @@ export default function FavoritesPage(): JSX.Element {
               <h1 className="win31-font hero-title" style={{ fontSize: '32px' }}>
                 Your Favorites
               </h1>
-              <p className="win31-font" style={{ fontSize: '16px', textAlign: 'center', color: '#333', marginBottom: '20px' }}>
+              <p className="win31-font" style={{ fontSize: '16px', textAlign: 'center', color: "var(--theme-text)", marginBottom: '20px' }}>
                 {getStarredCount() > 0
                   ? `You have ${getStarredCount()} starred skill${getStarredCount() === 1 ? '' : 's'}`
                   : 'Star skills to save them here for quick access'}

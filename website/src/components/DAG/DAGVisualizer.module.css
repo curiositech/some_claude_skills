@@ -17,7 +17,7 @@
 .tooltip {
   position: fixed;
   background: var(--ifm-background-surface-color);
-  border: 2px solid #000;
+  border: 2px solid var(--theme-border);
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
   padding: 12px;
   font-size: 14px;
@@ -47,7 +47,7 @@
   align-items: center;
   z-index: 10;
   background: var(--ifm-background-surface-color);
-  border: 2px solid #000;
+  border: 2px solid var(--theme-border);
   padding: 6px 10px;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
 }
@@ -55,9 +55,9 @@
 .zoomButton {
   width: 32px;
   height: 32px;
-  border: 2px solid #000;
-  background: #c0c0c0;
-  color: #000;
+  border: 2px solid var(--theme-border);
+  background: var(--theme-surface);
+  color: var(--theme-text);
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
@@ -65,15 +65,15 @@
   align-items: center;
   justify-content: center;
   transition: all 0.1s;
-  box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
+  box-shadow: inset -1px -1px 0 var(--theme-border), inset 1px 1px 0 var(--theme-border-light);
 }
 
 .zoomButton:hover {
-  background: #d0d0d0;
+  background: var(--theme-surface);
 }
 
 .zoomButton:active {
-  box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #fff;
+  box-shadow: inset 1px 1px 0 var(--theme-border), inset -1px -1px 0 var(--theme-border-light);
   transform: translate(1px, 1px);
 }
 

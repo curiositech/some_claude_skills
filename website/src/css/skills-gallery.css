@@ -40,13 +40,13 @@
 .top-banner__title {
   font-family: var(--font-display);
   font-size: 12px;
-  color: var(--win31-navy);
+  color: var(--theme-link);
 }
 
 .top-banner__subtitle {
   font-family: var(--font-system);
   font-size: 11px;
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
   flex: 1;
 }
 
@@ -88,11 +88,11 @@
 
 .theme-dropdown__item:hover {
   background: var(--win31-navy);
-  color: white;
+  color: var(--theme-titlebar-text);
 }
 
 .theme-dropdown__item--active {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
   font-weight: bold;
 }
 
@@ -184,7 +184,7 @@
 .skills-marquee--vertical {
   flex: 1;
   overflow: hidden;
-  background: #000;
+  background: var(--theme-code-bg);
   padding: 10px;
 }
 
@@ -229,7 +229,7 @@
 
 .skills-marquee-horizontal {
   overflow: hidden;
-  background: #1a1a2e;
+  background: var(--theme-code-bg);
   padding: 12px 0;
   display: flex;
   flex-direction: column;
@@ -301,7 +301,7 @@
   font-family: var(--font-system);
   font-size: 11px;
   font-weight: bold;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -319,7 +319,7 @@
   font-family: var(--font-system);
   font-size: 10px;
   font-weight: bold;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
@@ -327,7 +327,7 @@
 }
 
 .skills-marquee-horizontal__btn:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .skills-marquee-horizontal__btn:active {
@@ -363,13 +363,13 @@
   right: -160px;
   transform: translateY(-50%) rotate(12deg);
   background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
-  color: #fff;
+  color: var(--theme-titlebar-text);
   font-family: var(--font-display);
   font-size: 10px;
   padding: 14px 24px;
   border-radius: 50% / 40%;
   box-shadow:
-    3px 3px 0 #000,
+    3px 3px 0 var(--theme-border),
     inset 0 -3px 0 rgba(0,0,0,0.2);
   border: 3px solid #ffff00;
   animation: stickerPulseRight 2s ease-in-out infinite;
@@ -378,7 +378,7 @@
 
 .install-hero__sticker span {
   display: block;
-  text-shadow: 1px 1px 0 #000;
+  text-shadow: 1px 1px 0 var(--theme-border);
 }
 
 @keyframes stickerPulse {
@@ -398,20 +398,20 @@
   top: -8px;
   left: -90px;
   background: linear-gradient(135deg, #00ffff 0%, #0099cc 100%);
-  color: #fff;
+  color: var(--theme-titlebar-text);
   font-family: var(--font-display);
   font-size: 6px;
   padding: 4px 8px;
   border-radius: 50% / 40%;
   transform: rotate(-8deg);
   box-shadow:
-    2px 2px 0 #000,
+    2px 2px 0 var(--theme-border),
     inset 0 -2px 0 rgba(0,0,0,0.2);
   border: 2px solid #ff00ff;
   animation: stickerWiggleSlow 3s ease-in-out infinite;
   z-index: 10;
   white-space: nowrap;
-  text-shadow: 1px 1px 0 #000;
+  text-shadow: 1px 1px 0 var(--theme-border);
   font-weight: normal;
 }
 
@@ -447,13 +447,13 @@
   right: 120px;
   transform: rotate(8deg);
   background: linear-gradient(135deg, #ffff00 0%, #ff9900 100%);
-  color: #000;
+  color: var(--theme-text);
   font-family: var(--font-display);
   font-size: 8px;
   padding: 6px 12px;
   border-radius: 50% / 40%;
   box-shadow:
-    2px 2px 0 #000,
+    2px 2px 0 var(--theme-border),
     inset 0 -2px 0 rgba(0,0,0,0.1);
   border: 2px solid #ff00ff;
   animation: stickerBounceTitle 1.2s ease-in-out infinite;
@@ -463,7 +463,7 @@
 
 .marquee-sticker span {
   display: block;
-  text-shadow: 1px 1px 0 #fff;
+  text-shadow: 1px 1px 0 var(--theme-border-light);
   font-weight: bold;
 }
 
@@ -482,14 +482,14 @@
   top: -15px;
   right: -15px;
   background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
-  color: #000;
+  color: var(--theme-text);
   font-family: var(--font-display);
   font-size: 8px;
   padding: 8px 14px;
   border-radius: 50% / 40%;
   transform: rotate(15deg);
   box-shadow:
-    2px 2px 0 #000,
+    2px 2px 0 var(--theme-border),
     inset 0 -2px 0 rgba(0,0,0,0.1);
   border: 2px solid #ff0000;
   animation: stickerSpin 3s ease-in-out infinite;
@@ -499,7 +499,7 @@
 
 .nav-window-sticker span {
   display: block;
-  text-shadow: 1px 1px 0 #fff;
+  text-shadow: 1px 1px 0 var(--theme-border-light);
   font-weight: bold;
 }
 
@@ -525,13 +525,13 @@
   right: 50%;
   transform: translateX(50%) rotate(-10deg);
   background: linear-gradient(135deg, #ff6600 0%, #cc3300 100%);
-  color: #fff;
+  color: var(--theme-titlebar-text);
   font-family: var(--font-display);
   font-size: 8px;
   padding: 8px 14px;
   border-radius: 50% / 40%;
   box-shadow:
-    2px 2px 0 #000,
+    2px 2px 0 var(--theme-border),
     inset 0 -2px 0 rgba(0,0,0,0.2);
   border: 2px solid #ffff00;
   animation: stickerShakeFooter 1.8s ease-in-out infinite;
@@ -541,7 +541,7 @@
 
 .footer-sticker span {
   display: block;
-  text-shadow: 1px 1px 0 #000;
+  text-shadow: 1px 1px 0 var(--theme-border);
 }
 
 @keyframes stickerShake {
@@ -580,21 +580,21 @@
   position: absolute;
   top: -10px;
   right: -60px;
-  background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%);
-  color: #fff;
+  background: var(--theme-sticker-cyan);
+  color: var(--theme-titlebar-text);
   font-family: var(--font-display);
   font-size: 10px;
   padding: 6px 12px;
   border-radius: 50% / 40%;
   transform: rotate(12deg);
   box-shadow:
-    2px 2px 0 #000,
+    2px 2px 0 var(--theme-border),
     inset 0 -2px 0 rgba(0,0,0,0.2);
   border: 2px solid #ffff00;
   animation: stickerPulse 2s ease-in-out infinite;
   z-index: 10;
   white-space: nowrap;
-  text-shadow: 1px 1px 0 #000;
+  text-shadow: 1px 1px 0 var(--theme-border);
   font-weight: normal;
 }
 
@@ -604,20 +604,20 @@
   top: 8px;
   left: 8px;
   background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
-  color: #000;
+  color: var(--theme-text);
   font-family: var(--font-display);
   font-size: 7px;
   padding: 4px 8px;
   border-radius: 50% / 40%;
   transform: rotate(-15deg);
   box-shadow:
-    2px 2px 0 #000,
+    2px 2px 0 var(--theme-border),
     inset 0 -1px 0 rgba(0,0,0,0.1);
   border: 2px solid #ffff00;
   animation: stickerPulse 2s ease-in-out infinite;
   z-index: 10;
   white-space: nowrap;
-  text-shadow: 1px 1px 0 #fff;
+  text-shadow: 1px 1px 0 var(--theme-border-light);
   font-weight: bold;
   pointer-events: none;
 }
@@ -628,20 +628,20 @@
   top: 8px;
   left: 8px;
   background: linear-gradient(135deg, #00ccff 0%, #0099cc 100%);
-  color: #fff;
+  color: var(--theme-titlebar-text);
   font-family: var(--font-display);
   font-size: 7px;
   padding: 4px 8px;
   border-radius: 50% / 40%;
   transform: rotate(-12deg);
   box-shadow:
-    2px 2px 0 #000,
+    2px 2px 0 var(--theme-border),
     inset 0 -1px 0 rgba(0,0,0,0.2);
   border: 2px solid #ff00ff;
   animation: stickerPulse 2s ease-in-out infinite;
   z-index: 10;
   white-space: nowrap;
-  text-shadow: 1px 1px 0 #000;
+  text-shadow: 1px 1px 0 var(--theme-border);
   font-weight: bold;
   pointer-events: none;
 }
@@ -661,7 +661,7 @@
 .install-hero__exposition {
   font-family: var(--font-system);
   font-size: 15px;
-  color: var(--win31-light-gray);
+  color: var(--theme-code-text);
   max-width: 650px;
   text-align: center;
   line-height: 1.6;
@@ -669,7 +669,7 @@
 }
 
 .install-hero__exposition a {
-  color: var(--win31-teal);
+  color: var(--theme-link);
   text-decoration: underline;
 }
 
@@ -740,11 +740,11 @@
   left: 50%;
   transform: translateX(-50%);
   background: var(--win31-lime);
-  color: #000;
+  color: var(--theme-accent-ink);
   font-family: var(--font-display);
   font-size: 8px;
   padding: 6px 12px;
-  border: 2px solid #000;
+  border: 2px solid var(--theme-border);
   white-space: nowrap;
   z-index: 1;
 }
@@ -766,13 +766,13 @@
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 8px;
-  color: var(--win31-navy);
+  color: var(--theme-link);
 }
 
 .nav-window__desc {
   font-family: var(--font-system);
   font-size: 11px;
-  color: #444;
+  color: var(--theme-muted);
   margin-bottom: 16px;
   line-height: 1.4;
 }
@@ -810,12 +810,12 @@
   padding: 4px 12px;
   font-family: var(--font-system);
   font-size: 11px;
-  color: var(--win31-black);
+  color: var(--theme-text);
   white-space: nowrap;
 }
 
 .footer-bar a {
-  color: var(--win31-navy);
+  color: var(--theme-link);
   text-decoration: none;
   font-weight: bold;
 }
@@ -833,7 +833,7 @@
 }
 
 .share-to-desktop:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
   border-top-color: var(--win31-white) !important;
   border-left-color: var(--win31-white) !important;
 }
@@ -892,19 +892,19 @@
   font-size: 42px;
   font-weight: bold;
   margin-bottom: 16px;
-  color: var(--win31-navy);
+  color: var(--theme-link);
 }
 
 .hero-subtitle {
   font-size: 20px;
   margin-bottom: 8px;
-  color: #333;
+  color: var(--theme-text);
 }
 
 .hero-description {
   font-size: 16px;
   margin-bottom: 40px;
-  color: #666;
+  color: var(--theme-muted);
 }
 
 /* CTA Cards Grid */
@@ -919,7 +919,7 @@
 .cta-card {
   text-decoration: none;
   display: block;
-  background: #000;
+  background: var(--theme-code-bg);
   padding: 30px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -971,7 +971,7 @@
 }
 
 .cta-card__title--teal {
-  color: var(--win31-teal);
+  color: var(--theme-link);
 }
 
 .cta-card__description {
@@ -1021,7 +1021,7 @@
 }
 
 .skill-gallery-card--featured {
-  background: #fff;
+  background: var(--theme-elevated);
   border: 2px solid var(--win31-black);
   box-shadow: none;
 }
@@ -1034,7 +1034,7 @@
 .skill-card__image-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  background: #000;
+  background: var(--theme-code-bg);
 }
 
 .skill-card__image-container--compact {
@@ -1094,7 +1094,7 @@
 }
 
 .skill-card__action-btn:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .skill-card__action-btn:active {
@@ -1114,7 +1114,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: var(--win31-navy);
-  color: white;
+  color: var(--theme-titlebar-text);
   padding: 8px 16px;
   font-family: var(--font-system);
   font-size: 12px;
@@ -1143,7 +1143,7 @@
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 8px;
-  color: var(--win31-navy);
+  color: var(--theme-link);
 }
 
 .skill-card__title--compact {
@@ -1153,14 +1153,14 @@
 
 .skill-card__description {
   font-size: 12px;
-  color: #444;
+  color: var(--theme-muted);
   margin-bottom: 12px;
   line-height: 1.4;
 }
 
 .skill-card__description--compact {
   font-size: 11px;
-  color: #666;
+  color: var(--theme-muted);
   margin: 0;
 }
 
@@ -1170,9 +1170,9 @@
 
 .skill-card__category {
   font-size: 11px;
-  color: #666;
+  color: var(--theme-accent-ink);
   padding: 4px 10px;
-  background: var(--win31-yellow);
+  background: var(--theme-sticker-yellow);
   display: inline-block;
   border: 1px solid var(--win31-black);
 }
@@ -1186,7 +1186,7 @@
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 24px;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   text-align: center;
 }
 
@@ -1201,7 +1201,7 @@
   padding: 12px 16px;
   font-size: 14px;
   border: 2px inset var(--win31-gray);
-  background: white;
+  background: var(--theme-elevated);
 }
 
 /* Category Filter */
@@ -1215,7 +1215,7 @@
 
 /* Install Section */
 .install-section {
-  background: #000;
+  background: var(--theme-code-bg);
   border: 3px solid var(--win31-lime);
   padding: 30px;
   margin-bottom: 40px;
@@ -1247,11 +1247,11 @@
 }
 
 .install-method__label--teal {
-  color: var(--win31-teal);
+  color: var(--theme-link);
 }
 
 .install-method__code {
-  background: #111;
+  background: var(--theme-code-bg);
   padding: 16px;
   font-size: 11px;
   margin: 0;
@@ -1264,7 +1264,7 @@
 
 .install-method__code--teal {
   border: 1px solid var(--win31-teal);
-  color: var(--win31-teal);
+  color: var(--theme-link);
 }
 
 /* No Results */
@@ -1277,12 +1277,12 @@
 }
 
 .no-results__title {
-  color: var(--win31-navy);
+  color: var(--theme-link);
   margin-bottom: 16px;
 }
 
 .no-results__description {
-  color: #666;
+  color: var(--theme-muted);
   margin-bottom: 20px;
 }
 
@@ -1293,7 +1293,7 @@
 .pixel-title {
   font-family: var(--font-display);
   font-size: 32px;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   text-shadow: 3px 3px 0 var(--win31-dark-gray);
   margin-bottom: 16px;
   letter-spacing: 2px;
@@ -1344,7 +1344,7 @@
   padding: 16px 32px;
   display: inline-block;
   margin-bottom: 20px;
-  border: 3px solid #fff;
+  border: 3px solid var(--theme-border-light);
 }
 
 @keyframes flash-gradient {
@@ -1353,14 +1353,14 @@
 }
 
 .install-hero__flash .pixel-text {
-  color: #000;
+  color: var(--theme-text);
   font-weight: bold;
 }
 
 .install-hero__subtitle {
   font-family: var(--font-system);
   font-size: 16px;
-  color: var(--win31-light-gray);
+  color: var(--theme-code-text);
   margin-bottom: 24px;
 }
 
@@ -1399,7 +1399,7 @@
 }
 
 .install-hero__copy-btn:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .install-hero__copy-btn:active {
@@ -1409,7 +1409,7 @@
 
 .install-hero__copy-btn--copied {
   background: var(--win31-lime);
-  color: #000;
+  color: var(--theme-text);
   animation: copy-flash 0.3s ease-out;
 }
 
@@ -1445,7 +1445,7 @@
 }
 
 .install-hero__badge--teal {
-  color: var(--win31-teal);
+  color: var(--theme-link);
   border-color: var(--win31-teal);
   background: rgba(0, 128, 128, 0.1);
 }
@@ -1460,7 +1460,7 @@
 }
 
 .skills-marquee {
-  background: #000;
+  background: var(--theme-code-bg);
   padding: 20px 0;
   overflow: hidden;
 }
@@ -1507,7 +1507,7 @@
   font-size: 10px;
   padding: 6px;
   text-align: center;
-  color: var(--win31-black);
+  color: var(--theme-text);
   border: 2px solid var(--win31-black);
   border-top: none;
   white-space: nowrap;
@@ -1530,11 +1530,11 @@
   left: 50%;
   transform: translateX(-50%);
   background: var(--win31-lime);
-  color: #000;
+  color: var(--theme-text);
   font-family: var(--font-display);
   font-size: 6px;
   padding: 4px 8px;
-  border: 2px solid #000;
+  border: 2px solid var(--theme-border);
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -1806,4 +1806,8 @@
   .footer-bar {
     flex-wrap: wrap !important;
   }
+}
+
+@media (max-width: 768px) {
+  .beta-sticker { right: 0; top: -24px; }
 }

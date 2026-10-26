@@ -13,7 +13,7 @@
 }
 
 .nodeBody {
-  transition: all 0.15s ease;
+  transition: filter 0.15s ease;
 }
 
 .nodeGroup:hover .nodeBody {
@@ -26,7 +26,7 @@
 
 /* Status-specific node styles */
 .pending .nodeBody {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .ready .nodeBody {

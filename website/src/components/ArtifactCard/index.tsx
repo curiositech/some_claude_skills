@@ -9,7 +9,7 @@ interface ArtifactCardProps {
 
 const difficultyConfig = {
   beginner: { label: '⭐', color: '#10b981' },
-  intermediate: { label: '⭐⭐', color: '#f59e0b' },
+  intermediate: { label: '⭐⭐', color: "var(--theme-text)" },
   advanced: { label: '⭐⭐⭐', color: '#ef4444' }
 };
 
@@ -46,7 +46,7 @@ export default function ArtifactCard({ artifact }: ArtifactCardProps): JSX.Eleme
           <span className={styles.categoryLabel}>{category.label}</span>
         </div>
         {difficulty && (
-          <div className={styles.difficulty} style={{ color: difficulty.color }}>
+          <div className={styles.difficulty} style={{ color: 'var(--theme-titlebar-text)' }}>
             {difficulty.label}
           </div>
         )}

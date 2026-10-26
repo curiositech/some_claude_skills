@@ -34,7 +34,7 @@
 }
 
 .subtitle {
-  color: var(--ifm-color-emphasis-700);
+  color: var(--theme-muted);
   font-size: 1.1rem;
 }
 
@@ -53,39 +53,39 @@
   gap: 0.5rem;
   padding: 0.875rem 1.5rem;
 
-  background: #c0c0c0;
+  background: var(--theme-surface);
   border: none;
-  border-top: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
-  border-right: 2px solid #000000;
-  border-bottom: 2px solid #000000;
+  border-top: 2px solid var(--theme-border-light);
+  border-left: 2px solid var(--theme-border-light);
+  border-right: 2px solid var(--theme-border);
+  border-bottom: 2px solid var(--theme-border);
   box-shadow: none;
 
   font-size: 1rem;
   font-weight: 600;
-  color: #000000;
+  color: var(--theme-text);
   cursor: pointer;
   transition: all 0.1s ease;
 }
 
 .typeButton:hover {
-  background: #d0d0d0;
+  background: var(--theme-surface);
 }
 
 .typeButton.active {
   /* Active state - invert bevel */
-  background: #a0a0a0;
-  border-top: 2px solid #000000;
-  border-left: 2px solid #000000;
-  border-right: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
-  color: #000000;
+  background: var(--theme-surface);
+  border-top: 2px solid var(--theme-border);
+  border-left: 2px solid var(--theme-border);
+  border-right: 2px solid var(--theme-border-light);
+  border-bottom: 2px solid var(--theme-border-light);
+  color: var(--theme-text);
   box-shadow: none;
 }
 
 .typeIcon {
   font-size: 1.125rem;
-  color: #000080; /* Windows blue */
+  color: var(--theme-link); /* Windows blue */
 }
 
 .editorContainer {
@@ -98,17 +98,17 @@
 .editorPanel,
 .outputPanel {
   /* Windows 3.1 window chrome */
-  background: #c0c0c0;
+  background: var(--theme-surface);
 
   border: 2px solid;
-  border-top-color: #ffffff;
-  border-left-color: #ffffff;
-  border-right-color: #000000;
-  border-bottom-color: #000000;
+  border-top-color: var(--theme-border-light);
+  border-left-color: var(--theme-border-light);
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
 
   box-shadow:
-    inset 1px 1px 0 #dfdfdf,
-    inset -1px -1px 0 #808080;
+    inset 1px 1px 0 var(--theme-border),
+    inset -1px -1px 0 var(--theme-border);
 
   border-radius: 0; /* Windows 3.1 had no rounded corners */
   overflow: hidden;
@@ -121,8 +121,8 @@
   padding: 0.875rem 1.25rem;
 
   /* Windows 3.1 title bar */
-  background: #000080; /* Windows blue */
-  color: #ffffff;
+  background: var(--theme-titlebar); /* Windows blue */
+  color: var(--theme-titlebar-text);
   border-bottom: none;
 }
 
@@ -131,7 +131,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #ffffff;
+  color: var(--theme-titlebar-text);
 }
 
 .statusBadge {
@@ -141,14 +141,14 @@
   border-radius: 0;
 
   /* Inset badge */
-  background: #ffffff;
+  background: var(--theme-elevated);
   border: 2px solid;
-  border-top-color: #808080;
-  border-left-color: #808080;
-  border-right-color: #dfdfdf;
-  border-bottom-color: #dfdfdf;
-  color: #000000;
-  box-shadow: inset 1px 1px 0 #000000;
+  border-top-color: var(--theme-border);
+  border-left-color: var(--theme-border);
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
+  color: var(--theme-text);
+  box-shadow: inset 1px 1px 0 var(--theme-border);
 }
 
 .codeEditor {
@@ -157,8 +157,8 @@
   padding: 1.25rem;
 
   /* Windows terminal-style editor */
-  background: #ffffff;
-  color: #000000;
+  background: var(--theme-elevated);
+  color: var(--theme-code-muted);
   font-family: 'Courier New', Monaco, monospace;
   font-size: 0.9375rem;
   line-height: 1.6;
@@ -169,13 +169,13 @@
 
   /* Inset bevel effect */
   box-shadow:
-    inset 2px 2px 0 #808080,
-    inset -2px -2px 0 #ffffff;
+    inset 2px 2px 0 var(--theme-border),
+    inset -2px -2px 0 var(--theme-border-light);
 }
 
 .codeEditor::selection {
-  background: #000080;
-  color: #ffffff;
+  background: var(--theme-titlebar);
+  color: var(--theme-titlebar-text);
 }
 
 .outputConsole {
@@ -185,11 +185,11 @@
   font-size: 0.9375rem;
 
   /* Inset console background */
-  background: #ffffff;
-  color: #000000;
+  background: var(--theme-elevated);
+  color: var(--theme-text);
   box-shadow:
-    inset 2px 2px 0 #808080,
-    inset -2px -2px 0 #ffffff;
+    inset 2px 2px 0 var(--theme-border),
+    inset -2px -2px 0 var(--theme-border-light);
 }
 
 .successMessage {
@@ -199,23 +199,23 @@
   padding: 1rem;
 
   /* Windows 3.1 inset panel with green accent */
-  background: #ffffff;
+  background: var(--theme-elevated);
   border: 2px solid;
-  border-top-color: #808080;
-  border-left-color: #808080;
-  border-right-color: #ffffff;
-  border-bottom-color: #ffffff;
+  border-top-color: var(--theme-border);
+  border-left-color: var(--theme-border);
+  border-right-color: var(--theme-border-light);
+  border-bottom-color: var(--theme-border-light);
   border-left-width: 4px;
   border-left-color: #008000; /* Windows green */
 
-  color: #008000;
+  color: var(--theme-success);
   font-weight: 600;
-  box-shadow: inset 1px 1px 0 #000000;
+  box-shadow: inset 1px 1px 0 var(--theme-border);
 }
 
 .successIcon {
   font-size: 1.5rem;
-  color: #008000; /* Windows green */
+  color: var(--theme-success); /* Windows green */
 }
 
 .errorsList {
@@ -228,15 +228,15 @@
   padding: 1rem;
 
   /* Windows 3.1 inset panel with red accent */
-  background: #ffffff;
+  background: var(--theme-elevated);
   border: 2px solid;
-  border-top-color: #808080;
-  border-left-color: #808080;
-  border-right-color: #ffffff;
-  border-bottom-color: #ffffff;
+  border-top-color: var(--theme-border);
+  border-left-color: var(--theme-border);
+  border-right-color: var(--theme-border-light);
+  border-bottom-color: var(--theme-border-light);
   border-left-width: 4px;
   border-left-color: #ff0000; /* Red */
-  box-shadow: inset 1px 1px 0 #000000;
+  box-shadow: inset 1px 1px 0 var(--theme-border);
 }
 
 .errorHeader {
@@ -248,17 +248,17 @@
 
 .errorIcon {
   font-size: 1.125rem;
-  color: #ff0000; /* Red */
+  color: var(--theme-danger); /* Red */
 }
 
 .errorLine {
   font-weight: 700;
-  color: #ff0000;
+  color: var(--theme-danger);
   font-size: 0.875rem;
 }
 
 .errorMessage {
-  color: #000000;
+  color: var(--theme-text);
   margin-bottom: 0.5rem;
   line-height: 1.5;
 }
@@ -268,24 +268,24 @@
   margin-top: 0.5rem;
 
   /* Inset panel for fix suggestion */
-  background: #ffffff;
+  background: var(--theme-elevated);
   border: 2px solid;
-  border-top-color: #808080;
-  border-left-color: #808080;
-  border-right-color: #ffffff;
-  border-bottom-color: #ffffff;
+  border-top-color: var(--theme-border);
+  border-left-color: var(--theme-border);
+  border-right-color: var(--theme-border-light);
+  border-bottom-color: var(--theme-border-light);
   border-left-width: 3px;
   border-left-color: #000080; /* Windows blue */
-  box-shadow: inset 1px 1px 0 #000000;
+  box-shadow: inset 1px 1px 0 var(--theme-border);
 
   font-size: 0.875rem;
   line-height: 1.5;
-  color: #000000;
+  color: var(--theme-text);
 }
 
 .fixLabel {
   font-weight: 700;
-  color: #000080; /* Windows blue */
+  color: var(--theme-link); /* Windows blue */
   margin-right: 0.5rem;
 }
 
@@ -294,17 +294,17 @@
   padding: 2rem;
 
   /* Windows 3.1 window */
-  background: #c0c0c0;
+  background: var(--theme-surface);
 
   border: 2px solid;
-  border-top-color: #ffffff;
-  border-left-color: #ffffff;
-  border-right-color: #000000;
-  border-bottom-color: #000000;
+  border-top-color: var(--theme-border-light);
+  border-left-color: var(--theme-border-light);
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
 
   box-shadow:
-    inset 1px 1px 0 #dfdfdf,
-    inset -1px -1px 0 #808080,
+    inset 1px 1px 0 var(--theme-border),
+    inset -1px -1px 0 var(--theme-border),
     0 4px 8px rgba(0, 0, 0, 0.2);
 
   border-radius: 0;
@@ -315,13 +315,13 @@
   font-size: 1.5rem;
   font-weight: 800;
   margin-bottom: 0.75rem;
-  color: #000080; /* Windows blue */
+  color: var(--theme-link); /* Windows blue */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .installText {
-  color: #000000;
+  color: var(--theme-text);
   margin-bottom: 1rem;
 }
 
@@ -331,27 +331,27 @@
   margin: 1rem 0;
 
   /* Windows 3.1 inset terminal */
-  background: #000000;
+  background: var(--theme-code-bg);
   border: 2px solid;
-  border-top-color: #000000;
-  border-left-color: #000000;
-  border-right-color: #808080;
-  border-bottom-color: #808080;
+  border-top-color: var(--theme-border);
+  border-left-color: var(--theme-border);
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
   border-radius: 0;
 
   box-shadow:
-    inset 2px 2px 0 #000000;
+    inset 2px 2px 0 var(--theme-border);
 }
 
 .codeBlock code {
   font-family: 'Courier New', Monaco, monospace;
   font-size: 1rem;
-  color: #00ff00; /* DOS green */
+  color: var(--theme-code-green); /* DOS green */
   font-weight: 600;
 }
 
 .installNote {
-  color: #000000;
+  color: var(--theme-text);
   font-size: 0.9375rem;
   margin-top: 1rem;
 }
@@ -360,30 +360,30 @@
 [data-theme='dark'] .editorPanel,
 [data-theme='dark'] .outputPanel,
 [data-theme='dark'] .installSection {
-  background: #404040; /* Darker gray but still Windows-style */
+  background: var(--theme-surface); /* Darker gray but still Windows-style */
   border-top-color: #606060;
   border-left-color: #606060;
-  border-right-color: #000000;
-  border-bottom-color: #000000;
+  border-right-color: var(--theme-border);
+  border-bottom-color: var(--theme-border);
 }
 
 [data-theme='dark'] .typeButton {
-  background: #404040;
-  color: #d0d0d0;
+  background: var(--theme-surface);
+  color: var(--theme-muted);
 }
 
 [data-theme='dark'] .typeButton:hover {
-  background: #484848;
+  background: var(--theme-surface);
 }
 
 [data-theme='dark'] .typeButton.active {
-  background: #303030;
+  background: var(--theme-surface);
 }
 
 [data-theme='dark'] .codeEditor,
 [data-theme='dark'] .outputConsole {
-  background: #303030;
-  color: #d0d0d0;
+  background: var(--theme-surface);
+  color: var(--theme-muted);
   border-top-color: #202020;
   border-left-color: #202020;
   border-right-color: #505050;
@@ -393,8 +393,8 @@
 [data-theme='dark'] .successMessage,
 [data-theme='dark'] .error,
 [data-theme='dark'] .errorFix {
-  background: #303030;
-  color: #d0d0d0;
+  background: var(--theme-surface);
+  color: var(--theme-muted);
   border-top-color: #202020;
   border-left-color: #202020;
   border-right-color: #505050;
@@ -412,13 +412,13 @@
 
 [data-theme='dark'] .fixLabel,
 [data-theme='dark'] .installTitle {
-  color: #5B9BD5; /* Lighter blue for dark mode */
+  color: var(--theme-link); /* Lighter blue for dark mode */
 }
 
 [data-theme='dark'] .errorMessage,
 [data-theme='dark'] .installText,
 [data-theme='dark'] .installNote {
-  color: #d0d0d0;
+  color: var(--theme-muted);
 }
 
 /* Responsive */
@@ -455,3 +455,6 @@
     padding: 0.75rem 1.5rem;
   }
 }
+
+.codeBlock { background: var(--theme-code-bg) !important; color: var(--theme-code-text) !important; }
+.codeBlock :is(code,span) { background: transparent !important; color: var(--theme-code-text) !important; }

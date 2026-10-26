@@ -1,12 +1,12 @@
 /* Windows 3.1 Artifact Detail Page */
 .artifactDetail {
   min-height: calc(100vh - 60px);
-  background: #F5F5DC !important; /* Beige background */
+  background: var(--theme-elevated) !important; /* Beige background */
 }
 
 /* Hero Section - Teal Desktop Style */
 .hero {
-  background: var(--win31-teal);
+  background: var(--theme-desktop);
   padding: 2rem 0 2.5rem;
   margin-bottom: 2rem;
   border-bottom: 4px solid var(--win31-black);
@@ -34,22 +34,22 @@
 }
 
 .breadcrumb {
-  color: var(--win31-navy);
+  color: var(--theme-link);
   text-decoration: none;
   font-weight: 600;
 }
 
 .breadcrumb:hover {
-  color: var(--win31-teal);
+  color: var(--theme-link);
   text-decoration: underline;
 }
 
 .breadcrumbSeparator {
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
 }
 
 .breadcrumbCurrent {
-  color: var(--win31-black);
+  color: var(--theme-text);
   font-weight: 600;
 }
 
@@ -84,11 +84,12 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   background: var(--win31-gray);
-  color: var(--win31-black);
+  color: var(--theme-text);
   box-shadow: inset 0.5px 0.5px 0 var(--win31-light-gray), inset -0.5px -0.5px 0 var(--win31-dark-gray);
 }
 
 .featuredBadge {
+  color: var(--theme-accent-ink);
   background: var(--win31-bright-yellow);
   border-width: 2px;
 }
@@ -178,7 +179,7 @@
   font-size: 42px;
   font-weight: normal;
   margin: 0 0 1.5rem 0;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   padding-bottom: 8px;
   border-bottom: 3px solid var(--win31-navy);
   letter-spacing: 1px;
@@ -186,12 +187,12 @@
 
 /* Editorial Note - Callout for updates */
 .editorialNote {
-  background: #fffde7;
+  background: var(--theme-info-surface);
   border-left: 4px solid var(--win31-navy);
   padding: 12px 16px;
   font-family: var(--font-system);
   font-size: 14px;
-  color: #333;
+  color: var(--theme-text);
   line-height: 1.6;
 }
 
@@ -200,7 +201,7 @@
 }
 
 .editorialNote a {
-  color: var(--win31-navy);
+  color: var(--theme-info);
   text-decoration: underline;
 }
 
@@ -209,7 +210,7 @@
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--win31-navy);
+  color: var(--theme-info);
 }
 
 /* Exposition - Blog-like narrative window */
@@ -240,7 +241,7 @@
 
 .expositionContent {
   padding: 20px;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
 }
 
 .expositionParagraph {
@@ -248,7 +249,7 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1.8;
-  color: var(--win31-black);
+  color: var(--theme-text);
   margin: 0 0 16px 0;
   letter-spacing: 0.3px;
 }
@@ -259,7 +260,7 @@
 
 .expositionParagraph strong {
   font-weight: 700;
-  color: var(--win31-navy);
+  color: var(--theme-link);
 }
 
 /* Skills Grid - Windows 3.1 Windows */
@@ -315,7 +316,7 @@
 .activationBadge {
   display: inline-block;
   background: var(--win31-lime);
-  color: var(--win31-black);
+  color: var(--theme-text);
   padding: 2px 6px;
   border-style: solid;
   border-width: 1px;
@@ -331,7 +332,7 @@
 
 .skillRole {
   font-family: var(--font-system);
-  color: var(--win31-black);
+  color: var(--theme-text);
   font-size: 12px;
   font-weight: 500;
   line-height: 1.5;
@@ -358,7 +359,7 @@
   font-size: 15px;
   font-weight: normal;
   line-height: 1.7;
-  color: var(--win31-black);
+  color: var(--theme-text);
   margin: 0 0 24px 0;
   letter-spacing: 0.3px;
 }
@@ -368,7 +369,7 @@
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 12px;
   padding: 16px;
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
   border-style: solid;
   border-width: 2px;
   border-top-color: var(--win31-dark-gray);
@@ -397,7 +398,7 @@
   font-family: var(--font-pixel);
   font-size: 28px;
   font-weight: normal;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   line-height: 1;
   margin-bottom: 8px;
 }
@@ -406,7 +407,7 @@
   font-family: var(--font-system);
   font-size: 10px;
   font-weight: 600;
-  color: var(--win31-black);
+  color: var(--theme-text);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -448,7 +449,7 @@
   font-weight: 500;
   padding: 10px 12px;
   border-bottom: 1px solid var(--win31-dark-gray);
-  color: var(--win31-black);
+  color: var(--theme-text);
   line-height: 1.6;
   letter-spacing: 0.3px;
 }
@@ -467,7 +468,7 @@
 .tag {
   display: inline-block;
   background: var(--win31-gray);
-  color: var(--win31-black);
+  color: var(--theme-text);
   padding: 4px 12px;
   border-style: solid;
   border-width: 1px;
@@ -483,7 +484,7 @@
 }
 
 .tag:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .tag:active {
@@ -505,7 +506,7 @@
   display: inline-block;
   padding: 8px 24px;
   background: var(--win31-gray);
-  color: var(--win31-black);
+  color: var(--theme-text);
   border-style: solid;
   border-width: 2px;
   border-top-color: var(--win31-white);
@@ -523,8 +524,8 @@
 }
 
 .backButton:hover {
-  background: var(--win31-light-gray);
-  color: var(--win31-black);
+  background: var(--theme-sunken);
+  color: var(--theme-text);
 }
 
 .backButton:active {
@@ -560,7 +561,7 @@
   font-size: 48px;
   font-weight: normal;
   margin-bottom: 1rem;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   letter-spacing: 1px;
 }
 
@@ -568,7 +569,7 @@
   font-family: var(--font-system);
   font-size: 14px;
   font-weight: 500;
-  color: var(--win31-black);
+  color: var(--theme-text);
   margin-bottom: 2rem;
   letter-spacing: 0.3px;
 }
@@ -630,7 +631,7 @@
 
 /* File Comparison Section - Windows 3.1 Style */
 .comparisonNotice {
-  background: var(--win31-bright-yellow);
+  background: var(--theme-sticker-yellow);
   border-style: solid;
   border-width: 2px;
   border-top-color: rgba(255, 255, 255, 0.8);
@@ -646,13 +647,13 @@
   font-family: var(--font-system);
   font-size: 13px;
   font-weight: 600;
-  color: var(--win31-black);
+  color: var(--theme-accent-ink);
   letter-spacing: 0.3px;
 }
 
 .fileComparison {
   margin-bottom: 16px;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   border-style: solid;
   border-width: 2px;
   border-top-color: var(--win31-dark-gray);
@@ -675,7 +676,7 @@
 }
 
 .fileComparisonHeader:hover {
-  background: var(--win31-teal);
+  background: var(--theme-desktop);
 }
 
 .fileComparisonHeader:active {
@@ -779,7 +780,7 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1.7;
-  color: var(--win31-black);
+  color: var(--theme-text);
   margin: 0 0 20px 0;
   letter-spacing: 0.3px;
 }
@@ -788,7 +789,7 @@
   display: inline-block;
   padding: 12px 32px;
   background: var(--win31-lime);
-  color: var(--win31-black);
+  color: var(--theme-text);
   border-style: solid;
   border-width: 3px;
   border-top-color: var(--win31-white);
@@ -828,11 +829,11 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1.6;
-  color: var(--win31-black);
+  color: var(--theme-text);
   margin: 0 0 24px 0;
   letter-spacing: 0.3px;
   padding: 12px 16px;
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
   border-style: solid;
   border-width: 2px;
   border-top-color: var(--win31-dark-gray);
@@ -901,7 +902,7 @@
   font-family: var(--font-system);
   font-size: 12px;
   font-weight: 700;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   letter-spacing: 0.3px;
   white-space: nowrap;
   overflow: hidden;
@@ -912,7 +913,7 @@
   font-family: var(--font-system);
   font-size: 10px;
   font-weight: 600;
-  color: var(--win31-black);
+  color: var(--theme-text);
   letter-spacing: 0.2px;
   white-space: nowrap;
   overflow: hidden;
@@ -923,7 +924,7 @@
   font-family: var(--font-system);
   font-size: 9px;
   font-weight: 500;
-  color: var(--win31-dark-gray);
+  color: var(--theme-muted);
   letter-spacing: 0.2px;
   line-height: 1.3;
   margin-top: 2px;

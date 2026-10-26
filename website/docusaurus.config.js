@@ -83,8 +83,8 @@ var config = {
         image: 'img/og-image.png',
         colorMode: {
             defaultMode: 'light',
-            disableSwitch: true,
-            respectPrefersColorScheme: false,
+            disableSwitch: false,
+            respectPrefersColorScheme: true,
         },
         navbar: {
             title: "Some Skills",

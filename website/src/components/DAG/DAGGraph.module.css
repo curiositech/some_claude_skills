@@ -4,10 +4,11 @@
  */
 
 .container {
+  color: var(--theme-text);
   position: relative;
   width: 100%;
-  background: #e0e0e0;
-  border: 4px solid #000000;
+  background: var(--theme-elevated);
+  border: 4px solid var(--theme-border);
   box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
   border-radius: 0;
   overflow: hidden;
@@ -19,8 +20,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 4px 8px;
-  background: linear-gradient(90deg, #000080, #1084d0);
-  color: white;
+  background: var(--theme-titlebar);
+  color: var(--theme-titlebar-text);
   font-family: var(--font-system);
   font-size: 14px;
   font-weight: bold;
@@ -46,7 +47,7 @@
 /* SVG Canvas */
 .canvas {
   display: block;
-  background: #ffffff;
+  background: var(--theme-elevated);
   cursor: grab;
 }
 
@@ -60,7 +61,7 @@
 }
 
 .edge {
-  transition: stroke 0.2s ease;
+  /* Keep paired graph colors atomic during appearance changes. */
 }
 
 /* Nodes container */
@@ -74,8 +75,8 @@
   top: 40px;
   right: 8px;
   width: 240px;
-  background: #c0c0c0;
-  border: 2px solid #000000;
+  background: var(--theme-surface);
+  border: 2px solid var(--theme-border);
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -84,18 +85,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 4px 8px;
-  background: linear-gradient(90deg, #000080, #1084d0);
-  color: white;
+  background: var(--theme-titlebar);
+  color: var(--theme-titlebar-text);
   font-family: var(--font-system);
   font-size: 12px;
   font-weight: bold;
 }
 
 .closeButton {
-  background: #c0c0c0;
+  background: var(--theme-surface);
   border: 2px solid;
-  border-color: #ffffff #808080 #808080 #ffffff;
-  color: #000000;
+  border-color: var(--theme-border-light) var(--theme-border) var(--theme-border) var(--theme-border-light);
+  color: var(--theme-text);
   width: 20px;
   height: 20px;
   font-size: 14px;
@@ -108,11 +109,11 @@
 }
 
 .closeButton:hover {
-  background: #d0d0d0;
+  background: var(--theme-surface);
 }
 
 .closeButton:active {
-  border-color: #808080 #ffffff #ffffff #808080;
+  border-color: var(--theme-border) var(--theme-border-light) var(--theme-border-light) var(--theme-border);
 }
 
 .detailsContent {
@@ -129,12 +130,12 @@
 
 .detailLabel {
   font-weight: bold;
-  color: #000000;
+  color: var(--theme-text);
   min-width: 80px;
 }
 
 .detailValue {
-  color: #333333;
+  color: var(--theme-text);
   word-break: break-all;
 }
 
@@ -148,11 +149,12 @@
 }
 
 .controlButton {
+  color: var(--theme-text);
   width: 28px;
   height: 28px;
-  background: #c0c0c0;
+  background: var(--theme-surface);
   border: 2px solid;
-  border-color: #ffffff #808080 #808080 #ffffff;
+  border-color: var(--theme-border-light) var(--theme-border) var(--theme-border) var(--theme-border-light);
   font-size: 14px;
   cursor: pointer;
   display: flex;
@@ -161,11 +163,11 @@
 }
 
 .controlButton:hover {
-  background: #d0d0d0;
+  background: var(--theme-surface);
 }
 
 .controlButton:active {
-  border-color: #808080 #ffffff #ffffff #808080;
+  border-color: var(--theme-border) var(--theme-border-light) var(--theme-border-light) var(--theme-border);
 }
 
 /* Legend */
@@ -176,9 +178,9 @@
   display: flex;
   gap: 12px;
   padding: 6px 10px;
-  background: #c0c0c0;
+  background: var(--theme-surface);
   border: 2px solid;
-  border-color: #ffffff #808080 #808080 #ffffff;
+  border-color: var(--theme-border-light) var(--theme-border) var(--theme-border) var(--theme-border-light);
   font-family: var(--font-system);
   font-size: 10px;
 }

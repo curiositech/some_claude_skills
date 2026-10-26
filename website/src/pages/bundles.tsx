@@ -67,7 +67,7 @@ export default function BundlesPage(): React.JSX.Element {
                 style={{
                   fontSize: '16px',
                   textAlign: 'center',
-                  color: '#333',
+                  color: "var(--theme-text)",
                   marginBottom: '16px',
                   maxWidth: '700px',
                   marginLeft: 'auto',
@@ -93,17 +93,17 @@ export default function BundlesPage(): React.JSX.Element {
                   style={{
                     textAlign: 'center',
                     padding: '12px 20px',
-                    background: '#f8f8f8',
-                    border: '1px solid #ddd',
+                    background: "var(--theme-elevated)",
+                    border: "1px solid var(--theme-border)",
                   }}
                 >
                   <div
                     className="win31-font"
-                    style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--win31-navy)' }}
+                    style={{ fontSize: '24px', fontWeight: 'bold', color: "var(--theme-link)" }}
                   >
                     {bundles.length}
                   </div>
-                  <div className="win31-font" style={{ fontSize: '12px', color: '#666' }}>
+                  <div className="win31-font" style={{ fontSize: '12px', color: "var(--theme-muted)" }}>
                     Total Bundles
                   </div>
                 </div>
@@ -111,17 +111,17 @@ export default function BundlesPage(): React.JSX.Element {
                   style={{
                     textAlign: 'center',
                     padding: '12px 20px',
-                    background: '#ffd700',
+                    background: 'var(--theme-warning-surface)',
                     border: '1px solid #cc9900',
                   }}
                 >
                   <div
                     className="win31-font"
-                    style={{ fontSize: '24px', fontWeight: 'bold', color: '#000' }}
+                    style={{ fontSize: '24px', fontWeight: 'bold', color: "var(--theme-text)" }}
                   >
                     {featuredCount}
                   </div>
-                  <div className="win31-font" style={{ fontSize: '12px', color: '#333' }}>
+                  <div className="win31-font" style={{ fontSize: '12px', color: "var(--theme-text)" }}>
                     ⭐ Featured
                   </div>
                 </div>
@@ -129,17 +129,17 @@ export default function BundlesPage(): React.JSX.Element {
                   style={{
                     textAlign: 'center',
                     padding: '12px 20px',
-                    background: '#e8fff0',
+                    background: 'var(--theme-success-surface)',
                     border: '1px solid #4a9',
                   }}
                 >
                   <div
                     className="win31-font"
-                    style={{ fontSize: '24px', fontWeight: 'bold', color: '#060' }}
+                    style={{ fontSize: '24px', fontWeight: 'bold', color: "var(--theme-success)" }}
                   >
                     ~$0.45
                   </div>
-                  <div className="win31-font" style={{ fontSize: '12px', color: '#333' }}>
+                  <div className="win31-font" style={{ fontSize: '12px', color: "var(--theme-text)" }}>
                     Starting Cost
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export default function BundlesPage(): React.JSX.Element {
               style={{
                 fontSize: '14px',
                 margin: '0 0 12px 0',
-                color: 'var(--win31-navy)',
+                color: "var(--theme-link)",
               }}
             >
               💡 How Bundles Work
@@ -175,7 +175,7 @@ export default function BundlesPage(): React.JSX.Element {
                   <strong className="win31-font" style={{ fontSize: '12px' }}>
                     Browse & Select
                   </strong>
-                  <p className="win31-font" style={{ fontSize: '11px', color: '#666', margin: 0 }}>
+                  <p className="win31-font" style={{ fontSize: '11px', color: "var(--theme-muted)", margin: 0 }}>
                     Find a bundle that matches your workflow
                   </p>
                 </div>
@@ -186,7 +186,7 @@ export default function BundlesPage(): React.JSX.Element {
                   <strong className="win31-font" style={{ fontSize: '12px' }}>
                     Copy Command
                   </strong>
-                  <p className="win31-font" style={{ fontSize: '11px', color: '#666', margin: 0 }}>
+                  <p className="win31-font" style={{ fontSize: '11px', color: "var(--theme-muted)", margin: 0 }}>
                     Click to copy the install command
                   </p>
                 </div>
@@ -197,7 +197,7 @@ export default function BundlesPage(): React.JSX.Element {
                   <strong className="win31-font" style={{ fontSize: '12px' }}>
                     Run in Claude Code
                   </strong>
-                  <p className="win31-font" style={{ fontSize: '11px', color: '#666', margin: 0 }}>
+                  <p className="win31-font" style={{ fontSize: '11px', color: "var(--theme-muted)", margin: 0 }}>
                     Paste in your terminal to install all skills
                   </p>
                 </div>
@@ -208,7 +208,7 @@ export default function BundlesPage(): React.JSX.Element {
                   <strong className="win31-font" style={{ fontSize: '12px' }}>
                     Start Working
                   </strong>
-                  <p className="win31-font" style={{ fontSize: '11px', color: '#666', margin: 0 }}>
+                  <p className="win31-font" style={{ fontSize: '11px', color: "var(--theme-muted)", margin: 0 }}>
                     Skills work together automatically
                   </p>
                 </div>

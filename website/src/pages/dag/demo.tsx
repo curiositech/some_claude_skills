@@ -272,8 +272,9 @@ export default function DAGDemo(): JSX.Element {
         </p>
 
         <div className={styles.controls}>
-          <label>Example:</label>
+          <label htmlFor="dag-example">Example:</label>
           <select
+            id="dag-example"
             value={selectedDAG}
             onChange={(e) => setSelectedDAG(e.target.value as DAGExample)}
           >

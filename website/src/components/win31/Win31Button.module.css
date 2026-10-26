@@ -7,7 +7,7 @@
 .button {
   /* Base appearance */
   background: var(--win31-gray, #c0c0c0);
-  color: var(--win31-black, #000);
+  color: var(--theme-text);
   font-family: var(--font-code, 'Courier New', monospace);
   font-size: 14px;
   font-weight: normal;
@@ -18,15 +18,15 @@
   /* 3D beveled border (outset) */
   border-width: 2px;
   border-style: solid;
-  border-top-color: var(--win31-white, #fff);
-  border-left-color: var(--win31-white, #fff);
-  border-bottom-color: var(--win31-black, #000);
-  border-right-color: var(--win31-black, #000);
+  border-top-color: var(--win31-white, var(--theme-border-light));
+  border-left-color: var(--win31-white, var(--theme-border-light));
+  border-bottom-color: var(--win31-black, var(--theme-border));
+  border-right-color: var(--win31-black, var(--theme-border));
 
   /* Inner shadow for depth */
   box-shadow:
-    inset -1px -1px 0 var(--win31-dark-gray, #808080),
-    inset 1px 1px 0 var(--win31-light-gray, #dfdfdf);
+    inset -1px -1px 0 var(--win31-dark-gray, var(--theme-border)),
+    inset 1px 1px 0 var(--win31-light-gray, var(--theme-border));
 
   /* Layout */
   padding: 6px 16px;
@@ -38,7 +38,7 @@
 
 /* Hover state (subtle) */
 .button:hover:not(:disabled) {
-  background: var(--win31-light-gray, #dfdfdf);
+  background: var(--theme-sunken);
 }
 
 /* Active/pressed state (inverted borders) */
@@ -65,7 +65,7 @@
 
 /* Disabled state */
 .button:disabled {
-  color: var(--win31-dark-gray, #808080);
+  color: var(--theme-muted);
   background: var(--win31-gray, #c0c0c0);
   cursor: not-allowed;
   opacity: 0.6;
@@ -77,27 +77,27 @@
 
 /* Primary variant (navy title bar color) */
 .button.primary {
-  background: var(--win31-navy, #000080);
-  color: var(--win31-white, #fff);
+  background: var(--theme-action-bg);
+  color: var(--theme-action-text);
 }
 
 .button.primary:hover:not(:disabled) {
-  background: #0000a0;
+  background: var(--theme-action-bg);
 }
 
 .button.primary:disabled {
-  background: #000060;
+  background: var(--theme-titlebar);
   color: #a0a0a0;
 }
 
 /* Danger variant (red) */
 .button.danger {
-  background: #c00000;
-  color: var(--win31-white, #fff);
+  background: var(--theme-danger-surface);
+  color: var(--theme-danger);
 }
 
 .button.danger:hover:not(:disabled) {
-  background: #e00000;
+  background: var(--theme-danger-surface);
 }
 
 .button.danger:disabled {

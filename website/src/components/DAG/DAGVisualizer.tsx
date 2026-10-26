@@ -43,11 +43,21 @@ export function DAGVisualizer({
   const [hoveredNode, setHoveredNode] = useState<NodeId | null>(null);
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [themeRevision, setThemeRevision] = useState(0);
   const [zoom, setZoom] = useState(1.0);
   const [autoFit, setAutoFit] = useState(true);
   const [isPanning, setIsPanning] = useState(false);
   const [panOffset, setPanOffset] = useState({ x: 0, y: 0 });
   const [panStart, setPanStart] = useState({ x: 0, y: 0 });
+
+  // Canvas does not inherit CSS colors; redraw after appearance or palette changes.
+  useEffect(() => {
+    const observer = new MutationObserver(() => setThemeRevision(value => value + 1));
+    observer.observe(document.documentElement, {
+      attributes: true, attributeFilter: ['data-theme', 'data-win31-palette'],
+    });
+    return () => observer.disconnect();
+  }, []);
 
   // Preload skill hero images
   useEffect(() => {
@@ -90,7 +100,7 @@ export function DAGVisualizer({
 
     // Draw the DAG with zoom and pan
     drawDAG(ctx, dag, executionState, hoveredNode, highlightCriticalPath, zoom, autoFit, panOffset);
-  }, [dag, executionState, hoveredNode, highlightCriticalPath, imagesLoaded, zoom, autoFit, panOffset]);
+  }, [dag, executionState, hoveredNode, highlightCriticalPath, imagesLoaded, zoom, autoFit, panOffset, themeRevision]);
 
   // Mouse wheel zoom - attach manually with passive: false to allow preventDefault
   useEffect(() => {
@@ -193,6 +203,11 @@ export function DAGVisualizer({
       )}
     </div>
   );
+}
+
+// Canvas setters accept concrete browser colors, not CSS var() expressions.
+function canvasColor(role: string): string {
+  return getComputedStyle(document.documentElement).getPropertyValue(role).trim();
 }
 
 /**
@@ -386,7 +401,7 @@ function drawEdges(
   layout: Map<NodeId, { x: number; y: number }>,
   executionState: Map<NodeId, TaskState> | undefined
 ): void {
-  ctx.strokeStyle = '#666';
+  ctx.strokeStyle = canvasColor('--theme-border');
   ctx.lineWidth = 2;
 
   for (const [fromId, toIds] of dag.edges) {
@@ -436,7 +451,7 @@ function drawArrowhead(
   ctx.lineTo(x - size * Math.cos(angle - Math.PI / 6), y - size * Math.sin(angle - Math.PI / 6));
   ctx.lineTo(x - size * Math.cos(angle + Math.PI / 6), y - size * Math.sin(angle + Math.PI / 6));
   ctx.closePath();
-  ctx.fillStyle = '#666';
+  ctx.fillStyle = canvasColor('--theme-border');
   ctx.fill();
 }
 
@@ -454,40 +469,26 @@ function drawNode(
   const x = position.x - NODE_WIDTH / 2;
   const y = position.y - NODE_HEIGHT / 2;
 
-  // Determine title bar color based on state
-  let titleBarColor = '#000080'; // Navy blue (pending)
-
-  if (state) {
-    switch (state.status) {
-      case 'ready':
-        titleBarColor = '#ffeb3b'; // Yellow
-        break;
-      case 'running':
-        titleBarColor = '#2196f3'; // Blue
-        break;
-      case 'completed':
-        titleBarColor = '#4caf50'; // Green
-        break;
-      case 'failed':
-        titleBarColor = '#f44336'; // Red
-        break;
-      case 'skipped':
-        titleBarColor = '#9e9e9e'; // Gray
-        break;
-    }
-  }
+  const statusRole = state?.status === 'ready' ? 'warning' :
+    state?.status === 'running' ? 'info' :
+    state?.status === 'completed' ? 'success' :
+    state?.status === 'failed' ? 'danger' : null;
+  const titleBarColor = canvasColor(statusRole ? `--theme-${statusRole}-surface` :
+    state?.status === 'skipped' ? '--theme-sunken' : '--theme-titlebar');
+  const titleTextColor = canvasColor(statusRole ? `--theme-${statusRole}` :
+    state?.status === 'skipped' ? '--theme-muted' : '--theme-titlebar-text');
 
   // Draw outer border (black)
-  ctx.fillStyle = '#000';
+  ctx.fillStyle = canvasColor('--theme-border');
   ctx.fillRect(x, y, NODE_WIDTH, NODE_HEIGHT);
 
   // Draw white highlight (top-left)
-  ctx.fillStyle = '#fff';
+  ctx.fillStyle = canvasColor('--theme-border-light');
   ctx.fillRect(x + 2, y + 2, NODE_WIDTH - 4, 2); // Top
   ctx.fillRect(x + 2, y + 2, 2, NODE_HEIGHT - 4); // Left
 
   // Draw dark shadow (bottom-right)
-  ctx.fillStyle = '#808080';
+  ctx.fillStyle = canvasColor('--theme-border-shadow');
   ctx.fillRect(x + 2, y + NODE_HEIGHT - 4, NODE_WIDTH - 4, 2); // Bottom
   ctx.fillRect(x + NODE_WIDTH - 4, y + 2, 2, NODE_HEIGHT - 4); // Right
 
@@ -496,7 +497,7 @@ function drawNode(
   ctx.fillRect(x + 4, y + 4, NODE_WIDTH - 8, TITLE_BAR_HEIGHT);
 
   // Draw title bar text
-  ctx.fillStyle = '#fff';
+  ctx.fillStyle = titleTextColor;
   ctx.font = 'bold 11px sans-serif';
   ctx.textAlign = 'left';
   ctx.textBaseline = 'middle';
@@ -505,7 +506,7 @@ function drawNode(
   ctx.fillText(truncatedTitle, x + 8, y + 4 + TITLE_BAR_HEIGHT / 2);
 
   // Draw window content area (light gray)
-  ctx.fillStyle = '#c0c0c0';
+  ctx.fillStyle = canvasColor('--theme-surface');
   ctx.fillRect(x + 4, y + 4 + TITLE_BAR_HEIGHT, NODE_WIDTH - 8, NODE_HEIGHT - 8 - TITLE_BAR_HEIGHT);
 
   // Draw skill hero image if available
@@ -545,7 +546,7 @@ function drawNode(
 
   // Draw hover border
   if (isHovered) {
-    ctx.strokeStyle = '#ffff00';
+    ctx.strokeStyle = canvasColor('--theme-focus');
     ctx.lineWidth = 3;
     ctx.strokeRect(x, y, NODE_WIDTH, NODE_HEIGHT);
   }
@@ -556,11 +557,11 @@ function drawNode(
  */
 function drawLegend(ctx: CanvasRenderingContext2D, width: number, height: number): void {
   const legendItems = [
-    { color: '#f0f0f0', border: '#ccc', label: 'Pending' },
-    { color: '#ffffcc', border: '#ffeb3b', label: 'Ready' },
-    { color: '#bbdefb', border: '#2196f3', label: 'Running' },
-    { color: '#c8e6c9', border: '#4caf50', label: 'Completed' },
-    { color: '#ffcdd2', border: '#f44336', label: 'Failed' },
+    { color: canvasColor('--theme-sunken'), border: canvasColor('--theme-border'), label: 'Pending' },
+    ...(['warning', 'info', 'success', 'danger'] as const).map((role, index) => ({
+      color: canvasColor(`--theme-${role}-surface`), border: canvasColor(`--theme-${role}`),
+      label: ['Ready', 'Running', 'Completed', 'Failed'][index],
+    })),
   ];
 
   const legendX = 20;
@@ -583,7 +584,7 @@ function drawLegend(ctx: CanvasRenderingContext2D, width: number, height: number
     ctx.stroke();
 
     // Draw label
-    ctx.fillStyle = '#000';
+    ctx.fillStyle = canvasColor('--theme-text');
     ctx.fillText(item.label, legendX + 25, y);
   });
 }
@@ -657,8 +658,8 @@ function findNodeAtPosition(
 function renderNodeTooltip(node: DAGNode, state: TaskState | undefined): JSX.Element {
   return (
     <div style={{
-      background: '#fff',
-      border: '2px solid #000',
+      background: "var(--theme-elevated)",
+      border: "2px solid var(--theme-border)",
       padding: '12px',
       borderRadius: '4px',
       maxWidth: '320px',
@@ -674,7 +675,7 @@ function renderNodeTooltip(node: DAGNode, state: TaskState | undefined): JSX.Ele
       </div>
 
       {node.description && (
-        <div style={{ marginBottom: '4px', fontStyle: 'italic', color: '#666' }}>
+        <div style={{ marginBottom: '4px', fontStyle: 'italic', color: "var(--theme-muted)" }}>
           {node.description}
         </div>
       )}
@@ -704,7 +705,7 @@ function renderNodeTooltip(node: DAGNode, state: TaskState | undefined): JSX.Ele
       )}
 
       {node.config && (
-        <div style={{ marginBottom: '4px', fontSize: '12px', color: '#555' }}>
+        <div style={{ marginBottom: '4px', fontSize: '12px', color: "var(--theme-muted)" }}>
           <strong>Config:</strong>
           {node.config.model && ` Model: ${node.config.model} |`}
           {` Timeout: ${node.config.timeoutMs}ms`}
@@ -716,13 +717,13 @@ function renderNodeTooltip(node: DAGNode, state: TaskState | undefined): JSX.Ele
         <div style={{
           marginTop: '8px',
           paddingTop: '8px',
-          borderTop: '1px solid #ddd',
+          borderTop: "1px solid var(--theme-border)",
           fontWeight: 'bold'
         }}>
           Status: <span style={{
-            color: state.status === 'completed' ? '#4caf50' :
-                   state.status === 'failed' ? '#f44336' :
-                   state.status === 'running' ? '#2196f3' : '#666'
+            color: state.status === 'completed' ? 'var(--theme-success)' :
+                   state.status === 'failed' ? 'var(--theme-danger)' :
+                   state.status === 'running' ? 'var(--theme-info)' : 'var(--theme-muted)'
           }}>
             {state.status}
           </span>

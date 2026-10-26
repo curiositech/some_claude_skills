@@ -183,7 +183,7 @@ export default function SiteReliabilityEngineerArtifact(): JSX.Element {
                 padding: '1rem',
                 borderRadius: '8px'
               }}>
-                <h4 style={{ marginTop: 0, color: '#4CAF50' }}>✅ Use This If You:</h4>
+                <h4 style={{ marginTop: 0, color: "var(--theme-success)" }}>✅ Use This If You:</h4>
                 <ul style={{ marginBottom: 0, paddingLeft: '1.5rem', lineHeight: 1.8 }}>
                   <li>Work with Docusaurus + MDX documentation</li>
                   <li>Have multiple contributors committing docs</li>
@@ -199,7 +199,7 @@ export default function SiteReliabilityEngineerArtifact(): JSX.Element {
                 padding: '1rem',
                 borderRadius: '8px'
               }}>
-                <h4 style={{ marginTop: 0, color: '#F44336' }}>❌ Skip This If You:</h4>
+                <h4 style={{ marginTop: 0, color: "var(--theme-danger)" }}>❌ Skip This If You:</h4>
                 <ul style={{ marginBottom: 0, paddingLeft: '1.5rem', lineHeight: 1.8 }}>
                   <li>Use plain Markdown (not MDX)</li>
                   <li>Work solo and manually test builds</li>

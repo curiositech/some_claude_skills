@@ -31,10 +31,10 @@
   /* 3D outset border */
   border-width: 4px;
   border-style: solid;
-  border-top-color: var(--win31-white, #fff);
-  border-left-color: var(--win31-white, #fff);
-  border-bottom-color: var(--win31-black, #000);
-  border-right-color: var(--win31-black, #000);
+  border-top-color: var(--win31-white, var(--theme-border-light));
+  border-left-color: var(--win31-white, var(--theme-border-light));
+  border-bottom-color: var(--win31-black, var(--theme-border));
+  border-right-color: var(--win31-black, var(--theme-border));
 
   /* Drop shadow */
   box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.4);
@@ -56,7 +56,7 @@
   user-select: none;
 
   /* Subtle gradient inset */
-  border-bottom: 2px solid var(--win31-black, #000);
+  border-bottom: 2px solid var(--win31-black, var(--theme-border));
 }
 
 /* Icon */
@@ -79,7 +79,7 @@
 /* Close button */
 .closeButton {
   background: var(--win31-gray, #c0c0c0);
-  color: var(--win31-black, #000);
+  color: var(--theme-text);
   border: none;
   width: 24px;
   height: 24px;
@@ -95,14 +95,14 @@
   /* 3D button border */
   border-width: 2px;
   border-style: solid;
-  border-top-color: var(--win31-white, #fff);
-  border-left-color: var(--win31-white, #fff);
-  border-bottom-color: var(--win31-black, #000);
-  border-right-color: var(--win31-black, #000);
+  border-top-color: var(--win31-white, var(--theme-border-light));
+  border-left-color: var(--win31-white, var(--theme-border-light));
+  border-bottom-color: var(--win31-black, var(--theme-border));
+  border-right-color: var(--win31-black, var(--theme-border));
 }
 
 .closeButton:hover {
-  background: var(--win31-light-gray, #dfdfdf);
+  background: var(--theme-sunken);
 }
 
 .closeButton:active {

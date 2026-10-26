@@ -48,7 +48,7 @@
 .badge {
   display: inline-block;
   background: var(--win31-gray);
-  color: var(--win31-black);
+  color: var(--theme-text);
   padding: 2px 8px;
   border-style: solid;
   border-width: 1px;
@@ -76,7 +76,7 @@
   border-bottom-color: var(--win31-black);
   border-right-color: var(--win31-black);
   background: var(--win31-gray);
-  color: var(--win31-black);
+  color: var(--theme-text);
   font-family: var(--font-system);
   font-size: 14px;
   font-weight: 700;
@@ -90,7 +90,7 @@
 }
 
 .toggleButton:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .toggleButton:active {
@@ -105,7 +105,7 @@
 .content {
   overflow: hidden;
   transition: max-height 0.3s ease;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
 }
 
 .collapsed {
@@ -136,8 +136,8 @@
 .markdown {
   padding: 16px;
   line-height: 1.6;
-  background: var(--win31-white);
-  color: var(--win31-black);
+  background: var(--theme-elevated);
+  color: var(--theme-text);
   font-family: var(--font-system);
   font-size: 12px;
 }
@@ -150,7 +150,7 @@
   margin: 16px 0 8px 0;
   padding-bottom: 4px;
   border-bottom: 2px solid var(--win31-dark-gray);
-  color: var(--win31-black);
+  color: var(--theme-text);
   letter-spacing: 0.3px;
 }
 
@@ -159,7 +159,7 @@
   font-size: 14px;
   font-weight: 700;
   margin: 14px 0 6px 0;
-  color: var(--win31-black);
+  color: var(--theme-text);
   letter-spacing: 0.3px;
 }
 
@@ -168,7 +168,7 @@
   font-size: 13px;
   font-weight: 700;
   margin: 12px 0 6px 0;
-  color: var(--win31-black);
+  color: var(--theme-text);
   letter-spacing: 0.3px;
 }
 
@@ -177,13 +177,13 @@
   font-size: 12px;
   font-weight: 700;
   margin: 10px 0 4px 0;
-  color: var(--win31-black);
+  color: var(--theme-text);
   letter-spacing: 0.3px;
 }
 
 .paragraph {
   margin: 8px 0;
-  color: var(--win31-black);
+  color: var(--theme-text);
   line-height: 1.6;
 }
 
@@ -191,7 +191,7 @@
 .orderedList {
   margin: 8px 0;
   padding-left: 20px;
-  color: var(--win31-black);
+  color: var(--theme-text);
 }
 
 .list li,
@@ -204,8 +204,8 @@
   margin: 12px 0;
   padding: 8px 12px;
   border-left: 3px solid var(--win31-navy);
-  background: var(--win31-light-gray);
-  color: var(--win31-black);
+  background: var(--theme-sunken);
+  color: var(--theme-text);
   font-style: italic;
   border-style: solid;
   border-width: 1px;
@@ -217,8 +217,8 @@
 }
 
 .inlineCode {
-  background: var(--win31-light-gray);
-  color: var(--win31-navy);
+  background: var(--theme-sunken);
+  color: var(--theme-link);
   padding: 2px 4px;
   font-family: var(--font-code);
   font-size: 11px;
@@ -234,7 +234,7 @@
 .codeBlock {
   margin: 12px 0 !important;
   font-size: 11px !important;
-  background: var(--win31-white) !important;
+  background: var(--theme-elevated) !important;
   border-style: solid !important;
   border-width: 2px !important;
   border-top-color: var(--win31-dark-gray) !important;
@@ -246,12 +246,12 @@
 
 .strong {
   font-weight: 700;
-  color: var(--win31-black);
+  color: var(--theme-text);
 }
 
 .emphasis {
   font-style: italic;
-  color: var(--win31-black);
+  color: var(--theme-text);
 }
 
 /* Expand Prompt - Windows 3.1 Status Bar Style */
@@ -271,7 +271,7 @@
   border-bottom-color: var(--win31-black);
   border-right-color: var(--win31-black);
   background: var(--win31-gray);
-  color: var(--win31-black);
+  color: var(--theme-text);
   font-family: var(--font-system);
   font-size: 12px;
   font-weight: 600;
@@ -281,7 +281,7 @@
 }
 
 .expandButton:hover {
-  background: var(--win31-light-gray);
+  background: var(--theme-sunken);
 }
 
 .expandButton:active {

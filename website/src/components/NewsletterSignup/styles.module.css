@@ -1,12 +1,12 @@
 /* Inline variant - for homepage - Win31 style */
 .signup {
-  background: #c0c0c0;
+  background: var(--theme-surface);
   padding: 0;
   margin: 24px 0;
-  border: 3px solid #000000;
+  border: 3px solid var(--theme-border);
   box-shadow:
-    inset 2px 2px 0 #ffffff,
-    inset -2px -2px 0 #808080;
+    inset 2px 2px 0 var(--theme-border-light),
+    inset -2px -2px 0 var(--theme-border);
 }
 
 .signup.inline {
@@ -18,8 +18,8 @@
 .signup::before {
   content: 'MAIL.EXE - Subscribe';
   display: block;
-  background: #000080;
-  color: #ffffff;
+  background: var(--theme-titlebar);
+  color: var(--theme-titlebar-text);
   padding: 4px 8px;
   font-family: 'VT323', 'MS Sans Serif', monospace;
   font-size: 14px;
@@ -48,7 +48,7 @@
 }
 
 .title {
-  color: #000080;
+  color: var(--theme-link);
   font-size: 20px;
   font-weight: 700;
   margin: 0;
@@ -58,7 +58,7 @@
 }
 
 .description {
-  color: #333333;
+  color: var(--theme-text);
   font-size: 14px;
   margin: 0 0 16px 0;
   line-height: 1.5;
@@ -77,19 +77,19 @@
   font-size: 14px;
   font-family: 'VT323', 'Courier New', monospace;
   border: 2px solid;
-  border-color: #808080 #ffffff #ffffff #808080;
-  box-shadow: inset 1px 1px 0 #000000;
-  background: #ffffff;
+  border-color: var(--theme-border) var(--theme-border-light) var(--theme-border-light) var(--theme-border);
+  box-shadow: inset 1px 1px 0 var(--theme-border);
+  background: var(--theme-elevated);
   min-width: 260px;
   outline: none;
 }
 
 .input:focus {
-  border-color: #000080;
+  border-color: var(--theme-focus);
 }
 
 .input:disabled {
-  background: #c0c0c0;
+  background: var(--theme-surface);
   cursor: not-allowed;
 }
 
@@ -101,25 +101,25 @@
   letter-spacing: 1px;
   cursor: pointer;
   font-family: 'VT323', 'MS Sans Serif', sans-serif;
-  background: #c0c0c0;
+  background: var(--theme-surface);
   border: none;
   box-shadow:
-    inset -2px -2px 0 #808080,
-    inset 2px 2px 0 #ffffff,
-    inset -3px -3px 0 #000000,
-    inset 3px 3px 0 #dfdfdf;
+    inset -2px -2px 0 var(--theme-border),
+    inset 2px 2px 0 var(--theme-border-light),
+    inset -3px -3px 0 var(--theme-border),
+    inset 3px 3px 0 var(--theme-border);
 }
 
 .button:hover:not(:disabled) {
-  background: #d4d4d4;
+  background: var(--theme-sunken);
 }
 
 .button:active:not(:disabled) {
   box-shadow:
-    inset 2px 2px 0 #808080,
-    inset -2px -2px 0 #ffffff,
-    inset 3px 3px 0 #000000,
-    inset -3px -3px 0 #dfdfdf;
+    inset 2px 2px 0 var(--theme-border),
+    inset -2px -2px 0 var(--theme-border-light),
+    inset 3px 3px 0 var(--theme-border),
+    inset -3px -3px 0 var(--theme-border);
   padding: 9px 19px 7px 21px;
 }
 
@@ -136,15 +136,15 @@
 }
 
 .message.success {
-  color: #008000;
+  color: var(--theme-success);
 }
 
 .message.error {
-  color: #ff0000;
+  color: var(--theme-danger);
 }
 
 .privacy {
-  color: #666666;
+  color: var(--theme-muted);
   font-size: 11px;
   margin: 12px 0 0 0;
   font-family: 'VT323', 'MS Sans Serif', sans-serif;
@@ -156,14 +156,14 @@
 }
 
 .footerTitle {
-  color: white;
+  color: var(--theme-text);
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 4px 0;
 }
 
 .footerDesc {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--theme-muted);
   font-size: 13px;
   margin: 0 0 12px 0;
 }
@@ -176,30 +176,30 @@
 .footerInput {
   padding: 8px 12px;
   font-size: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--theme-border);
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: var(--theme-field-bg);
+  color: var(--theme-text);
   flex: 1;
   min-width: 150px;
   outline: none;
 }
 
 .footerInput::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--theme-muted);
 }
 
 .footerInput:focus {
-  border-color: rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--theme-muted);
+  background: var(--theme-field-bg);
 }
 
 .footerButton {
   padding: 8px 16px;
   font-size: 13px;
   font-weight: 600;
-  background: #667eea;
-  color: white;
+  background: var(--theme-action-bg);
+  color: var(--theme-action-text);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -207,7 +207,7 @@
 }
 
 .footerButton:hover:not(:disabled) {
-  background: #5a6fd6;
+  background: var(--theme-action-bg);
 }
 
 .footerButton:disabled {

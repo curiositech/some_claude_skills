@@ -7,7 +7,7 @@
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background: #000;
+  background: var(--theme-code-bg);
   z-index: 10000;
   overflow: hidden;
   /* Ensure no margin/padding interference */
@@ -29,6 +29,9 @@
 
 /* Loading State */
 .loading {
+  background: var(--theme-code-bg);
+  color: var(--theme-code-text);
+  padding: 16px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -56,7 +59,7 @@
 }
 
 .loadingText {
-  color: #00ff00;
+  color: var(--theme-code-text);
   font-family: 'VT323', monospace;
   font-size: 24px;
   text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
@@ -73,18 +76,19 @@
   align-items: center;
   gap: 16px;
   padding: 32px;
-  background: rgba(0, 0, 0, 0.8);
-  border: 2px solid #ff4444;
+  background: var(--theme-code-bg);
+  border: 2px solid var(--theme-code-pink);
   border-radius: 8px;
   z-index: 10;
 }
 
 .errorIcon {
+  color: var(--theme-code-pink);
   font-size: 48px;
 }
 
 .errorText {
-  color: #ff4444;
+  color: var(--theme-code-pink);
   font-family: 'VT323', monospace;
   font-size: 18px;
   text-align: center;
@@ -92,9 +96,9 @@
 
 .errorButton {
   padding: 8px 24px;
-  background: #ff4444;
-  color: #000;
-  border: none;
+  background: var(--theme-action-bg);
+  color: var(--theme-action-text);
+  border: 2px solid var(--theme-code-pink);
   border-radius: 4px;
   font-family: 'VT323', monospace;
   font-size: 18px;
@@ -103,7 +107,7 @@
 }
 
 .errorButton:hover {
-  background: #ff6666;
+  background: var(--theme-action-bg);
 }
 
 /* Track Info Overlay - Floating panel in corner */
@@ -115,7 +119,7 @@
   align-items: center;
   gap: 20px;
   padding: 20px 24px;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--theme-code-bg);
   backdrop-filter: blur(10px);
   border: 2px solid #2a2a2a;
   box-shadow: inset 1px 1px 0 #3a3a3a, inset -1px -1px 0 #1a1a1a;
@@ -158,7 +162,7 @@
 }
 
 .trackTitle {
-  color: #00e100;
+  color: var(--theme-code-green);
   font-family: 'Courier New', monospace;
   font-size: 28px;
   font-weight: bold;
@@ -169,7 +173,7 @@
 }
 
 .trackArtist {
-  color: #a0e0a0;
+  color: var(--theme-code-text);
   font-family: 'Courier New', monospace;
   font-size: 22px;
   white-space: nowrap;
@@ -178,7 +182,7 @@
 }
 
 .trackAlbum {
-  color: #608060;
+  color: var(--theme-code-muted);
   font-family: 'Courier New', monospace;
   font-size: 18px;
   white-space: nowrap;
@@ -190,7 +194,7 @@
   position: absolute;
   top: 10px;
   right: 14px;
-  color: #00e100;
+  color: var(--theme-code-green);
   font-family: 'Courier New', monospace;
   font-size: 16px;
   font-weight: bold;
@@ -208,7 +212,7 @@
   align-items: center;
   gap: 12px;
   padding: 12px 24px;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--theme-code-bg);
   border: 2px solid #2a2a2a;
   box-shadow: inset 1px 1px 0 #3a3a3a, inset -1px -1px 0 #1a1a1a;
   z-index: 5;
@@ -216,7 +220,7 @@
 }
 
 .presetLabel {
-  color: #00e100;
+  color: var(--theme-code-green);
   font-family: 'Courier New', monospace;
   font-size: 18px;
   font-weight: bold;
@@ -224,7 +228,7 @@
 }
 
 .presetName {
-  color: #a0e0a0;
+  color: var(--theme-code-text);
   font-family: 'Courier New', monospace;
   font-size: 20px;
   max-width: 600px;
@@ -243,7 +247,7 @@
   align-items: center;
   gap: 32px;
   padding: 16px 32px;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--theme-code-bg);
   backdrop-filter: blur(10px);
   border: 2px solid #2a2a2a;
   box-shadow: inset 1px 1px 0 #3a3a3a, inset -1px -1px 0 #1a1a1a;
@@ -452,7 +456,7 @@
   flex-direction: column;
   gap: 6px;
   padding: 16px 20px;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--theme-code-bg);
   backdrop-filter: blur(8px);
   border: 2px solid #2a2a2a;
   box-shadow: inset 1px 1px 0 #3a3a3a, inset -1px -1px 0 #1a1a1a;
@@ -461,7 +465,7 @@
 }
 
 .hints span {
-  color: #608060;
+  color: var(--theme-code-muted);
   font-family: 'Courier New', monospace;
   font-size: 16px;
   letter-spacing: 0.5px;

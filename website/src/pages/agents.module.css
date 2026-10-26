@@ -10,7 +10,7 @@
 
 .agents-subtitle {
   font-size: 14px;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
   padding: 4px 12px;
   border: 1px solid #f59e0b;
@@ -25,9 +25,9 @@
   gap: 24px;
   padding: 16px 24px;
   background: linear-gradient(180deg, var(--win31-navy) 0%, #000066 100%);
-  color: white;
+  color: var(--theme-titlebar-text);
   margin-bottom: 20px;
-  border: 2px solid #000;
+  border: 2px solid var(--theme-border);
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -78,7 +78,7 @@
 
 /* Coordination Network View */
 .coordination-network {
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   border: 2px solid var(--win31-navy);
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
   padding: 24px;
@@ -119,26 +119,26 @@
 
 .node-label {
   font-size: 2.5px;
-  fill: var(--win31-navy);
+  fill: var(--theme-link);
   font-weight: bold;
 }
 
 .network-legend {
   text-align: center;
   padding: 16px;
-  background: #f5f5f5;
-  border: 1px solid #ddd;
+  background: var(--theme-elevated);
+  border: 1px solid var(--theme-border);
 }
 
 .network-legend h4 {
   margin: 0 0 8px 0;
-  color: var(--win31-navy);
+  color: var(--theme-link);
 }
 
 .network-legend p {
   margin: 0;
   font-size: 12px;
-  color: #666;
+  color: var(--theme-muted);
 }
 
 .network-agent-list {
@@ -152,7 +152,7 @@
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   border: 1px solid var(--win31-navy);
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
@@ -164,12 +164,12 @@
 .network-agent-name {
   font-weight: bold;
   font-size: 12px;
-  color: var(--win31-navy);
+  color: var(--theme-link);
 }
 
 .network-agent-role {
   font-size: 10px;
-  color: #666;
+  color: var(--theme-muted);
   margin-left: auto;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -189,8 +189,8 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: #f5f5f5;
-  border: 1px solid #ddd;
+  background: var(--theme-elevated);
+  border: 1px solid var(--theme-border);
 }
 
 .philosophy-emoji {
@@ -199,7 +199,7 @@
 
 .philosophy-text {
   font-size: 12px;
-  color: #333;
+  color: var(--theme-text);
 }
 
 /* Responsive */

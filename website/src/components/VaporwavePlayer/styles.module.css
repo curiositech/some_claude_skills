@@ -248,7 +248,7 @@
 .visualizer {
   margin-top: 1.5rem;
   padding: 1rem;
-  background: #000;
+  background: var(--theme-code-bg);
   border: 2px solid #ff47b8;
   border-radius: 8px;
   overflow: hidden;

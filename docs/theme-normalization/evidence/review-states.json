@@ -1,0 +1,104 @@
+[
+  {
+    "mode": "light",
+    "state": "intermediate bundle quick view",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 94
+      },
+      {
+        "id": "color-contrast",
+        "count": 98
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "bundle install copied",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 94
+      },
+      {
+        "id": "color-contrast",
+        "count": 98
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "before-after split view",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 31
+      },
+      {
+        "id": "color-contrast",
+        "count": 36
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "split-view computed text",
+    "minimum": 16.277886248391155,
+    "pass": true
+  },
+  {
+    "mode": "dark",
+    "state": "intermediate bundle quick view",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 94
+      },
+      {
+        "id": "color-contrast",
+        "count": 98
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "bundle install copied",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 94
+      },
+      {
+        "id": "color-contrast",
+        "count": 98
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "before-after split view",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 31
+      },
+      {
+        "id": "color-contrast",
+        "count": 36
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "split-view computed text",
+    "minimum": 16.277886248391155,
+    "pass": true
+  }
+]

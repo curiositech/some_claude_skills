@@ -20,7 +20,7 @@
   margin: 0;
   font-size: 18px;
   font-weight: bold;
-  color: #fff;
+  color: var(--theme-titlebar-text);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -28,7 +28,7 @@
 .closeBtn {
   background: none;
   border: none;
-  color: #fff;
+  color: var(--theme-titlebar-text);
   font-size: 32px;
   line-height: 1;
   cursor: pointer;
@@ -155,7 +155,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--theme-titlebar-text);
   font-weight: bold;
   font-size: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);

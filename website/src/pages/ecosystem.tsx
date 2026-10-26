@@ -162,7 +162,7 @@ export default function EcosystemPage(): JSX.Element {
       </Head>
 
       <div className="page-backsplash page-backsplash--ecosystem page-backsplash--medium" style={{
-        background: '#0f172a',
+        background: "var(--theme-code-bg)",
         minHeight: '100vh',
         paddingTop: '60px'
       }}>
@@ -188,7 +188,7 @@ export default function EcosystemPage(): JSX.Element {
                 fontFamily: 'var(--font-heading)',
                 fontSize: '36px',
                 margin: '0 0 12px 0',
-                color: 'var(--win31-navy)'
+                color: "var(--theme-link)"
               }}>
                 Ecosystem Dashboard
               </h1>
@@ -197,7 +197,7 @@ export default function EcosystemPage(): JSX.Element {
                 fontFamily: 'var(--font-code)',
                 fontSize: '14px',
                 lineHeight: '1.6',
-                color: '#333',
+                color: "var(--theme-text)",
                 margin: '0 0 16px 0'
               }}>
                 Historical ledger of {stats.totalSkills} skills, council documentation, and ecosystem metrics.
@@ -207,7 +207,7 @@ export default function EcosystemPage(): JSX.Element {
               {/* Quick Stats */}
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))',
                 gap: '12px'
               }}>
                 <StatBox label="Total Skills" value={stats.totalSkills} />
@@ -221,6 +221,7 @@ export default function EcosystemPage(): JSX.Element {
           {/* View Selector */}
           <div style={{
             display: 'flex',
+            flexWrap: 'wrap',
             gap: '8px',
             marginBottom: '24px',
             padding: '8px',
@@ -279,7 +280,7 @@ export default function EcosystemPage(): JSX.Element {
 function StatBox({ label, value }: { label: string; value: string | number }) {
   return (
     <div style={{
-      background: '#fff',
+      background: "var(--theme-elevated)",
       border: '2px solid var(--win31-dark-gray)',
       padding: '12px',
       boxShadow: 'inset -1px -1px 0 var(--win31-dark-gray)'
@@ -289,7 +290,7 @@ function StatBox({ label, value }: { label: string; value: string | number }) {
         fontSize: '10px',
         fontWeight: 600,
         textTransform: 'uppercase',
-        color: 'var(--win31-dark-gray)',
+        color: "var(--theme-muted)",
         marginBottom: '4px'
       }}>
         {label}
@@ -298,7 +299,7 @@ function StatBox({ label, value }: { label: string; value: string | number }) {
         fontFamily: 'var(--font-heading)',
         fontSize: '24px',
         fontWeight: 'bold',
-        color: 'var(--win31-navy)'
+        color: "var(--theme-link)"
       }}>
         {value}
       </div>
@@ -312,8 +313,8 @@ function ViewButton({ label, active, onClick }: { label: string; active: boolean
     <button
       onClick={onClick}
       style={{
-        background: active ? 'var(--win31-navy)' : 'var(--win31-gray)',
-        color: active ? 'white' : 'var(--win31-black)',
+        background: active ? 'var(--theme-action-bg)' : 'var(--theme-surface)',
+        color: active ? 'var(--theme-action-text)' : 'var(--theme-text)',
         border: active ? '2px inset var(--win31-white)' : '2px outset var(--win31-white)',
         padding: '8px 16px',
         fontFamily: 'var(--font-system)',
@@ -363,7 +364,7 @@ function SkillsTimeline({
               fontFamily: 'var(--font-code)',
               fontSize: '12px',
               border: '2px inset var(--win31-gray)',
-              background: 'white'
+              background: "var(--theme-elevated)"
             }}
           />
         </div>
@@ -373,7 +374,7 @@ function SkillsTimeline({
           maxHeight: '600px',
           overflowY: 'auto',
           border: '2px inset var(--win31-dark-gray)',
-          background: 'white',
+          background: "var(--theme-elevated)",
           padding: '16px'
         }}>
           {Array.from(groupedSkills.entries()).map(([date, skills]) => (
@@ -389,7 +390,7 @@ function SkillsTimeline({
               }}>
                 <div style={{
                   background: 'var(--win31-navy)',
-                  color: 'white',
+                  color: "var(--theme-titlebar-text)",
                   padding: '4px 12px',
                   fontFamily: 'var(--font-system)',
                   fontSize: '12px',
@@ -400,7 +401,7 @@ function SkillsTimeline({
                 <span style={{
                   fontFamily: 'var(--font-code)',
                   fontSize: '11px',
-                  color: '#666'
+                  color: "var(--theme-muted)"
                 }}>
                   {skills.length} skill{skills.length > 1 ? 's' : ''} created
                 </span>
@@ -409,7 +410,7 @@ function SkillsTimeline({
               {/* Skills */}
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
                 gap: '8px'
               }}>
                 {skills.map(skill => (
@@ -419,17 +420,17 @@ function SkillsTimeline({
                     style={{
                       display: 'block',
                       padding: '12px',
-                      background: 'var(--win31-light-gray)',
+                      background: "var(--theme-sunken)",
                       border: '1px solid var(--win31-dark-gray)',
                       textDecoration: 'none',
-                      transition: 'all 0.2s'
+                      transition: 'transform 0.2s'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'var(--win31-navy)';
-                      e.currentTarget.style.color = 'white';
+                      e.currentTarget.style.background = 'var(--theme-action-bg)';
+                      e.currentTarget.style.color = 'var(--theme-action-text)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'var(--win31-light-gray)';
+                      e.currentTarget.style.background = 'var(--theme-sunken)';
                       e.currentTarget.style.color = 'inherit';
                     }}
                   >
@@ -464,7 +465,7 @@ function SkillsTimeline({
             <div style={{
               textAlign: 'center',
               padding: '40px',
-              color: '#666',
+              color: "var(--theme-muted)",
               fontFamily: 'var(--font-code)'
             }}>
               No skills found matching "{searchTerm}"
@@ -494,7 +495,7 @@ function DocumentBrowser({ docs }: { docs: typeof councilDocs }) {
         <p style={{
           fontFamily: 'var(--font-code)',
           fontSize: '12px',
-          color: '#333',
+          color: "var(--theme-text)",
           marginBottom: '16px'
         }}>
           Browse the Council of Agents documentation. These documents capture decisions,
@@ -503,7 +504,7 @@ function DocumentBrowser({ docs }: { docs: typeof councilDocs }) {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
           gap: '16px'
         }}>
           {docs.map(doc => (
@@ -512,11 +513,11 @@ function DocumentBrowser({ docs }: { docs: typeof councilDocs }) {
               href={doc.path}
               style={{
                 display: 'block',
-                background: 'white',
+                background: "var(--theme-elevated)",
                 border: '2px solid var(--win31-dark-gray)',
                 padding: '16px',
                 textDecoration: 'none',
-                transition: 'all 0.2s'
+                transition: 'transform 0.2s'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'var(--win31-navy)';
@@ -538,7 +539,7 @@ function DocumentBrowser({ docs }: { docs: typeof councilDocs }) {
                   fontFamily: 'var(--font-system)',
                   fontSize: '16px',
                   fontWeight: 600,
-                  color: 'var(--win31-navy)'
+                  color: "var(--theme-link)"
                 }}>
                   {doc.title}
                 </div>
@@ -546,7 +547,7 @@ function DocumentBrowser({ docs }: { docs: typeof councilDocs }) {
               <p style={{
                 fontFamily: 'var(--font-code)',
                 fontSize: '12px',
-                color: '#666',
+                color: "var(--theme-muted)",
                 margin: 0,
                 lineHeight: 1.5
               }}>
@@ -562,7 +563,7 @@ function DocumentBrowser({ docs }: { docs: typeof councilDocs }) {
             fontFamily: 'var(--font-system)',
             fontSize: '14px',
             fontWeight: 600,
-            color: 'var(--win31-navy)',
+            color: "var(--theme-link)",
             marginBottom: '12px'
           }}>
             Additional Resources
@@ -592,21 +593,21 @@ function ResourceLink({ href, label }: { href: string; label: string }) {
       style={{
         display: 'inline-block',
         padding: '8px 16px',
-        background: 'var(--win31-light-gray)',
+        background: "var(--theme-sunken)",
         border: '2px outset var(--win31-white)',
         fontFamily: 'var(--font-system)',
         fontSize: '12px',
         fontWeight: 600,
-        color: 'var(--win31-black)',
+        color: "var(--theme-text)",
         textDecoration: 'none'
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.background = 'var(--win31-navy)';
-        e.currentTarget.style.color = 'white';
+        e.currentTarget.style.background = 'var(--theme-action-bg)';
+        e.currentTarget.style.color = 'var(--theme-action-text)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.background = 'var(--win31-light-gray)';
-        e.currentTarget.style.color = 'var(--win31-black)';
+        e.currentTarget.style.background = 'var(--theme-sunken)';
+        e.currentTarget.style.color = 'var(--theme-text)';
       }}
     >
       {label}
@@ -651,7 +652,7 @@ function DetailedStats({
         <div style={{ padding: '16px', background: 'var(--win31-gray)' }}>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
             gap: '16px'
           }}>
             <StatBox label="Total Skills" value={stats.totalSkills} />
@@ -690,14 +691,14 @@ function DetailedStats({
                   alignItems: 'center',
                   gap: '12px',
                   padding: '8px',
-                  background: idx % 2 === 0 ? 'white' : 'var(--win31-light-gray)'
+                  background: idx % 2 === 0 ? 'var(--theme-elevated)' : 'var(--theme-sunken)'
                 }}
               >
                 <span style={{
                   fontFamily: 'var(--font-heading)',
                   fontSize: '18px',
                   fontWeight: 'bold',
-                  color: 'var(--win31-navy)',
+                  color: "var(--theme-link)",
                   width: '30px',
                   textAlign: 'center'
                 }}>
@@ -710,7 +711,7 @@ function DetailedStats({
                     fontFamily: 'var(--font-system)',
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: 'var(--win31-navy)',
+                    color: "var(--theme-link)",
                     textDecoration: 'none'
                   }}
                 >
@@ -719,7 +720,7 @@ function DetailedStats({
                 <div style={{
                   flex: 1,
                   height: '16px',
-                  background: 'var(--win31-light-gray)',
+                  background: "var(--theme-sunken)",
                   border: '1px solid var(--win31-dark-gray)',
                   position: 'relative'
                 }}>
@@ -762,7 +763,7 @@ function DetailedStats({
         <div style={{ padding: '16px', background: 'var(--win31-gray)' }}>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
             gap: '8px'
           }}>
             {recentlyUpdated.map(skill => (
@@ -774,7 +775,7 @@ function DetailedStats({
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   padding: '10px 12px',
-                  background: 'white',
+                  background: "var(--theme-elevated)",
                   border: '1px solid var(--win31-dark-gray)',
                   textDecoration: 'none'
                 }}
@@ -783,14 +784,14 @@ function DetailedStats({
                   fontFamily: 'var(--font-system)',
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: 'var(--win31-navy)'
+                  color: "var(--theme-link)"
                 }}>
                   {skill.id}
                 </span>
                 <span style={{
                   fontFamily: 'var(--font-code)',
                   fontSize: '10px',
-                  color: '#666'
+                  color: "var(--theme-muted)"
                 }}>
                   {formatDate(skill.updatedAt)}
                 </span>
@@ -821,7 +822,7 @@ function AgentsGallery({ agents }: { agents: AgentMeta[] }) {
         <p style={{
           fontFamily: 'var(--font-code)',
           fontSize: '12px',
-          color: '#333',
+          color: "var(--theme-text)",
           marginBottom: '16px'
         }}>
           The Council of Agents is a collaborative system of specialized AI agents, each with unique
@@ -831,17 +832,17 @@ function AgentsGallery({ agents }: { agents: AgentMeta[] }) {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
           gap: '16px'
         }}>
           {agents.map(agent => (
             <div
               key={agent.id}
               style={{
-                background: 'white',
+                background: "var(--theme-elevated)",
                 border: '2px solid var(--win31-dark-gray)',
                 overflow: 'hidden',
-                transition: 'all 0.2s'
+                transition: 'transform 0.2s'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'var(--win31-navy)';
@@ -874,14 +875,14 @@ function AgentsGallery({ agents }: { agents: AgentMeta[] }) {
                       fontFamily: 'var(--font-system)',
                       fontSize: '14px',
                       fontWeight: 600,
-                      color: 'var(--win31-navy)'
+                      color: "var(--theme-link)"
                     }}>
                       {agent.name}
                     </div>
                     <div style={{
                       fontFamily: 'var(--font-code)',
                       fontSize: '10px',
-                      color: '#666'
+                      color: "var(--theme-muted)"
                     }}>
                       {agent.role}
                     </div>
@@ -890,7 +891,7 @@ function AgentsGallery({ agents }: { agents: AgentMeta[] }) {
                 <p style={{
                   fontFamily: 'var(--font-code)',
                   fontSize: '11px',
-                  color: '#333',
+                  color: "var(--theme-text)",
                   margin: 0,
                   lineHeight: 1.5
                 }}>
@@ -909,7 +910,7 @@ function AgentsGallery({ agents }: { agents: AgentMeta[] }) {
               display: 'inline-block',
               padding: '12px 24px',
               background: 'var(--win31-navy)',
-              color: 'white',
+              color: "var(--theme-titlebar-text)",
               fontFamily: 'var(--font-system)',
               fontSize: '14px',
               fontWeight: 600,
@@ -917,10 +918,10 @@ function AgentsGallery({ agents }: { agents: AgentMeta[] }) {
               border: '2px outset var(--win31-white)'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'var(--win31-teal)';
+              e.currentTarget.style.background = 'var(--theme-action-bg)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'var(--win31-navy)';
+              e.currentTarget.style.background = 'var(--theme-action-bg)';
             }}
           >
             Read Council Overview →

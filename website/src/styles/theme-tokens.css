@@ -1,0 +1,110 @@
+/* Source → semantic → component roles. The palette never owns appearance. */
+:root {
+  --palette-desktop: #005757;
+  --palette-surface: #c0c0c0;
+  --palette-titlebar: #000080;
+  --palette-ink: #111111;
+  --palette-muted: #292929;
+  --theme-surface: var(--palette-surface);
+  --theme-elevated: #ffffff;
+  --theme-sunken: #e8e8e8;
+  --theme-text: var(--palette-ink);
+  --theme-muted: var(--palette-muted);
+  --theme-link: #00285c;
+  --theme-link-hover: #00332f;
+  --theme-desktop: var(--palette-desktop);
+  --theme-desktop-text: #ffffff;
+  --theme-border: #111111;
+  --theme-border-light: #ffffff;
+  --theme-border-shadow: #5a5a5a;
+  --theme-focus: #00285c;
+  --theme-overlay: rgb(0 0 0 / .75);
+  --theme-success: #001a04;
+  --theme-success-surface: #e5f4e7;
+  --theme-danger: #330005;
+  --theme-danger-surface: #ffe9e8;
+  --theme-info: #000e27;
+  --theme-info-surface: #e7f1ff;
+  --theme-warning: #201300;
+  --theme-warning-surface: #fff0bf;
+  --theme-titlebar: var(--palette-titlebar);
+  --theme-titlebar-text: #ffffff;
+  --theme-action-bg: var(--theme-titlebar);
+  --theme-action-text: var(--theme-titlebar-text);
+  --theme-field-bg: var(--theme-elevated);
+  --theme-field-text: var(--theme-text);
+  --theme-code-bg: #11131e;
+  --theme-code-text: #f4f0e9;
+  --theme-code-muted: #c2c9d8;
+  --theme-code-green: #caf0a5;
+  --theme-code-blue: #acdfff;
+  --theme-code-amber: #ffdfa6;
+  --theme-code-pink: #eccaff;
+  --theme-inline-code-bg: var(--theme-sunken);
+  --theme-inline-code-text: var(--theme-text);
+}
+:root[data-win31-palette='Hot Dog Stand'] {
+  --palette-desktop: #801010;
+  --palette-surface: #ffff00;
+  --palette-titlebar: #800000;
+}
+:root[data-win31-palette='Fluorescent'] {
+  --palette-desktop: #600060;
+  --palette-surface: #00ffff;
+  --palette-titlebar: #600060;
+}
+:root[data-win31-palette='Ocean'] {
+  --palette-desktop: #000040;
+  --palette-titlebar: #000040;
+}
+:root[data-win31-palette='Plasma Power Saver'] {
+  --palette-desktop: #000000;
+  --palette-surface: #e6d9ec;
+  --palette-titlebar: #600060;
+}
+:root[data-win31-palette='Pumpkin (Large)'] {
+  --palette-desktop: #603000;
+  --palette-surface: #ff8000;
+  --palette-titlebar: #603000;
+}
+:root[data-win31-palette='Rugby'] {
+  --palette-desktop: #004000;
+  --palette-titlebar: #004000;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --theme-surface: #242a37;
+  --theme-elevated: #181e29;
+  --theme-sunken: #303849;
+  --theme-text: #f4f0e9;
+  --theme-muted: #e1e3ec;
+  --theme-link: #b8e1ff;
+  --theme-link-hover: #d8eeff;
+  --theme-desktop: #0c1822;
+  --theme-border: #b7c7dd;
+  --theme-border-light: #71809a;
+  --theme-border-shadow: #0c1018;
+  --theme-focus: #d1eaff;
+  --theme-success: #daf3bd;
+  --theme-success-surface: #233022;
+  --theme-danger: #ffcdc5;
+  --theme-danger-surface: #362226;
+  --theme-info: #c7e6ff;
+  --theme-info-surface: #1c2a3b;
+  --theme-warning: #ffe2b2;
+  --theme-warning-surface: #322919;
+}
+:root[data-theme='light'] { color-scheme: light; }
+:root[data-win31-palette='Pumpkin (Large)'][data-theme='light'] {
+  --palette-muted: #111111;
+  --theme-link: #000e27;
+  --theme-link-hover: #001b17;
+}
+:root {
+  --theme-accent-ink: #111111;
+  --theme-sticker-red: #76121a;
+  --theme-sticker-orange: #663000;
+  --theme-sticker-cyan: #004250;
+  --theme-sticker-yellow: #ffe657;
+  --theme-sticker-green: #9ef187;
+}

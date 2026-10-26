@@ -46,13 +46,13 @@ const TYPE_LABELS: Record<string, string> = {
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
-  skills: '#00ff00',
-  ui: '#00ffff',
-  features: '#ffff00',
-  fixes: '#ff00ff',
-  performance: '#00cc00',
-  infra: '#888888',
-  other: '#aaaaaa',
+  skills: 'var(--theme-success-surface)',
+  ui: 'var(--theme-info-surface)',
+  features: 'var(--theme-warning-surface)',
+  fixes: 'var(--theme-danger-surface)',
+  performance: 'var(--theme-success-surface)',
+  infra: 'var(--theme-sunken)',
+  other: 'var(--theme-sunken)',
 };
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -134,7 +134,7 @@ export default function Changelog(): JSX.Element {
             </div>
             <div style={{ padding: '24px' }}>
               <h1 style={{ margin: 0, fontSize: '28px', marginBottom: '8px' }}>Changelog</h1>
-              <p style={{ margin: 0, color: '#666', fontSize: '14px' }}>
+              <p style={{ margin: 0, color: "var(--theme-muted)", fontSize: '14px' }}>
                 {changelog.totalEntries} updates since November 2025 •
                 Last generated: {new Date(changelog.generated).toLocaleDateString()}
               </p>
@@ -159,8 +159,8 @@ export default function Changelog(): JSX.Element {
                   onClick={() => setFilter(cat)}
                   className="win31-btn-3d"
                   style={{
-                    background: filter === cat ? (cat === 'all' ? '#333' : CATEGORY_COLORS[cat]) : 'var(--win31-gray)',
-                    color: filter === cat ? (cat === 'all' || ['ui', 'features'].includes(cat) ? '#000' : '#fff') : '#333',
+                    background: filter === cat ? 'var(--theme-action-bg)' : 'var(--theme-surface)',
+                    color: filter === cat ? 'var(--theme-action-text)' : 'var(--theme-text)',
                     fontWeight: filter === cat ? 'bold' : 'normal',
                     fontSize: '11px',
                     padding: '6px 12px',
@@ -197,7 +197,7 @@ export default function Changelog(): JSX.Element {
               <div style={{ padding: '16px' }}>
                 <div style={{
                   fontSize: '12px',
-                  color: '#666',
+                  color: "var(--theme-muted)",
                   marginBottom: '12px',
                   fontFamily: 'var(--font-code)',
                 }}>
@@ -228,7 +228,7 @@ export default function Changelog(): JSX.Element {
                         }}>
                           <span style={{
                             background: CATEGORY_COLORS[item.category],
-                            color: ['skills', 'performance', 'infra', 'other'].includes(item.category) ? '#000' : '#000',
+                            color: 'var(--theme-text)',
                             padding: '2px 8px',
                             fontSize: '10px',
                             fontWeight: 'bold',
@@ -237,12 +237,12 @@ export default function Changelog(): JSX.Element {
                             {CATEGORY_LABELS[item.category] || item.category}
                           </span>
                           <span style={{
-                            background: '#f0f0f0',
-                            border: '1px solid #ccc',
+                            background: "var(--theme-elevated)",
+                            border: "1px solid var(--theme-border)",
                             padding: '2px 6px',
                             fontSize: '10px',
                             fontFamily: 'var(--font-code)',
-                            color: '#666',
+                            color: "var(--theme-muted)",
                           }}>
                             {TYPE_LABELS[item.type] || item.type}
                           </span>
@@ -250,19 +250,19 @@ export default function Changelog(): JSX.Element {
                             <span style={{
                               fontSize: '11px',
                               fontFamily: 'var(--font-code)',
-                              color: '#888',
+                              color: "var(--theme-muted)",
                             }}>
                               [{item.scope}]
                             </span>
                           )}
                         </div>
-                        <div style={{ fontSize: '14px', color: '#333', lineHeight: 1.4 }}>
+                        <div style={{ fontSize: '14px', color: "var(--theme-text)", lineHeight: 1.4 }}>
                           {item.description}
                           {item.skillCount && (
                             <span style={{
                               display: 'inline-block',
-                              background: 'var(--win31-lime)',
-                              color: '#000',
+                              background: 'var(--theme-code-green)',
+                              color: "var(--theme-accent-ink)",
                               padding: '2px 8px',
                               marginLeft: '8px',
                               fontSize: '11px',
@@ -281,7 +281,7 @@ export default function Changelog(): JSX.Element {
                         style={{
                           fontSize: '10px',
                           fontFamily: 'var(--font-code)',
-                          color: '#888',
+                          color: "var(--theme-muted)",
                           textDecoration: 'none',
                           flexShrink: 0,
                         }}

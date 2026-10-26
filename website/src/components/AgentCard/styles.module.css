@@ -1,5 +1,5 @@
 .agentCard {
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   border: 2px solid var(--win31-navy);
   box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.4);
   cursor: pointer;
@@ -42,7 +42,7 @@
   align-items: center;
   padding: 12px 16px;
   background: linear-gradient(180deg, var(--win31-navy) 0%, #000066 100%);
-  color: white;
+  color: var(--theme-titlebar-text);
 }
 
 .emoji {
@@ -83,13 +83,13 @@
 .title {
   font-size: 18px;
   font-weight: bold;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   margin: 0 0 4px 0;
 }
 
 .role {
   font-size: 11px;
-  color: #666;
+  color: var(--theme-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 8px;
@@ -97,7 +97,7 @@
 
 .description {
   font-size: 13px;
-  color: #333;
+  color: var(--theme-text);
   margin: 0 0 12px 0;
   line-height: 1.4;
 }
@@ -109,7 +109,7 @@
 
 .triggersLabel {
   font-size: 11px;
-  color: #666;
+  color: var(--theme-muted);
   display: block;
   margin-bottom: 6px;
 }
@@ -121,8 +121,8 @@
 }
 
 .triggerBadge {
-  background: var(--win31-cyan);
-  color: var(--win31-navy);
+  background: var(--theme-info-surface);
+  color: var(--theme-info);
   font-size: 10px;
   font-family: monospace;
   padding: 2px 6px;
@@ -133,13 +133,13 @@
 .coordinationPreview {
   margin-bottom: 12px;
   padding: 8px;
-  background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
-  border: 1px solid #ccc;
+  background: var(--theme-sunken);
+  border: 1px solid var(--theme-border);
 }
 
 .coordLabel {
   font-size: 11px;
-  color: #666;
+  color: var(--theme-muted);
   display: block;
   margin-bottom: 6px;
 }
@@ -171,7 +171,7 @@
 
 .longDescription {
   font-size: 12px;
-  color: #444;
+  color: var(--theme-muted);
   line-height: 1.5;
   white-space: pre-line;
   margin-bottom: 16px;
@@ -183,7 +183,7 @@
 
 .section h4 {
   font-size: 12px;
-  color: var(--win31-navy);
+  color: var(--theme-link);
   margin: 0 0 8px 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -193,7 +193,7 @@
   margin: 0;
   padding-left: 20px;
   font-size: 11px;
-  color: #555;
+  color: var(--theme-muted);
   list-style-type: '> ';
 }
 
@@ -209,8 +209,8 @@
 }
 
 .outputBadge {
-  background: #fef3c7;
-  color: #92400e;
+  background: var(--theme-warning-surface);
+  color: var(--theme-warning);
   font-size: 10px;
   padding: 2px 8px;
   border: 1px solid #f59e0b;
@@ -224,8 +224,8 @@
 }
 
 .toolBadge {
-  background: var(--win31-cyan);
-  color: var(--win31-navy);
+  background: var(--theme-info-surface);
+  color: var(--theme-info);
   font-size: 10px;
   font-family: monospace;
   padding: 2px 8px;
@@ -235,10 +235,10 @@
 .pledge {
   margin-top: 16px;
   padding: 12px;
-  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+  background: var(--theme-info-surface);
   border-left: 3px solid #7c3aed;
   font-size: 12px;
-  color: #5b21b6;
+  color: var(--theme-info);
   line-height: 1.5;
 }
 
@@ -249,7 +249,7 @@
   align-items: center;
   margin-top: auto;
   padding-top: 12px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--theme-border);
 }
 
 .stats {
@@ -262,7 +262,7 @@
   align-items: center;
   gap: 4px;
   font-size: 11px;
-  color: #666;
+  color: var(--theme-muted);
 }
 
 .statIcon {
@@ -271,7 +271,7 @@
 
 .created {
   font-size: 10px;
-  color: #999;
+  color: var(--theme-muted);
   font-style: italic;
 }
 
@@ -279,7 +279,7 @@
 .expandHint {
   text-align: center;
   font-size: 10px;
-  color: #999;
+  color: var(--theme-muted);
   margin-top: 8px;
   font-style: italic;
 }
@@ -290,7 +290,7 @@
   align-items: center;
   gap: 8px;
   padding: 6px 10px;
-  background: var(--win31-white);
+  background: var(--theme-elevated);
   border: 1px solid var(--win31-navy);
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
   position: relative;
@@ -313,7 +313,7 @@
 .miniName {
   font-size: 12px;
   font-weight: bold;
-  color: var(--win31-navy);
+  color: var(--theme-link);
 }
 
 .miniStatus {

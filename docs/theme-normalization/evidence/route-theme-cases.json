@@ -1,0 +1,882 @@
+[
+  {
+    "scheme": "light",
+    "route": "/",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 130
+      },
+      {
+        "id": "color-contrast",
+        "count": 134
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/skills",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "Skills Gallery | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 882
+      },
+      {
+        "id": "color-contrast",
+        "count": 886
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/docs/intro",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "What Are Claude Skills? | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 4
+      },
+      {
+        "id": "color-contrast",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/docs/skills/design_critic/",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "🎨 Design Critic | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 4
+      },
+      {
+        "id": "color-contrast",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/submit-skill",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "Submit a Skill | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 58
+      },
+      {
+        "id": "color-contrast",
+        "count": 62
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/contact",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "How to Hire Author | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 301
+      },
+      {
+        "id": "color-contrast",
+        "count": 305
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/bundles",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "Skill Bundles | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 80
+      },
+      {
+        "id": "color-contrast",
+        "count": 84
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/favorites",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "Favorites | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 13
+      },
+      {
+        "id": "color-contrast",
+        "count": 17
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/agents",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "Agents++ | The Founding Council | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 179
+      },
+      {
+        "id": "color-contrast",
+        "count": 183
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/artifacts",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "Examples | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 229
+      },
+      {
+        "id": "color-contrast",
+        "count": 233
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/mcps",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "MCP Gallery | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 48
+      },
+      {
+        "id": "color-contrast",
+        "count": 52
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/ecosystem",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "Ecosystem Dashboard | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 811
+      },
+      {
+        "id": "color-contrast",
+        "count": 815
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/metrics",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "Ecosystem Metrics | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 109
+      },
+      {
+        "id": "color-contrast",
+        "count": 113
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/changelog",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "Changelog | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 614
+      },
+      {
+        "id": "color-contrast",
+        "count": 618
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/dag",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "DAG Execution Framework | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 5
+      },
+      {
+        "id": "color-contrast",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/dag/builder",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "DAG Builder | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 4
+      },
+      {
+        "id": "color-contrast",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/dag/monitor",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "DAG Monitor | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 5
+      },
+      {
+        "id": "color-contrast",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/dag/demo",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "DAG Visualization Demo | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 6
+      },
+      {
+        "id": "color-contrast",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/dag/lifecycle",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "winDAGs Lifecycle Tour | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 9
+      },
+      {
+        "id": "color-contrast",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/docs/guides/claude-skills-guide",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "Claude Skills Guide | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 7
+      },
+      {
+        "id": "color-contrast",
+        "count": 11
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/docs/skills/design_critic/references/assessment-rubric",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "Assessment Rubric | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 4
+      },
+      {
+        "id": "color-contrast",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "scheme": "light",
+    "route": "/artifacts/site-reliability-engineer-integration",
+    "status": 200,
+    "theme": "light",
+    "choice": "system",
+    "overflow": false,
+    "title": "Building Reliable Deployments: A Multi-Skill Validation System | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 33
+      },
+      {
+        "id": "color-contrast",
+        "count": 41
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 130
+      },
+      {
+        "id": "color-contrast",
+        "count": 134
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/skills",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "Skills Gallery | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 882
+      },
+      {
+        "id": "color-contrast",
+        "count": 886
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/docs/intro",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "What Are Claude Skills? | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 4
+      },
+      {
+        "id": "color-contrast",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/docs/skills/design_critic/",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "🎨 Design Critic | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 4
+      },
+      {
+        "id": "color-contrast",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/submit-skill",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "Submit a Skill | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 58
+      },
+      {
+        "id": "color-contrast",
+        "count": 62
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/contact",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "How to Hire Author | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 301
+      },
+      {
+        "id": "color-contrast",
+        "count": 305
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/bundles",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "Skill Bundles | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 80
+      },
+      {
+        "id": "color-contrast",
+        "count": 84
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/favorites",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "Favorites | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 13
+      },
+      {
+        "id": "color-contrast",
+        "count": 17
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/agents",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "Agents++ | The Founding Council | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 179
+      },
+      {
+        "id": "color-contrast",
+        "count": 183
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/artifacts",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "Examples | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 229
+      },
+      {
+        "id": "color-contrast",
+        "count": 233
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/mcps",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "MCP Gallery | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 48
+      },
+      {
+        "id": "color-contrast",
+        "count": 52
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/ecosystem",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "Ecosystem Dashboard | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 811
+      },
+      {
+        "id": "color-contrast",
+        "count": 815
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/metrics",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "Ecosystem Metrics | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 109
+      },
+      {
+        "id": "color-contrast",
+        "count": 113
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/changelog",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "Changelog | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 614
+      },
+      {
+        "id": "color-contrast",
+        "count": 618
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/dag",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "DAG Execution Framework | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 5
+      },
+      {
+        "id": "color-contrast",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/dag/builder",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "DAG Builder | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 4
+      },
+      {
+        "id": "color-contrast",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/dag/monitor",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "DAG Monitor | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 5
+      },
+      {
+        "id": "color-contrast",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/dag/demo",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "DAG Visualization Demo | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 6
+      },
+      {
+        "id": "color-contrast",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/dag/lifecycle",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "winDAGs Lifecycle Tour | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 9
+      },
+      {
+        "id": "color-contrast",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/docs/guides/claude-skills-guide",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "Claude Skills Guide | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 7
+      },
+      {
+        "id": "color-contrast",
+        "count": 11
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/docs/skills/design_critic/references/assessment-rubric",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "Assessment Rubric | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 4
+      },
+      {
+        "id": "color-contrast",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "scheme": "dark",
+    "route": "/artifacts/site-reliability-engineer-integration",
+    "status": 200,
+    "theme": "dark",
+    "choice": "system",
+    "overflow": false,
+    "title": "Building Reliable Deployments: A Multi-Skill Validation System | Some Claude Skills | AI Know-How Used at Curiositech",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast-enhanced",
+        "count": 33
+      },
+      {
+        "id": "color-contrast",
+        "count": 41
+      }
+    ]
+  }
+]

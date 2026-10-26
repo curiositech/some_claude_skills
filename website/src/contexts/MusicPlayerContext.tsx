@@ -1,3 +1,4 @@
+import { getLocalPreference, setLocalPreference } from '../utils/browserPreferences';
 import React, { createContext, useContext, useEffect, useRef, useState, ReactNode } from 'react';
 import MidiPlayer from 'midi-player-js';
 import Soundfont from 'soundfont-player';
@@ -639,7 +640,7 @@ export function MusicPlayerProvider({ children }: MusicPlayerProviderProps) {
 
     // Persist to localStorage
     if (typeof window !== 'undefined') {
-      localStorage.setItem('music-player-volume', clamped.toString());
+      setLocalPreference('music-player-volume', clamped.toString());
     }
   };
 
@@ -662,9 +663,9 @@ export function MusicPlayerProvider({ children }: MusicPlayerProviderProps) {
 
       // Persist to localStorage
       if (typeof window !== 'undefined') {
-        const currentEQ = JSON.parse(localStorage.getItem('music-player-eq') || '{}');
+        const currentEQ = JSON.parse(getLocalPreference('music-player-eq') || '{}');
         currentEQ[band] = clamped;
-        localStorage.setItem('music-player-eq', JSON.stringify(currentEQ));
+        setLocalPreference('music-player-eq', JSON.stringify(currentEQ));
       }
     }
   };

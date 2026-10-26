@@ -1,0 +1,33 @@
+[
+  {
+    "test": "native prepaint with React bundles blocked",
+    "pass": true
+  },
+  {
+    "test": "cycle, saved reload, explicit preference, live OS, cross-tab",
+    "pass": true
+  },
+  {
+    "test": "palette persistence independent of appearance",
+    "pass": true
+  },
+  {
+    "test": "mobile appearance control and reflow",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "test": "mobile appearance control and reflow",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "test": "mobile appearance control and reflow",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "test": "blocked browser storage",
+    "pass": true
+  }
+]

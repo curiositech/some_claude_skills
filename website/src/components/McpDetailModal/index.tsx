@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from '@docusaurus/Link';
+import { createPortal } from 'react-dom';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 import type { McpServer } from '../../types/mcp';
 import { MCP_STATUS_CONFIG } from '../../types/mcp';
 import styles from './styles.module.css';
@@ -13,6 +15,8 @@ export default function McpDetailModal({
   mcp,
   onClose,
 }: McpDetailModalProps): JSX.Element {
+  const isBrowser = useIsBrowser();
+  const dialogRef = useRef<HTMLDivElement>(null);
   const [copied, setCopied] = useState(false);
   const [activeTab, setActiveTab] = useState<'overview' | 'tools' | 'examples'>('overview');
   const statusConfig = MCP_STATUS_CONFIG[mcp.status];
@@ -28,11 +32,27 @@ export default function McpDetailModal({
 
   // Prevent body scroll when modal is open
   useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const dialog = dialogRef.current;
+    dialog?.querySelector<HTMLButtonElement>('[title="Close"]')?.focus();
+    const trapFocus = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab' || !dialog) return;
+      const controls = Array.from(dialog.querySelectorAll<HTMLElement>('button:not(:disabled), a[href], [tabindex="0"]'))
+        .filter(control => control.getClientRects().length > 0);
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    document.addEventListener('keydown', trapFocus);
     document.body.style.overflow = 'hidden';
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', trapFocus);
+      previousFocus?.focus();
     };
-  }, []);
+  }, [isBrowser]);
 
   // Generate the JSON config for settings.json
   const generateSettingsJson = () => {
@@ -54,9 +74,12 @@ export default function McpDetailModal({
     setTimeout(() => setCopied(false), 2000);
   };
 
-  return (
+  if (!isBrowser) return null;
+
+  // Escape the catalogue stacking context so the fixed header cannot cover Close.
+  return createPortal(
     <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+      <div ref={dialogRef} className={styles.modal} role="dialog" aria-modal="true" aria-label={`${mcp.name} details`} onClick={(e) => e.stopPropagation()}>
         {/* Title Bar - Windows 3.1 Style */}
         <div className={styles.titleBar}>
           <div className={styles.titleLeft}>
@@ -66,7 +89,7 @@ export default function McpDetailModal({
           <div className={styles.titleButtons}>
             <button className={styles.titleBtn} title="Minimize">_</button>
             <button className={styles.titleBtn} title="Maximize">□</button>
-            <button className={styles.titleBtnClose} onClick={onClose} title="Close">✕</button>
+            <button className={styles.titleBtnClose} onClick={onClose} title="Close" aria-label="Close MCP details">✕</button>
           </div>
         </div>
 
@@ -270,6 +293,7 @@ export default function McpDetailModal({
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
