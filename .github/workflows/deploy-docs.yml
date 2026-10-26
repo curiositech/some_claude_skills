@@ -1,6 +1,10 @@
 name: Deploy Documentation to GitHub Pages
 
 on:
+  pull_request:
+    paths:
+      - 'website/**'
+      - '.github/workflows/deploy-docs.yml'
   push:
     branches:
       - main
@@ -28,7 +32,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
           cache-dependency-path: 'website/package-lock.json'
 
@@ -37,10 +41,14 @@ jobs:
           cd website
           npm ci
 
-      - name: Build website
+      - name: Validate and build published website
         run: |
           cd website
-          npm run build
+          npx tsx scripts/validate-published-assets.test.ts
+          npx tsx scripts/validate-published-assets.ts
+          # Regeneration is an authoring operation; publish the reviewed website
+          # sources and assets without importing unfinished skill additions.
+          npx docusaurus build
         env:
           PLAUSIBLE_API_KEY: ${{ secrets.PLAUSIBLE_API_KEY }}
           PLAUSIBLE_SITE_ID: someclaudeskills.com
@@ -51,6 +59,7 @@ jobs:
           path: website/build
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
