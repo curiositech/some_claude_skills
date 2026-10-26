@@ -1,8 +1,9 @@
 {
   "baseline": 278,
-  "current": 267,
+  "current": 266,
   "added": [],
   "removed": [
+    "src/components/DAG/DAGNode.tsx: error TS2741: Property 'cancelled' is missing in type '{ pending: string; ready: string; running: string; completed: string; failed: string; skipped: string; }' but required in type 'Record<\"pending\" | \"completed\" | \"running\" | \"ready\" | \"failed\" | \"skipped\" | \"cancelled\", string>'.",
     "src/components/ThemePicker/index.tsx: error TS2503: Cannot find namespace 'JSX'.",
     "src/components/win31/Win31Button.test.tsx: error TS2339: Property 'toBeDisabled' does not exist on type 'Assertion<HTMLElement>'.",
     "src/components/win31/Win31Button.test.tsx: error TS2339: Property 'toBeInTheDocument' does not exist on type 'Assertion<HTMLElement>'.",

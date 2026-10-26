@@ -423,14 +423,14 @@ function SkillsTimeline({
                       background: "var(--theme-sunken)",
                       border: '1px solid var(--win31-dark-gray)',
                       textDecoration: 'none',
-                      transition: 'all 0.2s'
+                      transition: 'transform 0.2s'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'var(--win31-navy)';
-                      e.currentTarget.style.color = 'white';
+                      e.currentTarget.style.background = 'var(--theme-action-bg)';
+                      e.currentTarget.style.color = 'var(--theme-action-text)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'var(--win31-light-gray)';
+                      e.currentTarget.style.background = 'var(--theme-sunken)';
                       e.currentTarget.style.color = 'inherit';
                     }}
                   >
@@ -517,7 +517,7 @@ function DocumentBrowser({ docs }: { docs: typeof councilDocs }) {
                 border: '2px solid var(--win31-dark-gray)',
                 padding: '16px',
                 textDecoration: 'none',
-                transition: 'all 0.2s'
+                transition: 'transform 0.2s'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'var(--win31-navy)';
@@ -602,12 +602,12 @@ function ResourceLink({ href, label }: { href: string; label: string }) {
         textDecoration: 'none'
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.background = 'var(--win31-navy)';
-        e.currentTarget.style.color = 'white';
+        e.currentTarget.style.background = 'var(--theme-action-bg)';
+        e.currentTarget.style.color = 'var(--theme-action-text)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.background = 'var(--win31-light-gray)';
-        e.currentTarget.style.color = 'var(--win31-black)';
+        e.currentTarget.style.background = 'var(--theme-sunken)';
+        e.currentTarget.style.color = 'var(--theme-text)';
       }}
     >
       {label}
@@ -842,7 +842,7 @@ function AgentsGallery({ agents }: { agents: AgentMeta[] }) {
                 background: "var(--theme-elevated)",
                 border: '2px solid var(--win31-dark-gray)',
                 overflow: 'hidden',
-                transition: 'all 0.2s'
+                transition: 'transform 0.2s'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'var(--win31-navy)';
@@ -918,10 +918,10 @@ function AgentsGallery({ agents }: { agents: AgentMeta[] }) {
               border: '2px outset var(--win31-white)'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'var(--win31-teal)';
+              e.currentTarget.style.background = 'var(--theme-action-bg)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'var(--win31-navy)';
+              e.currentTarget.style.background = 'var(--theme-action-bg)';
             }}
           >
             Read Council Overview →

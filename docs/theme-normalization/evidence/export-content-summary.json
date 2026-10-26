@@ -679,6 +679,8 @@
   "specs": [
     {
       "spec": "dark/390/844",
+      "isMobile": true,
+      "hasTouch": true,
       "cases": 673,
       "uniqueRoutes": 673,
       "textNodes": 454976,
@@ -693,28 +695,46 @@
         "canvas": 2,
         "svg": 22918,
         "iframes": 0
-      }
+      },
+      "viewportWidths": [
+        [
+          390,
+          390,
+          390
+        ]
+      ]
     },
     {
       "spec": "dark/1440/1000",
+      "isMobile": false,
+      "hasTouch": false,
       "cases": 673,
       "uniqueRoutes": 673,
-      "textNodes": 503746,
+      "textNodes": 503708,
       "disabled": 5,
-      "emoji": 5462,
+      "emoji": 5459,
       "manualBackground": 26,
-      "manualOpacity": 719,
+      "manualOpacity": 47,
       "manualSvg": 15,
-      "solidPassed": 497519,
+      "solidPassed": 498156,
       "media": {
         "images": 2059,
         "canvas": 2,
         "svg": 19324,
         "iframes": 0
-      }
+      },
+      "viewportWidths": [
+        [
+          1440,
+          1440,
+          1440
+        ]
+      ]
     },
     {
       "spec": "light/390/844",
+      "isMobile": true,
+      "hasTouch": true,
       "cases": 673,
       "uniqueRoutes": 673,
       "textNodes": 454976,
@@ -729,25 +749,41 @@
         "canvas": 2,
         "svg": 22918,
         "iframes": 0
-      }
+      },
+      "viewportWidths": [
+        [
+          390,
+          390,
+          390
+        ]
+      ]
     },
     {
       "spec": "light/1440/1000",
+      "isMobile": false,
+      "hasTouch": false,
       "cases": 673,
       "uniqueRoutes": 673,
-      "textNodes": 503760,
+      "textNodes": 503788,
       "disabled": 5,
-      "emoji": 5462,
+      "emoji": 5464,
       "manualBackground": 26,
-      "manualOpacity": 719,
+      "manualOpacity": 47,
       "manualSvg": 15,
-      "solidPassed": 497533,
+      "solidPassed": 498231,
       "media": {
-        "images": 2049,
+        "images": 2059,
         "canvas": 2,
         "svg": 19324,
         "iframes": 0
-      }
+      },
+      "viewportWidths": [
+        [
+          1440,
+          1440,
+          1440
+        ]
+      ]
     }
   ],
   "errors": [],
@@ -756,6 +792,7 @@
   "solidFailures": [],
   "manualCandidates": [],
   "retries": [],
-  "elapsedMs": 85074,
-  "rawSha256": "d16d1f2b828493e2cf67e1d0460014ae5e3338dddb47b0d04742e71c16a15c33"
+  "elapsedMs": 83761,
+  "rawSha256": "657cdf523ac09559c07b8b293cafe7d5ae882b203a283eefc7c42b4b045c2317",
+  "overflowMeasurement": "documentElement.scrollWidth > documentElement.clientWidth; phone contexts use isMobile and hasTouch"
 }

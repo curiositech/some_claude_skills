@@ -23,6 +23,8 @@
 
 /* Main Windowshade Container - Classic Winamp compact mode */
 .winampShade {
+  --player-control-ink: var(--theme-text);
+  --player-control-hover: var(--theme-sunken);
   position: relative;
   display: flex;
   align-items: center;
@@ -92,7 +94,7 @@
 }
 
 .nullsoftSubtext {
-  color: var(--theme-text);
+  color: var(--theme-action-text);
   font-family: 'VT323', monospace;
   font-size: 8px;
   letter-spacing: 1px;
@@ -279,7 +281,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.6;
+  opacity: 1;
 
   /* Classic 3D button bevel */
   box-shadow:
@@ -290,12 +292,12 @@
 }
 
 .modeBtn:hover {
-  background: var(--theme-sunken);
+  background: var(--player-control-hover);
 }
 
 .modeBtn.active {
   opacity: 1;
-  background: var(--theme-sunken);
+  background: var(--player-control-hover);
   /* Pressed/active state - inverted bevel */
   box-shadow:
     inset 1px 1px 0 var(--win31-dark-gray),
@@ -335,7 +337,7 @@
 }
 
 .transportBtn:hover {
-  background: var(--theme-sunken);
+  background: var(--player-control-hover);
 }
 
 .transportBtn:active {
@@ -349,7 +351,7 @@
 
 .btnIcon {
   font-size: 8px;
-  color: var(--theme-text);
+  color: var(--player-control-ink);
   line-height: 1;
 }
 
@@ -437,7 +439,7 @@
   align-items: center;
   justify-content: center;
   font-size: 8px;
-  color: var(--theme-text);
+  color: var(--player-control-ink);
 
   /* Classic 3D button bevel */
   box-shadow:
@@ -448,7 +450,7 @@
 }
 
 .expandBtn:hover {
-  background: var(--theme-sunken);
+  background: var(--player-control-hover);
 }
 
 .expandBtn:active {
@@ -487,15 +489,15 @@
 }
 
 .skinBtn:hover {
-  background: var(--theme-sunken);
+  background: var(--player-control-hover);
 }
 
 .skinMenu {
   position: absolute;
-  bottom: 100%;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: 4px;
+  margin-top: 4px;
   background: var(--win31-gray);
   border: 2px solid;
   border-color: var(--win31-white) var(--win31-black) var(--win31-black) var(--win31-white);
@@ -515,18 +517,18 @@
   cursor: pointer;
   font-family: 'VT323', monospace;
   font-size: 11px;
-  color: var(--theme-text);
+  color: var(--player-control-ink);
   text-align: left;
 }
 
 .skinOption:hover {
-  background: var(--win31-navy);
-  color: var(--win31-white);
+  background: var(--theme-action-bg);
+  color: var(--theme-action-text);
 }
 
 .skinOption.activeSkin {
-  background: var(--win31-navy);
-  color: var(--win31-white);
+  background: var(--theme-action-bg);
+  color: var(--theme-action-text);
 }
 
 .skinSwatch {
@@ -546,6 +548,8 @@
 
 /* Matrix Skin - Dark with green accent */
 .skin_matrix {
+  --player-control-ink: #d6f5d6;
+  --player-control-hover: #212a34;
   --win31-gray: #0d1117;
   --win31-dark-gray: #161b22;
   --win31-light-gray: #21262d;
@@ -565,13 +569,15 @@
 
 /* Synthwave Skin - Purple/Pink neon */
 .skin_synthwave {
+  --player-control-ink: #ffe9ff;
+  --player-control-hover: #33243f;
   --win31-gray: #1a1a2e;
   --win31-dark-gray: #16213e;
   --win31-light-gray: #0f3460;
   --win31-white: #e94560;
   --win31-black: #0a0a15;
   --winamp-display-bg: #0a0a15;
-  --winamp-display-text: #ff00ff;
+  --winamp-display-text: #ff94ff;
   --winamp-vis-green: #00ffff;
   --winamp-vis-yellow: #ff00ff;
   --winamp-vis-red: #ff0080;
@@ -584,13 +590,15 @@
 
 /* Ice Skin - Light blue/cyan */
 .skin_ice {
+  --player-control-ink: #10232b;
+  --player-control-hover: #c4e8ed;
   --win31-gray: #e0f7fa;
   --win31-dark-gray: #b2ebf2;
   --win31-light-gray: #e0f7fa;
   --win31-white: #ffffff;
   --win31-black: #00838f;
   --winamp-display-bg: #004d40;
-  --winamp-display-text: #00bcd4;
+  --winamp-display-text: #c4ffff;
   --winamp-vis-green: #00bcd4;
   --winamp-vis-yellow: #26c6da;
   --winamp-vis-red: #00acc1;
@@ -603,6 +611,8 @@
 
 /* Amber Skin - Dark with orange/amber accent */
 .skin_amber {
+  --player-control-ink: #fff3e6;
+  --player-control-hover: #423731;
   --win31-gray: #2d2d2d;
   --win31-dark-gray: #1a1a1a;
   --win31-light-gray: #3d3d3d;
@@ -651,18 +661,18 @@
 /* CTA hint tooltip */
 .ctaHint {
   position: absolute;
-  bottom: 100%;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   padding: 3px 8px;
-  background: var(--win31-navy);
+  background: var(--winamp-display-bg);
   color: var(--winamp-display-text);
   font-family: 'VT323', monospace;
   font-size: 10px;
   white-space: nowrap;
   border: 1px solid;
   border-color: var(--win31-white) var(--win31-black) var(--win31-black) var(--win31-white);
-  margin-bottom: 4px;
+  margin-top: 4px;
   opacity: 0;
   pointer-events: none;
   animation: hintFadeIn 0.5s ease-out 2s forwards;
@@ -672,11 +682,11 @@
 .ctaHint::after {
   content: '';
   position: absolute;
-  top: 100%;
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
   border: 4px solid transparent;
-  border-top-color: var(--win31-navy);
+  border-bottom-color: var(--winamp-display-bg);
 }
 
 @keyframes hintFadeIn {
@@ -713,8 +723,8 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 6px;
-  color: rgba(0, 255, 0, 0.5);
-  animation: clickHintPulse 2s ease-in-out infinite 3s;
+  color: var(--winamp-display-text);
+  animation: none;
   pointer-events: none;
 }
 

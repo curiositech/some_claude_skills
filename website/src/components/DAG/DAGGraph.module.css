@@ -4,6 +4,7 @@
  */
 
 .container {
+  color: var(--theme-text);
   position: relative;
   width: 100%;
   background: var(--theme-elevated);
@@ -60,7 +61,7 @@
 }
 
 .edge {
-  transition: stroke 0.2s ease;
+  /* Keep paired graph colors atomic during appearance changes. */
 }
 
 /* Nodes container */
@@ -148,6 +149,7 @@
 }
 
 .controlButton {
+  color: var(--theme-text);
   width: 28px;
   height: 28px;
   background: var(--theme-surface);

@@ -274,11 +274,11 @@ export function DAGGraph({
 
   // Get edge color based on status
   const getEdgeColor = (fromStatus: string, toStatus: string) => {
-    if (fromStatus === 'completed' && toStatus === 'completed') return '#10b981';
-    if (fromStatus === 'completed' && toStatus === 'running') return '#f59e0b';
-    if (fromStatus === 'failed' || toStatus === 'failed') return '#ef4444';
-    if (fromStatus === 'completed') return '#3b82f6';
-    return '#9ca3af';
+    if (fromStatus === 'completed' && toStatus === 'completed') return 'var(--theme-success)';
+    if (fromStatus === 'completed' && toStatus === 'running') return 'var(--theme-warning)';
+    if (fromStatus === 'failed' || toStatus === 'failed') return 'var(--theme-danger)';
+    if (fromStatus === 'completed') return 'var(--theme-info)';
+    return 'var(--theme-border)';
   };
 
   const selectedNode = selectedNodeId ? dag.nodes.get(selectedNodeId as NodeId) : null;
@@ -322,7 +322,8 @@ export function DAGGraph({
             <path
               d="M 40 0 L 0 0 0 40"
               fill="none"
-              stroke="#e5e7eb"
+              stroke="var(--theme-border)"
+              strokeOpacity={0.15}
               strokeWidth="1"
             />
           </pattern>
@@ -338,7 +339,7 @@ export function DAGGraph({
           >
             <polygon
               points="0 0, 10 3.5, 0 7"
-              fill="#6b7280"
+              fill="var(--theme-border)"
             />
           </marker>
           <marker
@@ -351,7 +352,7 @@ export function DAGGraph({
           >
             <polygon
               points="0 0, 10 3.5, 0 7"
-              fill="#10b981"
+              fill="var(--theme-success)"
             />
           </marker>
         </defs>
@@ -476,23 +477,23 @@ export function DAGGraph({
       {/* Legend */}
       <div className={styles.legend}>
         <div className={styles.legendItem}>
-          <span className={styles.legendDot} style={{ background: '#6b7280' }} />
+          <span className={styles.legendDot} style={{ background: 'var(--theme-muted)' }} />
           <span>Pending</span>
         </div>
         <div className={styles.legendItem}>
-          <span className={styles.legendDot} style={{ background: '#3b82f6' }} />
+          <span className={styles.legendDot} style={{ background: 'var(--theme-info)' }} />
           <span>Ready</span>
         </div>
         <div className={styles.legendItem}>
-          <span className={styles.legendDot} style={{ background: '#f59e0b' }} />
+          <span className={styles.legendDot} style={{ background: 'var(--theme-warning)' }} />
           <span>Running</span>
         </div>
         <div className={styles.legendItem}>
-          <span className={styles.legendDot} style={{ background: '#10b981' }} />
+          <span className={styles.legendDot} style={{ background: 'var(--theme-success)' }} />
           <span>Completed</span>
         </div>
         <div className={styles.legendItem}>
-          <span className={styles.legendDot} style={{ background: '#ef4444' }} />
+          <span className={styles.legendDot} style={{ background: 'var(--theme-danger)' }} />
           <span>Failed</span>
         </div>
       </div>
