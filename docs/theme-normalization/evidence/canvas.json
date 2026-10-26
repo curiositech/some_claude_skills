@@ -1,0 +1,3170 @@
+[
+  {
+    "state": "light phase 1 live redraw",
+    "theme": "light",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Design System",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Completed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Failed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "state": "light phase 2",
+    "theme": "light",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Design System",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Completed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Failed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "state": "light phase 3",
+    "theme": "light",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Design System",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Completed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Failed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "state": "light phase 4",
+    "theme": "light",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Design System",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Completed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Failed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "state": "light phase 5",
+    "theme": "light",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Design System",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Completed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Failed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "state": "light phase 6",
+    "theme": "light",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Design System",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Completed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Failed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "state": "light phase 7",
+    "theme": "light",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Design System",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#000e27",
+        "pixel": [
+          231,
+          241,
+          255,
+          255
+        ],
+        "background": [
+          231,
+          241,
+          255
+        ],
+        "ratio": 16.869978323839266
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Completed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Failed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "state": "light phase 8",
+    "theme": "light",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Design System",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#001a04",
+        "pixel": [
+          229,
+          244,
+          231,
+          255
+        ],
+        "background": [
+          229,
+          244,
+          231
+        ],
+        "ratio": 16.029234270350216
+      },
+      {
+        "text": "Pending",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Ready",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Running",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Completed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Failed",
+        "foreground": "#111111",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "state": "dark phase 1 live redraw",
+    "theme": "dark",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Design System",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Completed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "state": "dark phase 2",
+    "theme": "dark",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Design System",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Completed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "state": "dark phase 3",
+    "theme": "dark",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Design System",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Completed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "state": "dark phase 4",
+    "theme": "dark",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Design System",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Completed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "state": "dark phase 5",
+    "theme": "dark",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Design System",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Completed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "state": "dark phase 6",
+    "theme": "dark",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Design System",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Completed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "state": "dark phase 7",
+    "theme": "dark",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Design System",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#c7e6ff",
+        "pixel": [
+          28,
+          42,
+          59,
+          255
+        ],
+        "background": [
+          28,
+          42,
+          59
+        ],
+        "ratio": 11.214924869848272
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#ffffff",
+        "pixel": [
+          0,
+          0,
+          128,
+          255
+        ],
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Pending",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Completed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "state": "dark phase 8",
+    "theme": "dark",
+    "text": [
+      {
+        "text": "Interview User",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Research In...",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Write Content",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Design System",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Build Site",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Human Review",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Deploy",
+        "foreground": "#daf3bd",
+        "pixel": [
+          35,
+          48,
+          34,
+          255
+        ],
+        "background": [
+          35,
+          48,
+          34
+        ],
+        "ratio": 11.557128854822475
+      },
+      {
+        "text": "Pending",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Ready",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Running",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Completed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Failed",
+        "foreground": "#f4f0e9",
+        "pixel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  }
+]

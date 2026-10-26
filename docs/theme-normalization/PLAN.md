@@ -2,7 +2,7 @@
 
 ## Authorization and preservation
 
-Repair the existing Windows 3.1 public site, as explicitly requested by the operator. Preserve its layout, typography, catalogue/docs content, seven palette choices, beveled controls and media artwork. This is normalization of existing roles, not a new aesthetic direction. Work only in linked worktree /Users/erichowens/coding/tmp/skills-theme-normalization on codex/skills-theme-normalization, baseline6713fc7a. Primary checkout and website-next are out of scope. No Port Daddy runtime, dependency upgrades, content regeneration, merge or deployment.
+Repair the existing Windows 3.1 public site, as explicitly requested by the operator. Preserve its layout, typography, catalogue/docs content, seven palette choices, beveled controls and media artwork. This is normalization of existing roles, not a new aesthetic direction. Work only in linked worktree /Users/erichowens/coding/tmp/skills-theme-normalization on codex/skills-theme-normalization, baseline6713fc7a. Primary checkout and website-next are out of scope. No Port Daddy runtime, dependency upgrades, unrelated content regeneration, native builds or billing changes. The parent explicitly authorized pinned PR merge and GitHub Pages publication after current-head review and validation, followed by public-page proof.
 
 ## Intake
 
@@ -27,11 +27,11 @@ Standards: https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html ; h
 3. Migrate active CSS/module/inline bypasses, preserving layout/media/content.
 4. Run meaningful native/prepaint/persistence/OS/cross-tab/palette/browser regressions and light/dark desktop/mobile route scans. Repair findings; record automated incompletes separately.
 5. Run tests, typecheck and production build. Existing prebuild generators are deliberately excluded from this scoped change; run validation independently and use the Docusaurus build directly to avoid unrequested regenerated catalogue/media.
-6. Commit explicit source/docs only, push, open PR, inspect exact-head reviews/checks/threads to verdict. Parent reviews and owns merge/publication.
+6. Commit explicit source/docs only, push, open PR, inspect exact-head reviews/checks/threads to verdict. After independent current-head review and validation pass, merge pinned to the reviewed head, follow the GitHub Pages workflow, and verify public theme behavior and assets.
 
 ## Risk and release boundaries
 
-Hundreds of generated skill documents and dozens of custom embeds may bypass shared roles. A sample screenshot does not prove every route. Enumerate actual build routes and coverage receipts; distinguish broad shared-role repair from unverified authored examples or visualizer canvases. Browser contrast over gradients/media may need manual review. No new data collection, runtime libraries or server operations. A missing test-only dependency is repaired. Existing dependency/security and unrelated TypeScript/test failures are reported with evidence rather than silently widened into this task. Rollback is the PR revert before parent publication.
+Hundreds of generated skill documents and dozens of custom embeds may bypass shared roles. A sample screenshot does not prove every route. Enumerate actual build routes and coverage receipts; distinguish broad shared-role repair from unverified authored examples or visualizer canvases. Browser contrast over gradients/media may need manual review. No new data collection, runtime libraries or server operations. A missing test-only dependency is repaired. Existing dependency/security and unrelated TypeScript/test failures are reported with evidence rather than silently widened into this task. Rollback is a reviewed PR revert followed by Pages publication.
 
 ## Verification receipts
 

@@ -49,7 +49,7 @@
 
 /* Title Bar */
 .titleBar {
-  background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+  background: var(--theme-titlebar);
   padding: 3px 4px;
   display: flex;
   align-items: center;
@@ -96,7 +96,7 @@
 }
 
 .titleBtn:hover {
-  background: #d4d4d4;
+  background: var(--theme-sunken);
 }
 
 .titleBtnClose {
@@ -104,8 +104,8 @@
 }
 
 .titleBtnClose:hover {
-  background: #ff6b6b;
-  color: var(--theme-titlebar-text);
+  background: var(--theme-danger-surface);
+  color: var(--theme-danger);
 }
 
 .titleBtn:active,
@@ -115,7 +115,7 @@
 
 /* Install Banner - Big CTA */
 .installBanner {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--theme-titlebar);
   padding: 16px 20px;
   display: flex;
   align-items: center;
@@ -137,24 +137,25 @@
 }
 
 .installSubtitle {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--theme-titlebar-text);
   font-size: 13px;
   margin: 0;
 }
 
 .installSubtitle code {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--theme-code-bg);
   padding: 2px 6px;
   border-radius: 3px;
   font-family: 'Monaco', 'Consolas', monospace;
   font-size: 12px;
+  color: var(--theme-code-text);
 }
 
 .installNote {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--theme-warning);
   font-size: 11px;
   margin: 8px 0 0 0;
-  background: rgba(255, 193, 7, 0.2);
+  background: var(--theme-warning-surface);
   padding: 6px 10px;
   border-radius: 4px;
   border-left: 3px solid #ffc107;
@@ -168,7 +169,7 @@
 }
 
 .installCommand {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--theme-code-bg);
   border-radius: 6px;
   padding: 8px 12px;
   display: flex;
@@ -177,14 +178,14 @@
 }
 
 .installCommand code {
-  color: #00ff88;
+  color: var(--theme-code-green);
   font-family: 'Monaco', 'Consolas', monospace;
   font-size: 13px;
   white-space: nowrap;
 }
 
 .installConfig {
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--theme-code-bg);
   border-radius: 6px;
   padding: 10px 14px;
   display: flex;
@@ -194,7 +195,7 @@
 }
 
 .configCode {
-  color: #00ff88;
+  color: var(--theme-code-green);
   font-family: 'Monaco', 'Consolas', monospace;
   font-size: 11px;
   margin: 0;
@@ -204,8 +205,8 @@
 }
 
 .copyBtn {
-  background: #00d084;
-  color: var(--theme-titlebar-text);
+  background: var(--theme-success-surface);
+  color: var(--theme-success);
   border: none;
   padding: 6px 12px;
   border-radius: 4px;
@@ -217,7 +218,7 @@
 }
 
 .copyBtn:hover {
-  background: #00b371;
+  background: var(--theme-success-surface);
   transform: scale(1.05);
 }
 
@@ -230,7 +231,7 @@
   color: var(--theme-titlebar-text);
   font-size: 12px;
   text-decoration: none;
-  opacity: 0.9;
+  opacity: 1;
   transition: opacity 0.2s;
 }
 
@@ -301,8 +302,8 @@
 }
 
 .stickerFeatured {
-  background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
-  color: #5d4e00;
+  background: var(--theme-sticker-yellow);
+  color: var(--theme-accent-ink);
 }
 
 .stickerFeatured span {
@@ -315,8 +316,8 @@
 }
 
 .stickerNew {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
-  color: var(--theme-titlebar-text);
+  background: var(--theme-danger-surface);
+  color: var(--theme-danger);
 }
 
 .stickerStatus {
@@ -324,18 +325,18 @@
 }
 
 .stickerCategory {
-  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
-  color: var(--theme-titlebar-text);
+  background: var(--theme-info-surface);
+  color: var(--theme-info);
 }
 
 .stickerTools {
-  background: linear-gradient(135deg, #667eea 0%, #5567d5 100%);
-  color: var(--theme-titlebar-text);
+  background: var(--theme-info-surface);
+  color: var(--theme-info);
 }
 
 .stickerVersion {
-  background: #333;
-  color: #00ff88;
+  background: var(--theme-code-bg);
+  color: var(--theme-code-green);
   font-family: monospace;
 }
 
@@ -388,7 +389,7 @@
 
 .tab {
   padding: 6px 16px;
-  background: #d4d4d4;
+  background: var(--theme-surface);
   border: 2px solid;
   border-color: var(--theme-border-light) var(--theme-border) #c0c0c0 var(--theme-border-light);
   border-bottom: none;
@@ -399,7 +400,7 @@
 }
 
 .tab:hover {
-  background: #e4e4e4;
+  background: var(--theme-sunken);
 }
 
 .tabActive {
@@ -446,7 +447,7 @@
 
 .features {
   margin-top: 16px;
-  background: #f8f9fa;
+  background: var(--theme-sunken);
   border: 1px solid var(--theme-border);
   border-radius: 4px;
   padding: 12px;
@@ -476,7 +477,7 @@
 }
 
 .toolCard {
-  background: #f8f9fa;
+  background: var(--theme-sunken);
   border: 1px solid var(--theme-border);
   border-left: 4px solid #667eea;
   padding: 10px 12px;
@@ -488,8 +489,8 @@
 }
 
 .toolName {
-  background: var(--theme-titlebar);
-  color: #00ff88;
+  background: var(--theme-code-bg);
+  color: var(--theme-code-green);
   padding: 2px 8px;
   border-radius: 3px;
   font-size: 13px;
@@ -511,7 +512,7 @@
 }
 
 .exampleCard {
-  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+  background: var(--theme-sunken);
   border: 2px solid #e0e0e0;
   border-radius: 6px;
   padding: 14px;
@@ -544,14 +545,15 @@
 .promptLabel {
   display: block;
   font-size: 10px;
-  color: var(--theme-muted);
+  color: var(--theme-code-muted);
   margin-bottom: 4px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .examplePrompt code {
-  color: #00ff88;
+  background: transparent;
+  color: var(--theme-code-green);
   font-family: 'Monaco', 'Consolas', monospace;
   font-size: 12px;
   word-break: break-word;
@@ -615,6 +617,7 @@
   .installBanner {
     flex-direction: column;
     text-align: center;
+    background: var(--theme-titlebar);
   }
 
   .installRight {
@@ -624,20 +627,26 @@
   .installCommand {
     flex-direction: column;
     gap: 8px;
+    background: var(--theme-code-bg);
   }
 
   .installCommand code {
     font-size: 11px;
     word-break: break-all;
     white-space: normal;
+    color: var(--theme-code-green);
   }
 
   .installConfig {
     max-width: 100%;
     width: 100%;
+    background: var(--theme-code-bg);
   }
 
   .configCode {
     font-size: 10px;
+    color: var(--theme-code-green);
   }
 }
+
+.titleBtn, .titleBtnClose, .tab { color: var(--theme-text); }

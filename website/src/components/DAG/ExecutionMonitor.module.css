@@ -51,23 +51,23 @@
 }
 
 .statusBadge.running {
-  background: #f59e0b;
-  color: var(--theme-text);
+  background: var(--theme-warning-surface);
+  color: var(--theme-warning);
 }
 
 .statusBadge.paused {
-  background: #3b82f6;
-  color: var(--theme-titlebar-text);
+  background: var(--theme-info-surface);
+  color: var(--theme-info);
 }
 
 .statusBadge.completed {
-  background: #10b981;
-  color: var(--theme-titlebar-text);
+  background: var(--theme-success-surface);
+  color: var(--theme-success);
 }
 
 .statusBadge.failed {
-  background: #ef4444;
-  color: var(--theme-titlebar-text);
+  background: var(--theme-danger-surface);
+  color: var(--theme-danger);
 }
 
 .headerActions {
@@ -94,11 +94,12 @@
 }
 
 .actionButton.danger {
-  background: #ffcccc;
+  background: var(--theme-danger-surface);
+  color: var(--theme-danger);
 }
 
 .actionButton.danger:hover {
-  background: #ffaaaa;
+  background: var(--theme-danger-surface);
 }
 
 /* Progress bar */
@@ -126,15 +127,15 @@
 }
 
 .progressFill.running {
-  background: #f59e0b;
+  background: var(--theme-warning);
 }
 
 .progressFill.completed {
-  background: #10b981;
+  background: var(--theme-success);
 }
 
 .progressFill.failed {
-  background: #ef4444;
+  background: var(--theme-danger);
 }
 
 .progressText {

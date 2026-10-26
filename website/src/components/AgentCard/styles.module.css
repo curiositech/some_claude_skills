@@ -121,8 +121,8 @@
 }
 
 .triggerBadge {
-  background: var(--win31-cyan);
-  color: var(--theme-link);
+  background: var(--theme-info-surface);
+  color: var(--theme-info);
   font-size: 10px;
   font-family: monospace;
   padding: 2px 6px;
@@ -133,7 +133,7 @@
 .coordinationPreview {
   margin-bottom: 12px;
   padding: 8px;
-  background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+  background: var(--theme-sunken);
   border: 1px solid var(--theme-border);
 }
 
@@ -210,7 +210,7 @@
 
 .outputBadge {
   background: var(--theme-warning-surface);
-  color: #92400e;
+  color: var(--theme-warning);
   font-size: 10px;
   padding: 2px 8px;
   border: 1px solid #f59e0b;
@@ -224,8 +224,8 @@
 }
 
 .toolBadge {
-  background: var(--win31-cyan);
-  color: var(--theme-link);
+  background: var(--theme-info-surface);
+  color: var(--theme-info);
   font-size: 10px;
   font-family: monospace;
   padding: 2px 8px;
@@ -235,10 +235,10 @@
 .pledge {
   margin-top: 16px;
   padding: 12px;
-  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+  background: var(--theme-info-surface);
   border-left: 3px solid #7c3aed;
   font-size: 12px;
-  color: #5b21b6;
+  color: var(--theme-info);
   line-height: 1.5;
 }
 

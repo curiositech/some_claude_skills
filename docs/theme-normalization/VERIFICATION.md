@@ -25,11 +25,11 @@ The 22 routes in `evidence/route-theme-cases.json` were checked at 1440 × 1000 
 
 The initial routes cover homepage, catalogue, docs/skill detail/reference/guide, submit form/contact, bundles/favorites, agents, artifacts/MCPs/ecosystem/metrics/changelog, DAG overview/builder/monitor/demo/lifecycle, and the reliability artifact with all three embeds.
 
-The follow-up sweep enumerated **all 673 application HTML exports**, including the standalone image-comparison report, at **1440 × 1000 and 390 × 844 in light and dark: 2,692 cases**. Every case returned HTTP 200 with the requested theme, zero document overflow and zero supported solid-text contrast failures. The final scan required no retries and completed in 82 seconds. It checked **1,903,650 supported solid HTML text instances** against the enhanced text thresholds; the route list, per-configuration counts, empty failure sets and raw-result SHA-256 are in `evidence/export-content-summary.json`.
+The follow-up sweep enumerated **all 673 application HTML exports**, including the standalone image-comparison report, at **1440 × 1000 and 390 × 844 in light and dark: 2,692 cases**. Every case returned HTTP 200 with the requested theme, zero document overflow and zero supported solid-text contrast failures. The final scan required no retries and completed in 96 seconds. It checked **1,903,737 supported solid HTML text instances** against the enhanced text thresholds; the route list, per-configuration counts, empty failure sets and raw-result SHA-256 are in `evidence/export-content-summary.json`.
 
 This wider scan drove fixes to narrow-phone grids, navigation wrapping, canvas-container minimum widths and an offset sticker on five active routes. It also repaired the mobile document TOC control. The standalone static report has no Docusaurus provider, so its small appearance adapter shares the framework's `theme` key and System/Light/Dark protocol. It keeps its existing content/media and supplies paired report colors. Five browser lifecycle checks verify its saved choice, live OS, cross-tab compatibility with native pages and restricted storage.
 
-The full-export scanner retained **140 image/gradient background instances, 1,526 opacity instances and 60 SVG text instances** for manual review rather than certifying them. It separately counted **12,102 color-emoji instances and 20 disabled-control instances**. Counts repeat across routes/configurations. Raster images, canvas/SVG drawing colors and group opacity require further manual or specialized checking; this remains a theme/contrast repair, not a complete WCAG conformance certificate.
+The full-export scanner retained **104 image/gradient background instances, 1,526 opacity instances and 60 SVG text instances** for manual review rather than certifying them. It separately counted **12,104 color-emoji instances and 20 disabled-control instances**. Counts repeat across routes/configurations. Raster images, canvas/SVG drawing colors and group opacity require further manual or specialized checking; this remains a theme/contrast repair, not a complete WCAG conformance certificate.
 
 Axe still returned **14,362 incomplete node/rule results**, including repeated checks across routes/themes. Screenshot inspection and a complementary computed solid-surface scan drove additional repairs to gallery badges, conditional controls, status data, code installation panels, docs references/guide panels and decorative window controls. The final solid-surface candidates are colored emoji glyphs and disabled controls; CSS foreground contrast does not describe multicolor emoji, and inactive controls are exempt from WCAG text contrast. The solid scan does not model gradients/images and does not replace manual review.
 
@@ -40,6 +40,10 @@ Native lifecycle checks: **7 pass**. They cover prepaint with React bundles bloc
 Actual rendered input checks: **14 palette/appearance states pass**, with minimum computed text/input contrast **14.71:1**. The source-pair tests separately cover text, muted/link, surface, status, titlebar, terminal and field roles in every palette.
 
 PR-review regressions: intermediate bundle modal and copied state, plus before/after split view, pass the five axe rules in both appearances (**6 interaction cases**). Computed split-view code text is **16.28:1** in both appearances. The review also drove terminal foreground/label repairs and paired difficulty/copy colors, plus adjacent artifact callouts and comparison-icon states. See `evidence/review-states.json`.
+
+The expanded library audit passes **20 interaction cases**, with zero resolved violations and **2,922 incomplete node/rule results** retained. It checks all nine agent cards expanded, both MCP detail dialogs in overview/tools/examples tabs, and running/paused/stopped monitor states in both appearances. It also verifies that modal focus stays contained and the Close button remains reachable above the fixed header. The prompt terminal explicitly clears the framework inline-code background. See `evidence/extended-states.json` for the final resolved violations and retained incompletes.
+
+The Canvas DAG now resolves CSS roles to concrete drawing colors and redraws when appearance or palette changes. A specialized browser check samples actual background pixels immediately before text drawing across eight lifecycle phases in both appearances, including live appearance changes: **16 states pass**, minimum text contrast **10.38:1**. It covers node-title and legend text; raster hero artwork and separate authored SVG media remain outside this specialized text check. See `evidence/canvas.json`.
 
 Screenshots in `evidence/` show the final exported skill docs in both appearances, the dark gallery, and the mobile appearance control.
 
@@ -63,10 +67,12 @@ node ../docs/theme-normalization/gallery-states-browser.mjs
 node ../docs/theme-normalization/export-content-browser.mjs
 node ../docs/theme-normalization/review-states-browser.mjs
 node ../docs/theme-normalization/standalone-lifecycle-browser.mjs
+node ../docs/theme-normalization/extended-states-browser.mjs
+node ../docs/theme-normalization/canvas-browser.mjs
 ```
 
 The axe and lifecycle scripts fail on resolved violations, route/reflow errors or lifecycle failures. The solid-surface script reports manual-review candidates. Stop the local static server after checking.
 
 ## Release boundary
 
-No merge or deployment is authorized for this worker. The parent reviews this scoped PR and owns publication. Exact-head CI/review receipts are recorded in the PR and parent handoff; local build/browser proof is separate from hosted review and production delivery.
+The parent explicitly authorized this worker to merge the pinned reviewed head, follow GitHub Pages publication, and verify the public pages after current-head checks and independent review pass. Exact-head CI/review and release receipts are recorded in the PR and parent handoff; local build/browser proof remains separate from hosted review and production delivery. Native builds, billing changes and unrelated source remain outside this task.

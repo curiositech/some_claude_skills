@@ -681,17 +681,35 @@
       "spec": "dark/390/844",
       "cases": 673,
       "uniqueRoutes": 673,
-      "textNodes": 454980,
+      "textNodes": 454976,
       "disabled": 5,
       "emoji": 588,
-      "manualBackground": 35,
+      "manualBackground": 26,
       "manualOpacity": 44,
       "manualSvg": 15,
-      "solidPassed": 454293,
+      "solidPassed": 454298,
       "media": {
-        "images": 3399,
+        "images": 3403,
         "canvas": 2,
         "svg": 22918,
+        "iframes": 0
+      }
+    },
+    {
+      "spec": "dark/1440/1000",
+      "cases": 673,
+      "uniqueRoutes": 673,
+      "textNodes": 503809,
+      "disabled": 5,
+      "emoji": 5465,
+      "manualBackground": 26,
+      "manualOpacity": 719,
+      "manualSvg": 15,
+      "solidPassed": 497579,
+      "media": {
+        "images": 2059,
+        "canvas": 2,
+        "svg": 19324,
         "iframes": 0
       }
     },
@@ -699,15 +717,15 @@
       "spec": "light/390/844",
       "cases": 673,
       "uniqueRoutes": 673,
-      "textNodes": 454980,
+      "textNodes": 454976,
       "disabled": 5,
       "emoji": 588,
-      "manualBackground": 35,
+      "manualBackground": 26,
       "manualOpacity": 44,
       "manualSvg": 15,
-      "solidPassed": 454293,
+      "solidPassed": 454298,
       "media": {
-        "images": 3399,
+        "images": 3403,
         "canvas": 2,
         "svg": 22918,
         "iframes": 0
@@ -717,31 +735,13 @@
       "spec": "light/1440/1000",
       "cases": 673,
       "uniqueRoutes": 673,
-      "textNodes": 503764,
+      "textNodes": 503790,
       "disabled": 5,
       "emoji": 5463,
-      "manualBackground": 35,
+      "manualBackground": 26,
       "manualOpacity": 719,
       "manualSvg": 15,
-      "solidPassed": 497527,
-      "media": {
-        "images": 2055,
-        "canvas": 2,
-        "svg": 19324,
-        "iframes": 0
-      }
-    },
-    {
-      "spec": "dark/1440/1000",
-      "cases": 673,
-      "uniqueRoutes": 673,
-      "textNodes": 503774,
-      "disabled": 5,
-      "emoji": 5463,
-      "manualBackground": 35,
-      "manualOpacity": 719,
-      "manualSvg": 15,
-      "solidPassed": 497537,
+      "solidPassed": 497562,
       "media": {
         "images": 2059,
         "canvas": 2,
@@ -756,6 +756,6 @@
   "solidFailures": [],
   "manualCandidates": [],
   "retries": [],
-  "elapsedMs": 81781,
-  "rawSha256": "2a00eeb570edd07f0bca6eba2e1da304d5c2ed6b8d338a80ef1bfa9368007a5f"
+  "elapsedMs": 94257,
+  "rawSha256": "b07e5001dfa03751145cdffb06627456318c90cbe2696d5917e5e02100bd7ae7"
 }
