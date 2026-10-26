@@ -35,7 +35,7 @@ const pairs = [
  ['--theme-link','--theme-surface'], ['--theme-link','--theme-elevated'], ['--theme-link-hover','--theme-surface'],
  ['--theme-titlebar-text','--theme-titlebar'], ['--theme-desktop-text','--theme-desktop'],
  ['--theme-code-text','--theme-code-bg'], ['--theme-code-muted','--theme-code-bg'],
- ['--theme-code-green','--theme-code-bg'], ['--theme-code-blue','--theme-code-bg'], ['--theme-code-amber','--theme-code-bg'],
+ ['--theme-code-pink','--theme-code-bg'], ['--theme-code-green','--theme-code-bg'], ['--theme-code-blue','--theme-code-bg'], ['--theme-code-amber','--theme-code-bg'],
  ['--theme-success','--theme-success-surface'], ['--theme-danger','--theme-danger-surface'],
  ['--theme-info','--theme-info-surface'], ['--theme-warning','--theme-warning-surface'],
  ...['--theme-success','--theme-danger','--theme-info','--theme-warning'].flatMap(ink => ['--theme-surface','--theme-elevated','--theme-sunken'].map(surface => [ink,surface])),

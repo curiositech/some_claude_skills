@@ -282,7 +282,7 @@
 }
 
 .errorText {
-  color: #ef4444;
+  color: var(--theme-danger);
   word-break: break-word;
 }
 
@@ -327,7 +327,7 @@
 }
 
 .emptyLogs {
-  color: var(--theme-muted);
+  color: var(--theme-code-muted);
   text-align: center;
   padding: 20px;
 }
@@ -336,11 +336,11 @@
   display: flex;
   gap: 8px;
   padding: 2px 0;
-  color: #c0c0c0;
+  color: var(--theme-code-text);
 }
 
 .logTime {
-  color: var(--theme-muted);
+  color: var(--theme-code-muted);
   min-width: 70px;
 }
 
@@ -350,23 +350,23 @@
 }
 
 .logLevel.info {
-  color: #3b82f6;
+  color: var(--theme-code-blue);
 }
 
 .logLevel.warn {
-  color: var(--theme-text);
+  color: var(--theme-code-amber);
 }
 
 .logLevel.error {
-  color: #ef4444;
+  color: var(--theme-code-pink);
 }
 
 .logLevel.debug {
-  color: #9ca3af;
+  color: var(--theme-code-muted);
 }
 
 .logNode {
-  color: #10b981;
+  color: var(--theme-code-green);
 }
 
 .logMessage {

@@ -1190,17 +1190,17 @@ html[class*="sidebar--show"] .theme-picker__hotdog,
   padding: 4px 10px !important;
   border: 2px solid var(--ifm-color-primary, #6366f1) !important;
   border-radius: 2px !important;
-  transition: all 0.15s ease !important;
+  transition: box-shadow 0.15s ease, transform 0.15s ease !important;
 }
 
 .navbar-submit-link:hover {
-  background: var(--ifm-color-primary, #6366f1) !important;
-  color: var(--theme-titlebar-text) !important;
+  background: var(--theme-action-bg) !important;
+  color: var(--theme-action-text) !important;
 }
 
 .navbar-submit-link:active {
-  background: var(--ifm-color-primary-dark, #4f46e5) !important;
-  color: var(--theme-titlebar-text) !important;
+  background: var(--theme-action-bg) !important;
+  color: var(--theme-action-text) !important;
 }
 
 /* Dropdown menu styling improvements */

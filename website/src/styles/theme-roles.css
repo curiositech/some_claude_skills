@@ -147,3 +147,17 @@ html:root .footer-sticker { color: var(--theme-titlebar-text); background: var(-
 html:root .theme-doc-toc-mobile button {
   color: var(--theme-text); background: var(--theme-surface);
 }
+
+/* Keep paired navigation colors atomic through hover/focus and palette changes. */
+html:root :is(.navbar,.navbar__link,.navbar__item) {
+  transition-property: transform, box-shadow !important;
+}
+html:root .navbar__link:not(.navbar-os2-link):not(.navbar-hire-link):not(.navbar-submit-link):is(:hover,:active,:focus-visible) {
+  background: var(--theme-action-bg) !important;
+  color: var(--theme-action-text) !important;
+}
+html:root a[class*='skipToContent'] {
+  color: var(--theme-link) !important;
+  background: var(--theme-surface) !important;
+  transition: none !important;
+}

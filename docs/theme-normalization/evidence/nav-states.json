@@ -1,0 +1,506 @@
+[
+  {
+    "mode": "light",
+    "palette": "Windows Default",
+    "state": "default",
+    "foreground": "rgb(0, 51, 47)",
+    "background": "rgb(192, 192, 192)",
+    "ratio": 7.620805382677837,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Windows Default",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(0, 0, 128)",
+    "ratio": 16.009727056831707,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Windows Default",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(0, 0, 128)",
+    "ratio": 16.009727056831707,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Windows Default",
+    "state": "focus",
+    "foreground": "rgb(0, 51, 47)",
+    "background": "rgb(192, 192, 192)",
+    "ratio": 7.620805382677837,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Hot Dog Stand",
+    "state": "default",
+    "foreground": "rgb(0, 51, 47)",
+    "background": "rgb(255, 255, 0)",
+    "ratio": 12.911849250301724,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Hot Dog Stand",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(128, 0, 0)",
+    "ratio": 10.949825131812458,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Hot Dog Stand",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(128, 0, 0)",
+    "ratio": 10.949825131812458,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Hot Dog Stand",
+    "state": "focus",
+    "foreground": "rgb(0, 51, 47)",
+    "background": "rgb(255, 255, 0)",
+    "ratio": 12.911849250301724,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Fluorescent",
+    "state": "default",
+    "foreground": "rgb(0, 51, 47)",
+    "background": "rgb(0, 255, 255)",
+    "ratio": 11.057867214361488,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Fluorescent",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(96, 0, 96)",
+    "ratio": 12.603037910218974,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Fluorescent",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(96, 0, 96)",
+    "ratio": 12.603037910218974,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Fluorescent",
+    "state": "focus",
+    "foreground": "rgb(0, 51, 47)",
+    "background": "rgb(0, 255, 255)",
+    "ratio": 11.057867214361488,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Ocean",
+    "state": "default",
+    "foreground": "rgb(0, 51, 47)",
+    "background": "rgb(192, 192, 192)",
+    "ratio": 7.620805382677837,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Ocean",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(0, 0, 64)",
+    "ratio": 19.55247006932495,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Ocean",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(0, 0, 64)",
+    "ratio": 19.55247006932495,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Ocean",
+    "state": "focus",
+    "foreground": "rgb(0, 51, 47)",
+    "background": "rgb(192, 192, 192)",
+    "ratio": 7.620805382677837,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Plasma Power Saver",
+    "state": "default",
+    "foreground": "rgb(0, 51, 47)",
+    "background": "rgb(230, 217, 236)",
+    "ratio": 10.234513190559884,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Plasma Power Saver",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(96, 0, 96)",
+    "ratio": 12.603037910218974,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Plasma Power Saver",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(96, 0, 96)",
+    "ratio": 12.603037910218974,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Plasma Power Saver",
+    "state": "focus",
+    "foreground": "rgb(0, 51, 47)",
+    "background": "rgb(230, 217, 236)",
+    "ratio": 10.234513190559884,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Pumpkin (Large)",
+    "state": "default",
+    "foreground": "rgb(0, 27, 23)",
+    "background": "rgb(255, 128, 0)",
+    "ratio": 7.133131145328231,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Pumpkin (Large)",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(96, 48, 0)",
+    "ratio": 10.936701170201951,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Pumpkin (Large)",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(96, 48, 0)",
+    "ratio": 10.936701170201951,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Pumpkin (Large)",
+    "state": "focus",
+    "foreground": "rgb(0, 27, 23)",
+    "background": "rgb(255, 128, 0)",
+    "ratio": 7.133131145328231,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Rugby",
+    "state": "default",
+    "foreground": "rgb(0, 51, 47)",
+    "background": "rgb(192, 192, 192)",
+    "ratio": 7.620805382677837,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Rugby",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(0, 64, 0)",
+    "ratio": 12.115209882029829,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Rugby",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(0, 64, 0)",
+    "ratio": 12.115209882029829,
+    "theme": "light"
+  },
+  {
+    "mode": "light",
+    "palette": "Rugby",
+    "state": "focus",
+    "foreground": "rgb(0, 51, 47)",
+    "background": "rgb(192, 192, 192)",
+    "ratio": 7.620805382677837,
+    "theme": "light"
+  },
+  {
+    "mode": "dark",
+    "palette": "Windows Default",
+    "state": "default",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Windows Default",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(0, 0, 128)",
+    "ratio": 16.009727056831707,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Windows Default",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(0, 0, 128)",
+    "ratio": 16.009727056831707,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Windows Default",
+    "state": "focus",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Hot Dog Stand",
+    "state": "default",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Hot Dog Stand",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(128, 0, 0)",
+    "ratio": 10.949825131812458,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Hot Dog Stand",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(128, 0, 0)",
+    "ratio": 10.949825131812458,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Hot Dog Stand",
+    "state": "focus",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Fluorescent",
+    "state": "default",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Fluorescent",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(96, 0, 96)",
+    "ratio": 12.603037910218974,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Fluorescent",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(96, 0, 96)",
+    "ratio": 12.603037910218974,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Fluorescent",
+    "state": "focus",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Ocean",
+    "state": "default",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Ocean",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(0, 0, 64)",
+    "ratio": 19.55247006932495,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Ocean",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(0, 0, 64)",
+    "ratio": 19.55247006932495,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Ocean",
+    "state": "focus",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Plasma Power Saver",
+    "state": "default",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Plasma Power Saver",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(96, 0, 96)",
+    "ratio": 12.603037910218974,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Plasma Power Saver",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(96, 0, 96)",
+    "ratio": 12.603037910218974,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Plasma Power Saver",
+    "state": "focus",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Pumpkin (Large)",
+    "state": "default",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Pumpkin (Large)",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(96, 48, 0)",
+    "ratio": 10.936701170201951,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Pumpkin (Large)",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(96, 48, 0)",
+    "ratio": 10.936701170201951,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Pumpkin (Large)",
+    "state": "focus",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Rugby",
+    "state": "default",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Rugby",
+    "state": "hover",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(0, 64, 0)",
+    "ratio": 12.115209882029829,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Rugby",
+    "state": "pressed",
+    "foreground": "rgb(255, 255, 255)",
+    "background": "rgb(0, 64, 0)",
+    "ratio": 12.115209882029829,
+    "theme": "dark"
+  },
+  {
+    "mode": "dark",
+    "palette": "Rugby",
+    "state": "focus",
+    "foreground": "rgb(216, 238, 255)",
+    "background": "rgb(36, 42, 55)",
+    "ratio": 12.039143351355502,
+    "theme": "dark"
+  }
+]

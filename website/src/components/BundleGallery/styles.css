@@ -70,7 +70,8 @@
 }
 
 .bundle-gallery__filter-btn:hover {
-  background: #d4d4d4;
+  background: var(--theme-sunken);
+  color: var(--theme-text);
 }
 
 .bundle-gallery__filter-btn--active {
@@ -157,4 +158,9 @@
     padding: 4px 8px;
     font-size: 11px;
   }
+}
+
+.bundle-gallery__filter-btn--active:is(:hover,:active,:focus-visible) {
+  background: var(--theme-action-bg);
+  color: var(--theme-action-text);
 }

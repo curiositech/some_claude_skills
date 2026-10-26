@@ -427,19 +427,19 @@
 }
 
 .tagAgent {
-  background: #6366f1;
-  color: var(--theme-titlebar-text);
+  background: var(--theme-info-surface);
+  color: var(--theme-info);
   cursor: pointer;
   border-color: #4f46e5;
 }
 
 .tagAgent:hover {
-  background: #4f46e5;
+  background: var(--theme-info-surface);
 }
 
 .tagTrigger {
-  background: #10b981;
-  color: var(--theme-titlebar-text);
+  background: var(--theme-success-surface);
+  color: var(--theme-success);
   border-color: #059669;
   font-style: italic;
 }

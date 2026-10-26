@@ -85,7 +85,7 @@
 }
 
 .input:focus {
-  border-color: #000080;
+  border-color: var(--theme-focus);
 }
 
 .input:disabled {
@@ -111,7 +111,7 @@
 }
 
 .button:hover:not(:disabled) {
-  background: #d4d4d4;
+  background: var(--theme-sunken);
 }
 
 .button:active:not(:disabled) {
@@ -156,14 +156,14 @@
 }
 
 .footerTitle {
-  color: var(--theme-titlebar-text);
+  color: var(--theme-text);
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 4px 0;
 }
 
 .footerDesc {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--theme-muted);
   font-size: 13px;
   margin: 0 0 12px 0;
 }
@@ -176,30 +176,30 @@
 .footerInput {
   padding: 8px 12px;
   font-size: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--theme-border);
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--theme-titlebar-text);
+  background: var(--theme-field-bg);
+  color: var(--theme-text);
   flex: 1;
   min-width: 150px;
   outline: none;
 }
 
 .footerInput::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--theme-muted);
 }
 
 .footerInput:focus {
-  border-color: rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--theme-muted);
+  background: var(--theme-field-bg);
 }
 
 .footerButton {
   padding: 8px 16px;
   font-size: 13px;
   font-weight: 600;
-  background: #667eea;
-  color: var(--theme-titlebar-text);
+  background: var(--theme-action-bg);
+  color: var(--theme-action-text);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -207,7 +207,7 @@
 }
 
 .footerButton:hover:not(:disabled) {
-  background: #5a6fd6;
+  background: var(--theme-action-bg);
 }
 
 .footerButton:disabled {

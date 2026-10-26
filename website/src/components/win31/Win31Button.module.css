@@ -77,12 +77,12 @@
 
 /* Primary variant (navy title bar color) */
 .button.primary {
-  background: var(--win31-navy, #000080);
-  color: var(--win31-white, #fff);
+  background: var(--theme-action-bg);
+  color: var(--theme-action-text);
 }
 
 .button.primary:hover:not(:disabled) {
-  background: #0000a0;
+  background: var(--theme-action-bg);
 }
 
 .button.primary:disabled {
@@ -92,12 +92,12 @@
 
 /* Danger variant (red) */
 .button.danger {
-  background: #c00000;
-  color: var(--win31-white, #fff);
+  background: var(--theme-danger-surface);
+  color: var(--theme-danger);
 }
 
 .button.danger:hover:not(:disabled) {
-  background: #e00000;
+  background: var(--theme-danger-surface);
 }
 
 .button.danger:disabled {

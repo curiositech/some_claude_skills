@@ -699,13 +699,13 @@
       "spec": "dark/1440/1000",
       "cases": 673,
       "uniqueRoutes": 673,
-      "textNodes": 503809,
+      "textNodes": 503746,
       "disabled": 5,
-      "emoji": 5465,
+      "emoji": 5462,
       "manualBackground": 26,
       "manualOpacity": 719,
       "manualSvg": 15,
-      "solidPassed": 497579,
+      "solidPassed": 497519,
       "media": {
         "images": 2059,
         "canvas": 2,
@@ -735,15 +735,15 @@
       "spec": "light/1440/1000",
       "cases": 673,
       "uniqueRoutes": 673,
-      "textNodes": 503790,
+      "textNodes": 503760,
       "disabled": 5,
-      "emoji": 5463,
+      "emoji": 5462,
       "manualBackground": 26,
       "manualOpacity": 719,
       "manualSvg": 15,
-      "solidPassed": 497562,
+      "solidPassed": 497533,
       "media": {
-        "images": 2059,
+        "images": 2049,
         "canvas": 2,
         "svg": 19324,
         "iframes": 0
@@ -756,6 +756,6 @@
   "solidFailures": [],
   "manualCandidates": [],
   "retries": [],
-  "elapsedMs": 94257,
-  "rawSha256": "b07e5001dfa03751145cdffb06627456318c90cbe2696d5917e5e02100bd7ae7"
+  "elapsedMs": 85074,
+  "rawSha256": "d16d1f2b828493e2cf67e1d0460014ae5e3338dddb47b0d04742e71c16a15c33"
 }

@@ -51,7 +51,7 @@
 
 .nameInput:focus {
   outline: none;
-  border-color: #000080;
+  border-color: var(--theme-focus);
 }
 
 .toolButton {
@@ -223,7 +223,8 @@
 }
 
 .nodeTypeSelected:hover {
-  background: #1084d0;
+  background: var(--theme-action-bg);
+  color: var(--theme-action-text);
 }
 
 .nodeTypeIcon {
@@ -249,7 +250,7 @@
 
 .select:focus {
   outline: none;
-  border-color: #000080;
+  border-color: var(--theme-focus);
 }
 
 /* Dependencies list */
@@ -301,7 +302,8 @@
 }
 
 .primaryButton:hover:not(:disabled) {
-  background: #1084d0;
+  background: var(--theme-action-bg);
+  color: var(--theme-action-text);
 }
 
 .primaryButton:active:not(:disabled) {

@@ -16,7 +16,7 @@ Three layers: isolated source colors and seven palette variants; semantic surfac
 
 Use Docusaurus 3.9.2's native prepaint, persisted choice, OS listener and cross-tab synchronization. Enable its existing three-choice button and style it with beveled square chrome, a 44px target and visible focus. No new select or preference owner.
 
-AA is the hard gate for applicable checks. Enhanced text contrast target: normal >= 7:1, large >= 4.5:1, meaningful controls/graphics >= 3:1. Do not round failures upward, and do not equate automated contrast checks with complete WCAG AAA conformance. Test links, hover/active/focus states, forms, menus, docs tables, inline and block code, errors and muted copy. Preserve source hues while darkening titlebar/desktop fills when white text would fail.
+AA is the hard gate for applicable checks. Enhanced text contrast target: normal >= 7:1, large >= 4.5:1, meaningful controls/graphics >= 3:1. Do not round failures upward, and do not equate automated contrast checks with complete WCAG AAA conformance. Test links, hover/active/focus states, selected filters/tabs, empty form validation, terminal output/errors, menus, docs tables, inline and block code, and muted copy. Paired navigation colors change atomically; preserve transform/shadow motion without interpolating an ink/fill pair through unreadable colors. Supported interaction coverage is recorded separately from route coverage. Preserve source hues while darkening titlebar/desktop fills when white text would fail.
 
 Standards: https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html ; https://www.w3.org/WAI/WCAG22/Understanding/contrast-enhanced.html ; https://docusaurus.io/docs/3.9.2/api/themes/configuration
 
