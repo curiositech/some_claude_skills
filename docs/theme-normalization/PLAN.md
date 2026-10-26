@@ -35,4 +35,4 @@ Hundreds of generated skill documents and dozens of custom embeds may bypass sha
 
 ## Verification receipts
 
-Implementation and local production export complete. Final browser/PR/CI receipts are tracked in VERIFICATION.md. No repaired release or universal compliance claim.
+Implementation and local production export complete. Final browser/PR/CI receipts are tracked in VERIFICATION.md. All-export desktop/mobile contrast receipts and PR-review state repairs are included; no publication or universal compliance claim.

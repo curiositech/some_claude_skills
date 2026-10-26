@@ -207,7 +207,7 @@ export default function EcosystemPage(): JSX.Element {
               {/* Quick Stats */}
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))',
                 gap: '12px'
               }}>
                 <StatBox label="Total Skills" value={stats.totalSkills} />
@@ -221,6 +221,7 @@ export default function EcosystemPage(): JSX.Element {
           {/* View Selector */}
           <div style={{
             display: 'flex',
+            flexWrap: 'wrap',
             gap: '8px',
             marginBottom: '24px',
             padding: '8px',
@@ -409,7 +410,7 @@ function SkillsTimeline({
               {/* Skills */}
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
                 gap: '8px'
               }}>
                 {skills.map(skill => (
@@ -503,7 +504,7 @@ function DocumentBrowser({ docs }: { docs: typeof councilDocs }) {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
           gap: '16px'
         }}>
           {docs.map(doc => (
@@ -651,7 +652,7 @@ function DetailedStats({
         <div style={{ padding: '16px', background: 'var(--win31-gray)' }}>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
             gap: '16px'
           }}>
             <StatBox label="Total Skills" value={stats.totalSkills} />
@@ -762,7 +763,7 @@ function DetailedStats({
         <div style={{ padding: '16px', background: 'var(--win31-gray)' }}>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
             gap: '8px'
           }}>
             {recentlyUpdated.map(skill => (
@@ -831,7 +832,7 @@ function AgentsGallery({ agents }: { agents: AgentMeta[] }) {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
           gap: '16px'
         }}>
           {agents.map(agent => (

@@ -5,9 +5,9 @@ const css = readFileSync(path.resolve('src/styles/theme-tokens.css'), 'utf8');
 import { COLOR_SCHEMES } from '../../hooks/useWin31Theme';
 
 // Verify the actual authored source-role pairs in every shipped palette/theme.
-function tokens(theme: string, palette: string) {
+function tokens(theme: string, palette: string, source = css) {
   const values: Record<string,string> = {};
-  for (const block of css.replace(/\/\*[\s\S]*?\*\//g, '').matchAll(/([^{}]+)\{([^{}]+)\}/g)) {
+  for (const block of source.replace(/\/\*[\s\S]*?\*\//g, '').matchAll(/([^{}]+)\{([^{}]+)\}/g)) {
     const selector = block[1].trim();
     const mode = selector.match(/data-theme='([^']+)'/);
     const choice = selector.match(/data-win31-palette='([^']+)'/);
@@ -45,5 +45,16 @@ describe.each(Object.keys(COLOR_SCHEMES))('%s contrast contract', (palette) => {
   it.each(['light','dark'])('%s authored text role pairs meet enhanced7:1', (mode) => {
     const get=tokens(mode,palette);
     for (const [ink,surface] of pairs) expect(contrast(get(ink),get(surface)),`${mode}/${palette}: ${ink} on ${surface}`).toBeGreaterThanOrEqual(7);
+  });
+});
+
+const standalone = readFileSync(path.resolve('static/hero-comparison/index.html'), 'utf8').match(/<style>([\s\S]*?)<\/style>/)![1];
+describe('standalone image comparison text roles', () => {
+  it.each(['light', 'dark'])('%s uses readable paired roles', mode => {
+    const get = tokens(mode, '', standalone);
+    for (const ink of ['--text-primary','--text-secondary','--accent-mint','--accent-pink','--accent-lavender']) {
+      for (const surface of ['--bg-primary','--bg-secondary','--bg-card']) expect(contrast(get(ink),get(surface)), `${mode}: ${ink} on ${surface}`).toBeGreaterThanOrEqual(7);
+    }
+    for (const [ink,surface] of [['--before-ink','--before-bg'],['--after-ink','--after-bg'],['--bg-primary','--accent-mint']]) expect(contrast(get(ink),get(surface))).toBeGreaterThanOrEqual(7);
   });
 });

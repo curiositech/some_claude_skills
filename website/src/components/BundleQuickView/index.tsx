@@ -12,9 +12,9 @@ interface BundleQuickViewProps {
  * Difficulty badge configuration
  */
 const DIFFICULTY_CONFIG = {
-  beginner: { label: 'Beginner', color: '#4a9', bg: '#e8fff0' },
-  intermediate: { label: 'Intermediate', color: "var(--theme-link)", bg: '#e8f4ff' },
-  advanced: { label: 'Advanced', color: '#a48', bg: '#fff0f8' },
+  beginner: { label: 'Beginner', color: 'var(--theme-success)', bg: 'var(--theme-success-surface)' },
+  intermediate: { label: 'Intermediate', color: 'var(--theme-info)', bg: 'var(--theme-info-surface)' },
+  advanced: { label: 'Advanced', color: 'var(--theme-danger)', bg: 'var(--theme-danger-surface)' },
 };
 
 /**
@@ -234,7 +234,7 @@ export default function BundleQuickView({
             >
               <span
                 style={{
-                  color: "var(--theme-muted)",
+                  color: "var(--theme-code-muted)",
                   fontSize: '11px',
                   fontFamily: 'var(--font-code)',
                 }}
@@ -244,13 +244,13 @@ export default function BundleQuickView({
               <button
                 onClick={copyInstallCommand}
                 style={{
-                  background: copied ? '#4a9' : 'var(--win31-gray)',
+                  background: copied ? 'var(--theme-success-surface)' : 'var(--theme-surface)',
                   border: "2px outset var(--theme-border-light)",
                   padding: '2px 8px',
                   cursor: 'pointer',
                   fontSize: '11px',
                   fontFamily: 'var(--font-code)',
-                  color: copied ? '#fff' : '#000',
+                  color: copied ? 'var(--theme-success)' : 'var(--theme-text)',
                 }}
               >
                 {copied ? '✓ Copied!' : 'Copy'}
@@ -258,7 +258,7 @@ export default function BundleQuickView({
             </div>
             <code
               style={{
-                color: '#4af',
+                color: 'var(--theme-code-blue)',
                 fontFamily: 'var(--font-code)',
                 fontSize: '13px',
                 wordBreak: 'break-all',

@@ -4,17 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hero Image Comparison - Before & After</title>
+  <script src="appearance.js"></script>
   <style>
     :root {
+      color-scheme: light;
+      --bg-primary: #f2f0e9;
+      --bg-secondary: #e8e8e8;
+      --bg-card: #ffffff;
+      --text-primary: #111111;
+      --text-secondary: #292929;
+      --accent-mint: #00285c;
+      --accent-pink: #330005;
+      --accent-lavender: #000e27;
+      --border-color: #111111;
+      --before-bg: #ffe9e8;
+      --before-ink: #330005;
+      --after-bg: #e5f4e7;
+      --after-ink: #001a04;
+      --focus-color: #00285c;
+    }
+    :root[data-theme='dark'] {
+      color-scheme: dark;
       --bg-primary: #1a1a2e;
       --bg-secondary: #16213e;
       --bg-card: #0f3460;
-      --text-primary: #eee;
-      --text-secondary: #aaa;
-      --accent-mint: #5B9A8B;
-      --accent-pink: #FF6B9D;
-      --accent-lavender: #9B8AA5;
-      --border-color: #333;
+      --text-primary: #f4f0e9;
+      --text-secondary: #e1e3ec;
+      --accent-mint: #b8e1ff;
+      --accent-pink: #ffcdc5;
+      --accent-lavender: #eccaff;
+      --border-color: #b7c7dd;
+      --before-bg: #362226;
+      --before-ink: #ffcdc5;
+      --after-bg: #233022;
+      --after-ink: #daf3bd;
+      --focus-color: #d1eaff;
     }
 
     * {
@@ -31,7 +55,7 @@
     }
 
     header {
-      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+      background: var(--bg-secondary);
       padding: 2rem;
       text-align: center;
       border-bottom: 2px solid var(--accent-mint);
@@ -40,10 +64,7 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, var(--accent-mint), var(--accent-pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--text-primary);
     }
 
     .subtitle {
@@ -55,6 +76,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
+      flex-wrap: wrap;
       margin-top: 1rem;
     }
 
@@ -75,6 +97,7 @@
       gap: 1rem;
       padding: 1rem;
       background: var(--bg-secondary);
+      flex-wrap: wrap;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -171,11 +194,11 @@
     }
 
     .comparison-side.before {
-      background: rgba(255, 100, 100, 0.1);
+      background: var(--before-bg);
     }
 
     .comparison-side.after {
-      background: rgba(100, 255, 100, 0.1);
+      background: var(--after-bg);
     }
 
     .comparison-label {
@@ -188,11 +211,11 @@
     }
 
     .before .comparison-label {
-      color: #ff6b6b;
+      color: var(--before-ink);
     }
 
     .after .comparison-label {
-      color: #6bff6b;
+      color: var(--after-ink);
     }
 
     .comparison img {
@@ -245,6 +268,16 @@
       margin-top: 2rem;
     }
 
+    .appearance-toggle { min-height: 44px; border-radius: 0; border-style: outset; }
+    :is(button,a):focus-visible { outline: 3px solid var(--focus-color); outline-offset: 3px; }
+    @media (max-width: 700px) {
+      main, header { padding: 1rem; }
+      .card { min-width: 0; }
+      .comparison { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+      nav button { padding: .5rem 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
     .style-guide-link {
       color: var(--accent-mint);
       text-decoration: none;
@@ -267,6 +300,7 @@
   </header>
 
   <nav>
+    <button id="appearance-toggle" class="appearance-toggle" type="button">Appearance: System</button>
     <button class="active" onclick="showSection('skills')">Skills (76)</button>
     <button onclick="showSection('agents')">Agents (14)</button>
     <button onclick="showSection('mcps')">MCPs (2)</button>

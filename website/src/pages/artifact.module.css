@@ -187,7 +187,7 @@
 
 /* Editorial Note - Callout for updates */
 .editorialNote {
-  background: #fffde7;
+  background: var(--theme-info-surface);
   border-left: 4px solid var(--win31-navy);
   padding: 12px 16px;
   font-family: var(--font-system);
@@ -201,7 +201,7 @@
 }
 
 .editorialNote a {
-  color: var(--theme-link);
+  color: var(--theme-info);
   text-decoration: underline;
 }
 
@@ -210,7 +210,7 @@
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--theme-link);
+  color: var(--theme-info);
 }
 
 /* Exposition - Blog-like narrative window */
@@ -631,7 +631,7 @@
 
 /* File Comparison Section - Windows 3.1 Style */
 .comparisonNotice {
-  background: var(--win31-bright-yellow);
+  background: var(--theme-sticker-yellow);
   border-style: solid;
   border-width: 2px;
   border-top-color: rgba(255, 255, 255, 0.8);
@@ -647,7 +647,7 @@
   font-family: var(--font-system);
   font-size: 13px;
   font-weight: 600;
-  color: var(--theme-text);
+  color: var(--theme-accent-ink);
   letter-spacing: 0.3px;
 }
 

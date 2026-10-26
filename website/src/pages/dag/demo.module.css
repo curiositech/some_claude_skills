@@ -129,3 +129,10 @@
 .dagExplanation strong {
   color: var(--theme-success);
 }
+
+/* The canvas must shrink with its page instead of contributing a minimum width. */
+.container { width: 100%; min-width: 0; }
+@media (max-width: 480px) {
+  .container { padding: 1rem; }
+  .controls select { max-width: 100%; }
+}

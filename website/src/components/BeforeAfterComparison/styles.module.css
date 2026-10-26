@@ -76,7 +76,7 @@
   font-size: 11px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.1s ease;
+  transition: none;
   letter-spacing: 0.3px;
 }
 
@@ -143,12 +143,12 @@
 }
 
 .beforeIcon {
-  color: #dc2626; /* Red for removed */
+  color: var(--theme-danger); /* Red for removed */
   font-weight: 700;
 }
 
 .afterIcon {
-  color: #16a34a; /* Green for added */
+  color: var(--theme-success); /* Green for added */
   font-weight: 700;
 }
 
@@ -164,7 +164,7 @@
 .codeContainer {
   flex: 1;
   overflow: auto;
-  background: var(--theme-elevated);
+  background: var(--theme-code-bg);
 }
 
 /* Override syntax highlighter styles for readability */
@@ -297,13 +297,13 @@
 }
 
 .addedLine {
-  background: #dcfce7; /* Light green */
-  color: #15803d;
+  background: var(--theme-success-surface); /* Light green */
+  color: var(--theme-success);
 }
 
 .removedLine {
-  background: #fee2e2; /* Light red */
-  color: #991b1b;
+  background: var(--theme-danger-surface); /* Light red */
+  color: var(--theme-danger);
 }
 
 .contextLine {
@@ -337,13 +337,13 @@
 }
 
 .addIcon {
-  background: #dcfce7;
-  color: #15803d;
+  background: var(--theme-success-surface);
+  color: var(--theme-success);
 }
 
 .removeIcon {
-  background: #fee2e2;
-  color: #991b1b;
+  background: var(--theme-danger-surface);
+  color: var(--theme-danger);
 }
 
 /* Code block styling for split view */
@@ -353,7 +353,7 @@
   font-family: var(--font-code);
   font-size: 11px;
   line-height: 1.5;
-  background: var(--theme-elevated);
+  background: var(--theme-code-bg);
   overflow-x: auto;
 }
 
@@ -367,14 +367,14 @@
   width: 40px;
   text-align: right;
   padding-right: 12px;
-  color: var(--theme-muted);
+  color: var(--theme-code-muted);
   user-select: none;
   flex-shrink: 0;
 }
 
 .lineText {
   flex: 1;
-  color: var(--theme-text);
+  color: var(--theme-code-text);
 }
 
 /* Responsive design */

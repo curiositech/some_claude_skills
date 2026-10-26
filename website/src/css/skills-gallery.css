@@ -1807,3 +1807,7 @@
     flex-wrap: wrap !important;
   }
 }
+
+@media (max-width: 768px) {
+  .beta-sticker { right: 0; top: -24px; }
+}

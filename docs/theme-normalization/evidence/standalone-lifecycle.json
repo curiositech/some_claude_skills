@@ -1,0 +1,22 @@
+[
+  {
+    "test": "standalone system dark prepaint",
+    "pass": true
+  },
+  {
+    "test": "standalone explicit choice persists",
+    "pass": true
+  },
+  {
+    "test": "native framework cross-tab preference reaches standalone",
+    "pass": true
+  },
+  {
+    "test": "standalone follows live OS in System",
+    "pass": true
+  },
+  {
+    "test": "standalone remains usable with blocked storage",
+    "pass": true
+  }
+]

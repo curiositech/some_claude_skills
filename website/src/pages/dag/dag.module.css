@@ -507,3 +507,10 @@
     width: 100%;
   }
 }
+
+.monitorContainer { min-width: 0; max-width: 100%; }
+@media (max-width: 768px) {
+  .monitorHeader { flex-wrap: wrap; gap: 12px; }
+  .monitorActions { flex-wrap: wrap; }
+}
+.container { width: 100%; min-width: 0; }

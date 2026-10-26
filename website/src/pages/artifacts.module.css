@@ -494,3 +494,7 @@
     font-size: 12px;
   }
 }
+
+@media (max-width: 996px) {
+  .artifactGrid { grid-template-columns: minmax(0, 1fr); }
+}

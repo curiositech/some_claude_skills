@@ -123,7 +123,7 @@ export default function MetricsPage(): JSX.Element {
           {/* Overview Stats Grid */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))',
             gap: '16px',
             marginBottom: '24px'
           }}>
@@ -243,7 +243,7 @@ export default function MetricsPage(): JSX.Element {
           {/* Two column layout */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))',
             gap: '24px',
             marginBottom: '24px'
           }}>
@@ -439,7 +439,7 @@ export default function MetricsPage(): JSX.Element {
             <div style={{ padding: '20px', background: 'var(--win31-gray)' }}>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 200px), 1fr))',
                 gap: '12px'
               }}>
                 {metrics.recentlyUpdated.map((skill) => (
@@ -502,7 +502,7 @@ export default function MetricsPage(): JSX.Element {
             <div style={{ padding: '20px', background: 'var(--win31-gray)' }}>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 200px), 1fr))',
                 gap: '12px'
               }}>
                 {metrics.largestSkills.map((skill, index) => (

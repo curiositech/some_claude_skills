@@ -143,3 +143,7 @@ html:root .bundle-gallery__filter-btn--active {
 html:root .win31-doc-content .guide-hero-title { color: var(--theme-code-green) !important; }
 html:root .win31-doc-content .guide-hero-subtitle { color: var(--theme-code-muted) !important; }
 html:root .footer-sticker { color: var(--theme-titlebar-text); background: var(--theme-sticker-red); }
+
+html:root .theme-doc-toc-mobile button {
+  color: var(--theme-text); background: var(--theme-surface);
+}

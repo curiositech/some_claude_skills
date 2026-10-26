@@ -509,3 +509,9 @@
     overflow-x: auto;
   }
 }
+
+.container, .tabContent, .graphContainer { min-width: 0; max-width: 100%; }
+.graphContainer > * { min-width: 0; }
+@media (max-width: 768px) {
+  .header, .quickStats, .statusBar { flex-wrap: wrap; }
+}
