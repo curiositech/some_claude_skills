@@ -112,14 +112,14 @@ export default function SiteBanner() {
                 }}
                 onMouseEnter={(e) => {
                   if (!site.current) {
-                    e.currentTarget.style.background = "var(--win31-navy, #000080)";
-                    e.currentTarget.style.color = "#ffffff";
+                    e.currentTarget.style.background = "var(--theme-action-bg)";
+                    e.currentTarget.style.color = "var(--theme-action-text)";
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!site.current) {
                     e.currentTarget.style.background = "transparent";
-                    e.currentTarget.style.color = "var(--win31-black, #000000)";
+                    e.currentTarget.style.color = "var(--theme-text)";
                   }
                 }}
               >
@@ -226,7 +226,7 @@ const styles: Record<string, React.CSSProperties> = {
     color: "var(--theme-text)",
     textDecoration: "none",
     cursor: "pointer",
-    transition: "background 0.1s, color 0.1s",
+    transition: "transform 0.1s",
   },
   linkCurrent: {
     background: "var(--theme-elevated)",
@@ -238,16 +238,19 @@ const styles: Record<string, React.CSSProperties> = {
     fontSize: 8,
   },
   linkContent: {
+    color: "inherit",
     flex: 1,
     minWidth: 0,
   },
   linkLabel: {
+    color: "inherit",
     fontWeight: 700,
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap" as const,
   },
   linkDesc: {
+    color: "inherit",
     fontSize: 8,
     opacity: 1,
     overflow: "hidden",

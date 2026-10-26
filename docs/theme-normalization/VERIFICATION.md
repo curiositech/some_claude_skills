@@ -45,9 +45,13 @@ The expanded library audit passes **20 interaction cases**, with zero resolved v
 
 The Canvas DAG now resolves CSS roles to concrete drawing colors and redraws when appearance or palette changes. A specialized browser check samples actual background pixels immediately before text drawing across eight lifecycle phases in both appearances, including live appearance changes: **16 states pass**, minimum text contrast **10.38:1**. It covers node-title and legend text; raster hero artwork and separate authored SVG media remain outside this specialized text check. See `evidence/canvas.json`.
 
-Shared authored interaction audit: **2,656 hover/pressed/focus/error cases pass**, checking **2,984 supported solid text instances** over 20 route/state contexts in both appearances. Fourteen media/opacity instances remain manual. The inventory deduplicates visible controls by tag/classes per route; it includes skill/MCP/bundle dialogs, the selected builder node panel, empty submission validation, and empty/running/deterministically failed-node log output. It rejects empty control inventories. The committed compact summary lists controls/states, counts, empty failures and the raw receipt hash; full raw output remains in task scratch. This covers supported authored states, not every possible user workflow.
+Shared authored interaction audit: **2,656 hover/pressed/focus/error cases pass**, checking **2,996 supported solid text instances** over 20 route/state contexts in both appearances. Fourteen media/opacity instances remain manual. The inventory deduplicates visible controls by tag/classes per route; it includes skill/MCP/bundle dialogs, the selected builder node panel, empty submission validation, and empty/running/deterministically failed-node log output. It rejects empty control inventories. The committed compact summary lists controls/states, counts, empty failures and the raw receipt hash; full raw output remains in task scratch. This covers supported authored states, not every possible user workflow.
 
 The audit drove paired header hover/focus/pressed colors, atomic navigation color changes during palette updates, a semantic keyboard skip link, dark filter hover, selected builder actions, terminal log levels and shared status/button/form roles. **56 Submit Skill cases** cover all seven palettes × both appearances × default/hover/pressed/focus; minimum contrast **7.13:1**. See `evidence/interaction-states-summary.json` and `evidence/nav-states.json`. These checks supplement the selected gallery/tab states above and do not replace manual artwork or nontext interaction review.
+
+Real-pointer and failure overlays: **30 cases pass**, minimum measured text contrast **10.38:1**. All three noncurrent Sites links are checked before pointer entry, on entry, after pointer leave and with keyboard focus in both appearances. These exercise React event handlers that forced CSS states do not trigger. The component restores semantic ink and explicitly carries link ink into child labels/descriptions. Navigation colors switch atomically; checks sample after a rendered frame.
+
+The same browser check delays then fails lazy visualizer chunks to inspect loading, initialization-error and error-action hover in both appearances. Text overlays use opaque terminal surfaces and matched terminal inks; metadata/hint roles are normalized without changing canvas artwork. See `evidence/pointer-overlays.json`. This verifies loading/error UI; it does not certify every live WebGL frame.
 
 Screenshots in `evidence/` show the final exported skill docs in both appearances, the dark gallery, and the mobile appearance control.
 
@@ -75,6 +79,7 @@ node ../docs/theme-normalization/extended-states-browser.mjs
 node ../docs/theme-normalization/canvas-browser.mjs
 node ../docs/theme-normalization/interaction-states-browser.mjs
 node ../docs/theme-normalization/nav-states-browser.mjs
+node ../docs/theme-normalization/pointer-overlays-browser.mjs
 ```
 
 The axe and lifecycle scripts fail on resolved violations, route/reflow errors or lifecycle failures. The solid-surface script reports manual-review candidates. Stop the local static server after checking.

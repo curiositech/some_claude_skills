@@ -1,9 +1,9 @@
 {
   "cases": 2656,
-  "checked": 2984,
+  "checked": 2996,
   "manual": 14,
   "exempt": 592,
-  "rawSha256": "e478a41b3a2a392173cea00587ee9c4de99543720e203ff346d9882bc5d5ce49",
+  "rawSha256": "17c13fd34fbd6fa1b722dba4f6693634458443dcac7457790e999b2c5bdfed45",
   "states": {
     "hover": 882,
     "pressed": 882,
@@ -62,7 +62,7 @@
       "mode": "light",
       "route": "/skills/",
       "cases": 66,
-      "checked": 57,
+      "checked": 63,
       "manual": 0,
       "exempt": 12,
       "states": [
@@ -138,7 +138,7 @@
       "mode": "light",
       "route": "/contact/",
       "cases": 60,
-      "checked": 48,
+      "checked": 57,
       "manual": 0,
       "exempt": 12,
       "states": [
@@ -210,7 +210,7 @@
       "mode": "light",
       "route": "/agents/",
       "cases": 66,
-      "checked": 54,
+      "checked": 60,
       "manual": 0,
       "exempt": 12,
       "states": [
@@ -590,7 +590,7 @@
       "mode": "light",
       "route": "/docs/skills/design_critic/",
       "cases": 66,
-      "checked": 63,
+      "checked": 69,
       "manual": 0,
       "exempt": 12,
       "states": [
@@ -765,7 +765,7 @@
       "mode": "dark",
       "route": "/",
       "cases": 84,
-      "checked": 129,
+      "checked": 126,
       "manual": 0,
       "exempt": 24,
       "states": [
@@ -808,7 +808,7 @@
       "mode": "dark",
       "route": "/skills/",
       "cases": 66,
-      "checked": 57,
+      "checked": 60,
       "manual": 0,
       "exempt": 12,
       "states": [
@@ -845,7 +845,7 @@
       "mode": "dark",
       "route": "/submit-skill/",
       "cases": 70,
-      "checked": 148,
+      "checked": 145,
       "manual": 1,
       "exempt": 18,
       "states": [
@@ -1070,7 +1070,7 @@
       "mode": "dark",
       "route": "/ecosystem/",
       "cases": 60,
-      "checked": 51,
+      "checked": 45,
       "manual": 0,
       "exempt": 12,
       "states": [
@@ -1474,7 +1474,7 @@
       "mode": "dark",
       "route": "/bundles/#detail",
       "cases": 66,
-      "checked": 63,
+      "checked": 57,
       "manual": 0,
       "exempt": 12,
       "states": [

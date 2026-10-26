@@ -1,0 +1,762 @@
+[
+  {
+    "mode": "light",
+    "state": "Desktop OS\nWindows 3.1 desktop experience: before pointer",
+    "text": [
+      {
+        "text": "Desktop OS",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Windows 3.1 desktop experience",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "Desktop OS\nWindows 3.1 desktop experience: pointer enter",
+    "text": [
+      {
+        "text": "Desktop OS",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Windows 3.1 desktop experience",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "Desktop OS\nWindows 3.1 desktop experience: pointer leave",
+    "text": [
+      {
+        "text": "Desktop OS",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Windows 3.1 desktop experience",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "Desktop OS\nWindows 3.1 desktop experience: keyboard focus",
+    "text": [
+      {
+        "text": "Desktop OS",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Windows 3.1 desktop experience",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "Documentation\nGetting started guide: before pointer",
+    "text": [
+      {
+        "text": "Documentation",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Getting started guide",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "Documentation\nGetting started guide: pointer enter",
+    "text": [
+      {
+        "text": "Documentation",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Getting started guide",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "Documentation\nGetting started guide: pointer leave",
+    "text": [
+      {
+        "text": "Documentation",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Getting started guide",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "Documentation\nGetting started guide: keyboard focus",
+    "text": [
+      {
+        "text": "Documentation",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Getting started guide",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "Artifacts\nExamples & showcases: before pointer",
+    "text": [
+      {
+        "text": "Artifacts",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Examples & showcases",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "Artifacts\nExamples & showcases: pointer enter",
+    "text": [
+      {
+        "text": "Artifacts",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Examples & showcases",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "Artifacts\nExamples & showcases: pointer leave",
+    "text": [
+      {
+        "text": "Artifacts",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Examples & showcases",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "Artifacts\nExamples & showcases: keyboard focus",
+    "text": [
+      {
+        "text": "Artifacts",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      },
+      {
+        "text": "Examples & showcases",
+        "foreground": "rgb(17, 17, 17)",
+        "background": [
+          192,
+          192,
+          192
+        ],
+        "ratio": 10.378762002183594
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "fullscreen visualizer loading",
+    "text": [
+      {
+        "text": "Loading Milkdrop Visualizer...",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          17,
+          19,
+          30
+        ],
+        "ratio": 16.277886248391155
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "fullscreen visualizer initialization error",
+    "text": [
+      {
+        "text": "[!]",
+        "foreground": "rgb(236, 202, 255)",
+        "background": [
+          17,
+          19,
+          30
+        ],
+        "ratio": 12.730823377395037
+      },
+      {
+        "text": "Loading chunk 87347 failed.\n(error: http://127.0.0.1:3240/assets/js/87347.ba38505c.js)",
+        "foreground": "rgb(236, 202, 255)",
+        "background": [
+          17,
+          19,
+          30
+        ],
+        "ratio": 12.730823377395037
+      },
+      {
+        "text": "CLOSE",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "state": "fullscreen visualizer error action hover",
+    "text": [
+      {
+        "text": "CLOSE",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "Desktop OS\nWindows 3.1 desktop experience: before pointer",
+    "text": [
+      {
+        "text": "Desktop OS",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Windows 3.1 desktop experience",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "Desktop OS\nWindows 3.1 desktop experience: pointer enter",
+    "text": [
+      {
+        "text": "Desktop OS",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Windows 3.1 desktop experience",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "Desktop OS\nWindows 3.1 desktop experience: pointer leave",
+    "text": [
+      {
+        "text": "Desktop OS",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Windows 3.1 desktop experience",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "Desktop OS\nWindows 3.1 desktop experience: keyboard focus",
+    "text": [
+      {
+        "text": "Desktop OS",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Windows 3.1 desktop experience",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "Documentation\nGetting started guide: before pointer",
+    "text": [
+      {
+        "text": "Documentation",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Getting started guide",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "Documentation\nGetting started guide: pointer enter",
+    "text": [
+      {
+        "text": "Documentation",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Getting started guide",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "Documentation\nGetting started guide: pointer leave",
+    "text": [
+      {
+        "text": "Documentation",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Getting started guide",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "Documentation\nGetting started guide: keyboard focus",
+    "text": [
+      {
+        "text": "Documentation",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Getting started guide",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "Artifacts\nExamples & showcases: before pointer",
+    "text": [
+      {
+        "text": "Artifacts",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Examples & showcases",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "Artifacts\nExamples & showcases: pointer enter",
+    "text": [
+      {
+        "text": "Artifacts",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      },
+      {
+        "text": "Examples & showcases",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "Artifacts\nExamples & showcases: pointer leave",
+    "text": [
+      {
+        "text": "Artifacts",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Examples & showcases",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "Artifacts\nExamples & showcases: keyboard focus",
+    "text": [
+      {
+        "text": "Artifacts",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      },
+      {
+        "text": "Examples & showcases",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          36,
+          42,
+          55
+        ],
+        "ratio": 12.650689360206039
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "fullscreen visualizer loading",
+    "text": [
+      {
+        "text": "Loading Milkdrop Visualizer...",
+        "foreground": "rgb(244, 240, 233)",
+        "background": [
+          17,
+          19,
+          30
+        ],
+        "ratio": 16.277886248391155
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "fullscreen visualizer initialization error",
+    "text": [
+      {
+        "text": "[!]",
+        "foreground": "rgb(236, 202, 255)",
+        "background": [
+          17,
+          19,
+          30
+        ],
+        "ratio": 12.730823377395037
+      },
+      {
+        "text": "Loading chunk 87347 failed.\n(error: http://127.0.0.1:3240/assets/js/87347.ba38505c.js)",
+        "foreground": "rgb(236, 202, 255)",
+        "background": [
+          17,
+          19,
+          30
+        ],
+        "ratio": 12.730823377395037
+      },
+      {
+        "text": "CLOSE",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "state": "fullscreen visualizer error action hover",
+    "text": [
+      {
+        "text": "CLOSE",
+        "foreground": "rgb(255, 255, 255)",
+        "background": [
+          0,
+          0,
+          128
+        ],
+        "ratio": 16.009727056831707
+      }
+    ]
+  }
+]
