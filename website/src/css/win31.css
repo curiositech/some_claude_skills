@@ -753,3 +753,9 @@ main[class*="docMainContainer"],
     display: none !important;
   }
 }
+
+/* Inline prose links remain distinguishable in every appearance and palette. */
+.win31-window :where(p, li) a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

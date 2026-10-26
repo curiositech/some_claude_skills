@@ -58,9 +58,15 @@ All five compact-player skins (Classic, Matrix, Synthwave, Ice and Amber) pass b
 
 The actual shared SVG DAG component is bundled without creating a public fixture route. All **seven TaskState statuses × seven palettes × two appearances** pass: **420 text instances**, minimum **7.50:1**; all five edge-color branches and legend markers minimum **7.22:1**. Node fills, status badges, edges and legend marks consume paired roles. Paint colors switch atomically during theme changes; the cancelled status has an explicit paired fallback and label. See `evidence/svg-status.json`. This covers shared authored status text, not arbitrary SVG artwork.
 
-The page-local JavaScript color-writer inventory includes ecosystem timeline/resources/Council Overview, Sites menu links and quick-view installation tabs. Their foreground/background writes and restoration use semantic pairs; actual pointer regressions complement forced CSS pseudo-state checks. Remaining manual limits include image/gradient and opacity instances listed above, raster illustrations, colored emoji, animated CTA/easter-egg gradients, authored SVG artwork outside the status component, native browser popups and live WebGL frames. The compact player's existing target sizes and complete nontext accessibility were not certified by this contrast slice.
+The page-local JavaScript color-writer inventory includes ecosystem timeline/resources/Council Overview, Sites menu links and quick-view installation tabs. Their foreground/background writes and restoration use semantic pairs; actual pointer regressions complement forced CSS pseudo-state checks. Remaining manual limits include image/gradient and opacity instances listed above, raster illustrations, colored emoji, animated CTA/easter-egg gradients, authored SVG artwork outside the status component, native browser popups and live WebGL frames. The expanded AA gate below supplements this earlier contrast slice.
 
 Screenshots in `evidence/` show the final exported skill docs in both appearances, the dark gallery, and the mobile appearance control.
+
+## Expanded AA regression gate
+
+After the contrast sweep, all applicable axe A/AA rules through WCAG 2.2 plus enhanced contrast were run on the same 22 representative routes at 1440px and real-touch 390px in both appearances: **88 cases pass**, with no resolved violations or document overflow. Retained incomplete results are in `evidence/full-aa.json`. This supplements the earlier five-rule receipts and does not erase their stated media/manual limits.
+
+The expanded gate repaired compact-player controls to 24 × 24px (AA minimum target size), preserved visible prose-link underlines, associated the DAG example label, made native MDX tables keyboard-scrollable, and gave the contact profile subtitle its heading semantics. The existing phone player exclusion remains explicit; 24px controls are not represented as AAA 44px targets. The production build and 44 focused tests pass after these repairs. Typecheck retains the baseline failures above with no new diagnostic identities.
 
 ## Reproduction
 

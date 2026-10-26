@@ -8,6 +8,9 @@ const CustomMDXComponents: typeof MDXComponentsType = {
   ...MDXComponents,
   SkillHeader,
   InstallTabs,
+  table: (props: React.ComponentPropsWithoutRef<'table'>) => (
+    <table {...props} tabIndex={props.tabIndex ?? 0} />
+  ),
   wrapper: ({ children }) => (
     <div className="win31-doc-content">{children}</div>
   ),

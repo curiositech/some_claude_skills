@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  height: 28px;
+  height: 32px;
   padding: 2px 4px;
   background: var(--win31-gray);
   font-family: 'VT323', 'Courier New', monospace;
@@ -272,8 +272,9 @@
 }
 
 .modeBtn {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
   padding: 0;
   background: var(--win31-gray);
   border: none;
@@ -317,8 +318,9 @@
 }
 
 .transportBtn {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
   padding: 0;
   background: var(--win31-gray);
   border: none;
@@ -470,8 +472,9 @@
 }
 
 .skinBtn {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
   padding: 0;
   background: var(--win31-gray);
   border: none;

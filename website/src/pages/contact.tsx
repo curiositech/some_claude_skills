@@ -33,14 +33,18 @@ export default function HireAuthor(): JSX.Element {
               }}>
                 Erich Owens
               </h1>
-              <p style={{
+              <h2 style={{
                 fontSize: '18px',
+                fontFamily: 'inherit',
+                fontWeight: 400,
+                lineHeight: 'inherit',
+                marginTop: 0,
                 color: "var(--theme-text)",
                 marginBottom: '24px',
                 fontStyle: 'italic'
               }}>
                 Architect & Tool Builder Who Makes Complex Systems Legible
-              </p>
+              </h2>
               <p style={{ fontSize: '15px', color: "var(--theme-muted)", maxWidth: '700px', margin: '0 auto 24px', lineHeight: '1.6' }}>
                 Founder of Curiositech, a Portland-based product studio building purpose-driven apps for recovery, legal aid, AI, and developer tools. Previously led 80+ engineers at Meta across VR/AR, computer vision, and ML. I build systems that last and tools that explain them.
               </p>
