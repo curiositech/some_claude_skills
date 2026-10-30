@@ -13,12 +13,12 @@ function ThemeApplicator({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
-export default function Root({ children }: { children: React.ReactNode }): JSX.Element {
+export default function Root({ children }: { children: React.ReactNode }): React.JSX.Element {
   return (
     <UISoundsProvider>
       <MusicPlayerProvider>
-        <ThemeApplicator>{children}</ThemeApplicator>
         <SiteBanner />
+        <ThemeApplicator>{children}</ThemeApplicator>
         <WinampModal />
         <FullScreenVisualizer />
       </MusicPlayerProvider>

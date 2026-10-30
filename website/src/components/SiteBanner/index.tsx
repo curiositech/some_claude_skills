@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useId } from "react";
 
 const SITES = [
   {
@@ -36,11 +36,13 @@ const SITES = [
  *
  * Mirrors the OS2 SiteBanner: compact Win31-styled hamburger in the top-left
  * that opens a dropdown with links to all SomeClaudeSkills properties.
- * Fixed position, always visible above the navbar.
+ * Its own flow row reserves space above the navbar instead of covering it.
  */
 export default function SiteBanner() {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const linksId = useId();
 
   // Close on outside click
   useEffect(() => {
@@ -58,16 +60,21 @@ export default function SiteBanner() {
   useEffect(() => {
     if (!open) return;
     function handleKey(e: KeyboardEvent) {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        setOpen(false);
+        buttonRef.current?.focus();
+      }
     }
     document.addEventListener("keydown", handleKey);
     return () => document.removeEventListener("keydown", handleKey);
   }, [open]);
 
   return (
-    <div ref={ref} style={styles.container}>
+    <div ref={ref} style={styles.container} className="site-switcher-row">
       {/* Hamburger button */}
       <button
+        ref={buttonRef}
+        type="button"
         onClick={() => setOpen((v) => !v)}
         style={{
           ...styles.button,
@@ -81,6 +88,7 @@ export default function SiteBanner() {
         }}
         aria-label="Switch site"
         aria-expanded={open}
+        aria-controls={linksId}
       >
         <span style={styles.icon}>{open ? "\u25BC" : "\u2630"}</span>
         Sites
@@ -88,7 +96,7 @@ export default function SiteBanner() {
 
       {/* Dropdown */}
       {open && (
-        <div style={styles.dropdown}>
+        <nav id={linksId} aria-label="Some Claude Skills sites" style={styles.dropdown}>
           {/* Title strip */}
           <div style={styles.titleStrip}>SomeClaudeSkills.com</div>
 
@@ -97,7 +105,8 @@ export default function SiteBanner() {
             {SITES.map((site) => (
               <a
                 key={site.id}
-                href={site.current ? undefined : site.url}
+                href={site.url}
+                aria-current={site.current ? "page" : undefined}
                 onClick={
                   site.current
                     ? (e) => {
@@ -143,7 +152,7 @@ export default function SiteBanner() {
 
           {/* Footer */}
           <div style={styles.footer}>someclaudeskills.com</div>
-        </div>
+        </nav>
       )}
     </div>
   );
@@ -153,18 +162,22 @@ export default function SiteBanner() {
 
 const styles: Record<string, React.CSSProperties> = {
   container: {
-    position: "fixed",
-    top: 4,
-    left: 4,
-    zIndex: 99999,
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+    minHeight: 48,
+    padding: "4px 8px",
+    background: "var(--theme-surface, var(--win31-gray))",
+    borderBottom: "1px solid var(--theme-border)",
     fontFamily: "var(--font-system, 'IBM Plex Mono', monospace)",
   },
   button: {
     display: "flex",
     alignItems: "center",
     gap: 4,
-    padding: "2px 6px",
-    fontSize: 9,
+    padding: "4px 10px",
+    minHeight: 40,
+    fontSize: "0.75rem",
     fontWeight: 700,
     fontFamily: "var(--font-system, 'IBM Plex Mono', monospace)",
     background: "var(--win31-gray, #c0c0c0)",
@@ -192,10 +205,11 @@ const styles: Record<string, React.CSSProperties> = {
   },
   dropdown: {
     position: "absolute",
+    zIndex: 201,
     top: "100%",
-    left: 0,
+    left: 8,
     marginTop: 2,
-    width: 208,
+    width: "min(20rem, calc(100vw - 16px))",
     background: "var(--win31-gray, #c0c0c0)",
     borderWidth: 2,
     borderStyle: "solid",
