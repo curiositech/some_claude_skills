@@ -1221,8 +1221,8 @@ html[class*="sidebar--show"] .theme-picker__hotdog,
   background-color: var(--ifm-color-primary-lightest) !important;
 }
 
-/* ── Early hamburger: collapse nav links at 1200px instead of 996px ──── */
-@media (max-width: 1200px) {
+/* Match Docusaurus’s native sidebar breakpoint so its menu stays functional. */
+@media (max-width: 996px) {
   /* Hide left-side dropdown items (Skills, Explore, Learn) */
   .navbar__items:not(.navbar__items--right) > .dropdown {
     display: none !important;
@@ -1259,11 +1259,54 @@ html[class*="sidebar--show"] .theme-picker__hotdog,
   display: none !important;
 }
 
-/* Ensure navbar doesn't crumple on any size */
+/* Each navigation group owns a flow row. The player and text links must not
+   compete for the same horizontal space or shrink over their neighbors. */
+.navbar {
+  height: auto;
+  min-height: var(--ifm-navbar-height);
+}
+
 .navbar__inner {
-  flex-wrap: nowrap !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem;
 }
 
 .navbar__items {
-  gap: 4px !important;
+  flex: 1 1 100%;
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 0.5rem !important;
+}
+
+.navbar__items--right {
+  justify-content: flex-start;
+}
+
+.navbar__items > * {
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.navbar__items > .navbar-hire-link {
+  white-space: normal !important;
+}
+
+.navbar__brand {
+  min-width: 0;
+  height: auto;
+}
+
+.navbar__title {
+  white-space: nowrap;
+}
+
+.site-switcher-row button:focus-visible,
+.site-switcher-row a:focus-visible {
+  outline: 2px solid var(--theme-text);
+  outline-offset: 2px;
+}
+
+@media (max-width: 996px) {
+  .navbar__items { gap: 0.375rem !important; }
+  .navbar__brand { flex: 0 0 auto; }
 }
