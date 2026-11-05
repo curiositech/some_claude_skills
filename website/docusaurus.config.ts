@@ -277,7 +277,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Made by Erich Owens at Curiositech | © ${new Date().getFullYear()} | Windows 3.1 aesthetic by design.`,
+      copyright: `<div>Made by Erich Owens | © ${new Date().getFullYear()} | Windows 3.1 aesthetic by design.</div><a class="studio-signature" href="https://curiositech.ai/" aria-label="Curiositech home"><span class="studio-signature__mark" aria-hidden="true"></span><span class="studio-signature__wordmark" aria-hidden="true"></span></a>`,
     },
     prism: {
       theme: prismThemes.github,
