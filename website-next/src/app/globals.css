@@ -33,6 +33,14 @@
   flex: none;
 }
 
+
+@media (forced-colors: active) {
+  .studio-signature__mark,
+  .studio-signature__wordmark {
+    background-color: LinkText;
+  }
+}
+
 .studio-signature__mark {
   inline-size: 20px;
   block-size: 20px;
