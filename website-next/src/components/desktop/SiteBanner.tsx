@@ -149,7 +149,10 @@ export function SiteBanner() {
                 "font-[family-name:var(--font-code)] text-[8px] text-[var(--color-text-muted)]"
               )}
             >
-              os2.someclaudeskills.com
+              <a className="studio-signature" href="https://curiositech.ai/" aria-label="Curiositech home">
+                <span className="studio-signature__mark" aria-hidden="true" />
+                <span className="studio-signature__wordmark" aria-hidden="true" />
+              </a>
             </div>
           </div>
         </>

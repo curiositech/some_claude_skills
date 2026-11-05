@@ -7,3 +7,40 @@
 @import '../styles/themes/cyberpunk.css';
 @import '../styles/dossier.css';
 @import "tailwindcss";
+
+/* Curiositech's original artwork. The surrounding surface supplies the ink color. */
+.studio-signature {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-block-size: 44px;
+  max-inline-size: 100%;
+  padding: 4px 8px;
+  color: var(--color-text-primary);
+}
+
+.studio-signature:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.studio-signature__mark,
+.studio-signature__wordmark {
+  display: block;
+  background: currentColor;
+  forced-color-adjust: none;
+  flex: none;
+}
+
+.studio-signature__mark {
+  inline-size: 20px;
+  block-size: 20px;
+  mask: url('/brand/curiositech-mark.png') center / contain no-repeat;
+}
+
+.studio-signature__wordmark {
+  inline-size: 110px;
+  aspect-ratio: 7.192375;
+  mask: url('/brand/curiositech-wordmark.svg') center / contain no-repeat;
+}
