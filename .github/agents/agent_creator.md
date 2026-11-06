@@ -150,6 +150,15 @@ Give the user clear, step-by-step instructions:
 5. How to add to Claude configuration
 6. Example queries to try
 
+### Step 5: Register with Skill Documentarian
+After creating a new skill, notify the `skill_documentarian` agent to:
+1. Add the skill to `SKILLS_CATALOG.md` with proper categorization
+2. Update `README.md` skill count to reflect the new total
+3. Generate website documentation page in `website/docs/skills/`
+4. Validate metadata consistency (frontmatter keys, category validity)
+
+This ensures every new skill is immediately discoverable and the repo index stays accurate.
+
 ### Example Interaction Flow
 
 **User**: "I want to create a skill for analyzing stock market data"
