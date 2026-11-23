@@ -40,7 +40,7 @@ Severity reflects the consequence for the intended reader, never how sure you sh
 | [`significance-puffery-testament`](#significance-puffery-testament) | HIGH | form | n/a |
 | [`stance-neutralization`](#stance-neutralization) | HIGH | form | n/a |
 | [`textureless-anecdote`](#textureless-anecdote) | HIGH | form | n/a |
-| [`unearned-prior-reference`](#unearned-prior-reference) | HIGH | form | yes |
+| [`unearned-prior-reference`](#unearned-prior-reference) | HIGH | form | n/a |
 | [`uniform-explanatory-depth`](#uniform-explanatory-depth) | HIGH | form | n/a |
 | [`vague-attribution`](#vague-attribution) | HIGH | form | n/a |
 | [`abstraction-jump-no-rung`](#abstraction-jump-no-rung) | med | form | n/a |
@@ -282,17 +282,13 @@ A personal story with no texture: no names, no weather, no dialogue, nothing tha
 > Priya gave me exactly one piece of feedback in two years, in a stairwell, about a slide I'd already presented.
 
 <a id="unearned-prior-reference"></a>
-### `unearned-prior-reference`  ·  high · generic-llm · prose · structural · family: form
-
-**Automated here:** yes, these scripts implement it.
+### `unearned-prior-reference`  ·  high · generic-llm · prose · llm-judge · family: form
 
 The piece points at a history the reader was never present for: 'building on our previous approach', 'unlike the v2 design', 'as we discussed', 'you'll recall'. The referent exists only in the writer's context, not on the page.
 
 **Why it reads AI:** A model writes from its context window. That window holds the previous versions, the internal thread and the repo, and nothing in the loop marks which of it the reader has seen. The sentence reads fine to everyone who was in the room and as noise to everyone who was not.
 
-**Detect:** A closed set of deictic and anaphoric frames, scoped to the opening third of the document, where by construction nothing has been established yet. Closed grammatical forms measured positionally, not a topic list.
-
-**Thresholds** (read by `scripts/humanize_review.py`): `min_words` = 250
+**Detect:** Follow the reference to its antecedent. Check earlier material and links an intended reader can access. Flag a reference only when the reader needs the missing fact to understand the present claim.
 
 **Fix:** Either establish the prior thing in one sentence before you improve on it, or cut the comparison and state what the current thing does. 'Faster than our v2 pipeline' means nothing to someone who never saw v2; 'processes forty thousand invoices an hour' means something to everyone. The test: could a reader who arrived from a search result follow this sentence?
 

@@ -1,12 +1,10 @@
 # UX writing inside the product
 
-The strings a logged-in user reads mid-task: errors, empty states, button labels, confirmations, notifications, field hints. Their quality bar is not whether they read well — it is whether they unblock someone who is stuck.
+Review the words a person reads mid-task: errors, empty states, button labels, confirmations, notifications, and field hints. Start with what the user knows and what they need to do next.
 
-**The mechanism that runs through the whole file, and the reason its findings are legible.** Under uncertainty about what failed, every substantive clause a model could write risks being wrong, and exactly one clause carries zero risk: the one about how sorry everyone is. So the generated string is optimised for the WRITER'S UNCERTAINTY rather than for the READER'S BLOCKAGE — and the two are anti-correlated. The less the system knows about the failure, the warmer the copy gets. A person who does not know what went wrong writes something terse and slightly embarrassed; a model writes something fluent and kind.
+Read the entire state before judging the words. A phrase list cannot tell whether an apology displaces an explanation, whether a generic error is an honest fallback, or whether a toast reports an outcome the user could already see. Decide those questions in the judge pass. Check runtime tokens in a rendered fixture with missing data or translations. Source templates and localization files legitimately carry placeholders.
 
-**Why hard string matching is defensible here and nowhere else in this skill.** In prose a closed phrase list is a bad detector: the words have honest uses and the list ages out in months. UI strings are different in kind. A product's user-facing string table is small, enumerable and extractable — from i18n catalogs, from string literals in the render path, from the error and empty and toast slots in the rendered DOM. Within that surface the phrase space is genuinely narrow, because there are only so many ways to say nothing. "Something went wrong" is not a phrase with a good use at a different frequency; it is a phrase with no good use at all in a product that knows what went wrong. So these sets are hard matches rather than frequency cues, and where a set does not close, the item says so and routes to a judge pass.
-
-**One entry is the headline.** `collapsed-empty-states` is not a wording problem and wording cannot repair it: three unrelated situations — the user has never had data, their filter matched nothing, the fetch failed — produce the same observable in the component and collapse into one string. It needs a three-way probe, because the defect is a missing branch rather than a present string, and the condition that matters most is the third: an empty list after a failed load is what makes users believe their data was deleted.
+Try the three states in `collapsed-empty-states`: a new account, a search with no matches, and a failed fetch. Each needs its own explanation and next action. An empty list after a failed load can make a person think their data was deleted.
 
 _35 items. Generated from catalog.json — edit there, then re-run `scripts/regenerate_references.py`. Do not hand-edit this file._
 
@@ -20,12 +18,12 @@ _Every item carries a **False positive when** line. Read it before you act on th
 
 ```mermaid
 flowchart TD
-    A["Strings a logged-in user reads mid-task"] --> B["EXTRACT first, match second"]
-    B --> C["i18n catalogs, JSX text, the render<br/>and error paths"]
-    C --> D["Closed phrase sets run ONLY over<br/>the extracted strings"]
-    D --> E{"Why is this the one lane<br/>where hard matching is allowed?"}
-    E --> F["A product's string table is small,<br/>enumerable and extractable.<br/>Prose is none of those"]
-    F --> G["Start with collapsed-empty-states:<br/>three different situations collapsing<br/>into one string is what makes users<br/>believe their data was deleted"]
+    A["Open the screen or state where the copy appears"] --> B["Identify the task and what the user knows"]
+    B --> C{"Can the claim be verified in the rendered state?"}
+    C -->|yes| D["Exercise the relevant state and record what renders"]
+    C -->|requires context| E["Judge whether the text conveys the facts and next action"]
+    D --> F["Keep source interpolation separate from visible output"]
+    E --> G["Compare first use, no search result, and failed load"]
 ```
 
 ## What is in this file
@@ -34,39 +32,39 @@ Severity reflects the consequence for the intended reader, never how sure you sh
 
 | item | severity | family | automated |
 | --- | --- | --- | --- |
-| [`apology-in-place-of-explanation`](#apology-in-place-of-explanation) | HIGH | form | yes |
-| [`are-you-sure-without-the-object`](#are-you-sure-without-the-object) | HIGH | form | yes |
-| [`assistant-register-in-product-chrome`](#assistant-register-in-product-chrome) | HIGH | form | yes |
+| [`apology-in-place-of-explanation`](#apology-in-place-of-explanation) | HIGH | form | n/a |
+| [`are-you-sure-without-the-object`](#are-you-sure-without-the-object) | HIGH | form | n/a |
+| [`assistant-register-in-product-chrome`](#assistant-register-in-product-chrome) | HIGH | form | n/a |
 | [`collapsed-empty-states`](#collapsed-empty-states) | HIGH | defect | **no** |
 | [`confirmation-without-loss-inventory`](#confirmation-without-loss-inventory) | HIGH | form | n/a |
 | [`destructive-action-labelled-like-a-benign-one`](#destructive-action-labelled-like-a-benign-one) | HIGH | form | **no** |
 | [`empty-state-without-an-on-ramp`](#empty-state-without-an-on-ramp) | HIGH | form | **no** |
-| [`error-blames-the-user`](#error-blames-the-user) | HIGH | form | yes |
+| [`error-blames-the-user`](#error-blames-the-user) | HIGH | form | n/a |
 | [`error-names-the-system-not-the-situation`](#error-names-the-system-not-the-situation) | HIGH | form | n/a |
 | [`error-with-no-recovery-action`](#error-with-no-recovery-action) | HIGH | form | n/a |
-| [`forced-cheer-interjection`](#forced-cheer-interjection) | HIGH | form | yes |
-| [`generic-failure-string`](#generic-failure-string) | HIGH | form | yes |
+| [`forced-cheer-interjection`](#forced-cheer-interjection) | HIGH | form | n/a |
+| [`generic-failure-string`](#generic-failure-string) | HIGH | form | n/a |
 | [`inverted-confirmation-coverage`](#inverted-confirmation-coverage) | HIGH | defect | **no** |
-| [`permission-ask-without-a-why`](#permission-ask-without-a-why) | HIGH | form | yes |
+| [`permission-ask-without-a-why`](#permission-ask-without-a-why) | HIGH | form | n/a |
 | [`politeness-is-the-safe-completion`](#politeness-is-the-safe-completion) | HIGH | form | **no** |
 | [`raw-exception-text-in-ui`](#raw-exception-text-in-ui) | HIGH | residue | **no** |
 | [`rules-revealed-only-after-failure`](#rules-revealed-only-after-failure) | HIGH | defect | **no** |
-| [`unresolved-token-in-ui-string`](#unresolved-token-in-ui-string) | HIGH | residue | yes |
-| [`widget-named-action-label`](#widget-named-action-label) | HIGH | form | yes |
+| [`unresolved-token-in-ui-string`](#unresolved-token-in-ui-string) | HIGH | residue | **no** |
+| [`widget-named-action-label`](#widget-named-action-label) | HIGH | form | n/a |
 | [`cancel-cancel-ambiguity`](#cancel-cancel-ambiguity) | med | form | **no** |
-| [`emoji-in-system-status-strings`](#emoji-in-system-status-strings) | med | form | yes |
+| [`emoji-in-system-status-strings`](#emoji-in-system-status-strings) | med | form | n/a |
 | [`exclamation-in-system-strings`](#exclamation-in-system-strings) | med | rhythm | yes |
 | [`helper-text-restates-the-label`](#helper-text-restates-the-label) | med | form | **no** |
-| [`http-status-as-user-prose`](#http-status-as-user-prose) | med | form | yes |
-| [`invalid-as-the-entire-diagnosis`](#invalid-as-the-entire-diagnosis) | med | form | yes |
-| [`joke-in-a-failure-state`](#joke-in-a-failure-state) | med | form | yes |
+| [`http-status-as-user-prose`](#http-status-as-user-prose) | med | form | n/a |
+| [`invalid-as-the-entire-diagnosis`](#invalid-as-the-entire-diagnosis) | med | form | n/a |
+| [`joke-in-a-failure-state`](#joke-in-a-failure-state) | med | form | n/a |
 | [`locale-ambiguous-and-unitless-values`](#locale-ambiguous-and-unitless-values) | med | defect | **no** |
-| [`no-data-available-string`](#no-data-available-string) | med | form | yes |
+| [`no-data-available-string`](#no-data-available-string) | med | form | n/a |
 | [`no-reference-for-support`](#no-reference-for-support) | med | defect | **no** |
-| [`objectless-notification`](#objectless-notification) | med | form | yes |
-| [`success-toast-for-a-visible-result`](#success-toast-for-a-visible-result) | med | defect | yes |
+| [`objectless-notification`](#objectless-notification) | med | form | n/a |
+| [`success-toast-for-a-visible-result`](#success-toast-for-a-visible-result) | med | defect | n/a |
 | [`tour-narrates-the-obvious`](#tour-narrates-the-obvious) | med | form | n/a |
-| [`welcome-tour-boilerplate`](#welcome-tour-boilerplate) | med | form | yes |
+| [`welcome-tour-boilerplate`](#welcome-tour-boilerplate) | med | form | n/a |
 | [`zero-results-without-the-query`](#zero-results-without-the-query) | med | form | **no** |
 | [`gamified-setup-checklist`](#gamified-setup-checklist) | low | shape | **no** |
 
@@ -78,15 +76,13 @@ Severity reflects the consequence for the intended reader, never how sure you sh
      would flag the exhibits rather than the writing. -->
 
 <a id="apology-in-place-of-explanation"></a>
-### `apology-in-place-of-explanation`  ·  high · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `apology-in-place-of-explanation`  ·  high · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 The message opens with regret and never arrives at information. The apology occupies the first clause — the most-read position — and the diagnosis never comes.
 
 **Why it reads AI:** Apology is the single safest completion an assistant can produce. It cannot be factually incorrect, it cannot offend, and it scores well on helpfulness ratings in conversation. So under uncertainty about what failed, the model reaches for the token that costs nothing to assert. That is exactly backwards at the moment of use. And the apology does not merely waste the slot — it INFLATES the perceived severity, because a system that apologises signals that something serious happened.
 
-**Detect:** Static, closed set in error, empty and toast strings: we're sorry, we are sorry, sorry about that, sorry for the inconvenience, we apologize, our apologies, please accept our apologies, inconvenience (the noun is near-diagnostic on its own in product copy), bear with us, thank you for your patience. Rank higher when the apology is sentence-initial and the remainder carries no cause and no action.
+**Detect:** Read the complete message and its surrounding state. Flag regret that displaces the cause, consequence, or next action. An apology can coexist with an adequate explanation.
 
 **Fix:** Delete the apology. Lead with what happened, follow with what to do. If the outage is genuinely severe and genuinely your fault, one short acknowledgement AFTER the facts is defensible.
 
@@ -101,15 +97,13 @@ The message opens with regret and never arrives at information. The apology occu
 > Checkout is down. Your cart is saved and no payment was taken. We'll email you when it's back. [Check status]
 
 <a id="are-you-sure-without-the-object"></a>
-### `are-you-sure-without-the-object`  ·  high · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `are-you-sure-without-the-object`  ·  high · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 The contentless confirmation. "Are you sure?" "This action cannot be undone. Are you sure?" The dialog interrupts without adding information.
 
 **Why it reads AI:** "Are you sure?" is the safe completion for a dialog whose contents the model does not know. It is valid for deleting a file, ending a subscription and dropping a database, which is exactly the property that makes it worthless: a question carrying no new information can only be answered one way.
 
-**Detect:** Static, closed set over dialog titles and bodies: are you sure, are you sure you want to continue, are you sure you want to proceed, are you sure you want to do this, please confirm, confirm action, "this action cannot be undone" as the ENTIRE body, do you want to continue. Weight higher when the body names no object and no quantity.
+**Detect:** Read the entire confirmation. Check that the object, consequence and relevant recovery options are clear before proceeding.
 
 **Fix:** Replace the question with the consequence. Name the object, the quantity and the irreversibility, then let the buttons carry the two outcomes.
 
@@ -124,15 +118,13 @@ The contentless confirmation. "Are you sure?" "This action cannot be undone. Are
 > “Delete 1,240 files in Q3 Archive? They won't go to Trash and can't be restored.” with [Delete 1,240 files] / [Keep files]
 
 <a id="assistant-register-in-product-chrome"></a>
-### `assistant-register-in-product-chrome`  ·  high · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `assistant-register-in-product-chrome`  ·  high · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 The chat assistant's voice leaking into the product. “Let's get you set up!” “I'll help you connect your account.” The product starts talking like the model that wrote it.
 
 **Why it reads AI:** Literal register bleed. The model's own conversational voice — first-person plural cohortative, offers of help, reassurance — is its strongest prior, and when it writes UI strings without a voice spec it writes in that voice. The result is a product addressing the user as a HELPER rather than as a TOOL, which is a category error. “Don't worry” is the worst of them, because it instructs the user about their emotional state. The giveaway is that the same voice appears in a settings screen, an error and an onboarding step.
 
-**Detect:** Static, closed set — the highest-precision set in this lane, because these constructions are near-absent from human-written UI: let's get you, let's get started, let's dive in, let's take a look, let's begin, let's set up, let's make sure, I'll help you, I can help you, I've gone ahead and, feel free to, happy to help, great choice, great question, no worries, don't worry, “just” plus an imperative, and first-person SINGULAR anywhere in product chrome.
+**Detect:** Review the screen in context. Identify helper-like narration that substitutes for clear, task-specific interface copy.
 
 **Fix:** Strip the cohortative and the first person singular. State what the screen is and what to do.
 
@@ -237,15 +229,13 @@ An empty state that explains the emptiness and offers no way out of it. Prose an
 > No projects yet. A project holds your repos, runs and reports. [Create a project] · [Import from GitHub]
 
 <a id="error-blames-the-user"></a>
-### `error-blames-the-user`  ·  high · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `error-blames-the-user`  ·  high · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 The error makes the user the grammatical agent of the failure. "You entered an invalid email address." "You forgot to select a date."
 
 **Why it reads AI:** Second person is the house style of an assistant. Models are tuned to address a single addressee directly and helpfully, so "you" is the default subject of any sentence they write about a person. That instinct is right in chat and wrong in a validation message, where it converts a system constraint into a personal accusation. The failure is not rudeness — the model is trying to be warm — it is that warmth and accusation share a grammatical form, and telling them apart needs to know whose fault the constraint is. It is the product's: the form permitted the input.
 
-**Detect:** Static, closed set — the blame constructions are a small closed family, because they all need a second-person subject plus a failure predicate: you entered, you forgot, you failed to, you did not, you didn't, you have not, you provided, you selected, your entry is invalid, you incorrectly. Also flag illegal, forbidden, prohibited and not permitted used of user input.
+**Detect:** Read what happened and who could have prevented it. Flag wording that assigns blame without explaining the constraint or the recovery step.
 
 **Fix:** Drop the agent. An imperative for an empty field, a neutral description for a constraint violation — GOV.UK's split is the cleanest rule available.
 
@@ -302,15 +292,13 @@ The message correctly and specifically states the problem and then stops. No ver
 > Your session expired after 30 minutes of inactivity. Sign in again — your draft is saved. [Sign in]
 
 <a id="forced-cheer-interjection"></a>
-### `forced-cheer-interjection`  ·  high · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `forced-cheer-interjection`  ·  high · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 An interjection prepended to a system message to soften it. Oops. Uh oh. Whoops. Yay. The word carries no information and sets a tone the user is not in.
 
 **Why it reads AI:** The interjection is emotional hedging: it signals that the message is not the reader's fault before the message says anything. That is a conversational move, appropriate between people and inert in a system string. The model reaches for it because a bare failure sentence reads harsh and harshness is what alignment training discourages. And it is FREE — it costs nothing to produce and it makes the string feel authored, which is why it appears in so much generated UI.
 
-**Detect:** Static, closed set — interjections are a genuinely closed word class, which makes this the most defensible hard match in the lane. Flag string-initial: Oops, Whoops, Uh oh, Oh no, Oh snap, Yikes, Eek, Yay, Woohoo, Hooray, Bummer, Darn, “well, this is awkward”, and standalone Nice!/Awesome!/Sweet!/Great!. In an error or empty-state slot, any hit is a finding.
+**Detect:** In context, check whether a cheery or theatrical opening conflicts with the stakes or distracts from a necessary next action.
 
 **Fix:** Delete the interjection. Nothing replaces it.
 
@@ -325,15 +313,13 @@ An interjection prepended to a system message to soften it. Oops. Uh oh. Whoops.
 > We couldn't upload chart-q3.png — it's 18 MB and the limit is 10 MB. [Choose a smaller file]
 
 <a id="generic-failure-string"></a>
-### `generic-failure-string`  ·  high · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `generic-failure-string`  ·  high · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 The contentless failure. A string announcing that something failed without naming what, why or what to do, usually with "please try again later" bolted on as a non-action.
 
 **Why it reads AI:** A model generating an error handler writes the string before the failure exists. There is no caught exception it has inspected, so it emits the string valid for every possible cause — which is the string carrying no cause. And it is self-reinforcing: the generic string is the only one that never needs updating when the code changes, so nothing in the loop ever pressures it.
 
-**Detect:** Static, closed set, case-insensitive over extracted UI strings: something went wrong; an error occurred; an unexpected error occurred; oops something went wrong; we're having trouble; we ran into a problem; unable to complete your request; an error has occurred; unknown error; error loading data; failed to load (bare); we couldn't process your request. Any hit is a finding unless it is the LAST branch of a real error taxonomy.
+**Detect:** Review the full error state. If the product knows the cause or a useful next step, check that the screen gives that information where the user needs it.
 
 **Fix:** Branch on the cause you already have in hand. The handler knows whether it caught a 401, a timeout, a validation rejection or a quota. One string per branch, each naming the cause and the next action, plus one true fallback carrying a support reference.
 
@@ -371,15 +357,13 @@ Confirmations distributed by convenience rather than consequence. Every routine 
 > renaming renames with an undo strip; deleting the account opens a dialog naming what is lost plus a typed confirmation
 
 <a id="permission-ask-without-a-why"></a>
-### `permission-ask-without-a-why`  ·  high · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `permission-ask-without-a-why`  ·  high · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 A request for access that states what is wanted and not why. The reason is either absent or a non-reason — one that would be true of any app.
 
 **Why it reads AI:** The model knows what the API call requires and not what the feature is for, so it writes the REQUEST precisely and the RATIONALE generically. “To improve your experience” is the maximally safe justification: true of everything, committing to nothing, impossible to contradict. It is the generic-failure mechanism applied to consent — the string valid in every case and informative in none.
 
-**Detect:** Judge, with a static assist for the non-reason family, which is closed and highly diagnostic: to improve your experience, to enhance your experience, for a better experience, to provide better service, for personalization, to help us serve you better, to improve our services. Judge prompt: does this name a concrete capability the user gains, or only a category of benefit?
+**Detect:** Read the request where it appears. Check whether the user can tell what granting access enables in the current task.
 
 **Fix:** One sentence naming the capability unlocked, shown before the system prompt, at the moment the user reaches for the feature.
 
@@ -463,15 +447,15 @@ A constraint the user could not have known and learns only by breaking it — pa
 > visible from the start: “At least 12 characters · one uppercase · one number · one of ! ? $ #”, each ticking off live
 
 <a id="unresolved-token-in-ui-string"></a>
-### `unresolved-token-in-ui-string`  ·  high · generic-llm · web-ui · structural · family: residue · lane: microcopy
+### `unresolved-token-in-ui-string`  ·  high · generic-llm · web-ui · rendered · family: residue · lane: microcopy
 
-**Automated here:** yes, these scripts implement it.
+**Automated here:** no — decidable mechanically, but this bundle does not implement it. Ask it yourself in the judge pass.
 
 Template or runtime scaffolding reaching the screen: “Welcome back, undefined!”, an unsubstituted handlebars token, [object Object], NaN items, a raw i18n key shown instead of its translation.
 
 **Why it reads AI:** Generated code assumes the happy shape of its own data. A name field is always present in the mock, so the fallback is never written; a formatter is never given an empty array; the i18n key is added to the component and not to the locale file. These are defects of NEVER HAVING LOOKED at the running screen with imperfect data — the failure profile of code written from a specification rather than from use.
 
-**Detect:** Regex the rendered text for standalone undefined, null, NaN, [object Object], {{token}}, ${expr}, printf placeholders, Infinity, and a dotted lowercase identifier in a text node, which is an untranslated i18n key. Probe with an account missing optional profile fields, which is what surfaces most of these.
+**Detect:** Exercise the rendered state with missing optional data or translations. Inspect the actual customer-visible text for leaked interpolation tokens or a raw localization key. Exclude template source, locale files, documentation, and user content.
 
 **Fix:** Fallbacks at every interpolation, a locale-key linter in CI, and a probe suite that renders every screen with null-heavy fixtures.
 
@@ -486,15 +470,13 @@ Template or runtime scaffolding reaching the screen: “Welcome back, undefined!
 > Welcome back. You have no unread messages.
 
 <a id="widget-named-action-label"></a>
-### `widget-named-action-label`  ·  high · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `widget-named-action-label`  ·  high · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 A button labelled for the mechanism rather than the outcome. Submit. OK. Confirm. Done. Apply. The label names the act of pressing, not what the user will have afterwards.
 
 **Why it reads AI:** "Submit" is the HTML default — literally the most frequent button string in the web corpus — and a model generating a form emits the corpus mode. The deeper reason is that a model which has not modelled the next screen cannot name it, so it names the interaction instead. Distinct from cta-names-the-click-not-the-outcome: a landing CTA is vague because it is selling to a stranger; an in-product button is vague because the generator never determined what happens on click.
 
-**Detect:** Static, closed set — button labels are the most enumerable string surface in a product. Flag exact trimmed matches on interactive elements: Submit, OK, Okay, Confirm, Done, Apply, Proceed, Go, bare Send, and Yes/No as a pair. Weight higher when the button sits in a dialog whose title is a question, and when both buttons in a dialog come from the set.
+**Detect:** Check the button's meaning in its full dialog or form. Flag a label when the user cannot tell what action it takes by reading the label and its immediate context.
 
 **Fix:** Verb plus object, naming the result. Make the label answer the dialog's question so the pair reads as call and response.
 
@@ -532,15 +514,13 @@ A dialog about cancelling something whose dismiss button is labelled Cancel. The
 > “Cancel your Pro subscription?” with [Cancel subscription] / [Keep subscription]
 
 <a id="emoji-in-system-status-strings"></a>
-### `emoji-in-system-status-strings`  ·  medium · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `emoji-in-system-status-strings`  ·  medium · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 Emoji embedded in product chrome: a check in a success toast, a warning triangle in an error, a sad face on an empty state. Distinct from emoji-as-ui-icons, which covers emoji standing in for an icon SYSTEM; this is emoji inside running status text.
 
 **Why it reads AI:** Emoji are the highest-density warmth-per-token available and they survive every style constraint a prompt imposes, so they are what a model reaches for when told to make copy friendly or modern. They also make generated UI LOOK designed in a screenshot without requiring an icon system, which is why they cluster in exactly the products that have no icon system. In a failure state the effect inverts: the emoji reads as the product being pleased with itself while the user is stuck.
 
-**Detect:** Static: regex the UI string corpus for emoji codepoint ranges plus the variation selector. Any hit in an error, warning or confirmation string is a hard finding; hits elsewhere are weighted by density.
+**Detect:** Read the actual status or error and listen to its accessible announcement. Flag emoji that obscure the recovery step, misstate the stakes or interrupt the announcement.
 
 **Fix:** Replace with a real icon from the product's set, or with nothing. An error state should carry no emoji at all. Note screen readers announce emoji names aloud mid-sentence.
 
@@ -563,9 +543,9 @@ Exclamation marks in status, error, empty and confirmation copy. The punctuation
 
 **Why it reads AI:** Exclamation is the cheapest available warmth — one character that makes a flat string feel friendly — so a model rewarded for warmth applies it uniformly, which destroys the contrast it is reaching for. Human-written string tables are UNEVEN: a couple of exclamations at real milestones and none anywhere else. Generated tables are flat, and the flatness is the tell, exactly as in low-burstiness-uniform-rhythm.
 
-**Detect:** Static and threshold-based. Two findings: any exclamation in an ERROR or WARNING string is a hard match; and an exclamation rate above roughly one in twelve strings across the whole corpus, or more than one in a single string. The threshold matters, because one celebratory “Welcome!” is a choice and forty is a default.
+**Detect:** Structural cue: count exclamation marks across an extracted string table. Review intent against the actual screen and task before making editorial changes.
 
-**Thresholds** (read by `scripts/humanize_review.py`): `max_rate` = 0.083
+**Thresholds** (read by `scripts/humanize_review.py`): `min_strings` = 12, `strings_per_mark` = 12
 
 **Fix:** Remove all of them from errors and warnings. Keep at most one or two in the whole product, at genuine milestones.
 
@@ -603,15 +583,13 @@ Hint text under a field that repeats the field's own name. Label “Email addres
 > Label “Phone number”, hint “Include the country code, e.g. +44 7700 900123. We only use this for delivery updates.”
 
 <a id="http-status-as-user-prose"></a>
-### `http-status-as-user-prose`  ·  medium · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `http-status-as-user-prose`  ·  medium · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 A raw HTTP status line rendered to an end user as if it were a sentence. The number is shown where the explanation should be.
 
 **Why it reads AI:** The status code is the one piece of vocabulary guaranteed correct, so a model with no knowledge of the product's domain reaches for it: the highest-confidence, lowest-value token available. The giveaway is that the protocol's word choice leaks through unedited — "Forbidden" is a term of art no person writing a permissions message would choose, because in English it implies moral prohibition rather than a missing grant.
 
-**Detect:** Static, closed set — the status vocabulary is finite and fully enumerable. Flag any user-visible string with a 4xx or 5xx number adjacent to Internal Server Error, Bad Gateway, Service Unavailable, Forbidden, Unauthorized, Not Found, Bad Request, Gateway Timeout, Unprocessable Entity, Too Many Requests, Request Timeout, Conflict or Payload Too Large. Also flag a bare status name with no surrounding explanation.
+**Detect:** Check whether a customer-facing error exposes only protocol jargon or a raw status code where the user needs the cause and a next step.
 
 **Fix:** Keep the number for support and lead with the situation. Map each status you actually emit to a sentence about the user's world.
 
@@ -626,15 +604,13 @@ A raw HTTP status line rendered to an end user as if it were a sentence. The num
 > You don't have access to this project. Ask its owner to add you. [Request access] (ref 403 / req 8f2c1a)
 
 <a id="invalid-as-the-entire-diagnosis"></a>
-### `invalid-as-the-entire-diagnosis`  ·  medium · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `invalid-as-the-entire-diagnosis`  ·  medium · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 The word "invalid" doing all the work. The string asserts that the input is wrong without stating the rule it broke or echoing what was entered.
 
 **Why it reads AI:** "Invalid" is the model's word for THE PREDICATE RETURNED FALSE, and it is available without knowing which predicate. Writing the real message means reading the validator — the regex, the range, the allowed set — and restating it in English. The generated string summarises the boolean rather than the rule.
 
-**Detect:** Static, closed set: flag any user-visible string where invalid, not valid or valid is the only diagnostic content — it opens with Invalid / Not a valid / Please enter a valid and contains no numeral, no format example and no rule statement. "Please enter a valid <field>" as a whole phrase is the single most-generated validation string in existence.
+**Detect:** Check whether the validation state explains the actual rule and how to satisfy it in the message or nearby help.
 
 **Fix:** State the rule, and quote the value back where it helps. Showing the user's input beside the requirement is the strongest version, because it makes the mismatch visible rather than asserted.
 
@@ -655,7 +631,7 @@ Humour deployed in an error, an outage, a payment failure or a data-loss warning
 
 **Why it reads AI:** Humour is one of the few ways a model can make a string feel authored, and the corpus of “delightful 404 pages” is large. But the joke is generated without knowledge of stakes: the same quip is emitted for a mistyped URL and a failed medical-record upload, because the generator sees an error SLOT, not a SITUATION. The three standard objections are not taste: frustration resists humour, humour does not localise, and the joke crowds out the information.
 
-**Detect:** Judge, scoped to failure surfaces: does this string contain a joke, a pun, a pop-culture reference or self-deprecation, and does it state the cause and the action? Static pre-filter on high-frequency joke vocabulary in error slots: gremlins, hamsters, on vacation, took a coffee break, our bad, this is embarrassing, sad panda, blame the interns.
+**Detect:** Check whether humor fits the stakes of the failure and whether the message still explains the problem and the recovery path.
 
 **Fix:** Reserve humour for low-stakes, low-frequency, genuinely harmless failures, and only where the page still says what happened and offers a route back. Never on data, money, or a blocked task.
 
@@ -693,15 +669,13 @@ Values rendered without the information needed to read them: a slashed date with
 > Renews 10 November 2025 · Limit: 2,048 MB per file · Total: US$1,200.00
 
 <a id="no-data-available-string"></a>
-### `no-data-available-string`  ·  medium · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `no-data-available-string`  ·  medium · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 The empty state's contentless string, sibling of the generic failure. It reports the count and says nothing about the situation.
 
 **Why it reads AI:** "No data" is a restatement of the render condition — the English translation of a zero-length array, which is the only fact the generating model has. It is describing the array, not the user's situation, and those are different subjects. Same pathology as kpi-card-without-comparison: a number reported without the context that makes it mean anything.
 
-**Detect:** Static, closed set in empty-state slots: no data, no data available, no data to display, no records, no records found, no items, no items found, no results (bare, with no query echoed), nothing here yet, nothing to see here, it's empty here, nothing found, no content available.
+**Detect:** Compare first use, empty search results and loading failures. Check what each state tells the user to do next.
 
 **Fix:** Say what belongs here, why it is empty and what fills it. Status, learning cue, pathway — three short clauses.
 
@@ -739,15 +713,13 @@ A failure that leaves neither the user nor the support team anything to hold: no
 > We couldn't complete that. We've logged it — quote ref 8F2C-1A94 if you contact support. [Copy ref] · [Retry]
 
 <a id="objectless-notification"></a>
-### `objectless-notification`  ·  medium · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `objectless-notification`  ·  medium · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 A notification reporting a completed event without naming what it happened to, when, or what to do about it. No object, no timestamp, no action.
 
 **Why it reads AI:** The notification is written at the point where the job finishes, where the object is a variable the string does not interpolate and the time is implicit because the message is emitted synchronously. Both omissions are invisible at write time and obvious at read time — a notification centre is read hours later, out of order, in a stack. The model has the writing context and not the reading context.
 
-**Detect:** Static set for the objectless family: update complete, sync complete, sync finished, import complete, export complete, processing complete, task completed, operation successful, “Done!”, finished, all set. Then check the notification surface for three properties: does each item name a specific object, carry a time, and offer an action from within the notification?
+**Detect:** Read the notification outside the original workflow. Check whether it names what happened, what it happened to, and any action the reader should take.
 
 **Fix:** Object, time, action. Every notification names what happened to what, when, and gives the user somewhere to go.
 
@@ -762,15 +734,13 @@ A notification reporting a completed event without naming what it happened to, w
 > Import finished: 1,204 contacts added, 12 skipped as duplicates · 4 minutes ago · [View import log]
 
 <a id="success-toast-for-a-visible-result"></a>
-### `success-toast-for-a-visible-result`  ·  medium · generic-llm · web-ui · structural · family: defect · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `success-toast-for-a-visible-result`  ·  medium · generic-llm · web-ui · llm-judge · family: defect · lane: microcopy
 
 A confirmation toast for an action whose result is already on screen. The row disappears AND a toast says “Item deleted”. The toast duplicates evidence the user already has, in a corner they are not looking at.
 
 **Why it reads AI:** Every mutation handler gets the same completion block, because a model writing handlers writes them uniformly and a success toast is the idiomatic ending. No pass asks whether the user can already SEE the outcome, because answering that requires knowing what is rendered at that moment. And “Saved successfully!” is the maximally reassuring string, which is the safe completion: it confirms, it reassures, it cannot be wrong.
 
-**Detect:** For each toast trigger, check whether the same action produces a visible change in the user's current viewport; if it does, the toast is redundant. Static assist on the string set: Saved!, Saved successfully, Success!, Successfully saved, Changes saved successfully, Updated successfully, Operation completed successfully — “successfully” is near-diagnostic, since people rarely write the adverb.
+**Detect:** Carry out the action and see whether the result is already visible. Check whether a toast adds useful confirmation, an undo action or information about an otherwise invisible outcome.
 
 **Fix:** Toast only when the result is invisible, off-screen, asynchronous or reversible — and when it is reversible, put the undo IN the toast so it earns its interruption.
 
@@ -806,15 +776,13 @@ A coach-mark sequence labelling self-evident controls: a tooltip on the search b
 > no tour; one contextual tip the first time the filter panel opens: “Filters stack. Add a second filter to narrow rather than replace.”
 
 <a id="welcome-tour-boilerplate"></a>
-### `welcome-tour-boilerplate`  ·  medium · generic-llm · microcopy · structural · family: form · lane: microcopy
-
-**Automated here:** yes, these scripts implement it.
+### `welcome-tour-boilerplate`  ·  medium · generic-llm · microcopy · llm-judge · family: form · lane: microcopy
 
 The modal that greets a new user with nothing in it. It consumes the first screen and transmits no information.
 
 **Why it reads AI:** A welcome modal is the most templated artifact in software and it is what “add onboarding” retrieves. It is also content-free by construction: the model has no idea what THIS user should do first, so it writes the greeting, which is true of every product. The cheer serves the same function as the apology in an error — it fills the slot where substance would go with something that cannot be wrong.
 
-**Detect:** Static, closed set: “Welcome to” plus a product name as a standalone heading; let's get started; let's get you started; getting started is easy; we're glad you're here; we're excited to have you; “thanks for signing up!” as the whole message; here's a quick tour; take a quick tour; welcome aboard; “you're all set!” before the user has done anything.
+**Detect:** Walk through the first-run flow. Flag a greeting or tour step that interrupts the first useful task without teaching what the user needs to do it.
 
 **Fix:** Delete it and make the first real screen teach. If something genuinely must be said before the user starts, say the one thing and get out of the way.
 

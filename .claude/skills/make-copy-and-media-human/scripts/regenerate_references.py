@@ -156,12 +156,12 @@ DIAGRAMS = {
     G -->|yes| H["A person must hear it.<br/>Do NOT write an assertion and<br/>call a pass evidence"]
     G -->|no| I["render_check.py --probe-a11y<br/>settles text-spacing and forced-colors"]""",
     "product-ux-writing.md": """flowchart TD
-    A["Strings a logged-in user reads mid-task"] --> B["EXTRACT first, match second"]
-    B --> C["i18n catalogs, JSX text, the render<br/>and error paths"]
-    C --> D["Closed phrase sets run ONLY over<br/>the extracted strings"]
-    D --> E{"Why is this the one lane<br/>where hard matching is allowed?"}
-    E --> F["A product's string table is small,<br/>enumerable and extractable.<br/>Prose is none of those"]
-    F --> G["Start with collapsed-empty-states:<br/>three different situations collapsing<br/>into one string is what makes users<br/>believe their data was deleted"]""",
+    A["Open the screen or state where the copy appears"] --> B["Identify the task and what the user knows"]
+    B --> C{"Can the claim be verified in the rendered state?"}
+    C -->|yes| D["Exercise the relevant state and record what renders"]
+    C -->|requires context| E["Judge whether the text conveys the facts and next action"]
+    D --> F["Keep source interpolation separate from visible output"]
+    E --> G["Compare first use, no search result, and failed load"]""",
     "typographic-craft-and-tokens.md": """flowchart TD
     A["A stylesheet or design system"] --> B["Read COMPUTED values, not declarations"]
     B --> C["Utility frameworks bundle line-height<br/>into the size scale, so a page with no<br/>explicit rule is usually correct"]
@@ -355,7 +355,7 @@ GROUPS = {
     },
     "product-ux-writing.md": {
         "title": "UX writing inside the product",
-        "intro": "The strings a logged-in user reads mid-task: errors, empty states, button labels, confirmations, notifications, field hints. Their quality bar is not whether they read well \u2014 it is whether they unblock someone who is stuck.\n\n**The mechanism that runs through the whole file, and the reason its findings are legible.** Under uncertainty about what failed, every substantive clause a model could write risks being wrong, and exactly one clause carries zero risk: the one about how sorry everyone is. So the generated string is optimised for the WRITER'S UNCERTAINTY rather than for the READER'S BLOCKAGE \u2014 and the two are anti-correlated. The less the system knows about the failure, the warmer the copy gets. A person who does not know what went wrong writes something terse and slightly embarrassed; a model writes something fluent and kind.\n\n**Why hard string matching is defensible here and nowhere else in this skill.** In prose a closed phrase list is a bad detector: the words have honest uses and the list ages out in months. UI strings are different in kind. A product's user-facing string table is small, enumerable and extractable \u2014 from i18n catalogs, from string literals in the render path, from the error and empty and toast slots in the rendered DOM. Within that surface the phrase space is genuinely narrow, because there are only so many ways to say nothing. \"Something went wrong\" is not a phrase with a good use at a different frequency; it is a phrase with no good use at all in a product that knows what went wrong. So these sets are hard matches rather than frequency cues, and where a set does not close, the item says so and routes to a judge pass.\n\n**One entry is the headline.** `collapsed-empty-states` is not a wording problem and wording cannot repair it: three unrelated situations \u2014 the user has never had data, their filter matched nothing, the fetch failed \u2014 produce the same observable in the component and collapse into one string. It needs a three-way probe, because the defect is a missing branch rather than a present string, and the condition that matters most is the third: an empty list after a failed load is what makes users believe their data was deleted.",
+        "intro": "Review the words a person reads mid-task: errors, empty states, button labels, confirmations, notifications, and field hints. Start with what the user knows and what they need to do next.\n\nRead the entire state before judging the words. A phrase list cannot tell whether an apology displaces an explanation, whether a generic error is an honest fallback, or whether a toast reports an outcome the user could already see. Decide those questions in the judge pass. Check runtime tokens in a rendered fixture with missing data or translations. Source templates and localization files legitimately carry placeholders.\n\nTry the three states in `collapsed-empty-states`: a new account, a search with no matches, and a failed fetch. Each needs its own explanation and next action. An empty list after a failed load can make a person think their data was deleted.",
         "pick": lambda i: i.get("lane") == "microcopy",
     },
     "typographic-craft-and-tokens.md": {

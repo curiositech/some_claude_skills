@@ -34,7 +34,7 @@ dead citation: a fact about whether the thing works.
                                   1.4.12 spacing values and measures the clipping
   forced-colors-mode-erases-the-interface  with --probe-a11y: what loses its only
                                   boundary when the OS takes over the palette
-  escape-and-focus-declared-not-wired   with --probe-modals: opens each trigger and
+  escape-and-focus-declared-not-wired   with --probe-modals and --modal-trigger: opens selected dialogs and
                                   tests focus-in, Escape, Tab containment, restore
 """
 
@@ -95,7 +95,7 @@ PROBE = r"""() => {
   };
   const bgOf = (el) => {
     let n = el;
-    while (n && n !== document.documentElement) {
+    while (n) {
       const c = getComputedStyle(n).backgroundColor;
       const m = c.match(/[\d.]+/g);
       if (m && (m.length < 4 || Number(m[3]) > 0.9)) return c;
@@ -221,64 +221,55 @@ MODAL_PROBE = r"""() => {
 
 CONTAINED_JS = r"""() => {
   const d = document.querySelector('dialog[open], [role="dialog"], [role="alertdialog"]');
-  return d ? d.contains(document.activeElement) : true;
+  return !!d && d.contains(document.activeElement);
 }"""
 
 
-def probe_modals(page, target, limit=6):
-    """Open each plausible trigger, then test the four behaviours that matter:
-    focus moves in, Escape closes, Tab stays contained, focus returns."""
+def probe_modals(page, target, trigger_selectors, limit=6):
+    """Exercise only selectors for dialog-opening controls in a safe fixture."""
     out = []
-    triggers = page.query_selector_all(
-        'button, [role="button"], a[href="#"], [data-testid*="open"], [aria-haspopup="dialog"]')
-    tested = 0
-    for tr in triggers:
-        if tested >= limit:
+    attempted = 0
+    for selector in dict.fromkeys(trigger_selectors):
+        if attempted >= limit:
             break
+        matches = page.query_selector_all(selector)
+        if len(matches) != 1:
+            raise ValueError(f"modal trigger selector must match exactly one element: {selector}")
+        tr = matches[0]
         try:
             if not tr.is_visible() or not tr.is_enabled():
                 continue
             label = (tr.inner_text() or tr.get_attribute("aria-label") or "").strip()[:40]
-            tr.focus()
+            name = label or selector
+            initial_url = page.url
+            attempted += 1
             tr.press("Enter")
             page.wait_for_timeout(180)
+            if page.url != initial_url:
+                break                           # the selector led to another page
             st = page.evaluate(MODAL_PROBE)
             if not st:
-                continue                      # this control does not open a dialog
-            tested += 1
-            name = label or f"trigger #{tested}"
+                continue
             problems = []
 
             if not st["focusInside"]:
                 problems.append("focus was not moved into the dialog on open")
 
-            # Escape.
-            page.keyboard.press("Escape")
-            page.wait_for_timeout(180)
-            still = page.evaluate(MODAL_PROBE)
-            if still:
-                problems.append("Escape did not close it")
-            else:
-                back = page.evaluate(
-                    "() => document.activeElement && document.activeElement.tagName.toLowerCase()")
-                if back == "body":
-                    problems.append("focus was not restored to the trigger on close")
-
-            # Containment, only meaningful while it is still open.
-            if still and still["focusables"]:
-                escaped = False
-                for _ in range(min(still["focusables"] + 2, 12)):
+            if st["focusables"]:
+                for _ in range(min(st["focusables"] + 2, 12)):
                     page.keyboard.press("Tab")
                     if not page.evaluate(CONTAINED_JS):
-                        escaped = True
+                        problems.append("Tab moved focus out of the dialog into the page behind")
                         break
-                if escaped:
-                    problems.append("Tab moved focus out of the dialog into the page behind")
-                page.keyboard.press("Escape")
-                page.wait_for_timeout(120)
-                if page.evaluate(MODAL_PROBE):
-                    page.reload(wait_until="domcontentloaded")
-                    page.wait_for_timeout(200)
+
+            page.keyboard.press("Escape")
+            page.wait_for_timeout(180)
+            if page.evaluate(MODAL_PROBE):
+                problems.append("Escape did not close it")
+                page.reload(wait_until="domcontentloaded")
+                page.wait_for_timeout(200)
+            elif not page.evaluate("trigger => document.activeElement === trigger", tr):
+                problems.append("focus was not restored to the trigger on close")
 
             if problems:
                 out.append(finding(
@@ -427,7 +418,7 @@ def probe_forced_colors(page, target):
         "box-shadow does not.")]
 
 
-def run(target, viewports, timeout_ms, probe_modal=False, probe_a11y=False):
+def run(target, viewports, timeout_ms, modal_triggers=(), probe_a11y=False):
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
@@ -479,8 +470,8 @@ def run(target, viewports, timeout_ms, probe_modal=False, probe_a11y=False):
             page.wait_for_timeout(250)
             r = page.evaluate(PROBE)
             out += interpret(target, name, w, r)
-            if probe_modal and name == "desktop":
-                out += probe_modals(page, target)
+            if modal_triggers and name == "desktop":
+                out += probe_modals(page, target, modal_triggers)
             if probe_a11y and name == "desktop":
                 # forced colors first: the spacing probe mutates the page.
                 out += probe_forced_colors(page, target)
@@ -588,8 +579,14 @@ def main():
                          "criteria nobody tests because both need a state the author's browser "
                          "is not in.")
     ap.add_argument("--probe-modals", action="store_true",
-                    help="open each plausible trigger and test the four modal behaviours: focus in, Escape closes, Tab contained, focus restored. The one check source review cannot settle.")
+                    help="probe explicitly selected dialog triggers in a disposable fixture")
+    ap.add_argument("--modal-trigger", action="append", default=[], metavar="CSS",
+                    help="selector for one safe dialog trigger; repeat to check several")
     args = ap.parse_args()
+    if args.probe_modals and not args.modal_trigger:
+        ap.error("--probe-modals requires at least one --modal-trigger CSS selector")
+    if args.modal_trigger and not args.probe_modals:
+        ap.error("--modal-trigger requires --probe-modals")
 
     vps = VIEWPORTS
     if args.viewport:
@@ -599,7 +596,7 @@ def main():
             w, _, h = dims.partition("x")
             vps.append((name, int(w), int(h)))
 
-    res = run(args.target, vps, args.timeout, probe_modal=args.probe_modals,
+    res = run(args.target, vps, args.timeout, modal_triggers=args.modal_trigger,
               probe_a11y=args.probe_a11y)
     if res is None:
         sys.exit(2)

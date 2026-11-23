@@ -61,7 +61,7 @@ flowchart TD
     C --> E["LAYER 1 - STRUCTURAL<br/>humanize_review.py FILE --baseline GLOB"]
     D --> E
     E --> F{"Any finding marked rendered?"}
-    F -->|yes| G["LAYER 2 - RENDERED<br/>render_check.py FILE --viewports 390,768,1280<br/>--probe-modals --probe-a11y"]
+    F -->|yes| G["LAYER 2 - RENDERED<br/>render_check.py FILE --probe-a11y<br/>Probe only explicitly selected dialog triggers"]
     F -->|no| H["LAYER 3 - JUDGE"]
     G --> H
     H --> I["Select relevant lanes. Ask their judge rubrics,<br/>plus applicable structural items the scripts<br/>do NOT implement - each is marked<br/>'Automated here: no' in its reference file"]
@@ -128,11 +128,15 @@ Two of its flags turn a source-level guess into a verdict, and both cover states
 the author's own browser is never in:
 
 ```bash
-python3 scripts/render_check.py URL --probe-modals --probe-a11y
+python3 scripts/render_check.py FIXTURE.html --probe-a11y
+python3 scripts/render_check.py FIXTURE.html --probe-modals --modal-trigger '#open-dialog'
 ```
 
-`--probe-modals` opens each plausible trigger and tests the four behaviours that
-matter — focus moves in, Escape closes, Tab stays contained, focus returns.
+Use `--probe-modals` only in a disposable fixture or test environment. Each
+`--modal-trigger` selector must identify one control whose activation you
+have verified opens only the target dialog. The probe checks whether focus
+enters, tests Tab containment while the dialog is open, then checks whether
+Escape closes it and focus returns to the selected control.
 `--probe-a11y` applies the WCAG 1.4.12 text-spacing values and measures what
 stops fitting, then switches to forced colors and confirms which elements lost
 their only visible boundary. Both matter because a static pass reports success on
