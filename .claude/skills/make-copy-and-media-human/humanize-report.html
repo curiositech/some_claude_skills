@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Humanize review</title>
+<style>
+  /* Deliberately not the AI default look: no Inter/Geist, no indigo. */
+  :root { --ink:#1a1714; --paper:#faf7f2; --rule:#d8d0c2; --accent:#8a3324;
+           --high:#8a3324; --medium:#9a6a00; --low:#4a5d49; }
+  html { font-size: 16px; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: var(--paper);
+         color: var(--ink); margin: 0; padding: 3rem 4vw; line-height: 1.55; }
+  h1 { font-size: 2rem; font-weight: normal; margin: 0 0 .25rem; }
+  .kicker { font-family: Menlo, monospace; font-size: .875rem; font-weight: 700;
+            letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+  .summary { font-size: 1rem; margin: .75rem 0 2rem; }
+  table { width: 100%; border-collapse: collapse; background: #fff;
+          border: 1px solid var(--rule); font-size: .9375rem; }
+  th { font-family: Menlo, monospace; font-size: .8125rem; text-transform: uppercase;
+       letter-spacing: .08em; text-align: left; padding: .6rem .7rem;
+       border-bottom: 2px solid var(--ink); }
+  td { padding: .65rem .7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  td.num { font-family: Menlo, monospace; color: #777; }
+  .sev { font-family: Menlo, monospace; font-size: .8125rem; font-weight: 700;
+         text-transform: uppercase; }
+  tr.sev-high .sev { color: var(--high); }
+  tr.sev-medium .sev { color: var(--medium); }
+  tr.sev-low .sev { color: var(--low); }
+  td.ism { font-family: Menlo, monospace; font-size: .875rem; white-space: nowrap; }
+  .dialect { color: #8a8378; font-size: .8125rem; margin-top: .15rem; }
+  td.loc { font-family: Menlo, monospace; font-size: .875rem; white-space: nowrap; }
+  del { background: #f6e3df; text-decoration-color: var(--high); display: inline-block;
+        padding: .05rem .2rem; }
+  ins { background: #e7eee4; text-decoration: none; display: block; margin-top: .4rem;
+        padding: .3rem .45rem; border-left: 3px solid var(--low); }
+  .why { font-size: .875rem; color: #564f45; margin-top: .35rem; }
+  footer { margin-top: 2rem; font-family: Menlo, monospace; font-size: .875rem; color: #8a8378; }
+</style></head><body>
+<div class="kicker">make_copy_and_media_human · line-item fix plan</div>
+<h1>Humanize review</h1>
+<p class="summary"><strong>2</strong> findings —
+  0 high, 2 medium, 0 low.
+  Struck text is the AI-ism as found; the inset block is the proposed fix.</p>
+<table>
+  <thead><tr><th>#</th><th>Sev</th><th>Ism</th><th>Where</th><th>Finding → fix</th></tr></thead>
+  <tbody>
+      <tr class="sev-medium">
+        <td class="num">1</td>
+        <td><span class="sev">medium</span></td>
+        <td class="ism">heading-spam<div class="dialect">generic-llm · structural</div></td>
+        <td class="loc">27-context-memory-runtime-wiring.md:1</td>
+        <td class="body"><del>21 headings vs 30 paragraphs</del>
+          <div class="why">A heading every paragraph or two is scaffolding, not writing.</div>
+          <ins>Cut headings that label a single paragraph; let prose carry transitions.</ins></td>
+      </tr>
+      <tr class="sev-medium">
+        <td class="num">2</td>
+        <td><span class="sev">medium</span></td>
+        <td class="ism">bold-label-colon-bullets<div class="dialect">generic-llm · structural</div></td>
+        <td class="loc">27-context-memory-runtime-wiring.md:82</td>
+        <td class="body"><del>7 &#x27;**Label:** text&#x27; bullets, e.g. - **Preferred:** the pilot hook / squid harness stamps the envelope on each</del>
+          <div class="why">The bolded-noun-colon bullet grid is a generated-doc signature.</div>
+          <ins>Keep at most one such list per document, or rewrite as prose.</ins></td>
+      </tr></tbody>
+</table>
+<footer>generated 2026-07-23 18:52Z · structural layer is
+measurable signals only; phrase-level tropes come from the model judge pass.</footer>
+</body></html>

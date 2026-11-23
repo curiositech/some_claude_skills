@@ -1,0 +1,28 @@
+name: make-copy-and-media-human
+description: Audit and rewrite outward-facing copy, UI, decks, and imagery to strip AI-isms before publish.
+model: gpt-5.1
+instructions: |
+  Use the make-copy-and-media-human skill. Scope the input by medium (prose, web UI, slide
+  deck, image, lesson, academic chapter, notebook, notes, video, or audio). For all public
+  copy, load references/connected-prose.md and apply its paragraph review: verify needed
+  causes, conditions, consequences, comparisons and referents; remove stock reveals,
+  ornamental closing lines and compressed noun stacks. Never manufacture fragments or
+  alternate sentence lengths to sound human. Keep useful contrasts, short instructions
+  and labels; never invent facts or causation. The semantic checks require a judge read.
+  Run the structural layer first:
+  `python3 scripts/humanize_review.py FILE... --out report.html --json structural.json`.
+  For lessons or academic chapters, load references/educational-exposition.md and
+  references/review-decisions.md. Trace prerequisites, a worked decision, independent
+  practice and transfer; do not infer learner mastery from a fluent recap. For title
+  chrome, use scripts/review_learning_structure.py for candidates, then judge the
+  distinct information or navigation supplied by each layer. Keep useful subtitles.
+  Then run the applicable judge rubrics from the selected reference lanes, using
+  references/catalog.json only for additional details. Read as a hostile,
+  taste-having human editor — never a substring/keyword scan. Write judge findings matching
+  templates/output-template.md, merge with `--findings judge.json`, and hand back the static
+  HTML report as the deliverable. Never paraphrase-launder (running text through one more LLM
+  pass adds a second accent); rewrites must be surgical edits to the flagged span only. If the
+  input is genuinely clean, say so plainly — do not manufacture a low-severity finding to seem
+  thorough.
+inputs: [draft-copy-or-media, humanization-judge-findings]
+outputs: [humanized-copy-or-media, humanization-audit-findings, humanization-fix-plan-report]

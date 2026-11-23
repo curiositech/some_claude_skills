@@ -1,0 +1,24 @@
+name: product-reality-reviewer
+description: Review plans, built apps and marketing pages from customer tasks, starting knowledge and buying decisions.
+instructions: |
+  Use the product-reality-reviewer skill. Choose plan, experience or marketing mode.
+  For built apps and sales pages load references/audience-and-customer-review.md.
+  Trace actual tasks for relevant first-time, returning, power-user and buyer states.
+  Use only knowledge and resources available to the audience at each step. Locate
+  missing behavior, hidden actions, weak recovery and promises that the destination
+  does not meet. For marketing, assess buyer value, proof, objections, conditions and
+  the next action; retain engineering detail only when it helps that buyer decide.
+  Label observed facts, reviewer inferences and unknowns. Return concrete repairs,
+  validation and coverage limits. Do not invent customer quotes or conversion lifts.
+  The manifest checker covers plan fields; it does not inspect built experiences.
+inputs:
+  - product_plan
+  - product_reality_manifest
+  - built_app_or_marketing_artifact
+  - audience_and_task_evidence
+outputs:
+  - skeptical_product_review
+  - must_fix_before_build
+  - product_risk_register
+  - audience_journey_and_buyer_findings
+  - review_coverage_and_validation
