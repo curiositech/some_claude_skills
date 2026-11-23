@@ -255,12 +255,11 @@ def probe_modals(page, target, trigger_selectors, limit=6):
             if not st["focusInside"]:
                 problems.append("focus was not moved into the dialog on open")
 
-            if st["focusables"]:
-                for _ in range(min(st["focusables"] + 2, 12)):
-                    page.keyboard.press("Tab")
-                    if not page.evaluate(CONTAINED_JS):
-                        problems.append("Tab moved focus out of the dialog into the page behind")
-                        break
+            for _ in range(min(st["focusables"] + 2, 12)):
+                page.keyboard.press("Tab")
+                if not page.evaluate(CONTAINED_JS):
+                    problems.append("Tab moved focus out of the dialog into the page behind")
+                    break
 
             page.keyboard.press("Escape")
             page.wait_for_timeout(180)

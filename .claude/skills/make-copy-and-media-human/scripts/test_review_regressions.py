@@ -263,6 +263,24 @@ class ModalProbe(unittest.TestCase):
         self.assertNotIn("Escape did not close", findings[0]["excerpt"])
 
 
+    def test_tab_containment_is_exercised_for_a_focusable_dialog_container(self):
+        page = Mock(url="file:///fixture.html")
+        trigger = Mock()
+        trigger.inner_text.return_value = "Open notice"
+        page.query_selector_all.return_value = [trigger]
+        page.evaluate.side_effect = [
+            {"focusInside": True, "focusables": 0, "native": False},
+            False,
+            None,
+            True,
+        ]
+
+        findings = render_check.probe_modals(page, "fixture.html", ("#open",))
+
+        self.assertEqual(page.keyboard.press.call_args_list, [call("Tab"), call("Escape")])
+        self.assertEqual(len(findings), 1)
+        self.assertIn("Tab moved focus out", findings[0]["excerpt"])
+
     def test_probe_stops_after_navigation(self):
         page = Mock(url="file:///fixture.html")
         first = Mock()
