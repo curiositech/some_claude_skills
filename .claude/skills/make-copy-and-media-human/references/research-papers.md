@@ -45,8 +45,8 @@ Severity reflects the consequence for the intended reader, never how sure you sh
 | [`chat-preamble-in-the-manuscript`](#chat-preamble-in-the-manuscript) | HIGH | residue | yes |
 | [`hidden-prompt-aimed-at-a-reviewers-model`](#hidden-prompt-aimed-at-a-reviewers-model) | HIGH | residue | **no** |
 | [`knowledge-cutoff-disclaimer-in-scholarly-prose`](#knowledge-cutoff-disclaimer-in-scholarly-prose) | HIGH | residue | **no** |
-| [`manuscript-addressed-to-the-user`](#manuscript-addressed-to-the-user) | HIGH | residue | yes |
-| [`model-used-as-an-instrument-with-no-version-date-or-parameters`](#model-used-as-an-instrument-with-no-version-date-or-parameters) | HIGH | defect | yes |
+| [`manuscript-addressed-to-the-user`](#manuscript-addressed-to-the-user) | HIGH | residue | n/a |
+| [`model-used-as-an-instrument-with-no-version-date-or-parameters`](#model-used-as-an-instrument-with-no-version-date-or-parameters) | HIGH | defect | n/a |
 | [`numbers-in-the-text-disagree-with-the-table`](#numbers-in-the-text-disagree-with-the-table) | HIGH | defect | **no** |
 | [`partial-attribute-corruption-in-a-reference`](#partial-attribute-corruption-in-a-reference) | HIGH | defect | **no** |
 | [`placeholder-token-left-in-a-reference-or-heading`](#placeholder-token-left-in-a-reference-or-heading) | HIGH | residue | yes |
@@ -55,7 +55,7 @@ Severity reflects the consequence for the intended reader, never how sure you sh
 | [`retracted-reference-cited-as-live`](#retracted-reference-cited-as-live) | HIGH | defect | **no** |
 | [`review-criticises-what-the-paper-does-not-contain`](#review-criticises-what-the-paper-does-not-contain) | HIGH | defect | n/a |
 | [`single-factor-design-on-a-public-dataset`](#single-factor-design-on-a-public-dataset) | HIGH | shape | n/a |
-| [`tortured-phrase`](#tortured-phrase) | HIGH | residue | yes |
+| [`tortured-phrase`](#tortured-phrase) | HIGH | residue | n/a |
 | [`unchecked-tail-of-the-bibliography`](#unchecked-tail-of-the-bibliography) | HIGH | defect | **no** |
 | [`ai-use-undeclared-against-the-venues-own-policy`](#ai-use-undeclared-against-the-venues-own-policy) | med | defect | **no** |
 | [`bibliography-any-model-would-have-written`](#bibliography-any-model-would-have-written) | med | shape | **no** |
@@ -65,7 +65,7 @@ Severity reflects the consequence for the intended reader, never how sure you sh
 | [`limitations-that-name-no-limitation`](#limitations-that-name-no-limitation) | med | shape | n/a |
 | [`many-exposures-tested-one-reported`](#many-exposures-tested-one-reported) | med | shape | **no** |
 | [`review-whose-weaknesses-are-the-standard-asks`](#review-whose-weaknesses-are-the-standard-asks) | med | shape | n/a |
-| [`review-with-no-locator`](#review-with-no-locator) | med | shape | yes |
+| [`review-with-no-locator`](#review-with-no-locator) | med | shape | n/a |
 | [`review-in-the-five-canonical-sections`](#review-in-the-five-canonical-sections) | low | shape | **no** |
 | [`review-submitted-at-the-buzzer-and-never-followed-up`](#review-submitted-at-the-buzzer-and-never-followed-up) | low | shape | n/a |
 | [`style-verb-spike-against-the-fields-own-baseline`](#style-verb-spike-against-the-fields-own-baseline) | low | form | **no** |
@@ -109,7 +109,7 @@ The assistant's compliance sentence survives the paste: 'Certainly, here is a po
 
 **Why it reads AI:** Instruction-tuned models are rewarded for an acknowledgement turn before the substance, so the answer physically begins with a sentence addressed to the requester rather than to a reader. No draft written in a word processor produces it, and no copy-editor adds it. It is evidence that text moved from a chat window into the manuscript without a pass over it - which is a statement about process, not about whether the author understood the content.
 
-**Detect:** Static: case-insensitive regex over the extracted body text for '\bcertainly,? (here|below)', '\bhere(\047|')s (an?|the|your) (improved|revised|rewritten|polished)', '\bi hope this helps\b', '\bsure(,|!) here', '\bof course(,|!) here'. Report with the surrounding 200 characters; a single hit in running prose (not inside a quotation or a figure about LLM output) is the finding.
+**Detect:** Static: flag explicit model self-identification or an explicit first-person knowledge-update disclaimer in manuscript text. Review generic greetings, access limitations and other context-dependent phrases by hand.
 
 **Fix:** Delete the sentence. Then re-read the paragraph it introduced, because the preamble marks the exact boundary of the pasted region and that region is the part nobody proofread. If the venue requires an AI-use declaration, add it; do not quietly strip the evidence and publish.
 
@@ -170,15 +170,13 @@ A sentence that scopes a claim to the model's training window or its lack of too
 > A PubMed search on 12 March 2025 (terms in Supplementary Table 1) returned no randomised trial of this agent.
 
 <a id="manuscript-addressed-to-the-user"></a>
-### `manuscript-addressed-to-the-user`  ·  high · generic-llm · academic-paper · structural · family: residue · lane: research-papers
-
-**Automated here:** yes, these scripts implement it.
+### `manuscript-addressed-to-the-user`  ·  high · generic-llm · academic-paper · llm-judge · family: residue · lane: research-papers
 
 Second-person address or references to 'the user' inside a paper, which has readers and not users: 'your manuscript', 'the text you provided', 'It is not necessary to rewrite the user's text to make it more scholarly'. Academ-AI found second person in 87 of 768 documents (11.3%) and 'the user' in 34 (4.4%); one article in Memories - Materials, Devices, Circuits and Systems contained twenty separate references to 'the user', including 'There was no text provided by the user to alter.'
 
 **Why it reads AI:** A chat model's default addressee is the person in the conversation, so when it is asked to improve a passage it narrates the service it is performing and the improvement together. The paper then carries a sentence whose grammatical you is the author, not the reader - a referent that does not exist on the page. The scholarly register otherwise suppresses second person almost completely, so the rate is close to zero in the human baseline for these genres.
 
-**Detect:** Static: regex for '\bthe user\047?s?\b' and for second-person pronouns '\b(you|you\047re|your|yours|you\047ve)\b' in the abstract, introduction, methods, results and discussion. Exclude the discussion of human-subject users, HCI papers, tutorial or editorial genres, and quoted interview data. A hit in an abstract is near-decisive.
+**Detect:** Read the passage in its genre and identify who is being addressed. Flag second person only when it addresses a requester outside the work and displaces manuscript content. A reader directed to a real figure, a tutorial audience, or a participant quote is not such a case.
 
 **Fix:** Rewrite in the paper's own voice, naming the thing rather than the transaction. If the sentence was about the request rather than about the research, it has no rewrite: delete it and write the sentence that should have been there.
 
@@ -193,15 +191,13 @@ Second-person address or references to 'the user' inside a paper, which has read
 > (deleted; the sentence was about the request, not the research, so there is nothing to rewrite)
 
 <a id="model-used-as-an-instrument-with-no-version-date-or-parameters"></a>
-### `model-used-as-an-instrument-with-no-version-date-or-parameters`  ·  high · generic-llm · academic-paper · structural · family: defect · lane: research-papers
-
-**Automated here:** yes, these scripts implement it.
+### `model-used-as-an-instrument-with-no-version-date-or-parameters`  ·  high · generic-llm · academic-paper · llm-judge · family: defect · lane: research-papers
 
 A study whose measurements come from a language model reports it as 'we used GPT-4' or 'the latest model release', with no snapshot identifier, no access date, no temperature or seed, and no prompt. A manual audit of 640 LLM-for-software-engineering papers (2020-2025) found versioning problems in 32.2%, including unpinned dependencies and floating references such as 'latest'; 199 of the 640 papers did not give their prompt templates and 88 did not document inference parameters. 572 of the 640 made no mention of hardware at all.
 
 **Why it reads AI:** This is not a text tell and should never be reported as one: it is the reproducibility failure specific to using a model as a measuring instrument. Hosted models are silently updated, sampling is non-deterministic, and temperature zero does not remove variation from routing or rounding, so a result reported without a pinned version and parameters cannot be re-obtained by anyone including the authors. The reason it belongs in this lane is that it is the single most common methods defect in the papers that use these tools, and it is fully checkable from the text.
 
-**Detect:** Static: for any paper that uses a hosted model to produce results, grep the methods for a snapshot id (a dated model string), an access date, and each of 'temperature', 'top_p', 'top-k', 'seed', 'max_tokens', 'system prompt'. Also check that the full prompt is in the paper or a linked artefact. Missing snapshot plus missing access date is the reportable minimum.
+**Detect:** Identify whether the model produced measurements or classifications for this study. Check the methods, appendices and linked materials for the model identity, execution conditions and prompts needed to reproduce those measurements.
 
 **Fix:** Report the dated snapshot string, the access window, every sampling parameter, the exact system and user prompts, and the number of repeats with their variance. Archive the prompts and raw responses in a repository with a DOI.
 
@@ -270,7 +266,7 @@ Template variables the generator never filled: 'Firstname Lastname and Others', 
 
 **Why it reads AI:** A model asked for a citation it does not have will emit the schema instead of the value, because the schema is the high-probability continuation and refusing is not. The artefact is diagnostic of generation and also of a broken submission pipeline: it means no human and no reference manager touched the entry between drafting and submission. It says nothing about the rest of the paper's quality, and everything about what was not checked.
 
-**Detect:** Static: regex over the whole manuscript including the bibliography for 'Firstname|Lastname|\bFirst Author\b|\bAuthor, A\.|arXiv:\d{4}\.X+|\bXXXX\b|\[insert [^\]]*\]|\bTBD\b|\bto be updated\b|\b(Conclusions?|Introduction|Results) Here\b|\bLorem ipsum\b'. Zero tolerance: any hit is a finding.
+**Detect:** Static cue: look for explicit unfilled slots or sentinel citation keys such as TODO and XXX. Do not infer that a bibliographic key is unresolved from its spelling.
 
 **Fix:** Resolve or delete the entry. Then check every other reference in the same list, because a placeholder marks a bibliography that was written rather than collected, and the entries that look complete were produced by the same process.
 
@@ -392,15 +388,13 @@ One exposure, one outcome, one slice of a large public survey, and a title of th
 > A pre-registered analysis of all NHANES cycles 1999-2023 testing whether the reported niacin-depression association survives adjustment for total energy intake, income and comorbidity, with the 28 previously reported single-nutrient associations re-tested under FDR control.
 
 <a id="tortured-phrase"></a>
-### `tortured-phrase`  ·  high · generic-llm · academic-paper · structural · family: residue · lane: research-papers
-
-**Automated here:** yes, these scripts implement it.
+### `tortured-phrase`  ·  high · generic-llm · academic-paper · llm-judge · family: residue · lane: research-papers
 
 An established technical term replaced by a synonym chain that preserves grammar and destroys meaning: 'counterfeit consciousness' for artificial intelligence, 'bosom peril' for breast cancer, 'kidney disappointment' for kidney failure, 'fake neural organizations' for artificial neural networks, 'lactose bigotry' for lactose intolerance, 'Joined Together States' for the United States. The Problematic Paper Screener screens about 130 million publications weekly against a list of several thousand such fingerprints and has flagged nearly 19,000 articles containing at least five each, of which only around 2,900 have been retracted; the tool has contributed to more than 1,000 retractions.
 
 **Why it reads AI:** Not an LLM fingerprint, and saying so is the point. Tortured phrases come from word-level machine paraphrasers such as SpinBot, used to evade text-matching plagiarism detection, and modern instruction-tuned models generally preserve technical terminology because they have context. So a tortured phrase is evidence of plagiarism laundering rather than of generation, and reporting it as an AI tell gets both the mechanism and the remedy wrong. Prompts that ask explicitly for synonym substitution can still induce it.
 
-**Detect:** Static: match against the Problematic Paper Screener's published tortured-phrase list, or submit the DOI to the Screener directly. This is one of the narrow cases where a closed string list is defensible, because the strings have no correct use: nobody writes 'bosom peril' on purpose.
+**Detect:** Read the term in its field and passage. Verify that it displaces an established technical term in context. Exclude deliberate quotations, legitimate terminology and translated variants.
 
 **Fix:** Restore the standard term. Then establish where the passage came from, because the phrase is a symptom of a paraphrased source and the source is the actual problem; this is an integrity matter for the editor rather than a copy-edit.
 
@@ -618,15 +612,13 @@ The critique consists entirely of requests that could be made of any paper in th
 > Weakness: Theorem 2 assumes the noise is independent of the covariates, but the dataset in Section 5 is known to violate this (see Chen 2023, Fig. 4). If the result survives correlated noise, show it; if not, the empirical section does not support the theory.
 
 <a id="review-with-no-locator"></a>
-### `review-with-no-locator`  ·  medium · generic-llm · peer-review · structural · family: shape · lane: research-papers
-
-**Automated here:** yes, these scripts implement it.
+### `review-with-no-locator`  ·  medium · generic-llm · peer-review · llm-judge · family: shape · lane: research-papers
 
 A referee report that never points at a place in the manuscript: no line or page number, no section, equation, figure or table reference, no quoted sentence, and no citation of related work the authors should have engaged. Liang et al. (2024) found that reviews containing scholarly citations were significantly less likely to be estimated as AI-modified, and that generated reviews 'include less specific feedback or citations of other work' than written ones, across ICLR 2024, NeurIPS 2023, CoRL 2023 and EMNLP 2023.
 
 **Why it reads AI:** A locator is an index into a document the writer has in front of them; a model given the manuscript as one blob of text has no stable line numbering and no reason to produce one. More fundamentally, pointing commits the reviewer to a specific claim that can be checked and rebutted, and the generated register avoids exactly that. The absence is also what makes the review useless to the author, which is the argument to make when reporting it - not who wrote it.
 
-**Detect:** Static: count matches of 'line \d', 'p\. ?\d', 'page \d', 'Sec(tion)?\.? ?\d', 'Fig(ure)?\.? ?\d', 'Table ?\d', 'Eq(uation)?\.? ?\(?\d', and bracketed or author-year citations. Zero locators and zero citations across a review of more than 300 words is the finding. Report the count, not a verdict.
+**Detect:** Confirm that the artifact is a referee report. Read the substantive criticisms against the paper and check whether quotes, locators or specific methods let the authors find what needs changing.
 
 **Fix:** Anchor every substantive point to a location and quote the sentence you are objecting to. A review an author can act on is a review that says where.
 

@@ -5285,50 +5285,17 @@ def analyze_forms(path, text):
 TEX_EXT = {".tex", ".bib", ".cls", ".sty", ".ltx"}
 PLOT_EXT = {".py", ".r", ".rmd", ".ipynb", ".jl"}
 
-# Cabanac/Labbe tortured phrases. These are evidence of word-level machine
-# PARAPHRASING to evade text matching, not of LLM generation -- modern
-# instruction-tuned models preserve technical terms. The remedy differs, so the
-# distinction is kept in the finding text.
-TORTURED = {
-    "counterfeit consciousness": "artificial intelligence",
-    "man-made brainpower": "artificial intelligence",
-    "bosom peril": "breast cancer",
-    "kidney disappointment": "kidney failure",
-    "joined together states": "United States",
-    "irregular esteem": "random value",
-    "mean square blunder": "mean square error",
-    "profound learning": "deep learning",
-    "gullible bayes": "naive Bayes",
-    "bolster vector machine": "support vector machine",
-    "colossal information": "big data",
-    "lung malignancy": "lung cancer",
-}
-
 CHAT_RESIDUE = (
-    r"as an AI language model|I (?:do not|don't) have (?:access to|the ability)"
-    r"|my (?:knowledge )?(?:cut[- ]?off|training data)(?: date)?"
-    r"|as of my last (?:knowledge )?update|Regenerate response"
-    r"|certainly[,!]? here (?:is|are)|I hope this helps"
-    r"|as a large language model|I'm sorry,? but (?:I|as)"
+    r"\bas (?:an AI|a large) language model\b"
+    r"|\bas of my last knowledge update\b"
 )
 
 
 def analyze_manuscript(path, text):
-    """Research-paper surfaces: the manuscript and the referee report.
-
-    A paper's sentences and its checkable commitments come out of the same
-    machinery at the same confidence, and nothing in the finished artifact marks
-    which is which. So every check here points OUTWARD at the world -- does this
-    resolve, does the body contain the abstract's number -- rather than inward at
-    style. Those cost an accused author nothing when they come back clean, which
-    matters more here than anywhere else in this skill: the population most
-    likely to leave a style marker in a manuscript is the one writing in its
-    second language, and the cost of being wrong is a career rather than an edit.
-    """
+    """Check literal manuscript residue. Route meaning and genre to the judge."""
     out = []
     lines = mask_ignored(text.splitlines())
     text = "\n".join(lines)
-    low = text.lower()
 
     def first(pat, default=1):
         return next((i + 1 for i, l in enumerate(lines)
@@ -5351,27 +5318,14 @@ def analyze_manuscript(path, text):
             "of 56 publishers with a public AI policy, 82.1% require disclosure.",
             family="residue"))
 
-    # ---- a paper addressed to a chat user rather than a reader
-    if re.search(r"\b(?:as you\s+(?:can see|requested|mentioned)|you\s+(?:asked|wanted|said)|"
-                 r"in your\s+(?:question|prompt|request)|let me know if)\b", low) \
-       and re.search(r"\\begin\{abstract\}|\babstract\b|\bwe (?:present|propose|show)\b", low):
+    placeholder = (
+        r"\[(?:Author|Title|Journal|Year|Citation|Reference|insert [^\]]{2,30})\]"
+        r"|\bAuthor et al\., Title, Journal, Year\b"
+        r"|\\cite\{(?:TODO|XXX)\}"
+    )
+    if re.search(placeholder, text, re.I):
         out.append(finding(
-            path, first(r"as you |you asked|in your (?:question|prompt)|let me know if"),
-            "second person addressed to a requester, in a manuscript",
-            "manuscript-addressed-to-the-user", "high",
-            "A paper addresses a reader who is not in the room. Second person aimed at a "
-            "requester is the conversational frame surviving the copy-paste; Academ-AI finds "
-            "it in 11.3% of its documented cases.",
-            "Rewrite in the register of the venue. If the sentence only makes sense as an "
-            "answer to someone, it is not a finding and should go.",
-            family="residue"))
-
-    # ---- placeholder left in a reference or a heading
-    if re.search(r"\[(?:Author|Title|Journal|Year|Citation|Reference|insert [^\]]{2,30})\]"
-                 r"|\bAuthor et al\., Title, Journal, Year\b"
-                 r"|\\cite\{(?:key|ref|citation|TODO|XXX)\}", text, re.I):
-        out.append(finding(
-            path, first(r"\[(?:Author|Title|Journal|Year|Citation)\]|\\cite\{(?:key|ref|TODO)"),
+            path, first(placeholder),
             "a template slot left unfilled in a reference or heading",
             "placeholder-token-left-in-a-reference-or-heading", "high",
             "The scaffold for a citation shipped in place of the citation. Unlike a style "
@@ -5380,82 +5334,6 @@ def analyze_manuscript(path, text):
             "Fill it or cut the sentence. Then verify the reference you fill it with, because "
             "a slot nobody filled is a slot nobody checked.",
             family="residue"))
-
-    # ---- a referee report with nothing to point at
-    # A referee report makes a recommendation to an editor. A document ABOUT
-    # peer review describes one in the third person and makes none -- and this
-    # skill's own reference files are exactly that, which is how the first
-    # version of this check came to flag its own documentation.
-    is_review = bool(re.search(r"\b(?:this (?:paper|manuscript|submission)|the authors)\b", low)) \
-        and bool(re.search(r"\b(?:weakness(?:es)?|strengths?|soundness|rebuttals?)\b", low)) \
-        and bool(re.search(r"\bI\s+(?:recommend|suggest|would\s+recommend|vote|lean)\b"
-                           r"|\bmy\s+(?:recommendation|score|rating|assessment)\b"
-                           r"|\brecommend\s+(?:major|minor|rejection|acceptance|revision)\b"
-                           r"|\b(?:overall|confidence)\s+(?:score|rating)\b", text, re.I))
-    if is_review and len(text.split()) > th("review-with-no-locator", "min_words", 150) \
-       and not re.search(r"\b(?:line|l\.|p\.|page|section|sec\.|fig(?:ure)?\.?|table|eq(?:uation)?\.?)"
-                         r"\s*\d|\bl\d+\b|§\s*\d", low):
-        out.append(finding(
-            path, 1,
-            f"{len(text.split())} words of review with no line, page, figure, table or "
-            f"section reference",
-            "review-with-no-locator", "high",
-            "A referee who read the paper points at it. A review that never cites a line, a "
-            "figure or an equation is compatible with never having opened the submission, "
-            "and it gives the authors nothing to act on. This is a property of the review's "
-            "usefulness, not a claim about how it was written.",
-            "Anchor every criticism to a locator. A weakness that cannot be pinned to a place "
-            "in the paper is either not about this paper or not yet a weakness.",
-            family="shape"))
-
-    # ---- tortured phrases: paraphrase laundering, NOT generation
-    hits = [(k, v) for k, v in TORTURED.items() if k in low]
-    if hits:
-        out.append(finding(
-            path, first(re.escape(hits[0][0])),
-            "; ".join(f'"{k}" for "{v}"' for k, v in hits[:4]),
-            "tortured-phrase", "high",
-            "A term of art replaced by a synonym-swapped near-miss. Widely repeated as an "
-            "\"AI writing\" signal and it is NOT one: Cabanac and Labbe's mechanism is "
-            "word-level machine paraphrasing used to evade text-matching plagiarism "
-            "detection, and modern instruction-tuned models preserve technical terms. Getting "
-            "this wrong gets the remedy wrong.",
-            "Treat it as a plagiarism-laundering signal, not a generation signal: find the "
-            "source text the passage was paraphrased FROM. The Problematic Paper Screener "
-            "runs this over ~130 million publications weekly.",
-            family="residue"))
-
-    # ---- a hosted model used as an instrument, with no way to reproduce it
-    if re.search(r"\b(?:gpt-?4|gpt-?3|chatgpt|claude|gemini|llama|mistral|qwen|deepseek)\b", low) \
-       and re.search(r"\bwe (?:used|prompt|queried|asked|ran)\b|\bmodel was (?:used|queried)\b", low):
-        miss = []
-        if not re.search(r"\b(?:gpt-4[o0-9.\-]*\d{4}|20\d{2}-\d{2}-\d{2}|version\s+\d|"
-                         r"-\d{4}(?:-\d{2}-\d{2})?)\b", low):
-            miss.append("no pinned version or snapshot date")
-        if not re.search(r"\btemperature\b|\btop[_\- ]?p\b|\bseed\b|\bmax[_\- ]?tokens\b", low):
-            miss.append("no inference parameters")
-        if not re.search(r"\bprompt(?:s)?\b[^.]{0,60}(?:appendix|supplement|available|verbatim|"
-                         r"listed|table)|\bfull prompt", low):
-            miss.append("no prompt text")
-        if re.search(r"latest (?:model|version|release)", low):
-            miss.append('"latest model release" instead of a version')
-        if len(miss) >= th("model-used-as-an-instrument-with-no-version-date-or-parameters",
-                           "min_gaps", 2):
-            out.append(finding(
-                path, first(r"gpt-?4|chatgpt|claude|gemini|llama|we used|we prompted"),
-                "; ".join(miss),
-                "model-used-as-an-instrument-with-no-version-date-or-parameters", "high",
-                "A hosted model used as a measuring device, reported in a way nobody can "
-                "reproduce. Not a text tell at all -- it is a methods defect, fully checkable "
-                "from the methods section, and it carries no fairness cost. Of 640 manually "
-                "coded LLM-for-software-engineering papers, 32.2% had versioning problems "
-                "including the literal phrase \"latest model release\", 199 gave no prompt "
-                "templates, 88 documented no inference parameters, and only 13.3% were clean.",
-                "Pin the snapshot, state temperature, top_p and seed, put the prompts verbatim "
-                "in an appendix, and say how many times you ran it. Temperature zero removes "
-                "deliberate sampling but not variation from silent model updates, so a date "
-                "is part of the method.",
-                family="defect"))
 
     return out
 

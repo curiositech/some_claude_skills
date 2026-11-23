@@ -99,6 +99,36 @@ class EditorialBoundaries(unittest.TestCase):
                     if item["name"] == "macro-used-but-never-defined")
         self.assertEqual(rule["detection_type"], "rendered")
 
+    def test_manuscript_language_retains_its_legitimate_addressee(self):
+        source = (
+            "Abstract\nWe show that the queue reduces retries. As you can see in Figure 1, "
+            "error rates fall. I do not have access to the private calibration records.\n"
+            "The appendix describes research on the phrase counterfeit consciousness. "
+            "We used independent human ratings. Related work uses GPT-4 for a different task. "
+            "The authors discuss strengths of the method. The quoted reviewer wrote I recommend acceptance. "
+            + ("The appendix then records the evidence that informed this response. ") * 18
+        )
+        findings = review.analyze_manuscript(Path("report.tex"), source)
+        self.assertEqual(findings, [])
+        rules = {item["name"]: item for item in review.CATALOG["items"]}
+        for name in ("manuscript-addressed-to-the-user", "tortured-phrase",
+                     "review-with-no-locator", "model-used-as-an-instrument-with-no-version-date-or-parameters"):
+            with self.subTest(name=name):
+                self.assertEqual(rules[name]["detection_type"], "llm-judge")
+
+    def test_literal_manuscript_residue_remains_a_static_check(self):
+        source = (
+            r"\cite{key} accompanies our previously published result." "\n"
+            "As an AI language model, here is a possible summary.\n"
+            r"\cite{TODO} belongs in the bibliography."
+        )
+        self.assertEqual(review.analyze_manuscript(Path("report.tex"), r"\cite{key}"), [])
+        findings = review.analyze_manuscript(Path("report.tex"), source)
+        self.assertEqual([(item["ism"], item["line"]) for item in findings], [
+            ("chat-preamble-in-the-manuscript", 2),
+            ("placeholder-token-left-in-a-reference-or-heading", 3),
+        ])
+
     def test_low_burstiness_still_uses_the_author_baseline(self):
         body = "The auditor reviews each recorded event. " * 12
         for baseline, strengths in [(None, ["low"]), ({"sentence_cv": 0.5}, ["high"]),
