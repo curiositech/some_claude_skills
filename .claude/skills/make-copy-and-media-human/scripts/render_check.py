@@ -84,14 +84,22 @@ PROBE = r"""() => {
     }
   }
 
-  const lum = (c) => {
-    const m = c.match(/[\d.]+/g); if (!m) return null;
-    const [r, g, b] = m.slice(0, 3).map(Number);
-    const a = m.length > 3 ? Number(m[3]) : 1;
-    if (a < 0.9) return null;               // translucent: not worth guessing
+  const parseColor = (color) => {
+    const match = /^rgba?\(([^()]*)\)$/.exec(color);
+    if (!match) return null;
+    const parts = match[1].split(',').map(part => part.trim());
+    if ((parts.length !== 3 && parts.length !== 4) ||
+        parts.some(part => !/^(?:\d+(?:\.\d+)?|\.\d+)$/.test(part))) return null;
+    const [r, g, b, alpha = 1] = parts.map(Number);
+    if (r > 255 || g > 255 || b > 255 || alpha > 1) return null;
+    return {r, g, b, alpha};
+  };
+  const lum = (color) => {
+    const parsed = parseColor(color);
+    if (!parsed || parsed.alpha !== 1) return null;
     const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92
                                  : Math.pow((v + 0.055) / 1.055, 2.4); };
-    return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b);
+    return 0.2126 * f(parsed.r) + 0.7152 * f(parsed.g) + 0.0722 * f(parsed.b);
   };
   const bgOf = (el) => {
     let n = el;
@@ -99,8 +107,10 @@ PROBE = r"""() => {
       const style = getComputedStyle(n);
       if (style.backgroundImage !== 'none') return null;
       const c = style.backgroundColor;
-      const m = c.match(/[\d.]+/g);
-      if (m && (m.length < 4 || Number(m[3]) > 0.9)) return c;
+      const parsed = parseColor(c);
+      if (!parsed) return null;
+      if (parsed.alpha === 1) return c;
+      if (parsed.alpha !== 0) return null;
       n = n.parentElement;
     }
     return 'rgb(255, 255, 255)';

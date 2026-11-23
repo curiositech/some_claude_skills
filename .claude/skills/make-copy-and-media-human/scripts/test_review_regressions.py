@@ -363,26 +363,40 @@ global.document = {
 };
 let rootBackground = "rgb(0, 0, 0)";
 let bodyImage = "none";
+let bodyColor = "rgba(0, 0, 0, 0)";
+let foreground = "rgb(255, 255, 255)";
 global.getComputedStyle = (el) => ({
-  backgroundColor: el === root ? rootBackground : "rgba(0, 0, 0, 0)",
+  backgroundColor: el === root ? rootBackground : el === body ? bodyColor : "rgba(0, 0, 0, 0)",
   backgroundImage: el === body ? bodyImage : "none",
-  color: "rgb(255, 255, 255)", fontSize: "16px", fontWeight: "400",
+  color: foreground, fontSize: "16px", fontWeight: "400",
 });
 """
         reports = subprocess.check_output(
             ["node", "-e", fixture + f"""
 const probe = ({render_check.PROBE});
 const blackBackground = probe().contrast;
-rootBackground = "rgb(255, 255, 255)";
+rootBackground = "rgba(255, 255, 255, 1)";
 const whiteBackground = probe().contrast;
 bodyImage = "linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0))";
-console.log(JSON.stringify([blackBackground, whiteBackground, probe().contrast]));
+const gradient = probe().contrast;
+bodyImage = "none";
+bodyColor = "rgba(0, 0, 0, 0.5)";
+const translucentBackground = probe().contrast;
+bodyColor = "rgba(0, 0, 0, 0)";
+foreground = "rgba(255, 255, 255, 0.5)";
+const translucentForeground = probe().contrast;
+rootBackground = "oklch(0 0 0)";
+foreground = "oklch(1 0 0)";
+const otherColorSpace = probe().contrast;
+console.log(JSON.stringify({{blackBackground, whiteBackground, gradient,
+  translucentBackground, translucentForeground, otherColorSpace}}));
 """], text=True,
         )
-        black_background, white_background, gradient = json.loads(reports)
-        self.assertEqual(black_background, [])
-        self.assertEqual([item["ratio"] for item in white_background], [1])
-        self.assertEqual(gradient, [], "A gradient cannot be inferred from its flat background color")
+        measurements = json.loads(reports)
+        self.assertEqual([item["ratio"] for item in measurements.pop("whiteBackground")], [1])
+        for state, findings in measurements.items():
+            with self.subTest(state=state):
+                self.assertEqual(findings, [])
 
 
 if __name__ == "__main__":
