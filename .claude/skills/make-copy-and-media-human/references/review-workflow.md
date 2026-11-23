@@ -118,7 +118,7 @@ python3 scripts/humanize_review.py page.html --findings render.json --out report
 That script is the one thing in this bundle with a dependency, on Playwright, and
 it says so when it is missing rather than failing obscurely. It opens the page at
 390, 768 and 1280, and reports horizontal overflow with the offending elements
-named, tap targets under 44px, text under 12px, and contrast below AA. Those
+named, tap targets under 44px, text under 12px, and contrast below AA on flat backgrounds. Check the rendered pixels manually for text over gradients or background images. Those
 findings merge into the same report through the normal `--findings` path.
 
 If you cannot run it, open the page yourself at phone width. Half the findings in

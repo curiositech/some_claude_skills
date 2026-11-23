@@ -45,7 +45,7 @@ Severity reflects the consequence for the intended reader, never how sure you sh
 | [`font-declaration-used-as-command`](#font-declaration-used-as-command) | HIGH | defect | yes |
 | [`hardcoded-cross-reference-number`](#hardcoded-cross-reference-number) | HIGH | form | yes |
 | [`hidden-instruction-to-machine-reader`](#hidden-instruction-to-machine-reader) | HIGH | residue | **no** |
-| [`macro-used-but-never-defined`](#macro-used-but-never-defined) | HIGH | defect | yes |
+| [`macro-used-but-never-defined`](#macro-used-but-never-defined) | HIGH | defect | **no** |
 | [`manual-linebreak-as-paragraph`](#manual-linebreak-as-paragraph) | HIGH | form | **no** |
 | [`missing-or-absolute-path-include`](#missing-or-absolute-path-include) | HIGH | defect | **no** |
 | [`negative-vspace-to-hit-page-limit`](#negative-vspace-to-hit-page-limit) | HIGH | form | yes |
@@ -247,19 +247,19 @@ Text placed in the source so a human reader cannot see it but a machine reading 
 > (removed)
 
 <a id="macro-used-but-never-defined"></a>
-### `macro-used-but-never-defined`  ·  high · generic-llm · latex-source · structural · family: defect · lane: latex
+### `macro-used-but-never-defined`  ·  high · generic-llm · latex-source · rendered · family: defect · lane: latex
 
-**Automated here:** yes, these scripts implement it.
+**Automated here:** no — decidable mechanically, but this bundle does not implement it. Ask it yourself in the judge pass.
 
 A control sequence used but defined nowhere: not in the kernel, not in the document class, not in any loaded package, not in a \newcommand. pdfTeX halts with `! Undefined control sequence.` This is the single largest category in a mined taxonomy of localized hard-crash LaTeX faults -- 18.5% of 168 verified crashes -- and it is also what a plausible-looking invented macro produces: \bm{x} with no bm loaded, \argmin with no \DeclareMathOperator, \begin{theorem} where the document declared \newtheorem{thm}.
 
 **Why it reads AI:** The model emits the macro it expects to exist, exactly as it emits the Python function it expects to exist. LaTeX makes this worse than most languages because there is no import statement binding a name to a source: a command is just a token, so an invented one looks identical to a real one until the engine runs.
 
-**Detect:** Static: extract every `\\[A-Za-z@]+` token outside verbatim/listings/comments; subtract the kernel and class-provided set, every package's provided set, and every name bound by \newcommand|\renewcommand|\providecommand|\DeclareMathOperator|\def|\let|\newenvironment|\newtheorem. The remainder is the candidate set. Rendered to confirm: `grep -n 'Undefined control sequence' main.log` -- the log names the file and line, and a non-empty result is a build break, not an opinion.
+**Detect:** Compile the document with its actual class, packages, build flags and inputs. Report the control sequence and source location from an Undefined control sequence error in that build's log. An unrecognized name in source does not establish that the command is undefined.
 
 **Fix:** Define the macro, load the package that provides it, or fix the spelling. `texdoc <package>` gives the real name.
 
-**False positive when:** Not a fairness question -- this does not build. The real technical exception: a macro provided by a class file the checker cannot see (a publisher .cls sitting beside the source), and definitions guarded by \@ifpackageloaded or \ifdefined. Run the check with the actual class on the path before reporting.
+**False positive when:** An incomplete build environment can omit the class, package or included file that defines the command. Use the project's build command and verify that the error occurs on the path being reviewed.
 
 **Before**
 

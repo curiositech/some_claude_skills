@@ -9447,15 +9447,15 @@
       "medium": "latex-source",
       "lane": "latex",
       "description": "A control sequence used but defined nowhere: not in the kernel, not in the document class, not in any loaded package, not in a \\newcommand. pdfTeX halts with `! Undefined control sequence.` This is the single largest category in a mined taxonomy of localized hard-crash LaTeX faults -- 18.5% of 168 verified crashes -- and it is also what a plausible-looking invented macro produces: \\bm{x} with no bm loaded, \\argmin with no \\DeclareMathOperator, \\begin{theorem} where the document declared \\newtheorem{thm}.",
-      "detection": "Static: extract every `\\\\[A-Za-z@]+` token outside verbatim/listings/comments; subtract the kernel and class-provided set, every package's provided set, and every name bound by \\newcommand|\\renewcommand|\\providecommand|\\DeclareMathOperator|\\def|\\let|\\newenvironment|\\newtheorem. The remainder is the candidate set. Rendered to confirm: `grep -n 'Undefined control sequence' main.log` -- the log names the file and line, and a non-empty result is a build break, not an opinion.",
-      "detection_type": "structural",
+      "detection": "Compile the document with its actual class, packages, build flags and inputs. Report the control sequence and source location from an Undefined control sequence error in that build's log. An unrecognized name in source does not establish that the command is undefined.",
+      "detection_type": "rendered",
       "severity": "high",
       "why_it_reads_ai": "The model emits the macro it expects to exist, exactly as it emits the Python function it expects to exist. LaTeX makes this worse than most languages because there is no import statement binding a name to a source: a command is just a token, so an invented one looks identical to a real one until the engine runs.",
       "fix": "Define the macro, load the package that provides it, or fix the spelling. `texdoc <package>` gives the real name.",
       "before": "$\\argmin_{x} f(x)$   % \\argmin is not a LaTeX command",
       "after": "\\DeclareMathOperator*{\\argmin}{arg\\,min}  % in the preamble\n$\\argmin_{x} f(x)$",
       "family": "defect",
-      "false_positive_when": "Not a fairness question -- this does not build. The real technical exception: a macro provided by a class file the checker cannot see (a publisher .cls sitting beside the source), and definitions guarded by \\@ifpackageloaded or \\ifdefined. Run the check with the actual class on the path before reporting.",
+      "false_positive_when": "An incomplete build environment can omit the class, package or included file that defines the command. Use the project's build command and verify that the error occurs on the path being reviewed.",
       "currency": "current"
     },
     {

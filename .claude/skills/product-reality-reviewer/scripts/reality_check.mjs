@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { readFileSync, realpathSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 function hasValue(value) {
@@ -89,7 +88,16 @@ function parseArgs(argv) {
   return { input: argv[inputIndex + 1] };
 }
 
-if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
+function isInvokedDirectly(entryPoint) {
+  if (!entryPoint) return false;
+  try {
+    return realpathSync(entryPoint) === realpathSync(fileURLToPath(import.meta.url));
+  } catch {
+    return false;
+  }
+}
+
+if (isInvokedDirectly(process.argv[1])) {
   const { input } = parseArgs(process.argv.slice(2));
   const manifest = JSON.parse(readFileSync(input, 'utf8'));
   process.stdout.write(`${JSON.stringify(reviewProductReality(manifest), null, 2)}\n`);

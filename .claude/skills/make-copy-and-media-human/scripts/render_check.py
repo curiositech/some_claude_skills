@@ -96,7 +96,9 @@ PROBE = r"""() => {
   const bgOf = (el) => {
     let n = el;
     while (n) {
-      const c = getComputedStyle(n).backgroundColor;
+      const style = getComputedStyle(n);
+      if (style.backgroundImage !== 'none') return null;
+      const c = style.backgroundColor;
       const m = c.match(/[\d.]+/g);
       if (m && (m.length < 4 || Number(m[3]) > 0.9)) return c;
       n = n.parentElement;
@@ -134,7 +136,8 @@ PROBE = r"""() => {
                         text: txt.slice(0, 30)}); }
     }
 
-    const lf = lum(cs.color), lb = lum(bgOf(el));
+    const bg = bgOf(el);
+    const lf = lum(cs.color), lb = bg === null ? null : lum(bg);
     if (lf !== null && lb !== null) {
       const ratio = (Math.max(lf, lb) + 0.05) / (Math.min(lf, lb) + 0.05);
       const bold = parseInt(cs.fontWeight, 10) >= 700;
@@ -143,7 +146,7 @@ PROBE = r"""() => {
       if (ratio < need) {
         const k = sel(el); if (!seenContrast.has(k)) { seenContrast.add(k);
           out.contrast.push({sel: k, ratio: Math.round(ratio * 100) / 100,
-                             need, color: cs.color, bg: bgOf(el),
+                             need, color: cs.color, bg,
                              text: txt.slice(0, 30)}); }
       }
     }
@@ -202,11 +205,19 @@ def finding(file, ism, severity, excerpt, explanation, rewrite):
 # Generated modals carried an Escape handler in 79% of trials and Escape worked
 # in 59%, and 1,031 of 1,032 failures threw no console error. So a static pass
 # reports success on a broken modal, and only driving it in a browser disagrees.
+VISIBLE_DIALOG = r"""() => Array.from(
+  document.querySelectorAll('dialog[open], [role="dialog"], [role="alertdialog"]')
+).find(dialog => {
+  const bounds = dialog.getBoundingClientRect();
+  const visibility = getComputedStyle(dialog).visibility;
+  return bounds.width > 0 && bounds.height > 0
+         && visibility !== 'hidden' && visibility !== 'collapse';
+})"""
+
+
 MODAL_PROBE = r"""() => {
-  const open = document.querySelector('dialog[open], [role="dialog"], [role="alertdialog"]');
+  const open = (""" + VISIBLE_DIALOG + r""")();
   if (!open) return null;
-  const r = open.getBoundingClientRect();
-  if (r.width === 0 || r.height === 0) return null;
   const focusable = open.querySelectorAll(
     'a[href], button:not([disabled]), input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])');
   return {
@@ -220,7 +231,7 @@ MODAL_PROBE = r"""() => {
 
 
 CONTAINED_JS = r"""() => {
-  const d = document.querySelector('dialog[open], [role="dialog"], [role="alertdialog"]');
+  const d = (""" + VISIBLE_DIALOG + r""")();
   return !!d && d.contains(document.activeElement);
 }"""
 

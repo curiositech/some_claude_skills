@@ -5850,52 +5850,6 @@ def analyze_latex(path, text):
             "slot nobody filled usually has siblings.",
             family="residue"))
 
-    # ---- a macro used and never defined (fatal)
-    defined = set(re.findall(r"\\(?:new|renew|provide)command\*?\{?\\(\w+)", body))
-    defined |= set(re.findall(r"\\DeclareMathOperator\*?\{?\\(\w+)", body))
-    defined |= set(re.findall(r"\\def\\(\w+)", body))
-    used = set(re.findall(r"\\([a-zA-Z]{3,})\b", body))
-    KNOWN = set("""documentclass usepackage begin end section subsection subsubsection
-        paragraph textbf textit texttt emph label ref cite eqref autoref caption
-        includegraphics centering item newpage clearpage footnote title author date
-        maketitle bibliography bibliographystyle newcommand renewcommand providecommand
-        def input include appendix tableofcontents hspace vspace textwidth linewidth
-        columnwidth frac sqrt sum prod int left right mathrm mathbf mathcal text
-        alpha beta gamma delta theta lambda sigma mu nu pi rho tau phi psi omega
-        times cdot leq geq neq approx sim infty partial nabla forall exists
-        toprule midrule bottomrule multicolumn multirow cmidrule textsc textsf
-        footnotesize scriptsize normalsize selectfont bibitem thebibliography
-        printbibliography addbibresource DeclareMathOperator operatorname
-        newtheorem theoremstyle qquad quad noindent par relax phantom hfill vfill
-        color textcolor colorbox fcolorbox href url texorpdfstring
-        institution affiliation email orcid keywords abstract acks
-        subfigure subcaption includepdf pagestyle thispagestyle setlength
-        renewcommandx mathbb mathfrak mathscr boldsymbol overline underline
-        widehat widetilde xrightarrow xleftarrow substack binom
-        qty SI si num unit ang celsius percent
-        cref Cref crefname autoref nameref pageref
-        maketitlesupplementary onecolumn twocolumn makeatletter makeatother""".split())
-    undef = sorted(u for u in used - defined - KNOWN
-                   if re.search(r"\\" + re.escape(u) + r"\b", body)
-                   and not re.search(r"\\usepackage[^}]*\b" + re.escape(u), body)
-                   and len(u) > 3 and u.islower() and "_" not in u)
-    # Only report when the file looks self-contained (it has a documentclass),
-    # because a fragment legitimately uses macros defined in its parent.
-    if undef and re.search(r"\\documentclass", body) \
-       and len(undef) >= th("macro-used-but-never-defined", "min_count", 2):
-        shown = ", ".join("\\" + u for u in undef[:5])
-        out.append(finding(
-            path, first(r"\\" + re.escape(undef[0])),
-            f"{len(undef)} command(s) used but not defined here or loaded by a package: "
-            f"{shown}",
-            "macro-used-but-never-defined", "medium",
-            "A command that resolves to nothing at all. This is a compile-reproducible defect "
-            "rather than an inference about anyone, and it is the commonest LaTeX failure in "
-            "both human and generated source -- so treat it as a build error, not a tell.",
-            "Run the file and read the log: Undefined control sequence names it. Then either "
-            "define it, load the package that provides it, or delete the call.",
-            family="defect"))
-
     # ---- a float labelled and never referred to
     labels = set(re.findall(r"\\label\{((?:fig|tab|alg|lst):[^}]+)\}", body))
     refs = set(re.findall(r"\\(?:ref|autoref|cref|Cref|pageref)\{([^}]+)\}", body))

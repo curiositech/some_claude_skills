@@ -87,6 +87,18 @@ class EditorialBoundaries(unittest.TestCase):
             (14, "The daemon writes. The daemon checks. The daemon confirms."),
         ])
 
+    def test_latex_book_class_commands_do_not_trigger_undefined_macro(self):
+        source = r"""\documentclass{book}
+\begin{document}
+\chapter{Introduction}
+\listoffigures
+\end{document}"""
+        findings = review.analyze_latex(Path("book.tex"), source)
+        self.assertNotIn("macro-used-but-never-defined", {item["ism"] for item in findings})
+        rule = next(item for item in review.CATALOG["items"]
+                    if item["name"] == "macro-used-but-never-defined")
+        self.assertEqual(rule["detection_type"], "rendered")
+
     def test_low_burstiness_still_uses_the_author_baseline(self):
         body = "The auditor reviews each recorded event. " * 12
         for baseline, strengths in [(None, ["low"]), ({"sentence_cv": 0.5}, ["high"]),
@@ -293,6 +305,41 @@ class ModalProbe(unittest.TestCase):
         page.evaluate.assert_not_called()
 
 
+    @unittest.skipUnless(shutil.which("node"), "Node is needed to exercise the dialog probes")
+    def test_hidden_first_dialog_does_not_mask_the_visible_dialog(self):
+        fixture = """
+const focus = {tagName: "BUTTON"};
+const dialog = (width, visibility, contains) => ({
+  tagName: "DIV", visibility,
+  getBoundingClientRect: () => ({width, height: width}),
+  querySelectorAll: () => [focus],
+  contains: (element) => contains && element === focus,
+  matches: () => false,
+});
+const hidden = dialog(0, "visible", false);
+const invisible = dialog(100, "hidden", false);
+const visible = dialog(100, "visible", true);
+let candidates = [hidden, invisible, visible];
+global.document = {activeElement: focus, querySelectorAll: () => candidates};
+global.getComputedStyle = (element) => ({visibility: element.visibility});
+"""
+        reports = subprocess.check_output(
+            ["node", "-e", fixture + f"""
+const modal = ({render_check.MODAL_PROBE});
+const containsFocus = ({render_check.CONTAINED_JS});
+const opened = modal();
+const contained = containsFocus();
+candidates = [hidden, invisible];
+console.log(JSON.stringify([opened, contained, modal(), containsFocus()]));
+"""], text=True,
+        )
+        opened, contained, closed, contained_after_close = json.loads(reports)
+        self.assertTrue(opened["focusInside"])
+        self.assertTrue(contained)
+        self.assertIsNone(closed)
+        self.assertFalse(contained_after_close)
+
+
 @unittest.skipUnless(shutil.which("node"), "Node is needed to exercise the browser probe logic")
 class ContrastProbe(unittest.TestCase):
     def test_document_background_is_used_through_transparent_ancestors(self):
@@ -315,8 +362,10 @@ global.document = {
   createElement: () => ({getContext: () => ({})}),
 };
 let rootBackground = "rgb(0, 0, 0)";
+let bodyImage = "none";
 global.getComputedStyle = (el) => ({
   backgroundColor: el === root ? rootBackground : "rgba(0, 0, 0, 0)",
+  backgroundImage: el === body ? bodyImage : "none",
   color: "rgb(255, 255, 255)", fontSize: "16px", fontWeight: "400",
 });
 """
@@ -325,12 +374,15 @@ global.getComputedStyle = (el) => ({
 const probe = ({render_check.PROBE});
 const blackBackground = probe().contrast;
 rootBackground = "rgb(255, 255, 255)";
-console.log(JSON.stringify([blackBackground, probe().contrast]));
+const whiteBackground = probe().contrast;
+bodyImage = "linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0))";
+console.log(JSON.stringify([blackBackground, whiteBackground, probe().contrast]));
 """], text=True,
         )
-        black_background, white_background = json.loads(reports)
+        black_background, white_background, gradient = json.loads(reports)
         self.assertEqual(black_background, [])
         self.assertEqual([item["ratio"] for item in white_background], [1])
+        self.assertEqual(gradient, [], "A gradient cannot be inferred from its flat background color")
 
 
 if __name__ == "__main__":

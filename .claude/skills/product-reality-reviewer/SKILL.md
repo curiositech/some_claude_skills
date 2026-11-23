@@ -229,6 +229,7 @@ success rates without a recorded study or experiment.
 
 **`scripts/`**
 - [`scripts/reality_check.mjs`](scripts/reality_check.mjs) - Produces deterministic findings from a product manifest.
+- [`scripts/test_reality_check.mjs`](scripts/test_reality_check.mjs) - Run when changing the checker entry point or discovery links.
 
 **`templates/`**
 - [`templates/output-template.md`](templates/output-template.md) - Copyable product review template.
@@ -263,6 +264,7 @@ success rates without a recorded study or experiment.
 
 **`scripts/`**
 - [`scripts/reality_check.mjs`](scripts/reality_check.mjs)
+- [`scripts/test_reality_check.mjs`](scripts/test_reality_check.mjs) - Run when changing the checker entry point or discovery links.
 
 **`templates/`**
 - [`templates/output-template.md`](templates/output-template.md) — Product Reality Review — Choose the applicable mode below.
