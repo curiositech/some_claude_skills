@@ -526,7 +526,6 @@ def prose_sentence_groups(text, suffix=".md"):
         text = re.sub(r"\\(?:begin|end)\{(?:proof|theorem|corollary|lemma|remark)\}(?:\[[^\]]*\])?",
                       blank, text)
         text = re.sub(r"\\(?:textit|textbf|emph|texttt)\{([^{}]*)\}", r"\1", text)
-    text = re.sub(r"(`+).*?\1", "\x00", text)
     lines, tags = classify_lines(text, suffix)
     paragraph, start_line, in_list = [], 1, False
 
@@ -578,7 +577,7 @@ def prose_sentence_groups(text, suffix=".md"):
             continue
         if not paragraph:
             start_line = index
-        paragraph.append(raw)
+        paragraph.append(re.sub(r"(`+).*?\1", "\x00", raw))
     if paragraph:
         yield from sentences()
 

@@ -35,6 +35,15 @@ class LocalCadence(unittest.TestCase):
         text = "Done. A longer sentence explains what happened to the uploaded file. " * 12
         self.assertFalse(self.found(text))
 
+    def test_fences_are_classified_before_inline_code_is_masked(self):
+        for fence in ("```", "````", "~~~"):
+            text = ("This paragraph explains the example below.\n\n"
+                    + fence + "text\n\nReady. Closed. Filed.\n\n" + fence + "\n")
+            with self.subTest(fence=fence):
+                self.assertFalse(self.found(text))
+                found = review.analyze_prose(Path("example.md"), text)
+                self.assertNotIn("staccato-fragment-triplet", {f["ism"] for f in found})
+
     def test_boundaries_do_not_join_unrelated_short_sentences(self):
         for boundary in ("\n\n", "\n# Heading\n", "\n> A quoted example.\n",
                          "\n```text\nExample. Example. Example.\n```\n",
