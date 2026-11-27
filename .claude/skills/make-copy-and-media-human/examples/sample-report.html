@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample: platform copy review</title>
+<style>
+  /* Deliberately not the AI default look: no Inter/Geist, no indigo. */
+  :root { --ink:#1a1714; --paper:#faf7f2; --rule:#d8d0c2; --accent:#8a3324;
+           --high:#8a3324; --medium:#9a6a00; --low:#4a5d49; }
+  html { font-size: 16px; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: var(--paper);
+         color: var(--ink); margin: 0; padding: 3rem 4vw; line-height: 1.55; }
+  h1 { font-size: 2rem; font-weight: normal; margin: 0 0 .25rem; }
+  .kicker { font-family: Menlo, monospace; font-size: .875rem; font-weight: 700;
+            letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+  .summary { font-size: 1rem; margin: .75rem 0 2rem; }
+  table { width: 100%; border-collapse: collapse; background: #fff;
+          border: 1px solid var(--rule); font-size: .9375rem; }
+  th { font-family: Menlo, monospace; font-size: .8125rem; text-transform: uppercase;
+       letter-spacing: .08em; text-align: left; padding: .6rem .7rem;
+       border-bottom: 2px solid var(--ink); }
+  td { padding: .65rem .7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  td.num { font-family: Menlo, monospace; color: #777; }
+  .sev { font-family: Menlo, monospace; font-size: .8125rem; font-weight: 700;
+         text-transform: uppercase; }
+  tr.sev-high .sev { color: var(--high); }
+  tr.sev-medium .sev { color: var(--medium); }
+  tr.sev-low .sev { color: var(--low); }
+  td.ism { font-family: Menlo, monospace; font-size: .875rem; white-space: nowrap; }
+  .dialect { color: #8a8378; font-size: .8125rem; margin-top: .15rem; }
+  td.loc { font-family: Menlo, monospace; font-size: .875rem; white-space: nowrap; }
+  del { background: #f6e3df; text-decoration-color: var(--high); display: inline-block;
+        padding: .05rem .2rem; }
+  ins { background: #e7eee4; text-decoration: none; display: block; margin-top: .4rem;
+        padding: .3rem .45rem; border-left: 3px solid var(--low); }
+  .why { font-size: .875rem; color: #564f45; margin-top: .35rem; }
+  footer { margin-top: 2rem; font-family: Menlo, monospace; font-size: .875rem; color: #8a8378; }
+</style></head><body>
+<div class="kicker">make_copy_and_media_human · line-item fix plan</div>
+<h1>Sample: platform copy review</h1>
+<p class="summary"><strong>5</strong> findings —
+  3 high, 2 medium, 0 low.
+  Struck text is the AI-ism as found; the inset block is the proposed fix.</p>
+<table>
+  <thead><tr><th>#</th><th>Sev</th><th>Ism</th><th>Where</th><th>Finding → fix</th></tr></thead>
+  <tbody>
+      <tr class="sev-high">
+        <td class="num">1</td>
+        <td><span class="sev">high</span></td>
+        <td class="ism">staccato-delivery<div class="dialect">claude · structural</div></td>
+        <td class="loc">humanize-sample.md:1</td>
+        <td class="body"><del>8/10 sentences are ≤4 words</del>
+          <div class="why">Runs of clipped fragments (“Tight. Controlled. Deliberate.”) are a signature LLM rhythm.</div>
+          <ins>Merge fragments into full sentences; vary cadence naturally.</ins></td>
+      </tr>
+      <tr class="sev-high">
+        <td class="num">2</td>
+        <td><span class="sev">high</span></td>
+        <td class="ism">emoji-as-structure<div class="dialect">chatgpt · structural</div></td>
+        <td class="loc">humanize-sample.md:1</td>
+        <td class="body"><del># 🚀 Why Our Platform Wins</del>
+          <div class="why">Emoji-prefixed headers/bullets (🚀 Features) are the README-generator look.</div>
+          <ins>Delete the emoji; if a glyph is needed, use a real icon system.</ins></td>
+      </tr>
+      <tr class="sev-high">
+        <td class="num">3</td>
+        <td><span class="sev">high</span></td>
+        <td class="ism">unattributed-quote<div class="dialect">claude · structural</div></td>
+        <td class="loc">humanize-sample.md:5</td>
+        <td class="body"><del>&gt; The future belongs to those who automate it.</del>
+          <div class="why">A floating quote with no source reads as manufactured gravitas.</div>
+          <ins>Attribute it, or delete it. If nobody said it, it is not a quote.</ins></td>
+      </tr>
+      <tr class="sev-medium">
+        <td class="num">4</td>
+        <td><span class="sev">medium</span></td>
+        <td class="ism">bold-label-colon-bullets<div class="dialect">generic-llm · structural</div></td>
+        <td class="loc">humanize-sample.md:7</td>
+        <td class="body"><del>4 &#x27;**Label:** text&#x27; bullets, e.g. **Speed:** blazing fast.</del>
+          <div class="why">The bolded-noun-colon bullet grid is a generated-doc signature.</div>
+          <ins>Keep at most one such list per document, or rewrite as prose.</ins></td>
+      </tr>
+      <tr class="sev-medium">
+        <td class="num">5</td>
+        <td><span class="sev">medium</span></td>
+        <td class="ism">arrow-chain<div class="dialect">generic-llm · structural</div></td>
+        <td class="loc">humanize-sample.md:12</td>
+        <td class="body"><del>Input → Pipeline → Magic → Revenue</del>
+          <div class="why">A → B → C chains compress reasoning the reader needed to see.</div>
+          <ins>Write the causal chain as a sentence.</ins></td>
+      </tr></tbody>
+</table>
+<footer>generated 2026-06-12 10:11Z · structural layer is
+measurable signals only; phrase-level tropes come from the model judge pass.</footer>
+</body></html>

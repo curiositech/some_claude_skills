@@ -1,0 +1,1674 @@
+{
+  "schema_version": "2026-09-19",
+  "source_inventory_basis": "skills/make_copy_and_media_human/references/catalog.json at 90ff475ac522930f4636f01f46cbdcf1d0c76d99",
+  "catalog_source_count": 258,
+  "records": [
+    {
+      "title": "Wikipedia: Signs of AI writing",
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Wikipedia:WikiProject AI Cleanup",
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Wikipedia:WikiProject AI Cleanup/Guide",
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup/Guide",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "How to Stop Claude Writing Like an AI - Will Francis",
+      "url": "https://willfrancis.com/how-to-stop-claude-writing-like-an-ai/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Don't Write Like AI (1 of 101): 'It's Not X, it's Y' - Blake Stockton",
+      "url": "https://www.blakestockton.com/dont-write-like-ai-1-101-negation/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "How to spot when writing is AI: 6 elements - Hunting the Muse",
+      "url": "https://huntingthemuse.net/library/how-to-tell-if-writing-is-ai",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "The Ten Telltale Signs of AI-Generated Text - The Augmented Educator",
+      "url": "https://www.theaugmentededucator.com/p/the-ten-telltale-signs-of-ai-generated",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "avoid-ai-writing skill - Conor Bronsdon (GitHub)",
+      "url": "https://github.com/conorbronsdon/avoid-ai-writing",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "anti-ai-slop-writing - jalaalrd (GitHub)",
+      "url": "https://github.com/jalaalrd/anti-ai-slop-writing",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Signs of AI Writing: 27 Red Flags - VRID",
+      "url": "https://vrid.ai/blog/signs-of-ai-writing",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "People who frequently use ChatGPT are accurate detectors of AI text (arXiv 2501.15654)",
+      "url": "https://arxiv.org/abs/2501.15654",
+      "note_reviewed": true,
+      "live_status": "abstract"
+    },
+    {
+      "title": "AI Writing Tells: Words That Scream 'Written by ChatGPT' - SEO Francisco",
+      "url": "https://seofrancisco.com/insights/ai-writing-tells-sound-human-again/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Most Common ChatGPT Words to Avoid in 2026 - Walter Writes AI",
+      "url": "https://walterwrites.ai/most-common-chatgpt-words-to-avoid/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "The Role of GitHub Copilot on Software Development (arXiv 2502.13199)",
+      "url": "https://arxiv.org/pdf/2502.13199",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "What Is GitHub Copilot? - MindStudio",
+      "url": "https://www.mindstudio.ai/blog/what-is-github-copilot",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Stylometric analysis of AI text: ChatGPT and DeepSeek",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/23311983.2025.2553162",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Detecting Stylistic Fingerprints of LLMs (arXiv 2503.01659)",
+      "url": "https://arxiv.org/html/2503.01659v1",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "LLM Code Stylometry (arXiv 2506.17323)",
+      "url": "https://arxiv.org/html/2506.17323",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Stylometry recognizes human and LLM texts in short samples (arXiv 2507.00838 v1)",
+      "url": "https://arxiv.org/html/2507.00838v1",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Stylometry recognizes human and LLM texts in short samples (arXiv 2507.00838 v2)",
+      "url": "https://arxiv.org/html/2507.00838v2",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Generative AI in Academic Writing: DeepSeek, Qwen, ChatGPT, Gemini, Llama, Mistral, Gemma (arXiv 2503.04765)",
+      "url": "https://arxiv.org/pdf/2503.04765",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Why Gemini 2.5 Pro Won't Stop Talking",
+      "url": "https://eval.16x.engineer/blog/gemini-2-5-pro-verbose-output-control",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Gemini 3 Prompting: Best Practices",
+      "url": "https://www.philschmid.de/gemini-3-prompt-practices",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "5 Thoughts on Kimi K2 Thinking - Nathan Lambert",
+      "url": "https://www.interconnects.ai/p/kimi-k2-thinking-what-it-means",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "How Kimi K2 RL'ed Qualitative Data to Write Better - Drew Breunig",
+      "url": "https://www.dbreunig.com/2025/07/31/how-kimi-rl-ed-qualitative-data-to-write-better.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Kimi K2 Thinking Aftermath: Great Agent, Mediocre Writer - Adam Holter",
+      "url": "https://adam.holter.com/kimi-k2-thinking-aftermath-great-agent-mediocre-writer/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Grok's Rebellious Voice - Klover.ai",
+      "url": "https://www.klover.ai/groks-rebellious-voice-personality-engineering-or-prompt-tuning-theater/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Grok AI Personality Review - HumanJudge",
+      "url": "https://humanjudge.com/ai-reviews/grok-personality-humor",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Dark Patterns of LLMs in Co-Creativity (arXiv 2604.04735)",
+      "url": "https://arxiv.org/pdf/2604.04735",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Stop the LLM From Rambling: Penalties to Control Repetition - DEV",
+      "url": "https://dev.to/superorange0707/stop-the-llm-from-rambling-using-penalties-to-control-repetition-5h8",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Interaction Context Often Increases Sycophancy in LLMs (arXiv 2509.12517)",
+      "url": "https://arxiv.org/pdf/2509.12517",
+      "note_reviewed": true,
+      "live_status": "abstract"
+    },
+    {
+      "title": "How to eliminate Chinese generation in Qwen 2.5 - Medium",
+      "url": "https://jupyter2607.medium.com/how-to-eliminate-the-chance-of-generating-chinese-in-qwen-2-5-2cf919bb0fdc",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Is AI Catching Up to Human Expression? Emotion/Style across Six LLMs (arXiv 2603.23251)",
+      "url": "https://arxiv.org/pdf/2603.23251",
+      "note_reviewed": true,
+      "live_status": "abstract"
+    },
+    {
+      "title": "Why Every AI-Built Website Looks the Same (Blame Tailwind's Indigo-500) - dev.to",
+      "url": "https://dev.to/alanwest/why-every-ai-built-website-looks-the-same-blame-tailwinds-indigo-500-3h2p",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Why Your AI Keeps Building the Same Purple Gradient Website (prg.sh)",
+      "url": "https://prg.sh/ramblings/Why-Your-AI-Keeps-Building-the-Same-Purple-Gradient-Website",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "We Don't Want a Beige Internet: Homogeneity of AI-Built Sites",
+      "url": "https://www.wheelsupcollective.com/post/we-dont-want-a-beige-internet",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Why AI Websites All Look the Same (And When It Matters)",
+      "url": "https://axe-web.com/insights/ai-website-design-sameness/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "How to make an AI-built website stop looking AI-built",
+      "url": "https://publishd.app/blog/make-ai-built-site-not-look-ai",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Rise of the AI Sparkle Icon - Google Design",
+      "url": "https://design.google/library/ai-sparkle-icon-research-pozos-schmidt",
+      "note_reviewed": true,
+      "live_status": "fulltext"
+    },
+    {
+      "title": "How The Sparkle Icon Became The Universal Symbol For AI",
+      "url": "https://jurgengravestein.substack.com/p/how-the-sparkle-icon-became-the-universal",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Geist - Vercel Design System / Icons",
+      "url": "https://vercel.com/geist/icons",
+      "note_reviewed": true,
+      "live_status": "partial"
+    },
+    {
+      "title": "5 Telltale Signs That a Photo Is AI-generated - Kellogg Insight",
+      "url": "https://insight.kellogg.northwestern.edu/article/ai-photos-identification",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "How to Spot AI-Generated Images: 10 Telltale Signs",
+      "url": "https://whichoneis.ai/blog/how-to-spot-ai-generated-images",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "How to fix AI-generated skin to look realistic - Morphic",
+      "url": "https://morphic.com/resources/how-to/fix-ai-generated-skin-realistic",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "How to spot AI images and deepfakes - Sightengine",
+      "url": "https://sightengine.com/how-to-spot-ai-images-and-deepfakes",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "How to Make AI Slides That Don't Look AI-Generated - 2Slides",
+      "url": "https://2slides.com/blog/can-ai-make-slides-that-dont-look-ai-generated",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Why Your AI-Generated Slides Look Generic - Winning Presentations",
+      "url": "https://winningpresentations.com/ai-generated-slides-look-generic/",
+      "note_reviewed": true,
+      "live_status": "unavailable"
+    },
+    {
+      "title": "The Anatomy of AI-Optimized Content - VISIBLE",
+      "url": "https://govisible.ai/blog/the-anatomy-of-ai-optimized-content-headings-bullets-summaries/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "How to structure pages for AEO - HubSpot",
+      "url": "https://blog.hubspot.com/marketing/aeo-page-structure",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "LinkedIn 'Broetry' - Peter Bencsik",
+      "url": "https://peterbencsik.com/blog/linkedin-broetry/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Broetry: single line sentences on LinkedIn - Fenwick",
+      "url": "https://fenwick.media/rewild/magazine/dead-broets-society-behind-the-strange-story",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Using AI to Create High-Converting Ad Copy - Aginto",
+      "url": "https://blog.aginto.com/using-ai-to-create-high-converting-ad-copy/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "25 Powerful CTA Examples - Copy.ai",
+      "url": "https://www.copy.ai/blog/cta-examples",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "I Hope This Email Finds You Well - Serif",
+      "url": "https://www.serif.ai/guides/hope-you-are-doing-well-email",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "How to write an executive summary - Zapier",
+      "url": "https://zapier.com/blog/executive-summary/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Delving into LLM-assisted writing through excess vocabulary (Kobak et al., Science Advances 2025; arXiv 2406.07016)",
+      "url": "https://arxiv.org/abs/2406.07016",
+      "note_reviewed": true,
+      "live_status": "abstract"
+    },
+    {
+      "title": "Delving into LLM-assisted writing (PMC full text)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12219543/",
+      "note_reviewed": true,
+      "live_status": "fulltext"
+    },
+    {
+      "title": "Delving into 'delve' - Philip Shapira",
+      "url": "https://pshapira.net/2024/03/31/delving-into-delve/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "The Last Fingerprint: How Markdown Training Shapes LLM Prose (arXiv 2603.27006)",
+      "url": "https://arxiv.org/html/2603.27006v1",
+      "note_reviewed": true,
+      "live_status": "partial"
+    },
+    {
+      "title": "Em-dash Usage by LLMs Reveals a Lot About AI Biases - Sean Richey",
+      "url": "https://seanrichey.substack.com/p/em-dash-usage-by-llms-reveals-a-lot",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Idiosyncrasies in Large Language Models (arXiv 2502.12150)",
+      "url": "https://arxiv.org/pdf/2502.12150",
+      "note_reviewed": true,
+      "live_status": "abstract"
+    },
+    {
+      "title": "AI Design Slop: 16 Patterns That Out Your App as Vibe-Coded - Developers Digest",
+      "url": "https://www.developersdigest.tech/blog/ai-design-slop-and-how-to-spot-it",
+      "note_reviewed": true,
+      "live_status": "fulltext"
+    },
+    {
+      "title": "Why Perplexity and Burstiness Fail to Detect AI - Pangram Labs",
+      "url": "https://www.pangram.com/blog/why-perplexity-and-burstiness-fail-to-detect-ai",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Claude says 'You're absolutely right!' about everything (Hacker News #44885398)",
+      "url": "https://news.ycombinator.com/item?id=44885398",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Mitigating GPT-isms in AI Finetunes - Evan Armstrong",
+      "url": "https://promptingweekly.substack.com/p/mitigating-gpt-isms-in-ai-finetunes",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "How much are LLMs changing academic-paper language after ChatGPT? (Scientometrics 2026)",
+      "url": "https://link.springer.com/article/10.1007/s11192-026-05601-5",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Wikipedia:WikiProject AI Cleanup/AI catchphrases",
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup/AI_catchphrases",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Reinhart et al., 'Do LLMs write like humans? Variation in grammatical and rhetorical styles', PNAS 122 e2422455122 (2025)",
+      "url": "https://doi.org/10.1073/pnas.2422455122",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Kobak, Gonzalez-Marquez, Horvat & Lause, 'Delving into LLM-assisted writing through excess vocabulary', Science Advances (2025)",
+      "url": "https://www.science.org/doi/10.1126/sciadv.adt3813",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Liang, Yuksekgonul, Mao, Wu & Zou, 'GPT detectors are biased against non-native English writers', Patterns 4(7):100779 (2023)",
+      "url": "https://www.cell.com/patterns/fulltext/S2666-3899(23)00130-7",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Weber-Wulff et al., 'Testing of detection tools for AI-generated text', International Journal for Educational Integrity 19:26 (2023)",
+      "url": "https://arxiv.org/abs/2306.15666",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "van Nuenen, 'Voice Under Revision: LLMs and the Normalization of Personal Narrative', arXiv:2604.22142 (2026)",
+      "url": "https://arxiv.org/abs/2604.22142",
+      "note_reviewed": true,
+      "live_status": "abstract"
+    },
+    {
+      "title": "Abdulhai et al., 'How LLMs Distort Our Written Language', arXiv:2603.18161 (2026)",
+      "url": "https://arxiv.org/abs/2603.18161",
+      "note_reviewed": true,
+      "live_status": "abstract"
+    },
+    {
+      "title": "Hart, Allred, Abbas & Alugo, 'The Deontic Gap', arXiv:2608.18144 (2026)",
+      "url": "https://arxiv.org/abs/2608.18144",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Munoz-Ortiz, Gomez-Rodriguez & Vilares, 'Contrasting linguistic patterns in human and LLM-generated news text', Artificial Intelligence Review 57:267 (2024)",
+      "url": "https://doi.org/10.1007/s10462-024-10903-2",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Vanderbilt University, 'Guidance on AI detection and why we're disabling Turnitin's AI detector' (2023)",
+      "url": "https://www.vanderbilt.edu/brightspace/2023/08/16/guidance-on-ai-detection-and-why-were-disabling-turnitins-ai-detector/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "OpenAI, 'New AI classifier for indicating AI-written text' (retired 20 July 2023)",
+      "url": "https://openai.com/index/new-ai-classifier-for-indicating-ai-written-text/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Simon Willison, 'Delve' (2024), summarizing Alex Hern's Guardian TechScape",
+      "url": "https://simonwillison.net/2024/Apr/18/delve/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "GIJN, 'Reporter's Guide to Detecting AI-Generated Content'",
+      "url": "https://gijn.org/resource/guide-detecting-ai-generated-content/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "grain — anti-slop linter for AI-assisted codebases",
+      "url": "https://github.com/mmartoccia/grain",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "melissawm/open-source-ai-contribution-policies",
+      "url": "https://github.com/melissawm/open-source-ai-contribution-policies",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "WebAIM Million 2026 — annual accessibility analysis of the top 1,000,000 home pages",
+      "url": "https://webaim.org/projects/million/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Why AI-generated websites all look the same - parix.ai",
+      "url": "https://parix.ai/blog/ai-website-design-decisions/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Pull quote - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pull_quote",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Block Quotes and Pull Quotes: Examples and Good Practices - Smashing Magazine",
+      "url": "https://www.smashingmagazine.com/2008/06/block-quotes-and-pull-quotes-examples-and-good-practices/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "ELI-Why: benchmarking the pedagogical utility of LLM explanations (arXiv:2506.14200)",
+      "url": "https://arxiv.org/abs/2506.14200",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Know Your Audience: do LLMs adapt to different age and education levels? (arXiv:2312.02065)",
+      "url": "https://arxiv.org/abs/2312.02065",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "The Curse of Knowledge: Pinker Describes a Key Cause of Bad Writing - APS",
+      "url": "https://www.psychologicalscience.org/observer/the-curse-of-knowledge-pinker-describes-a-key-cause-of-bad-writing",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Featherstone, AI UI accessibility: operability under browser-driven testing",
+      "url": "https://feather.ca/experiments/ai-ui-accessibility-operability/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Featherstone, AI UI accessibility: the markup baseline",
+      "url": "https://feather.ca/experiments/ai-ui-accessibility-baseline/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "A11yN and the systematic review of LLM-generated accessibility",
+      "url": "https://arxiv.org/html/2510.13914v1",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "NN/g: Flat vs. deep website hierarchies",
+      "url": "https://www.nngroup.com/articles/flat-vs-deep-hierarchy/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "NN/g: Menu design — 15 UX guidelines",
+      "url": "https://www.nngroup.com/articles/menu-design/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "NN/g: Hamburger menus and hidden navigation hurt UX metrics",
+      "url": "https://www.nngroup.com/articles/hamburger-menus/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "NN/g: The 10 most violated homepage guidelines",
+      "url": "https://www.nngroup.com/articles/most-violated-homepage-guidelines/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "NN/g: Breadcrumbs — 11 design guidelines",
+      "url": "https://www.nngroup.com/articles/breadcrumbs/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "NN/g: Duplicate links on a page",
+      "url": "https://www.nngroup.com/articles/duplicate-links/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "W3C i18n: Personal names around the world",
+      "url": "https://www.w3.org/International/questions/qa-personal-names",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "WCAG 3.1.2 Understanding: Language of Parts",
+      "url": "https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "WCAG 1.4.5 Understanding: Images of Text",
+      "url": "https://www.w3.org/WAI/WCAG21/Understanding/images-of-text.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Mozilla RTL guidelines",
+      "url": "https://firefox-source-docs.mozilla.org/code-quality/coding-style/rtl_guidelines.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Princeton: Dark Patterns at Scale",
+      "url": "https://webtransparency.cs.princeton.edu/dark-patterns/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Deceptive Design: types of deceptive pattern",
+      "url": "https://www.deceptive.design/types",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "CJEU C-673/17 (Planet49)",
+      "url": "https://gdprhub.eu/index.php?title=CJEU_-_C-673%2F17_-_Planet49",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "CPPA enforcement advisory: symmetry in choice",
+      "url": "https://www.cppa.ca.gov/announcements/2024/20240904.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Baymard: reduce cart abandonment",
+      "url": "https://baymard.com/learn/reduce-cart-abandonment",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Baymard: spec sheet scannability",
+      "url": "https://baymard.com/blog/spec-sheet-scannability",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Litmus: rendering differences in Microsoft Outlook clients",
+      "url": "https://www.litmus.com/blog/a-guide-to-rendering-differences-in-microsoft-outlook-clients",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Litmus: the ultimate guide to preview text support",
+      "url": "https://www.litmus.com/blog/the-ultimate-guide-to-preview-text-support",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Mailgun: Yahoo and Gmail bulk sender requirements",
+      "url": "https://www.mailgun.com/state-of-email-deliverability/chapter/yahoogle-bulk-senders/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Email on Acid: dark mode for email",
+      "url": "https://www.emailonacid.com/blog/article/email-development/dark-mode-for-email/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Manuel Matuzovic: I totally forgot about print style sheets",
+      "url": "https://www.matuzo.at/blog/i-totally-forgot-about-print-style-sheets/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Smashing Magazine: a guide to the state of print stylesheets",
+      "url": "https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Adobe: PDF accessibility overview",
+      "url": "https://www.adobe.com/accessibility/pdf/pdf-accessibility-overview.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Diátaxis",
+      "url": "https://diataxis.fr/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Docusaurus 2.0 announcement",
+      "url": "https://docusaurus.io/blog/2022/08/01/announcing-docusaurus-2.0",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Aftermath: how an SEO network built author bylines that do not exist",
+      "url": "https://aftermath.site/gameshub-clickout-media-seo-gambling-ai/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Finsweet Client-First documentation",
+      "url": "https://finsweet.com/client-first/docs/core-structure-strategy",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Framer: how to optimize PageSpeed Insights",
+      "url": "https://www.framer.com/help/articles/how-to-optimize-pagespeed-insights/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "CVE-2025-48757: missing row-level security in generated Supabase backends",
+      "url": "https://launchreadycode.com/blog/cve-2025-48757",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Symbiotic Security: we scanned 1,072 vibe-coded apps",
+      "url": "https://www.symbioticsec.ai/blog/we-scanned-1-072-vibe-coded-apps-98-had-security-flaws",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Publishing and sharing Claude artifacts",
+      "url": "https://support.claude.com/en/articles/9547008-publish-and-share-artifacts",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "WebAIM Screen Reader User Survey #10",
+      "url": "https://webaim.org/projects/screenreadersurvey10/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Overlay Fact Sheet",
+      "url": "https://overlayfactsheet.com/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "ARIA Authoring Practices: read me first",
+      "url": "https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "ARIA Authoring Practices: modal dialog pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Using ARIA: the five rules",
+      "url": "https://www.w3.org/TR/using-aria/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Understanding WCAG 2.2: Focus Not Obscured (Minimum)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Understanding WCAG 2.2: Dragging Movements",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Understanding WCAG 2.2: Label in Name",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Understanding WCAG 2.2: Reflow",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Understanding WCAG 2.2: Text Spacing",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Sarah Higley: escaping 101",
+      "url": "https://sarahmhigley.com/writing/escaping-101/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Sara Soueidan: accessible notifications with ARIA live regions",
+      "url": "https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-2/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Manuel Matuzović: aria-label on generic elements",
+      "url": "https://www.matuzo.at/blog/2026/aria-label-generic-elements",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Deque: accessible forms, the problem with placeholders",
+      "url": "https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Google technical writing: error messages",
+      "url": "https://developers.google.com/tech-writing/error-messages",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "GOV.UK Design System: error message component",
+      "url": "https://design-system.service.gov.uk/components/error-message/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "NN/g: error message guidelines",
+      "url": "https://www.nngroup.com/articles/error-message-guidelines/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Microsoft writing style guide",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/design/style/writing-style",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Butterick's Practical Typography: line spacing",
+      "url": "https://practicaltypography.com/line-spacing.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Richard Rutter: The Elements of Typographic Style Applied to the Web",
+      "url": "http://webtypography.net/2.2.1",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Pimp my Type: the ideal line length and line height",
+      "url": "https://pimpmytype.com/line-length-line-height/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "MDN: line-height",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/line-height",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Web Almanac 2025: page weight",
+      "url": "https://almanac.httparchive.org/en/2025/page-weight",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Web Almanac 2025: performance",
+      "url": "https://almanac.httparchive.org/en/2025/performance",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Web Almanac 2025: generative AI",
+      "url": "https://almanac.httparchive.org/en/2025/generative-ai",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Alex Russell: the performance inequality gap, 2026",
+      "url": "https://infrequently.org/2025/11/performance-inequality-gap-2026/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "web.dev: Vodafone case study",
+      "url": "https://web.dev/case-studies/vodafone",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "V8: the cost of JavaScript in 2019",
+      "url": "https://v8.dev/blog/cost-of-javascript-2019",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Calibre: the downsides of the Lighthouse performance score",
+      "url": "https://calibreapp.com/blog/downsides-of-performance-score",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Nielsen Norman Group: Scrolljacking 101",
+      "url": "https://www.nngroup.com/articles/scrolljacking-101/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "A Usability and Universal Design Investigation into Scrolljacking for Web Pages",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-032-16454-4_6",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Agrawal et al., Disorders of balance and vestibular function in US adults (NHANES 2001-2004)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19468085/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "W3C: Understanding SC 2.3.3 Animation from Interactions",
+      "url": "https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions",
+      "note_reviewed": true,
+      "live_status": "fulltext"
+    },
+    {
+      "title": "web.dev: prefers-reduced-motion, sometimes less movement is more",
+      "url": "https://web.dev/articles/prefers-reduced-motion",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "CSS-Tricks: Solving Sticky Hover States with @media (hover: hover)",
+      "url": "https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Adam Silver: The problem with disabled buttons and what to do instead",
+      "url": "https://adamsilver.io/blog/the-problem-with-disabled-buttons-and-what-to-do-instead/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Bogdan Cerovac: When a disabled submit button becomes a dead end",
+      "url": "https://cerovac.com/a11y/2026/08/when-a-disabled-submit-button-becomes-a-dead-end/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "WebAIM discussion: whether or not to disable form submit button",
+      "url": "https://webaim.org/discussion/mail_thread?thread=10935",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "W3C: Understanding SC 1.3.5 Identify Input Purpose",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Orange digital accessibility guidelines: the HTML autocomplete attribute",
+      "url": "https://a11y-guidelines.orange.com/en/articles/autocomplete-attribute/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "CSS-Tricks: Finger-friendly numerical inputs with inputmode",
+      "url": "https://css-tricks.com/finger-friendly-numerical-inputs-with-inputmode/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Stack Overflow blog: Why the number input is the worst input",
+      "url": "https://stackoverflow.blog/2022/12/26/why-the-number-input-is-the-worst-input/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "GOV.UK Design System: Error summary",
+      "url": "https://design-system.service.gov.uk/components/error-summary",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Baymard Institute: checkout flow and form field count",
+      "url": "https://baymard.com/blog/checkout-flow-average-form-fields",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Unslop UI: AI design tells ranked from a ~3.2M-post Reddit analysis",
+      "url": "https://www.claudecodehq.com/playbooks/unslop-ui",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Monitoring AI-Modified Content at Scale: A Case Study on the Impact of ChatGPT on AI Conference Peer Reviews (Liang et al.)",
+      "url": "https://arxiv.org/abs/2403.07183",
+      "note_reviewed": true,
+      "live_status": "abstract"
+    },
+    {
+      "title": "Academ-AI: documenting the undisclosed use of generative artificial intelligence in academic publishing (Glynn)",
+      "url": "https://arxiv.org/abs/2411.15218",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Compound Deception in Elite Peer Review: A Failure Mode Taxonomy of 100 Fabricated Citations at NeurIPS 2025 (Ansari), using GPTZero's scan",
+      "url": "https://arxiv.org/abs/2602.05930",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "One in 277 PubMed-indexed papers in 2026 shows fabricated references, says analysis (Retraction Watch, on Topaz et al.)",
+      "url": "https://retractionwatch.com/2026/05/07/one-in-277-pubmed-indexed-papers-in-2026-shows-fabricated-references-says-analysis/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Hallucinations in Bibliographic Recommendation: Citation Frequency as a Proxy for Training Data Redundancy (Niimi)",
+      "url": "https://arxiv.org/abs/2510.25378",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "When AI Writes, Who Gets Cited? Evidence of Citation Monoculture Across Language Models",
+      "url": "https://arxiv.org/abs/2608.19230",
+      "note_reviewed": true,
+      "live_status": "abstract"
+    },
+    {
+      "title": "Evaluating Sakana's AI Scientist for Autonomous Research (Beel, Kan, Baumgart)",
+      "url": "https://arxiv.org/abs/2502.14297",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Explosion of formulaic research articles, including inappropriate study designs and false discoveries, based on the NHANES US national health database (Suchak, Aliu, Harrison, Zwiggelaar, Geifman, Spick), PLOS Biology",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003152",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "The 'Problematic Paper Screener' / Problematic Paper Screener: Trawling for fraud in the scientific literature (Cabanac, Labbe, Magazinov)",
+      "url": "https://theconversation.com/problematic-paper-screener-trawling-for-fraud-in-the-scientific-literature-246317",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Tortured phrases: A dubious writing style emerging in science (Cabanac, Labbe, Magazinov)",
+      "url": "https://arxiv.org/abs/2107.06751",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "'Positive review only': Researchers hide AI prompts in papers (Nikkei Asia, 1 July 2025) and Hidden Prompts in Manuscripts Exploit AI-Assisted Peer Review",
+      "url": "https://arxiv.org/abs/2507.06185",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Pangram Predicts 21% of ICLR Reviews are AI-Generated",
+      "url": "https://www.pangram.com/blog/pangram-predicts-21-of-iclr-reviews-are-ai-generated",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "CoCoNUTS: Concentrating on Content while Neglecting Uninformative Textual Styles for AI-Generated Peer Review Detection (Chen et al.)",
+      "url": "https://arxiv.org/abs/2509.04460",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Does ChatGPT Ignore Article Retractions and Other Reliability Concerns? (Thelwall), Learned Publishing",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/leap.2018",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "arXiv changes rules after a flood of AI-generated survey and position papers (404 Media; arXiv CS moderation announcement, 31 October 2025)",
+      "url": "https://www.404media.co/arxiv-changes-rules-after-getting-spammed-with-ai-generated-research-papers/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Policies on artificial intelligence chatbots among academic publishers: a cross-sectional audit",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11869395/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Apply Responsibly: Policy on AI Use in NIH Research Applications and Limiting Submissions per PI (NIH, July 2025)",
+      "url": "https://grants.nih.gov/news-events/nih-extramural-nexus-news/2025/07/apply-responsibly-policy-on-ai-use-in-nih-research-applications-and-limiting-submissions-per-pi",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Large Language Models for Software Engineering: A Reproducibility Crisis",
+      "url": "https://arxiv.org/abs/2512.00651",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Randomness in large language models: What researchers need to know (and report)",
+      "url": "https://arxiv.org/abs/2607.24372",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Comparing scientific abstracts generated by ChatGPT to original abstracts (Gao et al., npj Digital Medicine)",
+      "url": "https://www.biorxiv.org/content/10.1101/2022.12.23.521610v1",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Systematic review and meta-analysis of quotation inaccuracy in medicine",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12285159/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "The Prevalence of Misreporting and Misinterpreting Correlation Coefficients in Biomedical Literature",
+      "url": "https://arxiv.org/abs/2511.14092",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Evaluation of spin in abstracts (psychiatry and psychology; allergy and immunology; sleep medicine; orthopaedics)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31383725/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "GPT detectors are biased against non-native English writers (Liang, Yuksekgonul, Mao, Wu, Zou)",
+      "url": "https://arxiv.org/abs/2304.02819",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Hindawi reveals process for retracting more than 8,000 paper mill articles (Retraction Watch)",
+      "url": "https://retractionwatch.com/2023/12/19/hindawi-reveals-process-for-retracting-more-than-8000-paper-mill-articles",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "GPT-fabricated scientific papers on Google Scholar (Haider, Rodl, Soderberg, Ekstrom), Harvard Kennedy School Misinformation Review",
+      "url": "https://misinforeview.hks.harvard.edu/article/gpt-fabricated-scientific-papers-on-google-scholar-key-features-spread-and-implications-for-preempting-evidence-manipulation/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Retraction: Cellular functions of spermatogonial stem cells in relation to JAK/STAT signaling pathway (Frontiers in Cell and Developmental Biology)",
+      "url": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2024.1386861/full",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "The rat with the big balls and the enormous penis - Science Integrity Digest (Elisabeth Bik)",
+      "url": "https://scienceintegritydigest.com/2024/02/15/the-rat-with-the-big-balls-and-enormous-penis-how-frontiers-published-a-paper-with-botched-ai-generated-images/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Study Featuring AI-Generated Giant Rat Penis Retracted, Journal Apologizes (Vice)",
+      "url": "https://www.vice.com/en/article/ai-midjourney-rat-penis-study-retracted-frontiers/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Giant rat penis redux: AI-generated diagram, errors lead to retraction (Retraction Watch)",
+      "url": "https://retractionwatch.com/2024/07/22/giant-rat-penis-redux-ai-generated-diagram-errors-lead-to-retraction/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Bik EM, Casadevall A, Fang FC. The Prevalence of Inappropriate Image Duplication in Biomedical Research Publications. mBio 7(3), 2016",
+      "url": "https://journals.asm.org/doi/10.1128/mbio.00809-16",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Weissgerber TL, Milic NM, Winham SJ, Garovic VD. Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm. PLOS Biology 13(4):e1002128, 2015",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4406565",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Crameri F, Shephard GE, Heron PJ. The misuse of colour in science communication. Nature Communications 11:5444, 2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7595127/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Borland D, Taylor MR. Rainbow Color Map (Still) Considered Harmful. IEEE Computer Graphics and Applications 27(2), 2007",
+      "url": "https://www.semanticscholar.org/paper/Rainbow-Color-Map-(Still)-Considered-Harmful-Borland-Taylor/ee792edccb2c88e927c81285344d2d88babfb86f",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Ware C, Stone M, Szafir DA. Rainbow Colormaps Are Not All Bad. IEEE Computer Graphics and Applications 43(3):88-93, 2023",
+      "url": "https://scholars.unh.edu/cgi/viewcontent.cgi?article=2478&context=ccom",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "matplotlib default matplotlibrc (main branch)",
+      "url": "https://raw.githubusercontent.com/matplotlib/matplotlib/main/lib/matplotlib/mpl-data/matplotlibrc",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Nature research figure guide: building and exporting figure panels",
+      "url": "https://research-figure-guide.nature.com/figures/building-and-exporting-figure-panels/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "PLOS figure requirements",
+      "url": "https://journals.plos.org/plosone/s/figures",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Elsevier artwork overview",
+      "url": "https://www.elsevier.com/about/policies-and-standards/author/artwork-and-media-instructions/artwork-overview",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Cumming G, Fidler F, Vaux DL. Error bars in experimental biology. Journal of Cell Biology 177(1):7-11, 2007",
+      "url": "https://rupress.org/jcb/article/177/1/7/34602/Error-bars-in-experimental-biology",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Wullschleger et al. High Incorrect Use of the Standard Error of the Mean (SEM) in Original Articles in Three Cardiovascular Journals Evaluated for 2012. PLOS ONE 9(10):e110364",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0110364",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Wasserstein RL, Lazar NA. The ASA Statement on p-Values: Context, Process, and Purpose. The American Statistician 70(2):129-133, 2016",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/00031305.2016.1154108",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Pandey AV, Rall K, Satterthwaite ML, Nov O, Bertini E. How Deceptive are Deceptive Visualizations? CHI 2015",
+      "url": "https://dl.acm.org/doi/10.1145/2702123.2702608",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Correll M, Bertini E, Franconeri S. Truncating the Y-Axis: Threat or Menace? CHI 2020",
+      "url": "https://dl.acm.org/doi/10.1145/3313831.3376222",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Cleveland WS, McGill R. Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods. JASA 79(387):531-554, 1984",
+      "url": "http://euclid.psych.yorku.ca/www/psy6135/papers/ClevelandMcGill1984.pdf",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Siegrist M. The use or misuse of three-dimensional graphs to represent lower-dimensional data. Behaviour & Information Technology 15(2), 1996",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/014492996120300",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "ggplot2 reference: scale_colour_hue (evenly spaced colours for discrete data)",
+      "url": "https://ggplot2.tidyverse.org/reference/scale_hue.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Identifying images in the biology literature that are problematic for people with a colour-vision deficiency. eLife 2024;13:e95524",
+      "url": "https://elifesciences.org/articles/95524",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Figure accessibility for readers with colour vision deficiency: analysis of leading medical journals (medRxiv preprint)",
+      "url": "https://www.medrxiv.org/content/10.64898/2025.12.11.25342084v3.full",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Colour Blind Awareness: types of colour blindness",
+      "url": "https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Dong H. Self-Distillation Policy Optimization via Visual Feedback: Bridging Code and Visual Artifacts. arXiv:2606.10334 (Microsoft), June 2026",
+      "url": "https://arxiv.org/abs/2606.10334",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Galimzyanov T, Titov S, Golubev Y, Bogomolov E. Drawing Pandas: A Benchmark for LLMs in Generating Plotting Code. arXiv:2412.02764",
+      "url": "https://arxiv.org/abs/2412.02764",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "SciFigDetect: A Benchmark for AI-Generated Scientific Figure Detection. arXiv:2604.08211",
+      "url": "https://arxiv.org/abs/2604.08211",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "AI detectors are poor western blot classifiers: a study of accuracy and predictive values. PeerJ 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11847483/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Springer Nature AI guidance for researchers and communities",
+      "url": "https://www.springernature.com/gp/group/ai/ai-guidance-for-our-researchers-and-communities",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Gabelica M, Bojcic R, Puljak L. Many researchers were not compliant with their published data sharing statement: a mixed-methods study. Journal of Clinical Epidemiology 150:33-41, 2022",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S089543562200141X",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Nature: initial submission - figure guidelines",
+      "url": "https://www.nature.com/nature/for-authors/initial-submission",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "l2tabu: An essential guide to LaTeX2e usage -- obsolete commands and packages (English, source)",
+      "url": "https://ftp.fau.de/ctan/documentation/l2tabu/english/l2tabuen.tex",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "CTAN: package nag -- detecting and warning about obsolete LaTeX commands",
+      "url": "https://ctan.org/pkg/nag",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "ChkTeX source: FindErrs.h warning table",
+      "url": "https://github.com/overleaf/chktex/blob/master/FindErrs.h",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "ChkTeX default configuration (chktexrc)",
+      "url": "https://github.com/overleaf/chktex/blob/master/chktexrc",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "TeXtidote rule list",
+      "url": "https://github.com/sylvainhalle/textidote",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "TeXpert: A Multi-Level Benchmark for Evaluating LaTeX Code Generation by LLMs",
+      "url": "https://arxiv.org/abs/2506.16990",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "TeXFix-Bench: An Empirically Grounded Multi-Format Benchmark for LLM-Based Document Source Repair",
+      "url": "https://arxiv.org/abs/2608.07617",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "X-raying the arXiv: A Large-Scale Analysis of arXiv Submissions' Source Files",
+      "url": "https://arxiv.org/abs/2601.11385",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "arXiv FAQ: Why Submit the TeX/LaTeX Source?",
+      "url": "https://info.arxiv.org/help/faq/whytex.html",
+      "note_reviewed": true,
+      "live_status": "fulltext"
+    },
+    {
+      "title": "google-research/arxiv-latex-cleaner",
+      "url": "https://github.com/google-research/arxiv-latex-cleaner",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "TeX StackExchange Q139873: What are the most common mistakes that beginners of (La)TeX make?",
+      "url": "https://tex.stackexchange.com/questions/139873/what-are-the-most-common-mistakes-that-beginners-of-latex-and-friends-make",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "TeX StackExchange Q173717: Is it ever bad to use \\left and \\right?",
+      "url": "https://tex.stackexchange.com/questions/173717/is-it-ever-bad-to-use-left-and-right",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "dspinellis/latex-advice",
+      "url": "https://github.com/dspinellis/latex-advice",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Wookai/paper-tips-and-tricks",
+      "url": "https://github.com/Wookai/paper-tips-and-tricks",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "booktabs manual: Publication quality tables in LaTeX (Simon Fear)",
+      "url": "https://cs.brown.edu/about/system/managed/latex/doc/booktabs.pdf",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "NIST: SI Unit rules and style conventions checklist",
+      "url": "https://physics.nist.gov/cuu/Units/checklist.html",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "siunitx package documentation",
+      "url": "https://ctan.org/pkg/siunitx",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "acmart samples.dtx (ACM article template sources)",
+      "url": "https://github.com/borisveytsman/acmart/blob/primary/samples/samples.dtx",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Published and preprint papers still carrying 'Conference acronym XX / Woodstock, NY'",
+      "url": "https://arxiv.org/pdf/2604.27692",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "NeurIPS LaTeX template (Overleaf)",
+      "url": "https://www.overleaf.com/latex/templates/formatting-instructions-for-neurips-2026/bjdwqfdkyftc",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "IEEE Conference Template (Overleaf)",
+      "url": "https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "ACL Rolling Review: Authors Beware -- Common Submission Problems",
+      "url": "https://aclrollingreview.org/authorchecklist",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "acl-org/aclpubcheck",
+      "url": "https://github.com/acl-org/aclpubcheck",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "ICLR formatting instructions (\\iclrfinalcopy) and CVPR author guidelines (\\cvprfinalcopy)",
+      "url": "https://openreview.net/pdf?id=qioDi3afqm",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Nikkei: 'Positive review only' -- researchers hide AI prompts in papers",
+      "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/positive-review-only-researchers-hide-ai-prompts-in-papers",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Prompt Injection Attacks on LLM Generated Reviews of Scientific Papers",
+      "url": "https://arxiv.org/abs/2509.10248",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "CTAN JSON API (package existence)",
+      "url": "https://ctan.org/json/2.0/pkg/booktabs",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "CTAN obsolete/ tree: subfigure",
+      "url": "https://ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "cleveref manual and TeX.SE Q1863 on hyperref load order",
+      "url": "https://mirrors.ctan.org/macros/latex/contrib/cleveref/cleveref.pdf",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Claus Wilke: How to not mess up your bibliographies with BibTeX",
+      "url": "https://clauswilke.com/blog/2015/10/02/bibtex/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "TeX.SE Q1380: how to avoid the BibTeX 'repeated entry' error",
+      "url": "https://tex.stackexchange.com/questions/1380/how-to-avoid-bibtex-error-message-repeated-entry-for-an-entry-appearing-in-sev",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "r/LaTeX community observation on chatbot-generated LaTeX",
+      "url": "https://www.reddit.com/r/LaTeX/comments/1fcwigf/just_started_dipping_my_toes_into_latex_and_was/",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "USENIX ;login:: We Have a Package for You -- package hallucinations in LLM-generated code",
+      "url": "https://www.usenix.org/publications/loginonline/we-have-package-you-comprehensive-analysis-package-hallucinations-code",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    },
+    {
+      "title": "Overleaf documentation: 'There were undefined references' and float placement specifiers",
+      "url": "https://www.overleaf.com/learn/latex/Errors/There_were_undefined_references",
+      "note_reviewed": true,
+      "live_status": "not-opened"
+    }
+  ],
+  "status_legend": {
+    "fulltext": "opened and substantive source text inspected",
+    "abstract": "opened landing/abstract and claim limited to that evidence",
+    "partial": "opened but only metadata/search/limited text inspected",
+    "unavailable": "actual open attempt failed or was blocked",
+    "not-opened": "note reviewed from original catalog; not opened in this research pass"
+  },
+  "verified_new_sources": [
+    {
+      "title": "WWC Organizing Instruction and Study to Improve Student Learning",
+      "url": "https://ies.ed.gov/ncee/wwc/practiceguide/1",
+      "status": "fulltext",
+      "claim": "Seven recommendations include spacing, worked examples, graphics plus verbal descriptions, abstract-concrete integration, retrieval practice, delayed judgments, and deep explanatory questions."
+    },
+    {
+      "title": "Generative AI without guardrails can harm learning",
+      "url": "https://doi.org/10.1073/pnas.2422633122",
+      "status": "fulltext",
+      "claim": "High-school math RCT: GPT-assisted practice improved practice performance but unassisted exam performance could fall; single school/topic and short-term limits are explicit."
+    },
+    {
+      "title": "AI tutoring outperforms in-class active learning",
+      "url": "https://doi.org/10.1038/s41598-025-97652-6",
+      "status": "search_abstract",
+      "claim": "Search result and abstract: crossover RCT in Harvard introductory physics; a carefully scaffolded tutor improved measured learning and engagement versus active learning. Direct Nature PDF was blocked; use abstract-level claims only."
+    },
+    {
+      "title": "GOV.UK headings",
+      "url": "https://design-system.service.gov.uk/styles/headings/",
+      "status": "fulltext",
+      "claim": "Semantic heading hierarchy, sentence case, and captions are legitimate information architecture; visual variation is allowed only with accessibility testing."
+    },
+    {
+      "title": "WCAG 2.2 SC 2.4.6 Headings and Labels",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html",
+      "status": "fulltext",
+      "claim": "Headings/labels should describe topic or purpose; semantic markup and descriptive content are separate requirements."
+    },
+    {
+      "title": "CLDR 34 French locale migration",
+      "url": "https://cldr.unicode.org/downloads/cldr-34",
+      "status": "fulltext",
+      "claim": "French grouping separator changed from NBSP U+00A0 to narrow NBSP U+202F; locale formatting is not evidence of authorship or AI provenance."
+    },
+    {
+      "title": "Interrogating Design Homogenization in Web Vibe Coding",
+      "url": "https://www.microsoft.com/en-us/research/publication/interrogating-design-homogenization-in-web-vibe-coding/",
+      "status": "abstract",
+      "claim": "Research frames frictionless vibe coding as a possible homogenization mechanism and recommends productive friction; no population prevalence estimate."
+    },
+    {
+      "title": "What Makes a Good Generated Image?",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/39666",
+      "status": "abstract",
+      "claim": "Human and multimodal-LLM image-quality attribute relationships differ; evaluate aesthetics, artifacts, anatomy, composition, adherence, and style separately."
+    },
+    {
+      "title": "T2VTextBench",
+      "url": "https://arxiv.org/abs/2505.04946",
+      "status": "fulltext",
+      "claim": "Ten text-to-video systems show poor and unstable on-screen text fidelity and temporal consistency."
+    },
+    {
+      "title": "DEVIL dynamics evaluation",
+      "url": "https://arxiv.org/abs/2407.01094",
+      "status": "fulltext",
+      "claim": "Low-dynamics video can score well on consistency metrics; dynamics-aware metrics align better with human ratings on the benchmark."
+    },
+    {
+      "title": "Re-FRAME meeting summarization",
+      "url": "https://arxiv.org/abs/2509.15901",
+      "status": "abstract",
+      "claim": "Fact extraction and reader-specific questions reduce omission/hallucination in benchmark meeting summaries."
+    },
+    {
+      "title": "What’s Wrong? Refining Meeting Summaries",
+      "url": "https://aclanthology.org/2025.coling-main.143/",
+      "status": "fulltext",
+      "claim": "ACL paper releases 200-summary error dataset covering omission, irrelevance, and structural errors."
+    },
+    {
+      "title": "AI-Generated Slides: Are They Good? Can Students Tell?",
+      "url": "https://arxiv.org/abs/2605.13532",
+      "status": "fulltext",
+      "claim": "Curated and edited AI slides in one course were rated comparably to instructor slides; students could not reliably identify origin."
+    },
+    {
+      "title": "From Text to Map",
+      "url": "https://arxiv.org/pdf/2402.11400",
+      "status": "fulltext",
+      "claim": "LLM causal-loop diagram recovered 56% of human-coded relationships; authors require human verification of each relationship and sign."
+    },
+    {
+      "title": "How LLMs Distort Our Written Language",
+      "url": "https://arxiv.org/abs/2603.18161",
+      "status": "abstract",
+      "claim": "Even grammar-only prompts can alter semantics; generated peer reviews showed different weighting and higher scores."
+    },
+    {
+      "title": "Voice Under Revision",
+      "url": "https://arxiv.org/abs/2604.22142",
+      "status": "abstract",
+      "claim": "LLM editing pulls personal narrative toward a polished, less situated register; author-baseline comparison is preferable to universal word bans."
+    },
+    {
+      "title": "When AI Writes, Who Gets Cited?",
+      "url": "https://arxiv.org/abs/2608.19230",
+      "status": "abstract",
+      "claim": "Models share citation-selection preferences not seen in blinded domain experts, supporting citation monoculture audits."
+    }
+  ],
+  "verification_boundary": "All original source notes screened. Only recorded tool-opened sources have a live status other than not-opened. Abstract or landing-page access does not verify the full paper or all catalog claims.",
+  "access_status_meanings": {
+    "not-opened": "No live access recorded in this inventory; note screening only.",
+    "abstract": "Abstract or publication landing page read; no complete paper verification.",
+    "fulltext": "Substantive source text accessed; individual claims still require alignment review.",
+    "partial": "Only selected sections, metadata, or limited access.",
+    "unavailable": "Open attempt failed; catalog note not treated as verified."
+  }
+}

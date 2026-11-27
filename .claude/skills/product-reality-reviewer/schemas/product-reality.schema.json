@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://port-daddy.dev/schemas/product-reality-reviewer/product-reality.schema.json",
+  "title": "Product Reality Manifest",
+  "type": "object",
+  "required": ["name", "targetUsers", "firstRun", "account", "providerAccess", "trust", "support"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "targetUsers": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "firstRun": { "type": "object" },
+    "account": { "type": "object" },
+    "providerAccess": { "type": "object" },
+    "agentActions": { "type": "array", "items": { "type": "object" } },
+    "trust": { "type": "object" },
+    "support": { "type": "object" },
+    "business": { "type": "object" }
+  }
+}

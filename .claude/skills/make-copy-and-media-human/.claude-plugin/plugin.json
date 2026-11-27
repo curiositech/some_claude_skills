@@ -1,0 +1,4 @@
+{
+  "name": "make-copy-and-media-human",
+  "description": "Review and rewrite copy, web UI, slides, READMEs, commits, PRs, marketing pages, educational chapters, class materials, notebooks, and generated media to repair clipped or stilted prose, missing reasoning, and AI-isms \u2014 Claudeisms, GPT-isms, Codexisms, Geminisms, engineering-artifact slop, and the v0/Lovable design look \u2014 producing a line-item fix plan as static HTML. Use before shipping any outward-facing text or design, when something \"reads like AI\", or when auditing a property for machine tells. NOT for grammar/spell checking, SEO optimization, plagiarism detection, or judging whether a third party used AI (this is an editing skill, and the evidence says authorship detection does not work)."
+}

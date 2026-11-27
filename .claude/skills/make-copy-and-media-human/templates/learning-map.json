@@ -1,0 +1,18 @@
+{
+  "source": "path/to/lesson.md",
+  "declared_prior_knowledge": ["fractions"],
+  "concepts": [
+    {
+      "id": "conditional-probability",
+      "prerequisites": ["fractions"],
+      "teaching_line": 10,
+      "first_use_line": 12
+    }
+  ],
+  "evidence": [
+    {"kind": "worked-example", "concept_id": "conditional-probability", "line": 20},
+    {"kind": "practice", "concept_id": "conditional-probability", "line": 30},
+    {"kind": "retrieval", "concept_id": "conditional-probability", "line": 40},
+    {"kind": "transfer", "concept_id": "conditional-probability", "line": 50}
+  ]
+}
